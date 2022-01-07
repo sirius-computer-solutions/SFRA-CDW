@@ -1,7 +1,7 @@
 <isloop items="${pdict.productSearch.refinements}" var="refinement">
     
     <isif condition="${refinement.isAttributeRefinement || refinement.isPromotionRefinement}">
-        <isif condition="${refinement.values[0].id == 'acme-tools-brand-name'}">
+        <isif condition="${refinement.values[0].id == 'cdw-tools-brand-name'}">
 
             
 
@@ -53,15 +53,15 @@
             <div class="row">
                 <div class="col-12">
                     <div class="shop-by-brand-carousel">
-                            <div id="shopByBrandCarousel" class="acme-carousel" data-column-count-by-width='{"0": 2,"750": 3,"1200": 4}' data-interval="false">
-                                <div class="acme-carousel-inner">
+                            <div id="shopByBrandCarousel" class="cdw-carousel" data-column-count-by-width='{"0": 2,"750": 3,"1200": 4}' data-interval="false">
+                                <div class="cdw-carousel-inner">
                                 
                                     
                                     <isloop items="${(finalrefinementValuesStr.split(','))}" var="refinementValue"  status="loopStatus">
                                         <isset name="imageURL" value="${URLUtils.staticURL(URLUtils.CONTEXT_CATALOG, '', 'images/brands/'+(refinementValue.toLowerCase().replace(/ /g, '-')).replace(/'/g, '-') +'.jpg')}" scope="page"/> 
                                         <isset name="oci" value="${(refinementValue.toLowerCase().replace(/ /g, '-')).replace(/'/g, '-')+'-'+pdict.productSearch.category.id.toLowerCase().replace(/ /g, '-')}" scope="page" />
-                                        <div data-slide-to="${loopStatus.index}" class='acme-carousel-item' >
-                                            <a href="${URLUtils.url('Search-Show', 'cgid', pdict.productSearch.category.id, 'prefn1', 'acme-tools-brand-name', 'prefv1', refinementValue,'oci',oci)}" title="${refinementValue.toLowerCase()}">
+                                        <div data-slide-to="${loopStatus.index}" class='cdw-carousel-item' >
+                                            <a href="${URLUtils.url('Search-Show', 'cgid', pdict.productSearch.category.id, 'prefn1', 'cdw-tools-brand-name', 'prefv1', refinementValue,'oci',oci)}" title="${refinementValue.toLowerCase()}">
                                                 <span class="carousel-image-wrapper"> 
                                                     <img class="tile-image" src="${imageURL}" alt="${refinementValue}" onerror="this.src='${URLUtils.staticURL('/images/img-na.png')}'"  />
                                                 </span>

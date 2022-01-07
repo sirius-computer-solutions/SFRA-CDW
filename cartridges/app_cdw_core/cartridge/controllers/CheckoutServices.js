@@ -11,7 +11,7 @@ var PaymentInstrument = require('dw/order/PaymentInstrument');
 var collections = require('*/cartridge/scripts/util/collections');
 var PayPalPaymentHelper = require('*/cartridge/scripts/helpers/paymentHelper');
 var BasketMgr = require('dw/order/BasketMgr');
-var MessageConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+var MessageConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
 var validationHelper = require('*/cartridge/scripts/helpers/validationHelper');
 var Logger = require('dw/system/Logger');
 var logger = Logger.getLogger("Checkout","checkout");
@@ -232,7 +232,7 @@ server.replace(
 
             Transaction.wrap(function () {
 
-                //ACME-1334
+                //cdw-1334
                 if(empty(shipping.phone)){ 
                     shipping.setPhone(billingData.phone.value);  
                 }

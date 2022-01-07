@@ -12,7 +12,7 @@ var COHelpers = require('*/cartridge/scripts/checkout/checkoutHelpers');
 var validationHelper = require('*/cartridge/scripts/helpers/validationHelper');
 var Resource = require('dw/web/Resource');
 var hooksHelper = require('*/cartridge/scripts/helpers/hooks');
-var MessageConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+var MessageConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
 var messageHelper = require('~/cartridge/scripts/helpers/messageHelper');
 
 server.extend(page);

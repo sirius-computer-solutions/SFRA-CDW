@@ -32,7 +32,7 @@ $stored-payment-spacing: 1rem;
     font-size: 1.125rem !important;
     font-weight: 800;
     .remaining-added-total-sum{
-        color: $acme-red;
+        color: $cdw-red;
     }
 }
 
@@ -270,11 +270,11 @@ $stored-payment-spacing: 1rem;
         margin-top: 15px;
     }
     .strike-through, .discounted-price {
-        color: $acme-red;
+        color: $cdw-red;
         font-weight: bolder;
     }
     .final-line-price .line-item-total-price-amount {
-        color: $acme-red;
+        color: $cdw-red;
         font-weight: bolder;
         margin-top: 0;
     }

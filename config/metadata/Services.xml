@@ -57,12 +57,12 @@
     </service-credential>
 
     <service-credential service-credential-id="Varsity_Credentials">
-        <url>https://portal.acmetools.com:8523/rest/vtransit/</url>
+        <url>https://portal.cdw.com:8523/rest/vtransit/</url>
         <user-id>1234</user-id>
         <password encrypted="true" encryption-type="common.export">cOI/n/PZVqFHQI1h+0NB++6r2tiGXsjzJj4OnBZQoEs=</password>
     </service-credential>
 
-    <service-credential service-credential-id="bazaarvoice.sftp.prd.AcmeTools">
+    <service-credential service-credential-id="bazaarvoice.sftp.prd.CDWStarterStore">
         <url>sftp.bazaarvoice.com</url>
         <user-id>TODO</user-id>
         <password encrypted="true" encryption-type="common.export">eo/vwvM/IsqFylkwktTGKu02EWPMz/IFAPazta1cfRg=</password>
@@ -74,9 +74,9 @@
         <password encrypted="true" encryption-type="common.export">7uE2FpNExRk9PdUQjyaQsoPIf+/YLr6opRTKoluPojo=</password>
     </service-credential>
 
-    <service-credential service-credential-id="bazaarvoice.sftp.stg.AcmeTools">
+    <service-credential service-credential-id="bazaarvoice.sftp.stg.CDWStarterStore">
         <url>sftp-stg.bazaarvoice.com</url>
-        <user-id>acmetools</user-id>
+        <user-id>cdwtools</user-id>
         <password encrypted="true" encryption-type="common.export">EjFvoidPacLZxC3B1r7goJyaRFYiVNQlys76DmZu65YiYa4b7tZBmisrEtK3Oxt7</password>
     </service-credential>
 
@@ -93,8 +93,8 @@
     </service-credential>
 
     <service-credential service-credential-id="int.s2k.http.credentials">
-        <url>https://portal.acmetools.com/WebServicesTest/</url>
-        <user-id>acmetools</user-id>
+        <url>https://portal.cdw.com/WebServicesTest/</url>
+        <user-id>cdwtools</user-id>
         <password encrypted="true" encryption-type="common.export">FwGkqgrXEQhxBOJHfd9zXeiALEiRoiA4htbz6fYDqUYxaCe/lrTtAyJykaMZn53Ddavzt6Xwel8Vj3yU0dxO0w==</password>
     </service-credential>
 
@@ -229,7 +229,7 @@
         <credential-id>NARVAR_BULK_API_CREDS</credential-id>
     </service>
 
-    <service service-id="NARVAR_LOG_INGESTION_AcmeTools">
+    <service service-id="NARVAR_LOG_INGESTION_CDWStarterStore">
         <service-type>HTTP</service-type>
         <enabled>true</enabled>
         <log-prefix>Narvar</log-prefix>
@@ -240,7 +240,7 @@
         <credential-id>NARVAR_LOGS_API_CREDS</credential-id>
     </service>
 
-    <service service-id="NARVAR_ORDER_INGESTION_AcmeTools">
+    <service service-id="NARVAR_ORDER_INGESTION_CDWStarterStore">
         <service-type>HTTP</service-type>
         <enabled>true</enabled>
         <log-prefix>Narvar</log-prefix>
@@ -273,7 +273,7 @@
         <credential-id/>
     </service>
 
-    <service service-id="bazaarvoice.sftp.export.AcmeTools">
+    <service service-id="bazaarvoice.sftp.export.CDWStarterStore">
         <service-type>SFTP</service-type>
         <enabled>true</enabled>
         <log-prefix>bazaarvoice_sftp</log-prefix>
@@ -281,7 +281,7 @@
         <force-prd-enabled>false</force-prd-enabled>
         <mock-mode-enabled>false</mock-mode-enabled>
         <profile-id>bazaarvoice.sftp</profile-id>
-        <credential-id>bazaarvoice.sftp.stg.AcmeTools</credential-id>
+        <credential-id>bazaarvoice.sftp.stg.CDWStarterStore</credential-id>
     </service>
 
     <service service-id="bazaarvoice.sftp.export.RefArch">
@@ -295,7 +295,7 @@
         <credential-id>bazaarvoice.sftp.stg.RefArch</credential-id>
     </service>
 
-    <service service-id="bazaarvoice.sftp.import.AcmeTools">
+    <service service-id="bazaarvoice.sftp.import.CDWStarterStore">
         <service-type>SFTP</service-type>
         <enabled>true</enabled>
         <log-prefix>bazaarvoice_sftp</log-prefix>
@@ -303,7 +303,7 @@
         <force-prd-enabled>false</force-prd-enabled>
         <mock-mode-enabled>false</mock-mode-enabled>
         <profile-id>bazaarvoice.sftp</profile-id>
-        <credential-id>bazaarvoice.sftp.stg.AcmeTools</credential-id>
+        <credential-id>bazaarvoice.sftp.stg.CDWStarterStore</credential-id>
     </service>
 
     <service service-id="bazaarvoice.sftp.import.RefArch">

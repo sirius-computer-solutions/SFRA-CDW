@@ -27,7 +27,7 @@ function getConstants() {
         UNKNOWN_STRING: 'unknown',
         VALID_STRING: 'valid',
         ACCEPT_ALL_STRING: 'accept_all',
-        INTEGRATION_ERROR_FILE: 'AcmeIntegrationError',
+        INTEGRATION_ERROR_FILE: 'cdwIntegrationError',
         FEDEX_ERROR: "FEDEX ERROR:",
         ORDER_ERROR: 'ORDER ERROR:',
         GOOGLE_CAPTCHA_ERROR: 'GOOGLE CAPTCHA ERROR:',

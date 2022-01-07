@@ -7,7 +7,7 @@ var processInclude = require('base/util');
 $(document).ready(function () {
     // Instore pickup
     try {
-        //ACME checkout below includes instorepickup checkout overrides
+        //cdw checkout below includes instorepickup checkout overrides
         //processInclude(require('instorepickup/checkout/checkout'));
         processInclude(require('./checkout/instore'));
     } catch (ex) {

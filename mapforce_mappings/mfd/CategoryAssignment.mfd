@@ -2,7 +2,7 @@
 <!-- Edited with Altova MapForce 2021r3 -->
 <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="31">
 	<settings>
-		<deployment path="/public/Acme/CategoryAssignment.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
+		<deployment path="/public/cdw/CategoryAssignment.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
 	</settings>
 	<resources/>
 	<component name="defaultmap" uid="1" editable="1">
@@ -227,7 +227,7 @@
 					</targets>
 					<view ltx="859" lty="50" rbx="995" rby="68"/>
 					<data>
-						<constant value="acme-sf-catalog-en" datatype="string"/>
+						<constant value="cdw-sf-catalog-en" datatype="string"/>
 					</data>
 				</component>
 				<component name="category_assignments" library="json" uid="2" kind="31">
@@ -278,7 +278,7 @@
 																		<entry name="SEO Brand Name Display" type="json-property" expanded="1"/>
 																		<entry name="  SEO URL Keyword Character Count" type="json-property" expanded="1"/>
 																		<entry name="SEO URL Keywword" type="json-property" expanded="1"/>
-																		<entry name="Acme Tools Salesforce Category" type="json-property" expanded="1">
+																		<entry name="cdw Tools Salesforce Category" type="json-property" expanded="1">
 																			<entry name="string" outkey="66"/>
 																		</entry>
 																		<entry name="property" ns="1" type="json-property" outkey="19" expanded="1">
@@ -352,7 +352,7 @@
 								</entry>
 							</entry>
 						</root>
-						<document schema="xsd/catalog.xsd" instanceroot="{http://www.demandware.com/xml/impex/catalog/2006-10-31}catalog" outputinstance="..\FinalACME\catalog.xml"/>
+						<document schema="xsd/catalog.xsd" instanceroot="{http://www.demandware.com/xml/impex/catalog/2006-10-31}catalog" outputinstance="..\Finalcdw\catalog.xml"/>
 					</data>
 				</component>
 			</children>
@@ -755,7 +755,7 @@
 					</targets>
 					<view ltx="452" lty="233" rbx="604" rby="251"/>
 					<data>
-						<constant value="Acme Tools Salesforce Sub-Category" datatype="string"/>
+						<constant value="cdw Tools Salesforce Sub-Category" datatype="string"/>
 					</data>
 				</component>
 				<component name="contains" library="core" uid="103" kind="5">

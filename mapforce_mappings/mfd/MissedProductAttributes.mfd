@@ -393,7 +393,7 @@
 						</join>
 					</data>
 				</component>
-				<component name="acmejson_2_performance" library="json" uid="2" kind="31">
+				<component name="cdwjson_2_performance" library="json" uid="2" kind="31">
 					<properties XSLTTargetEncoding="UTF-8"/>
 					<view ltx="10" lty="43" rbx="358" rby="517"/>
 					<data>
@@ -477,10 +477,10 @@
 																	<entry name="  SEO URL Keyword Character Count" type="json-property" expanded="1"/>
 																	<entry name="SEO URL Keywword" type="json-property" expanded="1"/>
 																	<entry name="Package Weight" type="json-property" expanded="1"/>
-																	<entry name="Acme Tools Salesforce Category" type="json-property" expanded="1"/>
-																	<entry name="Acme Tools Salesforce Sub-Category 1" type="json-property" expanded="1"/>
-																	<entry name="Acme Tools Salesforce Sub-Category 2" type="json-property" expanded="1"/>
-																	<entry name="Acme Tools Salesforce Sub-Category 3" type="json-property" expanded="1"/>
+																	<entry name="cdw Tools Salesforce Category" type="json-property" expanded="1"/>
+																	<entry name="cdw Tools Salesforce Sub-Category 1" type="json-property" expanded="1"/>
+																	<entry name="cdw Tools Salesforce Sub-Category 2" type="json-property" expanded="1"/>
+																	<entry name="cdw Tools Salesforce Sub-Category 3" type="json-property" expanded="1"/>
 																	<entry name="Country of Origin" type="json-property" expanded="1"/>
 																	<entry name="property" ns="1" type="json-property" outkey="57"/>
 																</entry>
@@ -495,7 +495,7 @@
 								</entry>
 							</entry>
 						</root>
-						<json schema="schema\acmejson_2_performance.schema.json" inputinstance="..\..\input\product-feed-0_1.json"/>
+						<json schema="schema\cdwjson_2_performance.schema.json" inputinstance="..\..\input\product-feed-0_1.json"/>
 					</data>
 				</component>
 				<component name="can-import-attribute" library="user" uid="625" kind="19" visible="0">
@@ -1114,7 +1114,7 @@
 					</targets>
 					<view ltx="169" lty="403" rbx="327" rby="420"/>
 					<data>
-						<constant value="Acme Tools Salesforce" datatype="string"/>
+						<constant value="cdw Tools Salesforce" datatype="string"/>
 					</data>
 				</component>
 				<component name="starts-with" library="core" uid="664" kind="5">
@@ -1133,7 +1133,7 @@
 					</targets>
 					<view ltx="86" lty="594" rbx="244" rby="611"/>
 					<data>
-						<constant value="Acme Tools Salesforce Category" datatype="string"/>
+						<constant value="cdw Tools Salesforce Category" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="666" kind="2">
@@ -1142,7 +1142,7 @@
 					</targets>
 					<view ltx="68" lty="685" rbx="226" rby="702"/>
 					<data>
-						<constant value="Acme Tools Salesforce Sub-Category" datatype="string"/>
+						<constant value="cdw Tools Salesforce Sub-Category" datatype="string"/>
 					</data>
 				</component>
 				<component name="starts-with" library="core" uid="660" kind="5">

@@ -5,7 +5,7 @@ const Bytes = require('dw/util/Bytes');
 const Resource = require('dw/web/Resource');
 const Logger = require('dw/system/Logger');
 var MessageDigest = require('dw/crypto/MessageDigest');
-var s2kConstants = require('/app_acme_core/cartridge/scripts/utils/s2kServiceConstants').getConstants();
+var s2kConstants = require('/app_cdw_core/cartridge/scripts/utils/s2kServiceConstants').getConstants();
 var s2kLogger = Logger.getLogger('S2K', 'S2K_General');
 
 /**

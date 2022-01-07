@@ -71,7 +71,7 @@ function hasStoredRates(shipment) {
     collections.forEach(shipment.productLineItems, function (pli) {
         var product = pli.product && pli.product.variant ? pli.product.masterProduct : pli.product;
 
-        //ACME - updated to use package-weight instead of dimWeight
+        //cdw - updated to use package-weight instead of dimWeight
         var productWeight = product.custom['package-weight'] || defaultShippingWeight;
         var productQuantity = pli.quantityValue;
         var packageCount = 0;

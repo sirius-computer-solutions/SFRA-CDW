@@ -141,7 +141,7 @@
 					</targets>
 					<view ltx="1750" lty="1081" rbx="1890" rby="1098"/>
 					<data>
-						<constant value="acme-catalog-m-en" datatype="string"/>
+						<constant value="cdw-catalog-m-en" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="618" kind="2">
@@ -150,7 +150,7 @@
 					</targets>
 					<view ltx="1780" lty="438" rbx="1920" rby="455"/>
 					<data>
-						<constant value="acme-catalog-m-en" datatype="string"/>
+						<constant value="cdw-catalog-m-en" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="619" kind="2">
@@ -244,7 +244,7 @@
 						</root>
 					</data>
 				</component>
-				<component name="is-attr-acme-tools-brand-name" library="user" uid="626" kind="19" visible="0">
+				<component name="is-attr-cdw-tools-brand-name" library="user" uid="626" kind="19" visible="0">
 					<view ltx="1731" lty="728" rbx="1856" rby="745"/>
 					<data>
 						<root>
@@ -901,7 +901,7 @@
 					</targets>
 					<view ltx="386" lty="290" rbx="552" rby="307"/>
 					<data>
-						<constant value="Acme Tools Part Number" datatype="string"/>
+						<constant value="cdw Tools Part Number" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="654" kind="2">
@@ -1143,7 +1143,7 @@
 													<entry name="attribute-id" type="attribute">
 														<inputnodefunctions>
 															<rule applyto="self">
-																<default value="acme-tools-brand-name-2"/>
+																<default value="cdw-tools-brand-name-2"/>
 															</rule>
 														</inputnodefunctions>
 													</entry>

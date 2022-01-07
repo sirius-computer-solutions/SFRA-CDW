@@ -52,8 +52,8 @@ server.append('Show', function (req, res, next) {
  
     var origCatId = req.querystring.oci;
     
-    if(empty(origCatId) && !empty(req.querystring.preferences) && 'acme-tools-brand-name' in req.querystring.preferences && resViewData.apiProductSearch && resViewData.apiProductSearch.categorySearch && resViewData.apiProductSearch.category){   
-        var brandName = req.querystring.preferences['acme-tools-brand-name'];
+    if(empty(origCatId) && !empty(req.querystring.preferences) && 'cdw-tools-brand-name' in req.querystring.preferences && resViewData.apiProductSearch && resViewData.apiProductSearch.categorySearch && resViewData.apiProductSearch.category){   
+        var brandName = req.querystring.preferences['cdw-tools-brand-name'];
         var currentCategoryID = resViewData.apiProductSearch.category.ID;
         var origCatIdTemp = brandName + '-' +currentCategoryID;
         origCatId = origCatIdTemp.replace(/ /g, '-').toLowerCase();
@@ -300,7 +300,7 @@ pageMetaData.computedPageMetaData
     });
 
     var tempOrigCatId;
-    if (!empty(req.querystring.preferences) && 'acme-tools-brand-name' in req.querystring.preferences && viewData.productSearch && viewData.productSearch.isCategorySearch) { // This is from the SEO Direct link or refresh of the page after the brand filters selected
+    if (!empty(req.querystring.preferences) && 'cdw-tools-brand-name' in req.querystring.preferences && viewData.productSearch && viewData.productSearch.isCategorySearch) { // This is from the SEO Direct link or refresh of the page after the brand filters selected
         var catId = viewData.productSearch.category.id;
         if(catId == "categories") {
              tempOrigCatId = categoryHelper.getGeneratedKeyWithFilters(req.querystring).toString().replace(/ /g, '-' ).toLowerCase();

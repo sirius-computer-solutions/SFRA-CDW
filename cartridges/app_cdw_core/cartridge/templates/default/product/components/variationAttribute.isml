@@ -50,7 +50,7 @@ Template Notes:
         </label>
 
         <!-- Attribute Values Drop Down Menu -->
-        <select class="custom-select form-control acme-${attr.id}" id="${attr.id}-${loopState && loopState.count ? loopState.count : '1' }" ${ product.productType === "variant" && isBundle ? "disabled" : "" }>
+        <select class="custom-select form-control cdw-${attr.id}" id="${attr.id}-${loopState && loopState.count ? loopState.count : '1' }" ${ product.productType === "variant" && isBundle ? "disabled" : "" }>
             <option value="${attr.resetUrl}">
                 ${Resource.msg('label.select', 'common', null)}${attr.displayName}
             </option>

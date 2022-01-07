@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--  MapForce Project File  -->
-<Project Expanded="Yes" Type="Root" language="builtin" OutputDir="output\" Title="acme-latest" OutputName="acme-latest" Version="6">
+<Project Expanded="Yes" Type="Root" language="builtin" OutputDir="output\" Title="cdw-latest" OutputName="cdw-latest" Version="6">
 	<Folder FolderName="sfcc-catalog-load" Expanded="Yes" Type="VirtualFolder">
 		<File Type="Mapping" FilePath="mfd\attribute-definitions-merge-product-attributes.mfd"/>
 		<File Type="Mapping" FilePath="mfd\attribute-definitions-merge.mfd"/>

@@ -8,7 +8,7 @@ var DefaultPrice = require('*/cartridge/models/price/default');
 var RangePrice = require('*/cartridge/models/price/range');
 var Site = require('dw/system/Site');
 
-var wasPriceBookName = Site.current.getCustomPreferenceValue('wasPriceBookName') || 'acme-usd-m-sale-was-prices';
+var wasPriceBookName = Site.current.getCustomPreferenceValue('wasPriceBookName') || 'cdw-usd-m-sale-was-prices';
 
 /**
  * Retrieve promotions that apply to current product

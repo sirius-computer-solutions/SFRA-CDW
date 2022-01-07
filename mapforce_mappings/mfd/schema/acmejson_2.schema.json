@@ -237,19 +237,19 @@
 			"type": "string",
 			"optional": true
 		},
-		"Acme Tools Salesforce Category": {
+		"cdw Tools Salesforce Category": {
           "type": "string",
 		  "optional": true
         },
-        "Acme Tools Salesforce Sub-Category 1": {
+        "cdw Tools Salesforce Sub-Category 1": {
           "type": "string",
 		  "optional": true
         },
-		"Acme Tools Salesforce Sub-Category 2": {
+		"cdw Tools Salesforce Sub-Category 2": {
           "type": "string",
 		  "optional": true
         },
-		"Acme Tools Salesforce Sub-Category 3": {
+		"cdw Tools Salesforce Sub-Category 3": {
           "type": "string",
 		  "optional": true
         },

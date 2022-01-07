@@ -11,7 +11,7 @@ server.extend(module.superModule);
 var varsityHelper = require('~/cartridge/scripts/helpers/varsityHelper');
 var dateHelper = require('*/cartridge/scripts/helpers/dateHelper');
 
-server.get('GetInventory', cache.applyAcmeInventorySensitiveCache, function (req, res, next) {
+server.get('GetInventory', cache.applycdwInventorySensitiveCache, function (req, res, next) {
     
     var productParams = {};
     Object.keys(req.querystring).forEach(function (key) {
@@ -40,7 +40,7 @@ server.get('GetInventory', cache.applyAcmeInventorySensitiveCache, function (req
     next();
 });
 
-server.get('GetPrice', cache.applyAcmePriceSensitiveCache, function (req, res, next) {
+server.get('GetPrice', cache.applycdwPriceSensitiveCache, function (req, res, next) {
     var productParams = {};
     Object.keys(req.querystring).forEach(function (key) {
         productParams[key] = req.querystring[key];
@@ -110,7 +110,7 @@ server.prepend('Show',  function (req, res, next) {
     next();
 });
 
-server.get('GetArrivalDate', cache.applyAcmeArrivalDateSensitiveCache, function (req, res, next) {
+server.get('GetArrivalDate', cache.applycdwArrivalDateSensitiveCache, function (req, res, next) {
     var qs = res.viewData.queryString;
     if(qs) {
         var params = qs.split('=');
@@ -222,7 +222,7 @@ server.append('Show', function (req, res, next) {
             if(attrGroup.ID === 'Specifications') {
                  var attrs = attrGroup.attributes;
                  for(var j=0;j<attrs.length;j++) {
-                    if(attrs[j].ID === 'acme-tools-brand-name') {
+                    if(attrs[j].ID === 'cdw-tools-brand-name') {
                         brandName = attrs[j].value;
                     }
                  }

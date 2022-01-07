@@ -157,7 +157,7 @@ var endDate = new Calendar();
 };
 
 function buildPriceBookXML(wasPriceProducts, wasPriceBookName ){
-    var priceBookXML = '<pricebooks xmlns="http://www.demandware.com/xml/impex/pricebook/2006-10-31"><pricebook><header pricebook-id="'+wasPriceBookName+ '"><currency>USD</currency><display-name xml:lang="x-default">Acme Was Prices</display-name><online-flag>true</online-flag></header><price-tables>';
+    var priceBookXML = '<pricebooks xmlns="http://www.demandware.com/xml/impex/pricebook/2006-10-31"><pricebook><header pricebook-id="'+wasPriceBookName+ '"><currency>USD</currency><display-name xml:lang="x-default">cdw Was Prices</display-name><online-flag>true</online-flag></header><price-tables>';
     for(var i=0;i<wasPriceProducts.length;i++)
     {
         var productXML = buildWasPriceProduct(wasPriceProducts[i]);
@@ -169,7 +169,7 @@ function buildPriceBookXML(wasPriceProducts, wasPriceBookName ){
  }
 
  function buildCatalogXML(wasPriceHotSmokingProducts){
-    var catalogXML = '<catalog xsi:schemaLocation="http://www.demandware.com/xml/impex/catalog/2006-10-31 file:///C:/MyWork/catalogload/acme-new/mfd/xsd/catalog.xsd" catalog-id="acme-catalog-m-en" xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">';
+    var catalogXML = '<catalog xsi:schemaLocation="http://www.demandware.com/xml/impex/catalog/2006-10-31 file:///C:/MyWork/catalogload/cdw-new/mfd/xsd/catalog.xsd" catalog-id="cdw-catalog-m-en" xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">';
     for(var i=0;i<wasPriceHotSmokingProducts.length;i++)
     {
         var productXML = buildWasPriceCatalogAttribute(wasPriceHotSmokingProducts[i]);

@@ -4,7 +4,7 @@
     transform: translateY(-50%);
 }
 
-.carousel, .acme-carousel {
+.carousel, .cdw-carousel {
     padding: 0 20px;
     .icon-prev,
     .icon-next {
@@ -51,7 +51,7 @@
     }
 }
 
-.acme-carousel {
+.cdw-carousel {
     margin-bottom: 1em;
     padding: 0 1em;
     overflow: hidden;
@@ -60,7 +60,7 @@
     .icon-next {
         background-color: transparent;
     }
-    .acme-carousel-row {
+    .cdw-carousel-row {
         display: flex;
         flex-wrap: wrap;
         flex: 0 0 100%;
@@ -76,7 +76,7 @@
 
 .pdp-image {
     padding-bottom: 70px;
-    .acme-carousel {
+    .cdw-carousel {
         margin: 0 20px;
         padding: 0;
         
@@ -88,7 +88,7 @@
             left: -10px;
         }
         
-        .acme-carousel-item {
+        .cdw-carousel-item {
             > iframe, > img {
                 @include vertically-center;
             }
@@ -113,7 +113,7 @@
 }
 
 .pdp-carousel {
-    .acme-carousel-item {
+    .cdw-carousel-item {
         a {
             display: inline-flex;
             height: 100%;
@@ -155,7 +155,7 @@
     }
 }
 
-.acme-carousel-inner { 
+.cdw-carousel-inner { 
     display: flex;
     position: relative;
     left: 0;
@@ -165,7 +165,7 @@
     }
 }
 
-.acme-carousel-item {
+.cdw-carousel-item {
     display: inline-block;
     text-align: center;
     position: relative;
@@ -180,7 +180,7 @@
 }
 
 #shopByBrandCarousel {
-    .acme-carousel-item {
+    .cdw-carousel-item {
         height: 150px;
         display: flex;
         align-items: center;
@@ -206,7 +206,7 @@
     }
 }
 .recommended-categories-carousel {
-    .acme-carousel-item {
+    .cdw-carousel-item {
         padding: 0 20px;
         visibility: visible;
     }

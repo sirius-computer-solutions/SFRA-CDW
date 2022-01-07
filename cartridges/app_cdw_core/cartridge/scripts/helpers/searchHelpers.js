@@ -572,9 +572,9 @@ var base = module.superModule;
         });
 
         // alter the sz and start parameters
-        /* ACME-1487: The below code is applicable only for OOB-SFRA since their 
+        /* cdw-1487: The below code is applicable only for OOB-SFRA since their 
            pagination is done by 'More Results' button.
-           AcmeTools Site pagination behavior is different and the below
+           CDWStarterStore Site pagination behavior is different and the below
            2 lines of code was breaking it. Hence commenting it out.
         */
         /*

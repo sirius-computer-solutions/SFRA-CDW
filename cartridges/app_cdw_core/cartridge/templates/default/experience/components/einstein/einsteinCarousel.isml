@@ -19,7 +19,7 @@
 
 <div class="experience-einstein-carousel experience-einstein-carouselCategory experience-einstein-carouselProduct">
     <div id="${pdict.id}"
-        class="acme-carousel einstein-carousel"
+        class="cdw-carousel einstein-carousel"
         data-column-count-by-width='{"0": 3,"651": 4,"992": 5,"1200": 6}' 
         data-keyboard="true"
         data-interval="false"
@@ -42,7 +42,7 @@
         data-limit="${pdict.limit}"
         data-category-id="${pdict.categoryId}">
 
-        <div class="acme-carousel-inner"></div>
+        <div class="cdw-carousel-inner"></div>
 
         <ol class="pd-carousel-indicators"></ol>
 

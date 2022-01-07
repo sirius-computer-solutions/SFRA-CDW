@@ -1,7 +1,7 @@
 'use strict';
 
 var messageHelper = require('~/cartridge/scripts/helpers/messageHelper');
-var MessageConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+var MessageConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
 var Transaction = require('dw/system/Transaction');
 
 

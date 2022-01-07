@@ -13,7 +13,7 @@
 </isif>
 
     <div id="${pdict.id}"
-        class="acme-carousel"
+        class="cdw-carousel"
         data-column-count-by-width='{"0": ${pdict.slidesToDisplay.xs},"750": ${pdict.slidesToDisplay.sm},"1200": ${pdict.slidesToDisplay.md} }'}
         data-keyboard="true"
         data-interval="false"

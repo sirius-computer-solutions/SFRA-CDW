@@ -36,35 +36,35 @@ server.replace('Start', consentTracking.consent, cache.applyDefaultCache, functi
     pageMetaHelper.setPageMetaTags(req.pageMetaData, Site.current);
     var aspectAttributes = new HashMap();
     var pdHomePage = PageMgr.getPage(homePageId);
-    var siteHostName = Site.current.getCustomPreferenceValue('siteHostName') || 'https://www.acmetools.com';
+    var siteHostName = Site.current.getCustomPreferenceValue('siteHostName') || 'https://www.cdw.com';
     var schemaDataVar =    {
                                 "@context": "https://schema.org",
                                 "@type": "Corporation",
-                                "name": "Acme Tools",
+                                "name": "cdw Tools",
                                 "url": siteHostName,
-                                "logo": siteHostName + URLUtils.staticURL('/images/AcmeToolsLogo.svg').toString(),
+                                "logo": siteHostName + URLUtils.staticURL('/images/CDWStarterStoreLogo.svg').toString(),
                                 "sameAs": [
-                                    "https://facebook.com/acmetools",
-                                    "https://instagram.com/acmetools",
-                                    "https://twitter.com/acmetools",
-                                    "https://www.linkedin.com/company/acmetools.com/",
-                                    "https://www.youtube.com/acmetoolstv",
-                                    "https://www.pinterest.com/acmetools/",
-                                    "https://www.tiktok.com/@acmetools"
+                                    "https://facebook.com/cdwtools",
+                                    "https://instagram.com/cdwtools",
+                                    "https://twitter.com/cdwtools",
+                                    "https://www.linkedin.com/company/cdw.com/",
+                                    "https://www.youtube.com/cdwtoolstv",
+                                    "https://www.pinterest.com/cdwtools/",
+                                    "https://www.tiktok.com/@cdwtools"
                                 ],
                                 "contactPoint": [
                                     {
                                     "@type": "ContactPoint",
                                     "telephone": "1-877-345-2263",
                                     "contactType": "customer service",
-                                    "email": "support@acmetools.com",
+                                    "email": "support@cdw.com",
                                     "contactOption": "TollFree",
                                     "areaServed": "US"
                                     }
                                 ],
                                 "potentialAction": {
                                     "@type": "SearchAction",
-                                    "target": "https://www.acmetools.com/search?q={search_term_string}",
+                                    "target": "https://www.cdw.com/search?q={search_term_string}",
                                     "query-input": "required name=search_term_string"
                                 }
                             } ;

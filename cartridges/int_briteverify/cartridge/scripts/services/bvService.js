@@ -6,7 +6,7 @@ const LocalServiceRegistry = require('dw/svc/LocalServiceRegistry');
 var Logger1 = require('dw/system/Logger');
 var Logger = Logger1.getLogger("Email","briteVerify");
 const ServiceCredential = require('dw/svc/ServiceCredential');
-var IntegrationConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+var IntegrationConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
 var errorLogger = require('dw/system/Logger').getLogger(IntegrationConstants.INTEGRATION_ERROR_FILE,"s2k");
 
 

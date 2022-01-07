@@ -41,7 +41,7 @@ base.submitGiftCertCode = function() {
                         $('.giftcert-message').show().append('<div id="gc-no-more-payments-enabled" class="gc-no-more-payments-enabled"/>');
 
 
-                        //ACME-804
+                        //cdw-804
                         $('.payment-information').data('payment-method-id', "GIFT_CERTIFICATE");    
                         
                         $('#gift-certificate-content').toggle(true);
@@ -66,7 +66,7 @@ base.submitGiftCertCode = function() {
                     // TOD: Always disable PayPal and StoreCredit as one of the GC is applied
                     
                     $('.giftcert-input-field').attr("placeholder", "Enter up to 4 codes").val("");
-                    $('.giftcert-message').show().append('<div id="'+data.payInstrumentId+'" class="added-gc-message" ><button type="button" id="gc-remove-button" class="remove-btn-lg btn btn-light remove-gc" data-pid="'+data.payInstrumentId+'" data-action="/on/demandware.store/Sites-AcmeTools-Site/en_US/GiftCertificate-Remove" aria-label="Remove"><span aria-hidden="true">×</span></button>'+data.message+'</div>');
+                    $('.giftcert-message').show().append('<div id="'+data.payInstrumentId+'" class="added-gc-message" ><button type="button" id="gc-remove-button" class="remove-btn-lg btn btn-light remove-gc" data-pid="'+data.payInstrumentId+'" data-action="/on/demandware.store/Sites-CDWStarterStore-Site/en_US/GiftCertificate-Remove" aria-label="Remove"><span aria-hidden="true">×</span></button>'+data.message+'</div>');
                 }
                 $.spinner().stop();
             },

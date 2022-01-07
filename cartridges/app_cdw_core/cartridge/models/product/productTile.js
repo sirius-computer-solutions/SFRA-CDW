@@ -86,8 +86,8 @@ module.exports = function productTile(product, apiProduct, productType) {
     decorators.availability(product, options.quantity, apiProduct.minOrderQuantity.value, apiProduct.availabilityModel);
     decorators.description(product, apiProduct);
 
-    if("custom" in apiProduct && apiProduct.custom && "acme-tools-brand-name" in apiProduct.custom) {
-        product.brandName = apiProduct.custom['acme-tools-brand-name'];
+    if("custom" in apiProduct && apiProduct.custom && "cdw-tools-brand-name" in apiProduct.custom) {
+        product.brandName = apiProduct.custom['cdw-tools-brand-name'];
     }
     return product;
 };

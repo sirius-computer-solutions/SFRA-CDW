@@ -218,7 +218,7 @@
     span {
         display: inline-block;
         a {
-            color: $acme-blue;
+            color: $cdw-blue;
         }
     }
     .acct_mgr-image { width: 90px;
@@ -370,7 +370,7 @@
 
 .slogan {
     font-family: 'Oswald', sans-serif; 
-    color:$acme-red; 
+    color:$cdw-red; 
     font-weight:500; 
     font-size:1rem;
     margin: 0 1em .25em;
@@ -472,7 +472,7 @@
         position: relative;
     }
     .minicart-quantity {
-        background-color: $acme-red;
+        background-color: $cdw-red;
         border-radius: 4px;
         width: auto;
         height: auto;

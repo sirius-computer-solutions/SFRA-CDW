@@ -213,7 +213,7 @@
         "MFG Part # (OEM)": {
           "type": "string"
         },
-        "Acme Tools Part Number": {
+        "cdw Tools Part Number": {
           "type": "string"
         },
         "Short Description": {
@@ -253,51 +253,51 @@
           "type": "string",
           "optional": true
         },
-        "Acme Tools Salesforce Category": {
+        "cdw Tools Salesforce Category": {
           "type": "string",
           "optional": true
         },
-        "Acme Tools Salesforce Category Name": {
+        "cdw Tools Salesforce Category Name": {
           "type": "string",
           "optional": true
         },
-        "Acme Tools Salesforce Sub-Category 1": {
+        "cdw Tools Salesforce Sub-Category 1": {
           "type": "string",
           "optional": true
         },
-        "Acme Tools Salesforce Sub-Category 1 Name": {
+        "cdw Tools Salesforce Sub-Category 1 Name": {
           "type": "string",
           "optional": true
         },
-        "Acme Tools Salesforce Sub-Category 2": {
+        "cdw Tools Salesforce Sub-Category 2": {
           "type": "string",
           "optional": true
         },
-        "Acme Tools Salesforce Sub-Category 2 Name": {
+        "cdw Tools Salesforce Sub-Category 2 Name": {
           "type": "string",
           "optional": true
         },
-        "Acme Tools Salesforce Sub-Category 3": {
+        "cdw Tools Salesforce Sub-Category 3": {
           "type": "string",
           "optional": true
         },
-        "Acme Tools Salesforce Sub-Category 3 Name": {
+        "cdw Tools Salesforce Sub-Category 3 Name": {
           "type": "string",
           "optional": true
         },
-        "Acme Tools Salesforce Sub-Category 4": {
+        "cdw Tools Salesforce Sub-Category 4": {
           "type": "string",
           "optional": true
         },
-        "Acme Tools Salesforce Sub-Category 4 Name": {
+        "cdw Tools Salesforce Sub-Category 4 Name": {
           "type": "string",
           "optional": true
         },
-        "Acme Tools Salesforce Sub-Category 5": {
+        "cdw Tools Salesforce Sub-Category 5": {
           "type": "string",
           "optional": true
         },
-        "Acme Tools Salesforce Sub-Category 5 Name": {
+        "cdw Tools Salesforce Sub-Category 5 Name": {
           "type": "string",
           "optional": true
         },

@@ -13,11 +13,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="cart-recommendations-carousel">
-                    <div id="cartRecommendations" class="acme-carousel" data-column-count-by-width='{"0": 2,"451": 3,"651": 4,"992": 5,"1200": 6}' data-interval="false">
-                        <div class="acme-carousel-inner">
+                    <div id="cartRecommendations" class="cdw-carousel" data-column-count-by-width='{"0": 2,"451": 3,"651": 4,"992": 5,"1200": 6}' data-interval="false">
+                        <div class="cdw-carousel-inner">
                             <isloop items="${slotcontent.content}" var="product" begin="0" end="${end}">
                                 <isobject object="${product}" view="recommendation">
-                                    <div class='acme-carousel-item' >
+                                    <div class='cdw-carousel-item' >
                                         <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'swatches', true, 'ratings', true, 'compare', false, 'showQuickView', false)}" />
                                     </div>
                                 </isobject>
@@ -40,6 +40,6 @@
 
 <script>
 $(function() {
-    $('.acme-carousel').trigger('acme-carousel:init')
+    $('.cdw-carousel').trigger('cdw-carousel:init')
 });
 </script>

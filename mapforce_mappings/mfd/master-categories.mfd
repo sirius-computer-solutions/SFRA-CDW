@@ -2,7 +2,7 @@
 <!-- Edited with Altova MapForce 2021r3 -->
 <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="31">
 	<settings>
-		<deployment path="/public/Acme/master-categories.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
+		<deployment path="/public/cdw/master-categories.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
 	</settings>
 	<resources/>
 	<component name="defaultmap" uid="1" editable="1">
@@ -385,7 +385,7 @@
 					</targets>
 					<view ltx="1682" lty="327" rbx="1784" rby="384"/>
 				</component>
-				<component name="acme_product_feed" library="json" uid="16" kind="31">
+				<component name="cdw_product_feed" library="json" uid="16" kind="31">
 					<properties XSLTTargetEncoding="UTF-8" DynamicFilenames="1"/>
 					<view ltx="20" lty="1" rbx="342" rby="449"/>
 					<data>
@@ -443,7 +443,7 @@
 																	<entry name="UPC" type="json-property" expanded="1"/>
 																	<entry name="Marketing Copy" type="json-property" expanded="1"/>
 																	<entry name="MFG Part # (OEM)" type="json-property" expanded="1"/>
-																	<entry name="Acme Tools Part Number" type="json-property" expanded="1"/>
+																	<entry name="cdw Tools Part Number" type="json-property" expanded="1"/>
 																	<entry name="Short Description" type="json-property" expanded="1"/>
 																	<entry name="W1BUYABLE" type="json-property" expanded="1"/>
 																	<entry name="W1DSCDT" type="json-property" expanded="1"/>
@@ -453,40 +453,40 @@
 																	<entry name="  SEO URL Keyword Character Count" type="json-property" expanded="1"/>
 																	<entry name="SEO URL Keywword" type="json-property" expanded="1"/>
 																	<entry name="Package Weight" type="json-property" expanded="1"/>
-																	<entry name="Acme Tools Salesforce Category" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Category" type="json-property" expanded="1">
 																		<entry name="string" outkey="106"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Category Name" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Category Name" type="json-property" expanded="1">
 																		<entry name="string" outkey="138"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 1" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 1" type="json-property" expanded="1">
 																		<entry name="string" outkey="107"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 1 Name" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 1 Name" type="json-property" expanded="1">
 																		<entry name="string" outkey="187"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 2" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 2" type="json-property" expanded="1">
 																		<entry name="string" outkey="108"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 2 Name" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 2 Name" type="json-property" expanded="1">
 																		<entry name="string" outkey="188"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 3" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 3" type="json-property" expanded="1">
 																		<entry name="string" outkey="109"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 3 Name" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 3 Name" type="json-property" expanded="1">
 																		<entry name="string" outkey="189"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 4" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 4" type="json-property" expanded="1">
 																		<entry name="string" outkey="121"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 4 Name" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 4 Name" type="json-property" expanded="1">
 																		<entry name="string" outkey="190"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 5" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 5" type="json-property" expanded="1">
 																		<entry name="string" outkey="129"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 5 Name" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 5 Name" type="json-property" expanded="1">
 																		<entry name="string" outkey="191"/>
 																	</entry>
 																	<entry name="Country of Origin" type="json-property" expanded="1"/>
@@ -502,7 +502,7 @@
 								</entry>
 							</entry>
 						</root>
-						<json schema="schema\acme_product_feed.schema.json" inputinstance="..\..\Users\admin\Desktop\QA-load-20July\salsify-json\variation-feed_2021_07_14_15_39_57_UTC.json"/>
+						<json schema="schema\cdw_product_feed.schema.json" inputinstance="..\..\Users\admin\Desktop\QA-load-20July\salsify-json\variation-feed_2021_07_14_15_39_57_UTC.json"/>
 					</data>
 				</component>
 				<component name="catalog" library="xml" uid="4" kind="14">
@@ -625,7 +625,7 @@
 					</targets>
 					<view ltx="802" lty="-11" rbx="939" rby="7"/>
 					<data>
-						<constant value="acme-catalog-m-en" datatype="string"/>
+						<constant value="cdw-catalog-m-en" datatype="string"/>
 					</data>
 				</component>
 			</children>

@@ -549,7 +549,7 @@ function createOrder(currentBasket) {
         });
     } catch (error) {
         var a =error;
-        var IntegrationConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+        var IntegrationConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
         var errorLogger = require('dw/system/Logger').getLogger(IntegrationConstants.INTEGRATION_ERROR_FILE,"order");
         errorLogger.error("Order Create Errors::"+a);
         return null;
@@ -625,7 +625,7 @@ function sendConfirmationEmail(order, lineItemsAvailabilityMap, locale) {
     var OrderModel = require('*/cartridge/models/order');
     var emailHelpers = require('*/cartridge/scripts/helpers/emailHelpers');
     var Locale = require('dw/util/Locale');
-    var IntegrationConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+    var IntegrationConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
     var errorLogger = require('dw/system/Logger').getLogger(IntegrationConstants.INTEGRATION_ERROR_FILE,"order");
     const Money = require('dw/value/Money');
     const StringUtils = require('dw/util/StringUtils');
@@ -983,7 +983,7 @@ function setGift(shipment, isGift, giftMessage) {
         }
     }
 
-    // ACME-1668: check if shipping address in Shipping Form matches 
+    // cdw-1668: check if shipping address in Shipping Form matches 
     // shipping address in Current basket
     var validShippingFormAddress = isShippingFormAddressValid(shippingForm,currentBasket);
 

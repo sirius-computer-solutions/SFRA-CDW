@@ -6,18 +6,18 @@
         <div class="row">
             <isset name="carouselClass" value="${(slotcontent.calloutMsg.toString().toLowerCase().replace(/ /g, '-')).replace(/'/g, '-')}" scope="page"/>
             <isset name="carouselId" value="${'prdRecommendationCarousel'+carouselClass}" scope="page"/>
-            <isset name="acmeCarouselConfig" value="{'0': 2,'451': 3,'651': 4,'992': 5,'1200': 6}" scope="page"/>
+            <isset name="cdwCarouselConfig" value="{'0': 2,'451': 3,'651': 4,'992': 5,'1200': 6}" scope="page"/>
             
             <isif condition="${slotcontent.calloutMsg.toString().toLowerCase().indexOf('forget')!=-1}" >  
                 <isset name="accessories1" value="xyz" scope="page"/>
-                <isset name="acmeCarouselConfig" value="{'0': 2,'601': 3}" scope="page"/>
+                <isset name="cdwCarouselConfig" value="{'0': 2,'601': 3}" scope="page"/>
                 <isscript>
                     var ProductMgr = require('dw/catalog/ProductMgr');
                     var origPrd = ProductMgr.getProduct(pdict.auid);
                 </isscript>
             </isif>
-            <div id="${carouselId}" class="acme-carousel ${carouselClass}" data-column-count-by-width="${acmeCarouselConfig}" data-interval="false">
-                <div class="acme-carousel-inner">
+            <div id="${carouselId}" class="cdw-carousel ${carouselClass}" data-column-count-by-width="${cdwCarouselConfig}" data-interval="false">
+                <div class="cdw-carousel-inner">
                     <isif condition="${typeof origPrd !== 'undefined' && origPrd}">
                         <isloop items="${origPrd.attributeModel.visibleAttributeGroups}" var="attrGroup">
                             <isif condition="${attrGroup.ID == Resource.msg('accessories.attribute', 'product', null)}">
@@ -40,11 +40,11 @@
                                             searchModel.setSearchPhrase(pid);
                                             searchModel.search();
                                             
-                                            // Fix for ACME-1653
+                                            // Fix for cdw-1653
                                             var searchHits = searchModel.getProductSearchHits();
                                             while(searchModel.count > 0 && searchHits != null && searchHits.hasNext()) {
                                                 var tempHit = searchHits.next();
-                                                if (tempHit.product.custom['acme-tools-part-number'] === pid) {
+                                                if (tempHit.product.custom['cdw-tools-part-number'] === pid) {
                                                     product = tempHit.product;
                                                     break;
                                                 }
@@ -66,7 +66,7 @@
                                                 <isset name="bopisonly" value="${true}"  scope="page"  />
                                             </isif> 
                                             <isif condition="${!callforprice && buyable && !bopisonly}">
-                                                <div class='acme-carousel-item'>
+                                                <div class='cdw-carousel-item'>
                                                     <div>
                                                         <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'swatches', false, 'ratings', false, 'compare', false, 'showQuickView', false, 'dontForgetRecommendation',true , 'addToCart',true,'availability',false,'promotions',true,'showListPrice', false,'showWasPrice',false )}" />
                                                     </div>
@@ -95,7 +95,7 @@
                                 <isset name="bopisonly" value="${true}"  scope="page"  />
                             </isif> 
                             <isif condition="${!callforprice && buyable && !bopisonly}">
-                                <div class='acme-carousel-item'>
+                                <div class='cdw-carousel-item'>
                                     <div>
                                         <isif condition="${slotcontent.calloutMsg.toString().toLowerCase().indexOf('forget')!=-1}" >  
                                             <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'swatches', false, 'ratings', false, 'compare', false, 'showQuickView', false, 'dontForgetRecommendation',true , 'addToCart',true,'availability',false,'promotions',true,'showListPrice', false,'showWasPrice',false)}" />
@@ -124,6 +124,6 @@
 </isif>
 <script>
 $(function() {
-    $('.acme-carousel').trigger('acme-carousel:init')
+    $('.cdw-carousel').trigger('cdw-carousel:init')
 });
 </script>

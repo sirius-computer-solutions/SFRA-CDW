@@ -8,15 +8,15 @@ $flag-icon-css-path: "../fonts/flags/" !default;
 
 $white: #fff !default;
 $black: #000 !default;
-$acme-blue: #0779CA !default;
+$cdw-blue: #0779CA !default;
 $green: #208920 !default;
 $light-green: #32A800 !default;
 $yellow: #FBB03B !default; // always with a black background, headings, banner, ratings
 // primary is replaced by css variable --skin-primary-color-1
 $primary: #f6f6f6 !default; // links, primary button
-$acme-red: #E7131A !default; // headings, pricing
-$danger: $acme-red !default;
-$state-danger-text: $acme-red !default;
+$cdw-red: #E7131A !default; // headings, pricing
+$danger: $cdw-red !default;
+$state-danger-text: $cdw-red !default;
 $success: $green !default;
 $light-blue: #a9d1ef !default;  
 $hover-blue: #066AB1 !default;

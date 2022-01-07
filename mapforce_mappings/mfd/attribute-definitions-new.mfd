@@ -2,7 +2,7 @@
 <!-- Edited with Altova MapForce 2021r3 -->
 <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="34">
 	<settings>
-		<deployment path="/public/Acme/attribute-definitions-new.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
+		<deployment path="/public/cdw/attribute-definitions-new.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
 	</settings>
 	<resources/>
 	<component name="defaultmap" uid="1">
@@ -206,7 +206,7 @@
 						<document schema="xsd/metadata.xsd" instanceroot="{http://www.demandware.com/xml/impex/metadata/2006-10-31}metadata" outputinstance="metadata.xml"/>
 					</data>
 				</component>
-				<component name="acme_product_feed" library="json" uid="2" kind="31">
+				<component name="cdw_product_feed" library="json" uid="2" kind="31">
 					<properties XSLTTargetEncoding="UTF-8" DynamicFilenames="1"/>
 					<view ltx="35" lty="179" rbx="363" rby="807"/>
 					<data>
@@ -276,7 +276,7 @@
 								</entry>
 							</entry>
 						</root>
-						<json schema="schema\acme_product_feed.schema.json" inputinstance="..\..\..\..\Users\admin\Desktop\QA-load-20July\salsify-json\variation-feed_2021_07_14_15_39_57_UTC.json"/>
+						<json schema="schema\cdw_product_feed.schema.json" inputinstance="..\..\..\..\Users\admin\Desktop\QA-load-20July\salsify-json\variation-feed_2021_07_14_15_39_57_UTC.json"/>
 					</data>
 				</component>
 				<component name="inputFile" library="core" uid="146" kind="6">
@@ -557,7 +557,7 @@
 					</targets>
 					<view ltx="47" lty="367" rbx="205" rby="384"/>
 					<data>
-						<constant value="Acme Tools Salesforce Category" datatype="string"/>
+						<constant value="cdw Tools Salesforce Category" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="156" kind="2">
@@ -566,7 +566,7 @@
 					</targets>
 					<view ltx="29" lty="458" rbx="187" rby="475"/>
 					<data>
-						<constant value="Acme Tools Salesforce Sub-Category" datatype="string"/>
+						<constant value="cdw Tools Salesforce Sub-Category" datatype="string"/>
 					</data>
 				</component>
 				<component name="result" library="core" uid="64" kind="7">

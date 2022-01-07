@@ -2,7 +2,7 @@
 <!-- Edited with Altova MapForce 2021r3 -->
 <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="31">
 	<settings>
-		<deployment path="/public/Acme/variation-product-full-load.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
+		<deployment path="/public/cdw/variation-product-full-load.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
 	</settings>
 	<resources/>
 	<component name="defaultmap" uid="1" editable="1">
@@ -80,7 +80,7 @@
 						</root>
 					</data>
 				</component>
-				<component name="is-attr-acme-tools-brand-name" library="user" uid="497" kind="19" visible="0">
+				<component name="is-attr-cdw-tools-brand-name" library="user" uid="497" kind="19" visible="0">
 					<view ltx="1321" lty="665" rbx="1447" rby="682"/>
 					<data>
 						<root>
@@ -523,7 +523,7 @@
 					</targets>
 					<view ltx="1321" lty="755" rbx="1458" rby="773"/>
 					<data>
-						<constant value="acme-catalog-m-en" datatype="string"/>
+						<constant value="cdw-catalog-m-en" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="31" kind="2">
@@ -532,7 +532,7 @@
 					</targets>
 					<view ltx="1196" lty="31" rbx="1333" rby="49"/>
 					<data>
-						<constant value="acme-catalog-m-en" datatype="string"/>
+						<constant value="cdw-catalog-m-en" datatype="string"/>
 					</data>
 				</component>
 				<component name="equal" library="core" uid="84" kind="5">
@@ -551,7 +551,7 @@
 					</targets>
 					<view ltx="564" lty="1058" rbx="716" rby="1076"/>
 					<data>
-						<constant value="Acme Tools Salesforce Filter Product Line" datatype="string"/>
+						<constant value="cdw Tools Salesforce Filter Product Line" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="757" kind="2">
@@ -814,7 +814,7 @@
 										<entry name="name" outkey="680">
 											<inputnodefunctions>
 												<rule applyto="self">
-													<default value="acme-tools-part-number"/>
+													<default value="cdw-tools-part-number"/>
 												</rule>
 											</inputnodefunctions>
 										</entry>
@@ -831,7 +831,7 @@
 						</parameter>
 					</data>
 				</component>
-				<component name="acme_product_feed_copy" library="json" uid="599" kind="31">
+				<component name="cdw_product_feed_copy" library="json" uid="599" kind="31">
 					<properties XSLTTargetEncoding="UTF-8"/>
 					<view ltx="-105" lty="937" rbx="178" rby="1838"/>
 					<data>
@@ -869,7 +869,7 @@
 								</entry>
 							</entry>
 						</root>
-						<json schema="schema\acme_product_feed.schema.json" inputinstance="..\..\..\Downloads\product-feed_2021_10_27_06_08_13_UTC_3_1.json"/>
+						<json schema="schema\cdw_product_feed.schema.json" inputinstance="..\..\..\Downloads\product-feed_2021_10_27_06_08_13_UTC_3_1.json"/>
 					</data>
 				</component>
 				<component name="add-image-path" library="user" uid="836" kind="19" visible="0">
@@ -977,7 +977,7 @@
 						</root>
 					</data>
 				</component>
-				<component name="acme_product_feed" library="json" uid="4" kind="31">
+				<component name="cdw_product_feed" library="json" uid="4" kind="31">
 					<properties XSLTTargetEncoding="UTF-8"/>
 					<view ltx="-105" lty="-12" rbx="178" rby="889"/>
 					<data>
@@ -1054,7 +1054,7 @@
 																	<entry name="MFG Part # (OEM)" type="json-property" expanded="1">
 																		<entry name="string" outkey="521"/>
 																	</entry>
-																	<entry name="Acme Tools Part Number" type="json-property" expanded="1">
+																	<entry name="cdw Tools Part Number" type="json-property" expanded="1">
 																		<entry name="string" outkey="677"/>
 																	</entry>
 																	<entry name="Short Description" type="json-property" expanded="1">
@@ -1084,22 +1084,22 @@
 																	<entry name="Package Weight" type="json-property" expanded="1">
 																		<entry name="string" outkey="527"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Category" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Category" type="json-property" expanded="1">
 																		<entry name="string" outkey="530"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 1" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 1" type="json-property" expanded="1">
 																		<entry name="string" outkey="531"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 2" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 2" type="json-property" expanded="1">
 																		<entry name="string" outkey="532"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 3" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 3" type="json-property" expanded="1">
 																		<entry name="string" outkey="533"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 4" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 4" type="json-property" expanded="1">
 																		<entry name="string" outkey="559"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 5" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 5" type="json-property" expanded="1">
 																		<entry name="string" outkey="560"/>
 																	</entry>
 																	<entry name="Country of Origin" type="json-property" expanded="1">
@@ -1117,7 +1117,7 @@
 								</entry>
 							</entry>
 						</root>
-						<json schema="schema\acme_product_feed.schema.json" inputinstance="..\..\..\Downloads\product-feed_2021_10_27_06_08_13_UTC_3_1.json"/>
+						<json schema="schema\cdw_product_feed.schema.json" inputinstance="..\..\..\Downloads\product-feed_2021_10_27_06_08_13_UTC_3_1.json"/>
 					</data>
 				</component>
 				<component name="get-max-order" library="user" uid="823" kind="19" visible="0">
@@ -1452,7 +1452,7 @@
 													<entry name="attribute-id" type="attribute">
 														<inputnodefunctions>
 															<rule applyto="self">
-																<default value="acme-tools-brand-name-2"/>
+																<default value="cdw-tools-brand-name-2"/>
 															</rule>
 														</inputnodefunctions>
 													</entry>
@@ -3636,7 +3636,7 @@
 					</targets>
 					<view ltx="209" lty="538" rbx="367" rby="555"/>
 					<data>
-						<constant value="Acme Tools Salesforce Sub-Category" datatype="string"/>
+						<constant value="cdw Tools Salesforce Sub-Category" datatype="string"/>
 					</data>
 				</component>
 				<component name="result" library="core" uid="428" kind="7">
@@ -3698,7 +3698,7 @@
 					</targets>
 					<view ltx="227" lty="447" rbx="385" rby="464"/>
 					<data>
-						<constant value="Acme Tools Salesforce Category" datatype="string"/>
+						<constant value="cdw Tools Salesforce Category" datatype="string"/>
 					</data>
 				</component>
 				<component name="logical-and" library="core" uid="590" kind="5" growable="1" growablebasename="value">
@@ -4267,7 +4267,7 @@
 			<edge from="3" to="5"/>
 		</connections>
 	</component>
-	<component name="is-attr-acme-tools-brand-name" library="user" uid="487" inline="1" editable="1">
+	<component name="is-attr-cdw-tools-brand-name" library="user" uid="487" inline="1" editable="1">
 		<structure>
 			<children>
 				<component name="constant" library="core" uid="489" kind="2">
@@ -4328,7 +4328,7 @@
 					</targets>
 					<view ltx="275" lty="407" rbx="443" rby="424"/>
 					<data>
-						<constant value="acme-tools-brand-name" datatype="string"/>
+						<constant value="cdw-tools-brand-name" datatype="string"/>
 					</data>
 				</component>
 			</children>

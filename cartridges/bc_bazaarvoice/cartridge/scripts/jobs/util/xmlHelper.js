@@ -231,11 +231,11 @@ function writeProductFeedItem(item, localeMap) {
 
                 if (product.getBrand() != null && !empty(product.brand)) {
                     writeElementCDATA('BrandExternalId', BVHelper.replaceIllegalCharacters(product.brand));
-                } // ACME Customization :: BEGIN
-                else if (!empty(product.custom['acme-tools-brand-name'])) {
-                    writeElementCDATA('BrandExternalId', BVHelper.replaceIllegalCharacters(product.custom['acme-tools-brand-name']));
+                } // cdw Customization :: BEGIN
+                else if (!empty(product.custom['cdw-tools-brand-name'])) {
+                    writeElementCDATA('BrandExternalId', BVHelper.replaceIllegalCharacters(product.custom['cdw-tools-brand-name']));
                 }
-                // ACME Customization :: END
+                // cdw Customization :: END
 
                 var categoryExternalId = bvConstants.CATEGORY_NONE;
                 if (product.primaryCategory != null) {

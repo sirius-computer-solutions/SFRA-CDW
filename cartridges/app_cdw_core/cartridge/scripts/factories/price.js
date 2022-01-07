@@ -9,7 +9,7 @@ var Site = require('dw/system/Site');
 var hooksHelper = require('*/cartridge/scripts/helpers/hooks');
 var Resource = require('dw/web/Resource');
 
-var wasPriceBookName = Site.current.getCustomPreferenceValue('wasPriceBookName') || 'acme-usd-m-sale-was-prices';
+var wasPriceBookName = Site.current.getCustomPreferenceValue('wasPriceBookName') || 'cdw-usd-m-sale-was-prices';
 /**
  * Get list price for a product
  *

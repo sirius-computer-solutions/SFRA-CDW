@@ -1,7 +1,7 @@
 'use strict';
 
 var bvService = require('*/cartridge/scripts/services/bvService');
-var ValidationConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+var ValidationConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
 var emailHelper = require('*/cartridge/scripts/helpers/emailHelpers');
 var Site = require('dw/system/Site');
 

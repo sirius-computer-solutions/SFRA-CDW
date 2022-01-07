@@ -644,7 +644,7 @@ module.exports = function () {
                 helper.callWhenAvailable(function(){
                     return $('#chooseBonusProductModal') && $('#chooseBonusProductModal').css('display') != 'none';
                 }, function(){
-                    $('.acme-carousel').trigger('acme-carousel:init');
+                    $('.cdw-carousel').trigger('cdw-carousel:init');
                 });
                 $.spinner().stop();
             },

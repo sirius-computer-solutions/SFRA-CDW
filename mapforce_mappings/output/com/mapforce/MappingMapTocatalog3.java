@@ -25,10 +25,10 @@ public class MappingMapTocatalog3 extends com.altova.TraceProvider {
 
 
 	static class main implements IEnumerable {
-		com.altova.mapforce.IMFNode var1_acmejson_2_Instance;
+		com.altova.mapforce.IMFNode var1_cdwjson_2_Instance;
 
-		public main(com.altova.mapforce.IMFNode var1_acmejson_2_Instance)	{
-			this.var1_acmejson_2_Instance = var1_acmejson_2_Instance;
+		public main(com.altova.mapforce.IMFNode var1_cdwjson_2_Instance)	{
+			this.var1_cdwjson_2_Instance = var1_cdwjson_2_Instance;
 		}
 
 		public IEnumerator enumerator() {return new Enumerator(this);}
@@ -58,7 +58,7 @@ public class MappingMapTocatalog3 extends com.altova.TraceProvider {
 
 			private boolean moveNext_2() throws Exception {
 				state = 0;				
-				current = com.altova.functions.Core.createElement(com.altova.functions.Core.createQName("catalog", "http://www.demandware.com/xml/impex/catalog/2006-10-31"), (new seq1_join(closure.var1_acmejson_2_Instance)));
+				current = com.altova.functions.Core.createElement(com.altova.functions.Core.createQName("catalog", "http://www.demandware.com/xml/impex/catalog/2006-10-31"), (new seq1_join(closure.var1_cdwjson_2_Instance)));
 				pos++;
 				return true;
 			}
@@ -69,10 +69,10 @@ public class MappingMapTocatalog3 extends com.altova.TraceProvider {
 		}
 	}
 	static class seq1_join implements IEnumerable {
-		com.altova.mapforce.IMFNode var1_acmejson_2_Instance;
+		com.altova.mapforce.IMFNode var1_cdwjson_2_Instance;
 
-		public seq1_join(com.altova.mapforce.IMFNode var1_acmejson_2_Instance)	{
-			this.var1_acmejson_2_Instance = var1_acmejson_2_Instance;
+		public seq1_join(com.altova.mapforce.IMFNode var1_cdwjson_2_Instance)	{
+			this.var1_cdwjson_2_Instance = var1_cdwjson_2_Instance;
 		}
 
 		public IEnumerator enumerator() {return new Enumerator(this);}
@@ -124,13 +124,13 @@ public class MappingMapTocatalog3 extends com.altova.TraceProvider {
 			}
 			private boolean moveNext_2() throws Exception {
 				state = 3;				
-				var2_filter = ((new seq2_join(closure.var1_acmejson_2_Instance))).enumerator();
+				var2_filter = ((new seq2_join(closure.var1_cdwjson_2_Instance))).enumerator();
 				return false;
 			}
 			private boolean moveNext_3() throws Exception {
 				state = 5;				
 				if (!var2_filter.moveNext()) {state = 4; return false; }
-				if (!(com.altova.functions.Json.IsA(((com.altova.mapforce.IMFNode)(var2_filter.current())), "file:///C:/Users/admin/Desktop/output%20files/acmejson_2.schema.json#//definitions//products_obj/@64"))) {state = 3; return false; }
+				if (!(com.altova.functions.Json.IsA(((com.altova.mapforce.IMFNode)(var2_filter.current())), "file:///C:/Users/admin/Desktop/output%20files/cdwjson_2.schema.json#//definitions//products_obj/@64"))) {state = 3; return false; }
 				var3_object_member_by_name = (com.altova.functions.Json.GetMemberByName(((com.altova.mapforce.IMFNode)(var2_filter.current())), "products")).enumerator();
 				return false;
 			}
@@ -199,10 +199,10 @@ public class MappingMapTocatalog3 extends com.altova.TraceProvider {
 		}
 	}
 	static class seq2_join implements IEnumerable {
-		com.altova.mapforce.IMFNode var1_acmejson_2_Instance;
+		com.altova.mapforce.IMFNode var1_cdwjson_2_Instance;
 
-		public seq2_join(com.altova.mapforce.IMFNode var1_acmejson_2_Instance)	{
-			this.var1_acmejson_2_Instance = var1_acmejson_2_Instance;
+		public seq2_join(com.altova.mapforce.IMFNode var1_cdwjson_2_Instance)	{
+			this.var1_cdwjson_2_Instance = var1_cdwjson_2_Instance;
 		}
 
 		public IEnumerator enumerator() {return new Enumerator(this);}
@@ -241,7 +241,7 @@ public class MappingMapTocatalog3 extends com.altova.TraceProvider {
 
 			private boolean moveNext_1() throws Exception {
 				state = 2;				
-				var2_as_array = (com.altova.functions.Json.AsArray(com.altova.functions.Json.RootValue(closure.var1_acmejson_2_Instance))).enumerator();
+				var2_as_array = (com.altova.functions.Json.AsArray(com.altova.functions.Json.RootValue(closure.var1_cdwjson_2_Instance))).enumerator();
 				return false;
 			}
 			private boolean moveNext_2() throws Exception {
@@ -504,8 +504,8 @@ public class MappingMapTocatalog3 extends com.altova.TraceProvider {
 			private boolean moveNext_2() throws Exception {
 				state = 2;				
 				if (!var2_filter.moveNext()) {state = 3; return false; }
-				if (!(com.altova.functions.Json.IsValueA(((com.altova.mapforce.IMFNode)(var2_filter.current())), "file:///C:/Users/admin/Desktop/output%20files/acmejson_2.schema.json#//definitions//products/!additionalProperties/@127"))) {state = 2; return false; }
-				if (!(com.altova.functions.Core.startsWith(com.altova.functions.Json.GetMemberName(((com.altova.mapforce.IMFNode)(var2_filter.current()))), "Acme Tools Salesforce Sub-Category"))) {state = 2; return false; }
+				if (!(com.altova.functions.Json.IsValueA(((com.altova.mapforce.IMFNode)(var2_filter.current())), "file:///C:/Users/admin/Desktop/output%20files/cdwjson_2.schema.json#//definitions//products/!additionalProperties/@127"))) {state = 2; return false; }
+				if (!(com.altova.functions.Core.startsWith(com.altova.functions.Json.GetMemberName(((com.altova.mapforce.IMFNode)(var2_filter.current()))), "cdw Tools Salesforce Sub-Category"))) {state = 2; return false; }
 				current = com.altova.functions.Core.createElement(com.altova.functions.Core.createQName("subcategories", ""), (new seq6_join(((com.altova.mapforce.IMFNode)(var2_filter.current())))));
 				pos++;
 				return true;
@@ -595,10 +595,10 @@ public class MappingMapTocatalog3 extends com.altova.TraceProvider {
 		}
 	}
 	static class Outer implements IEnumerable {
-		com.altova.mapforce.IMFNode var1_acmejson_2_Instance;
+		com.altova.mapforce.IMFNode var1_cdwjson_2_Instance;
 
-		public Outer(com.altova.mapforce.IMFNode var1_acmejson_2_Instance)	{
-			this.var1_acmejson_2_Instance = var1_acmejson_2_Instance;
+		public Outer(com.altova.mapforce.IMFNode var1_cdwjson_2_Instance)	{
+			this.var1_cdwjson_2_Instance = var1_cdwjson_2_Instance;
 		}
 
 		public IEnumerator enumerator() {return new Enumerator(this);}
@@ -631,7 +631,7 @@ public class MappingMapTocatalog3 extends com.altova.TraceProvider {
 
 			private boolean moveNext_1() throws Exception {
 				state = 2;				
-				var2_box = ((new main(closure.var1_acmejson_2_Instance))).enumerator();
+				var2_box = ((new main(closure.var1_cdwjson_2_Instance))).enumerator();
 				return false;
 			}
 			private boolean moveNext_2() throws Exception {
@@ -659,18 +659,18 @@ public class MappingMapTocatalog3 extends com.altova.TraceProvider {
 
 
 	// instances
-	protected com.altova.json.Document varacmejson_22Instance;
+	protected com.altova.json.Document varcdwjson_22Instance;
 
-	public void run(String acmejson_22SourceFilename, String catalog4TargetFilename) throws Exception {
+	public void run(String cdwjson_22SourceFilename, String catalog4TargetFilename) throws Exception {
 		try(
 			// open source streams
-			com.altova.io.FileInput acmejson_22Source = new com.altova.io.FileInput(acmejson_22SourceFilename);
+			com.altova.io.FileInput cdwjson_22Source = new com.altova.io.FileInput(cdwjson_22SourceFilename);
 		// open target stream
 			com.altova.io.FileOutput catalog4Target = new com.altova.io.FileOutput(catalog4TargetFilename);
 
 		) {
 			// run
-			run(acmejson_22Source, catalog4Target);
+			run(cdwjson_22Source, catalog4Target);
 
 		}
 	}
@@ -678,16 +678,16 @@ public class MappingMapTocatalog3 extends com.altova.TraceProvider {
 
 	// main entry point
 
-	public void run(com.altova.io.Input acmejson_22Source, com.altova.io.Output catalog4Target) throws Exception {
+	public void run(com.altova.io.Input cdwjson_22Source, com.altova.io.Output catalog4Target) throws Exception {
 		// Open the source(s)
-			varacmejson_22Instance = com.altova.functions.Json.Load(acmejson_22Source, MapForceJsonLibs_acmejson_2.Schemas, false, false);
+			varcdwjson_22Instance = com.altova.functions.Json.Load(cdwjson_22Source, MapForceJsonLibs_cdwjson_2.Schemas, false, false);
 
 		// Create the target
 		org.w3c.dom.Document catalog4Doc = (catalog4Target.getType() == com.altova.io.Output.IO_DOM) ? catalog4Target.getDocument() : XmlTreeOperations.createDocument();
 
 		// Execute mapping
 
-		main mapping = new main(varacmejson_22Instance);
+		main mapping = new main(varcdwjson_22Instance);
 
 		com.altova.xml.MFDOMWriter.write(mapping, catalog4Doc);
 		// Close the target

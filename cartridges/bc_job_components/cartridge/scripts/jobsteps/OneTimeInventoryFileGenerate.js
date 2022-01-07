@@ -40,7 +40,7 @@ var productsList = new ArrayList();
     }
 
     var catalogMgr = require('dw/catalog/CatalogMgr');
-    var siteRootCategory = catalogMgr.getCatalog("acme-catalog-m-en");
+    var siteRootCategory = catalogMgr.getCatalog("cdw-catalog-m-en");
     var a= siteRootCategory;
     updateProductId(siteRootCategory.root, args.noOfProducts, args.priceBookName,args.fileName, args.filePath, args.objectName);
     
@@ -101,7 +101,7 @@ var productsList = new ArrayList();
 };
 
 function buildPriceBookXML(wasPriceProducts, wasPriceBookName ){
-    var priceBookXML = '<pricebooks xmlns="http://www.demandware.com/xml/impex/pricebook/2006-10-31"><pricebook><header pricebook-id="'+wasPriceBookName+ '"><currency>USD</currency><display-name xml:lang="x-default">Acme Was Prices</display-name><online-flag>true</online-flag></header><price-tables>';
+    var priceBookXML = '<pricebooks xmlns="http://www.demandware.com/xml/impex/pricebook/2006-10-31"><pricebook><header pricebook-id="'+wasPriceBookName+ '"><currency>USD</currency><display-name xml:lang="x-default">cdw Was Prices</display-name><online-flag>true</online-flag></header><price-tables>';
     for(var i=0;i<wasPriceProducts.length;i++)
     {
         var productXML = buildWasPriceProduct(wasPriceProducts[i]);

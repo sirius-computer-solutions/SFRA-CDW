@@ -20,7 +20,7 @@ function getAttributes(attributeModel) {
     while(visibleAttributeGroupsIter.hasNext())
     {
         var attrGrp = visibleAttributeGroupsIter.next();
-        if(attrGrp.ID==='Acme Overrides')
+        if(attrGrp.ID==='cdw Overrides')
         {
             var attrDefIter = attributeModel.getVisibleAttributeDefinitions(attrGrp).iterator();
             while(attrDefIter.hasNext())
@@ -30,7 +30,7 @@ function getAttributes(attributeModel) {
                 if(attrVal!=null)
                 {
                     var attrID = attrDef.ID.replace('-override','');
-                    attrID = attrID.replace('acme-tools-','');
+                    attrID = attrID.replace('cdw-tools-','');
                     attributeOverride.put(attrID,attrVal);
                     attributeIgnore.put(attrDef.ID,attrVal);
                 }

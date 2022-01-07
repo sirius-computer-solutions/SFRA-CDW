@@ -4475,7 +4475,7 @@
                             "@type": "string",
                             "@required": true,
                             "@trim": true,
-                            "default-value": "acme-usd-m-sale-was-prices"
+                            "default-value": "cdw-usd-m-sale-was-prices"
                         },
                         {
                             "@name": "ArchivePath",
@@ -4620,7 +4620,7 @@
                             "@required": "true",
                             "@trim": "true",
                             "description": "The number of days a WAS Price remains on the Site",
-                            "default-value": "acme-usd-m-sale-prices"
+                            "default-value": "cdw-usd-m-sale-prices"
                         },
                         {
                             "@name": "objectName",
@@ -4698,7 +4698,7 @@
                             "@required": "true",
                             "@trim": "true",
                             "description": "The name of the csv file",
-                            "default-value": "acme-sf-catalog-en"
+                            "default-value": "cdw-sf-catalog-en"
                         },
                         {
                             "@name": "fileName",

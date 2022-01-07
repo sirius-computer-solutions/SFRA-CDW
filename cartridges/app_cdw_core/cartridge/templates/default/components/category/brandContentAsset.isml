@@ -2,7 +2,7 @@
     <isset name="brandBasedContentAsset" value="" scope="page"/>
     <isloop items="${pdict.productSearch.refinements}" var="refinement">
         <isif condition="${refinement.isAttributeRefinement || refinement.isPromotionRefinement}">
-            <isif condition="${refinement.values[0].id == 'acme-tools-brand-name'}">
+            <isif condition="${refinement.values[0].id == 'cdw-tools-brand-name'}">
                 <isloop items="${refinement.values}" var="refinementValue">
                     <isif condition="${refinementValue.selected && refinementValue.selectable}">
                             <isset name="brandBasedContentAsset" value="${refinementValue.displayValue.toLowerCase().replace(' ','-')+'-'+pdict.productSearch.category.id.toLowerCase()}" scope="page"/>

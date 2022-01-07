@@ -1,6 +1,6 @@
 var Status = require('dw/system/Status');
-var s2kConstants = require('../../../../app_acme_core/cartridge/scripts/utils/s2kServiceConstants').getConstants();
-var s2kRestService = require('../../../../app_acme_core/cartridge/scripts/services/s2kRestService');
+var s2kConstants = require('../../../../app_cdw_core/cartridge/scripts/utils/s2kServiceConstants').getConstants();
+var s2kRestService = require('../../../../app_cdw_core/cartridge/scripts/services/s2kRestService');
 var StepUtil = require('~/cartridge/scripts/util/StepUtil');
 const tokenCache = require('dw/system/CacheMgr').getCache(s2kConstants.AUTHORIZATION_TOKEN_CACHE_LOOKUP_ID);
 

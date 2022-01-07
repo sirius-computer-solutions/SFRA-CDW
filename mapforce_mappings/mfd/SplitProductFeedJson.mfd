@@ -9,7 +9,7 @@
 		<properties SelectedLanguage="builtin"/>
 		<structure>
 			<children>
-				<component name="acmejson_2" library="json" uid="2" kind="31">
+				<component name="cdwjson_2" library="json" uid="2" kind="31">
 					<properties XSLTTargetEncoding="UTF-8" DynamicFilenames="1"/>
 					<view ltx="127" lty="121" rbx="353" rby="321"/>
 					<data>
@@ -178,7 +178,7 @@
 								</entry>
 							</entry>
 						</root>
-						<json schema="schema\acmejson_2.schema.json" inputinstance="..\..\FullExport-Asof8-6-21\product-feed-8.json" outputinstance="..\..\FullExport-Asof8-6-21\product-feed-8.json"/>
+						<json schema="schema\cdwjson_2.schema.json" inputinstance="..\..\FullExport-Asof8-6-21\product-feed-8.json" outputinstance="..\..\FullExport-Asof8-6-21\product-feed-8.json"/>
 					</data>
 				</component>
 				<component name="attributes" library="json" uid="3" kind="31">

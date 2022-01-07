@@ -20,7 +20,7 @@
          var catId = refinementValue.ID;
          if(catId == "categories") {
             oci = categoryHelper.getGeneratedKeyWithFilters(httpParams).toString().replace(/ /g, '-' ).toLowerCase();
-         } else if (!empty(httpParams.preferences) && 'acme-tools-brand-name' in httpParams.preferences) {
+         } else if (!empty(httpParams.preferences) && 'cdw-tools-brand-name' in httpParams.preferences) {
             oci = categoryHelper.getGeneratedKeyWithFilters(httpParams).toString().replace(/ /g, '-' ).toLowerCase()+"-"+catId.toString().replace(/ /g, '-' ).toLowerCase();
          } else if('oci' in httpParams){
             oci = catId.toString().replace(/ /g, '-' ).toLowerCase();

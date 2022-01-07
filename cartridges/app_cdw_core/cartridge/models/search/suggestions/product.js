@@ -40,8 +40,8 @@ var IMAGE_SIZE = preferences.imageSize ? preferences.imageSize : 'medium';
             product = suggestedProducts.next().productSearchHit.product;
             var productBrandName = '';
             var manufacturerSKU = '';
-            if("custom" in product && product.custom && "acme-tools-brand-name" in product.custom) {
-                productBrandName = product.custom['acme-tools-brand-name'];
+            if("custom" in product && product.custom && "cdw-tools-brand-name" in product.custom) {
+                productBrandName = product.custom['cdw-tools-brand-name'];
             }
 
             if(!empty(product.manufacturerSKU)) {

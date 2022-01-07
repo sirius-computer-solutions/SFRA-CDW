@@ -68,10 +68,10 @@ function fillDomElement(einsteinResponse, $parentElement) {
             type: 'get',
             dataType: 'html',
             success: function (html) {
-                $parentElement.find('.acme-carousel-inner').html(html);
+                $parentElement.find('.cdw-carousel-inner').html(html);
                 showControls($parentElement);
                 $('body').trigger('carousel:setup', {});
-                $('.acme-carousel').trigger('acme-carousel:init');
+                $('.cdw-carousel').trigger('cdw-carousel:init');
             },
             error: function () {
                 $parentElement.spinner().stop();

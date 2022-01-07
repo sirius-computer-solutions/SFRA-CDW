@@ -35,7 +35,7 @@ server.prepend(
 // Main entry point for Checkout
 /**
  * Checkout-Begin : The Checkout-Begin endpoint will render the checkout shipping page for both guest shopper and returning shopper
- * @name app_acme_core/Checkout-Begin
+ * @name app_cdw_core/Checkout-Begin
  * @function
  * @memberof Checkout
  * @param {middleware} - server.middleware.https

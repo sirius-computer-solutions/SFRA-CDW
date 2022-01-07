@@ -13,11 +13,11 @@
             "script": "./cartridge/scripts/hooks/customerService/newsletter.js"
         },        
         {
-            "name": "app.payment.processor.acme_payware_processor",
+            "name": "app.payment.processor.cdw_payware_processor",
             "script": "./cartridge/scripts/hooks/payment/processor/payware.js"
         },
         {
-            "name": "app.payment.form.processor.acme_payware_processor",
+            "name": "app.payment.form.processor.cdw_payware_processor",
             "script": "./cartridge/scripts/hooks/payment/processor/payware_form_processor.js"
         },
         {

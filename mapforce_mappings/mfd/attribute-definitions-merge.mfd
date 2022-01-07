@@ -2,7 +2,7 @@
 <!-- Edited with Altova MapForce 2021r3 -->
 <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="26">
 	<settings>
-		<deployment path="/public/Acme/attribute-definitions-merge.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
+		<deployment path="/public/cdw/attribute-definitions-merge.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
 	</settings>
 	<resources/>
 	<component name="defaultmap" uid="1" editable="1" blackbox="0">
@@ -341,7 +341,7 @@
 					</targets>
 					<view ltx="1109" lty="88" rbx="1246" rby="106"/>
 					<data>
-						<constant value="acme-catalog-m-en" datatype="string"/>
+						<constant value="cdw-catalog-m-en" datatype="string"/>
 					</data>
 				</component>
 				<component name="attributeExportFull" library="core" uid="83" kind="6">

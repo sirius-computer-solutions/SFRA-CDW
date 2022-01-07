@@ -50,7 +50,7 @@
         <enabled-flag>true</enabled-flag>
         <content>
             <html>
-                <body xml:lang="x-default">&lt;p&gt;If you have a product, ordering, support, or technical question for us, please see our Customer Service for answers and the appropriate contact information or use the below form to contact an Acme customer service representative. We usually respond within 1-3 business days.
+                <body xml:lang="x-default">&lt;p&gt;If you have a product, ordering, support, or technical question for us, please see our Customer Service for answers and the appropriate contact information or use the below form to contact an cdw customer service representative. We usually respond within 1-3 business days.
 &lt;/p&gt;</body>
             </html>
         </content>
@@ -67,11 +67,11 @@
 				&lt;h2&gt;&lt;i class="far fa-user fa-pull-left"&gt;&lt;/i&gt; &lt;span&gt;Customer Support&lt;/span&gt;&lt;/h2&gt;
 &lt;div&gt;
 				&lt;p&gt;
-					&lt;strong itemprop="name"&gt;Acme Tools&lt;/strong&gt;&lt;br&gt; 
+					&lt;strong itemprop="name"&gt;cdw Tools&lt;/strong&gt;&lt;br&gt; 
 					&lt;span itemprop="address" itemscope="" itemtype="https://schema.org/PostalAddress"&gt; 
 						&lt;span itemprop="streetAddress"&gt;1603 12th Avenue N.&lt;br&gt;&lt;/span&gt;
 						&lt;span itemprop="addressLocality"&gt;Grand Forks, ND 58203&lt;/span&gt;&lt;br&gt;
-						&lt;i class="fas fa-phone-alt fa-sm fa-pull-left"&gt;&lt;/i&gt; Toll Free: &amp;nbsp;&lt;a href="tel:1-877-345-2263"&gt;&lt;span itemprop="telephone"&gt;877-345-ACME (2263)&lt;/span&gt;&lt;/a&gt;
+						&lt;i class="fas fa-phone-alt fa-sm fa-pull-left"&gt;&lt;/i&gt; Toll Free: &amp;nbsp;&lt;a href="tel:1-877-345-2263"&gt;&lt;span itemprop="telephone"&gt;877-345-cdw (2263)&lt;/span&gt;&lt;/a&gt;
 					&lt;/span&gt;	&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Checking order status? &lt;a style="color:#299ADA;" class="hover_underline" href="/shop/OrderStatusLookupView?catalogId=10551&amp;amp;langId=-1&amp;amp;storeId=11301"&gt;Click Here to locate your order&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 				&lt;/div&gt;
@@ -83,7 +83,7 @@
 				&lt;h2&gt;&lt;i class="far fa-clock fa-pull-left"&gt;&lt;/i&gt; &lt;span&gt;Customer Support Hours&lt;/span&gt;&lt;/h2&gt;
 				&lt;p&gt;
 					Monday – Friday, 9AM–5PM CT&lt;br&gt;
-					Email:  &amp;nbsp;&lt;a href="mailto: support@acmetools.com"&gt;&lt;span itemprop="email"&gt;support@acmetools.com&lt;/span&gt;&lt;/a&gt;
+					Email:  &amp;nbsp;&lt;a href="mailto: support@cdw.com"&gt;&lt;span itemprop="email"&gt;support@cdw.com&lt;/span&gt;&lt;/a&gt;
 				&lt;/p&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
@@ -222,12 +222,12 @@ Here you will find answers to your questions about shopping at our online store,
 
 &lt;a href="/shop/tools/bosch-x-lock"&gt;
        
-    &lt;div class="PBP_Background2" style="background-image: url(https://www.acmetools.com/wcsstore/AcmeToolsRWD/Deals/Bosch/2021/May/bosch-x-lock-grinder.jpg);"&gt;
+    &lt;div class="PBP_Background2" style="background-image: url(https://www.cdw.com/wcsstore/CDWStarterStoreRWD/Deals/Bosch/2021/May/bosch-x-lock-grinder.jpg);"&gt;
        
 
         &lt;div class="PBP_TextContainer"&gt;
             
-         &lt;img src="https://www.acmetools.com/wcsstore/AcmeToolsRWD/Logos/makita-xlock.png" alt="Bosch X Lock" style="max-width:350px; padding:10px;"&gt;
+         &lt;img src="https://www.cdw.com/wcsstore/CDWStarterStoreRWD/Logos/makita-xlock.png" alt="Bosch X Lock" style="max-width:350px; padding:10px;"&gt;
                           
 
              &lt;button class="BTN_White"&gt;SHOP NOW &lt;i class="icon-arrow-right"&gt;&lt;/i&gt;&lt;/button&gt;
@@ -274,12 +274,12 @@ Here you will find answers to your questions about shopping at our online store,
 
 &lt;a href="/shop/tools/bosch-x-lock"&gt;
        
-    &lt;div class="PBP_Background2" style="background-image: url(https://www.acmetools.com/wcsstore/AcmeToolsRWD/Deals/Bosch/2021/May/bosch-x-lock-grinder.jpg);"&gt;
+    &lt;div class="PBP_Background2" style="background-image: url(https://www.cdw.com/wcsstore/CDWStarterStoreRWD/Deals/Bosch/2021/May/bosch-x-lock-grinder.jpg);"&gt;
        
 
         &lt;div class="PBP_TextContainer"&gt;
             
-         &lt;img src="https://www.acmetools.com/wcsstore/AcmeToolsRWD/Logos/makita-xlock.png" alt="Bosch X Lock" style="max-width:350px; padding:10px;"&gt;
+         &lt;img src="https://www.cdw.com/wcsstore/CDWStarterStoreRWD/Logos/makita-xlock.png" alt="Bosch X Lock" style="max-width:350px; padding:10px;"&gt;
                           
 
              &lt;button class="BTN_White"&gt;SHOP NOW &lt;i class="icon-arrow-right"&gt;&lt;/i&gt;&lt;/button&gt;
@@ -320,7 +320,7 @@ Here you will find answers to your questions about shopping at our online store,
 
 &lt;a href="/shop/tools/bosch-bare-tool-promotion"&gt;
        
-    &lt;div class="PBP_Background2" style="background-image: url(https://www.acmetools.com/wcsstore/AcmeToolsRWD/Deals/Bosch/2021/May/Bosch-grinder.jpg);"&gt;
+    &lt;div class="PBP_Background2" style="background-image: url(https://www.cdw.com/wcsstore/CDWStarterStoreRWD/Deals/Bosch/2021/May/Bosch-grinder.jpg);"&gt;
        
 
         &lt;div class="PBP_TextContainer"&gt;
@@ -363,7 +363,7 @@ Here you will find answers to your questions about shopping at our online store,
 &lt;!-- END Content_UI.jspf --&gt;
 			&lt;/div&gt;
 		&lt;!-- END ContentRecommendation_UI.jspf --&gt;&lt;!-- END ContentRecommendation.jsp --&gt;&lt;!--  BEGIN EMarketingSpot.jsp --&gt;&lt;!-- BEGIN ContentRecommendation.jsp --&gt;&lt;!-- BEGIN ContentRecommendation_UI.jspf --&gt;
-			&lt;div id="contentRecommendationWidget_10_-5008_3074457345618383103" class="contentRecommendationWidget acmeResponsiveImg" &gt;
+			&lt;div id="contentRecommendationWidget_10_-5008_3074457345618383103" class="contentRecommendationWidget cdwResponsiveImg" &gt;
 			&lt;!-- BEGIN Content_UI.jspf --&gt;
 
 &lt;div class="left_espot"&gt;
@@ -387,7 +387,7 @@ High-quality &lt;a href="/shop/tools/bosch-power-tool-accessories" title="Bosch 
 &lt;h2&gt;&lt;strong&gt;Why Buy Bosch Tools?&lt;/strong&gt;&lt;/h2&gt;
 From hand tools and &lt;a href="/shop/tools/bosch-measuring-and-layout-tools" title="Bosch Measuring &amp; Layout Tools"&gt;measuring tools&lt;/a&gt; to &lt;a href="/shop/tools/bosch-power-tools" title="Bosch Power Tools"&gt;corded&lt;/a&gt; and &lt;a href="/shop/tools/bosch-cordless-tools" title="Bosch Cordless Tools"&gt;cordless power tools&lt;/a&gt;, Bosch has the combo kit or bare tool for you.&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-For reliable and powerful tools, shop Bosch Tools at an Acme Tools near you or visit our online store.&lt;br&gt;
+For reliable and powerful tools, shop Bosch Tools at an cdw Tools near you or visit our online store.&lt;br&gt;
 
 
 
@@ -507,7 +507,7 @@ For reliable and powerful tools, shop Bosch Tools at an Acme Tools near you or v
         <callout-msg xml:lang="x-default">Request Quote</callout-msg>
         <content>
             <html>
-                <body xml:lang="x-default">In certain instances, Acme Tools may offer volume discounts on select tools, equipment, or accessories that may not be reflected on our website. If you're looking at placing a bulk order of your favorite accessory or outfitting an entire workshop or crew, we'll do our best to sharpen our pencil. Fill out the form below with our part numbers and the quantities you're interested in. An Acme Tools Representative will contact you within two business days.</body>
+                <body xml:lang="x-default">In certain instances, cdw Tools may offer volume discounts on select tools, equipment, or accessories that may not be reflected on our website. If you're looking at placing a bulk order of your favorite accessory or outfitting an entire workshop or crew, we'll do our best to sharpen our pencil. Fill out the form below with our part numbers and the quantities you're interested in. An cdw Tools Representative will contact you within two business days.</body>
             </html>
         </content>
     </slot-configuration>
@@ -791,7 +791,7 @@ For reliable and powerful tools, shop Bosch Tools at an Acme Tools near you or v
   &lt;div class="modal-dialog" role="document"&gt;
     &lt;div class="modal-content"&gt;
       &lt;div class="modal-header"&gt;
-        &lt;h5 class="modal-title"&gt;Acme Tools offers fast order processing and great shipping options
+        &lt;h5 class="modal-title"&gt;cdw Tools offers fast order processing and great shipping options
 &lt;/h5&gt;
         &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
           &lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;

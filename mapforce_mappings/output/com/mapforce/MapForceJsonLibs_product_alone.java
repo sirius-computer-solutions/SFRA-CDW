@@ -204,7 +204,7 @@ public class MapForceJsonLibs_product_alone
                        new PropertyRule("MFG Name", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//MFG Name/@16"), null, null),
                        new PropertyRule("Package Weight (lbs)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Package Weight (lbs)/@16"), null, null),
                        new PropertyRule("Marketing Copy", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Marketing Copy/@16"), null, null),
-                       new PropertyRule("Acme Tools Brand Name", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Brand Name/@16"), null, null),
+                       new PropertyRule("cdw Tools Brand Name", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Brand Name/@16"), null, null),
                        new PropertyRule("Package Contents", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Package Contents/@16"), null, null),
                        new PropertyRule("Feature - Benefit Bullet 2", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Feature - Benefit Bullet 2/@16"), null, null),
                        new PropertyRule("Detailed Product View 1", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Detailed Product View 1/@16"), null, null),
@@ -218,7 +218,7 @@ public class MapForceJsonLibs_product_alone
                        new PropertyRule("Short Description", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Short Description/@16"), null, null),
                        new PropertyRule("UPC", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//UPC/@16"), null, null),
                        new PropertyRule("Feature - Benefit Bullet 3", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Feature - Benefit Bullet 3/@16"), null, null),
-                       new PropertyRule("Acme Tools Part Number", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Part Number/@16"), null, null),
+                       new PropertyRule("cdw Tools Part Number", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Part Number/@16"), null, null),
                        new PropertyRule("Warranty Type", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Warranty Type/@16"), null, null),
                        new PropertyRule("Restrictions", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Restrictions/@16"), null, null),
                        new PropertyRule("Package Height", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Package Height/@16"), null, null),
@@ -231,16 +231,16 @@ public class MapForceJsonLibs_product_alone
                        new PropertyRule("Approved?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Approved?/@2"), null, null),
                        new PropertyRule("Contains a Proposition 65 chemical", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Contains a Proposition 65 chemical/@16"), null, null),
                        new PropertyRule("product_type", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//product_type/@16"), null, null),
-                       new PropertyRule("Acme Tools Category", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Category/@16"), null, null),
+                       new PropertyRule("cdw Tools Category", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Category/@16"), null, null),
                        new PropertyRule("Created By Supplier", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Created By Supplier/@2"), null, null),
                        new PropertyRule("Country of Origin - Alpha", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Country of Origin - Alpha/@16"), null, null),
                        new PropertyRule("Prop65 Warning Label", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Prop65 Warning Label/@16"), null, null),
                        new PropertyRule("California Proposition 65 Warning Required", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//California Proposition 65 Warning Required/@16"), null, null),
                        new PropertyRule("Import to WCE?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Import to WCE?/@2"), null, null),
-                       new PropertyRule("Acme Tools Salesforce Category", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Salesforce Category/@16"), null, null),
-                       new PropertyRule("Acme Tools Salesforce Sub-Category 1", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Salesforce Sub-Category 1/@16"), null, null),
+                       new PropertyRule("cdw Tools Salesforce Category", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Salesforce Category/@16"), null, null),
+                       new PropertyRule("cdw Tools Salesforce Sub-Category 1", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Salesforce Sub-Category 1/@16"), null, null),
                        new PropertyRule("BUYABLE", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//BUYABLE/@2"), null, null),
-                       new PropertyRule("AcmeMarketingComputedProperty", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//AcmeMarketingComputedProperty/@16"), null, null),
+                       new PropertyRule("cdwMarketingComputedProperty", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdwMarketingComputedProperty/@16"), null, null),
                        new PropertyRule("Alternate Image has Multiple Images", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Alternate Image has Multiple Images/@2"), null, null),
                        new PropertyRule("Lifestyle Image has Multiple Images", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Lifestyle Image has Multiple Images/@2"), null, null),
                        new PropertyRule("Main Image has Multiple Values", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Main Image has Multiple Values/@2"), null, null),
@@ -248,7 +248,7 @@ public class MapForceJsonLibs_product_alone
                        new PropertyRule("SEO Brand Name Display", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//SEO Brand Name Display/@16"), null, null),
                        new PropertyRule("  SEO URL Keyword Character Count", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//  SEO URL Keyword Character Count/@16"), null, null),
                        new PropertyRule("SEO URL Keywword", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//SEO URL Keywword/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Heating & Cooling Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Heating & Cooling Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Heating & Cooling Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Heating & Cooling Item?/@16"), null, null),
                        new PropertyRule("Weight (lbs)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Weight (lbs)/@16"), null, null),
                        new PropertyRule("Skid Shoes", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Skid Shoes/@16"), null, null),
                        new PropertyRule("Drive System", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Drive System/@16"), null, null),
@@ -257,7 +257,7 @@ public class MapForceJsonLibs_product_alone
                        new PropertyRule("MFG Brand Name", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//MFG Brand Name/@16"), null, null),
                        new PropertyRule("Google class path", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Google class path/@16"), null, null),
                        new PropertyRule("Engine Cycles", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Engine Cycles/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Flooring Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Flooring Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Flooring Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Flooring Item?/@16"), null, null),
                        new PropertyRule("Auger Diameter (in)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Auger Diameter (in)/@16"), null, null),
                        new PropertyRule("Chute Direction Control", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Chute Direction Control/@16"), null, null),
                        new PropertyRule("Auger Type", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Auger Type/@16"), null, null),
@@ -266,10 +266,10 @@ public class MapForceJsonLibs_product_alone
                        new PropertyRule("Small Engine Maximum Horsepower (hp)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Small Engine Maximum Horsepower (hp)/@16"), null, null),
                        new PropertyRule("Engine Displacement (cc)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Engine Displacement (cc)/@16"), null, null),
                        new PropertyRule("Headlights", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Headlights/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Concrete & Masonry Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Concrete & Masonry Item?/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Metal Working Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Metal Working Item?/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Finish Carpentry Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Finish Carpentry Item?/@16"), null, null),
-                       new PropertyRule("Acme Tools Vendor Number", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Vendor Number/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Concrete & Masonry Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Concrete & Masonry Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Metal Working Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Metal Working Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Finish Carpentry Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Finish Carpentry Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Vendor Number", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Vendor Number/@16"), null, null),
                        new PropertyRule("Intake Height (in)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Intake Height (in)/@16"), null, null),
                        new PropertyRule("ETL Listed", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//ETL Listed/@16"), null, null),
                        new PropertyRule("Tire Diameter (in)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Tire Diameter (in)/@16"), null, null),
@@ -280,10 +280,10 @@ public class MapForceJsonLibs_product_alone
                        new PropertyRule("Fuel Type", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Fuel Type/@16"), null, null),
                        new PropertyRule("CARB Compliant", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//CARB Compliant/@16"), null, null),
                        new PropertyRule("Detailed Product View 4", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Detailed Product View 4/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Plumbing Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Plumbing Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Plumbing Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Plumbing Item?/@16"), null, null),
                        new PropertyRule("Number of Reverse Speeds", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Number of Reverse Speeds/@16"), null, null),
                        new PropertyRule("Packaging Level", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Packaging Level/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Roofing Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Roofing Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Roofing Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Roofing Item?/@16"), null, null),
                        new PropertyRule("Feature - Benefit Bullet 8", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Feature - Benefit Bullet 8/@16"), null, null),
                        new PropertyRule("Maximum Throwing Distance (Ft)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Maximum Throwing Distance (Ft)/@16"), null, null),
                        new PropertyRule("Discharge Chute Rotation Angle (Deg)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Discharge Chute Rotation Angle (Deg)/@16"), null, null),
@@ -291,26 +291,26 @@ public class MapForceJsonLibs_product_alone
                        new PropertyRule("Auger Material", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Auger Material/@16"), null, null),
                        new PropertyRule("Start Type", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Start Type/@16"), null, null),
                        new PropertyRule("Small Engine Maximum Torque (ft-lbs)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Small Engine Maximum Torque (ft-lbs)/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Framing Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Framing Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Framing Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Framing Item?/@16"), null, null),
                        new PropertyRule("Chute Pitch Control", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Chute Pitch Control/@16"), null, null),
                        new PropertyRule("Drift Cutters", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Drift Cutters/@16"), null, null),
                        new PropertyRule("Rust Resistant", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Rust Resistant/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Electrical Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Electrical Item?/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Landscaping Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Landscaping Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Electrical Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Electrical Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Landscaping Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Landscaping Item?/@16"), null, null),
                        new PropertyRule("UL Listed", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//UL Listed/@16"), null, null),
                        new PropertyRule("Feature - Benefit Bullet 6", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Feature - Benefit Bullet 6/@16"), null, null),
                        new PropertyRule("Feature - Benefit Bullet 7", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Feature - Benefit Bullet 7/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Woodworking Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Woodworking Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Woodworking Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Woodworking Item?/@16"), null, null),
                        new PropertyRule("MFG Model # (Series)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//MFG Model # (Series)/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Drywall & Plastering Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Drywall & Plastering Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Drywall & Plastering Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Drywall & Plastering Item?/@16"), null, null),
                        new PropertyRule("Clearing Width (in)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Clearing Width (in)/@16"), null, null),
                        new PropertyRule("Manufacturer Warranty", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Manufacturer Warranty/@16"), null, null),
                        new PropertyRule("Chute Material", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Chute Material/@16"), null, null),
                        new PropertyRule("Engine", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Engine/@16"), null, null),
                        new PropertyRule("Feature - Benefit Bullet 9", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Feature - Benefit Bullet 9/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Tiling Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Tiling Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Tiling Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Tiling Item?/@16"), null, null),
                        new PropertyRule("Variable Speed", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Variable Speed/@16"), null, null),
-                       new PropertyRule("Acme Tools Shop By Trade-Siding Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Siding Item?/@16"), null, null),
+                       new PropertyRule("cdw Tools Shop By Trade-Siding Item?", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Siding Item?/@16"), null, null),
                        new PropertyRule("Number of Forward Speeds", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Number of Forward Speeds/@16"), null, null),
                        new PropertyRule("Internet Product Code (IPC)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Internet Product Code (IPC)/@16"), null, null),
                        new PropertyRule("Taxonomy", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Taxonomy/@16"), null, null),
@@ -318,9 +318,9 @@ public class MapForceJsonLibs_product_alone
                        new PropertyRule("guid", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//guid/@16"), null, null),
                        new PropertyRule("S2K-SKU-PROP65-COMPLIANT", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//S2K-SKU-PROP65-COMPLIANT/@2"), null, null),
                        new PropertyRule("Feature - Benefit Bullets", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//array_01/@32"), null, null),
-                       new PropertyRule("Acme Tools Accessory 1", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Accessory 1/@16"), null, null),
-                       new PropertyRule("Acme Tools Accessory 2", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Accessory 2/@16"), null, null),
-                       new PropertyRule("Acme Tools Accessory 3", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Accessory 3/@16"), null, null),
+                       new PropertyRule("cdw Tools Accessory 1", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Accessory 1/@16"), null, null),
+                       new PropertyRule("cdw Tools Accessory 2", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Accessory 2/@16"), null, null),
+                       new PropertyRule("cdw Tools Accessory 3", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Accessory 3/@16"), null, null),
                        new PropertyRule("Transfer Switch Specs - UL Approved", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Transfer Switch Specs - UL Approved/@16"), null, null),
                        new PropertyRule("Width (in)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Width (in)/@16"), null, null),
                        new PropertyRule("Standby Generator Fuel Type", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Standby Generator Fuel Type/@16"), null, null),
@@ -368,7 +368,7 @@ public class MapForceJsonLibs_product_alone
                        new PropertyRule("Head Width (in)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Head Width (in)/@16"), null, null),
                        new PropertyRule("Handle Length (in)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Handle Length (in)/@16"), null, null),
                        new PropertyRule("Brand Name (Amazon)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Brand Name (Amazon)/@16"), null, null),
-                       new PropertyRule("Acme Tools Salesforce Sub-Category 2", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Salesforce Sub-Category 2/@16"), null, null),
+                       new PropertyRule("cdw Tools Salesforce Sub-Category 2", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Salesforce Sub-Category 2/@16"), null, null),
                        new PropertyRule("Snow Product Type", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Snow Product Type/@16"), null, null),
                        new PropertyRule("Assembled Height (in)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Assembled Height (in)/@16"), null, null),
                        new PropertyRule("Horsepower (hp)", NameMatchKind.Exact, new Reference("file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Horsepower (hp)/@16"), null, null),
@@ -554,7 +554,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Brand Name/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Brand Name/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -694,7 +694,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Part Number/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Part Number/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -824,7 +824,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Category/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Category/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -884,7 +884,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Salesforce Category/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Salesforce Category/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -894,7 +894,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Salesforce Sub-Category 1/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Salesforce Sub-Category 1/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -914,7 +914,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//AcmeMarketingComputedProperty/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdwMarketingComputedProperty/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -994,7 +994,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Heating & Cooling Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Heating & Cooling Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1084,7 +1084,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Flooring Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Flooring Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1174,7 +1174,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Concrete & Masonry Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Concrete & Masonry Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1184,7 +1184,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Metal Working Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Metal Working Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1194,7 +1194,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Finish Carpentry Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Finish Carpentry Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1204,7 +1204,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Vendor Number/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Vendor Number/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1314,7 +1314,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Plumbing Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Plumbing Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1344,7 +1344,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Roofing Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Roofing Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1424,7 +1424,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Framing Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Framing Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1464,7 +1464,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Electrical Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Electrical Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1474,7 +1474,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Landscaping Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Landscaping Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1514,7 +1514,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Woodworking Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Woodworking Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1534,7 +1534,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Drywall & Plastering Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Drywall & Plastering Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1594,7 +1594,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Tiling Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Tiling Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1614,7 +1614,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Shop By Trade-Siding Item?/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Shop By Trade-Siding Item?/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1734,7 +1734,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Accessory 1/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Accessory 1/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1744,7 +1744,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Accessory 2/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Accessory 2/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -1754,7 +1754,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Accessory 3/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Accessory 3/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,
@@ -2234,7 +2234,7 @@ public class MapForceJsonLibs_product_alone
                 new AlsoAcceptor[]{}
             ),
             new ValueAcceptor(
-                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//Acme Tools Salesforce Sub-Category 2/@16", 
+                "file:///C:/Users/admin/Desktop/output%20files/product-alone.schema.json#//definitions//object_03//properties//cdw Tools Salesforce Sub-Category 2/@16", 
                 new StringAcceptor(null, null, null, null), 
                 null,
                 null,

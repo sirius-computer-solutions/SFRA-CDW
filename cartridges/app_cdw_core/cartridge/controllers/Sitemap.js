@@ -23,7 +23,7 @@
 
     var categories = [];
 
-    var catalog = CatalogMgr.getCatalog("acme-sf-catalog-en");
+    var catalog = CatalogMgr.getCatalog("cdw-sf-catalog-en");
     if(!empty(catalog)) {
         categories.push(catalog.root.subCategories);
     }

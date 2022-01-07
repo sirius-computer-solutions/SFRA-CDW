@@ -23,10 +23,10 @@
                     salsify.enhancedContent.renderIframe(document.querySelector('#wc-power-page'),'${pdict.product.manufacturerSKU}');
                 } else {
                     // load Mosaic content
-                    Webcollage.loadProductContent('acmetools', '${pdict.product.manufacturerSKU}', {"mosaic-board": {containerSelector: "div.widget_product_image_viewer"}});
+                    Webcollage.loadProductContent('cdwtools', '${pdict.product.manufacturerSKU}', {"mosaic-board": {containerSelector: "div.widget_product_image_viewer"}});
                     
                     // load Power Page content
-                    Webcollage.loadProductContent('acmetools', '${pdict.product.manufacturerSKU}', {"power-page": {autoPlayAndStop: true}});   
+                    Webcollage.loadProductContent('cdwtools', '${pdict.product.manufacturerSKU}', {"power-page": {autoPlayAndStop: true}});   
                     
                 }
             }  
@@ -72,14 +72,14 @@
             </isif> 
             <isif condition="${attrGroup.ID == 'Specifications'}">
                 <isloop items="${attrGroup.attributes}" var="attr">
-                    <isif condition="${attr.ID == 'acme-tools-brand-name'}">       
+                    <isif condition="${attr.ID == 'cdw-tools-brand-name'}">       
                         <isloop items="${attr.value}" var="value">  
                             <isset name="productBrand" value="${value}" scope="page" /> 
                         </isloop>
                     </isif>
                 </isloop>
             </isif>
-            <isif condition="${attrGroup.ID == 'AcmeProductManuals'}">
+            <isif condition="${attrGroup.ID == 'cdwProductManuals'}">
                 <isloop items="${attrGroup.attributes}" var="attr">
                         <isloop items="${attr.value}" var="value">  
                             <isif condition="${value!=null && value!=''}">
@@ -123,7 +123,7 @@
                             </isif>        
                         </isloop>
                     </isif>
-                    <isif condition="${attr.ID == 'acme-tools-quote-only-item'}">
+                    <isif condition="${attr.ID == 'cdw-tools-quote-only-item'}">
                         <isloop items="${attr.value}" var="value">
                             <isif condition="${value == 'Y'|| value===true || value == 'Yes'}">
                                 <isset name="requestQuoteOnly" value="${true}" scope="page" />

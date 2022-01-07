@@ -2,9 +2,9 @@
 
 module.exports = function (object, product) {
     var longDesc = null;
-    if('custom' in product && 'acme-tools-override-marketing-copy' in product.custom && product.custom['acme-tools-override-marketing-copy']!=null)
+    if('custom' in product && 'cdw-tools-override-marketing-copy' in product.custom && product.custom['cdw-tools-override-marketing-copy']!=null)
     {
-        var overrideLongDesc = product.custom['acme-tools-override-marketing-copy'];
+        var overrideLongDesc = product.custom['cdw-tools-override-marketing-copy'];
         if(overrideLongDesc.toString().trim()!=''){
             longDesc = overrideLongDesc;
         }

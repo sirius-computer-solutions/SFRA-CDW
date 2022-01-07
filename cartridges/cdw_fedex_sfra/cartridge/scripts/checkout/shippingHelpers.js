@@ -39,7 +39,7 @@ function getApplicableShippingMethods(shipment, address) {
     var fedexRatesFilter = fedexRatesHelper.getShippingMethodFilter(shipment, address, customer);
     /** Fedex END */
 
-    /** ACME freight and state restrictions START */
+    /** cdw freight and state restrictions START */
     var restrictedShippingMethods =[];
     if (currentBasket && shipment && shipment.shippingAddress){       
         if(isCartContainingFreight(currentBasket)){
@@ -65,7 +65,7 @@ function getApplicableShippingMethods(shipment, address) {
             }
         }
     });
-    /** ACME freight and state restrictions END */
+    /** cdw freight and state restrictions END */
     return filteredMethods;
 }
 

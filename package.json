@@ -1,7 +1,7 @@
 {
-  "name": "app_acme_core",
+  "name": "app_cdw_core",
   "version": "1.0.0",
-  "description": "Acme Tools Custom",
+  "description": "cdw Tools Custom",
   "main": "index.js",
   "engines": {
     "node": ">=4.0"
@@ -33,9 +33,9 @@
     "build:isml": "./node_modules/.bin/isml-linter --build",
     "fix:isml": "./node_modules/.bin/isml-linter --autofix",
     "upload": "sgmf-scripts --upload",
-    "uploadCartridge": "sgmf-scripts --uploadCartridge app_acme_core && sgmf-scripts --uploadCartridge sfra_giftcert",
-    "cjs": "sgmf-scripts --compile js && sgmf-scripts --uploadCartridge app_acme_core && sgmf-scripts --uploadCartridge sfra_giftcert",
-    "cscss": "sgmf-scripts --compile css && sgmf-scripts --uploadCartridge app_acme_core && sgmf-scripts --uploadCartridge sfra_giftcert",
+    "uploadCartridge": "sgmf-scripts --uploadCartridge app_cdw_core && sgmf-scripts --uploadCartridge sfra_giftcert",
+    "cjs": "sgmf-scripts --compile js && sgmf-scripts --uploadCartridge app_cdw_core && sgmf-scripts --uploadCartridge sfra_giftcert",
+    "cscss": "sgmf-scripts --compile css && sgmf-scripts --uploadCartridge app_cdw_core && sgmf-scripts --uploadCartridge sfra_giftcert",
     "watch": "sgmf-scripts --watch",
     "watch:static": "sgmf-scripts --watch static",
     "release": "node bin/Makefile release --"
@@ -118,17 +118,17 @@
     "ie >= 10"
   ],
   "paths": {
-    "base": "../acmetools-sf/cartridges/app_storefront_base/",
-    "acme": "../acmetools-sf/cartridges/app_acme_core/",
-    "gift_cert": "../acmetools-sf/cartridges/sfra_giftcert/",
-    "instorepickup": "../acmetools-sf/cartridges/plugin_instorepickup/",
-    "product_compare": "../acmetools-sf/cartridges/plugin_productcompare/",
-    "cartridge_merge": "../acmetools-sf/cartridges/plugin_cartridge_merge/",
-    "wishlist": "../acmetools-sf/cartridges/plugin_wishlists/",
-    "int_paypal": "../acmetools-sf/cartridges/int_paypal/"
+    "base": "../SFRA-CDW/cartridges/app_storefront_base/",
+    "cdw": "../SFRA-CDW/cartridges/app_cdw_core/",
+    "gift_cert": "../SFRA-CDW/cartridges/sfra_giftcert/",
+    "instorepickup": "../SFRA-CDW/cartridges/plugin_instorepickup/",
+    "product_compare": "../SFRA-CDW/cartridges/plugin_productcompare/",
+    "cartridge_merge": "../SFRA-CDW/cartridges/plugin_cartridge_merge/",
+    "wishlist": "../SFRA-CDW/cartridges/plugin_wishlists/",
+    "int_paypal": "../SFRA-CDW/cartridges/int_paypal/"
   },
   "packageName": [
-    "app_acme_core"
+    "app_cdw_core"
   ],
   "babel": {
     "presets": [

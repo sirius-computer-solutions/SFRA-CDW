@@ -20,10 +20,10 @@
         <div class="row">
             <div class="col-12">
                 <div class="shop-by-brand-carousel">
-                    <div id="shopByBrandCarousel" class="acme-carousel" data-column-count-by-width='{"0": 2,"750": 3,"1200": 6}' data-interval="false">
-                        <div class="acme-carousel-inner">
+                    <div id="shopByBrandCarousel" class="cdw-carousel" data-column-count-by-width='{"0": 2,"750": 3,"1200": 6}' data-interval="false">
+                        <div class="cdw-carousel-inner">
                             <isloop items="${pdict.categories}" var="category">
-                                <div class='acme-carousel-item' >
+                                <div class='cdw-carousel-item' >
                                     <isif condition="${category.custom.alternativeUrl}">
                                         <isset name="altURL" value="${category.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
                                         <isif condition="${altURL.includes('?')}">

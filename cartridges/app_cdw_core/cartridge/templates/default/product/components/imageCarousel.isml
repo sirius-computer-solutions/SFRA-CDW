@@ -1,8 +1,8 @@
 <div class="primary-images pdp-image col-12 col-md-5 px-0">
-    <div id="pdpCarousel-${product.id}" class="pdp-carousel acme-carousel slide" data-column-count-by-width='{"0": 1}' data-interval="0" data-prev="${Resource.msg('button.previous', 'common', null)}" data-next="${Resource.msg('button.next', 'common', null)}">
-        <div class="acme-carousel-inner">
+    <div id="pdpCarousel-${product.id}" class="pdp-carousel cdw-carousel slide" data-column-count-by-width='{"0": 1}' data-interval="0" data-prev="${Resource.msg('button.previous', 'common', null)}" data-next="${Resource.msg('button.next', 'common', null)}">
+        <div class="cdw-carousel-inner">
             <isloop items="${product.images['large']}" var="image" status="loopStatus">
-                <div class='acme-carousel-item <isif condition="${loopStatus.index == 0}">active</isif>'>
+                <div class='cdw-carousel-item <isif condition="${loopStatus.index == 0}">active</isif>'>
                     <a href="${"#"}full-${image.index}" data-toggle="modal" data-target='${"#"}full-${image.index}'><img data-src="${image.url}" class="d-block img-fluid mx-auto" alt="${image.alt} image number ${image.index}" itemprop="image" onerror="this.src='${URLUtils.staticURL('/images/img-na.png')}'" /></a>
                 </div>
                 <div class="modal" tabindex="-1" role="dialog" id='full-${image.index}'>
@@ -23,7 +23,7 @@
                 </div>
             </isloop>
             <isloop items="${product.video}" var="video" status="loopStatus">
-                <div class='acme-carousel-item '>
+                <div class='cdw-carousel-item '>
                 
                     <iframe width="560" height="315" src="${video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -39,15 +39,15 @@
             <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
         </a>
     </div>
-    <div class="carousel-indicators acme-carousel" data-column-count-by-width='{"0": 5}'>
-        <div class="acme-carousel-inner">
+    <div class="carousel-indicators cdw-carousel" data-column-count-by-width='{"0": 5}'>
+        <div class="cdw-carousel-inner">
             <isloop items="${product.images['large']}" var="image" status="loopStatus">
-                <div class='acme-carousel-item'>
+                <div class='cdw-carousel-item'>
                     <img data-src="${image.url}" alt="${image.alt}" data-slide-to="${loopStatus.index}"  onerror="this.src='${URLUtils.staticURL('/images/img-na.png')}'" />
                 </div>
             </isloop>
             <isloop items="${product.video}" var="image" status="loopStatus">
-                <div class='acme-carousel-item'>
+                <div class='cdw-carousel-item'>
                     <isif condition="${image.toLowerCase().indexOf('youtube')!=-1}">
                         <isset name="videoId" value="" scope="page"/>
                         <isif condition="${image.toLowerCase().indexOf('?v=')!=-1}">

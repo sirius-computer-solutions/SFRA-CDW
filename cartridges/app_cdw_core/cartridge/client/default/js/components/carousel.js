@@ -61,13 +61,13 @@ function getCarouselState($carousel) {
         if(carouselState.itemsToDisplay != carouselState.columnCount){
             carouselState.carouselPosition=0;
             if(carouselState.rowCount){
-                $carousel.find('.acme-carousel-row > .acme-carousel-item').unwrap();
+                $carousel.find('.cdw-carousel-row > .cdw-carousel-item').unwrap();
                 var maxItemsInRow = carouselState.rowCount * carouselState.itemsToDisplay;
                 var $div;
 
                 for(var i=0; i<$carouselItems.length; i++){
                     if(i%maxItemsInRow === 0){
-                        $div = $("<div class='acme-carousel-row'></div>");
+                        $div = $("<div class='cdw-carousel-row'></div>");
                         $carousel.find(_CAROUSEL_INNER_SELECTOR).append($div);
                     }
                     $($carouselItems[i]).appendTo($div);
@@ -291,15 +291,15 @@ const _DATA_COLUMN_COUNT = 'column-count';
 const _DATA_CAROUSEL_POSITION = 'carousel-position';
 const _DATA_ITEMS_COUNT = 'items-count';
 const _DATA_ROW_COUNT = 'row-count';
-const _CAROUSEL_SELECTOR = '.acme-carousel';
-const _UNINITIALIZED_CAROUSEL_SELECTOR = '.acme-carousel:not(.initialized)';
-const _CAROUSEL_INNER_SELECTOR = '.acme-carousel-inner';
-const _CAROUSEL_ITEM_SELECTOR = '.acme-carousel-inner > .acme-carousel-item, .acme-carousel-row > .acme-carousel-item';
-const _CAROUSEL_ROWS_SELECTOR = '.acme-carousel-row';
-const _CAROUSEL_INDICATOR_SELECTOR = '.acme-carousel .carousel-indicators, .acme-carousel + .carousel-indicators';
-const _CAROUSEL_INACTIVE_ITEMS_SELECTOR = '.acme-carousel-inner > .acme-carousel-item:not(.active), .acme-carousel-row > .acme-carousel-item:not(.active)';
-const _CAROUSEL_NEXT_SELECTOR = '.acme-carousel .carousel-control-next';
-const _CAROUSEL_PREV_SELECTOR = '.acme-carousel .carousel-control-prev';
+const _CAROUSEL_SELECTOR = '.cdw-carousel';
+const _UNINITIALIZED_CAROUSEL_SELECTOR = '.cdw-carousel:not(.initialized)';
+const _CAROUSEL_INNER_SELECTOR = '.cdw-carousel-inner';
+const _CAROUSEL_ITEM_SELECTOR = '.cdw-carousel-inner > .cdw-carousel-item, .cdw-carousel-row > .cdw-carousel-item';
+const _CAROUSEL_ROWS_SELECTOR = '.cdw-carousel-row';
+const _CAROUSEL_INDICATOR_SELECTOR = '.cdw-carousel .carousel-indicators, .cdw-carousel + .carousel-indicators';
+const _CAROUSEL_INACTIVE_ITEMS_SELECTOR = '.cdw-carousel-inner > .cdw-carousel-item:not(.active), .cdw-carousel-row > .cdw-carousel-item:not(.active)';
+const _CAROUSEL_NEXT_SELECTOR = '.cdw-carousel .carousel-control-next';
+const _CAROUSEL_PREV_SELECTOR = '.cdw-carousel .carousel-control-prev';
 const _NEXT_ICON_CLASS = 'carousel-control-next';
 const _PREV_ICON_CLASS = 'carousel-control-prev';
 const _CAROUSEL_INDICATORS_CLASS = 'carousel-indicators';
@@ -323,6 +323,6 @@ var _isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navi
 module.exports = function () {
     $(function () {
         initialize()
-        $(document).on("acme-carousel:init", _UNINITIALIZED_CAROUSEL_SELECTOR, initialize);
+        $(document).on("cdw-carousel:init", _UNINITIALIZED_CAROUSEL_SELECTOR, initialize);
     });
 };

@@ -3,7 +3,7 @@
 var Site = require('dw/system/Site');
 
 var base = module.superModule;
-let customAttrAcmeToolsSalesTaxCode = 'w1taxcd';
+let customAttrCDWStarterStoreSalesTaxCode = 'w1taxcd';
 
 /**
  * Helper for Vertex service
@@ -30,9 +30,9 @@ Helper.prototype = {
                 product = productWrap.product;
             }
             if(product.custom && "w1taxcd" in product.custom){
-                productClass = product.custom[customAttrAcmeToolsSalesTaxCode];
+                productClass = product.custom[customAttrCDWStarterStoreSalesTaxCode];
             } else {
-                productClass = Site.current.getCustomPreferenceValue('acmeToolsDefaultSalesTaxCode') || "";
+                productClass = Site.current.getCustomPreferenceValue('cdwToolsDefaultSalesTaxCode') || "";
             } 
         }
 

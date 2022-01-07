@@ -63,8 +63,8 @@ function getStores(radius, postalCode, lat, long, geolocation, showMap, url, pro
     if(products){
         products.forEach(function(currentProduct){     
             var product = ProductMgr.getProduct(currentProduct.id);
-            if(product != null && product.custom && "acme-tools-heavy-equipment" in product.custom) {
-                if (product.custom["acme-tools-heavy-equipment"] == 'true' || product.custom["acme-tools-heavy-equipment"] == 'Yes' || product.custom["acme-tools-heavy-equipment"] === true || product.custom["acme-tools-heavy-equipment"] == 'Y') {
+            if(product != null && product.custom && "cdw-tools-heavy-equipment" in product.custom) {
+                if (product.custom["cdw-tools-heavy-equipment"] == 'true' || product.custom["cdw-tools-heavy-equipment"] == 'Yes' || product.custom["cdw-tools-heavy-equipment"] === true || product.custom["cdw-tools-heavy-equipment"] == 'Y') {
                     isHeavyEquipmentCategory=true;
                 }
             }

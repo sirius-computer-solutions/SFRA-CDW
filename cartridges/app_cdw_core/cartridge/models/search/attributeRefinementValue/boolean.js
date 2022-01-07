@@ -96,8 +96,8 @@ function BooleanRefinementValueWrapper(productSearch, refinementDefinition, refi
 
     this.pageUrl = new BooleanAttributeValue(productSearch, refinementDefinition, refinementValue, httpParams, oci).pageUrl;    
 
-    if(refinementDefinition.attributeID == 'acme-tools-brand-name' && productSearch.categorySearch  && !value.selected) {
-        // if (!empty(httpParams.preferences) && 'acme-tools-brand-name' in httpParams.preferences && productSearch.categorySearch) { // This is from the SEO Direct link or refresh of the page after the brand filters selected
+    if(refinementDefinition.attributeID == 'cdw-tools-brand-name' && productSearch.categorySearch  && !value.selected) {
+        // if (!empty(httpParams.preferences) && 'cdw-tools-brand-name' in httpParams.preferences && productSearch.categorySearch) { // This is from the SEO Direct link or refresh of the page after the brand filters selected
         //     var catId = productSearch.category.ID;
         //     if(catId == "categories") {
         //        oci = categoryHelper.getGeneratedKeyWithFilters(httpParams).toString().replace(/ /g, '-' ).toLowerCase();

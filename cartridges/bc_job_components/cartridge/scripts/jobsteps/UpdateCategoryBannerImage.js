@@ -47,7 +47,7 @@ var StepUtil = require('~/cartridge/scripts/util/StepUtil');
         var altURLStr = category.custom.alternativeUrl.source;
         var refinenementStringArr = Site.current.getCustomPreferenceValue('refinementKeyUpdateBannerImage');
 
-        //$url('Search-Show','cgid','Outdoor Power Equipment','prefn1','acme-tools-brand-name','prefv1','EGO')$  
+        //$url('Search-Show','cgid','Outdoor Power Equipment','prefn1','cdw-tools-brand-name','prefv1','EGO')$  
         //BBelow logic for Preferencs  
         if(!empty(refinenementStringArr)){
             for(var i=0;i<refinenementStringArr.length;i++) {

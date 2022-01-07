@@ -2,7 +2,7 @@
 <!-- Edited with Altova MapForce 2021r3 -->
 <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="31">
 	<settings>
-		<deployment path="/public/Acme/product-full-load.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
+		<deployment path="/public/cdw/product-full-load.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
 	</settings>
 	<resources/>
 	<component name="defaultmap" uid="1" editable="1">
@@ -133,7 +133,7 @@
 					</targets>
 					<view ltx="1355" lty="325" rbx="1490" rby="341"/>
 					<data>
-						<constant value="acme-catalog-m-en" datatype="string"/>
+						<constant value="cdw-catalog-m-en" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="46" kind="2">
@@ -193,7 +193,7 @@
 						</root>
 					</data>
 				</component>
-				<component name="is-attr-acme-tools-brand-name" library="user" uid="577" kind="19" visible="0">
+				<component name="is-attr-cdw-tools-brand-name" library="user" uid="577" kind="19" visible="0">
 					<view ltx="1306" lty="615" rbx="1427" rby="632"/>
 					<data>
 						<root>
@@ -901,7 +901,7 @@
 													<entry name="attribute-id" type="attribute">
 														<inputnodefunctions>
 															<rule applyto="self">
-																<default value="acme-tools-brand-name-2"/>
+																<default value="cdw-tools-brand-name-2"/>
 															</rule>
 														</inputnodefunctions>
 													</entry>
@@ -1112,7 +1112,7 @@
 						<parameter usageKind="input" name="countryCodesFilePath"/>
 					</data>
 				</component>
-				<component name="acme_product_feed" library="json" uid="4" kind="31">
+				<component name="cdw_product_feed" library="json" uid="4" kind="31">
 					<properties XSLTTargetEncoding="UTF-8" DynamicFilenames="1"/>
 					<view ltx="-19" lty="-29" rbx="276" rby="776"/>
 					<data>
@@ -1254,30 +1254,30 @@
 																	<entry name="Package Weight" type="json-property" expanded="1">
 																		<entry name="string" outkey="479"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Category" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Category" type="json-property" expanded="1">
 																		<entry name="string" outkey="481"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Category Name" type="json-property" expanded="1"/>
-																	<entry name="Acme Tools Salesforce Sub-Category 1" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Category Name" type="json-property" expanded="1"/>
+																	<entry name="cdw Tools Salesforce Sub-Category 1" type="json-property" expanded="1">
 																		<entry name="string" outkey="482"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 1 Name" type="json-property" expanded="1"/>
-																	<entry name="Acme Tools Salesforce Sub-Category 2" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 1 Name" type="json-property" expanded="1"/>
+																	<entry name="cdw Tools Salesforce Sub-Category 2" type="json-property" expanded="1">
 																		<entry name="string" outkey="483"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 2 Name" type="json-property" expanded="1"/>
-																	<entry name="Acme Tools Salesforce Sub-Category 3" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 2 Name" type="json-property" expanded="1"/>
+																	<entry name="cdw Tools Salesforce Sub-Category 3" type="json-property" expanded="1">
 																		<entry name="string" outkey="484"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 3 Name" type="json-property" expanded="1"/>
-																	<entry name="Acme Tools Salesforce Sub-Category 4" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 3 Name" type="json-property" expanded="1"/>
+																	<entry name="cdw Tools Salesforce Sub-Category 4" type="json-property" expanded="1">
 																		<entry name="string" outkey="496"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 4 Name" type="json-property" expanded="1"/>
-																	<entry name="Acme Tools Salesforce Sub-Category 5" type="json-property" expanded="1">
+																	<entry name="cdw Tools Salesforce Sub-Category 4 Name" type="json-property" expanded="1"/>
+																	<entry name="cdw Tools Salesforce Sub-Category 5" type="json-property" expanded="1">
 																		<entry name="string" outkey="497"/>
 																	</entry>
-																	<entry name="Acme Tools Salesforce Sub-Category 5 Name" type="json-property" expanded="1"/>
+																	<entry name="cdw Tools Salesforce Sub-Category 5 Name" type="json-property" expanded="1"/>
 																	<entry name="Country of Origin" type="json-property" expanded="1">
 																		<entry name="string" outkey="485"/>
 																	</entry>
@@ -1294,7 +1294,7 @@
 								</entry>
 							</entry>
 						</root>
-						<json schema="schema\acme_product_feed.schema.json" inputinstance="input-product-feed-Z.json"/>
+						<json schema="schema\cdw_product_feed.schema.json" inputinstance="input-product-feed-Z.json"/>
 					</data>
 				</component>
 				<component name="input" library="core" uid="689" kind="6">
@@ -3342,7 +3342,7 @@
 					</targets>
 					<view ltx="240" lty="393" rbx="398" rby="410"/>
 					<data>
-						<constant value="Acme Tools Salesforce Category" datatype="string"/>
+						<constant value="cdw Tools Salesforce Category" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="666" kind="2">
@@ -3351,7 +3351,7 @@
 					</targets>
 					<view ltx="222" lty="484" rbx="380" rby="501"/>
 					<data>
-						<constant value="Acme Tools Salesforce Sub-Category" datatype="string"/>
+						<constant value="cdw Tools Salesforce Sub-Category" datatype="string"/>
 					</data>
 				</component>
 				<component name="attr_id" library="core" uid="659" kind="6">
@@ -3804,7 +3804,7 @@
 			<edge from="32" to="41"/>
 		</connections>
 	</component>
-	<component name="is-attr-acme-tools-brand-name" library="user" uid="567" inline="1" editable="1">
+	<component name="is-attr-cdw-tools-brand-name" library="user" uid="567" inline="1" editable="1">
 		<structure>
 			<children>
 				<component name="constant" library="core" uid="575" kind="2">
@@ -3822,7 +3822,7 @@
 					</targets>
 					<view ltx="238" lty="305" rbx="406" rby="322"/>
 					<data>
-						<constant value="acme-tools-brand-name" datatype="string"/>
+						<constant value="cdw-tools-brand-name" datatype="string"/>
 					</data>
 				</component>
 				<component name="equal" library="core" uid="574" kind="5">

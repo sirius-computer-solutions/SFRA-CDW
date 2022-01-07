@@ -2,7 +2,7 @@
 
 var LocalServiceRegistry = require('dw/svc/LocalServiceRegistry');
 var Logger = require('dw/system/Logger');
-var IntegrationConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+var IntegrationConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
 var errorLogger = require('dw/system/Logger').getLogger(IntegrationConstants.INTEGRATION_ERROR_FILE,"gogoeCaptcha");
 
 

@@ -144,7 +144,7 @@ function addToCart() {
         addToCartUrl = getAddToCartUrl();
         if(addToCartUrl == null || addToCartUrl == undefined)
         {
-            addToCartUrl = '/on/demandware.store/Sites-AcmeTools-Site/en_US/Cart-AddProduct';
+            addToCartUrl = '/on/demandware.store/Sites-CDWStarterStore-Site/en_US/Cart-AddProduct';
         }
 
         var qty = getQuantitySelected($(this));
@@ -175,7 +175,7 @@ function addToCart() {
 
         if(quantityValidationUrl == null || quantityValidationUrl == undefined)
         {
-            quantityValidationUrl = '/on/demandware.store/Sites-AcmeTools-Site/en_US/Product-ValidateQty';
+            quantityValidationUrl = '/on/demandware.store/Sites-CDWStarterStore-Site/en_US/Product-ValidateQty';
         }
         quantityValidationUrl = quantityValidationUrl + quantityValidationparams;
 
@@ -630,7 +630,7 @@ function updateOptions(optionsHtml, $productContainer) {
 }
 
 function selectAttribute() {
-    $(document).on('change', 'select[class*="acme-"], .options-select', function (e) {
+    $(document).on('change', 'select[class*="cdw-"], .options-select', function (e) {
         e.preventDefault();
         var $productContainer = $(this).closest('.set-item');
         if (!$productContainer.length) {

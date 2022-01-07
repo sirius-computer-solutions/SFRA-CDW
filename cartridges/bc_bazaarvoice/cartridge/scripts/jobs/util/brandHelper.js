@@ -19,10 +19,10 @@ function getBrandList() {
 
     var refinements = psm.getRefinements();
 
-    // ACME Customization :: BEGIN
+    // cdw Customization :: BEGIN
     //var brandVals = refinements.getAllRefinementValues('brand');
-    var brandVals = refinements.getAllRefinementValues('acme-tools-brand-name');
-    // ACME Customization :: END
+    var brandVals = refinements.getAllRefinementValues('cdw-tools-brand-name');
+    // cdw Customization :: END
     if (!brandVals.empty) {
         brands = new ArrayList(brandVals);
         Logger.debug('Brand refinement values found: ' + brands.length);

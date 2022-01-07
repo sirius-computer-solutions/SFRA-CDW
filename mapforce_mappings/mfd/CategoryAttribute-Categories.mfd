@@ -12,7 +12,7 @@
 					</targets>
 					<view ltx="620" lty="-5" rbx="760" rby="12"/>
 					<data>
-						<constant value="acme-catalog-m-en" datatype="string"/>
+						<constant value="cdw-catalog-m-en" datatype="string"/>
 					</data>
 				</component>
 				<component name="exists" library="core" uid="186" kind="5">

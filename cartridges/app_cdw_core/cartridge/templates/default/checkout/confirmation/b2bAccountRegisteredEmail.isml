@@ -49,7 +49,7 @@
                                                          </p>
 
                                                         <p>${Resource.msg('user.registration.email.customerSupport', 'b2bUserRegistration', null)}<br>
-                                                            <a href="https://www.acmetools.com">acmetools.com</a>
+                                                            <a href="https://www.cdw.com">cdw.com</a>
                                                         </p>
                                                     </td>
                                                 </tr>

@@ -2,7 +2,7 @@
 
 /* API Includes */
 var Logger = require('dw/system/Logger').getLogger('Fedex', 'service');
-var IntegrationConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+var IntegrationConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
 var errorLogger = require('dw/system/Logger').getLogger(IntegrationConstants.INTEGRATION_ERROR_FILE,"fedex");
 
 var LocalServiceRegistry = require('dw/svc/LocalServiceRegistry');

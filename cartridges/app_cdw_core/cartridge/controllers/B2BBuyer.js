@@ -23,7 +23,7 @@ var validationHelper = require('*/cartridge/scripts/helpers/validationHelper');
     var profiles = [];
     var result = [];
     
-    // Fix for ACME-1644
+    // Fix for cdw-1644
     if (b2bAccountNumber !== null && !empty(b2bAccountNumber)) {
         profiles = CustomerMgr.queryProfiles('custom.b2bAccountNumber = {0}', 'creationDate asc', b2bAccountNumber).asList().toArray();
     

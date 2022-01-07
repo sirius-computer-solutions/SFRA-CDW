@@ -55,15 +55,15 @@ module.exports = function (object, product, config) {
     var contentBannerAssetIds;
     var displayCommonBanner = false;
 
-    var acmePartnumber = "";
+    var cdwPartnumber = "";
     
     if('custom' in product && product.custom)
     {
-        if('acme-tools-utube-video-1---url' in product.custom && product.custom['acme-tools-utube-video-1---url']!=null){
-            videoURLs.add(product.custom['acme-tools-utube-video-1---url']);
+        if('cdw-tools-utube-video-1---url' in product.custom && product.custom['cdw-tools-utube-video-1---url']!=null){
+            videoURLs.add(product.custom['cdw-tools-utube-video-1---url']);
         }
-        if('acme-tools-utube-video-2---url' in product.custom && product.custom['acme-tools-utube-video-2---url']!=null){
-            videoURLs.add(product.custom['acme-tools-utube-video-2---url']);
+        if('cdw-tools-utube-video-2---url' in product.custom && product.custom['cdw-tools-utube-video-2---url']!=null){
+            videoURLs.add(product.custom['cdw-tools-utube-video-2---url']);
         }
         if('assembly-instruction-video-link---url' in product.custom && product.custom['assembly-instruction-video-link---url']!=null){
             videoURLs.add(product.custom['assembly-instruction-video-link-url']);
@@ -105,9 +105,9 @@ module.exports = function (object, product, config) {
         {
             buyable = false;
         }  
-        if( 'acme-tools-brand-name' in product.custom)
+        if( 'cdw-tools-brand-name' in product.custom)
         {
-            productBrandName = product.custom['acme-tools-brand-name'];
+            productBrandName = product.custom['cdw-tools-brand-name'];
         }    
 
         if(!empty(product.manufacturerSKU))
@@ -126,16 +126,16 @@ module.exports = function (object, product, config) {
         {
             displayCommonBanner = product.custom['displayCommonBanner'];
         }  
-        if( 'acme-tools-part-number' in product.custom)
+        if( 'cdw-tools-part-number' in product.custom)
         {
-            acmePartnumber = product.custom['acme-tools-part-number'];
+            cdwPartnumber = product.custom['cdw-tools-part-number'];
         }          
         
     }
         
-    Object.defineProperty(object, 'acmePartnumber', {
+    Object.defineProperty(object, 'cdwPartnumber', {
         enumerable: true,
-        value: acmePartnumber
+        value: cdwPartnumber
     });
 
     Object.defineProperty(object, 'video', {

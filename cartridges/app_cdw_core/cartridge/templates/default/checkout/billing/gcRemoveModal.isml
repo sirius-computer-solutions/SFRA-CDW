@@ -17,7 +17,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-primary gc-delete-cancel-btn" data-dismiss="modal">${Resource.msg('button.cancel','cart',null)}</button>
                 <button type="button" class="btn btn-primary gc-delete-confirmation-btn"
-                        data-dismiss="modal" data-action="/on/demandware.store/Sites-AcmeTools-Site/en_US/GiftCertificate-Remove" >
+                        data-dismiss="modal" data-action="/on/demandware.store/Sites-CDWStarterStore-Site/en_US/GiftCertificate-Remove" >
                     ${Resource.msg('button.confirm','cart',null)}
                 </button>
             </div>

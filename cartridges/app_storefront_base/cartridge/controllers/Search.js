@@ -178,7 +178,7 @@ server.get('Show', cache.applyShortPromotionSensitiveCache, consentTracking.cons
 
     var redirectGridUrl = searchHelper.backButtonDetection(req.session.clickStream);
     if (redirectGridUrl) {
-        // decodeURIComponent() fix for ACME-1606 (issue-1)
+        // decodeURIComponent() fix for cdw-1606 (issue-1)
         res.redirect(decodeURIComponent(redirectGridUrl));
     }
 

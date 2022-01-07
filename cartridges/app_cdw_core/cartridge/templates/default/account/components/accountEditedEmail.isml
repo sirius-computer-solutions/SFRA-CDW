@@ -46,7 +46,7 @@
                                                             ${Resource.msg('user.profile.update.email.content4', 'account', null)}<br><br><br>
                                                             ${Resource.msg('user.profile.update.email.content5', 'account', null)}<br><br><br>
                                                             ${Resource.msg('user.profile.update.email.content6', 'account', null)}<br><br><br>
-                                                            ${Resource.msg('user.profile.update.email.content7', 'account', null)}<br><a href="https://www.acmetools.com">acmetools.com</a>     <br><br><br>
+                                                            ${Resource.msg('user.profile.update.email.content7', 'account', null)}<br><a href="https://www.cdw.com">cdw.com</a>     <br><br><br>
                                                     </td>
                                                 </tr>
                                                 

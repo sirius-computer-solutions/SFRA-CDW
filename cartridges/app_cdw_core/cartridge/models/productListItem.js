@@ -38,9 +38,9 @@ var base = module.superModule;
         this.productListItem.maxOrderQuantity = maxOrderQty;
     }
 
-    if(productListItemObject.product && 'custom' in productListItemObject.product && 'acme-tools-brand-name' in productListItemObject.product.custom)
+    if(productListItemObject.product && 'custom' in productListItemObject.product && 'cdw-tools-brand-name' in productListItemObject.product.custom)
     {
-        this.productListItem.productBrandName = productListItemObject.product.custom['acme-tools-brand-name'];
+        this.productListItem.productBrandName = productListItemObject.product.custom['cdw-tools-brand-name'];
     }
 
     if(!empty(productListItemObject.product.manufacturerSKU)) {

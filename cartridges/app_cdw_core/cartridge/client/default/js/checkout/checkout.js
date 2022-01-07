@@ -300,7 +300,7 @@ var scrollAnimate = require('base/components/scrollAnimate');
                         data: paymentForm,
                         success: function (data) {
                              
-                            // ACME-335: Empty value on PayPal dropdown when user selects New Paypal
+                            // cdw-335: Empty value on PayPal dropdown when user selects New Paypal
                             // payment during Submit Payment
                             if(data.order && data.order.paypalPayerEmail){
                                 var paypalEmail = data.order.paypalPayerEmail;

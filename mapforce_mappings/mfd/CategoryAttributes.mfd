@@ -2,7 +2,7 @@
 <!-- Edited with Altova MapForce 2021r3 -->
 <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="31">
 	<settings>
-		<deployment path="/public/Acme/CategoryProperties.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
+		<deployment path="/public/cdw/CategoryProperties.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
 	</settings>
 	<resources/>
 	<component name="defaultmap" uid="1" editable="1">
@@ -220,7 +220,7 @@
 					</targets>
 					<view ltx="833" lty="12" rbx="973" rby="29"/>
 					<data>
-						<constant value="acme-catalog-m-en" datatype="string"/>
+						<constant value="cdw-catalog-m-en" datatype="string"/>
 					</data>
 				</component>
 				<component name="Cells" library="core" uid="86" kind="3">
@@ -368,7 +368,7 @@
 					</targets>
 					<view ltx="412" lty="1036" rbx="565" rby="1053"/>
 					<data>
-						<constant value="AcmeProductManuals" datatype="string"/>
+						<constant value="cdwProductManuals" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="269" kind="2">
@@ -441,7 +441,7 @@
 					</targets>
 					<view ltx="423" lty="968" rbx="566" rby="985"/>
 					<data>
-						<constant value="AcmeFeatureBullets" datatype="string"/>
+						<constant value="cdwFeatureBullets" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="33" kind="2">
@@ -680,7 +680,7 @@
 					</targets>
 					<view ltx="3064" lty="220" rbx="3207" rby="237"/>
 					<data>
-						<constant value="AcmeFeatureBullets" datatype="string"/>
+						<constant value="cdwFeatureBullets" datatype="string"/>
 					</data>
 				</component>
 				<component name="string-compare-ignore-case" library="lang" uid="291" kind="5">
@@ -919,7 +919,7 @@
 					</targets>
 					<view ltx="648" lty="247" rbx="791" rby="264"/>
 					<data>
-						<constant value="AcmeFeatureBullets" datatype="string"/>
+						<constant value="cdwFeatureBullets" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="31" kind="2">
@@ -946,7 +946,7 @@
 					</targets>
 					<view ltx="661" lty="403" rbx="814" rby="420"/>
 					<data>
-						<constant value="AcmeProductManuals" datatype="string"/>
+						<constant value="cdwProductManuals" datatype="string"/>
 					</data>
 				</component>
 				<component name="catalog" library="xml" uid="3" kind="14">
@@ -1438,7 +1438,7 @@
 					</targets>
 					<view ltx="425" lty="20" rbx="567" rby="37"/>
 					<data>
-						<constant value="AcmeFeatureBullets" datatype="string"/>
+						<constant value="cdwFeatureBullets" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="41" kind="2">
@@ -1589,7 +1589,7 @@
 					</targets>
 					<view ltx="162" lty="241" rbx="321" rby="258"/>
 					<data>
-						<constant value="Acme Tools Override Feature - Benefit Bullet" datatype="string"/>
+						<constant value="cdw Tools Override Feature - Benefit Bullet" datatype="string"/>
 					</data>
 				</component>
 				<component name="constant" library="core" uid="271" kind="2">
@@ -1650,7 +1650,7 @@
 					</targets>
 					<view ltx="212" lty="61" rbx="365" rby="78"/>
 					<data>
-						<constant value="AcmeProductManuals" datatype="string"/>
+						<constant value="cdwProductManuals" datatype="string"/>
 					</data>
 				</component>
 				<component name="contains" library="core" uid="51" kind="5">

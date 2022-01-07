@@ -4,7 +4,7 @@ var base = module.superModule;
 var Resource = require('dw/web/Resource');
 var collections = require('*/cartridge/scripts/util/collections');
 var formatCurrency = require('*/cartridge/scripts/util/formatting').formatCurrency;
-var OrderConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+var OrderConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
 
 /**
  * Parse the S2K Order response and constructs the order object similar to OOTB to display the order details
@@ -391,7 +391,7 @@ function getS2KOrderDetailsFromResponse(s2korderDetailsResponse) {
                 var origPrd = ProductMgr.getProduct(order.itemNumber)
                 if(!empty(origPrd)) {
                     var prdImages = origPrd.getImages("small");
-                    // firstLineItem.imageURL = "/on/demandware.static/-/Sites-acme-catalog-m-en/default/dw021a8404/images/images/catalog/products/full/E74327FC-1A65-40FC-B683-AD15607E061C.jpg";
+                    // firstLineItem.imageURL = "/on/demandware.static/-/Sites-cdw-catalog-m-en/default/dw021a8404/images/images/catalog/products/full/E74327FC-1A65-40FC-B683-AD15607E061C.jpg";
                     firstLineItem.imageURL = prdImages && prdImages.length > 0 && prdImages[0].url ? prdImages[0].url:"";
                     firstLineItem.alt = origPrd.shortDescription+",small";
                     firstLineItem.title = origPrd.shortDescription+" ";

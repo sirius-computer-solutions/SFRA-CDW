@@ -1,5 +1,5 @@
 <form action="${pdict.actionUrl}" class="login" method="POST" name="login-form">
-<p>If you have an Acme Tools account, please sign in below.</p>
+<p>If you have an cdw Tools account, please sign in below.</p>
     <div class="form-group required">
         <label class="form-control-label" for="login-form-email">
             ${Resource.msg('label.input.logonId.profile', 'account', null)}

@@ -5,10 +5,10 @@ const ServiceCredential = require('dw/svc/ServiceCredential');
 const LocalServiceRegistry = require('dw/svc/LocalServiceRegistry');
 const Resource = require('dw/web/Resource');
 
-var s2kConstants = require('/app_acme_core/cartridge/scripts/utils/s2kServiceConstants').getConstants();
+var s2kConstants = require('/app_cdw_core/cartridge/scripts/utils/s2kServiceConstants').getConstants();
 const tokenCache = require('dw/system/CacheMgr').getCache(s2kConstants.AUTHORIZATION_TOKEN_CACHE_LOOKUP_ID);
 
-var IntegrationConstants = require('/app_acme_core/cartridge/scripts/utils/acmeConstants').getConstants();
+var IntegrationConstants = require('/app_cdw_core/cartridge/scripts/utils/cdwConstants').getConstants();
 var errorLogger = require('dw/system/Logger').getLogger(IntegrationConstants.INTEGRATION_ERROR_FILE,"s2k");
 
 

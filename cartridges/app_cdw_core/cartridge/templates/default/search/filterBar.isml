@@ -10,7 +10,7 @@
             </li>
         <iselse/>
         
-            <isset name="hideRefinmentsList" value="${(dw.system.Site.getCurrent().getCustomPreferenceValue('hideRefinmentsCategoryNameList')||'Categories,Acme  StoreFront Catalog').split(',')}" scope="page"/>
+            <isset name="hideRefinmentsList" value="${(dw.system.Site.getCurrent().getCustomPreferenceValue('hideRefinmentsCategoryNameList')||'Categories,cdw  StoreFront Catalog').split(',')}" scope="page"/>
             <isif condition="${hideRefinmentsList.indexOf(refinement.displayValue)=== -1}">
                 <li class="filter-value">
                     <a data-href="${refinement.url}" class="btn text-left">

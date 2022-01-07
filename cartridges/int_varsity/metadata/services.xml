@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
     <service-credential service-credential-id="Varsity_Credentials">
-        <url>https://portal.acmetools.com:8523/rest/vtransit/</url>
+        <url>https://portal.cdw.com:8523/rest/vtransit/</url>
         <user-id>1234</user-id>
         <password masked="true"></password>
     </service-credential>

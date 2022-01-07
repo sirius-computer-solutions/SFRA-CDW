@@ -25,7 +25,7 @@
             '@type': 'BreadcrumbList',
             itemListElement: []
         };
-        var siteHostName = Site.current.getCustomPreferenceValue('siteHostName') || 'https://www.acmetools.com';
+        var siteHostName = Site.current.getCustomPreferenceValue('siteHostName') || 'https://www.cdw.com';
         collections.forEach(pdict.breadcrumbs, function (breadcrumb, index) {       
             var urlBreadcrumb = breadcrumb.url.toString();
             if(!urlBreadcrumb.startsWith('http') && !empty(urlBreadcrumb))

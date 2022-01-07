@@ -58,7 +58,7 @@ function getRefinements(productSearch, refinements, refinementDefinitions, oci, 
         var originalCategory = CatalogMgr.getCategory(oci); 
 
         if(!empty(originalCategory) && !empty(originalCategory.custom) && "notToDisplayBrandFilter" in originalCategory.custom && originalCategory.custom.notToDisplayBrandFilter) {
-            attributesNotToDisplayList.add("acme-tools-brand-name");
+            attributesNotToDisplayList.add("cdw-tools-brand-name");
         }
     }
     /**Logic to check if the ALT URL is done and if if it is alt url, then check if we need to exclude the Brand filter to display END */
@@ -147,7 +147,7 @@ function getShowMoreUrl(productSearch, httpParams) {
 
     if(!empty(httpParams.oci)) { // This is when request from the brand link click
         tempOrigCatId = "oci="+httpParams.oci;
-    } else if (empty(httpParams.oci) && !empty(httpParams.preferences) && 'acme-tools-brand-name' in httpParams.preferences && productSearch.categorySearch) { // This is from the SEO Direct link or refresh of the page after the brand filters selected
+    } else if (empty(httpParams.oci) && !empty(httpParams.preferences) && 'cdw-tools-brand-name' in httpParams.preferences && productSearch.categorySearch) { // This is from the SEO Direct link or refresh of the page after the brand filters selected
         var catId = productSearch.category.ID;
         if(catId == "categories") {
             tempOrigCatId = categoryHelper.getGeneratedKeyWithFilters(httpParams).toString().replace(/ /g, '-' ).toLowerCase();
@@ -496,8 +496,8 @@ function ProductSearch(productSearch, httpParams, sortingRule, sortingOptions, r
         tempCanonicalLink = appended;
     }
     
-    // } else if (empty(httpParams.oci) && !empty(httpParams.preferences) && 'acme-tools-brand-name' in httpParams.preferences && productSearch.categorySearch) { // This is from the SEO Direct link or refresh of the page after the brand filters selected
-    if (!empty(httpParams.preferences) && 'acme-tools-brand-name' in httpParams.preferences && productSearch.categorySearch) { // This is from the SEO Direct link or refresh of the page after the brand filters selected
+    // } else if (empty(httpParams.oci) && !empty(httpParams.preferences) && 'cdw-tools-brand-name' in httpParams.preferences && productSearch.categorySearch) { // This is from the SEO Direct link or refresh of the page after the brand filters selected
+    if (!empty(httpParams.preferences) && 'cdw-tools-brand-name' in httpParams.preferences && productSearch.categorySearch) { // This is from the SEO Direct link or refresh of the page after the brand filters selected
         var catId = productSearch.category.ID;
         if(catId == "categories") {
             var tempOrigCatId = categoryHelper.getGeneratedKeyWithFilters(httpParams).toString().replace(/ /g, '-' ).toLowerCase();
@@ -552,7 +552,7 @@ function ProductSearch(productSearch, httpParams, sortingRule, sortingOptions, r
 Object.defineProperty(ProductSearch.prototype, 'refinements', {
     get: function () {
         if (!this.cachedRefinements) {
-            //Filter any refinemnets configured for Acme NOT to display in filter on top of search refinements
+            //Filter any refinemnets configured for cdw NOT to display in filter on top of search refinements
             this.cachedRefinements = getRefinements(
                 this.productSearch,
                 this.productSearch.refinements,

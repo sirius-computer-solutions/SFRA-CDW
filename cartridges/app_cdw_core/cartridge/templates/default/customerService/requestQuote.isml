@@ -133,7 +133,7 @@
                             </div>                                                 
                             <div class="col">
                                 <div class="form-group">
-                                    <div class="btn btn-outline-primary add-more-products-contact-us" role="button"><!-- dwMarker="link" dwPipelineTitle="Checkout-Begin (app_acme_core)" dwIsController="true" dwPipelineURL="http://localhost:60606/target=/app_acme_core/cartridge/controllers/Checkout.js&amp;start=Begin" -->
+                                    <div class="btn btn-outline-primary add-more-products-contact-us" role="button"><!-- dwMarker="link" dwPipelineTitle="Checkout-Begin (app_cdw_core)" dwIsController="true" dwPipelineURL="http://localhost:60606/target=/app_cdw_core/cartridge/controllers/Checkout.js&amp;start=Begin" -->
                                                 ${Resource.msg('label.input.request-quote-add-more-products', 'customerService', null)}
                                     </div>
                                 </div>

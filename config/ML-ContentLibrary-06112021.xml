@@ -437,7 +437,7 @@
 }</config>
         <data xml:lang="x-default">{ }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
         <content-links>
             <content-link content-id="c0e8f4f4fa3d48c9bcbf34dabc" type="component.commerce_layouts.mobileGrid1r1c.column1">
@@ -471,7 +471,7 @@
 }</config>
         <data xml:lang="x-default">{ }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
         <content-links>
             <content-link content-id="a192c1b7d49ef61d71185cf236" type="component.commerce_layouts.mobileGrid1r1c.column1">
@@ -525,7 +525,7 @@
   "alt" : null
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -542,7 +542,7 @@
   "category" : "Accessories:32169"
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -1190,7 +1190,7 @@ La pagina non è più disponibile: (Pagina o file non trovati: errore 404). Prov
   "textHeadline" : null
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
         <content-links>
             <content-link content-id="d867505638ed7fc94def355d3d" type="component.commerce_layouts.popularCategories.categories">
@@ -1370,7 +1370,7 @@ La pagina non è più disponibile: (Pagina o file non trovati: errore 404). Prov
   "category" : "DEWALT"
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -1517,7 +1517,7 @@ La pagina non è più disponibile: (Pagina o file non trovati: errore 404). Prov
   }
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -1643,7 +1643,7 @@ La pagina non è più disponibile: (Pagina o file non trovati: errore 404). Prov
   "richText" : "&lt;p&gt;SSSE&lt;/p&gt;"
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -1653,10 +1653,10 @@ La pagina non è più disponibile: (Pagina o file non trovati: errore 404). Prov
   "visibility" : [ ]
 }</config>
         <data xml:lang="x-default">{
-  "richText" : "&lt;div class=\"row margin-false\"&gt;\n\t\t&lt;div class=\"col12\" data-slot-id=\"3\"&gt;&lt;!--  BEGIN EMarketingSpot.jsp --&gt;&lt;!-- BEGIN ContentRecommendation.jsp --&gt;&lt;!-- BEGIN ContentRecommendation_UI.jspf --&gt;\n\t\t\t&lt;div id=\"contentRecommendationWidget_4_-5008_3074457345618339061\" class=\"contentRecommendationWidget acmeResponsiveImg\"&gt;\n\t\t\t&lt;!-- BEGIN Content_UI.jspf --&gt;\n\n&lt;div class=\"left_espot\"&gt;\n\t\n\t\n\t\t\t\t\t&lt;style&gt;\n.Locations_3by{\n    max-width:1170px;\n    width:100%;\n    display:flex;\n    flex-direction:row;\n}\n\n.Location3by_img{\n    max-width:120px;\n    width:100%;\n    padding-bottom:10px;\n}\n\n.BOPIS, .Service, .Sharpening{\n    text-align:center;\n    max-width:350px;\n    width:100%;\n    padding:30px;\n}\n\n.BOPIS strong, .Service strong, .Sharpening strong{\n    font-size:1.25em;\n}\n\n\n\n\n@media screen and (max-width:768px){\n.Location3by_img{\n      max-width:80px;\n}\n\n.BOPIS, .Service, .Sharpening{\n    padding:15px;\n}\n}\n    \n@media screen and (max-width:425px){\n\n\n .Locations_3by{\n        flex-direction:column;\n   }\n.BOPIS, .Service, .Sharpening{\n    max-width:400px;\n    padding:10px;\n}\n}\n\n@media screen and (max-width:320px){\n.BOPIS, .Service, .Sharpening{\n    max-width:300px;\n}\n\n}\n\n&lt;/style&gt;\n\n\n\n&lt;div class=\"Locations_3by\"&gt;\n    &lt;div class=\"BOPIS\"&gt;\n        &lt;img class=\"Location3by_img\" src=\"https://www.acmetools.com/wcsstore/AcmeToolsRWD/MiscImages/Locations/BOPIS.jpg\" alt=\"Red map with location pin with cart un the middle of it\"&gt;\n        &lt;p&gt;&lt;strong&gt;Buy Online, Pick Up In Store&lt;/strong&gt;&lt;/p&gt;\n        &lt;p style=\"text-align:left; padding-top:10px;\"&gt;Save time and shipping costs. Select Pick Up Today, and we’ll let you know when your order is ready!&lt;br&gt;&lt;br&gt;Want curbside pick up instead? When we call you to confirm your order is ready, just let us know you would like to receive it curbside.&lt;/p&gt;\n    &lt;/div&gt;\n    &lt;div class=\"Service\"&gt;\n          &lt;img class=\"Location3by_img\" src=\"https://www.acmetools.com/wcsstore/AcmeToolsRWD/MiscImages/Locations/Repair.jpg\" alt=\"Red bolt with wrench in the middle\"&gt;\n        &lt;p&gt;&lt;strong&gt;Authorized Service Center&lt;/strong&gt;&lt;/p&gt;\n        &lt;p style=\"text-align:left; padding-top:10px;\"&gt;We are an Authorized Service Center for most major brands that we sell. Contact us for more information.&lt;/p&gt;\n    &lt;/div&gt;\n    &lt;div class=\"Sharpening\"&gt;\n        &lt;img class=\"Location3by_img\" src=\"https://www.acmetools.com/wcsstore/AcmeToolsRWD/MiscImages/Locations/Blade.jpg\" alt=\"Red bolt with wrench in the middle\"&gt;\n        &lt;p&gt;&lt;strong&gt;Sharpening Services&lt;/strong&gt;&lt;/p&gt;\n        &lt;p style=\"text-align:left; padding-top:10px;\"&gt;We sharpen saw blades, jointer and planer knives, carbide-tipped router and shaper bits, and boring bits.&lt;/p&gt;\n    &lt;/div&gt;\n\n\n&lt;/div&gt;\n\t\t\t\t\n\t\n&lt;/div&gt;\n\n&lt;!-- END Content_UI.jspf --&gt;\n\t\t\t&lt;/div&gt;\n\t\t&lt;!-- END ContentRecommendation_UI.jspf --&gt;&lt;!-- END ContentRecommendation.jsp --&gt;&lt;!-- END EMarketingSpot.jsp --&gt;&lt;/div&gt;\n\t&lt;/div&gt;"
+  "richText" : "&lt;div class=\"row margin-false\"&gt;\n\t\t&lt;div class=\"col12\" data-slot-id=\"3\"&gt;&lt;!--  BEGIN EMarketingSpot.jsp --&gt;&lt;!-- BEGIN ContentRecommendation.jsp --&gt;&lt;!-- BEGIN ContentRecommendation_UI.jspf --&gt;\n\t\t\t&lt;div id=\"contentRecommendationWidget_4_-5008_3074457345618339061\" class=\"contentRecommendationWidget cdwResponsiveImg\"&gt;\n\t\t\t&lt;!-- BEGIN Content_UI.jspf --&gt;\n\n&lt;div class=\"left_espot\"&gt;\n\t\n\t\n\t\t\t\t\t&lt;style&gt;\n.Locations_3by{\n    max-width:1170px;\n    width:100%;\n    display:flex;\n    flex-direction:row;\n}\n\n.Location3by_img{\n    max-width:120px;\n    width:100%;\n    padding-bottom:10px;\n}\n\n.BOPIS, .Service, .Sharpening{\n    text-align:center;\n    max-width:350px;\n    width:100%;\n    padding:30px;\n}\n\n.BOPIS strong, .Service strong, .Sharpening strong{\n    font-size:1.25em;\n}\n\n\n\n\n@media screen and (max-width:768px){\n.Location3by_img{\n      max-width:80px;\n}\n\n.BOPIS, .Service, .Sharpening{\n    padding:15px;\n}\n}\n    \n@media screen and (max-width:425px){\n\n\n .Locations_3by{\n        flex-direction:column;\n   }\n.BOPIS, .Service, .Sharpening{\n    max-width:400px;\n    padding:10px;\n}\n}\n\n@media screen and (max-width:320px){\n.BOPIS, .Service, .Sharpening{\n    max-width:300px;\n}\n\n}\n\n&lt;/style&gt;\n\n\n\n&lt;div class=\"Locations_3by\"&gt;\n    &lt;div class=\"BOPIS\"&gt;\n        &lt;img class=\"Location3by_img\" src=\"https://www.cdw.com/wcsstore/CDWStarterStoreRWD/MiscImages/Locations/BOPIS.jpg\" alt=\"Red map with location pin with cart un the middle of it\"&gt;\n        &lt;p&gt;&lt;strong&gt;Buy Online, Pick Up In Store&lt;/strong&gt;&lt;/p&gt;\n        &lt;p style=\"text-align:left; padding-top:10px;\"&gt;Save time and shipping costs. Select Pick Up Today, and we’ll let you know when your order is ready!&lt;br&gt;&lt;br&gt;Want curbside pick up instead? When we call you to confirm your order is ready, just let us know you would like to receive it curbside.&lt;/p&gt;\n    &lt;/div&gt;\n    &lt;div class=\"Service\"&gt;\n          &lt;img class=\"Location3by_img\" src=\"https://www.cdw.com/wcsstore/CDWStarterStoreRWD/MiscImages/Locations/Repair.jpg\" alt=\"Red bolt with wrench in the middle\"&gt;\n        &lt;p&gt;&lt;strong&gt;Authorized Service Center&lt;/strong&gt;&lt;/p&gt;\n        &lt;p style=\"text-align:left; padding-top:10px;\"&gt;We are an Authorized Service Center for most major brands that we sell. Contact us for more information.&lt;/p&gt;\n    &lt;/div&gt;\n    &lt;div class=\"Sharpening\"&gt;\n        &lt;img class=\"Location3by_img\" src=\"https://www.cdw.com/wcsstore/CDWStarterStoreRWD/MiscImages/Locations/Blade.jpg\" alt=\"Red bolt with wrench in the middle\"&gt;\n        &lt;p&gt;&lt;strong&gt;Sharpening Services&lt;/strong&gt;&lt;/p&gt;\n        &lt;p style=\"text-align:left; padding-top:10px;\"&gt;We sharpen saw blades, jointer and planer knives, carbide-tipped router and shaper bits, and boring bits.&lt;/p&gt;\n    &lt;/div&gt;\n\n\n&lt;/div&gt;\n\t\t\t\t\n\t\n&lt;/div&gt;\n\n&lt;!-- END Content_UI.jspf --&gt;\n\t\t\t&lt;/div&gt;\n\t\t&lt;!-- END ContentRecommendation_UI.jspf --&gt;&lt;!-- END ContentRecommendation.jsp --&gt;&lt;!-- END EMarketingSpot.jsp --&gt;&lt;/div&gt;\n\t&lt;/div&gt;"
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -1693,7 +1693,7 @@ La pagina non è più disponibile: (Pagina o file non trovati: errore 404). Prov
   "category" : "Hand Tools"
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -1792,7 +1792,7 @@ La pagina non è più disponibile: (Pagina o file non trovati: errore 404). Prov
   "htmlContent" : null
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -1847,7 +1847,7 @@ La pagina non è più disponibile: (Pagina o file non trovati: errore 404). Prov
   "alt" : null
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -1931,10 +1931,10 @@ La pagina non è più disponibile: (Pagina o file non trovati: errore 404). Prov
   "visibility" : [ ]
 }</config>
         <data xml:lang="x-default">{
-  "richText" : "&lt;div id=\"contentRecommendationWidget_10_-5008_3074457345618286556\" class=\"contentRecommendationWidget acmeResponsiveImg\"&gt;\n\t\t\t&lt;!-- BEGIN Content_UI.jspf --&gt;\n\n&lt;div class=\"left_espot\"&gt;\n\t\n\t\n\t\t\t\t\t&lt;div id=\"Category_SEO_Content\"&gt; &lt;p&gt;&lt;b&gt;Welcome To Acme Tools in Bemidji, MN&lt;/b&gt;&lt;br&gt;\nAcme Tools is the premier locally owned retailer of tools and equipment in Bemidji and the lakes area. Serving North Central, Minnesota since 2008, the store has a 6,700-square-foot showroom of &lt;a href=\"https://www.acmetools.com/shop/tools/power-tools\" title=\"power tools\" target=\"_self\"&gt;power tools&lt;/a&gt;, &lt;a href=\"https://www.acmetools.com/shop/tools/cordless-tools\" title=\"cordless tools\" target=\"_self\"&gt;cordless tools&lt;/a&gt;, &lt;a href=\"https://www.acmetools.com/shop/tools/woodworking\" title=\"woodworking tools\" target=\"_self\"&gt;woodworking tools&lt;/a&gt;, &lt;a href=\"https://www.acmetools.com/shop/tools/power-tool-accessories\" title=\"power tools accessories\" target=\"_self\"&gt;power tools accessories&lt;/a&gt;, &lt;a href=\"https://www.acmetools.com/shop/tools/hand-tools\" title=\"hand tools\" target=\"_self\"&gt;hand tools&lt;/a&gt;, &lt;a href=\"https://www.acmetools.com/shop/tools/heavy-equipment\" title=\"equipment\" target=\"_self\"&gt;equipment&lt;/a&gt;, and a full service department and rental facility within called Acme Rents. &lt;br&gt;&lt;br&gt; \n \n&lt;b&gt;Bemidji, MN Best Selection of Tools&lt;/b&gt;&lt;br&gt;\nWhether you’re a do it yourselfer, a professional, or provide niche services with your power tools, we have it all at Acme Tools. From concrete tools, to electrical tools, to concrete tools, woodworking tools, to concrete tools, hardware, and more, we carry &lt;a href=\"https://www.acmetools.com/shop/tools/categories\" title=\"the best selection of tools\" target=\"_self\"&gt;the best selection of tools&lt;/a&gt; in Bemidji, MN area. We carry the &lt;a href=\"https://www.acmetools.com/shop/tools/brands\" title=\"best brands in the tool industry\" target=\"_self\"&gt;best brands in the tools market&lt;/a&gt; including Milwaukee, Champion, Honda, Makita, DeWalt, Klein, Hitachi, Bosch, Jet, and more. &lt;br&gt;&lt;br&gt; \n \n&lt;b&gt;Equipment Dealer in Bemidji, MN&lt;/b&gt;&lt;br&gt;\nWe also carry a wide variety of new and used equipment. We are Bemidji’s go to, authorized dealer of &lt;a href=\"https://www.acmetools.com/shop/tools/trailers\" title=\"trailers\" target=\"_self\"&gt;trailers&lt;/a&gt;, &lt;a href=\"https://www.acmetools.com/shop/tools/tractors\" title=\"tractors\" target=\"_self\"&gt;tractors&lt;/a&gt;,  &lt;a href=\"https://www.acmetools.com/shop/tools/aerial-work-platform\" title=\"lifts\" target=\"_self\"&gt;lifts&lt;/a&gt;, &lt;a href=\"https://www.acmetools.com/shop/tools/telehandlers-forklifts\" title=\"forklifts\" target=\"_self\"&gt;forklifts&lt;/a&gt;, &lt;a href=\"https://www.acmetools.com/shop/tools/compact-equipment-for-professionals\" title=\"compact equipment\" target=\"_self\"&gt;compact equipment&lt;/a&gt;, &lt;a href=\"https://www.acmetools.com/shop/tools/utility-vehicles\" title=\"utility vehicles\" target=\"_self\"&gt;utility vehicles&lt;/a&gt;, &lt;a href=\"https://www.acmetools.com/shop/tools/excavators\" title=\"excavators\" target=\"_self\"&gt;excavators&lt;/a&gt;, and more. Our extensive equipment selection comes from top brands like Genie, Diamond C Trailers, Kubota, Skyjack, PJ Trailers, JLG, Toro, and more. No matter what you do, our equipment experts work hard to understand what you need to “do your best work.”&lt;br&gt;&lt;br&gt; \n \n&lt;b&gt;Tool and Equipment Rental in Bemidji, MN&lt;/b&gt;&lt;br&gt;\nOur Bemidji, MN Acme Tools store offers tool and equipment rentals. If you need a tool to get a job done, but only need to use the tool once or don’t have the budget to purchase the tool, then Acme Tools rental tools and equipment are a great choice for you. We offer tools and equipment such as paint sprayers, generators, cordless tools, corded power tools, personal lifts, tractors, trailers, and more. Stop by our store location to learn more about tool and equipment rentals from our highly trained staff. &lt;br&gt;&lt;br&gt; \n \nWe are conveniently located off Paul Bunyan Dr NW at 2025 30 St SW. We look forward to seeing you in our store next time you’re in the area. &lt;/p&gt;&lt;/div&gt;\n\t\t\t\t\n\t\n&lt;/div&gt;\n\n&lt;!-- END Content_UI.jspf --&gt;\n\t\t\t&lt;/div&gt;"
+  "richText" : "&lt;div id=\"contentRecommendationWidget_10_-5008_3074457345618286556\" class=\"contentRecommendationWidget cdwResponsiveImg\"&gt;\n\t\t\t&lt;!-- BEGIN Content_UI.jspf --&gt;\n\n&lt;div class=\"left_espot\"&gt;\n\t\n\t\n\t\t\t\t\t&lt;div id=\"Category_SEO_Content\"&gt; &lt;p&gt;&lt;b&gt;Welcome To cdw Tools in Bemidji, MN&lt;/b&gt;&lt;br&gt;\ncdw Tools is the premier locally owned retailer of tools and equipment in Bemidji and the lakes area. Serving North Central, Minnesota since 2008, the store has a 6,700-square-foot showroom of &lt;a href=\"https://www.cdw.com/shop/tools/power-tools\" title=\"power tools\" target=\"_self\"&gt;power tools&lt;/a&gt;, &lt;a href=\"https://www.cdw.com/shop/tools/cordless-tools\" title=\"cordless tools\" target=\"_self\"&gt;cordless tools&lt;/a&gt;, &lt;a href=\"https://www.cdw.com/shop/tools/woodworking\" title=\"woodworking tools\" target=\"_self\"&gt;woodworking tools&lt;/a&gt;, &lt;a href=\"https://www.cdw.com/shop/tools/power-tool-accessories\" title=\"power tools accessories\" target=\"_self\"&gt;power tools accessories&lt;/a&gt;, &lt;a href=\"https://www.cdw.com/shop/tools/hand-tools\" title=\"hand tools\" target=\"_self\"&gt;hand tools&lt;/a&gt;, &lt;a href=\"https://www.cdw.com/shop/tools/heavy-equipment\" title=\"equipment\" target=\"_self\"&gt;equipment&lt;/a&gt;, and a full service department and rental facility within called cdw Rents. &lt;br&gt;&lt;br&gt; \n \n&lt;b&gt;Bemidji, MN Best Selection of Tools&lt;/b&gt;&lt;br&gt;\nWhether you’re a do it yourselfer, a professional, or provide niche services with your power tools, we have it all at cdw Tools. From concrete tools, to electrical tools, to concrete tools, woodworking tools, to concrete tools, hardware, and more, we carry &lt;a href=\"https://www.cdw.com/shop/tools/categories\" title=\"the best selection of tools\" target=\"_self\"&gt;the best selection of tools&lt;/a&gt; in Bemidji, MN area. We carry the &lt;a href=\"https://www.cdw.com/shop/tools/brands\" title=\"best brands in the tool industry\" target=\"_self\"&gt;best brands in the tools market&lt;/a&gt; including Milwaukee, Champion, Honda, Makita, DeWalt, Klein, Hitachi, Bosch, Jet, and more. &lt;br&gt;&lt;br&gt; \n \n&lt;b&gt;Equipment Dealer in Bemidji, MN&lt;/b&gt;&lt;br&gt;\nWe also carry a wide variety of new and used equipment. We are Bemidji’s go to, authorized dealer of &lt;a href=\"https://www.cdw.com/shop/tools/trailers\" title=\"trailers\" target=\"_self\"&gt;trailers&lt;/a&gt;, &lt;a href=\"https://www.cdw.com/shop/tools/tractors\" title=\"tractors\" target=\"_self\"&gt;tractors&lt;/a&gt;,  &lt;a href=\"https://www.cdw.com/shop/tools/aerial-work-platform\" title=\"lifts\" target=\"_self\"&gt;lifts&lt;/a&gt;, &lt;a href=\"https://www.cdw.com/shop/tools/telehandlers-forklifts\" title=\"forklifts\" target=\"_self\"&gt;forklifts&lt;/a&gt;, &lt;a href=\"https://www.cdw.com/shop/tools/compact-equipment-for-professionals\" title=\"compact equipment\" target=\"_self\"&gt;compact equipment&lt;/a&gt;, &lt;a href=\"https://www.cdw.com/shop/tools/utility-vehicles\" title=\"utility vehicles\" target=\"_self\"&gt;utility vehicles&lt;/a&gt;, &lt;a href=\"https://www.cdw.com/shop/tools/excavators\" title=\"excavators\" target=\"_self\"&gt;excavators&lt;/a&gt;, and more. Our extensive equipment selection comes from top brands like Genie, Diamond C Trailers, Kubota, Skyjack, PJ Trailers, JLG, Toro, and more. No matter what you do, our equipment experts work hard to understand what you need to “do your best work.”&lt;br&gt;&lt;br&gt; \n \n&lt;b&gt;Tool and Equipment Rental in Bemidji, MN&lt;/b&gt;&lt;br&gt;\nOur Bemidji, MN cdw Tools store offers tool and equipment rentals. If you need a tool to get a job done, but only need to use the tool once or don’t have the budget to purchase the tool, then cdw Tools rental tools and equipment are a great choice for you. We offer tools and equipment such as paint sprayers, generators, cordless tools, corded power tools, personal lifts, tractors, trailers, and more. Stop by our store location to learn more about tool and equipment rentals from our highly trained staff. &lt;br&gt;&lt;br&gt; \n \nWe are conveniently located off Paul Bunyan Dr NW at 2025 30 St SW. We look forward to seeing you in our store next time you’re in the area. &lt;/p&gt;&lt;/div&gt;\n\t\t\t\t\n\t\n&lt;/div&gt;\n\n&lt;!-- END Content_UI.jspf --&gt;\n\t\t\t&lt;/div&gt;"
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -1945,7 +1945,7 @@ La pagina non è più disponibile: (Pagina o file non trovati: errore 404). Prov
 }</config>
         <data xml:lang="x-default">{ }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
         <content-links>
             <content-link content-id="81c6c184a3139c1a80a8eea1bf" type="component.commerce_layouts.mobileGrid1r1c.column1">
@@ -2136,7 +2136,7 @@ For more information please browse our &lt;a title="About Us Content" href="$url
   "recommender" : null
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -3661,10 +3661,10 @@ Sintonizzatore esterno ATSC DTB-H260F Samsung&lt;/div&gt;&#13;
   "visibility" : [ ]
 }</config>
         <data xml:lang="x-default">{
-  "richText" : "&lt;div itemscope=\"\" itemtype=\"https://schema.org/LocalBusiness\" class=\"Main210309_grid-container\"&gt;\n\t&lt;div class=\"Main210309_item1\"&gt;\n\t\t&lt;h1 class=\"MainTitle210309\" itemprop=\"name\"&gt;Acme Tools&lt;br&gt;Bemidji, MN&lt;/h1&gt;\n\t&lt;/div&gt;\n\t&lt;div class=\"Main210309_item2\"&gt;\n\t\t&lt;iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2695.5569485989195!2d-94.91289198397786!3d47.49854380342876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b82e00e83c1c2d%3A0x405ca7f7c3de580b!2sAcme+Tools!5e0!3m2!1sen!2sus!4v1542406699621\" width=\"100%\" height=\"100%\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"&gt;&lt;/iframe&gt;\n\t&lt;/div&gt;\n\t&lt;div class=\"Main210309_item3\"&gt;\n\t\t&lt;div class=\"SubTitle210309\"&gt;&lt;i class=\"fas fa-home\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;Address:&lt;/div&gt;\n\t\t&lt;div class=\"ContactInfo210309\"&gt;&lt;a itemprop=\"address\" itemscope=\"\" itemtype=\"http://schema.org/PostalAddress\" href=\"https://www.google.com/maps/place/Acme+Tools/@47.4985438,-94.912892,17z/data=!4m5!3m4!1s0x52b82e00e83c1c2d:0x405ca7f7c3de580b!8m2!3d47.4985322!4d-94.9106579\" target=\"_blank\"&gt;\n\t\t\t&lt;span style=\"display: inline-block; margin-top: -3px; text-decoration: underline;\" itemprop=\"streetAddress\"&gt;2025 30th St NW&lt;/span&gt;&lt;br&gt;\n\t\t\t&lt;span style=\"display: inline-block; margin-top: -3px; text-decoration: underline;\" itemprop=\"addressLocality\"&gt;Bemidji,&amp;nbsp;&lt;/span&gt;\n\t\t\t&lt;span style=\"display: inline-block; margin-top: -3px; text-decoration: underline;\" itemprop=\"addressRegion\"&gt;MN&amp;nbsp;&lt;/span&gt;\n\t\t\t&lt;span style=\"display: inline-block; margin-top: -3px; text-decoration: underline;\" itemprop=\"postalCode\"&gt;56601&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;\n\t&lt;/div&gt;  \n\t&lt;div class=\"Main210309_item4\" itemprop=\"openingHoursSpecification\" itemscope=\"\" itemtype=\"http://schema.org/OpeningHoursSpecification\"&gt;\n\t\t&lt;div class=\"SubTitle210309\"&gt;&lt;i class=\"fas fa-clock\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;Store Hours:&lt;/div&gt;\n\t\t&lt;div class=\"ContactInfo210309\"&gt;&lt;span style=\"display: inline-block; margin-top: -3px;\" itemprop=\"dayOfWeek\"&gt;Mon&lt;/span&gt; - &lt;span style=\"display: inline-block; margin-top: -3px;\" itemprop=\"dayOfWeek\"&gt;Fri:&lt;/span&gt;&amp;nbsp;&lt;time itemprop=\"opens\" content=\"07:00:00\"&gt;7:00 AM&lt;/time&gt; - &lt;time itemprop=\"closes\" content=\"17:30:00\"&gt; 5:30 PM&lt;/time&gt;&lt;br&gt;&lt;span style=\"display: inline-block; margin-top: -3px;\" itemprop=\"dayOfWeek\"&gt;Saturday:&lt;/span&gt;&lt;time itemprop=\"opens\" content=\"08:00:00\"&gt;&amp;nbsp;8:00 AM&lt;/time&gt; - &lt;time itemprop=\"closes\" content=\"17:30:00\"&gt;5:30 PM&lt;/time&gt;\n\t\t&lt;/div&gt;\n\t&lt;/div&gt;\n\t&lt;div class=\"Main210309_item5\"&gt;&lt;img itemprop=\"image\" src=\"https://www.acmetools.com/wcsstore/AcmeToolsRWD/LocationPages/Acme-Tools-Bemidji-Storefront.jpg\" alt=\"Acme Tools Bemidji Storefront\"&gt;&lt;/div&gt;\n\t&lt;div class=\"Main210309_item6\"&gt;&lt;img itemprop=\"image\" src=\"https://www.acmetools.com/wcsstore/AcmeToolsRWD/LocationPages/Acme-Tools-Bemidji-Salesfloor.jpg\" alt=\"Acme Tools Bemidji Salesfloor\"&gt;&lt;/div&gt;\n\t&lt;div class=\"Main210309_item7\"&gt;&lt;div class=\"SubTitle210309\"&gt;&lt;i class=\"fas fa-phone\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;Contact Us:&lt;/div&gt;\n\t\t&lt;div class=\"ContactInfo210309\"&gt;Toll-Free: &lt;a href=\"tel:8002866268\"&gt;(800) 286-6268&lt;/a&gt;&lt;br&gt;Local: &lt;a itemprop=\"telephone\" href=\"tel:2184448665\"&gt;(218) 444-8665&lt;/a&gt;&lt;br&gt;Fax: (218) 751-5275&lt;br&gt;E-mail: &lt;a itemprop=\"email\" href=\"mailto:bemidji@acmetools.com\"&gt;bemidji@acmetools.com&lt;/a&gt;&lt;/div&gt;\n\t&lt;/div&gt;\n\t&lt;div class=\"Main210309_item8\"&gt;\t&lt;div class=\"SubTitle210309\"&gt;Have some feedback?&lt;/div&gt;\n\t\t&lt;div class=\"ContactInfo210309\"&gt;&lt;i class=\"fab fa-google\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;a href=\"https://www.google.com/search?source=hp&amp;amp;ei=CepIYOSQJ-KP9PwP5Iy98Aw&amp;amp;iflsig=AINFCbYAAAAAYEj4GdVU-ujM2dTYSIp-fpzjmJlljuhC&amp;amp;q=Acme+Tools+Bemidji&amp;amp;oq=Acme+Tools+Bemidji&amp;amp;gs_lcp=Cgdnd3Mtd2l6EAMyCwguEMcBEK8BEJMCMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoICAAQ6gIQjwE6CAgAELEDEIMBOgIIADoLCC4QsQMQxwEQowI6BQguELEDOggILhDHARCjAjoOCC4QsQMQxwEQowIQkwI6BQgAELEDOggILhDHARCvAToLCC4QxwEQrwEQiwM6DgguELEDEMcBEKMCEIsDOggIABCxAxCLAzoFCAAQiwM6CwgAELEDEIMBEIsDOggIABCxAxDJAzoFCAAQkgM6BQgAEMkDOgsIABDJAxAWEAoQHjoICAAQFhAKEB5QxRFYnSZg_SdoAXAAeACAAaoBiAGlDpIBBDEwLjiYAQCgAQGqAQdnd3Mtd2l6sAEKuAEC&amp;amp;sclient=gws-wiz&amp;amp;ved=0ahUKEwikuYapiabvAhXiB50JHWRGD84Q4dUDCAo&amp;amp;uact=5#lrd=0x52b82e00e83c1c2d:0x405ca7f7c3de580b,1,,,\" target=\"_blank\"&gt;Review us on Google&lt;/a&gt;&lt;/div&gt;\n\t&lt;/div&gt;\n\t&lt;div class=\"Main210309_item9\" style=\"border: none;\"&gt;&lt;div class=\"SubTitle210309\"&gt;Connect with us&lt;/div&gt;\n\t\t&lt;div class=\"ContactInfo210309\" style=\"line-height: 20px;\"&gt;\n\t\t\t&lt;span style=\"margin-top: 0px;\"&gt;&lt;i class=\"fab fa-facebook-square\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;b&gt;Facebook&lt;/b&gt;&lt;br&gt;&lt;a href=\"https://www.facebook.com/acmetoolsbemidji\" target=\"_blank\"&gt;facebook.com/acmetoolsbemidji&lt;/a&gt;&lt;/span&gt;\n\t\t\t&lt;br&gt;\n\t\t\t&lt;span&gt;&lt;i class=\"fab fa-instagram-square\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;b&gt;Instagram&lt;/b&gt;&amp;nbsp;&lt;a href=\"https://www.instagram.com/acmetools/\" target=\"_blank\"&gt;@acmetools&lt;/a&gt;&lt;/span&gt;\n\t\t\t&lt;br&gt;\n\t\t\t&lt;span&gt;&lt;i class=\"fab fa-twitter-square\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;b&gt;Twitter&lt;/b&gt;&amp;nbsp;&lt;a href=\"https://twitter.com/AcmeTools\" target=\"_blank\"&gt;@AcmeTools&lt;/a&gt;&lt;/span&gt;\n\t\t\t&lt;br&gt;\n\t\t\t&lt;span&gt;&lt;i class=\"fab fa-youtube\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;b&gt;YouTube&lt;/b&gt;&lt;br&gt;&lt;a href=\"https://www.youtube.com/acmetoolstv\" target=\"_blank\"&gt;youtube.com/acmetoolstv&lt;/a&gt;&lt;/span&gt;\n\t\t\t&lt;br&gt;\n\t\t\t&lt;span&gt;&lt;i class=\"fab fa-tiktok\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;b&gt;TikTok&lt;/b&gt;&amp;nbsp;&lt;a href=\"https://www.tiktok.com/@acmetools?\" target=\"_blank\"&gt;@acmetools&lt;/a&gt;&lt;/span&gt;\n\t\t\t&lt;br&gt;\n\t\t\t&lt;span&gt;&lt;i class=\"fab fa-snapchat-square\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;b&gt;Snapchat&lt;/b&gt;&amp;nbsp;@acmetools&lt;/span&gt;\n\t\t&lt;/div&gt;\n\t&lt;/div&gt;\n&lt;/div&gt;"
+  "richText" : "&lt;div itemscope=\"\" itemtype=\"https://schema.org/LocalBusiness\" class=\"Main210309_grid-container\"&gt;\n\t&lt;div class=\"Main210309_item1\"&gt;\n\t\t&lt;h1 class=\"MainTitle210309\" itemprop=\"name\"&gt;cdw Tools&lt;br&gt;Bemidji, MN&lt;/h1&gt;\n\t&lt;/div&gt;\n\t&lt;div class=\"Main210309_item2\"&gt;\n\t\t&lt;iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2695.5569485989195!2d-94.91289198397786!3d47.49854380342876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b82e00e83c1c2d%3A0x405ca7f7c3de580b!2scdw+Tools!5e0!3m2!1sen!2sus!4v1542406699621\" width=\"100%\" height=\"100%\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"&gt;&lt;/iframe&gt;\n\t&lt;/div&gt;\n\t&lt;div class=\"Main210309_item3\"&gt;\n\t\t&lt;div class=\"SubTitle210309\"&gt;&lt;i class=\"fas fa-home\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;Address:&lt;/div&gt;\n\t\t&lt;div class=\"ContactInfo210309\"&gt;&lt;a itemprop=\"address\" itemscope=\"\" itemtype=\"http://schema.org/PostalAddress\" href=\"https://www.google.com/maps/place/cdw+Tools/@47.4985438,-94.912892,17z/data=!4m5!3m4!1s0x52b82e00e83c1c2d:0x405ca7f7c3de580b!8m2!3d47.4985322!4d-94.9106579\" target=\"_blank\"&gt;\n\t\t\t&lt;span style=\"display: inline-block; margin-top: -3px; text-decoration: underline;\" itemprop=\"streetAddress\"&gt;2025 30th St NW&lt;/span&gt;&lt;br&gt;\n\t\t\t&lt;span style=\"display: inline-block; margin-top: -3px; text-decoration: underline;\" itemprop=\"addressLocality\"&gt;Bemidji,&amp;nbsp;&lt;/span&gt;\n\t\t\t&lt;span style=\"display: inline-block; margin-top: -3px; text-decoration: underline;\" itemprop=\"addressRegion\"&gt;MN&amp;nbsp;&lt;/span&gt;\n\t\t\t&lt;span style=\"display: inline-block; margin-top: -3px; text-decoration: underline;\" itemprop=\"postalCode\"&gt;56601&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;\n\t&lt;/div&gt;  \n\t&lt;div class=\"Main210309_item4\" itemprop=\"openingHoursSpecification\" itemscope=\"\" itemtype=\"http://schema.org/OpeningHoursSpecification\"&gt;\n\t\t&lt;div class=\"SubTitle210309\"&gt;&lt;i class=\"fas fa-clock\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;Store Hours:&lt;/div&gt;\n\t\t&lt;div class=\"ContactInfo210309\"&gt;&lt;span style=\"display: inline-block; margin-top: -3px;\" itemprop=\"dayOfWeek\"&gt;Mon&lt;/span&gt; - &lt;span style=\"display: inline-block; margin-top: -3px;\" itemprop=\"dayOfWeek\"&gt;Fri:&lt;/span&gt;&amp;nbsp;&lt;time itemprop=\"opens\" content=\"07:00:00\"&gt;7:00 AM&lt;/time&gt; - &lt;time itemprop=\"closes\" content=\"17:30:00\"&gt; 5:30 PM&lt;/time&gt;&lt;br&gt;&lt;span style=\"display: inline-block; margin-top: -3px;\" itemprop=\"dayOfWeek\"&gt;Saturday:&lt;/span&gt;&lt;time itemprop=\"opens\" content=\"08:00:00\"&gt;&amp;nbsp;8:00 AM&lt;/time&gt; - &lt;time itemprop=\"closes\" content=\"17:30:00\"&gt;5:30 PM&lt;/time&gt;\n\t\t&lt;/div&gt;\n\t&lt;/div&gt;\n\t&lt;div class=\"Main210309_item5\"&gt;&lt;img itemprop=\"image\" src=\"https://www.cdw.com/wcsstore/CDWStarterStoreRWD/LocationPages/cdw-Tools-Bemidji-Storefront.jpg\" alt=\"cdw Tools Bemidji Storefront\"&gt;&lt;/div&gt;\n\t&lt;div class=\"Main210309_item6\"&gt;&lt;img itemprop=\"image\" src=\"https://www.cdw.com/wcsstore/CDWStarterStoreRWD/LocationPages/cdw-Tools-Bemidji-Salesfloor.jpg\" alt=\"cdw Tools Bemidji Salesfloor\"&gt;&lt;/div&gt;\n\t&lt;div class=\"Main210309_item7\"&gt;&lt;div class=\"SubTitle210309\"&gt;&lt;i class=\"fas fa-phone\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;Contact Us:&lt;/div&gt;\n\t\t&lt;div class=\"ContactInfo210309\"&gt;Toll-Free: &lt;a href=\"tel:8002866268\"&gt;(800) 286-6268&lt;/a&gt;&lt;br&gt;Local: &lt;a itemprop=\"telephone\" href=\"tel:2184448665\"&gt;(218) 444-8665&lt;/a&gt;&lt;br&gt;Fax: (218) 751-5275&lt;br&gt;E-mail: &lt;a itemprop=\"email\" href=\"mailto:bemidji@cdw.com\"&gt;bemidji@cdw.com&lt;/a&gt;&lt;/div&gt;\n\t&lt;/div&gt;\n\t&lt;div class=\"Main210309_item8\"&gt;\t&lt;div class=\"SubTitle210309\"&gt;Have some feedback?&lt;/div&gt;\n\t\t&lt;div class=\"ContactInfo210309\"&gt;&lt;i class=\"fab fa-google\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;a href=\"https://www.google.com/search?source=hp&amp;amp;ei=CepIYOSQJ-KP9PwP5Iy98Aw&amp;amp;iflsig=AINFCbYAAAAAYEj4GdVU-ujM2dTYSIp-fpzjmJlljuhC&amp;amp;q=cdw+Tools+Bemidji&amp;amp;oq=cdw+Tools+Bemidji&amp;amp;gs_lcp=Cgdnd3Mtd2l6EAMyCwguEMcBEK8BEJMCMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoICAAQ6gIQjwE6CAgAELEDEIMBOgIIADoLCC4QsQMQxwEQowI6BQguELEDOggILhDHARCjAjoOCC4QsQMQxwEQowIQkwI6BQgAELEDOggILhDHARCvAToLCC4QxwEQrwEQiwM6DgguELEDEMcBEKMCEIsDOggIABCxAxCLAzoFCAAQiwM6CwgAELEDEIMBEIsDOggIABCxAxDJAzoFCAAQkgM6BQgAEMkDOgsIABDJAxAWEAoQHjoICAAQFhAKEB5QxRFYnSZg_SdoAXAAeACAAaoBiAGlDpIBBDEwLjiYAQCgAQGqAQdnd3Mtd2l6sAEKuAEC&amp;amp;sclient=gws-wiz&amp;amp;ved=0ahUKEwikuYapiabvAhXiB50JHWRGD84Q4dUDCAo&amp;amp;uact=5#lrd=0x52b82e00e83c1c2d:0x405ca7f7c3de580b,1,,,\" target=\"_blank\"&gt;Review us on Google&lt;/a&gt;&lt;/div&gt;\n\t&lt;/div&gt;\n\t&lt;div class=\"Main210309_item9\" style=\"border: none;\"&gt;&lt;div class=\"SubTitle210309\"&gt;Connect with us&lt;/div&gt;\n\t\t&lt;div class=\"ContactInfo210309\" style=\"line-height: 20px;\"&gt;\n\t\t\t&lt;span style=\"margin-top: 0px;\"&gt;&lt;i class=\"fab fa-facebook-square\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;b&gt;Facebook&lt;/b&gt;&lt;br&gt;&lt;a href=\"https://www.facebook.com/cdwtoolsbemidji\" target=\"_blank\"&gt;facebook.com/cdwtoolsbemidji&lt;/a&gt;&lt;/span&gt;\n\t\t\t&lt;br&gt;\n\t\t\t&lt;span&gt;&lt;i class=\"fab fa-instagram-square\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;b&gt;Instagram&lt;/b&gt;&amp;nbsp;&lt;a href=\"https://www.instagram.com/cdwtools/\" target=\"_blank\"&gt;@cdwtools&lt;/a&gt;&lt;/span&gt;\n\t\t\t&lt;br&gt;\n\t\t\t&lt;span&gt;&lt;i class=\"fab fa-twitter-square\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;b&gt;Twitter&lt;/b&gt;&amp;nbsp;&lt;a href=\"https://twitter.com/CDWStarterStore\" target=\"_blank\"&gt;@CDWStarterStore&lt;/a&gt;&lt;/span&gt;\n\t\t\t&lt;br&gt;\n\t\t\t&lt;span&gt;&lt;i class=\"fab fa-youtube\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;b&gt;YouTube&lt;/b&gt;&lt;br&gt;&lt;a href=\"https://www.youtube.com/cdwtoolstv\" target=\"_blank\"&gt;youtube.com/cdwtoolstv&lt;/a&gt;&lt;/span&gt;\n\t\t\t&lt;br&gt;\n\t\t\t&lt;span&gt;&lt;i class=\"fab fa-tiktok\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;b&gt;TikTok&lt;/b&gt;&amp;nbsp;&lt;a href=\"https://www.tiktok.com/@cdwtools?\" target=\"_blank\"&gt;@cdwtools&lt;/a&gt;&lt;/span&gt;\n\t\t\t&lt;br&gt;\n\t\t\t&lt;span&gt;&lt;i class=\"fab fa-snapchat-square\" aria-hidden=\"true\"&gt;&lt;/i&gt;&amp;nbsp;&lt;b&gt;Snapchat&lt;/b&gt;&amp;nbsp;@cdwtools&lt;/span&gt;\n\t\t&lt;/div&gt;\n\t&lt;/div&gt;\n&lt;/div&gt;"
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -3677,7 +3677,7 @@ Sintonizzatore esterno ATSC DTB-H260F Samsung&lt;/div&gt;&#13;
   "htmlContent" : "&lt;p&gt;&lt;strong&gt;Test&lt;/strong&gt;&lt;img src=\"placeholder%20410x179.4.png?$staticlink$\"&gt;&lt;/p&gt;"
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -5669,7 +5669,7 @@ Sintonizzatore esterno ATSC DTB-H260F Samsung&lt;/div&gt;&#13;
   "category" : "Apparel"
 }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
     </content>
 
@@ -6468,7 +6468,7 @@ Sintonizzatore esterno ATSC DTB-H260F Samsung&lt;/div&gt;&#13;
 }</config>
         <data xml:lang="x-default">{ }</data>
         <online-flag>true</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <page-attributes/>
         <content-links>
             <content-link content-id="972e059a9b9b54d1af2c1cfa31" type="component.commerce_layouts.mobileGrid3r2c.column3">
@@ -6505,14 +6505,14 @@ Sintonizzatore esterno ATSC DTB-H260F Samsung&lt;/div&gt;&#13;
             <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div&gt;&lt;button class="title btn text-left btn-block d-sm-none" aria-expanded="false" aria-controls="collapsible-about"&gt;Company Info&lt;/button&gt;&lt;h2 class="title d-none d-sm-block"&gt;Company Info&lt;/h2&gt;&lt;/div&gt;&#13;
 &lt;div id="collapsible-about" class="menu-footer content"&gt;                &#13;
 &lt;ul class=""&gt;&#13;
-                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'about-us')$" title="Go to About Us"&gt;About Acme&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'about-us')$" title="Go to About Us"&gt;About cdw&lt;/a&gt;&lt;/li&gt;&#13;
                 &lt;li&gt;&lt;a href="$httpsURL('Stores-Find', 'showMap', true, 'horizontalView', true, 'isForm', true)$" title="Go to Store Locator"&gt;Location&lt;/a&gt;&lt;/li&gt;&#13;
                 &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'jobs-landing')$" title="Go to Careers"&gt;Careers&lt;/a&gt;&lt;/li&gt;&#13;
 	     &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'privacy-policy')$" title="Go to Press Releases"&gt;Press Releases&lt;/a&gt;&lt;/li&gt;&#13;
 	     &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'privacy-policy')$" title="Go to Affiliates"&gt;Affiliates&lt;/a&gt;&lt;/li&gt;&#13;
-	    &lt;li&gt;&lt;a href="https://www.acmerents.com/" title="External Link: Go to Acme Rents"&gt;Acme Rents&lt;/a&gt;&lt;/li&gt;&#13;
-	    &lt;li&gt;&lt;a href="#" title="Go to Acme Equipment"&gt;Acme Equipment&lt;/a&gt;&lt;/li&gt;&#13;
-	    &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'blog')$" title="Go to Blog"&gt;Acme Tools Blog&lt;/a&gt;&lt;/li&gt;&#13;
+	    &lt;li&gt;&lt;a href="https://www.cdwrents.com/" title="External Link: Go to cdw Rents"&gt;cdw Rents&lt;/a&gt;&lt;/li&gt;&#13;
+	    &lt;li&gt;&lt;a href="#" title="Go to cdw Equipment"&gt;cdw Equipment&lt;/a&gt;&lt;/li&gt;&#13;
+	    &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'blog')$" title="Go to Blog"&gt;cdw Tools Blog&lt;/a&gt;&lt;/li&gt;&#13;
                 &lt;/ul&gt;&#13;
 &lt;span class="catalog"&gt;&#13;
 &lt;h3&gt;Free Catalog!&lt;/h3&gt;&#13;
@@ -6619,7 +6619,7 @@ Sintonizzatore esterno ATSC DTB-H260F Samsung&lt;/div&gt;&#13;
 &lt;/ul&gt;&#13;
 &#13;
 &lt;ul class="partners"&gt;&#13;
-	&lt;li class="bbb"&gt;&lt;a href="https://www.bbb.org/minnesota/business-reviews/contractors-equipment-and-supplies-dealers-and-ser/acme-tools-in-grand-forks-nd-22003059#sealclick" id="BBBLink" rel="nofollow" target="_blank"&gt;&lt;img alt="Acme Tools is a BBB Accredited Business. Click for the BBB Business Review of this Contractors Equipment &amp;amp; Supplies - Dealers &amp;amp; Service in Grand Forks ND" src="partners_bbb_1.png?$staticlink$" target="_blank" title="" /&gt; &lt;/a&gt;&lt;/li&gt;&#13;
+	&lt;li class="bbb"&gt;&lt;a href="https://www.bbb.org/minnesota/business-reviews/contractors-equipment-and-supplies-dealers-and-ser/cdw-tools-in-grand-forks-nd-22003059#sealclick" id="BBBLink" rel="nofollow" target="_blank"&gt;&lt;img alt="cdw Tools is a BBB Accredited Business. Click for the BBB Business Review of this Contractors Equipment &amp;amp; Supplies - Dealers &amp;amp; Service in Grand Forks ND" src="partners_bbb_1.png?$staticlink$" target="_blank" title="" /&gt; &lt;/a&gt;&lt;/li&gt;&#13;
 	&lt;li&gt;&lt;img alt="National Association of Home Builders" src="partners_nahb.png?$staticlink$" title="" /&gt;&lt;/li&gt;&#13;
 	&lt;li&gt;&lt;img alt="Associated General Contractors of America" src="partners_agc.png?$staticlink$" title="" /&gt;&lt;/li&gt;&#13;
 	&lt;li&gt;&lt;img alt="UC SSL Certificate" height="26" src="ComodoSecure_BW.png?$staticlink$" style="border-color: initial; border-image: initial;" title="" width="76" /&gt;&lt;br /&gt;&#13;
@@ -6627,7 +6627,7 @@ Sintonizzatore esterno ATSC DTB-H260F Samsung&lt;/div&gt;&#13;
 &lt;/ul&gt;&#13;
 &lt;/div&gt;&#13;
 &#13;
-&lt;div class="copyright"&gt;&amp;copy; Copyright 2010-2021 Acme Tools&lt;/div&gt;&#13;
+&lt;div class="copyright"&gt;&amp;copy; Copyright 2010-2021 cdw Tools&lt;/div&gt;&#13;
 &lt;!-- SFRA 6.0.0 --&gt;</custom-attribute>
             <custom-attribute attribute-id="body" xml:lang="fr-FR">&lt;div class="copyright"&gt;© 2004-2019 Salesforce. Tous droits réservés.&lt;/div&gt;&#13;
                 &lt;div class="postscript"&gt;Ceci est une boutique de démonstration uniquement. Les commandes NE SERONT PAS traitées.&lt;/div&gt;&#13;
@@ -6677,7 +6677,7 @@ Sintonizzatore esterno ATSC DTB-H260F Samsung&lt;/div&gt;&#13;
         <searchable-flag>false</searchable-flag>
         <page-attributes/>
         <custom-attributes>
-            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;form action="/on/demandware.store/Sites-AcmeTools-Site/en_US/CustomerService-NLSubscribe" class="contact-us" method="POST" name="contact-us"&gt;&#13;
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;form action="/on/demandware.store/Sites-CDWStarterStore-Site/en_US/CustomerService-NLSubscribe" class="contact-us" method="POST" name="contact-us"&gt;&#13;
         &lt;!--- contact us email ---&gt;&#13;
         &lt;div class="row contact-us-email"&gt;&#13;
             &lt;div class="col"&gt;&#13;
@@ -6742,33 +6742,33 @@ Sintonizzatore esterno ATSC DTB-H260F Samsung&lt;/div&gt;&#13;
         <custom-attributes>
             <custom-attribute attribute-id="body" xml:lang="x-default">&lt;ul class="social-links"&gt;&#13;
 &#13;
-&lt;li &gt;&lt;a target="_blank" id="FooterFacebookLink" href="https://facebook.com/acmetools" rel="nofollow" onClick='cmCreateElementTag("Facebook-Footer","Social Media","TBD");'&gt;&#13;
+&lt;li &gt;&lt;a target="_blank" id="FooterFacebookLink" href="https://facebook.com/cdwtools" rel="nofollow" onClick='cmCreateElementTag("Facebook-Footer","Social Media","TBD");'&gt;&#13;
 		 &lt;i class="fab fa-facebook-square fa-2x fa-fw"&gt;&lt;/i&gt; &lt;span&gt;Like us on Facebook&lt;/span&gt;&#13;
 		&lt;/a&gt;&#13;
 	&lt;/li&gt;&#13;
-	&lt;li&gt;&lt;a target="_blank" id="FooterInstagramLink" href="https://instagram.com/acmetools" rel="nofollow" onClick='cmCreateElementTag("Instagram-Footer","Social Media","TBD");'&gt;&#13;
+	&lt;li&gt;&lt;a target="_blank" id="FooterInstagramLink" href="https://instagram.com/cdwtools" rel="nofollow" onClick='cmCreateElementTag("Instagram-Footer","Social Media","TBD");'&gt;&#13;
 	       &lt;i class="fab fa-instagram-square fa-2x fa-fw"&gt;&lt;/i&gt; &lt;span&gt;Follow us on Instagram&lt;/span&gt;&#13;
 		&lt;/a&gt;&#13;
 	&lt;/li&gt;&#13;
-	&lt;li&gt;&lt;a target="_blank" id="FooterTwitterLink" href="https://twitter.com/acmetools" rel="nofollow" onClick='cmCreateElementTag("Twitter-Footer","Social Media","TBD");'&gt;&#13;
+	&lt;li&gt;&lt;a target="_blank" id="FooterTwitterLink" href="https://twitter.com/cdwtools" rel="nofollow" onClick='cmCreateElementTag("Twitter-Footer","Social Media","TBD");'&gt;&#13;
 		  &lt;i class="fab fa-twitter-square fa-2x fa-fw"&gt;&lt;/i&gt; &lt;span&gt;Follow us on Twitter&lt;/span&gt;&#13;
 		&lt;/a&gt;&#13;
 	&lt;/li&gt;&#13;
 						&#13;
-	&lt;li&gt;&lt;a target="_blank" id="FooterLinkedInLink" href="https://www.linkedin.com/company/acmetools.com/" rel="nofollow" onClick='cmCreateElementTag("Linkedin-Footer","Social Media","TBD");'&gt;&#13;
+	&lt;li&gt;&lt;a target="_blank" id="FooterLinkedInLink" href="https://www.linkedin.com/company/cdw.com/" rel="nofollow" onClick='cmCreateElementTag("Linkedin-Footer","Social Media","TBD");'&gt;&#13;
 		  &lt;i class="fab fa-linkedin fa-2x fa-fw"&gt;&lt;/i&gt; &lt;span&gt;Connect with us on LinkedIn&lt;/span&gt;&#13;
 		&lt;/a&gt;&#13;
 	&lt;/li&gt;&#13;
-	&lt;li&gt;&lt;a target="_blank" id="FooterYouTubeLink" href="https://www.youtube.com/acmetoolstv" rel="nofollow" onClick='cmCreateElementTag("YouTube-Footer","Social Media","TBD");'&gt;&#13;
+	&lt;li&gt;&lt;a target="_blank" id="FooterYouTubeLink" href="https://www.youtube.com/cdwtoolstv" rel="nofollow" onClick='cmCreateElementTag("YouTube-Footer","Social Media","TBD");'&gt;&#13;
 		  &lt;i class="fab fa-youtube-square fa-2x fa-fw"&gt;&lt;/i&gt; &lt;span&gt;Watch us on YouTube&lt;/span&gt;&#13;
 		&lt;/a&gt;&#13;
 	&lt;/li&gt;&#13;
 &#13;
-	&lt;li&gt;&lt;a target="_blank" id="FooterPinterestLink" href="https://www.pinterest.com/acmetools/" rel="nofollow" onClick='cmCreateElementTag("Pinterest-Footer","Social Media","TBD");'&gt;&#13;
+	&lt;li&gt;&lt;a target="_blank" id="FooterPinterestLink" href="https://www.pinterest.com/cdwtools/" rel="nofollow" onClick='cmCreateElementTag("Pinterest-Footer","Social Media","TBD");'&gt;&#13;
 		  &lt;i class="fab fa-pinterest-square fa-2x fa-fw"&gt;&lt;/i&gt; &lt;span&gt;Follow us on Pinterest&lt;/span&gt;&#13;
 		&lt;/a&gt;&#13;
 	&lt;/li&gt;	&#13;
-      &lt;li&gt;&lt;a target="_blank" id="FooterTwitterLink" href="https://www.tiktok.com/@acmetools?lang=en" rel="nofollow" onClick='cmCreateElementTag("TikTokt-Footer","Social Media","TBD");'&gt;&#13;
+      &lt;li&gt;&lt;a target="_blank" id="FooterTwitterLink" href="https://www.tiktok.com/@cdwtools?lang=en" rel="nofollow" onClick='cmCreateElementTag("TikTokt-Footer","Social Media","TBD");'&gt;&#13;
 		  &lt;i class="fab fa-tiktok fa-2x fa-fw"&gt;&lt;/i&gt; &lt;span&gt;Follow us on TikTok&lt;/span&gt;&#13;
 		&lt;/a&gt;&#13;
 	&lt;/li&gt;	&#13;
@@ -6811,8 +6811,8 @@ Sintonizzatore esterno ATSC DTB-H260F Samsung&lt;/div&gt;&#13;
         <searchable-flag>false</searchable-flag>
         <page-attributes/>
         <custom-attributes>
-            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div&gt;&lt;button aria-controls="collapsible-customer-service" aria-expanded="false" class="title btn text-left btn-block d-sm-none"&gt;Acme Resources&lt;/button&gt;&#13;
-&lt;h2 class="title d-none d-sm-block"&gt;Acme Resources&lt;/h2&gt;&#13;
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div&gt;&lt;button aria-controls="collapsible-customer-service" aria-expanded="false" class="title btn text-left btn-block d-sm-none"&gt;cdw Resources&lt;/button&gt;&#13;
+&lt;h2 class="title d-none d-sm-block"&gt;cdw Resources&lt;/h2&gt;&#13;
 &lt;/div&gt;&#13;
 &#13;
 &lt;ul class="menu-footer content" id="collapsible-customer-service"&gt;&#13;
@@ -8526,10 +8526,10 @@ Per utilizzare un certificato regalo, specifica il codice di 16 cifre nella pagi
         <data xml:lang="x-default">{ }</data>
         <online-flag>false</online-flag>
         <online-flag site-id="RefArch">true</online-flag>
-        <online-flag site-id="AcmeTools">false</online-flag>
+        <online-flag site-id="CDWStarterStore">false</online-flag>
         <searchable-flag>false</searchable-flag>
         <searchable-flag site-id="RefArch">false</searchable-flag>
-        <searchable-flag site-id="AcmeTools">true</searchable-flag>
+        <searchable-flag site-id="CDWStarterStore">true</searchable-flag>
         <page-attributes/>
         <folder-links>
             <classification-link folder-id="My Customer Service"/>
@@ -8567,7 +8567,7 @@ Per utilizzare un certificato regalo, specifica il codice di 16 cifre nella pagi
             </content-link>
         </content-links>
         <sitemap-included-flag site-id="RefArch">false</sitemap-included-flag>
-        <sitemap-included-flag site-id="AcmeTools">false</sitemap-included-flag>
+        <sitemap-included-flag site-id="CDWStarterStore">false</sitemap-included-flag>
     </content>
 
     <content content-id="inactive-source-code">
@@ -11295,7 +11295,7 @@ CityName, XX 00000 USA&lt;br /&gt;&#13;
         <searchable-flag>true</searchable-flag>
         <page-attributes/>
         <custom-attributes>
-            <custom-attribute attribute-id="body" xml:lang="x-default">In certain instances, Acme Tools may offer volume discounts on select tools, equipment, or accessories that may not be reflected on our website. If you're looking at placing a bulk order of your favorite accessory or outfitting an entire workshop or crew, we'll do our best to sharpen our pencil. Fill out the form below with our part numbers and the quantities you're interested in. An Acme Tools Representative will contact you within two business days.</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="x-default">In certain instances, cdw Tools may offer volume discounts on select tools, equipment, or accessories that may not be reflected on our website. If you're looking at placing a bulk order of your favorite accessory or outfitting an entire workshop or crew, we'll do our best to sharpen our pencil. Fill out the form below with our part numbers and the quantities you're interested in. An cdw Tools Representative will contact you within two business days.</custom-attribute>
         </custom-attributes>
         <sitemap-included-flag>true</sitemap-included-flag>
     </content>
@@ -11816,9 +11816,9 @@ Consideriamo molto seriamente i diritti relativi alla privacy degli utenti di qu
         <visibility-mode xml:lang="x-default">visible</visibility-mode>
         <data xml:lang="x-default">{ }</data>
         <online-flag>false</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <searchable-flag>false</searchable-flag>
-        <searchable-flag site-id="AcmeTools">false</searchable-flag>
+        <searchable-flag site-id="CDWStarterStore">false</searchable-flag>
         <page-attributes/>
         <content-links>
             <content-link content-id="a4798deb58a5b1d058b5e299ac" type="page.storePage.main">
@@ -11831,7 +11831,7 @@ Consideriamo molto seriamente i diritti relativi alla privacy degli utenti di qu
                 <position>2.0</position>
             </content-link>
         </content-links>
-        <sitemap-included-flag site-id="AcmeTools">false</sitemap-included-flag>
+        <sitemap-included-flag site-id="CDWStarterStore">false</sitemap-included-flag>
     </content>
 
     <content content-id="store-bismarck">
@@ -11843,16 +11843,16 @@ Consideriamo molto seriamente i diritti relativi alla privacy degli utenti di qu
         <visibility-mode xml:lang="x-default">visible</visibility-mode>
         <data xml:lang="x-default">{ }</data>
         <online-flag>false</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <searchable-flag>false</searchable-flag>
-        <searchable-flag site-id="AcmeTools">false</searchable-flag>
+        <searchable-flag site-id="CDWStarterStore">false</searchable-flag>
         <page-attributes/>
         <content-links>
             <content-link content-id="fd7321ec233c3a16ea631c8250" type="page.storePage.main">
                 <position>0.0</position>
             </content-link>
         </content-links>
-        <sitemap-included-flag site-id="AcmeTools">false</sitemap-included-flag>
+        <sitemap-included-flag site-id="CDWStarterStore">false</sitemap-included-flag>
     </content>
 
     <content content-id="store-locator">
@@ -13798,9 +13798,9 @@ Burlington, MA 01803, USA&lt;br /&gt;&#13;
         <visibility-mode xml:lang="x-default">visible</visibility-mode>
         <data xml:lang="x-default">{ }</data>
         <online-flag>false</online-flag>
-        <online-flag site-id="AcmeTools">true</online-flag>
+        <online-flag site-id="CDWStarterStore">true</online-flag>
         <searchable-flag>false</searchable-flag>
-        <searchable-flag site-id="AcmeTools">false</searchable-flag>
+        <searchable-flag site-id="CDWStarterStore">false</searchable-flag>
         <page-attributes/>
         <content-links>
             <content-link content-id="5e7654ea9497844878fcb52ebb" type="page.storePage.main">
@@ -13816,7 +13816,7 @@ Burlington, MA 01803, USA&lt;br /&gt;&#13;
                 <position>1.0</position>
             </content-link>
         </content-links>
-        <sitemap-included-flag site-id="AcmeTools">false</sitemap-included-flag>
+        <sitemap-included-flag site-id="CDWStarterStore">false</sitemap-included-flag>
     </content>
 
 </library>

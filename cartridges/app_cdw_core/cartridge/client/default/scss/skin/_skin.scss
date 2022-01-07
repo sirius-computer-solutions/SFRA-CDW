@@ -102,7 +102,7 @@ h1.header.page-title::before {
 }
 // primary blue
 .btn-primary {
-    background-color: $acme-blue;
+    background-color: $cdw-blue;
     border-color: #{var(--skin-primary-color-2)};
     color: #{var(--skin-banner-text-color-1)};
 }
@@ -163,8 +163,8 @@ h1.header.page-title::before {
     background-color: $white;
 
     &:hover, &:focus {
-        background-color: $acme-blue;
-        border-color: $acme-blue;
+        background-color: $cdw-blue;
+        border-color: $cdw-blue;
         color: #{var(--skin-banner-text-color-1)};
     }
 }
@@ -172,7 +172,7 @@ h1.header.page-title::before {
 .btn-link {
     background: transparent;
     border: none;
-    color: $acme-blue;
+    color: $cdw-blue;
 }
 body {
     font-family: var(--skin-body-font);

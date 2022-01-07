@@ -225,7 +225,7 @@
         "SEO URL Keywword": {
           "type": "string"
         },
-		"Acme Tools Salesforce Category": {
+		"cdw Tools Salesforce Category": {
           "type": "string",
 		  "optional": true
         }

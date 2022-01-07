@@ -185,7 +185,7 @@ public class MappingMapTocatalog2 extends com.altova.TraceProvider {
 			private boolean moveNext_9() throws Exception {
 				state = 11;				
 				if (!var5_join.moveNext()) {state = 10; return false; }
-				var6_object_member_by_name = (com.altova.functions.Json.GetMemberByName(((com.altova.mapforce.IMFNode)(var5_join.current())), "Acme Tools Salesforce Sub-Category 2")).enumerator();
+				var6_object_member_by_name = (com.altova.functions.Json.GetMemberByName(((com.altova.mapforce.IMFNode)(var5_join.current())), "cdw Tools Salesforce Sub-Category 2")).enumerator();
 				return false;
 			}
 			private boolean moveNext_10() throws Exception {
@@ -208,8 +208,8 @@ public class MappingMapTocatalog2 extends com.altova.TraceProvider {
 				state = 15;				
 				if (!var7_as_string.moveNext()) {state = 14; return false; }
 				var8_box = new com.altova.functions.Core.SequenceCache(com.altova.functions.Core.box(((java.lang.String)(var7_as_string.current()))));
-				var9_object_member_by_name = new com.altova.functions.Core.SequenceCache(com.altova.functions.Json.GetMemberByName(((com.altova.mapforce.IMFNode)(var5_join.current())), "Acme Tools Salesforce Sub-Category 1"));
-				var10_object_member_by_name = new com.altova.functions.Core.SequenceCache(com.altova.functions.Json.GetMemberByName(((com.altova.mapforce.IMFNode)(var5_join.current())), "Acme Tools Salesforce Category"));
+				var9_object_member_by_name = new com.altova.functions.Core.SequenceCache(com.altova.functions.Json.GetMemberByName(((com.altova.mapforce.IMFNode)(var5_join.current())), "cdw Tools Salesforce Sub-Category 1"));
+				var10_object_member_by_name = new com.altova.functions.Core.SequenceCache(com.altova.functions.Json.GetMemberByName(((com.altova.mapforce.IMFNode)(var5_join.current())), "cdw Tools Salesforce Category"));
 				current = com.altova.functions.Core.createElement(com.altova.functions.Core.createQName("category", "http://www.demandware.com/xml/impex/catalog/2006-10-31"), (new seq4_join(var9_object_member_by_name, var8_box)));
 				pos++;
 				return true;

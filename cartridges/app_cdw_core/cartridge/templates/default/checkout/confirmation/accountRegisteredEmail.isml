@@ -51,10 +51,10 @@
                                                             </ul>
 
                                                             ${Resource.msg('user.registration.email.content3', 'account', null)}<br><br><br>
-                                                            ${Resource.msg('user.registration.email.content4', 'account', null)}<a href="https://www.acmetools.com">acmetools.com</a>&nbsp;${Resource.msg('user.registration.email.content4.1', 'account', null)}<br><br><br>
+                                                            ${Resource.msg('user.registration.email.content4', 'account', null)}<a href="https://www.cdw.com">cdw.com</a>&nbsp;${Resource.msg('user.registration.email.content4.1', 'account', null)}<br><br><br>
                                                             ${Resource.msg('user.registration.email.content5', 'account', null)}<br><br><br>
                                                             ${Resource.msg('user.registration.email.content6', 'account', null)}<br><br><br>
-                                                            ${Resource.msg('user.registration.email.content7', 'account', null)}<br><a href="https://www.acmetools.com">acmetools.com</a>     <br><br><br>
+                                                            ${Resource.msg('user.registration.email.content7', 'account', null)}<br><a href="https://www.cdw.com">cdw.com</a>     <br><br><br>
                                                     </td>
                                                 </tr>
                                                 

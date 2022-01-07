@@ -22,8 +22,8 @@ function init(model, context) {
     var sizeSmall = ' col-sm-' + smColSize;
     var sizeMedium = ' col-md-' + mdColSize;
 
-    model.regions.slides.setClassName('acme-carousel-inner');
-    model.regions.slides.setComponentClassName('acme-carousel-item');
+    model.regions.slides.setClassName('cdw-carousel-inner');
+    model.regions.slides.setComponentClassName('cdw-carousel-item');
 
     var numberOfSlides = model.regions.slides.region.size;
 

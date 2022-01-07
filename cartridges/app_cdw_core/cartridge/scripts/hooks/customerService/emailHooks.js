@@ -10,8 +10,8 @@ function sendContactUsEmail(contactUsDetails, templateContext) {
 
     var email = new Mail();
 
-    email.addTo(Site.current.getCustomPreferenceValue('contactUsToEmail') || 'support@acmetools.com');
-    //email.addBcc(Site.current.getCustomPreferenceValue('contactUsToEmail') || 'support@acmetools.com');
+    email.addTo(Site.current.getCustomPreferenceValue('contactUsToEmail') || 'support@cdw.com');
+    //email.addBcc(Site.current.getCustomPreferenceValue('contactUsToEmail') || 'support@cdw.com');
     email.setFrom(Site.current.getCustomPreferenceValue('contactUsFromEmail') || 'no-reply@salesforce.com');
     if(contactUsDetails.topic && contactUsDetails != undefined && contactUsDetails != "undefined") {
         email.setSubject(contactUsDetails.topic);

@@ -10,8 +10,8 @@ var FileWriter = require('dw/io/FileWriter');
 var FileHelper = require('~/cartridge/scripts/file/FileHelper');
 var StepUtil = require('~/cartridge/scripts/util/StepUtil');
 
-var s2kConstants = require('../../../../app_acme_core/cartridge/scripts/utils/s2kServiceConstants').getConstants();
-var s2kRestService = require('../../../../app_acme_core/cartridge/scripts/services/s2kRestService');
+var s2kConstants = require('../../../../app_cdw_core/cartridge/scripts/utils/s2kServiceConstants').getConstants();
+var s2kRestService = require('../../../../app_cdw_core/cartridge/scripts/services/s2kRestService');
 
 var overallStatus = new Status(Status.OK, 'OK', 'Import successful');
 

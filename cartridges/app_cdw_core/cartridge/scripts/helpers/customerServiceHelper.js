@@ -77,9 +77,9 @@
                 product = tempHit.product;
             }
             
-            if(product != null && product.custom && "acme-tools-heavy-equipment" in product.custom) {
-                if (product.custom["acme-tools-heavy-equipment"] == 'true' || product.custom["acme-tools-heavy-equipment"] == 'Yes'
-                        || product.custom["acme-tools-heavy-equipment"] === true || product.custom["acme-tools-heavy-equipment"] == 'Y') {
+            if(product != null && product.custom && "cdw-tools-heavy-equipment" in product.custom) {
+                if (product.custom["cdw-tools-heavy-equipment"] == 'true' || product.custom["cdw-tools-heavy-equipment"] == 'Yes'
+                        || product.custom["cdw-tools-heavy-equipment"] === true || product.custom["cdw-tools-heavy-equipment"] == 'Y') {
                     return true;
                 }
                 

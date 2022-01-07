@@ -82,7 +82,7 @@
                 font-size: 1em;
             }
             .sales {
-                color: $acme-red;
+                color: $cdw-red;
                 font-weight: 600;
             }
             .tiered {
@@ -221,7 +221,7 @@
     }
 }
 
-.acme-carousel-item {
+.cdw-carousel-item {
     .product {
         @include media-breakpoint-down(sm) {
             margin-bottom: 0 !important;
@@ -409,7 +409,7 @@ div.availability, .availability-styling {
     } 
 }
 .fs-promo {
-    color: $acme-blue;
+    color: $cdw-blue;
     i:before {
         padding-right: .25em;
     } 

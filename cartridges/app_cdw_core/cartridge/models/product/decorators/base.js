@@ -3,9 +3,9 @@
 module.exports = function (object, apiProduct, type) {
 
     var productName = apiProduct.name;
-    if('custom' in apiProduct && 'acme-tools-override-product-name' in apiProduct.custom && apiProduct.custom['acme-tools-override-product-name']!=null)
+    if('custom' in apiProduct && 'cdw-tools-override-product-name' in apiProduct.custom && apiProduct.custom['cdw-tools-override-product-name']!=null)
     {
-        var overrideProductName = apiProduct.custom['acme-tools-override-product-name'];
+        var overrideProductName = apiProduct.custom['cdw-tools-override-product-name'];
         if(overrideProductName.toString().trim()!='') productName = overrideProductName;
     }
         

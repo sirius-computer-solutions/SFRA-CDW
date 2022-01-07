@@ -2,7 +2,7 @@
 
 var CustomObjectMgr = require('dw/object/CustomObjectMgr');
 var UUIDUtils = require('dw/util/UUIDUtils');
-var MessageConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+var MessageConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
 var hooksHelper = require('*/cartridge/scripts/helpers/hooks');
 const Transaction = require('dw/system/Transaction');
 const Logger = require('dw/system/Logger');

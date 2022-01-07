@@ -15,10 +15,10 @@ var datalayerEvent = [];
 var datalayerView = [];
 var datalayerEventSort = [];
 var defaultPageData = { pageTypeIdentifier: "StaticContent", pageSubIdentifier: "", pageGroup: "Content", supportCenter: "1" };
-var defaultOwnerData = { sectionName: "Ownership",Owner: "Acmetools.com",copyRights: "All Rights Reserved"};
+var defaultOwnerData = { sectionName: "Ownership",Owner: "cdw.com",copyRights: "All Rights Reserved"};
 
 /**
- * Retrieve ACME OWNER tracking data
+ * Retrieve cdw OWNER tracking data
  * @param {Object} obj - JSON object with required properties
  * @return {Object} - tracking data
  */
@@ -32,7 +32,7 @@ function getOwnerData() {
 };
 
 /**
- * Retrieve ACME PAGE tracking data
+ * Retrieve cdw PAGE tracking data
  * @param {Object} obj - JSON object with required properties
  * @return {Object} - tracking data
  */
@@ -63,7 +63,7 @@ function isMobile() {
 };
 
 /**
- * Retrieve ACME USER tracking data
+ * Retrieve cdw USER tracking data
  * @param {Object} req - current request object
  * @return {Object} - tracking data
  */
@@ -108,7 +108,7 @@ function getUserData(req) {
 };
 
 /**
- * Retrieve ACME PDP tracking data
+ * Retrieve cdw PDP tracking data
  * @param {Object} product - a salesforce product
  * @return {Object} - tracking data
  */
@@ -123,7 +123,7 @@ function getPDPData(product) {
 };
 
 /**
- * Retrieve ACME PDP tracking data
+ * Retrieve cdw PDP tracking data
  * @param {Object} product - a salesforce product
  * @return {Object} - tracking data
  */
@@ -150,7 +150,7 @@ function getEcommerceData(product) {
 };
 
 /**
- * Retrieve ACME ecommerce tracking data
+ * Retrieve cdw ecommerce tracking data
  * @param {Object} data - a salesforce product
  * @param {Object} basket - a salesforce product
  * @return {Object} - updated tracking data
@@ -166,7 +166,7 @@ function addActionAndProductData(data, basket, container) {
         // build actionField
         var actionField = {
             "id": orderNo,
-            "affiliation": "AcmeTools",
+            "affiliation": "CDWStarterStore",
             "subTotal": basket.merchandizeTotalPrice.value,
             "tax": basket.totalTax,
             "shipping": basket.adjustedShippingTotalPrice.value,
@@ -187,7 +187,7 @@ function addActionAndProductData(data, basket, container) {
     
         collections.forEach(basket.productLineItems, function (productLineItem) {
             var item = {
-                'id': productLineItem.product && productLineItem.product.custom && 'acme-tools-part-number' in productLineItem.product.custom ? productLineItem.product.custom['acme-tools-part-number']:productLineItem.manufacturerSKU,
+                'id': productLineItem.product && productLineItem.product.custom && 'cdw-tools-part-number' in productLineItem.product.custom ? productLineItem.product.custom['cdw-tools-part-number']:productLineItem.manufacturerSKU,
                 'name': productLineItem.productName,
                 "brand": productLineItem.manufacturerName,
                 "category": productLineItem.product && productLineItem.product.primaryCategory?productLineItem.product.primaryCategory.displayName:'',
@@ -325,24 +325,24 @@ datalayerUtils.getProductData = function (req, product, apiProduct) {
             }
         }
         var isHeavyEquipment = false;
-        if(apiProduct.custom && "acme-tools-heavy-equipment" in apiProduct.custom) {
-            if(apiProduct.custom["acme-tools-heavy-equipment"] == 'true'){
+        if(apiProduct.custom && "cdw-tools-heavy-equipment" in apiProduct.custom) {
+            if(apiProduct.custom["cdw-tools-heavy-equipment"] == 'true'){
                 isHeavyEquipment = true;
             }
         }
         var commodityCode = "";
-        if(apiProduct.custom && "acme-tools-commodity-code" in apiProduct.custom) {
-            commodityCode = apiProduct.custom["acme-tools-commodity-code"];
+        if(apiProduct.custom && "cdw-tools-commodity-code" in apiProduct.custom) {
+            commodityCode = apiProduct.custom["cdw-tools-commodity-code"];
         }
         var isQuoteOnly = false;
-        if(apiProduct.custom && "acme-tools-quote-only-item" in apiProduct.custom) {
-            if(apiProduct.custom["acme-tools-quote-only-item"] == 'true'){
+        if(apiProduct.custom && "cdw-tools-quote-only-item" in apiProduct.custom) {
+            if(apiProduct.custom["cdw-tools-quote-only-item"] == 'true'){
                 isQuoteOnly = true;
             }
         }
         var inStoreOnly = "No";
-        if(apiProduct.custom && "acme-tools-available-in-store-only" in apiProduct.custom) {
-            inStoreOnly = apiProduct.custom["acme-tools-available-in-store-only"];
+        if(apiProduct.custom && "cdw-tools-available-in-store-only" in apiProduct.custom) {
+            inStoreOnly = apiProduct.custom["cdw-tools-available-in-store-only"];
         }
         
         var isFreeShipping = false;
@@ -363,7 +363,7 @@ datalayerUtils.getProductData = function (req, product, apiProduct) {
         data[3].PDP[0].brand = product.brand?product.brand.toString():"";
         data[3].PDP[0].pageTitle = product.productName.toString();
         data[3].PDP[0].categoryId = apiProduct.categories && apiProduct.categories.length>0?apiProduct.categories[0].ID:"";
-        data[3].PDP[0].partNumber = !empty(product.acmePartnumber) ? product.acmePartnumber: !empty(product.manufacturerSKU)?product.manufacturerSKU:'';
+        data[3].PDP[0].partNumber = !empty(product.cdwPartnumber) ? product.cdwPartnumber: !empty(product.manufacturerSKU)?product.manufacturerSKU:'';
         data[3].PDP[0].partType = "item";
         data[3].PDP[0].numParentCategories = apiProduct.categories.length.toString();
         data[3].PDP[0].listPrice = product.price.list && product.price.list.decimalPrice?product.price.list.decimalPrice.toString():"";
@@ -437,7 +437,7 @@ datalayerUtils.getCartData = function (req, basket) {
  */
 datalayerUtils.getCheckoutData = function (req, basket) {
     var data = datalayerUtils.getDefaultData(req);
-    var checkoutStage = req.querystring?req.querystring.stage?req.querystring.stage:"Acme Tools":"Acme Tools";
+    var checkoutStage = req.querystring?req.querystring.stage?req.querystring.stage:"cdw Tools":"cdw Tools";
     data[1].PAGE[0].pageTypeIdentifier = "Checkout-Summary";
     data[1].PAGE[0].pageSubIdentifier = checkoutStage;
     data[1].PAGE[0].pageGroup = "Checkout";
@@ -463,7 +463,7 @@ datalayerUtils.getCheckoutData = function (req, basket) {
 datalayerUtils.getConfirmationData = function (req, orderModel) {
     var data = datalayerUtils.getDefaultData(req);
     data[1].PAGE[0].pageTypeIdentifier = "Checkout-OrderConfirmation";
-    data[1].PAGE[0].pageSubIdentifier = "Acme Tools";
+    data[1].PAGE[0].pageSubIdentifier = "cdw Tools";
     data[1].PAGE[0].pageGroup = "Checkout-Confirmation";
     addActionAndProductData(data, orderModel, "purchase");
 

@@ -644,8 +644,8 @@
                 <attribute attribute-id="alternativeUrl"/>
                 <attribute attribute-id="bannerImageName"/>
             </attribute-group>
-            <attribute-group group-id="Acme Tool Custom Configuration">
-                <display-name xml:lang="x-default">Acme Tool Store Custom Configurations</display-name>
+            <attribute-group group-id="cdw Tool Custom Configuration">
+                <display-name xml:lang="x-default">cdw Tool Store Custom Configurations</display-name>
                 <attribute attribute-id="showSubCategories"/>
                 <attribute attribute-id="showBrandHeaderNav"/>
                 <attribute attribute-id="brandSortValue"/>
@@ -2418,8 +2418,8 @@
             </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
-            <attribute-group group-id="AcmeAttribute">
-                <display-name xml:lang="x-default">Acme Custom Attribute</display-name>
+            <attribute-group group-id="cdwAttribute">
+                <display-name xml:lang="x-default">cdw Custom Attribute</display-name>
                 <attribute attribute-id="dropShipQuantity"/>
             </attribute-group>
         </group-definitions>
@@ -2485,8 +2485,8 @@
             </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
-            <attribute-group group-id="AcmeAttribute">
-                <display-name xml:lang="x-default">Acme Custom Attribute</display-name>
+            <attribute-group group-id="cdwAttribute">
+                <display-name xml:lang="x-default">cdw Custom Attribute</display-name>
                 <attribute attribute-id="dropShip"/>
             </attribute-group>
         </group-definitions>
@@ -2804,8 +2804,8 @@
                 <attribute attribute-id="phoneMobile" system="true"/>
                 <attribute attribute-id="fax" system="true"/>
             </attribute-group>
-            <attribute-group group-id="Acme Tools B2B">
-                <display-name xml:lang="x-default">Acme Tools B2B Attributes</display-name>
+            <attribute-group group-id="cdw Tools B2B">
+                <display-name xml:lang="x-default">cdw Tools B2B Attributes</display-name>
                 <attribute attribute-id="b2bAccountNumber"/>
                 <attribute attribute-id="b2bAdmin"/>
                 <attribute attribute-id="b2bAdminApproved"/>
@@ -2818,8 +2818,8 @@
                 <attribute attribute-id="b2bWebEnabled"/>
                 <attribute attribute-id="b2bOrganizationName"/>
             </attribute-group>
-            <attribute-group group-id="Acme Custom Profile Attributes">
-                <display-name xml:lang="x-default">Acme Custom Profile Attributes</display-name>
+            <attribute-group group-id="cdw Custom Profile Attributes">
+                <display-name xml:lang="x-default">cdw Custom Profile Attributes</display-name>
                 <attribute attribute-id="newsletterSignUp"/>
             </attribute-group>
         </group-definitions>
@@ -2930,13 +2930,13 @@
             </attribute-definition>            
         </custom-attribute-definitions>
         <group-definitions>
-            <attribute-group group-id="Acme Custom Attributes">
-                <display-name xml:lang="x-default">Acme Custom Attributes</display-name>
+            <attribute-group group-id="cdw Custom Attributes">
+                <display-name xml:lang="x-default">cdw Custom Attributes</display-name>
                 <attribute attribute-id="shortPromoMessage"/>
                 <attribute attribute-id="bannerImageURL"/>
             </attribute-group>
-            <attribute-group group-id="Acme Tool Custom Configuration">
-                <display-name xml:lang="x-default">Acme Tool Store Custom Configurations</display-name>
+            <attribute-group group-id="cdw Tool Custom Configuration">
+                <display-name xml:lang="x-default">cdw Tool Store Custom Configurations</display-name>
                 <attribute attribute-id="displayInPLPAsSeparate"/>
             </attribute-group>
         </group-definitions>
@@ -3556,25 +3556,25 @@
 
     <type-extension type-id="SitePreferences">
         <custom-attribute-definitions>
-            <attribute-definition attribute-id="AcmeInventoryCacheTTL">
-                <display-name xml:lang="x-default">Acme inventory cache time to live in minutes</display-name>
-                <description xml:lang="x-default">Acme inventory cache time to live in minutes</description>
+            <attribute-definition attribute-id="cdwInventoryCacheTTL">
+                <display-name xml:lang="x-default">cdw inventory cache time to live in minutes</display-name>
+                <description xml:lang="x-default">cdw inventory cache time to live in minutes</description>
                 <type>int</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <default-value>30</default-value>
             </attribute-definition>
-            <attribute-definition attribute-id="AcmeArrivalDateTTL">
-                <display-name xml:lang="x-default">Acme price cache time to live in minutes</display-name>
-                <description xml:lang="x-default">Acme price cache time to live in minutes</description>
+            <attribute-definition attribute-id="cdwArrivalDateTTL">
+                <display-name xml:lang="x-default">cdw price cache time to live in minutes</display-name>
+                <description xml:lang="x-default">cdw price cache time to live in minutes</description>
                 <type>int</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <default-value>180</default-value>
             </attribute-definition>
-            <attribute-definition attribute-id="AcmePriceCacheTTL">
-                <display-name xml:lang="x-default">Acme price cache time to live in minutes</display-name>
-                <description xml:lang="x-default">Acme price cache time to live in minutes</description>
+            <attribute-definition attribute-id="cdwPriceCacheTTL">
+                <display-name xml:lang="x-default">cdw price cache time to live in minutes</display-name>
+                <description xml:lang="x-default">cdw price cache time to live in minutes</description>
                 <type>int</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
@@ -4054,9 +4054,9 @@
                 <externally-managed-flag>false</externally-managed-flag>
                 <default-value>false</default-value>
             </attribute-definition>
-            <attribute-definition attribute-id="acmeToolsDefaultSalesTaxCode">
-                <display-name xml:lang="x-default">Acme Tools: Default Sales Tax Code</display-name>
-                <description xml:lang="x-default">Acme Tools Default Sales Tax Code</description>
+            <attribute-definition attribute-id="cdwToolsDefaultSalesTaxCode">
+                <display-name xml:lang="x-default">cdw Tools: Default Sales Tax Code</display-name>
+                <description xml:lang="x-default">cdw Tools Default Sales Tax Code</description>
                 <type>string</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
@@ -4475,8 +4475,8 @@
                 <default-value>2</default-value>
             </attribute-definition>
             <attribute-definition attribute-id="gcEncryptionKey">
-                <display-name xml:lang="x-default">Acme Tools: Gift Card Encryption Key</display-name>
-                <description xml:lang="x-default">Acme Tools: Gift Card Encryption Key</description>
+                <display-name xml:lang="x-default">cdw Tools: Gift Card Encryption Key</display-name>
+                <description xml:lang="x-default">cdw Tools: Gift Card Encryption Key</description>
                 <type>string</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
@@ -4661,7 +4661,7 @@
                 <type>set-of-string</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
-                <default-value>acme-tools-brand-name</default-value>
+                <default-value>cdw-tools-brand-name</default-value>
             </attribute-definition>
             <attribute-definition attribute-id="refinementKeyUpdateBannerImage">
                 <display-name xml:lang="x-default">Attribute Key to Update Banner Image during filter refinements</display-name>
@@ -4669,7 +4669,7 @@
                 <type>set-of-string</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
-                <default-value>acme-tools-brand-name</default-value>
+                <default-value>cdw-tools-brand-name</default-value>
             </attribute-definition>            
             <attribute-definition attribute-id="requestCatalogFromEmail">
                 <display-name xml:lang="x-default">Request Catalog From Email</display-name>
@@ -5066,8 +5066,8 @@
                 <default-value>110</default-value>
             </attribute-definition> 
             <attribute-definition attribute-id="grandForksStoreID">
-                <display-name xml:lang="x-default">Store ID for AcmeTools-GrandForks Store</display-name>
-                <description xml:lang="x-default">Store ID for Acme Tools Grand Forks Store.</description>
+                <display-name xml:lang="x-default">Store ID for CDWStarterStore-GrandForks Store</display-name>
+                <description xml:lang="x-default">Store ID for cdw Tools Grand Forks Store.</description>
                 <type>string</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
@@ -5076,8 +5076,8 @@
                 <default-value>110</default-value>
             </attribute-definition>
             <attribute-definition attribute-id="grandForksEquipmentStoreID">
-                <display-name xml:lang="x-default">Store ID for AcmeTools-GrandForks Equipment Store</display-name>
-                <description xml:lang="x-default">Store ID for Acme Tools Grand Forks Equipment Store.</description>
+                <display-name xml:lang="x-default">Store ID for CDWStarterStore-GrandForks Equipment Store</display-name>
+                <description xml:lang="x-default">Store ID for cdw Tools Grand Forks Equipment Store.</description>
                 <type>string</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
@@ -5147,8 +5147,8 @@
             </attribute-definition>                                                                  
         </custom-attribute-definitions>
         <group-definitions>
-            <attribute-group group-id="Acme Payware Payment Configuration">
-                <display-name xml:lang="x-default">Acme Payware Payment Configuration</display-name>
+            <attribute-group group-id="cdw Payware Payment Configuration">
+                <display-name xml:lang="x-default">cdw Payware Payment Configuration</display-name>
                 <attribute attribute-id="enablePaymentCVVValidation"/>
                 <attribute attribute-id="enablePaymentAVSValidation"/>
                 <attribute attribute-id="enablePaymentResultValidation"/>
@@ -5204,8 +5204,8 @@
                 <attribute attribute-id="bvQuickViewRatingsType_C2013"/>
                 <attribute attribute-id="bvEnableProductFamilies_C2013"/>
             </attribute-group>
-            <attribute-group group-id="Acme Tool Preferences">
-                <display-name xml:lang="x-default">Acme Tool Preferences</display-name>
+            <attribute-group group-id="cdw Tool Preferences">
+                <display-name xml:lang="x-default">cdw Tool Preferences</display-name>
                 <attribute attribute-id="pageDesignerHomePageId"/>
                 <attribute attribute-id="storeLocatorRadiusOptions"/>
                 <attribute attribute-id="storeLocatorDefaultRadius"/>
@@ -5222,7 +5222,7 @@
                 <attribute attribute-id="s2kOrderLookupCompany"/>
                 <attribute attribute-id="s2kOrderLookupBackOrderCode"/>
                 <attribute attribute-id="plpItemsPerPageOptions"/>
-                <attribute attribute-id="acmeToolsDefaultSalesTaxCode"/>
+                <attribute attribute-id="cdwToolsDefaultSalesTaxCode"/>
                 <attribute attribute-id="attributeIdsToNotToDisplay"/>
                 <attribute attribute-id="hideRefinmentsCategoryNameList"/>
                 <attribute attribute-id="gcEncryptionKey"/>
@@ -5233,8 +5233,8 @@
                 <attribute attribute-id="grandForksStoreID"/>
                 <attribute attribute-id="grandForksEquipmentStoreID"/>         
             </attribute-group>
-            <attribute-group group-id="Acme Tool Email Configurations">
-                <display-name xml:lang="x-default">Acme Tool Email Configurations</display-name>
+            <attribute-group group-id="cdw Tool Email Configurations">
+                <display-name xml:lang="x-default">cdw Tool Email Configurations</display-name>
                 <attribute attribute-id="contactUsToEmail"/>
                 <attribute attribute-id="contactUsFromEmail"/>
                 <attribute attribute-id="requestCatalogToEmail"/>
@@ -5280,8 +5280,8 @@
                 <attribute attribute-id="Vertex_DetailedLogLevel"/>
                 <attribute attribute-id="Vertex_RemoteRequestToken"/>
             </attribute-group>
-            <attribute-group group-id="Acme Tool WAS Price Configurations">
-                <display-name xml:lang="x-default">Acme Tool WAS Price Configurations</display-name>
+            <attribute-group group-id="cdw Tool WAS Price Configurations">
+                <display-name xml:lang="x-default">cdw Tool WAS Price Configurations</display-name>
                 <attribute attribute-id="wasPriceComparePercent"/>
                 <attribute attribute-id="wasPriceCompareDollarValue"/>
                 <attribute attribute-id="wasPriceBookName"/>
@@ -5320,11 +5320,11 @@
                 <attribute attribute-id="gtmLoadAsync"/>
                 <attribute attribute-id="gtmProfileKey"/>
             </attribute-group>
-            <attribute-group group-id="Acme Tool Cache Configurations">
-                <display-name xml:lang="x-default">Acme Tool Cache Configurations</display-name>
-                <attribute attribute-id="AcmeInventoryCacheTTL"/>
-                <attribute attribute-id="AcmePriceCacheTTL"/>
-                <attribute attribute-id="AcmeArrivalDateTTL"/>
+            <attribute-group group-id="cdw Tool Cache Configurations">
+                <display-name xml:lang="x-default">cdw Tool Cache Configurations</display-name>
+                <attribute attribute-id="cdwInventoryCacheTTL"/>
+                <attribute attribute-id="cdwPriceCacheTTL"/>
+                <attribute attribute-id="cdwArrivalDateTTL"/>
             </attribute-group>
         </group-definitions>
     </type-extension>
@@ -5647,8 +5647,8 @@
                 <display-name xml:lang="x-default">Inventory</display-name>
                 <attribute attribute-id="inventoryListId"/>
             </attribute-group>
-            <attribute-group group-id="Acme Tool Store Configurations">
-                <display-name xml:lang="x-default">Acme Tool Store Configurations</display-name>
+            <attribute-group group-id="cdw Tool Store Configurations">
+                <display-name xml:lang="x-default">cdw Tool Store Configurations</display-name>
                 <attribute attribute-id="storeDetailsURL"/>
                 <attribute attribute-id="metaDescription"/>
                 <attribute attribute-id="metaKeyword"/>

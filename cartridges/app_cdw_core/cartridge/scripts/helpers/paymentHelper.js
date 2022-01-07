@@ -7,13 +7,13 @@ const ServiceCredential = require('dw/svc/ServiceCredential');
 var Logger1 = require('dw/system/Logger');
 var Logger = Logger1.getLogger("Payment","payware");
 const LocalServiceRegistry = require('dw/svc/LocalServiceRegistry');
-var PaymentConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+var PaymentConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
 var BasketMgr = require('dw/order/BasketMgr');
 const Encoding = require('dw/crypto/Encoding');
 const Bytes = require('dw/util/Bytes');
 var Site = require('dw/system/Site');
 
-var IntegrationConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+var IntegrationConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
 var errorLogger = require('dw/system/Logger').getLogger(IntegrationConstants.INTEGRATION_ERROR_FILE,"payware");
 
 const {

@@ -543,7 +543,7 @@ function createOrder(currentBasket) {
         });
     } catch (error) {
         var a =error;
-        var IntegrationConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+        var IntegrationConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
         var errorLogger = require('dw/system/Logger').getLogger(IntegrationConstants.INTEGRATION_ERROR_FILE,"order");
         errorLogger.error("Order Create Error::"+a);
         return null;
@@ -619,7 +619,7 @@ function sendConfirmationEmail(order, locale) {
     var OrderModel = require('*/cartridge/models/order');
     var emailHelpers = require('*/cartridge/scripts/helpers/emailHelpers');
     var Locale = require('dw/util/Locale');
-    var IntegrationConstants = require('*/cartridge/scripts/utils/acmeConstants').getConstants();
+    var IntegrationConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
     var errorLogger = require('dw/system/Logger').getLogger(IntegrationConstants.INTEGRATION_ERROR_FILE,"order");
     
     var currentLocale = Locale.getLocale(locale);
