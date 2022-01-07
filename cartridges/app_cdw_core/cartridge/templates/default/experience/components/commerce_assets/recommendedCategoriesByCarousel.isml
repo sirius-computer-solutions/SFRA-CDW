@@ -1,0 +1,44 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/recommendedCategoriesByCarousel.css');
+</isscript>
+<div class="shop-category-component ${pdict.image && pdict.applyImageShade ? 'shop-category-component-filter' : ''}"
+    <isif condition="${pdict.image}">
+        style="background-image: url('${pdict.image.url}');
+                background-position-x: ${pdict.image.focalPointX};
+                background-position-y: ${pdict.image.focalPointY};"
+    </isif>
+>
+    <div class="row shop-category-header ${pdict.image && pdict.changeTextColor ? 'shop-category-header-text-color-other' : ''}">
+        <div class="col-12">
+            <h3 class="text-center carousel-title"><isprint value="${pdict.textHeadline}" encoding="off"></h3>
+        </div>
+    </div>
+
+    <div id="recommendedCategoriesByCarousel" class="acme-carousel recommended-categories-carousel" data-column-count-by-width='{"0": 2,"750": 4}' data-row-count="2" data-interval="false">
+        <div class="acme-carousel-inner">
+            <isif condition="${pdict.categories}">
+                <isloop items="${pdict.categories}" var="category">
+                    <div class='acme-carousel-item' >
+                        <a href="${category.url}" id="${category.id}"
+                            class="shop-category-label-a ${pdict.image && pdict.changeTextColor ? 'shop-category-label-a-color-other ' : ''}">
+                                <img class="img-fluid" src="${category.thumbnail.getURL()}" alt="${category.displayName}" role="option" />
+                                <div class="top-category-tile-name">
+                                        <isprint value="${category.displayName}" encoding="off"/>                  
+                                </div>                        
+
+                        </a>
+                    </div>
+                </isloop>
+            </isif>
+        </div>
+        <a class="carousel-control-prev" href="${"#"}recommendedCategoriesByCarousel" role="button" data-slide="prev">
+            <span class="fas icon-prev" aria-hidden="true"></span>
+            <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+        </a>
+        <a class="carousel-control-next" href="${"#"}recommendedCategoriesByCarousel" role="button" data-slide="next">
+            <span class="fas icon-next" aria-hidden="true"></span>
+            <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+        </a>
+    </div>
+</div>

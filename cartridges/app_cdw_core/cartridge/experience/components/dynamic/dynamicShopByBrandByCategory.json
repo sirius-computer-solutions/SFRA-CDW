@@ -1,0 +1,25 @@
+{
+    "name": "Shop By Brand for Category",
+    "description": "Shop By Brand for Category for Super Cat Landing and Brand Landing Pages.",
+    "group": "dynamic",
+    "attribute_definition_groups": [
+        {
+            "id": "dynamicShopByBrandByCategory",
+            "name": "dynamicShopByBrandByCategory",
+            "description": "Specify the Category to pull the brands underneath.",
+            "attribute_definitions": [
+                {
+                    "id": "category",
+                    "name": "Category",
+                    "description": "Select Category to pull the brands underneath.",
+                    "type": "category",
+                    "required": false,
+                    "dynamic_lookup": {
+                        "aspect_attribute_alias" : "category"
+                    }    
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

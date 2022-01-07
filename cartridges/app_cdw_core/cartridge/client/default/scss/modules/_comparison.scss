@@ -1,0 +1,180 @@
+@import "~base/variables";
+
+$border-radius: 3px;
+
+.compare-bar-wrapper {
+    border: 1px solid $grey8;
+    bottom: 0;
+    left: 0;
+    display: none;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: $grey8;
+
+    .compare-bar{
+        width: 67%;
+        margin: auto;
+
+        @media screen and (max-width: 1025px) {
+            width: 75%;          
+        }
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
+
+        .compare-tiles{
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .product-slots {
+        height: 6.25em;
+    }
+
+    .slot {
+        background-color: $black;
+        height: 5em;
+        margin: 0 auto;
+        position: relative;
+        width: 6.667em;
+        border-radius: $border-radius;
+
+        &:not([data-pid]) {
+            border: 1px dashed #ccc;
+        }
+
+        img {
+            float: left;
+            height: 100%;
+            width: 100%;
+            position: static;
+            border-radius: $border-radius 0 0 $border-radius;
+            background-color: $white;
+            max-width: 80px;
+            object-fit: contain;
+            padding: 0 0.25em;
+        }
+
+        i {
+            color: $grey5;
+            float: left;
+            font-size: 1rem;
+            position: relative;
+            top: 50%;
+            right: 10%;
+            transform: translate(65%, -50%);
+            @media screen and (max-width: 697px) {
+                right: 20%;
+            }
+            @media screen and (max-width: 575px) {
+                right: 22%;
+                font-size: 0.95rem;
+            }
+        }
+
+        .close {
+            background-color: $grey2;
+            height: 100%;
+            width: 25%;
+            border-radius: 0 $border-radius $border-radius 0;
+            opacity: 1;
+        }       
+    
+        @media screen and (max-width: 697px) {
+            height: 4.5rem;
+            width: 5.667em;
+
+            img{
+                height: 100%;
+                width: 75%;
+            }
+        }
+
+        @media screen and (max-width: 575px) {
+            height: 4.2rem;
+            width: 5.27em;
+
+            img{
+                height: 100%;
+                width: 75%;
+            }
+        }
+
+    }
+
+    .min-products-msg {
+        color: $white;
+        font-size: 0.75em;
+        line-height: 1.375em;
+        padding: 0.438rem;
+
+        @media screen and (max-width: 697px){
+            line-height: 1.24em;
+        }
+
+        @media screen and (max-width: 575px) {
+            line-height: 1.16em;
+        }
+    }
+
+    .action{
+        text-align: center;
+        .btn-primary:disabled{
+            background-color: #377E9D;
+            border-color: #222;
+            color: white;
+            opacity: .6;
+        }
+
+        .compare{
+            margin-top: 0.35em;
+            margin-bottom: 0.4em;
+        }
+
+        .clear-all {
+            color: $grey2 !important;
+            display: block;
+            margin-top: 5px;
+        }
+    }
+}
+
+.product-comparison {
+    .back-to-results {
+        margin: 1em 0;
+    }
+
+    .product-header > .col {
+        padding: 0;
+    }
+    table {
+        table-layout: fixed;
+    }
+    .attr-value {
+        display:inline-block;
+        max-width: 95%;
+        overflow-wrap: break-word;
+    }
+}
+
+.product-tile {
+    .tile-body {
+        .compare {
+            font-size: 0.875em;
+        }
+    }
+}
+
+.table-striped-column {
+    .product-tile {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
+.table-striped-column tbody tr:nth-child(odd) {
+    background-color: $grey2;
+}

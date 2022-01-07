@@ -1,0 +1,24 @@
+<div class="b2b-locate-account" style="display:none;">
+    <form action="${URLUtils.url('Account-B2BAccountValidation')}" class="locateaccount" method="POST" name="locate-account">
+    
+        <div class="form-group required">
+            <label class="form-control-label" for="locate-account-accountNumber">
+                ${Resource.msg('label.input.accountNumber.b2bLocateAccount', 'b2bLocateAccount', null)}
+            </label>
+            <input type="text" id="locate-account-accountNumber" required aria-required="true" class="form-control required" aria-describedby="form-accountnumber-error" name="accountNumber">
+            <div class="invalid-feedback" id="form-accountnumber-error"></div>
+        </div>
+
+        <div class="form-group required">
+            <label class="form-control-label" for="locate-account-zipCode">
+                    ${Resource.msg('label.input.billingZipCode.b2bLocateAccount', 'b2bLocateAccount', null)}
+            </label>
+            <input type="text" id="locate-account-zipCode" required aria-required="true" class="form-control required" aria-describedby="form-zipcode-error" name="zipCode">
+            <div class="invalid-feedback" id="form-zipcode-error"></div>
+        </div>
+
+        <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+
+        <button type="submit" class="btn btn-block btn-primary">${Resource.msg('button.text.register', 'b2bLocateAccount', null)}</button>
+    </form>
+</div>

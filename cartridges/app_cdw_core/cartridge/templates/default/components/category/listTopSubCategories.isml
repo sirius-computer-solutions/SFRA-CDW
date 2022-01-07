@@ -1,0 +1,100 @@
+        <div class="row">
+            <div class="col-12">
+            <iscomment> <isif condition=" ${pdict.productSearch.category.name}">
+                <h3 class="text-center carousel-title">Shop Top ${pdict.productSearch.category.name} Categories</h3>
+            <iselse/>
+                <h3 class="text-center carousel-title">Shop Top ${parentCategory.name} Categories</h3>
+            </isif> </iscomment>
+                
+            </div>
+        
+            <isloop items="${parentCategory.subCategories}" var="subCategory" status="loopState">
+                    
+                <isif condition="${loopState.count<5}">
+                    <div class="col-sm-6 col-md-3 category-item">
+                        <isif condition="${subCategory.custom.alternativeUrl}">
+                            <isset name="altURL" value="${subCategory.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+                            <isif condition="${altURL.includes('prefn') && altURL.includes('prefv')}">
+                                <isif condition="${altURL.includes('?')}">
+                                    <a href="${altURL}&oci=${subCategory.ID}" title="${subCategory.displayName}">
+                                <iselse/>
+                                    <a href="${altURL}?oci=${subCategory.ID}" title="${subCategory.displayName}">
+                                </isif>
+                            <iselse/>
+                                <a href="${altURL}">
+                            </isif>
+                        <iselse/>
+                            <a href="${URLUtils.url('Search-Show', 'cgid', subCategory.ID)}" title="${subCategory.displayName}">    
+                        </isif>                    
+                            <div class="category-tile">
+                                <isif condition="${subCategory.image!=null && subCategory.image.getURL()!=null}">
+                                    <img class="img-fluid" src="${subCategory.image.getURL()}" alt="${subCategory.displayName}" onerror="this.src='${URLUtils.staticURL('/images/img-na.png')}'"/>
+                                <iselse/>
+                                    <img class="img-fluid" src="${URLUtils.staticURL('/images/img-na.png')}" alt="${subCategory.displayName}" />
+                                </isif>
+                                
+                            </div>
+                            <div class="subcategory-header">
+                                <isprint value="${subCategory.displayName}" encoding="htmlcontent" />
+                            </div>
+                        </a> 
+                        <isloop items="${subCategory.subCategories}" var="underSubCategory" status="loopStateForUnder">
+                                <isif condition="${loopStateForUnder.count<dw.system.Site.getCurrent().getCustomPreferenceValue('topCategoriesDispalyCount')}">
+                                    <div class="top-cat-subcategories">
+                                    <isif condition="${underSubCategory.custom.alternativeUrl}">
+                                        <isset name="altURL" value="${underSubCategory.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+                                        <isif condition="${altURL.includes('prefn') && altURL.includes('prefv')}">
+                                            <isif condition="${altURL.includes('?')}">
+                                                <a href="${altURL}&oci=${underSubCategory.ID}" title="${underSubCategory.displayName}">
+                                            <iselse/>
+                                                <a href="${altURL}?oci=${underSubCategory.ID}" title="${underSubCategory.displayName}">
+                                            </isif>
+                                        <iselse/>
+                                            <a href="${altURL}">
+                                        </isif>
+                                    <iselse/>
+                                            <a href="${URLUtils.url('Search-Show', 'cgid', underSubCategory.ID)}" title="${underSubCategory.displayName}">    
+                                    </isif>                                    
+                                            <isprint value="${underSubCategory.displayName}" encoding="htmlcontent"/> 
+                                        </a>
+                                    </div>
+                                    <iselse/>
+                                        <div class="top-cat-subcategories">
+                                            <isif condition="${loopStateForUnder.count == dw.system.Site.getCurrent().getCustomPreferenceValue('topCategoriesDispalyCount')+1}">
+                                                <isif condition="${subCategory.custom.alternativeUrl}">
+                                                    <isset name="altURL" value="${subCategory.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+                                                    <isif condition="${altURL.includes('prefn') && altURL.includes('prefv')}">
+                                                        <isif condition="${altURL.includes('?')}">
+                                                            <a href="${altURL}&oci=${subCategory.ID}" title="${subCategory.displayName}">
+                                                        <iselse/>
+                                                            <a href="${altURL}?oci=${subCategory.ID}" title="${subCategory.displayName}">
+                                                        </isif>
+                                                    <iselse/>
+                                                        <a href="${altURL}">
+                                                    </isif>
+                                                <iselse/>
+                                                    <a href="${URLUtils.url('Search-Show', 'cgid', subCategory.ID)}" title="${subCategory.displayName}">    
+                                                </isif>  
+                                                        ${Resource.msg('see.more.sub-categories.values', 'category', null)}
+                                                </a>
+                                            </isif>
+                                        </div>
+                                </isif>
+                                    
+                        </isloop>
+                    </div>
+                </isif>
+            </isloop>
+            
+            
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <a href="#category-all-sub-categories"> 
+                    <button class="btn btn-primary ">
+                        ${Resource.msg('shop.all.categories', 'category', null)}
+                        <i class="fas fa-angle-double-right"></i>
+                    </button>
+                </a>
+            </div>
+        </div>

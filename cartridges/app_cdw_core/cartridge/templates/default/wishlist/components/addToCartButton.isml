@@ -1,0 +1,15 @@
+<div class="add-to-cart-wishList">
+    <input type="hidden" class="add-to-cart-url" value="${URLUtils.url('Cart-AddProduct')}">
+    <isset name="disableAddToCartPrice" value="${!item.priceObj || !item.priceObj.sales || !item.priceObj.sales.value}" scope="page" />
+    <button class="add-to-cart btn btn-primary"
+        data-wlproduct-id="${item.pid}"
+        data-wlproduct-lineid="${loopState && loopState.count ? loopState.count  : '1' }"
+        data-url="${URLUtils.url('Cart-AddProduct')}"
+        data-option="${JSON.stringify(item.selectedOptions)}"
+        ${!item.available || disableAddToCartPrice ? "disabled" : ""}
+    >
+        ${Resource.msg('button.addtocart', 'common', null)}
+    </button>
+</div>
+
+

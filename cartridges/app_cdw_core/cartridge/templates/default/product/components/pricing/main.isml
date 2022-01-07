@@ -1,0 +1,27 @@
+<isif condition="${price.type === 'tiered'}">
+    <div class="price">
+        <isinclude template="/product/components/pricing/tiered" />
+    </div>
+<iselseif condition="${price.type === 'range'}">
+    <div class="price">
+        <isinclude template="/product/components/pricing/range" />
+    </div>
+<iselse>
+    <div class="price">
+        <isset name="isLowPrice" value="${}" scope="page" />
+        
+        <isif condition="${typeof lineItem !== 'undefined'}">
+            <isinclude template="/product/components/pricing/default" />
+        <iselseif condition="${typeof ajaxPrice !== 'undefined'}">
+            <isinclude template="/product/components/pricing/default" />
+        <iselseif condition="${typeof item !== 'undefined'}" />
+            <isinclude template="/product/components/pricing/default" />
+        <iselse/>
+            <isif condition="${'display' in pdict && 'showListPrice' in pdict.display }">
+                <isinclude url="${URLUtils.url('Product-GetPrice','pid', product.id, 'showListPrice',pdict.display.showListPrice,'showWasPrice',pdict.display.showWasPrice)}"/>
+            <iselse/>
+                <isinclude url="${URLUtils.url('Product-GetPrice','pid', product.id)}"/>
+            </isif>
+        </isif>
+    </div>
+</isif>

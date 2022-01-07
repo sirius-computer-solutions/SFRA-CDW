@@ -1,0 +1,26 @@
+<div class="modal fade" id="removeGCModal" tabindex="-1" role="dialog" aria-labelledby="removeProductLineItemModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header delete-confirmation-header">
+                <h2 class="modal-title" id="removeGiftCardModal">${Resource.msg('heading.remove.gc.confirmation.modal','giftCertificate',null)}</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body delete-confirmation-body">
+                <p>
+                <span class="gc-to-remove-message-cc" id="ccGiftCardRemoveMessage" role="alert" style="display:none">${Resource.msg('msg.gc.remove.for.cc', 'giftCertificate', null)}</span>
+                <span class="gc-to-remove-message-pp" id="paypalGiftCardRemoveMessage" role="alert" style="display:none">${Resource.msg('msg.gc.remove.for.pp', 'giftCertificate', null)}</span>
+                <span class="gc-to-remove-message-storecredit" id="storeCreditGiftCardRemoveMessage" role="alert" style="display:none">${Resource.msg('msg.gc.remove.for.store.credit', 'giftCertificate', null)}</span>
+                </p>
+
+                ${Resource.msg('msg.remove.gc.confirmation.modal','giftCertificate',null)}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary gc-delete-cancel-btn" data-dismiss="modal">${Resource.msg('button.cancel','cart',null)}</button>
+                <button type="button" class="btn btn-primary gc-delete-confirmation-btn"
+                        data-dismiss="modal" data-action="/on/demandware.store/Sites-AcmeTools-Site/en_US/GiftCertificate-Remove" >
+                    ${Resource.msg('button.confirm','cart',null)}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

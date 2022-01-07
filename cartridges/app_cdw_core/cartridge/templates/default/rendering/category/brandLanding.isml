@@ -1,0 +1,58 @@
+<isdecorate template="common/layout/page">
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addCss('/css/search.css');
+    </isscript>
+
+
+    
+
+    <isslot
+        id="brand-landing-slotbanner-m"
+        context="category"
+        description="Banner at the top of Brand Category Landing Pages"
+        context-object="${pdict.category}"
+    />
+
+    <div class="container">
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+    
+    <isif condition="${pdict.productSearch.isCategorySearch}">
+        <div class="slant-down search-banner">
+            <h1 class="header page-title">
+                ${pdict.productSearch.category.name}
+            </h1>
+        </div>
+    </isif>
+
+          
+        <div class="row">
+
+
+            <div class="col-sm-12 col-md-12">
+                <div class="secondary-content">
+                    <isslot id="super-cat-landing-slotbottom1-m" context="category" description="First slot below the Super Category Banner" context-object="${pdict.category}"/>
+                    <isslot id="super-cat-landing-slotbottom2-m" context="category" description="Second slot below the Super Category Banner" context-object="${pdict.category}"/>
+                    <isslot id="super-cat-landing-slotbottom3-m" context="category" description="Third slot below the Super Category Banner" context-object="${pdict.category}"/>
+                </div>   
+                <div class="top-sub-categories">
+                    <isset name="parentCategory" value="${pdict.category}" scope="page" />
+                    <isinclude template="components/category/listTopSubCategories" />
+                </div>
+                <div class="secondary-content">
+                    <isslot id="brand-landing-slotbottom4-m" context="category" description="First slot after Top Sub Categories and before All SubCategories" context-object="${pdict.category}"/>
+                    <isslot id="brand-landing-slotbottom5-m" context="category" description="Second slot after Top Sub Categories and before All SubCategories" context-object="${pdict.category}"/>
+                </div>   
+                <div class="all-sub-categories">
+                    <isinclude template="components/category/listAllSubCategories" />
+                </div>        
+                <div class="secondary-content">
+                    <isslot id="brand-landing-slotbottom6-m" context="category" description="First slot after All Sub Categories and before Footer" context-object="${pdict.category}"/>
+                    <isslot id="brand-landing-slotbottom7-m" context="category" description="Second slot after All Sub Categories and before Footer" context-object="${pdict.category}"/>
+                </div>                                        
+            </div>
+
+        </div>
+    </div>
+</isdecorate>

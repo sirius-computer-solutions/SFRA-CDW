@@ -1,0 +1,64 @@
+    
+    <!--- More button --->
+    <div class="col-12 grid-footer d-block"
+        data-sort-options="${JSON.stringify(pdict.productSearch.productSort)}"
+        data-page-size="${pdict.productSearch.pageSize}"
+        data-page-number="${pdict.productSearch.pageNumber}"
+    >
+
+    <!--- More button --->
+    
+        <div class="row show-more">
+                <div class="col-3 col-sm-6 col-md-auto mb-0 p-0"> 
+                    <div class="form-group row mx-0">
+                        <label for="itemsperpage" class="d-none d-sm-block">${Resource.msg('label.filter.items.per.page', 'category', null)}</label>
+                        <div class="col pl-0 pl-sm-3">
+                            <select id="itemsperpage" class="col-auto form-control custom-select plp-items-per-page"
+                                data-url="${pdict.productSearch.itemsPerPageURL}">
+                                <isloop items="${dw.system.Site.getCurrent().getCustomPreferenceValue('plpItemsPerPageOptions')}" var="itemsPerPage">
+                                    <option
+                                        value="${itemsPerPage}"
+                                        <isif condition="${pdict.productSearch.pageSize.toString() === itemsPerPage}">selected</isif>>
+                                            ${itemsPerPage}
+                                    </option>
+                                </isloop>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <isif condition="${pdict.productSearch.showMoreUrl !== ''}">
+                    <div class="col p-0">
+                        <ul class="float-right pagination-wrapper d-flex">
+                    <isset name="selectEmpty" value="${true}" scope="page" />
+                    
+                        <isloop items="${pdict.productSearch.showMoreUrl}" var="page" status="loopstatus">
+                            
+                                    <isif condition="${page.showPageNumber}">
+                                        <li class="plp-page-number text-right d-inline-block">
+                                        <isif condition="${page.pageSelected}">
+                                            <a class="btn page-number-button selected" href="${page.fullPageUrl}" data-url="${page.pageURL}" onclick="window.location='#plp-product-grid'">
+                                        <iselse/>
+                                            <a class="btn page-number-button" href="${page.fullPageUrl}" data-url="${page.pageURL}" onclick="window.location='#plp-product-grid'">
+                                        </isif>
+                                                ${page.pageNumber}
+                                            </a>
+                                            <isset name="selectEmpty" value="${true}" scope="page" />                        
+                                        </li>
+                                    <iselse/>
+                                        <isif condition="${selectEmpty}">
+                                            <div class="page-number-empty d-inline-block">${Resource.msg('label.input.page-empty-dots', 'category', null)}</div>
+                                            <isset name="selectEmpty" value="${false}" scope="page" />
+                                        </isif>
+                                    </isif>
+                                
+                        </isloop>
+                    </ul>
+                    </div>
+            </isif>            
+        </div>        
+
+
+    <isif condition="${pdict.productSearch.category != null}">
+        <input type="hidden" class="category-id" value="${pdict.productSearch.category.id}" />
+    </isif>
+</div>

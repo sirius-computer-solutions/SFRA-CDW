@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with Altova MapForce 2021r3 -->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap" uid="1" editable="1" blackbox="0">
+		<properties SelectedLanguage="builtin"/>
+		<structure>
+			<children>
+				<component name="catalog" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="603" lty="7" rbx="839" rby="398"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.demandware.com/xml/impex/catalog/2006-10-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="2" expanded="1">
+								<entry name="document" ns="2" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="catalog" ns="1" inpkey="1" expanded="1">
+										<entry name="catalog-id" type="attribute" inpkey="2"/>
+										<entry name="header" ns="1" inpkey="3"/>
+										<entry name="product-attribute-definitions" ns="1" inpkey="4"/>
+										<entry name="category" ns="1" inpkey="5" expanded="1">
+											<entry name="mode" type="attribute" inpkey="6"/>
+											<entry name="category-id" type="attribute" inpkey="7"/>
+											<entry name="display-name" ns="1" inpkey="8"/>
+											<entry name="description" ns="1" inpkey="9"/>
+											<entry name="online-flag" ns="1" inpkey="10"/>
+											<entry name="online-from" ns="1" inpkey="11"/>
+											<entry name="online-to" ns="1" inpkey="12"/>
+											<entry name="variation-groups-display-mode" ns="1" inpkey="13"/>
+											<entry name="parent" ns="1" inpkey="14"/>
+											<entry name="position" ns="1" inpkey="15"/>
+											<entry name="thumbnail" ns="1" inpkey="16"/>
+											<entry name="image" ns="1" inpkey="17"/>
+											<entry name="template" ns="1" inpkey="18"/>
+											<entry name="search-placement" ns="1" inpkey="19"/>
+											<entry name="search-rank" ns="1" inpkey="20"/>
+											<entry name="sitemap-included-flag" ns="1" inpkey="21"/>
+											<entry name="sitemap-changefrequency" ns="1" inpkey="22"/>
+											<entry name="sitemap-priority" ns="1" inpkey="23"/>
+											<entry name="page-attributes" ns="1" inpkey="24"/>
+											<entry name="custom-attributes" ns="1" inpkey="25"/>
+											<entry name="category-links" ns="1" inpkey="26"/>
+											<entry name="attribute-groups" ns="1" inpkey="27"/>
+											<entry name="refinement-definitions" ns="1" inpkey="28"/>
+											<entry name="product-detail-page-meta-tag-rules" ns="1" inpkey="29"/>
+											<entry name="product-listing-page-meta-tag-rules" ns="1" inpkey="30"/>
+											<entry name="product-specification-rule" ns="1" inpkey="31"/>
+										</entry>
+										<entry name="product" ns="1" inpkey="32"/>
+										<entry name="product-option" ns="1" inpkey="33"/>
+										<entry name="variation-attribute" ns="1" inpkey="34"/>
+										<entry name="category-assignment" ns="1" inpkey="35"/>
+										<entry name="recommendation" ns="1" inpkey="36"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\catalog.xsd" instanceroot="{http://www.demandware.com/xml/impex/catalog/2006-10-31}catalog" outputinstance="xsd\catalog.xml"/>
+					</data>
+				</component>
+				<component name="sanitize-category-id" library="user" uid="31" kind="19" visible="0" blackbox="0">
+					<view ltx="373" lty="111" rbx="474" rby="128"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="input" inpkey="73" componentid="44"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="74" componentid="42"/>
+						</root>
+					</data>
+				</component>
+				<component name="catalog" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view rbx="243" rby="417"/>
+					<data>
+						<root scrollposition="417">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.demandware.com/xml/impex/catalog/2006-10-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="2" expanded="1">
+								<entry name="document" ns="2" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="catalog" ns="1" outkey="37" expanded="1">
+										<entry name="catalog-id" type="attribute" outkey="38"/>
+										<entry name="header" ns="1" outkey="39"/>
+										<entry name="product-attribute-definitions" ns="1" outkey="40"/>
+										<entry name="category" ns="1" outkey="41" expanded="1">
+											<entry name="mode" type="attribute" outkey="42"/>
+											<entry name="category-id" type="attribute" outkey="43"/>
+											<entry name="display-name" ns="1" outkey="44"/>
+											<entry name="description" ns="1" outkey="45"/>
+											<entry name="online-flag" ns="1" outkey="46"/>
+											<entry name="online-from" ns="1" outkey="47"/>
+											<entry name="online-to" ns="1" outkey="48"/>
+											<entry name="variation-groups-display-mode" ns="1" outkey="49"/>
+											<entry name="parent" ns="1" outkey="50"/>
+											<entry name="position" ns="1" outkey="51"/>
+											<entry name="thumbnail" ns="1" outkey="52"/>
+											<entry name="image" ns="1" outkey="53"/>
+											<entry name="template" ns="1" outkey="54"/>
+											<entry name="search-placement" ns="1" outkey="55"/>
+											<entry name="search-rank" ns="1" outkey="56"/>
+											<entry name="sitemap-included-flag" ns="1" outkey="57"/>
+											<entry name="sitemap-changefrequency" ns="1" outkey="58"/>
+											<entry name="sitemap-priority" ns="1" outkey="59"/>
+											<entry name="page-attributes" ns="1" outkey="60"/>
+											<entry name="custom-attributes" ns="1" outkey="61"/>
+											<entry name="category-links" ns="1" outkey="62"/>
+											<entry name="attribute-groups" ns="1" outkey="63"/>
+											<entry name="refinement-definitions" ns="1" outkey="64"/>
+											<entry name="product-detail-page-meta-tag-rules" ns="1" outkey="65"/>
+											<entry name="product-listing-page-meta-tag-rules" ns="1" outkey="66"/>
+											<entry name="product-specification-rule" ns="1" outkey="67"/>
+										</entry>
+										<entry name="product" ns="1" outkey="68"/>
+										<entry name="product-option" ns="1" outkey="69"/>
+										<entry name="variation-attribute" ns="1" outkey="70"/>
+										<entry name="category-assignment" ns="1" outkey="71" expanded="1"/>
+										<entry name="recommendation" ns="1" outkey="72"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\catalog.xsd" instanceroot="{http://www.demandware.com/xml/impex/catalog/2006-10-31}catalog" inputinstance="..\..\catalog-load-10052021.xml" outputinstance="..\..\catalog-load-10052021.xml"/>
+					</data>
+				</component>
+				<component name="sanitize-category-id" library="user" uid="33" kind="19" visible="0" blackbox="0">
+					<view ltx="373" lty="226" rbx="474" rby="243"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="input" inpkey="75" componentid="44"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="76" componentid="42"/>
+						</root>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges>
+					<edge edgekey="3">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="4">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="8">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="9">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="24">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="25">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="26">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="27">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="28">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="29">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="30">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="31">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="32">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="33">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="34">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="35">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="36">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+				</edges>
+				<vertices>
+					<vertex vertexkey="37">
+						<edges>
+							<edge vertexkey="1"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="38">
+						<edges>
+							<edge vertexkey="2"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="39">
+						<edges>
+							<edge vertexkey="3" edgekey="3"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="40">
+						<edges>
+							<edge vertexkey="4" edgekey="4"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="41">
+						<edges>
+							<edge vertexkey="5"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="42">
+						<edges>
+							<edge vertexkey="6"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="74">
+						<edges>
+							<edge vertexkey="7"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="44">
+						<edges>
+							<edge vertexkey="8" edgekey="8"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="45">
+						<edges>
+							<edge vertexkey="9" edgekey="9"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="46">
+						<edges>
+							<edge vertexkey="10"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="47">
+						<edges>
+							<edge vertexkey="11"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="48">
+						<edges>
+							<edge vertexkey="12"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="49">
+						<edges>
+							<edge vertexkey="13"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="76">
+						<edges>
+							<edge vertexkey="14"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="51">
+						<edges>
+							<edge vertexkey="15"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="52">
+						<edges>
+							<edge vertexkey="16"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="53">
+						<edges>
+							<edge vertexkey="17"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="54">
+						<edges>
+							<edge vertexkey="18"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="55">
+						<edges>
+							<edge vertexkey="19"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="56">
+						<edges>
+							<edge vertexkey="20"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="57">
+						<edges>
+							<edge vertexkey="21"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="58">
+						<edges>
+							<edge vertexkey="22"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="59">
+						<edges>
+							<edge vertexkey="23"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="60">
+						<edges>
+							<edge vertexkey="24" edgekey="24"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="61">
+						<edges>
+							<edge vertexkey="25" edgekey="25"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="62">
+						<edges>
+							<edge vertexkey="26" edgekey="26"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="63">
+						<edges>
+							<edge vertexkey="27" edgekey="27"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="64">
+						<edges>
+							<edge vertexkey="28" edgekey="28"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="65">
+						<edges>
+							<edge vertexkey="29" edgekey="29"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="66">
+						<edges>
+							<edge vertexkey="30" edgekey="30"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="67">
+						<edges>
+							<edge vertexkey="31" edgekey="31"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="68">
+						<edges>
+							<edge vertexkey="32" edgekey="32"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="69">
+						<edges>
+							<edge vertexkey="33" edgekey="33"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="70">
+						<edges>
+							<edge vertexkey="34" edgekey="34"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="71">
+						<edges>
+							<edge vertexkey="35" edgekey="35"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="72">
+						<edges>
+							<edge vertexkey="36" edgekey="36"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="43">
+						<edges>
+							<edge vertexkey="73"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="50">
+						<edges>
+							<edge vertexkey="75"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+	<component name="sanitize-category-id" library="user" uid="4" inline="1" editable="1" blackbox="0">
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="34" kind="2">
+					<targets>
+						<datapoint pos="0" key="61"/>
+					</targets>
+					<view ltx="469" lty="178" rbx="513" rby="196"/>
+					<data>
+						<constant value="32" datatype="decimal"/>
+					</data>
+				</component>
+				<component name="char-from-code" library="core" uid="35" kind="5">
+					<sources>
+						<datapoint pos="0" key="62"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="56"/>
+					</targets>
+					<view ltx="567" lty="157" rbx="670" rby="196"/>
+				</component>
+				<component name="left-trim" library="lang" uid="36" kind="5">
+					<sources>
+						<datapoint pos="0" key="73"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="74"/>
+					</targets>
+					<view ltx="530" lty="282" rbx="602" rby="321"/>
+				</component>
+				<component name="right-trim" library="lang" uid="37" kind="5">
+					<sources>
+						<datapoint pos="0" key="75"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="50"/>
+					</targets>
+					<view ltx="620" lty="282" rbx="692" rby="321"/>
+				</component>
+				<component name="replace" library="lang" uid="38" kind="5">
+					<sources>
+						<datapoint pos="0" key="51"/>
+						<datapoint pos="1" key="58"/>
+						<datapoint pos="2" key="57"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="59"/>
+					</targets>
+					<view ltx="746" lty="250" rbx="838" rby="325"/>
+				</component>
+				<component name="normalize-space" library="core" uid="39" kind="5">
+					<sources>
+						<datapoint pos="0" key="60"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="67"/>
+					</targets>
+					<view ltx="879" lty="262" rbx="984" rby="301"/>
+				</component>
+				<component name="constant" library="core" uid="40" kind="2">
+					<targets>
+						<datapoint pos="0" key="52"/>
+					</targets>
+					<view ltx="669" lty="81" rbx="715" rby="99"/>
+					<data>
+						<constant value="-" datatype="string"/>
+					</data>
+				</component>
+				<component name="lowercase" library="lang" uid="41" kind="5">
+					<sources>
+						<datapoint pos="0" key="64"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="72"/>
+					</targets>
+					<view ltx="436" lty="282" rbx="510" rby="321"/>
+				</component>
+				<component name="result" library="core" uid="42" kind="7">
+					<sources>
+						<datapoint pos="0" key="77"/>
+					</sources>
+					<view ltx="1248" lty="216" rbx="1301" rby="255"/>
+					<data>
+						<output datatype="string"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="tokenize-regexp" library="core" uid="43" kind="5">
+					<sources>
+						<datapoint pos="0" key="66"/>
+						<datapoint pos="1" key="55"/>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="70"/>
+					</targets>
+					<view ltx="164" lty="378" rbx="269" rby="453"/>
+				</component>
+				<component name="input" library="core" uid="44" kind="6">
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="65"/>
+					</targets>
+					<view ltx="83" lty="266" rbx="160" rby="305"/>
+					<data>
+						<input datatype="string"/>
+						<parameter usageKind="input" name="input"/>
+					</data>
+				</component>
+				<component name="string-join" library="core" uid="45" kind="5">
+					<sources>
+						<datapoint/>
+						<datapoint pos="1" key="71"/>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="63"/>
+					</targets>
+					<view ltx="290" lty="378" rbx="407" rby="453"/>
+				</component>
+				<component name="replace" library="lang" uid="46" kind="5">
+					<sources>
+						<datapoint pos="0" key="68"/>
+						<datapoint pos="1" key="69"/>
+						<datapoint pos="2" key="53"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="76"/>
+					</targets>
+					<view ltx="1052" lty="230" rbx="1144" rby="305"/>
+				</component>
+				<component name="constant" library="core" uid="47" kind="2">
+					<targets>
+						<datapoint pos="0" key="54"/>
+					</targets>
+					<view ltx="4" lty="402" rbx="128" rby="420"/>
+					<data>
+						<constant value="[^a-zA-Z0-9\- ]+" datatype="string"/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="50">
+						<edges>
+							<edge vertexkey="51"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="52">
+						<edges>
+							<edge vertexkey="53"/>
+							<edge vertexkey="58"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="54">
+						<edges>
+							<edge vertexkey="55"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="56">
+						<edges>
+							<edge vertexkey="57"/>
+							<edge vertexkey="69"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="59">
+						<edges>
+							<edge vertexkey="60"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="61">
+						<edges>
+							<edge vertexkey="62"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="63">
+						<edges>
+							<edge vertexkey="64"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="65">
+						<edges>
+							<edge vertexkey="66"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="67">
+						<edges>
+							<edge vertexkey="68"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="70">
+						<edges>
+							<edge vertexkey="71"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="72">
+						<edges>
+							<edge vertexkey="73"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="74">
+						<edges>
+							<edge vertexkey="75"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="76">
+						<edges>
+							<edge vertexkey="77"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

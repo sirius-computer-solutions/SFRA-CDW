@@ -1,0 +1,22 @@
+<div class="modal fade" id="oversellConfModal" tabindex="-1" role="dialog" aria-labelledby="oversellConfModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header delete-confirmation-header">
+                <h2 class="modal-title" id="oversellConfModalHeading">${Resource.msg('label.oversell.quantity','product',null)}</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body over-sell-confirmation-body">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary os-cancel-btn" data-dismiss="modal">${Resource.msg('button.oversell.cancel','product',null)}</button>
+                <button type="button" class="btn btn-primary os-confirmation-btn"
+                        data-pid="" data-qty=""
+                        data-dismiss="modal" data-action="${URLUtils.url('Cart-AddProduct')}" >
+                    ${Resource.msg('button.oversell.confirm','product',null)}
+                </button>
+                
+            </div>
+        </div>
+    </div>
+</div>

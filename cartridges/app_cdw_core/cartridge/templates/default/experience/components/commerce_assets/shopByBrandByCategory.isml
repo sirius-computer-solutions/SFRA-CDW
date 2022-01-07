@@ -1,0 +1,9 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+    
+    <div class="container">
+        <div class="shop-by-brand">
+            <isinclude template="components/category/shopByBrand" />            
+        </div>
+    </div>

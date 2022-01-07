@@ -1,0 +1,18 @@
+<div class="description-and-detail" id="fromManufacturer">
+    <div class="row product-attributes">
+        <div class="col">
+            <div id="fromManufacturer" class="card-header">
+                <h3 class="header-styling">
+                    ${Resource.msg('label.heading.from.manufacturer', 'product', null)}
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="inner-container clearfix">
+                    <div id="wc-power-page"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

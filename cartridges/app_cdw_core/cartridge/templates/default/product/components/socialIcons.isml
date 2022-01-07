@@ -1,0 +1,51 @@
+<isset name="escapedProductName" value="${encodeURIComponent(product.productName)}" scope="page"/>
+<isset name="productImageLarge" value="${encodeURIComponent(product.images['large'][0].absURL)}" scope="page"/>
+<isset name="productUrlencode" value="${encodeURIComponent(URLUtils.https('Product-Show', 'pid', product.id))}" scope="page"/>
+
+<div class="social-container pull-right mr-3">
+    <div class="collapsible-icons">
+        <a class="btn-link add-to-wish-list share-icon" data-toggle="popover" data-placement='bottom' href="#" role="button" aria-expanded="false"
+        aria-controls="collapseExample"><i class="fas fa-share-alt"></i> Share</a>
+        
+    </div>
+   <div id="socialPopoverContainer"></div>
+    <div style="display:none;" id="socialPopover">
+        <div id="closePopover" class="close-popover">
+           <i class="fa fa-times"></i>
+        </div>
+        <ul class="social-icons social-icons">
+            <li>
+                <a href="https://pinterest.com/pin/create/button/?url=${productUrlencode}&description=${escapedProductName}&media=${productImageLarge}" title="${Resource.msgf('label.social.pinterest', 'product', null, product.productName)}" aria-label="${Resource.msgf('label.social.pinterest', 'product', null, product.productName)}" class="share-icons" target="_blank">
+                    <i class="fab fa-pinterest"></i>
+                    Pinterest
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/share.php?u=${productUrlencode}" title="${Resource.msgf('label.social.facebook', 'product', null, product.productName)}" data-share="facebook" aria-label="${Resource.msgf('label.social.facebook', 'product', null, product.productName)}" class="share-icons" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                    Facebook
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/share?url=${productUrlencode}&text=${product.productName}" data-share="twitter" title="${Resource.msgf('label.social.twitter', 'product', null, product.productName)}" aria-label="${Resource.msgf('label.social.twitter', 'product', null, product.productName)}" class="share-icons" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                    Twitter
+                </a>
+            </li>
+            <li>
+            <a href="#copy-link-message" class="share-icons" id="fa-link" role="button" title="${Resource.msgf('label.social.link', 'product', null, product.productName)}" aria-label="${Resource.msgf('label.social.link', 'product', null, product.productName)}">
+                <i class="fa fa-link"></i>
+                Copy link
+            </a>
+            <input type="hidden" id="shareUrl" value="${URLUtils.https('Product-Show', 'pid', product.id)}"/>
+            </li>
+        </ul>
+    </div>
+</div>
+<div style="clear:both;"> </div>
+<div class="copy-link-message d-none">
+    <div class="alert alert-success text-center pop-up-position">
+        ${Resource.msgf('text.alert.social.linkcopysuccess', 'product', null, product.productName)}
+        <button class="closeX btn"><span aria-hidden="true">×</span></button>
+    </div>
+</div>

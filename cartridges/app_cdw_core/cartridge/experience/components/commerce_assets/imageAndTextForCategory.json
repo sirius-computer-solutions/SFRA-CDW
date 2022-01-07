@@ -1,0 +1,50 @@
+{
+  "name": "Image With Text For Category Links",
+  "description": "This is a component combined image with text for Category Lnks",
+  "group": "commerce_assets",
+  "attribute_definition_groups": [
+    {
+      "id": "ITCImage",
+      "attribute_definitions": [
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "alt",
+          "name": "Alt Text",
+          "description": "The image alt text shown by the component.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "textOverlay1",
+          "name": "Text Overlay 1",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "textOverlay2",
+          "name": "Text Overlay 2",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "ITCLink",
+          "name": "Image Link",
+          "type": "category",
+          "required": false
+        },
+        {
+          "id": "ITCText",
+          "name": "Text Below Image",
+          "type": "markup",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

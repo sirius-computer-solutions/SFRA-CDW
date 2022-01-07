@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="http://www.demandware.com/xml/impex/shipping/2007-03-31" elementFormDefault="qualified" xmlns="http://www.demandware.com/xml/impex/shipping/2007-03-31" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
+	<xs:element name="shipping">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="shipping-method">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="display-name">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute ref="xml:lang" use="required"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="online-flag" type="xs:boolean"/>
+							<xs:element name="price-table">
+								<xs:complexType>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="product-cost-groups">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="product-cost-group" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="products">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="included-products">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="condition-group">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="product-id-condition">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="product-id" type="xs:string"/>
+																								</xs:sequence>
+																								<xs:attribute name="operator" use="required" type="xs:string"/>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="cost-per-item">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="surcharge" type="xs:decimal"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="custom-attributes">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="custom-attribute" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:boolean">
+														<xs:attribute name="attribute-id" use="required" type="xs:string"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="currency" type="xs:string"/>
+						</xs:sequence>
+						<xs:attribute name="method-id" use="required" type="xs:string"/>
+						<xs:attribute name="default" use="required" type="xs:boolean"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

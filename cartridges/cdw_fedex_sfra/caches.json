@@ -1,0 +1,6 @@
+{
+    "caches": [{
+        "id": "Fedex_rates",
+        "expireAfterSeconds": 10800
+    }]
+}

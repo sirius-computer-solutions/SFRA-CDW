@@ -1,0 +1,38 @@
+<isdecorate template="common/layout/page">
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/pages/error.css');
+</isscript>
+    
+    <div class="container error-background">
+        <h1 class="error-title">${Resource.msg('heading.error.general','error',null)}</h1>
+        <div class="col">
+            <div class="error-500-container">    
+                <h2 class='col col-sm-11 col-md-10 col-lg-6 error-message'><strong>${Resource.msg('message.page.not.found','error',null)}</strong></h2>
+                <span class="col error-code">Error code : 404</span>
+                <div class="col col-sm-11 col-md-10 col-lg-6 error-details">
+                    <p class='error-message'>${Resource.msg('message.page.previous','error',null)}</p>
+                    <br/>
+                    <isif condition="${pdict.showError}">
+                        <div class="d-none">
+                            <pre><code>
+                            <isprint value=${pdict.error.errorText} encoding="htmlcontent" />
+                            <isif condition="${pdict.error.controllerName}">
+                                in controller ${pdict.error.controllerName}
+                            </isif>
+                            </code></pre>
+                        </div>
+                    </isif>
+                </div>
+                <div class="row">
+                    <div class="col-10 offset-1 col-sm-5 col-md-4 col-lg-3 ">
+                        <isslot id="404-error-content-1" description="404 Page Content Slot 1" context="global" />             
+                    </div>
+                </div>
+                                                        
+            </div>
+        </div>
+    </div>
+    <isslot id="404-error-content-2" description="404 Page Content Slot 2" context="global" />             
+    
+</isdecorate>

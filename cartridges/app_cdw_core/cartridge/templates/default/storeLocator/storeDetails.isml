@@ -1,0 +1,45 @@
+<div class="store-details" data-store-id="${store.ID}">
+    <div class="store-name" data-store-id="${store.ID}" data-reset-url="${URLUtils.url('Stores-ResetBOPISSession')}">
+    <isif condition="${store.storeDetailsURL}">
+        <a href="${store.storeDetailsURL}" title="${store.name}">
+           <isprint value="${store.name}" encoding="htmlcontent"/> 
+        </a>
+    <iselse/>
+           <isprint value="${store.name}" encoding="htmlcontent"/> 
+    </isif>
+
+    </div> 
+    <address>
+        <a class="store-map" target='_blank' href="https://maps.google.com/?daddr=${store.latitude},${store.longitude}">
+            ${store.address1}
+            <isif condition="${store.address2}">
+                ${store.address2}
+            </isif>
+            <isif condition="${store.city}">
+                ${store.city},
+            </isif>
+            <isif condition="${store.stateCode}">
+                ${store.stateCode}
+            </isif>
+             ${store.postalCode}
+        </a>
+        <div class="store-hours">
+            <isif condition="${store.storeHours}">
+                <isprint value="${store.storeHours}" encoding="off"/>
+            </isif>
+        </div>
+        <p>
+            <isif condition="${store.phone}">
+                <i class="fa fa-phone fa-flip-horizontal" aria-hidden="true" ></i>
+                <span><a class="storelocator-phone" href="tel:${store.phone}">${store.phone}</a></span>
+            </isif>
+        </p>
+        <div class="store-inventory-status">
+            <isif condition="${store.inventoryStatus === Resource.msg('store.product.inventory.available','storeLocator',null)}">
+                <span class="availability-msg-content">${Resource.msg('store.details.inventory.instock', 'storeLocator', null)}</span>
+            <iselseif condition="${store.inventoryStatus === Resource.msg('store.product.inventory.not.available','storeLocator',null)}" />
+                <span class="non-availability-msg-content">${Resource.msg('store.details.inventory.oos', 'storeLocator', null)}</span>
+            </isif>
+        </div>        
+    </address>
+</div>

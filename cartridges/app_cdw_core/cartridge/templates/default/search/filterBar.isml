@@ -1,0 +1,26 @@
+<ul>
+    <isloop items="${pdict.productSearch.selectedFilters}" var="refinement">
+        <isif condition="${refinement.type === 'color'}">
+            <li class="swatch-filter swatch-filter-${refinement.presentationId}">
+                <button data-href="${refinement.url}" class="btn">
+                    <span class="sr-only">
+                        ${Resource.msgf('assistive.text.remove.filter.button', 'search', null, refinement.title)}
+                    </span>
+                </button>
+            </li>
+        <iselse/>
+        
+            <isset name="hideRefinmentsList" value="${(dw.system.Site.getCurrent().getCustomPreferenceValue('hideRefinmentsCategoryNameList')||'Categories,Acme  StoreFront Catalog').split(',')}" scope="page"/>
+            <isif condition="${hideRefinmentsList.indexOf(refinement.displayValue)=== -1}">
+                <li class="filter-value">
+                    <a data-href="${refinement.url}" class="btn text-left">
+                        <span aria-hidden="true">${refinement.displayValue}</span>
+                        <span class="sr-only">
+                            ${Resource.msgf('assistive.text.remove.filter.button', 'search', null, refinement.title)}
+                        </span>
+                    </a>
+                </li>
+            </isif>
+        </isif>
+    </isloop>
+</ul>

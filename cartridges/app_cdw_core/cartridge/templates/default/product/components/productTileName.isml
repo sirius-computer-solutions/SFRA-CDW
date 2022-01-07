@@ -1,0 +1,24 @@
+<div class="pdp-link">
+    <a class="link" href="${pdict.urls.product}">
+        <isset name="productBrandName" value="" scope="page" />
+        
+        <isif condition="${product.brandName}">
+            <isset name="productBrandName" value="${product.brandName+'-'}" scope="page" />
+        </isif>
+
+        <isset name="productNameAndDescription" value="${productBrandName+product.manufacturerSKU + ' ' + product.productName.trim()}" scope="page"/>
+        <isset name="characterLimit" value="${50}" scope="page"/>
+        <isif condition="${pdict.display.dontForgetRecommendation}">
+            <isset name="characterLimit" value="${30}" scope="page"/>
+        <iselseif condition="${pdict.display.ymalRecommendation}" />
+            <isset name="characterLimit" value="${40}" scope="page"/>
+        </isif>
+            
+        <isset name="ellipsis" value="..." scope="page"/>
+        <isif condition="#len(productNameAndDescription)>characterLimit#">
+            <isprint value="${productNameAndDescription.substring(0,characterLimit) + ellipsis}" encoding="off" /> 
+        <iselse/>
+            <isprint value=${productNameAndDescription} encoding="off" />  
+        </isif>
+    </a>
+</div>

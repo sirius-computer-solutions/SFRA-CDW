@@ -1,0 +1,86 @@
+<!--- Subtotal --->
+<div class="row  subtotal-item">
+    <div class="col-6 start-lines">
+        <p class="order-receipt-label"><span>${Resource.msg('label.order.subtotal','confirmation', null)}</span></p>
+    </div>
+    <div class="col-6 end-lines">
+        <p class="text-right"><span class="sub-total">${pdict.order.totals.subTotal}</span></p>
+    </div>
+</div>
+
+<!--- Order Discount --->
+<div class="row  order-discount <isif condition="${pdict.order.totals.orderLevelDiscountTotal.value === 0}">hide-order-discount</isif>">
+    <div class="col-6 start-lines">
+        <p class="order-receipt-label"><span>${Resource.msg('label.order.discount', 'common', null)}</span></p>
+    </div>
+    <div class="col-6 end-lines">
+        <p class="text-right"><span class="order-discount-total">${pdict.order.totals.orderLevelDiscountTotal.formatted}</span></p>
+    </div>
+</div>
+
+<!--- Shipping Cost --->
+<div class="row  shipping-item">
+    <div class="col-6 start-lines">
+        <p class="order-receipt-label"><span>${Resource.msg('label.order.shipping.cost','confirmation', null)}</span></p>
+    </div>
+    <div class="col-6 end-lines">
+        <p class="text-right"><span class="shipping-total-cost">${pdict.order.totals.shippingTotalLessSurcharge}</span></p>
+    </div>
+</div>
+
+<!--- Shipping Surcharge Cost --->
+<div class="row  shipping-surcharge-item">
+    <div class="col-6 start-lines">
+        <p class="order-receipt-label"><span>${Resource.msg('label.order.shippingsurcharge.cost','confirmation', null)}</span></p>
+    </div>
+    <div class="col-6 end-lines">
+        <p class="text-right"><span class="shipping-surcharge-cost">${pdict.order.totals.shippingSurcharge}</span></p>
+    </div>
+</div>
+
+<!--- Sales Tax --->
+<div class="row  sales-tax-item">
+    <div class="col-6 start-lines">
+        <p class="order-receipt-label"><span>${Resource.msg('label.order.sales.tax','confirmation', null)}</span></p>
+    </div>
+    <div class="col-6 end-lines">
+        <p class="text-right"><span class="tax-total">${pdict.order.totals.totalTax}</span></p>
+    </div>
+</div>
+
+<!--- Grand Total --->
+<div class="row grand-total ">
+    <div class="col-12"><hr class="wishlist-line-item-divider line-solid"></div>
+    <div class="col-6 start-lines">
+        <p class="order-receipt-label"><span>${Resource.msg('label.order.grand.total','confirmation', null)}</span></p>
+    </div>
+    <div class="col-6 end-lines">
+        <isif condition="${pdict.order.totals.grandTotal != '-'}">
+            <p class="text-right"><span class="grand-total-sum">${pdict.order.totals.grandTotal}</span></p>
+        <iselse>
+            <p class="text-right"><span class="grand-total-sum">${pdict.order.totals.subTotal}</span></p>
+        </isif>
+    </div>
+</div>
+
+<div class="gc-balance-summary-total" style="display: none">
+<!--- Gift Card Balance Summary Details --->
+    <div class="row total-gc-added ">
+        <div class="col-6 start-lines">
+            <p class="order-receipt-label"><span>${Resource.msg('label.gc.added.total','checkout', null)}</span></p>
+        </div>
+        <div class="col-6 end-lines">
+            <p class="text-right"><span class="gc-added-total-sum"></span></p>
+        </div>
+    </div>
+
+    <div class="row remaining-balance-total ">
+        <div class="col-12"><hr class="wishlist-line-item-divider line-solid"></div>
+        <div class="col-6 start-lines">
+            <p class="order-receipt-label"><span>${Resource.msg('label.remaining.balance.total','checkout', null)}</span></p>
+        </div>
+        <div class="col-6 end-lines">
+            <p class="text-right"><span class="remaining-added-total-sum"></span></p>
+        </div>
+    </div>
+</div>

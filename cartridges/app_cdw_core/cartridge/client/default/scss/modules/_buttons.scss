@@ -1,0 +1,77 @@
+
+.btn-small {
+    font-size: .875rem;
+    color: #fff !important;
+    padding: .15em .75em;
+    text-decoration: none !important;
+    
+}
+
+.simple-quantity {
+    float: right;
+    margin-top: .25em;
+    margin-right: 1.5rem;
+    @include media-breakpoint-down(sm){
+        margin-top: .625em; 
+    }
+    @include media-breakpoint-only(xs){
+        margin-right: 0;
+         float: none;
+        margin-left: 1.175em;
+        margin-top: .5em;
+    }
+    
+    .btn-number {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 500;
+    font-size: .725rem;
+    color: $grey6;
+    height: 36px;
+    width: 36px;
+    line-height: 25px;
+    border: 1px solid $grey3;
+    user-select: none;
+    }
+    .input-group {
+        flex-wrap:nowrap;
+        justify-content: center;
+    }
+    .input-number {
+        border-left: transparent;
+        border-right: transparent;
+        height: calc(1.5em + .34rem);
+        text-align: center;
+        font-size: 1.275em;
+        max-width: 4em;
+        &:focus {
+            border-top: 1px solid $grey3;
+            border-bottom: 1px solid $grey3;
+            box-shadow: none;
+        }
+    }
+}
+.btn-large, .guest-signin .btn-sign-in {
+    font-size: 1em;
+    padding: .5em 4em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+ .change-store {
+     color: var(--color-grey7) !important;
+     font-family: var(--skin-body-font);
+     padding: 0;
+     @include media-breakpoint-down(sm) {
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+     }
+ }
+
+ button:focus {
+     outline: none !important;
+ }

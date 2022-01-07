@@ -1,0 +1,33 @@
+<ul class="values content">
+    <isloop items="${categories}" var="category">
+        <li class="refinement-category">
+            <a href="${category.pageUrl}" data-href="${category.url}" 
+            <isif condition="${category.selected}">
+                class="disabled"
+            </isif>
+            
+            >
+                <!--- Radio button --->
+                <isif condition="${category.selected}">
+                    <i class="fa fa-check-circle"></i>
+                <iselse>
+                    <i class="far fa-circle"></i>
+                </isif>
+
+                <div class="pl-1 d-inline-block" style="text-indent: 0;">
+                    <!--- Label --->
+                    <span title="${category.title}" class="facet ${category.selected ? 'selected' : ''}" aria-hidden="true">
+                        ${category.displayValue}
+                    </span>
+                </div>
+                <span class="sr-only selected-assistive-text">
+                    ${category.selected ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
+                    ${category.title}
+                </span>
+            </a>
+            <!--- Process subcategories --->
+            <isset name="categories" value="${category.subCategories}" scope="page" />
+            <isinclude template="search/refinements/categories" />
+        </li>
+    </isloop>
+</ul>

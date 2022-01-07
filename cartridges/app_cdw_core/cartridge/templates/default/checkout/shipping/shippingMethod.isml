@@ -1,0 +1,93 @@
+<isset name="shippingAddress" value="${pdict.forms.shippingForm.shippingAddress}" scope="page"/>
+
+<div class="leading-lines shipping-method-list" data-select-shipping-method-url="${URLUtils.https('CheckoutShippingServices-SelectShippingMethod')}" data-action-url="${URLUtils.https('CheckoutShippingServices-UpdateShippingMethodsList')}">
+    <!--<input name="shipmentUUID" type="hidden" value="${shippingModel.UUID}" />-->
+    <isset name="selectedBOPIS" value="false" scope="page"/>
+    <isset name="validShipMethodSelected" value="false" scope="page"/>
+    <isloop items="${shippingModel.applicableShippingMethods}" var="shippingMethod1">
+        <isif condition="${shippingModel.selectedShippingMethod && shippingMethod1.ID === shippingModel.selectedShippingMethod.ID && shippingMethod1.storePickupEnabled}">
+            <isset name="selectedBOPIS" value="true" scope="page"/>
+        </isif>
+        <isif condition="${shippingModel.selectedShippingMethod && shippingMethod1.ID === shippingModel.selectedShippingMethod.ID}">
+            <isset name="validShipMethodSelected" value="true" scope="page"/>
+        </isif>
+    </isloop>
+    
+    <isloop items="${shippingModel.applicableShippingMethods}" var="shippingMethod" status="loopstatus">        
+            <isif condition="${selectedBOPIS == 'false' && !shippingMethod.storePickupEnabled}">
+                <div class="ship-method d-flex">
+                <div class="form-check col-9 col-sm-10 start-lines d-flex align-items-center">
+            <iselseif condition="${selectedBOPIS == 'true'}" />
+                <div class="ship-method d-flex">
+                <div class="form-check col-9 col-sm-10 start-lines d-flex align-items-center">
+            </isif>
+           
+            <isinclude template="checkout/shipping/selectedShippingMethod"/>
+            <isif condition="${selectedBOPIS == 'false' && !shippingMethod.storePickupEnabled}">
+                    <label class="form-check-label shipping-method-option" for="shippingMethod-${shippingMethod.ID}-${shippingModel.UUID}">
+                        <h3 class="display-name text-uppercase mb-0">
+                            ${shippingMethod.displayName}
+                            <isif condition="${ shippingMethod.ID == 'EXPRESS'}">
+                                <span class="fastest-tag">MOST POPULAR</span>
+                            </isif>
+                        </h3>
+                        
+                        <isif condition="${shippingMethod.estimatedArrivalTime}">
+                            <div class="arrival-time">
+                                ${Resource.msg('checkout.shipping.estimateddelivery', 'checkout', null)} ${shippingMethod.estimatedArrivalTime}
+                            </div>
+                            <div class="shipping-method-note text-muted">
+                                ${Resource.msg('checkout.shipping.shippingmethodnote', 'checkout', null)}
+                            </div>
+                        </isif>
+                    </label>
+                </div>
+                <div class="col-3 col-sm-2 text-right shipping-method-pricing end-lines">
+                    <h3 class="shipping-cost mb-0">${shippingMethod.shippingCost}</h3>
+                </div>
+                </div>
+            <iselseif condition="${selectedBOPIS == 'true'}" />
+                    <label class="form-check-label shipping-method-option" for="shippingMethod-${shippingMethod.ID}-${shippingModel.UUID}">
+                        <h3 class="display-name text-uppercase mb-0">${shippingMethod.displayName}</h3>
+                        <isif condition="${shippingMethod.estimatedArrivalTime}">
+                             <div class="arrival-time">
+                                ${Resource.msg('checkout.shipping.estimateddelivery', 'checkout', null)} ${shippingMethod.estimatedArrivalTime}
+                            </div>
+                            <div class="shipping-method-note text-muted">
+                                ${Resource.msg('checkout.shipping.shippingmethodnote', 'checkout', null)}
+                            </div>
+                        </isif>
+                    </label>
+                </div>
+                <div class="col-3 col-sm-2 text-right shipping-method-pricing end-lines">
+                    <h3 class="shipping-cost mb-0">${shippingMethod.shippingCost}</h3>
+                </div>
+                </div>
+            </isif>
+           
+    </isloop>
+</div>
+<div class="shipping-disclaimer text-muted">
+    ${Resource.msg('checkout.shipping.disclaimer', 'checkout', null)}
+</div>
+
+
+<!---------------------------------------------------------------------------------->
+<!-- Template used by client to redraw shipping methods                           -->
+<!---------------------------------------------------------------------------------->
+<div id="shipping-method-template" style="display:none;" >
+    <div class="ship-method d-flex">
+        <div class="form-check col-9 col-sm-10 start-lines d-flex align-items-center">
+            <input type="radio" class="form-check-input" id="shippingMethodRadioButton">
+            <label class="form-check-label shipping-method-option" for="shippingMethodRadioButton">
+                <h3 class="display-name text-uppercase mb-0"></h3>
+                <div class="arrival-time" style="display:none"></div>
+                <div class="shipping-method-note text-muted" style="display:none"></div>
+            </label>
+        </div>
+        <div class="col-3 col-sm-2 text-right shipping-method-pricing end-lines">
+            <h3 class="shipping-cost mb-0"></h3>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,158 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/customerService.js');
+        assets.addCss('/css/contactUs.css');
+    </isscript>
+
+
+    <div class="hero slant-down contact-us-banner">
+        <h1 class="page-title text-center">${Resource.msg('title.request.quote.page', 'customerService', null)}</h1>
+    </div>
+  
+    
+    
+
+    <div class="container contact-us-landing-page">
+        <div class="header-details">
+            <isslot id="request-quote-m" description="Request Quote Landing Page Content" context="global" />
+        </div>
+        <div class="row justify-content-center">
+            
+            <div class="col-sm-8 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="${pdict.actionUrl}" class="contact-us" method="POST" name="contact-us">
+                            <!--- contact us first name, last name --->
+                            <isinclude template="customerService/customerServiceCommonForm" />
+
+                            <div class="row contact-us-phone">
+                                    <div class="col">
+                                        <div class="form-group required">
+                                            <label class="form-control-label" for="contact-phone">
+                                                ${Resource.msg('label.input.contact-us-phone', 'customerService', null)}
+                                            </label>
+                                            <input type="tel" required class="form-control required" aria-describedby="form-contact-phone-error" id="contact-phone" name="contactPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12">
+                                            <div class="invalid-feedback" id="form-contact-phone-error"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <div class="form-group custom-control custom-checkbox">
+                                <input
+                                    type="checkbox" <isif condition="${customer.registered && customer.profile.custom.newsletterSignUp}">checked<iselseif condition="${!customer.registered}">checked<iselse></isif>
+                                    class="custom-control-input" id="add-to-email-list" name="contactAddToEmail"
+                                >
+                                <label class="custom-control-label" for="add-to-email-list">
+                                    <label class="form-control-label" for="contact-addToEmail">
+                                                ${Resource.msg('description.checkbox.emailsignup.profile', 'forms', null)}
+                                    </label>
+                                </label>
+                            </div>
+
+                            <div class="row contact-us-item">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="contact-model">
+                                          <h2>  ${Resource.msg('label.input.request-quote-products', 'customerService', null)}</h2>
+                                        </label>
+                                    </div>
+                                </div> 
+                            </div>
+
+                            <div class="row contact-us-item">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="contact-model">
+                                            ${Resource.msg('label.input.request-quote-model', 'customerService', null)}
+                                        </label>
+                                    </div>
+                                </div> 
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="contact-qty">
+                                            ${Resource.msg('label.input.request-quote-qty', 'customerService', null)}
+                                        </label>
+                                    </div>
+                                </div>        
+                            </div>
+                            <div class="contact-us-products-section">
+                                <div class="row contact-us-item">
+                                    <div class="col">
+                                        <div class="form-group">                     
+                                                   
+                                            <input type="text"  class="form-control"  <isif condition="${pdict.incomingProduct.pid}"> value="${pdict.incomingProduct.pid}"</isif>     aria-describedby="form-contact-model-error" id="contact-model" name="contactModel">                                                       
+                                        </div>                                        
+                                    </div>  
+                                    <div class="col">
+                                        <div class="form-group">                                
+                                            <input type="text"  class="form-control" <isif condition="${pdict.incomingProduct.pQty}"> value="${pdict.incomingProduct.pQty}"</isif>     aria-describedby="form-contact-qty-error" id="contact-qty" name="contactQty">                                                       
+                                        </div>                                        
+                                    </div>
+                                
+                                </div>
+                                <div class="row contact-us-item">
+                                    <div class="col">
+                                        <div class="form-group">                                
+                                            <input type="text"  class="form-control" aria-describedby="form-contact-model-error" id="contact-model" name="contactModel">                                                       
+                                        </div>                                        
+                                    </div> 
+                                    <div class="col">
+                                        <div class="form-group">                                
+                                            <input type="text"  class="form-control" aria-describedby="form-contact-qty-error" id="contact-qty" name="contactQty">                                                       
+                                        </div>                                        
+                                    </div>
+                                
+                                </div>
+                                <div class="row contact-us-item">
+                                    <div class="col">
+                                        <div class="form-group">                                
+                                            <input type="text"  class="form-control" aria-describedby="form-contact-model-error" id="contact-model" name="contactModel">                                                       
+                                        </div>                                        
+                                    </div> 
+                                    <div class="col">
+                                        <div class="form-group">                                
+                                            <input type="text"  class="form-control" aria-describedby="form-contact-qty-error" id="contact-qty" name="contactQty">                                                       
+                                        </div>                                        
+                                    </div>
+                                
+                                </div>
+                                <div class="row contact-us-item">
+                                    <div class="col">
+                                        <div class="form-group">                                
+                                            <input type="text"  class="form-control" aria-describedby="form-contact-model-error" id="contact-model" name="contactModel">                                                       
+                                        </div>                                        
+                                    </div>  
+                                    <div class="col">
+                                        <div class="form-group">                                
+                                            <input type="text"  class="form-control" aria-describedby="form-contact-qty-error" id="contact-qty" name="contactQty">                                                       
+                                        </div>                                        
+                                    </div>
+                                
+                                </div>     
+                            </div>                                                 
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="btn btn-outline-primary add-more-products-contact-us" role="button"><!-- dwMarker="link" dwPipelineTitle="Checkout-Begin (app_acme_core)" dwIsController="true" dwPipelineURL="http://localhost:60606/target=/app_acme_core/cartridge/controllers/Checkout.js&amp;start=Begin" -->
+                                                ${Resource.msg('label.input.request-quote-add-more-products', 'customerService', null)}
+                                    </div>
+                                </div>
+                            </div>                                
+                            <!--- contact us submit --->
+                            <div class="row contact-us-submit">
+                                
+                                <div class="col">
+                                    <div class="form-group">
+                                        <button class="btn btn-block btn-primary subscribe-contact-us" type="submit" name="submit" value="submit">
+                                            ${Resource.msg('label.input.contact-us-submit', 'customerService', null)}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

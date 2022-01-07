@@ -1,0 +1,209 @@
+body,
+.card
+.hero {
+    background-color: $white;
+    font-family: var(--skin-body-font);
+    color: var(--skin-main-text-color-1);
+}
+
+.hero {
+    border-bottom-color: var(--skin-background-color-1);
+}
+
+.main-menu {
+    background-color: var(--skin-banner-background-color-1);
+}
+
+.banner-color {
+    background-color: var(--skin-banner-background-color-1);
+}
+
+.header-banner {
+    background-color: var(--skin-banner-background-color-2);
+    color: var(--skin-banner-text-color-1);
+}
+
+.header-banner .close-button .close {
+    background-color: var(--skin-primary-color-1);
+}
+
+/*h1.header.page-title,
+h1.header.page-title::before {
+    background-color: var(--skin-background-color-1);
+    color: var(--color-grey7);
+}*/
+
+.product-tile {
+    background-color: var(--skin-background-color-1);
+    border: 10px solid var(--skin-border-color-1);
+}
+
+.refinements ul li button {
+    color: var(--skin-primary-color-1);
+}
+
+.custom-select {
+    background-color: var(--skin-selectbox-background-color-1);
+    color: var(--skin-selectbox-text-color-1);
+    &:focus {
+        border-color: $black;
+    }
+}
+
+// removing 2 arrow marks being displayed in cart-page and mini-cart
+.line-item-quantity{
+    .custom-select{
+        background: none;
+        padding: .375rem .75rem .375rem .75rem;
+    }
+}
+
+.content-page a, header~#maincontent .storepage .container .experience-bottom a:not(.btn-primary):not(.btn-outline-primary), header~#maincontent .container #Category_SEO_Content a:not(.btn-primary):not(.btn-outline-primary) { 
+    color: var(--skin-link-color-1);
+}
+
+.price {
+    color: var(--skin-price-1);
+}
+
+.navbar,
+.navbar .nav-item,
+.navbar .nav-item a,
+.navbar .nav-item.dropdown,
+.navbar .nav-item.dropdown a,
+.dropdown-menu,
+.dropdown-menu a {
+    color: var(--skin-menu-color-1);
+
+    @media (min-width: 769px) { // stylelint-disable-line
+        color: var(--skin-menu-color-1-invert);
+    }
+}
+
+.navbar .nav-item.dropdown,
+.navbar .nav-item.dropdown .dropdown-menu.show {
+    color: var(--skin-selectbox-text-color-1);
+}
+
+.navbar .nav-item.dropdown .dropdown-menu.show {
+    background-color: var(--skin-selectbox-background-color-1);
+
+    a,
+    .nav-item {
+        color: var(--skin-selectbox-text-color-1);
+    }
+}
+
+.nav-item .nav-link:hover,
+.nav-item .nav-link:focus,
+.nav-item.show .nav-link {
+    background-color: var(--skin-menu-color-1-invert);
+    color: var(--skin-menu-color-1) !important;
+}
+// primary blue
+.btn-primary {
+    background-color: $acme-blue;
+    border-color: #{var(--skin-primary-color-2)};
+    color: #{var(--skin-banner-text-color-1)};
+}
+
+.btn-primary:hover {
+    color: $white;
+    border-color: $hover-blue;
+    background-color: $hover-blue;
+}
+
+// secondary navy
+.btn-secondary {
+    background-color: #002939;
+    border-color: $black;
+    color: $white;
+}
+
+.btn-secondary:hover {
+    color: $white;
+    border-color: $black;
+    background-color: #003A4C;
+}
+
+//Page Number Button
+.page-number-button:hover {
+    background-color: $grey2;
+}
+
+.page-number-button.selected {
+    background-color: $grey2;
+}
+
+// grey button - used for Cancel or Non-Actionable items
+.btn-outline-primary {
+    color: $grey8;
+    border-color: $grey5;
+    background-color: $grey3;
+}
+
+.btn-outline-primary:hover {
+    color: $white;
+    background-color: $grey8;
+    border-color: $grey3;
+}
+.btn-primary.disabled,
+.btn-primary:disabled,
+.btn-outline-primary.disabled,
+.btn-outline-primary:disabled {
+    background-color: $grey2;
+    border-color: $grey8;
+    color: $grey6;
+    opacity: 0.6;
+}
+
+.btn-primary-reverse {
+    color: $hover-blue;
+    border-color: $hover-blue;
+    background-color: $white;
+
+    &:hover, &:focus {
+        background-color: $acme-blue;
+        border-color: $acme-blue;
+        color: #{var(--skin-banner-text-color-1)};
+    }
+}
+
+.btn-link {
+    background: transparent;
+    border: none;
+    color: $acme-blue;
+}
+body {
+    font-family: var(--skin-body-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--skin-header-font), sans-serif;
+}
+
+.page header ~ #maincontent .content-page a:not(.btn-primary):not(.btn-outline-primary) {
+    color: var(--skin-link-color-1);
+    text-decoration: underline;
+    &:hover {
+        text-decoration: none;
+    }
+}
+.page header ~ #maincontent .content-page .card a:not(.btn-primary):not(.btn-outline-primary) {
+    color: var(--skin-link-color-2); 
+    text-decoration:  none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+header ~ #maincontent .container a:not(.btn-primary, .btn-outline-primary) {
+    color: #{var(--skin-link-color-1)};
+}
+header ~ #maincontent .container .pdp-link a:not(.btn-primary, .btn-outline-primary) {
+    color: #{var(--skin-link-color-2)};
+}

@@ -1,0 +1,88 @@
+@import "~base/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "bootstrap/scss/variables";
+@import "~base/storeLocator/storeLocator";
+
+.card {
+    &.search-form, &.results-card {
+    border: 1px solid $grey3;
+    }
+    
+}
+
+.in-store-inventory-dialog {
+    max-width: 56.25em;
+
+    .mt-auto {
+
+        @include media-breakpoint-up(sm) {
+            margin-top: -2rem !important;
+        }
+
+        @include media-breakpoint-down(xs) {
+            margin-top: 1.15em !important;
+        }
+    }
+}
+
+.btn-storelocator-search {
+    background-color: $light-gray;
+    border-color: $primary;
+    border-radius: 0;
+    color: $primary;
+    margin-bottom: 1rem;
+
+    &:hover {
+        background-color: $primary;
+        color: $light-gray;
+    }
+}
+
+.store-name {
+    font-weight: 600;
+}
+
+.btn-get-in-store-inventory {
+    .btn-storelocator-search {
+        margin-bottom: 0.625rem;
+        display: block;
+        width: 100%;
+
+        @include media-breakpoint-up(sm) {
+            margin-top: 2rem;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.selected-store-with-inventory {
+    .change-store {
+        // @extend .btn-storelocator-search;
+        margin: 0;
+        width: auto;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.display-none {
+    display: none;
+}
+.in-store-inventory-dialog {
+    .modal-header {
+        background-color: $grey2;
+        border-bottom: 2px solid $grey3;
+        border-top-left-radius: 0.1875rem;
+        border-top-right-radius: 0.1875rem;
+
+        .close {
+            font-size: 2rem;
+
+            span {
+                font-size: 1rem;
+                margin-right: 0.313em;
+            }
+        }
+    }
+}

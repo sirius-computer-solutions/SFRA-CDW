@@ -1,0 +1,115 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isset name="gtmSettings" value="${require("*/cartridge/scripts/tracking/gtm.js").getSettings()}" scope="page"/>
+
+ <isif condition="${gtmSettings !== null && dw.system.Site.getCurrent().getCustomPreferenceValue('gtmEnable') === true}"> 
+    <iscomment> Used here to check for gtm enabled </iscomment>
+    <div class="gtm-active"></div>
+    <script>
+        function decodeHtml(html) {
+            var txt = document.createElement("textarea");
+            txt.innerHTML = html;
+            return txt.value;
+        }
+        try {
+            var datalayer = decodeHtml('${pdict.datalayer}');
+            var parsed_clean_datalayer = JSON.parse(datalayer);
+            var atDataLayer = parsed_clean_datalayer?parsed_clean_datalayer:[];
+            document.addEventListener('DOMContentLoaded', function () {
+                window.assignTracking = function (nodePropertyName, trackingObject, node) {
+                    //console.log("nodePropertyName::"+nodePropertyName);
+                    const tmp = JSON.parse(node.dataset[nodePropertyName]);
+                    if (tmp && tmp.constructor === Array) {
+                        tmp.forEach(function (m) {
+                            Object.assign(trackingObject, m);
+                        });
+                    }
+                };
+                const viewNodes = document.querySelectorAll('[data-tracking-view]');
+                //console.log("viewNodes ::"+JSON.stringify(viewNodes));
+
+                viewNodes.forEach(assignTracking.bind(this, 'trackingView', atDataLayer));
+
+                //console.log("atDatalayer::"+JSON.stringify(atDataLayer));
+                window.atDataLayer = atDataLayer;
+
+                /** All the EVENTS need for data layer are tracked here -- START*/
+                // eslint-disable-next-line no-unused-vars
+                window.$('body').on('product:beforeAddToCart', (event, data) => {
+                    data.event = "addToCart:before";
+                    atDataLayer.push(data);
+                });
+
+                // eslint-disable-next-line no-unused-vars
+                window.$('body').on('product:afterAddToCart', (event, data) => {
+                    data.event = "addToCart:after";
+                    atDataLayer.push(data);
+                });
+
+                //Notify Me Event
+                window.$('body').on('product:notifyMe', (event, data) => {
+                    data.event = "notifyMe";
+                    atDataLayer.push(data);
+                });
+
+                //Newsletter signup event
+                window.$('body').on('footer:newsletterSignup', (event, data) => {
+                    data.event = "newsletterSignup";
+                    atDataLayer.push(data);
+                });
+
+                //Checkout events
+                window.$('body').on('checkout:updateCheckoutView', (event, data) => {
+                    data.event = "updateCheckoutView";
+                    atDataLayer.push(data);
+                });
+                window.$('body').on('checkout:serializeBilling', (event, data) => {
+                    data.event = "serializeBilling";
+                    atDataLayer.push(data);
+                });
+
+                //Promo events
+                window.$('body').on('promotion:beforeUpdate', (event) => {
+                    var data = {};
+                    data.event = "promotion:before";
+                    atDataLayer.push(data);
+                });
+                window.$('body').on('promotion:error', (event, data) => {
+                    data.event = "promotion:error";
+                    atDataLayer.push(data);
+                });
+                window.$('body').on('promotion:success', (event, data) => {
+                    data.event = "promotion:success";
+                    atDataLayer.push(data);
+                });
+
+                //Shipping events
+                window.$('body').on('shipping:updateShippingMethods', (event, data) => {
+                    data.event = "updateShippingMethods";
+                    atDataLayer.push(data);
+                });
+
+                /** All the EVENTS need for data layer are tracked here -- END*/
+
+
+
+                /** GTM Integration and Pushing START*/
+
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=${gtmSettings.loadAsync};j.src=
+                '//${gtmSettings.accountURL}'+i+dl+ '&gtm_auth=${gtmSettings.profileAuth}&gtm_preview=${gtmSettings.environment}&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+                })(window,document,'script','atDataLayer','${gtmSettings.key}');
+
+                /** GTM Integration and Pushing END*/
+
+            });
+        } catch (e) {
+            // temporary work around to force a server side log entry if an exception happens
+            var head = document.getElementsByTagName('head').item(0);
+            var script = document.createElement('script');
+            script.setAttribute('type', 'text/javascript');
+            script.setAttribute('src', '${URLUtils.https("Error-Force").abs()}?exception=' + e.toString());
+            head.appendChild(script);
+        }
+    </script>
+ </isif> 

@@ -1,0 +1,99 @@
+#maincontent {
+    .hero {
+        position: relative;
+        padding: 1em 0 .5em;
+        background: $white;
+        height: auto;
+        .page-title {
+            @extend .container;
+            background: initial;
+            color: $grey7;
+            &:before, &:after {
+                position: static;
+            }
+        }
+        &.slant-down:after, &.slant-up:after {
+            position: static;
+            border: 0;
+        }
+    }
+    .hero-bg {
+        position: static;
+        padding: 0;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+
+        &:after {
+            content: "";
+            position: static;
+        }
+        img {
+            object-fit: cover;
+        }
+    }
+}
+
+.storepage {
+    width: 100%;
+    .hero-container {
+    margin: 0 auto;
+    }   
+}
+
+.search-banner { background-image: none; background-color: transparent;}
+h1.page-title {
+    padding: 0.3125em 0.625em 0.5rem $grid-gutter-width / 2;
+    background-color: transparent;
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    font-size: 1.75em;
+
+
+    &::before {
+        content: "";
+        background-color: transparent;
+        height: 100%;
+        width: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        @include media-breakpoint-only(xl) {
+            width: calc((100vw - #{map-get($container-max-widths, xl)}) / 2);
+            left: calc((100vw - #{map-get($container-max-widths, xl)}) / 2 * -1);
+        }
+
+        @include media-breakpoint-only(lg) {
+            width: calc((100vw - #{map-get($container-max-widths, lg)}) / 2);
+            left: calc((100vw - #{map-get($container-max-widths, lg)}) / 2 * -1);
+        }
+
+        @include media-breakpoint-only(md) {
+            width: calc((100vw - #{map-get($container-max-widths, md)}) / 2);
+            left: calc((100vw - #{map-get($container-max-widths, md)}) / 2 * -1);
+        }
+    }
+
+    @include media-breakpoint-only(xl) {
+        left: calc((100% - #{map-get($container-max-widths, xl)}) / 2);
+    }
+
+    @include media-breakpoint-only(lg) {
+        left: calc((100% - #{map-get($container-max-widths, lg)}) / 2);
+    }
+
+    @include media-breakpoint-only(md) {
+        left: calc((100% - #{map-get($container-max-widths, md)}) / 2);
+    }
+
+    @include media-breakpoint-down(sm) {
+        left: 0;
+    }
+}
+
+.category-title-h1 {
+    font: 700 1.75em var(--font-family-sans-serif) !important;
+}

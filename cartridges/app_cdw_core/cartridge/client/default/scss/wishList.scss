@@ -1,0 +1,46 @@
+@import "bootstrap/scss/mixins/breakpoints";
+
+@import "~base/variables";
+@import "bootstrap/scss/variables";
+
+@include media-breakpoint-down(xs) {
+    .wishlist-header {
+        flex-direction: column;
+    }
+    .add-to-cart-wishList {
+        .btn.add-to-cart{
+            font-size: 0.88rem;
+        }
+    }
+    .wishlist-hide{
+        font-size: 0.88rem;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .hide-from-public {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+
+.quantity-form-wishlist {
+    .simple-quantity {
+        float: none;
+        margin-right: 0;
+        @include media-breakpoint-only(xs){
+            margin-left: 0;
+        }
+        .form-control {
+            padding: .37rem .2rem;
+        }
+
+        .input-group {
+            justify-content: start;
+        }
+    }
+    .quantity-label {
+        margin-bottom: 1rem;
+    }
+}

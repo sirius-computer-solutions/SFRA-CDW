@@ -1,0 +1,146 @@
+<div class="col product-line-item" data-product-line-item="${lineItem.UUID}">
+    <isif condition="${lineItem.productType === 'bundle'}">
+        <div class="row line-item-header">
+            <isinclude template="checkout/productCard/productCardProductName" />
+        </div>
+
+        <div class="bundle-includes">${Resource.msg('msg.bundle.includes','cart',null)}</div>
+        <!--- individual bundled line items --->
+        <isinclude template="cart/productCard/cartProductCardBundledItems" />
+    <iselse/>
+        
+        <div class="row mt-3">    
+            <div class="col-7 col-sm-8">    
+                <div class="row line-item-header">
+                    <isinclude template="checkout/productCard/productCardProductName" />
+                </div>
+
+                <div class="row">
+                    <div class="item-attributes">
+                        <isif condition="${(pdict.order && !pdict.order.orderStatus) || (typeof miniCart !== 'undefined' && miniCart)}">
+                            <isinclude template="cart/productCard/cartProductCardAvailability" />
+                        </isif>
+                    </div>        
+                </div>    
+                <div class="item-image">
+                        <a href="${URLUtils.url('Product-Show', 'pid', lineItem.id)}">
+                            <isif condition="${lineItem.images[0] && lineItem.images[0].url}">
+                                <img class="product-image"
+                                    src="${lineItem.images[0].url}"
+                                    alt="${lineItem.images[0].alt}"
+                                    title="${lineItem.images[0].title}"
+                                    onerror="this.src='${URLUtils.staticURL('/images/img-na.png')}'">
+                                
+                            <iselse/>
+                                <img class="product-image"
+                                    src="${lineItem.images.small[0].url}"
+                                    alt="${lineItem.images.small[0].alt}"
+                                    title="${lineItem.images.small[0].title}"
+                                    onerror="this.src='${URLUtils.staticURL('/images/img-na.png')}'"> 
+                                                      
+                            </isif>
+                        </a>              
+                </div>
+                <div class="item-attributes">
+                    <isloop items="${lineItem.variationAttributes}" var="attribute">
+                        <p class="line-item-attributes">${attribute.displayName}: ${attribute.displayValue}</p>
+                    </isloop>
+
+                    <div class="item-options">
+                        <isloop items="${lineItem.options}" var="option">
+                            <div class="line-item-option">${option.displayName}</div>
+                        </isloop>
+                    </div>
+                    <isif condition="${lineItem.trackingInfo}">
+                        <isinclude template="cart/productCard/productCardTrackingInfo" />
+                    </isif>
+
+                </div>
+            </div>
+
+            <isif condition=${lineItem.priceTotal.nonAdjustedPrice}>
+                <div class="col-5 col-sm-4 line-item-total-price text-right">
+                    <div class="checkout-item-total-${lineItem.UUID} price checkout-price">
+                        <div class="strike-through
+                        <isif condition=${!lineItem.priceTotal.nonAdjustedPrice}>non-adjusted-price</isif>"
+                        >
+                            ${lineItem.priceTotal.nonAdjustedPrice}
+                        </div>
+                    </div>
+                </div> 
+            <iselse/>
+                <div class="col-5 col-sm-4 text-right final-line-price">
+                    <div class="pricing line-item-total-price-amount checkout-item-total-${lineItem.UUID} <isif condition=${lineItem.priceTotal.nonAdjustedPrice}>discounted-price</isif>">
+                        ${lineItem.priceTotal.price}
+                    </div>                    
+                </div> 
+            </isif>               
+        </div>
+        <div class="row">            
+            <!--- quantity --->
+            <div class="col-4 line-item-quantity">
+                <p class="line-item-pricing-info">
+                    <isif condition="${lineItem.quantity}">
+                        <span class="line-item-total-text qty-card-quantity-label">
+                            ${Resource.msg('field.selectqty','cart',null)}
+                        </span>
+                        <span class="pricing qty-card-quantity-count"><isprint value="${lineItem.quantity}" formatter="##" /></span>    
+
+                    <iselseif condition="${lineItem.quantityShipped && lineItem.quantityBackOrdered}" />
+                        <span class="line-item-total-text qty-card-quantity-label">
+                            ${Resource.msg('field.shippedQty','cart',null)}
+                        </span>
+                        <span class="pricing qty-card-quantity-count"><isprint value="${lineItem.quantityShipped}" formatter="##" /></span>    
+
+                        <span class="line-item-total-text qty-card-quantity-label">
+                            ${Resource.msg('field.backOrderedQty','cart',null)}
+                        </span>
+                        <span class="pricing qty-card-quantity-count"><isprint value="${lineItem.quantityBackOrdered}" formatter="##" /></span>    
+                    <iselse/>
+                    </isif>
+                    <isif condition="${lineItem.itemCancelled}">
+                        <span class="pricing qty-card-quantity-count">
+                            ${Resource.msg('field.item.cancelled','cart',null)}
+                        </span>
+
+                        <span class="line-item-total-text qty-card-quantity-label">
+                            ${Resource.msg('field.cancelleddQty','cart',null)}
+                        </span>
+                        <span class="pricing qty-card-quantity-count"><isprint value="${lineItem.cancelledQty}" formatter="##" /></span>   
+                    </isif>
+                </p>
+            </div>
+        </div>
+
+    </isif>
+
+    
+    <isif condition="${lineItem.productType === 'bundle' && ((pdict.order && !pdict.order.orderStatus) || (typeof miniCart !== 'undefined' && miniCart))}">
+        <isinclude template="cart/productCard/cartProductCardAvailability" />
+    </isif>
+
+        <div class="row line-promotion-styling <isif condition=${lineItem.priceTotal.nonAdjustedPrice}> promo-border-top </isif>">            
+            <div class="col-7 col-sm-8 promotion-styling">
+                    <div class="item-${lineItem.UUID}">
+                        <isif condition="${lineItem.appliedPromotions}">
+                            <isloop items="${lineItem.appliedPromotions}" var="appliedPromotion">
+                                <div class="d-flex align-items-baseline">
+                                    <i class="fas fa-tag promotion-icon"></i>
+                                    <isprint value="${appliedPromotion.shortPromoMessage}" encoding="off"/>
+                                </div>
+                            </isloop>
+                        </isif>
+                    </div>
+            </div>
+            <isif condition=${lineItem.priceTotal.nonAdjustedPrice}>
+                <div class="col-5 col-sm-4 text-right final-line-price">
+                    <div class="pricing line-item-total-price-amount checkout-item-total-${lineItem.UUID} discounted-price">
+                        ${lineItem.priceTotal.price}
+                    </div>   
+                </div>    
+            </isif>         
+        </div>
+
+
+
+</div>

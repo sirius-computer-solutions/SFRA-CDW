@@ -1,0 +1,111 @@
+@import "../skin/skinVariables";
+@import "../utilities/variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+ 
+ .not-found{
+    &-background{
+        background-image: url('../../images/genericError.jpeg') !important;
+        background-position: center;
+        min-height: 500px;
+        padding: 0;
+        margin-top: 1.5rem;
+        margin-bottom: 1.7rem;
+        
+        @include media-breakpoint-down(sm) {
+            background-position: 48% 44px !important;
+            background-size: cover !important; 
+        }
+    }
+    &-title{
+        display: inline-block;
+        font: 700 2.5em myriad-pro-condensed-n7,myriad-pro-condensed,Helvetica Neue,Arial,sans-serif;
+        color: $white;
+        background-color: $black;
+        padding: 0.5rem 3rem 0.5rem 2rem;
+        margin-top: 2rem;
+        @include media-breakpoint-down(xs){
+            width: 100%;
+            font-size: 2.2rem;
+        }
+        
+        @media screen and (max-width: 375px) {
+            font-size: 2.1rem;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+    }
+
+    &-container{
+        padding: 1.5em 0.7rem 0.7rem;
+        margin-left: 1rem;
+        padding-left: 0;
+        @include media-breakpoint-down(sm){
+            background-color: rgba(191,186,181,.2);
+        }
+        .error-code{
+            color: $grey5;
+            font-family: 'Zilla Slab', serif;
+            font-weight: 600;
+        }
+
+        .previous-page-link{
+            width: 59%;
+            font: 600 1.5rem/1.9rem myriad-pro-condensed-n7,myriad-pro-condensed,Helvetica Neue,Arial,sans-serif;
+            margin: 1rem 0;
+
+            @include media-breakpoint-down(md){
+                width: 80%;
+            }
+
+            @include media-breakpoint-down(xs){
+                width: 100%;
+                font-size: 1.4rem;
+            }
+            @media screen and (max-width: 375px) {
+                font-size: 1.3rem;
+            }
+        }
+        
+    }
+    
+    &-message{
+        font: 600 2.2em/2rem myriad-pro-condensed-n7,myriad-pro-condensed,Helvetica Neue,Arial,sans-serif;
+        width: 75%;
+        margin-top: .225rem;
+        margin-bottom: 0.525rem;
+
+        @include media-breakpoint-down(md){
+            width: 85%;
+        }
+
+        @include media-breakpoint-down(sm){
+            width: 90%;
+        }
+
+        @include media-breakpoint-down(xs){
+            width: 100%;
+            font-size: 1.8rem;
+        }
+        @media screen and (max-width: 375px) {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.redirect-containter{
+    width: 100%;
+    margin: 2rem 0;
+    
+    .redirect-button{
+
+        margin-bottom: 0.7rem;
+
+        i{
+            margin-left: 2px;
+            font-size: .75rem;
+        }
+    }
+}
+

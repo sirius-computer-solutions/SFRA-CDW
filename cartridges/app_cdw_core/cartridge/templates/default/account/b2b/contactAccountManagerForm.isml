@@ -1,0 +1,47 @@
+<form class="contact-account-manager-form" action="${URLUtils.url('Account-ContactAccountManagerDialogForm', 'mobile', pdict.mobile)}" method="POST" name="account-manager-form" id="account-manager-form">
+    <div class="row contact-account-manager-body text-left">
+
+        <isif condition="${pdict.CurrentCustomer && pdict.CurrentCustomer.profile && pdict.CurrentCustomer.profile.custom && pdict.CurrentCustomer.profile.custom.b2bSalesPersonInfo}">
+            <isset name="accountManagerInfo" value="${JSON.parse(pdict.CurrentCustomer.profile.custom.b2bSalesPersonInfo)}" scope="page" />
+            <isset name="accountManagerId" value="${accountManagerInfo.id}" scope="page" />
+            <isset name="accountManagerName" value="${accountManagerInfo.name}" scope="page" />
+            <isset name="accountManagerEmailAddress" value="${accountManagerInfo.emailAddress}" scope="page" />
+            <isset name="accountManagerPhoneNo" value="${accountManagerInfo.phoneNo}" scope="page" />
+            <isset name="accountManagerImagePath" value="${'/images/accountManager/' + accountManagerId + '.jpg'}" scope="page" />
+
+            <div class="account-manager-image col">
+                <img class="acct-mgr-image" src="${URLUtils.staticURL(URLUtils.CONTEXT_LIBRARY, '', accountManagerImagePath)}" alt="${accountManagerId}" onerror="this.src='${URLUtils.staticURL('/images/img-na.png')}'"  />
+            </div>
+            <div class="col">
+                <div class="account-manager-details">
+                    <p class="account_manager_name"><strong>${accountManagerName}</strong></p>
+
+                    <p class="account_manager_email">${accountManagerEmailAddress}</p>
+                    <p class="account_manager_phone">${Resource.msg('label.accountmanager.contact.phone', 'b2bUserRegistration', null)} ${accountManagerPhoneNo}</p>
+
+                    <div class="form-group required">
+                        <label class="form-control-label" for="messageContent">
+                            <isprint value="${Resource.msg('label.accountmanager.contact.message', 'b2bUserRegistration', null)}" encoding="htmlcontent" />
+                        </label>
+
+                        <textarea class="form-control sales-messageContent" id="messageContent" name="messageContent" rows="3" cols="40" maxlength="250"></textarea>
+
+                        <div class="invalid-feedback"></div>
+                        <div id="accountManagerMessageArea" class="contact-account-manager-confirmation-message"></div>
+                    </div>
+                </div> 
+
+                <input type="hidden" name="${dw.web.CSRFProtection.getTokenName()}" value="${dw.web.CSRFProtection.generateToken()}"/>
+
+                <div class="contact-account-manager-email-btn">
+                    <button
+                        type="submit"
+                        id="submitContactAccountManagerEmailButton"
+                        class="btn btn-primary btn-block btn-manager-message-submit">
+                        ${Resource.msg('accountmanager.contact.button.submit','b2bUserRegistration',null)}
+                    </button>
+                </div>
+            </div>
+        </isif>
+    </div>
+</form>

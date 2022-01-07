@@ -1,0 +1,129 @@
+<isif condition="${slotcontent}">
+    <div class="recommendations">
+        <div class="row">
+            <div class="h2 col-12 title"><isprint value="${slotcontent.calloutMsg}" encoding="off"/></div>
+        </div>
+        <div class="row">
+            <isset name="carouselClass" value="${(slotcontent.calloutMsg.toString().toLowerCase().replace(/ /g, '-')).replace(/'/g, '-')}" scope="page"/>
+            <isset name="carouselId" value="${'prdRecommendationCarousel'+carouselClass}" scope="page"/>
+            <isset name="acmeCarouselConfig" value="{'0': 2,'451': 3,'651': 4,'992': 5,'1200': 6}" scope="page"/>
+            
+            <isif condition="${slotcontent.calloutMsg.toString().toLowerCase().indexOf('forget')!=-1}" >  
+                <isset name="accessories1" value="xyz" scope="page"/>
+                <isset name="acmeCarouselConfig" value="{'0': 2,'601': 3}" scope="page"/>
+                <isscript>
+                    var ProductMgr = require('dw/catalog/ProductMgr');
+                    var origPrd = ProductMgr.getProduct(pdict.auid);
+                </isscript>
+            </isif>
+            <div id="${carouselId}" class="acme-carousel ${carouselClass}" data-column-count-by-width="${acmeCarouselConfig}" data-interval="false">
+                <div class="acme-carousel-inner">
+                    <isif condition="${typeof origPrd !== 'undefined' && origPrd}">
+                        <isloop items="${origPrd.attributeModel.visibleAttributeGroups}" var="attrGroup">
+                            <isif condition="${attrGroup.ID == Resource.msg('accessories.attribute', 'product', null)}">
+                                <isloop items="${origPrd.attributeModel.getVisibleAttributeDefinitions(attrGroup)}" var="attr">
+                                    <isset name="pid" value="${origPrd.attributeModel.getDisplayValue(attr)}" scope="page"/>
+                                    <isif condition="${pid}" >  
+                                        <isscript>
+                                            var ProductSearchModel = require('dw/catalog/ProductSearchModel');
+                                            var Site = require('dw/system/Site');
+                                            var product = null;
+                                            var searchModel = new ProductSearchModel();
+                                            if(!empty(pid)) {
+                                                var regex = new RegExp(Site.getCurrent().getCustomPreferenceValue('ProductIDRegex') || '[+-*/]','g');
+                                                if(pid.match(regex))
+                                                {
+                                                    pid = pid.replace(regex, "_"); 
+                                                }
+                                            }
+
+                                            searchModel.setSearchPhrase(pid);
+                                            searchModel.search();
+                                            
+                                            // Fix for ACME-1653
+                                            var searchHits = searchModel.getProductSearchHits();
+                                            while(searchModel.count > 0 && searchHits != null && searchHits.hasNext()) {
+                                                var tempHit = searchHits.next();
+                                                if (tempHit.product.custom['acme-tools-part-number'] === pid) {
+                                                    product = tempHit.product;
+                                                    break;
+                                                }
+                                            }
+                                        </isscript>
+                                        <isif condition="${product!=null}" >
+                                            <isset name="callforprice" value="${false}"  scope="page" />
+                                            <isif condition="${'custom' in product && 'w1call' in product.custom && (product.custom.w1call ===true || product.custom.w1call ==='Y')}" >
+                                                <isset name="callforprice" value="${true}"  scope="page"  />
+                                            </isif> 
+                                            
+                                            <isset name="buyable" value="${true}"  scope="page" />
+                                            <isif condition="${'custom' in product && 'w1buyable' in product.custom && (product.custom.w1buyable ===false || product.custom.w1buyable ==='N')}" >
+                                                <isset name="buyable" value="${false}"  scope="page"  />
+                                            </isif> 
+
+                                            <isset name="bopisonly" value="${false}"  scope="page" />
+                                            <isif condition="${'custom' in product && 'w1bopis' in product.custom && (product.custom.w1bopis ===true || product.custom.w1bopis ==='Y')}" >
+                                                <isset name="bopisonly" value="${true}"  scope="page"  />
+                                            </isif> 
+                                            <isif condition="${!callforprice && buyable && !bopisonly}">
+                                                <div class='acme-carousel-item'>
+                                                    <div>
+                                                        <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'swatches', false, 'ratings', false, 'compare', false, 'showQuickView', false, 'dontForgetRecommendation',true , 'addToCart',true,'availability',false,'promotions',true,'showListPrice', false,'showWasPrice',false )}" />
+                                                    </div>
+                                                </div>
+                                            </isif> 
+                                        </isif> 
+                                    </isif>
+                                </isloop> 
+                                <isbreak/>
+                            </isif> 
+                        </isloop>
+                    </isif>
+                    <isloop items="${slotcontent.content}" var="product" status="loopStatus">
+                        <isobject object="${product}" view="recommendation">
+                            <isset name="callforprice" value="${false}"  scope="page" />
+                            <isif condition="${'custom' in product && 'w1call' in product.custom && (product.custom.w1call ===true || product.custom.w1call ==='Y')}" >
+                                <isset name="callforprice" value="${true}"  scope="page"  />
+                            </isif> 
+                            <isset name="buyable" value="${true}"  scope="page" />
+                            <isif condition="${'custom' in product && 'w1buyable' in product.custom && (product.custom.w1buyable ===false ||product.custom.w1buyable ==='N')}" >
+                                <isset name="buyable" value="${false}"  scope="page"  />
+                            </isif> 
+                            
+                            <isset name="bopisonly" value="${false}"  scope="page" />
+                            <isif condition="${'custom' in product && 'w1bopis' in product.custom && (product.custom.w1bopis ===true || product.custom.w1bopis ==='Y')}" >
+                                <isset name="bopisonly" value="${true}"  scope="page"  />
+                            </isif> 
+                            <isif condition="${!callforprice && buyable && !bopisonly}">
+                                <div class='acme-carousel-item'>
+                                    <div>
+                                        <isif condition="${slotcontent.calloutMsg.toString().toLowerCase().indexOf('forget')!=-1}" >  
+                                            <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'swatches', false, 'ratings', false, 'compare', false, 'showQuickView', false, 'dontForgetRecommendation',true , 'addToCart',true,'availability',false,'promotions',true,'showListPrice', false,'showWasPrice',false)}" />
+                                        <iselse>
+                                            <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'swatches', false, 'ratings', false, 'compare', false, 'showQuickView', false, 'ymalRecommendation',true , 'addToCart',true,'availability',false,'promotions',true,'showListPrice', true,'showWasPrice',false)}" />
+                                        </isif>    
+                                    </div>
+                                </div>
+                            </isif>
+                        </isobject>
+                    </isloop>
+                </div>
+                
+                <a class="carousel-control-prev" href="${"#"}${carouselId}" role="button" data-slide="prev" tabindex="-1" aria-hidden="true">
+                    <span class="fas icon-prev" aria-hidden="true"></span>
+                    
+                </a>
+                <a class="carousel-control-next" href="${"#"}${carouselId}" role="button" data-slide="next" tabindex="-1" aria-hidden="true">
+                    <span class="fas icon-next" aria-hidden="true"></span>
+                    
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</isif>
+<script>
+$(function() {
+    $('.acme-carousel').trigger('acme-carousel:init')
+});
+</script>

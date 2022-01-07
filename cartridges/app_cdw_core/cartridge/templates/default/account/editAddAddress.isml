@@ -1,0 +1,36 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/account.css');
+        assets.addJs('/js/addressBook.js');
+    </isscript>
+    <div class="account">
+        
+    <div class="container">
+        <!---Breadcrumbs--->
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+        <h1 class="page-title">${Resource.msg('label.addressbook', 'account', null)}</h1>
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                    <isif condition="${pdict.addressId}">
+                        <h3>${Resource.msg('label.addressbook.editaddress','account',null)}</h3>
+                        <iselse>
+                            <h2>${Resource.msg('label.addressbook.addnewaddress','account',null)}</h2>
+                    </isif>
+                    </div>
+                    <div class="card-body">
+                        <isinclude template="account/addressForm"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <a href="${URLUtils.url('Account-Show')}" class="btn btn-outline-primary profile-back-to-account-link">${Resource.msg('link.profile.backtomyaccount','account',null)}</a>
+            </div>
+        </div>
+    </div>
+</div>
+</isdecorate>

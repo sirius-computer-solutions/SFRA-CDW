@@ -1,0 +1,10 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/topSubCategoriesForCategory.css');
+</isscript>
+    <div class="container">
+        <div class="top-sub-categories">
+            <isset name="parentCategory" value="${pdict.category}" scope="page" />
+            <isinclude template="components/category/listTopSubCategories" />
+        </div>
+    </div>

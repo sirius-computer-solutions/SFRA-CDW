@@ -1,0 +1,21 @@
+<div class="container-fluid compare-bar-wrapper hidden-xs-down">
+    <div class="row">
+        <div class="container compare-bar"
+            data-max-slots="${pdict.maxSlots}"
+            data-min-products-msg="${Resource.msg('text.productcompare.select2', 'product', null)}">
+            <form method="GET" class="compare-products-form" name="compare-products" action="${URLUtils.url('Compare-Show')}">
+                <div class="row align-items-center compare-tiles">
+                    <div class="col-8">
+                        <div class="row align-items-center product-slots"></div>
+                    </div>
+                    <div class="col-3 action">
+                        <button type="submit" class="compare btn btn-primary">Compare</button>
+                        <a href="${'#'}" class="clear-all">Clear All</a>
+                    </div>
+                </div>
+                <input type="hidden" name="cgid" />
+                <input type="hidden" name="backUrl" />
+            </form>
+        </div>
+    </div>
+</div>

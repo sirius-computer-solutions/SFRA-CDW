@@ -1,0 +1,5 @@
+<isinclude template="/search/productGrid" />
+
+<span class="d-none"
+    data-sort-event="${ JSON.stringify(require('*/cartridge/scripts/datalayer.js').getDatalayerEventSort()) }" >
+</span>

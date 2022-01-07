@@ -1,0 +1,27 @@
+<isdecorate template="common/layout/page">
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addCss('/css/search.css');
+    </isscript>
+
+    
+<div class="container">
+    <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+    <isslot
+        id="top-cat-landing-slotbanner-m"
+        context="category"
+        description="Banner at the top of Category Landing Pages"
+        context-object="${pdict.category}"
+    />
+        <div class="secondary-content">
+            <isslot id="alternate-url-content-slot-1" context="category" description="Slot to manage the brand specific image for alt url" context-object="${pdict.category}"/>
+            <isslot id="alternate-url-content-slot-2" context="category" description="Slot to manage the brand specific image for alt url" context-object="${pdict.category}"/>
+            <div class="seo-content">
+                <isslot id="alternate-url-seo-content-1" context="category" description="Slot to manage the brand specific image for alt url" context-object="${pdict.category}"/>
+                <isslot id="alternate-url-seo-content-2" context="category" description="Slot to manage the brand specific image for alt url" context-object="${pdict.category}"/>
+            </div>
+        </div>
+    </div>
+
+</isdecorate>

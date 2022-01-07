@@ -1,0 +1,47 @@
+<!--- applicable credit cards--->
+<div class="payment-option">
+    <div class="credit-card-tab py-3 nav-item" id="${paymentOption.ID}" data-method-id="${paymentOption.ID}">
+        <div class="d-flex align-items-center">
+            <input type="radio" name="paymentType" value="${paymentOption.ID}" checked="checked"/>
+            <label for="${paymentOption.ID}" class="nav-link credit-card-tab">
+                <div class="master-card"> </div>
+                <div class="visa-card"> </div>
+                <div class="amex-card"> </div>
+                <div class="discover-card"> </div>
+            </label>
+        </div>
+        <div class="tab-pane active credit-card-content mt-3" id="credit-card-content">
+            <fieldset class="payment-form-fields">
+
+                <!--- payment method is credit card --->
+                <input type="hidden" class="form-control"
+                    name="${pdict.forms.billingForm.paymentMethod.htmlName}"
+                    value="CREDIT_CARD"
+                >
+
+                <!--- register/authenticated user --->
+                <isif condition="${pdict.customer.registeredUser}">
+                    <div class="user-payment-instruments container ${pdict.customer.registeredUser && pdict.customer.customerPaymentInstruments.length ? '' : 'checkout-hidden'}">
+                        <!--- Stored user payments --->
+                        <div class="stored-payments">
+                            <isinclude template="checkout/billing/storedPaymentInstruments" />
+                        </div>
+
+                        <!--- Add new credit card button --->
+                        <div class="row">
+                            <button class="btn btn-block add-payment btn-outline-primary" type="button">${Resource.msg('button.add.payment', 'checkout', null)}</button>
+                        </div>
+                    </div>
+                </isif>
+
+                <fieldset class="credit-card-form ${pdict.customer.registeredUser && pdict.customer.customerPaymentInstruments.length ? 'checkout-hidden' : ''}">
+                    <isinclude template="checkout/billing/creditCardForm" />
+                    <isif condition="${pdict.customer.registeredUser}">
+                        <button class="btn btn-block cancel-new-payment btn-outline-primary ${pdict.customer.registeredUser && pdict.customer.customerPaymentInstruments.length ? '' : 'checkout-hidden'}" type="button">${Resource.msg('button.back.to.stored.payments', 'checkout', null)}</button>
+                    </isif>
+                </fieldset>
+
+            </fieldset>
+        </div>
+    </div>
+</div>

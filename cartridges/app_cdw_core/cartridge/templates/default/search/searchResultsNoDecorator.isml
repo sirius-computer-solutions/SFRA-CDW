@@ -1,0 +1,197 @@
+
+<isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+    <isinclude template="reporting/reportingUrls" />
+</isif>
+
+<isif condition="${!empty(pdict.refinedKey)}">
+    <isset name="refinedKey" value="${pdict.refinedKey}" scope="page"/>
+<iselse/>
+    <isset name="refinedKey" value="" scope="page"/>
+</isif>
+
+    <!--- Search Results Banner --->
+<div class="banner-container row mx-0">    
+    <isif condition="${pdict.productSearch.isCategorySearch}">
+        <iscomment> <div class="slant-down search-banner" 
+            <isif condition="${!empty(pdict.showOrignialslotBannerImage) && pdict.showOrignialslotBannerImage}">
+                style="background-image: url(${pdict.orignialslotBannerImage.url})"
+            <iselseif condition="${pdict.productSearch.bannerImageUrl}">
+                style="background-image: url(${pdict.productSearch.bannerImageUrl})"
+            </isif>
+        >
+
+        </div> </iscomment>
+
+        <isif condition="${!empty(pdict.showOrignialslotBannerImage) && pdict.showOrignialslotBannerImage && !pdict.refinedPage}">
+            <div class="hero-bg search-banner" style="overflow: hidden;">    
+                    <img src="${pdict.orignialslotBannerImage.url}" alt="${pdict.productSearch.category.name}" style="${pdict.slotBannerStyle}"/>
+            </div>
+        <iselseif condition="${pdict.productSearch.bannerImageUrl && !pdict.refinedPage}">
+            <div class="hero-bg search-banner" style="overflow: hidden;">    
+                <img src="${pdict.productSearch.bannerImageUrl}" alt="${pdict.productSearch.category.name}" style="${pdict.slotBannerStyle}"/>
+            </div>
+        <iselse/>
+            <div class="hero-bg search-banner" style="overflow: hidden;">
+                <isif condition="${!empty(pdict.refinedKey)}"> 
+                    <img class="hero-bg-search-banner-image" src ="${URLUtils.staticURL('/images/spacer.png')}" data-imgsrc="${URLUtils.staticURL(URLUtils.CONTEXT_CATALOG, '', 'images/slot/brand-banners/'+(refinedKey.toLowerCase().replace(/ /g, '-')).replace(/'/g, '-') +'.jpg')}" 
+                        alt="${pdict.refinementIncludedH1}" onerror="this.src='${URLUtils.staticURL('/images/spacer.png')}'">
+                </isif>
+            </div>
+        </isif>
+    <iselseif condition="${pdict.promoListing && pdict.promoDetails && pdict.promoDetails.custom && 'bannerImageURL' in pdict.promoDetails.custom}">
+            <div class="hero-bg search-banner" style="overflow: hidden;">    
+                    <img src="${URLUtils.staticURL(URLUtils.CONTEXT_CATALOG, '', pdict.promoDetails.custom.bannerImageURL)}" alt="${pdict.promoDetails.name}" style="${pdict.slotBannerStyle}"/>
+            </div>  
+    <iselse>
+        <isif condition="${!pdict.productSearch.isCategorySearch && !pdict.promoListing}">
+            <isslot id="search-result-banner-m" description="Banner for search results" context="global" />        
+        </isif>
+
+    </isif>
+</div>
+
+
+
+<div class="container search-results">
+
+    
+    <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+    <div class="row search-nav">
+        <isif condition="${!pdict.productSearch.isCategorySearch && !pdict.promoListing}">
+            <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs nav-fill" role="tablist">
+
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active product-search" href="#product-search-results" aria-controls="product-search-results" data-toggle="tab" role="tab" aria-selected="true" tabindex="0" id="product-tab">
+                            ${Resource.msg('tab.nav.search.productsresults', 'search', null)}
+                        </a>
+                    </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link content-search" href="#content-search-results-pane" aria-controls="content-search-results-pane" data-toggle="tab" role="tab" aria-selected="false" tabindex="-1" id="articles-tab"
+                                data-url="${URLUtils.url('Search-Content', 'q', pdict.origSearchString, 'startingPage', 0)}">
+                                ${Resource.msg('label.content', 'search', 'Content')}
+                            </a>
+                        </li>
+                    </ul>
+            </div>
+        </isif>
+    </div>
+    <div class="row">
+        <div class="tab-content col-12 px-0">
+            <div class="tab-pane container active" id="product-search-results" role="tabpanel" aria-labelledby="product-tab">
+
+                    <isif condition="${pdict.productSearch.isCategorySearch}">
+                        <h1 class="header page-title">
+                            <isif condition="${!empty(pdict.refinementIncludedH1)}">
+                                ${pdict.refinementIncludedH1}
+                            <iselse/>
+                                 ${pdict.productSearch.category.name}
+                            </isif>
+                        </h1>
+                    <iselseif condition="${pdict.promoListing}">
+                        <h1 class="header page-title">
+                            <isprint value="${pdict.promoDetails.name}" encoding="htmlcontent" />
+                        </h1>
+                        <div class="promotion-landing-description">
+                            <isprint value="${pdict.promoDetails.details}" encoding="htmlcontent" />
+                        </div>                        
+                    </isif>
+
+                    
+                
+                <isif condition="${pdict.productSearch.productIds.length > 0}">
+                    <!--- Refinement bar --->
+                    <div class="row mt-3">
+                        <div class="refinement-bar col-md-3">
+                            <isinclude url="${pdict.refineurl}"/>
+                        </div>
+                        <div class="col-sm-12 col-md-9">
+                            <isif condition="${pdict.origCategoryObject && pdict.productSearch.productIds.length > 0}">
+                                    <isslot id="alternate-url-content-slot-1" context="category" description="Brand Alternamte URL Content Slots" context-object="${pdict.origCategoryObject}"/>
+                        </isif>
+                            <iscomment> <isinclude template="components/category/brandContentAsset" /> </iscomment>
+                             <!--- Selected filters bar --->
+                             <div class="row filter-bar d-md-none">
+                                 <isinclude template="search/filterBar" />
+                             </div>
+                                <div class="all-sub-categories">
+                                    <isif condition="${!empty(pdict.showSubCategories) && pdict.showSubCategories && pdict.productSearch.productIds.length > 0 }">
+                                        <isset name="parentCategory" value="${pdict.apiProductSearch.category}" scope="page" />
+                                        <isinclude template="components/category/listAllSubCategories" />
+                                    </isif>                                        
+                                </div>    
+                            <isif condition="${pdict.productSearch.productIds.length > 0}">
+                                <div id="plp-product-grid" class="row grid-header">
+                                    <div class="result-count text-right col-12 col-6 col-md-9 order-xs-2">
+                                        <iselse>
+                                            <div class="row grid-header justify-content-center">
+                                                <div id="plp-product-grid" class="result-count col">
+                            </isif>
+                            <isinclude template="search/resultsCount" />
+                            </div>
+                            <div id="windowReplaceURL" class="window-replace-url" data-id="${pdict.productSearch.canonicalLink}"></div>
+                            <div id="refinementIncludedH1" class="refinement-included-h1" data-id="${pdict.refinementIncludedH1}"></div>
+                            <div id="npSpaceImagePath" class="no-spacer-image-path" data-id="${URLUtils.staticURL('/images/spacer.png')}"></div>        
+                            <div id="pageTitleValue" class="page-title-value" data-id="${pdict.refinementIncludedH1 +' | '+dw.system.Site.current.name}-"></div>        
+                            <div id="refinementIncludedBannerImage" class="refinement-included-banner-image" data-id="${URLUtils.staticURL(URLUtils.CONTEXT_CATALOG, '', 'images/slot/brand-banners/'+(refinedKey.toLowerCase().replace(/ /g, '-')).replace(/'/g, '-') +'.jpg')}"></div>
+                            
+                            <isif condition="${pdict.productSearch.productIds.length > 0}">
+                                <div class="col-6 col-md-3 col-sm-6 order-xs-1">
+                                    <isinclude template="search/sortOrderMenu" />
+                                </div>
+                            
+                                <div class="col-6 col-sm-3 text-right d-md-none order-xs-3">
+                                    <button type="button" class="btn btn-primary filter-results col-12">
+                                        ${Resource.msg('button.filter', 'search', null)}
+                                    </button>
+                                </div>
+                            </isif>
+                            </div>
+
+                             <!--- Product Grid --->
+                             <div class="row equal-height product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
+                                 <isinclude template="search/productGrid" />
+                             </div>
+                            <div class="secondary-content-seo">
+                                <isslot id="cat-landing-slotbottom1-m" context="category" description="First slot below the Category Landing Bottom" context-object="${pdict.category}"/>
+                                <isslot id="cat-landing-slotbottom2-m" context="category" description="Second slot below the Category Landing Bottom" context-object="${pdict.category}"/>
+                                <isif condition="${pdict.origCategoryObject && pdict.productSearch.productIds.length > 0}">
+                                        <div class="seo-content">
+                                            <isslot id="alternate-url-seo-content-1" context="category" description="Brand Alternamte URL Content Slots" context-object="${pdict.origCategoryObject}"/>
+                                            <isslot id="alternate-url-seo-content-2" context="category" description="Brand Alternamte URL Content Slots" context-object="${pdict.origCategoryObject}"/>
+                                            <isinclude template="/components/modules" />
+                                            <isset name="seoContentAssetForCategory" value="${pdict.origCategoryObject.ID+'-seo-content'}" scope="page"/>
+                                            <iscontentasset aid="${seoContentAssetForCategory}" />
+                                        </div>
+                                <iselse/>
+                                    <isif condition="${pdict.productSearch.category && !pdict.refinedKey}">
+                                        <isinclude template="/components/modules" />
+                                        <isset name="seoContentAssetForCategory" value="${pdict.productSearch.category.id+'-seo-content'}" scope="page"/>
+                                        <iscontentasset aid="${seoContentAssetForCategory}" />
+                                    <iselseif condition="${pdict.productSearch.category && pdict.refinedKey}">
+                                        <isinclude template="/components/modules" />
+                                        <isset name="seoContentAssetForCategory" value="${(refinedKey.toLowerCase().replace(/ /g, '-')).replace(/'/g, '-')+'-seo-content'}" scope="page"/>
+                                        <iscontentasset aid="${seoContentAssetForCategory}" />
+                                    </isif>
+                                </isif>
+
+                            </div>                                
+                        </div>
+                    </div>
+                <iselse>
+                    <div class="row grid-header justify-content-center">
+                        <div id="plp-product-grid" class="result-count col">
+                            <isinclude template="search/resultsCount" />
+                        </div>
+                    </div>
+                </isif>
+            </div>
+            <!--- Content Grid --->
+            <div class="tab-pane container" id="content-search-results-pane" role="tabpanel" aria-labelledby="articles-tab">
+                <div id="content-search-results" class="row content-grid-header"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<isinclude template="product/compareBar" />

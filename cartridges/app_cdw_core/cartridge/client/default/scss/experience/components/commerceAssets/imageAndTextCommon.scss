@@ -1,0 +1,288 @@
+@import "../../../utilities/variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+
+
+
+.image-cta {
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    margin: 0;
+}
+
+.image-component {
+    display: grid;
+  //grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.common-image-component {
+    width: 100%;
+    object-fit: cover;
+    object-position: var(--focal-point-x) var(--focal-point-y);
+}
+
+.image-wrapper {
+    padding: 0;
+    left: 0;
+    position: relative;
+    top: 0;
+    background-position: bottom;
+}
+
+.mainbanner-image {
+    height: 43.75vw;
+    @include media-breakpoint-down(xs) {
+        height: 75vw;
+    }
+}
+
+.common-image-filter {
+   // filter: brightness(40%);
+}
+
+.image-heading-container {
+    
+    width: 100%;
+}
+
+.image-heading-container {
+    &.orientation-container {
+        position: absolute;
+        height: 100%;
+        .image-heading-text {
+            height: 100%;
+        }
+    }
+    .text-center {
+        div {
+        color: $white;
+        background: linear-gradient(rgba(0, 0, 0, 0), #222);
+        padding: 2.25em 25px;
+        margin: 0;
+        text-shadow: 1px 2px 2px black, 0 0 1em black, 0 0 1em black;
+        position: absolute;
+        bottom: 0;
+        width: calc(100% - 30px);
+            &:empty {
+            background: none; 
+            padding: 0;
+            }
+            a {
+                color: $white !important;
+            }
+        }
+
+        .orientation {
+            width: 35%;
+            bottom: unset;
+            top: unset;
+            left: unset;
+            right: unset;
+            background: none;
+    
+            &.top-left {
+                top: 0;
+                left: 0;
+            }
+            &.top-right {
+                top: 0;
+                right: 0;
+            }
+            &.bottom-left {
+                bottom: 0;
+                left: 0;
+            }
+            &.bottom-right {
+                bottom: 0;
+                right: 0;
+            }
+            &.center-left {
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+            &.center-right {
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+            }
+            &.center {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .text-overlay2 p {
+                margin: 0 0 1rem;
+            }
+        }
+    }
+
+    .text-overlay1 {
+        font: 600 1.53125em myriad-pro-condensed,'Helvetica Neue',Arial,sans-serif;
+    }
+
+    .text-overlay2 {
+        display: block;
+        font: normal 1em myriad-pro-n6,myriad-pro,'Helvetica Neue',Arial,sans-serif;
+        p {
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .image-heading-container .text-center .orientation {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .image-heading-container .text-center .orientation {
+        width: 100%;
+    }
+}
+
+.image-heading-text {
+    font-family: $image-text-font;
+    color: $white;
+    a {
+        color: $white !important;
+    }
+}
+
+.button-container {
+    position: absolute;
+    -webkit-align-self: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 33%;
+    margin-left: 10px;
+    z-index: 2;
+    color: $white;
+    transform: translateY(-50%);
+    @include media-breakpoint-down(md) {
+        width: 50%;
+    }
+    .promotional-overlay-text {
+        text-align: center;
+        color: $white;
+        padding-bottom: .5em;
+    }
+    .promotional-overlay-text-1 {
+        text-align: center;
+        color: $white;
+        padding-bottom: .5em;
+        font: 600 2.625em myriad-pro-condensed,'Helvetica Neue',Arial,sans-serif;
+    }
+    .promotional-overlay-text-2 {
+        text-align: center;
+        color: $white;
+        padding-bottom: .5em;
+        font: normal 1.3125em myriad-pro-n6,myriad-pro,'Helvetica Neue',Arial,sans-serif;
+    }
+    .row-horizontal {
+        display: flex;
+        margin-left: 1em;
+        justify-content: center;
+        .text-overlay-horizontal {
+            justify-content: center;
+            white-space: nowrap;
+            margin: 0 5px;
+        }
+    }
+    .row-vertical {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .text-overlay-vertical {
+            margin-bottom: .5em;
+        }
+    }
+    .btn {
+    border: transparent !important;
+    text-transform: uppercase;
+        p {
+            padding: 0;
+            margin: 0;
+        }
+        &:hover {
+             filter: brightness(0.85);
+        }
+    }
+}
+
+.image-button-container {
+    .image-text {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        &.row-horizontal {
+            justify-content: center!important;
+            margin-bottom: 1em;
+        }
+        p {
+            margin: 0;
+        }
+    }
+    .text-overlay-vertical {
+        flex: 0 0 100%;
+        max-width: 100%;
+        span {
+            margin-left: 1em;
+            margin-bottom: 1em;
+            display: block;
+            &:empty {
+                margin: 0;
+                display: none;
+            }
+        }
+    }
+}
+
+/*.ITC-image-heading-text {
+    color: $banner-heading-text-color;
+}
+
+.image-heading-container .mainbanner-sub-text p {
+    font-size: $banner-sub-text-font-size;
+    font-family: $banner-font;
+    color: $banner-sub-text-color;
+}*/
+
+.mainbanner-sub-text .btn {
+    text-shadow: none;
+    text-decoration: none;
+}
+
+.ITC-text-underneath span {
+    color: $black;
+    padding-top: 0.75em;
+    text-align: center;
+}
+
+.parent-img {
+    position: relative;
+}
+
+.parent-img-resposinve {
+    width: 100%;
+    height: auto;
+}
+
+.child-img {
+    position: relative;
+}
+
+.product-list-tile {
+    padding: 0 20px;
+}

@@ -1,0 +1,16 @@
+<isif condition="${product.promotions}">
+    <isset name="displaySeparatePromoMessage" value="" scope="page"/>
+    <isloop items="${product.promotions}" var="promotion" status="promdet">
+        <isif condition="${!empty(promotion.displayInPLPAsSeparate) && promotion.displayInPLPAsSeparate}">
+                <isset name="displaySeparatePromoMessage" value="${promotion.calloutMsg}" scope="page"/>
+        </isif>
+    </isloop>
+    <isif condition="${!empty(displaySeparatePromoMessage)}">
+        <div class="row pb-2 font-small-bold">  
+            <div class="col">      
+                <span class="fs-promo"><i class="fas fa-truck fa-flip-horizontal fa-fw"></i>&nbsp; 
+                <isprint value="${displaySeparatePromoMessage}" encoding="off" /></span>      
+            </div>
+        </div>
+    </isif>
+</isif>

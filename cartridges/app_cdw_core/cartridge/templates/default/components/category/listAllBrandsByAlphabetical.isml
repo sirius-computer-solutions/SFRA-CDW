@@ -1,0 +1,43 @@
+<div class="department-brands">						
+        <div id="brandsListing">
+                <div id="brandAlphabets" class="alphabet-button-array">
+                        <ul class="grid_mode grid category-list-alpha-group text-center">
+                                <isloop items="${categoryAlphabets}" var="alphabet">
+                                        <li>
+                                        <div class="categoryAlphaListCell">
+                                                <isset name="hrefVal" value="${StringUtils.stringToWml('#')}" scope="page" />
+                                                <a href="${hrefVal}${alphabet}"  class="btn"><isprint value="${alphabet}" /></a>
+                                        </div>
+                                        </li>
+                                </isloop>
+                        </ul>
+                </div>	
+
+                <isloop items="${categoryAlphabets}" var="alphabet">
+
+                <div id="${alphabet}" class="row mx-0 alphabetical-family">
+                        <div class="col border-bottom pb-1 font-weight-bold"><isprint value="${alphabet}" /></div>
+                        <div class="w-100"></div>
+                        <ul class="col brandListing column-list-js">
+                                <isloop items="${categoriesMap[alphabet]}" var="category">
+                                        <li class="column-list">
+                                        <isif condition="${category.custom.alternativeUrl}">
+                                                <isset name="altURL" value="${category.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+                                                <isif condition="${altURL.includes('?')}">
+                                                        <a href="${altURL}&oci=${category.ID}" title="${category.displayName}">
+                                                <iselse/>
+                                                        <a href="${altURL}?oci=${category.ID}" title="${category.displayName}">
+                                                </isif>
+                                        <iselse/>
+                                                 <a href="${URLUtils.url('Search-Show', 'cgid', category.ID)}" title="${category.displayName}">    
+                                        </isif>
+                                                        <isprint value="${category.displayName}" />
+                                                </a>
+                                        </li>   
+                                </isloop>
+                        </ul>
+                </div>
+                        
+                </isloop>
+        </div>
+</div>

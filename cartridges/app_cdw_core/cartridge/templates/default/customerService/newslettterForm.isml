@@ -1,0 +1,40 @@
+     <form action="CustomerService-NLSubscribe" class="contact-us" method="POST" name="contact-us">
+        <!--- contact us email --->
+        <div class="row contact-us-email">
+            <div class="col">
+                <div class="form-group required">
+                    <label class="form-control-label" for="contact-email">
+                        ${Resource.msg('label.input.contact-us-email', 'customerService', null)}
+                    </label>
+                    <input type="email" required class="form-control required" aria-describedby="form-contact-email-error" id="contact-email" name="contactEmail">
+                    <div class="invalid-feedback" id="form-contact-email-error"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row contact-us-zipCode">
+            <div class="col">
+                <div class="form-group required">
+                    <label class="form-control-label" for="contact-zipCode">
+                        ${Resource.msg('label.input.contact-us-zipCode', 'customerService', null)}
+                    </label>
+                    <input type="text" required class="form-control required" aria-describedby="form-contact-zipCode-error" id="contact-zipCode" name="contactZipCode">
+                    <div class="invalid-feedback" id="form-contact-zipCode-error"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row contact-us-submnit">
+            <div class="col-sm-6">
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <button class="btn btn-block btn-primary subscribe-contact-us" type="submit" name="submit" value="submit">
+                        ${Resource.msg('label.input.contact-us-submit', 'customerService', null)}
+                    </button>
+                </div>
+            </div>
+        </div>
+     </form>
+   
+   

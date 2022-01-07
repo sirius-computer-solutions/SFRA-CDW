@@ -1,0 +1,12 @@
+<div class="product-number-rating row">
+    <!-- Product Number -->
+    <div class="product-number px-0 pb-2 col-6">
+        <isinclude template="product/components/productNumber" />
+    </div>
+
+    <!-- Product Rating -->
+    <div class="ratings">
+        <span class="sr-only">${Resource.msgf('label.product.ratings', 'common', null, product.rating)}</span>
+        <isinclude template="product/components/productRating" />
+    </div>
+</div>

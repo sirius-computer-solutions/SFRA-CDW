@@ -1,0 +1,39 @@
+<div class="card ghost shipping">
+    <div class="card-header">
+        <h2 class="card-header-custom">${Resource.msg('heading.shipping', 'checkout', null)}</h2>
+    </div>
+</div>
+
+<div class="shipping-section">
+    <div class="single-shipping">
+        <isset name="shippingModel" value="${pdict.order.shipping[0]}" scope="page" />
+        <isset name="shipmentLoopState" value="${null}" scope="page" />
+        <isset name="lineItem" value="${null}" scope="page" />
+        <div class="card" data-shipment-uuid="${shippingModel.UUID}">
+            <div class="card-header">
+                <h2 class="card-header-custom">${Resource.msg('heading.checkout.shippingaddressinformation', 'checkout', null)}</h2>
+            </div>
+
+            <div class="shipping-error">
+                <isif condition="${pdict.serverErrors}">
+                    <isloop items="${pdict.serverErrors}" var="serverError">
+                        <div class="alert alert-danger alert-dismissible valid-cart-error fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <isprint value="${serverError}" encoding="off" />
+                        </div>
+                    </isloop>
+                </isif>
+            </div>
+            <div class="vertex-error">
+                <iscomment> <isinclude template="vertex/suggestions" /> </iscomment>
+            </div>
+
+            <iscomment> <isinclude template="checkout/shipping/multiShipCheckbox" /> </iscomment>
+
+            <isinclude template="checkout/shipping/shipmentCard" />
+        </div>
+    </div>
+
+</div>

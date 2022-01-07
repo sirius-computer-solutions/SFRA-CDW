@@ -1,0 +1,21 @@
+<isif condition="${pdict.enabledPlugins.Wishlist || pdict.enabledPlugins.GiftRegistry}">
+    <div class="icons">
+        <isif condition="${pdict.enabledPlugins.Wishlist && !isCallForPriceProduct}">
+                <isinclude template="wishlist/components/addToWishListButton" />
+        </isif>
+        <isif condition="${!isQuickView}">
+            <isif condition="${pdict.enabledPlugins.GiftRegistry}">
+                <isif condition="${pdict.enabledPlugins.Wishlist && pdict.enabledPlugins.GiftRegistry}">
+                    <div class="col-xs-12 col-sm-6 product-list-button-spacer">
+                <iselse/>
+                        <div class="col-xs-12 col-sm-6 ">
+                </isif>
+                <isinclude template="giftRegistry/components/addToRegistryButton" />
+                </div>
+            </isif>
+        </isif>
+        <isinclude template="product/components/socialIcons" />
+    </div>
+<iselse/>
+<isinclude template="product/components/socialIcons" />
+</isif>

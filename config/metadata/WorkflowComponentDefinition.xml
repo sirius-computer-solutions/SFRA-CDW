@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="WorkflowComponentDefinition" object-id="CustomFeeds">
+        <object-attribute attribute-id="action">CustomFeeds-Process</object-attribute>
+        <object-attribute attribute-id="description" xml:lang="x-default">Allows to define custom CSV and XML feeds</object-attribute>
+        <object-attribute attribute-id="parameters">[&#13;
+   {&#13;
+      "id":"ExportCatalogs",&#13;
+      "name":"Should we export catalogs?",&#13;
+      "type":"boolean",&#13;
+      "mandatory":false&#13;
+   },&#13;
+   {&#13;
+      "id":"ExportOrders",&#13;
+      "name":"Should we export orders?",&#13;
+      "type":"boolean",&#13;
+      "mandatory":false&#13;
+   },&#13;
+   {&#13;
+      "id":"DaysToExportOrders",&#13;
+      "name":"[Orders] # of days creationDate back",&#13;
+      "type":"int",&#13;
+      "mandatory":false&#13;
+   },&#13;
+   {&#13;
+      "id":"ExportCustomers",&#13;
+      "name":"Should we export customer profiles?",&#13;
+      "type":"boolean",&#13;
+      "mandatory":false&#13;
+   },&#13;
+   {&#13;
+      "id":"DaysToExportCustomers",&#13;
+      "name":"[Customers] # of days lastModified back",&#13;
+      "type":"int",&#13;
+      "mandatory":false&#13;
+   }&#13;
+ ]</object-attribute>
+ </custom-object>
+</custom-objects>

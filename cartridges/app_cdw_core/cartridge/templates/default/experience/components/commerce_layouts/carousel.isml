@@ -1,0 +1,40 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceLayouts/carousel.css');
+    assets.addJs('/js/carousel.js');
+</isscript>
+
+<isif condition="${pdict.title}">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-center carousel-title">${pdict.title}</h3>
+        </div>
+    </div>
+</isif>
+
+    <div id="${pdict.id}"
+        class="acme-carousel"
+        data-column-count-by-width='{"0": ${pdict.slidesToDisplay.xs},"750": ${pdict.slidesToDisplay.sm},"1200": ${pdict.slidesToDisplay.md} }'}
+        data-keyboard="true"
+        data-interval="false"
+    >
+        
+   
+
+
+    <isprint value="${pdict.regions.slides.render()}" encoding="off"/>
+    <ol class="pd-carousel-indicators hidden">
+        <isloop items=${pdict.regions.slides.region.visibleComponents} var="indicator" status="loopState">
+            <li class="${loopState.first ? 'active' : ''}" data-position="${loopState.index}"></li>
+        </isloop>
+    </ol>
+
+    <a class="carousel-control-prev" href="${'#' + pdict.id}" role="button" data-slide="prev">
+        <span class="fas icon-prev" aria-hidden="true"></span>
+        <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+    </a>
+    <a class="carousel-control-next" href="${'#' + pdict.id}" role="button" data-slide="next">
+        <span class="fas icon-next" aria-hidden="true"></span>
+        <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+    </a>
+</div>

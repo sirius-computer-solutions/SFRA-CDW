@@ -1,0 +1,30 @@
+<div class="minicart-total hide-link-med">
+    <a class="minicart-link" href="${URLUtils.https('Cart-Show')}"
+        title="${Resource.msgf('minicart.count', 'common', null, pdict.quantityTotal)}"
+        aria-label="${Resource.msgf('minicart.count', 'common', null, pdict.quantityTotal)}" aria-haspopup="true">
+        <i class="minicart-icon fa fa-shopping-bag"></i>
+        <span class="minicart-info">
+        <span class="minicart-header">${Resource.msg('minicart.mycart', 'common', null)} <i class="fa fa-caret-right"></i></span>
+        
+            <span class="minicart-quantity">
+            <isprint value="${pdict.quantityTotal}" formatter="##" />
+            </span>
+            <span class="minicart-items"><span class="d-inline">${Resource.msg('minicart.items', 'common', null)}</span></span>
+        </span>    
+    </a>
+</div>
+
+<div class="minicart-total hide-no-link">
+    <i class="minicart-icon fa fa-shopping-bag"></i>
+    <span class="fa-layers-counter minicart-quantity">
+        <isprint value="${pdict.quantityTotal}" formatter="##" />
+    </span>
+</div>
+<div class="popover popover-bottom"></div>
+
+
+
+
+
+
+

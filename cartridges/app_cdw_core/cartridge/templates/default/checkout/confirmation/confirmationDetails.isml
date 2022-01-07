@@ -1,0 +1,49 @@
+
+<div class="card confirm-details">
+    <div class="card-header">
+        <h2 class="card-header-custom">${Resource.msg('title.receipt', 'confirmation', null)}</h2>
+    </div>
+
+    <div class="row card-body pb-0">
+        <div class="col">
+            <p>
+            <isif condition="${pdict.order.type === 'R'}">
+                <span class="summary-section-label order-number-label">${Resource.msg('label.return.order.number', 'confirmation', null)}</span>
+            <iselseif condition="${pdict.order.type === 'C'}"/>    
+                <span class="summary-section-label order-number-label">${Resource.msg('label.credit.memo.number', 'confirmation', null)}</span>
+            <iselse/>
+                <span class="summary-section-label order-number-label">${Resource.msg('label.order.number', 'confirmation', null)}</span>
+            </isif>
+                
+                <span class="summary-details order-number">${pdict.order.orderNumber}</span>
+                <br/>
+                <span class="summary-section-label order-date-label">${Resource.msg('label.order.date', 'confirmation', null)}</span>
+                <span class="summary-details order-date"><isprint value="${pdict.order.creationDate}" timezone="utc" style="DATE_SHORT"/></span>
+                <br/>
+                <isif condition="${pdict.order.status}">
+                    <span class="summary-section-label order-status-label">${Resource.msg('label.order.status', 'confirmation', null)}</span>
+                    <span class="summary-details order-status"><isprint value="${pdict.order.status}"/></span>
+                </isif>
+
+            </p>
+        </div>
+    </div>
+    <div class="${pdict.returningCustomer ? 'row card-body' : 'card-body'}">
+        <div class="${pdict.returningCustomer ? 'col-md-6' : '' }">
+                <isinclude template="checkout/shipping/shippingSummary" />
+        </div>
+        <div class="${pdict.returningCustomer ? 'col-md-6 pl-md-5' : '' }">
+            <isinclude template="checkout/billing/billingSummary" />
+        </div>
+    </div>
+</div>
+
+<div class="${pdict.returningCustomer ? 'col-12 col-sm-8' : ''}">
+    <isinclude template="checkout/orderProductSummary" />
+
+    <div class="card checkout-order-total-summary">
+        <div class="card-body order-total-summary">
+            <isinclude template="checkout/orderTotalSummary" />
+        </div>
+    </div>
+</div>

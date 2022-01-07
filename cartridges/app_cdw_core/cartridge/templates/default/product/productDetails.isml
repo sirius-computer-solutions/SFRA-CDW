@@ -1,0 +1,387 @@
+<isdecorate template="common/layout/page">
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/productDetail.js');
+        assets.addCss('/css/detail.css');
+    </isscript>
+
+    <isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('enableWebCollage')}">    
+        <isscript>
+            var assets = require('*/cartridge/scripts/assets');
+            assets.addJs("https://salsify-ecdn.com/sdk/latest/salsify.js");
+            assets.addJs("https://scontent.webcollage.net/api/v2/product-content.js");
+        </isscript>
+        <script type="text/javascript">
+            window.salsifyExperiencesSdkLoaded = async function (salsify) {
+                salsify.init ({
+                    clientId : "${dw.system.Site.getCurrent().getCustomPreferenceValue('webCollageClientId')}",
+                    enhancedContent : {idType: "${dw.system.Site.getCurrent().getCustomPreferenceValue('webCollageClientIdType')}"}
+                });
+                const exists = await salsify.enhancedContent.exists('${pdict.product.manufacturerSKU}');
+                if (exists) {
+                    salsify.enhancedContent.renderIframe(document.querySelector('#wc-power-page'),'${pdict.product.manufacturerSKU}');
+                } else {
+                    // load Mosaic content
+                    Webcollage.loadProductContent('acmetools', '${pdict.product.manufacturerSKU}', {"mosaic-board": {containerSelector: "div.widget_product_image_viewer"}});
+                    
+                    // load Power Page content
+                    Webcollage.loadProductContent('acmetools', '${pdict.product.manufacturerSKU}', {"power-page": {autoPlayAndStop: true}});   
+                    
+                }
+            }  
+        </script>        
+    </isif>
+
+
+
+
+    <isset name="product" value="${pdict.product}" scope="page" />
+    <isset name="price" value="${product.price}" scope="page" />
+    <isset name="isQuickView" value="${false}" scope="page" />
+    <isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
+    <isset name="callingPage" value="PDP" scope="page" />
+    <isset name="isCallForPriceProduct" value="${price.isCallForPriceProduct}" scope="page" />
+    <isset name="seePriceInCart" value="${false}" scope="page" />
+    <isset name="rebateForm" value="" scope="page" />
+    <isset name="productBrand" value="" scope="page" />
+    <isset name="shipsTruck" value="${false}" scope="page" />
+    <isset name="airRestricted" value="${false}" scope="page" />
+    <isset name="madeInUSA" value="${false}" scope="page" />
+    <isset name="hasSurcharge" value="${false}" scope="page" />
+    <isset name="surchargeValue" value="${0.0}" scope="page" />
+    <isset name="bopisOnly" value="${false}" scope="page" />
+    <isset name="requestQuoteOnly" value="${false}" scope="page" />
+    <isset name="showManuals" value="${false}" scope="page" />
+
+    <isif condition="${'hasSurcharge' in product}">
+        <isset name="hasSurcharge" value="${product.hasSurcharge}" scope="page" />
+        <isset name="surchargeValue" value="${product.surchargeValue}" scope="page" />
+    </isif> 
+    
+    <isobject object="${product.raw}" view="detail" >
+        <isloop items="${product.attributes}" var="attrGroup">
+            <isif condition="${attrGroup.ID == 'Order'}">
+                <isloop items="${attrGroup.attributes}" var="attr">
+                    <isif condition="${attr.ID == 'rebate-form-pdf'}">
+                        <isloop items="${attr.value}" var="value">
+                            <isset name="rebateForm" value="${value}" scope="page" />
+                        </isloop>
+                    </isif>
+                </isloop>
+            </isif> 
+            <isif condition="${attrGroup.ID == 'Specifications'}">
+                <isloop items="${attrGroup.attributes}" var="attr">
+                    <isif condition="${attr.ID == 'acme-tools-brand-name'}">       
+                        <isloop items="${attr.value}" var="value">  
+                            <isset name="productBrand" value="${value}" scope="page" /> 
+                        </isloop>
+                    </isif>
+                </isloop>
+            </isif>
+            <isif condition="${attrGroup.ID == 'AcmeProductManuals'}">
+                <isloop items="${attrGroup.attributes}" var="attr">
+                        <isloop items="${attr.value}" var="value">  
+                            <isif condition="${value!=null && value!=''}">
+                                <isset name="showManuals" value="${true}" scope="page"/>
+                                <isbreak/>
+                            </isif>
+                        </isloop>    
+                        <isif condition="${showManuals}">
+                            <isbreak/>
+                        </isif>
+                </isloop>
+            </isif>    
+            <isif condition="${attrGroup.ID == 'Shipping'}">
+                <isloop items="${attrGroup.attributes}" var="attr">
+                    <isif condition="${attr.ID == 'w1frt'}">
+                        <isloop items="${attr.value}" var="value">
+                            <isif condition="${value == 'F'}">
+                                <isset name="shipsTruck" value="${true}" scope="page" />
+                            </isif>        
+                        </isloop>
+                    </isif>
+                    <isif condition="${attr.ID == 'w1noair'}">
+                        <isloop items="${attr.value}" var="value">
+                            <isif condition="${value == 'Y' || value == 'Yes' || value == true}">
+                                <isset name="airRestricted" value="${true}" scope="page" />
+                            </isif>        
+                        </isloop>
+                    </isif>
+                    
+                    <isif condition="${attr.ID == 'country-of-origin'}">
+                        <isloop items="${attr.value}" var="value">
+                            <isif condition="${value!=null && (value.trim().toUpperCase() == 'UNITED STATES' || value.trim().toUpperCase() == 'US' || value.trim().toUpperCase() == 'USA' || value.trim().toUpperCase() == 'UNITED STATES OF AMERICA') }">
+                                <isset name="madeInUSA" value="${true}" scope="page" />
+                            </isif>        
+                        </isloop>
+                    </isif>
+                    <isif condition="${attr.ID == 'w1bopis'}">
+                        <isloop items="${attr.value}" var="value">
+                            <isif condition="${value == 'Y'|| value===true || value == 'Yes'}">
+                                <isset name="bopisOnly" value="${true}" scope="page" />
+                            </isif>        
+                        </isloop>
+                    </isif>
+                    <isif condition="${attr.ID == 'acme-tools-quote-only-item'}">
+                        <isloop items="${attr.value}" var="value">
+                            <isif condition="${value == 'Y'|| value===true || value == 'Yes'}">
+                                <isset name="requestQuoteOnly" value="${true}" scope="page" />
+                            </isif>        
+                        </isloop>
+                    </isif>                    
+
+                </isloop>
+            </isif> 
+        </isloop>
+
+
+        <div class="container product-detail product-wrapper" data-pid="${product.id}">
+            <div class="row">
+                <div class="col-12">
+                    <!--Breadcrumbs-->
+                    <div class="product-breadcrumb pull-left">
+                        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+                    </div>
+                    <div class="icons-wrap">
+                        <!-- Wishlist & Social Icons -->
+                        <isinclude template="product/components/productActions" />
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Brand Name -->
+            <isif condition="${!empty(productBrand)}">
+                <div class="row">
+                    <div class="col d-md-none">
+                        <div class="col product-brand-store">
+                            <a href="${pdict.brandStoreURL}" class="pull-left" aria-label="product-brand-name">
+                                <isprint value="${Resource.msgf('brand.product.msg', 'product', null, productBrand)}" encoding="off" /> 
+                            </a>
+                        </div>
+                    </div>
+                        
+                </div>
+            </isif>
+
+
+            <!-- Product Name -->
+            <div class="row">
+                <div class="col">
+                    <div class="d-md-none col-sm-12">
+                      <span class="product-name">${product.productName}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Product Images Carousel -->
+                <isinclude template="product/components/imageCarousel" />
+
+                <div class="col-12 col-md-7">
+
+                    <!-- Brand Name -->
+                    <isif condition="${!empty(productBrand)}">
+                        <div class="row">
+                            <div class="col d-none d-md-block">
+                                <div class="product-brand-store">
+                                    <a href="${pdict.brandStoreURL}" class="pull-left" aria-label="product-brand-name">
+                                        <isprint value="${Resource.msgf('brand.product.msg', 'product', null, productBrand)}" encoding="off" /> 
+                                    </a>
+                                </div>
+                            </div>
+                               
+                        </div>
+                    </isif>
+
+                    <!-- Product Name -->
+                    <div class="d-none d-md-block row">
+                        <div class="col">
+                            <h1 class="product-name mb-1"><isprint value=${product.productName} encoding="off" /></h1>
+                        </div>
+                    </div>
+
+                    <div class="row pb-2">
+                        <div class="col">
+                            <isinclude template="product/components/pidRating" />
+                        </div>
+                    </div>
+
+                    <!-- Product Availability -->
+                    <div class="row">
+                        <div class="col-12 font-small-bold">
+                            <isinclude template="product/components/productAvailability" />
+                            <isif condition="${madeInUSA}">
+                                <div class="pb-2">
+                                    <isslot id="made-in-usa" description="Made In USA" context="global" context-object="${pdict.product.raw}" />
+                                </div>
+                            </isif>
+                            <isif condition="${airRestricted}">
+                                <div class="pb-2">
+                                    <isslot id="air-restrcited-item" description="Ships Truck" context="global" context-object="${pdict.product.raw}" />
+                                </div>
+                            </isif>    
+                            <isif condition="${shipsTruck}">
+                                <div class="pb-2">
+                                    <isslot id="ships-truck" description="Ships Truck" context="global" context-object="${pdict.product.raw}" />
+                                </div>
+                            </isif>    
+                            <isif condition="${hasSurcharge}">
+                                <div class="ptop5 pb-2">
+                                    <a id="specialHandlingMoreLink" onclick="jQuery('#special_handling_content').slideToggle(jQuery('#special_handling_content').height());" style="display: inline;">
+                                    <i class="fas fa-truck-loading fa-fw"></i> <isprint value="${Resource.msgf('surcharge.product.msg', 'product', null, surchargeValue)}" encoding="off" /> &nbsp;&nbsp;<i class="fas fa-caret-down" aria-hidden="true"></i></a>
+                                </div>
+
+                                <div class="surcharge-product-msg-callout" id="surcharge-product-msg-callout">
+                                    <isslot id="special-handling-surcharge" description="Special Handling" context="global" context-object="${pdict.product.raw}" />
+                                </div>
+                                
+                            </isif>
+                        </div>
+                    </div>
+                    <isset name="disableAddToCartPrice" value="${!product.price || !product.price.sales || !product.price.sales.value}" scope="page" />
+                    <isif condition="${!requestQuoteOnly && !disableAddToCartPrice}">
+                        <isinclude url="${URLUtils.url('Stores-ShowBOPIS', 'productId', product.id)}"/>
+                    </isif>
+
+                    <!-- Promotion to highlight as separate item (mainly FreeShipping) -->
+                    <isinclude template="product/components/fsPromotions" />
+
+                    <div class="row">
+                        <div class="col-12 low-price">
+                            <isslot id="low-price-guarantee" description="Low Price Guarantee" context="global" context-object="${pdict.product.raw}" />
+                        </div>
+                    </div>
+                    
+                    <!-- Attributes and Quantity -->
+                    <isinclude template="product/components/mainAttributes" />
+
+                    <isset name="isBundle" value="${false}" scope="page" />
+                    <isset name="isVariation" value="${false}" scope="page" />
+                    <isset name="loopState" value="${{count: 1}}" scope="page" />
+                    <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                        <div class="row" data-attr="${attr.id}">
+                            <div class="col-8">
+                                <isset name="isVariation" value="${true}" scope="page" />
+                                <isinclude template="product/components/variationAttribute" />
+                            </div>
+                        </div>
+                    </isloop>
+
+                    
+
+                    <div class="product-options">
+                        <isif condition="${product.options && product.options.length > 0}">
+                            <isinclude template="product/components/options" />
+                        </isif>
+                    </div>
+
+                    <!-- Size Chart -->
+                    <isif condition="${product.variationAttributes && product.sizeChartId}">
+                        <div class="row">
+                            <div class="size-chart col-12">
+                                <isinclude template="product/components/sizeChart" />
+                            </div>
+                        </div>
+                    </isif>
+                    <!-- Applicable Promotions -->
+                    <div class="row d-sm-none">
+                        <div class="col-12 promotions">
+                            <isinclude template="product/components/promotions" />
+                        </div>
+                    </div>
+                        <isif condition="${!isCallForPriceProduct || isVariation}">
+                            <div class='prices-add-to-cart-actions<isif condition="${isCallForPriceProduct}"> d-none</isif>' >
+                                <div class="row justify-content-end">
+                                    <div class="col-6 col-sm-12">
+                                        <!-- Prices -->
+                                        <div class="prices pb-0">
+                                            <isif condition="${price.type === 'tiered'}">
+                                                <div class="price">
+                                                    <isinclude template="/product/components/pricing/tiered" />
+                                                </div>
+                                            <iselseif condition="${price.type === 'range'}">
+                                                <div class="price">
+                                                    <isinclude template="/product/components/pricing/range" />
+                                                </div>
+                                            <iselse>
+                                                <div class="price">
+                                                    <isset name="isLowPrice" value="${}" scope="page" />
+                                                    <isinclude url="${URLUtils.url('Product-GetPriceForPDP','pid', product.id,'showB2BPrice',true,'isPDP',true)}"/>
+                                                </div>
+                                            </isif>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Applicable Promotions -->
+                                <div class="row">
+                                    <div class="col-12 promotions">
+                                        <isinclude template="product/components/promotions" />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    
+                                
+                                    <div class="quantity-section col-6 px-0">
+                                            <div class="simple-quantity text-center">
+                                                <isinclude template="product/components/quantity" />
+                                            </div>
+                                    </div>
+                                
+                                    <div class="add-to-cart-section col-6 px-0">
+                                        <!-- Cart and [Optionally] Apple Pay -->
+                                        <isif condition="${requestQuoteOnly}">
+                                            <isinclude template="product/components/requestQuoteProduct" />    
+                                        <iselse/>
+                                            <isinclude template="product/components/addToCartProduct" />    
+                                        </isif>
+                                        
+                                    </div>
+                                
+                                </div>
+                                <!-- Store Locator -->
+                                <isif condition="${!requestQuoteOnly}">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!-- Cart and [Optionally] Apple Pay -->
+                                            <div
+                                                class="pdp-in-store-inventory ${pdict.enabledPlugins.Wishlist || pdict.enabledPlugins.GiftRegistry ? 'wl-or-gr-ispu' : ''}">
+                                                <isinclude url="${URLUtils.url('Stores-PDPStoreDetails', 'productId', product.id)}"/>
+                                            </div>                                    
+                                        </div>                              
+                                    </div>
+                                </isif>
+                            </div>
+                        </isif>
+                        <isif condition="${isCallForPriceProduct || isVariation}">
+                            <isinclude template="product/components/callForPrice" />
+                        </isif>
+                    
+
+                    
+                    <isinclude template="product/components/notifyMe" />
+                    
+                    <div class="row">
+                        <isslot id="dont-forget-recommendations" description="Don't Forget" context="global" context-object="${pdict.product.raw}" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <isslot id="yaml-recommendations" description="Complete the set products" context="global" context-object="${pdict.product.raw}" />
+                </div>
+            </div>
+
+            <isset name="loopState" value="${{count: 1}}" scope="page" />
+            <isinclude template="product/components/descriptionAndDetails" />
+            
+            
+
+            <isinclude template="product/components/overSellConfirmationModal"/>
+        </div>
+    </isobject>
+</isdecorate>

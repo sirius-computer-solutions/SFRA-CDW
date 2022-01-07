@@ -1,0 +1,71 @@
+<isif condition="${product.attributes && product.attributes.length}">
+    <div class="col">
+
+        <isloop items="${product.attributes}" var="attrGroup">
+            <isset name="displayAttributesGroupPDP" value="Features,Specifications,Manuals" scope="page"/>
+            <isif condition="${'displayAttributesGroupPDP' in dw.system.Site.current.preferences.custom && dw.system.Site.current.preferences.custom.displayAttributesGroupPDP!=''}">
+                <isset name="displayAttributesGroupPDP" value="${dw.system.Site.current.preferences.custom.displayAttributesGroupPDP}" scope="page"/>
+            </isif>
+            <isset name="displayAttributesGroupPDPArray" value="${(displayAttributesGroupPDP.split(','))}" scope="page"/>
+            <isset name="displayAttributesGroup" value="${false}" scope="page"/>
+            <isif condition="${displayAttributesGroupPDPArray.indexOf(attrGroup.name)!=-1}">
+                <isloop items="${attrGroup.attributes}" var="attr" status="attrLoopStatus">
+                    <isloop items="${attr.value}" var="value">
+                        <isif condition="${value!=null && value!=''}">
+                            <isset name="displayAttributesGroup" value="${true}" scope="page"/>
+                            <isbreak/>
+                        </isif>
+                    </isloop>    
+                    <isif condition="${displayAttributesGroup}">
+                        <isbreak/>
+                    </isif>        
+                </isloop>
+            </isif>
+            <isif condition="${attrGroup.ID !== 'mainAttributes' && displayAttributesGroup}">
+                <div class="card-header col-sm-12" id="${attrGroup.name}PDP">
+                    <h2 class="header-styling" aria-label="${attrGroup.name}">${attrGroup.name}</h2>
+                </div>
+                <div class="card-body ${attrGroup.name}">
+                <isloop items="${attrGroup.attributes}" var="attr" status="attrLoopStatus">
+                        <isif condition="${attrGroup.name=='Features'}"> 
+                            <div class="attribute-values">
+                                <span>
+                                <isloop items="${attr.value}" var="value">
+                                    ${value}
+                                </isloop>
+                                </span>
+                            </div>
+                        <iselseif condition="${attrGroup.name=='Specifications'}"> 
+                            <isif condition="${attrLoopStatus.count%2==1}"> 
+                                <div class="row">
+                            </isif>
+                                <div class="col-6 col-sm-3">${attr.label}</div>
+                                <div class="col-6 col-sm-3 right text-right"><isloop items="${attr.value}" var="value">${value}</isloop></div>
+                            <isif condition="${attrLoopStatus.count%2==0 || attrLoopStatus.last}"> 
+                                </div>
+                            </isif>
+
+                        <iselseif condition="${attrGroup.name=='Manuals'}"> 
+                            <isif condition="${attrLoopStatus.count%6==1}"> 
+                                <div class="row">
+                            </isif>
+                                <div class="col-sm-2">
+                                    <isloop items="${attr.value}" var="value">
+                                        
+                                        
+                                        <a href="${URLUtils.staticURL(URLUtils.CONTEXT_CATALOG, '', value)}" target="_blank"> 
+                                        <img src="${URLUtils.staticURL('/images/manual.png')}" alt="${attr.label}"> </a>
+                                        <br>
+                                        <a href="${URLUtils.staticURL(URLUtils.CONTEXT_CATALOG, '', value)}" target="_blank">${attr.label}</a>
+                                    </isloop>
+                                </div>
+                            <isif condition="${attrLoopStatus.count%6==0 || attrLoopStatus.last}"> 
+                                </div>
+                            </isif>
+                        </isif>
+                </isloop>
+                </div>
+            </isif>
+        </isloop>
+    </div>
+</isif>

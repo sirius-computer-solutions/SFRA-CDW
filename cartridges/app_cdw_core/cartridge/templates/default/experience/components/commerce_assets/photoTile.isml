@@ -1,0 +1,17 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/photoTile.css');
+</isscript>
+<div class="photo-tile-container">
+   
+    <div class="photo-tile-figure">
+            <a href="javascript:void()">
+            <img
+                class="photo-tile-image image-fluid"
+                src="${pdict.image.src.desktop}"
+                <isif condition="${pdict.altText}">alt="${pdict.altText}" title="${pdict.altText}"</isif>
+            />
+            </a>
+    </div>
+</div>
+     

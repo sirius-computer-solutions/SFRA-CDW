@@ -1,0 +1,81 @@
+ <body style="font-size: 12px; font-weight: normal; font-family: Arial,Verdana,Helvetica,sans-serif; margin: 0; padding: 0; background: none repeat scroll 0 0 #EEEEEE; line-height: 1.4em; " role="document">
+    <span role="main">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="height: 100%; background-color: #ffffff; padding: 25px 0 50px;" role="presentation">
+            <tr>
+                <td align="center">
+                    <table style="border: 1px solid #cccccc; border-collapse: collapse; border-spacing: 0; margin: 0 auto;" role="presentation">
+                        <tr>
+                            <td style="margin:0;padding:0;"><img style="vertical-align:bottom" src="${URLUtils.staticURL('/images/email_template/border_top_left.png')}" alt="" height="7px" width="7px" /></td>
+                            <td style="margin:0;padding:0;"><img style="vertical-align:bottom" src="${URLUtils.staticURL('/images/email_template/border_top_middle.png')}" alt="" height="7px" width="628px" /></td>
+                            <td style="margin:0;padding:0;"><img style="vertical-align:bottom" src="${URLUtils.staticURL('/images/email_template/border_top_right.png')}" alt="" height="7px" width="7px" /></td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="margin: 0; padding: 0; background-image: url('${URLUtils.staticURL('/images/email_template/border_left.png')}'); background-repeat: repeat-y; width: 7px;"></td>
+                            <td style="margin: 0; padding: 0;">
+                                <table style="border-collapse: collapse; border-spacing: 0;" role="presentation">
+                                    <tr style="">
+                                        <td style="margin: 0; padding: 0; border-bottom: 1px solid #cccccc; width: 600px; height: 16px;">
+                                            <isinclude template="/components/email/emailHeader" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 560px; color: #404040; font-size: 12px;" role="presentation">
+                                                <tr>
+                                                    <td style="padding: 0 0 0 20px;">
+                                                        <br/><br/>
+                                                        <p>${Resource.msg('user.registration.email.salutation', 'b2bUserRegistration', null)}</p>
+                                                        <p>${Resource.msg('user.registration.email.content1', 'b2bUserRegistration', null)}</p>
+                                                        <p>${Resource.msg('user.registration.email.content2', 'b2bUserRegistration', null)}</p>
+                                                        <ul>
+                                                            <li>${Resource.msg('user.registration.email.logonId', 'b2bUserRegistration', null)}&nbsp;${pdict.logonId}</li>
+                                                            <li>${Resource.msg('user.registration.email.emailAddress', 'b2bUserRegistration', null)}&nbsp;${pdict.email}</li>
+                                                            <li>${Resource.msg('user.registration.email.s2kAccountNumber', 'b2bUserRegistration', null)}&nbsp;${pdict.accountNumber}</li>
+                                                        </ul>
+
+                                                        <p>${Resource.msg('user.registration.email.userInformation', 'b2bUserRegistration', null)}</p>
+                                                        <p>${pdict.firstName}&nbsp;${pdict.lastName}<br/>
+                                                           ${pdict.organizationName}<br/>
+                                                           ${pdict.phone}
+                                                        </p>
+
+                                                        <p>${Resource.msg('user.registration.email.interestedaca', 'b2bUserRegistration', null)} &nbsp;
+                                                            <isif condition="${pdict.interestedInACA || pdict.interestedInACA == 'true'}">
+                                                                ${Resource.msg('user.registration.email.interestedaca.yes', 'b2bUserRegistration', null)}
+                                                            <iselse/>
+                                                                ${Resource.msg('user.registration.email.interestedaca.no', 'b2bUserRegistration', null)}
+                                                            </isif>
+                                                         </p>
+
+                                                        <p>${Resource.msg('user.registration.email.customerSupport', 'b2bUserRegistration', null)}<br>
+                                                            <a href="https://www.acmetools.com">acmetools.com</a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style="margin: 0; padding: 0; background-image: url('/email_template/border_right.png'); background-repeat: repeat-y; width: 7px;"></td>
+                        </tr>
+                       
+                   </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">
+                    <table style="border-collapse: collapse; border-spacing: 0; text-align: center; font-size: 9px; color: gray; padding: 25px 0 0; margin: 0 auto; width: 600px; margin-top: 10px" role="presentation">
+                        <tr>
+                            <td>
+                                <isinclude template="/components/email/emailFooter" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </span>
+</body>

@@ -1,0 +1,85 @@
+ <body style="font-size: 12px; font-weight: normal; font-family: Arial,Verdana,Helvetica,sans-serif; margin: 0; padding: 0; background: none repeat scroll 0 0 #EEEEEE; line-height: 1.4em; " role="document">
+    <span role="main">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="height: 100%; background-color: #ffffff; padding: 25px 0 50px;" role="presentation">
+            <tr>
+                <td align="center">
+                    <table style="border: 1px solid #cccccc; border-collapse: collapse; border-spacing: 0; margin: 0 auto;" role="presentation">
+                        <tr>
+                            <td style="margin:0;padding:0;"><img style="vertical-align:bottom" src="${URLUtils.staticURL('/images/email_template/border_top_left.png')}" alt="" height="7px" width="7px" /></td>
+                            <td style="margin:0;padding:0;"><img style="vertical-align:bottom" src="${URLUtils.staticURL('/images/email_template/border_top_middle.png')}" alt="" height="7px" width="628px" /></td>
+                            <td style="margin:0;padding:0;"><img style="vertical-align:bottom" src="${URLUtils.staticURL('/images/email_template/border_top_right.png')}" alt="" height="7px" width="7px" /></td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="margin: 0; padding: 0; background-image: url('${URLUtils.staticURL('/images/email_template/border_left.png')}'); background-repeat: repeat-y; width: 7px;"></td>
+                            <td style="margin: 0; padding: 0;">
+                                <table style="border-collapse: collapse; border-spacing: 0;" role="presentation">
+                                    <tr style="">
+                                        <td style="margin: 0; padding: 0; border-bottom: 1px solid #cccccc; width: 600px; height: 16px;">
+                                            <isinclude template="/components/email/emailHeader" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 560px; color: #404040; font-size: 12px;" role="presentation">
+                                                <tr>
+                                                    <td style="padding: 0 0 0 20px;">
+                                                        <br/><br/>
+                                                        <p style="font-size:18px">${Resource.msg('accountmanager.contact.email.request', 'b2bUserRegistration', null)}</p>
+                                                        <br/>
+														<table align="left" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 500px; font-size: 12px; text-align: left;">
+															<tr>
+																<th>${Resource.msg('accountmanager.contact.email.to', 'b2bUserRegistration', null)}</th>
+																<td>${pdict.accountManagerName} - ${pdict.accountManagerId}</td>
+															</tr>
+															<tr>
+																<th>${Resource.msg('accountmanager.contact.email.from.name', 'b2bUserRegistration', null)}</th>
+																<td>${pdict.customerFirstName} ${pdict.customerLastName}</td>
+															</tr>
+															<tr>
+																<th>${Resource.msg('accountmanager.contact.email.from.company', 'b2bUserRegistration', null)}</th>
+																<td>${pdict.customerOrganizationName}</td>
+															</tr>
+															<tr>
+																<th>${Resource.msg('accountmanager.contact.email.from.emailAddress', 'b2bUserRegistration', null)}</th>
+																<td>${pdict.customerEmailAddress}</td>
+															</tr>
+															<tr>
+																<th>${Resource.msg('accountmanager.contact.email.from.phoneNumber', 'b2bUserRegistration', null)}</th>
+																<td>${pdict.customerPhoneNumber}</td>
+															</tr>
+															<br/>
+															<tr>
+																<th>${Resource.msg('accountmanager.contact.email.from.message', 'b2bUserRegistration', null)}</th>
+																<td>${pdict.message}</td>
+															</tr>
+                                                            <br/>
+														</table>
+                                                   </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style="margin: 0; padding: 0; background-image: url('/email_template/border_right.png'); background-repeat: repeat-y; width: 7px;"></td>
+                        </tr>
+                       
+                   </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">
+                    <table style="border-collapse: collapse; border-spacing: 0; text-align: center; font-size: 9px; color: gray; padding: 25px 0 0; margin: 0 auto; width: 600px; margin-top: 10px" role="presentation">
+                        <tr>
+                            <td>
+                                <isinclude template="/components/email/emailFooter" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </span>
+</body>

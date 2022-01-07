@@ -1,0 +1,40 @@
+<isdecorate template="common/layout/page">
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addCss('/css/search.css');
+        assets.addCss('/css/allBrandLanding.css');
+        assets.addJs('/js/allBrandLanding.js');
+    </isscript>
+
+    <div class="container">
+
+    <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+
+        <isif condition="${pdict.productSearch.isCategorySearch}">
+            <div class="slant-down search-banner">
+                <h1 class="header page-title">
+                    ${pdict.productSearch.category.name}
+                </h1>
+            </div>
+        </isif>
+        
+        <isslot
+            id="all-brand-landing-slotbanner-m"
+            context="category"
+            description="Top Content Section for All Brand Category Landing Pages"
+            context-object="${pdict.category}"
+        />
+
+        <div class="secondary-content">
+            <isslot id="all-brand-landing-slotbottom-m" context="category" description="First slot below the All Brand Category Banner" context-object="${pdict.category}"/>
+            <isslot id="all-brand-landing-slotbottom2-m" context="category" description="Second slot below the All Brand Category Banner" context-object="${pdict.category}"/>
+        </div>
+
+        <isset name="categoriesMap" value="${pdict.sortedCategoriesMap}" scope="page" />
+        <isset name="categoryAlphabets" value="${pdict.categoryAlphabets}" scope="page" />
+        <isinclude template="components/category/listAllBrandsByAlphabetical" />
+
+    </div>
+
+</isdecorate>

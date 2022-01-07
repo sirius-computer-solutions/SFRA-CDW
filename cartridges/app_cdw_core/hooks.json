@@ -1,0 +1,94 @@
+{
+    "hooks": [
+        {
+            "name": "app.contactUs.subscribe",
+            "script": "./cartridge/scripts/hooks/customerService/emailHooks.js"
+        },
+        {
+            "name": "app.requestQuote.subscribeEmail",
+            "script": "./cartridge/scripts/hooks/customerService/emailHooks.js"
+        },
+        {
+            "name": "app.newsletter.subscribe",
+            "script": "./cartridge/scripts/hooks/customerService/newsletter.js"
+        },        
+        {
+            "name": "app.payment.processor.acme_payware_processor",
+            "script": "./cartridge/scripts/hooks/payment/processor/payware.js"
+        },
+        {
+            "name": "app.payment.form.processor.acme_payware_processor",
+            "script": "./cartridge/scripts/hooks/payment/processor/payware_form_processor.js"
+        },
+        {
+            "name": "app.b2b.account.retrieve",
+            "script": "./cartridge/scripts/hooks/s2k/retrieveAccountDetails.js"
+        },
+        {
+            "name": "app.b2b.salesperson.retrieve",
+            "script": "./cartridge/scripts/hooks/s2k/retrieveSalesPersonDetails.js"
+        },
+        {
+            "name": "app.b2b.accountinfo.retrieve",
+            "script": "./cartridge/scripts/hooks/s2k/retrieveAccountInfo.js"
+        },
+        {
+            "name": "app.b2b.registration.email",
+            "script": "./cartridge/scripts/hooks/customerService/emailHooks.js"
+        },
+        {
+            "name": "app.b2b.accountmanager.email",
+            "script": "./cartridge/scripts/hooks/customerService/emailHooks.js"
+        },
+        {
+            "name": "app.payment.giftcard.retrieve_balance",
+            "script": "./cartridge/scripts/hooks/s2k/giftCardOperations.js"
+        },
+        {
+            "name": "app.payment.giftcard.authroize",
+            "script": "./cartridge/scripts/hooks/s2k/giftCardOperations.js"
+        },
+        {
+            "name": "app.payment.giftcard.unAuthroize",
+            "script": "./cartridge/scripts/hooks/s2k/giftCardOperations.js"
+        },
+        {
+            "name": "app.s2k.b2b.price",
+            "script": "./cartridge/scripts/hooks/s2k/retrievePrice.js"
+        },
+        {
+            "name": "app.payment.processor.store_credit",
+            "script": "./cartridge/scripts/hooks/payment/processor/store_credit"
+        },
+        {
+            "name": "app.payment.form.processor.store_credit",
+            "script": "./cartridge/scripts/hooks/payment/processor/store_credit_form_processor"
+        },
+        {
+            "name": "app.s2k.b2b.address_sync",
+            "script": "./cartridge/scripts/hooks/s2k/addressOperations.js"
+        },
+        {
+            "name": "app.s2k.order.status_lookup",
+            "script": "./cartridge/scripts/hooks/s2k/orderOperations.js"
+        },
+        {
+            "name": "app.s2k.order.history_lookup",
+            "script": "./cartridge/scripts/hooks/s2k/orderOperations.js"
+        },   
+        {
+            "name": "app.s2k.order.details_lookup",
+            "script": "./cartridge/scripts/hooks/s2k/orderOperations.js"
+        },             
+        {
+            "name": "dw.order.calculate",
+            "script": "./cartridge/scripts/hooks/cart/calculate.js"
+        }
+        ,             
+        {
+            "name": "dw.order.merge.cart.on.login",
+            "script": "./cartridge/scripts/hooks/cart/mergeCartOnLogin.js"
+        }                     
+         
+    ]
+}

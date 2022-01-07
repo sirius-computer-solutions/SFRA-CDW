@@ -1,0 +1,10 @@
+<isloop items="${lineItem.trackingInfo}" var="trackInfo" status="loopstatus">
+    <div class="line-item-availability availability-${lineItem.UUID}">
+        ${Resource.msg('link.tracking.number','confirmation',null)}
+        <a href="${trackInfo.trackingURL}" class="" aria-label="">
+            <isprint value="${trackInfo.trackingNumber}" encoding="on" />
+        </a>
+
+        
+    </div>
+</isloop>

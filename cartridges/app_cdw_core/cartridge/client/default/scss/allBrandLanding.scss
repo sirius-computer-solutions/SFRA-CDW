@@ -1,0 +1,132 @@
+@import "skin/skinVariables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+
+.department-brands #brandsListing {
+    display: inline-block;
+    zoom: 1;
+    margin-top: 4em;
+    width: 100%;
+}
+
+.department-brands #brandsListing div.alphabet-button-array {
+    margin: 0 0 50px;
+}
+
+#brandAlphabets ul.category-list-alpha-group li {
+    width: auto!important;
+}
+
+.grid > li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.categoryAlphaListCell {
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 5px;
+    position: relative;
+    width: 90%;
+}
+
+ul.category-list-alpha-group .categoryAlphaListCell {
+    border: medium none;
+    width: 100%;
+    padding: 0 0px 5px;
+}
+
+.department-brands {
+    .btn {
+        display: inline-block;
+        padding: 5px 10px;
+        margin-bottom: 0;
+        font-size: 1.1em;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        color: #333333;
+        background-color: #fff;
+        border: none;
+        &:hover {
+            background: #333;
+            color: #fff !important;
+        }
+    }
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+
+
+.department-brands #brandsListing div.alphabetical-family {
+    margin-bottom: 40px;
+    display: inline-block;
+    zoom: 1;
+    width: 100%;
+}
+
+.grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.column-list-js {
+    padding: 15px;
+    overflow: hidden;
+   
+}
+
+ul.column-list-js.brandListing li {
+    list-style-type: none;
+}
+
+ul.column-list-js > .column-list {
+    float: left;
+    width: 24%;
+    margin-left: 1%;
+
+
+    @include media-breakpoint-only(xs) {
+        width: 49%;
+    }
+    ul {
+        @include media-breakpoint-only(xs) {
+        padding-left: 0;
+    }
+    }
+
+
+
+}
+
+ul.column-list-js.brandListing li ul li a {
+    padding: 8px 0 8px 13px;
+    display: block;
+    color: #333;
+    &:hover {
+        background-color: #333;
+        color: #fff !important;
+        text-decoration: none;;
+    }
+}
+// To remove grey box-shadow in allBrandLanding 
+.category-slot {
+    .category-item {
+        margin: 0;
+    }
+    .category-tile{
+        box-shadow: none;
+        min-height: 100px;
+        padding: 0;
+        img{
+            padding: 0;
+        }
+    }
+    .top-category-tile-name{
+        display: none;
+    }
+}

@@ -1,0 +1,135 @@
+
+
+<html xmlns:wairole="http://www.w3.org/2005/01/wai-rdf/GUIRoleTaxonomy#" xmlns:waistate="http://www.w3.org/2005/07/aaa">
+    
+    <head>
+        <title>
+            ${Resource.msg('email.title.contact.us', 'customerService', null)}
+        </title>
+    </head>
+
+    <body style="font-size: 12px; font-weight: normal; font-family: Arial,Verdana,Helvetica,sans-serif; margin: 0; padding: 0; background: none repeat scroll 0 0 #EEEEEE; line-height: 1.4em; " role="document">
+        <span role="main">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="height: 100%; background-color: #ffffff; padding: 25px 0 50px;" role="presentation">
+            
+            <tr>
+                <td align="center">
+                    <table style="border: 1px solid #cccccc; border-collapse: collapse; border-spacing: 0; margin: 0 auto;" role="presentation">
+                        
+                        <tr>
+                        </tr>
+                        
+                        <tr>
+                            
+                            <td style="margin: 0; padding: 0;">
+                                <table style="border-collapse: collapse; border-spacing: 0;" role="presentation">
+                                    <tr style="">
+                                        <isinclude template="/components/email/emailHeader" />                                       
+                                    </tr>
+                                    
+                                        <tr style="">
+                                            <td style="margin: 0; padding: 0; border-bottom: 1px solid #cccccc; width: 600px; height: 16px;">
+                                                <isprint value="${pdict.cuEmailContent}" encoding="off"/>
+                                            </td>
+
+                                        </tr>                                    
+                                    <tr>
+                                        <td>
+                                            <table style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 560px; color: #404040; font-size: 12px;" role="presentation">
+                                                <tr>
+                                                    <td style="padding: 20px 0 0 20px;">
+                                                    
+                                                        <p style="font-size:18px">${Resource.msg('email.header.contact.us', 'customerService', null)}</p>
+                                                        
+                                                        <table cellpadding="5" align="left" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 500px; font-size: 12px; text-align: left;">
+                                                            <tr>
+                                                                <th style="width:125px;">${Resource.msg('email.header.first.name.contact.us', 'customerService', null)}</th>
+                                                                <td>${pdict.firstName} </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="width:125px;">${Resource.msg('email.header.last.name.contact.us', 'customerService', null)}</th>
+                                                                <td>${pdict.lastName}</td>
+                                                            </tr>
+                                                            <isif condition="${pdict.company && pdict.company != 'undefined' && pdict.company != undefined}">                                                            
+                                                                <tr>
+                                                                    <th style="width:125px;">${Resource.msg('email.header.company.name.contact.us', 'customerService', null)}</th>
+                                                                    <td>${pdict.company}</td>
+                                                                </tr>                                                           
+                                                            </isif>    
+                                                            <tr>
+                                                                <th style="width:125px;">${Resource.msg('email.header.street.contact.us', 'customerService', null)}</th>
+                                                                <td>${pdict.streetAddress} </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="width:125px;">${Resource.msg('email.header.city.contact.us', 'customerService', null)}</th>
+                                                                <td>${pdict.city}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="width:125px;">${Resource.msg('email.header.state.contact.us', 'customerService', null)}</th>
+                                                                <td>${pdict.state}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="width:125px;">${Resource.msg('email.header.zipcode.contact.us', 'customerService', null)}</th>
+                                                                <td>${pdict.zipCode}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="width:125px;">${Resource.msg('email.header.email.contact.us', 'customerService', null)}</th>
+                                                                <td>${pdict.email}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="width:125px;">${Resource.msg('email.header.phone.contact.us', 'customerService', null)}</th>
+                                                                <td>${pdict.phone}</td>
+                                                            </tr>
+                                                            <isif condition="${pdict.topic && pdict.topic != 'undefined' && pdict.topic != undefined}">                                                                                                                        
+                                                                <tr>
+                                                                    <th style="width:125px;">${Resource.msg('email.header.subject.contact.us', 'customerService', null)}</th>
+                                                                    <td>${pdict.topic}</td>
+                                                                </tr>
+                                                            </isif>
+                                                            <isif condition="${pdict.comment && pdict.comment != 'undefined' && pdict.comment != undefined}">                                                                                                                                                                                    
+                                                                <tr>
+                                                                    <th valign="top" style="width:125px;">${Resource.msg('email.header.comment.contact.us', 'customerService', null)}</th>
+                                                                    <td valign="top">${pdict.comment}</td>
+                                                                </tr>
+                                                            </isif>
+                                                            <isif condition="${pdict.orderNumber && pdict.orderNumber != 'undefined' && pdict.orderNumber != undefined}">
+                                                                <tr>
+                                                                    <th style="width:125px;">${Resource.msg('email.header.order.number.contact.us', 'customerService', null)}</th>
+                                                                        <td>${pdict.orderNumber}</td>
+                                                                 </tr>
+                                                            </isif>
+                                                            <isif condition="${pdict.customerNumber && pdict.customerNumber != 'undefined' && pdict.customerNumber != undefined}">
+                                                                <tr>
+                                                                    <th style="width:125px;">${Resource.msg('email.header.customer.number.contact.us', 'customerService', null)}</th>
+                                                                    <td>${pdict.customerNumber}</td>
+                                                                </tr>
+                                                            </isif>
+                                                        </table>
+                                                    
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <table style="border-collapse: collapse; border-spacing: 0; text-align: center; font-size: 9px; color: gray; padding: 25px 0 0; margin: 0 auto; width: 600px;" role="presentation">
+                        <tr>
+                            <td>
+                                <isinclude template="components/email/emailFooter" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        </span>
+    </body>
+</html>

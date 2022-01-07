@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-8">
+        <p>${Resource.msg('label.order.shipping.cost','confirmation',null)}</p>
+    </div>
+    <div class="col-4">
+        <p class="text-right shipping-cost">${pdict.totals.shippingTotalLessSurcharge}</p>
+    </div>
+</div>
+
+<!--- Order Discount --->
+<div class="row order-discount <isif condition="${pdict.totals.orderLevelDiscountTotal.value === 0}">hide-order-discount</isif>">
+    <div class="col-8">
+        <p>${Resource.msg('label.order.discount', 'common', null)}</p>
+    </div>
+    <div class="col-4">
+        <p class="text-right order-discount-total"> - ${pdict.totals.orderLevelDiscountTotal.formatted}</p>
+    </div>
+</div>
+
+<!--- Shipping Surcharge Cost --->
+<div class="row  shipping-surcharge-item">
+    <div class="col-6 start-lines">
+        <p class="order-receipt-label"><span>${Resource.msg('label.order.shippingsurcharge.cost','confirmation', null)}</span></p>
+    </div>
+    <div class="col-6 end-lines">
+        <p class="text-right"><span class="shipping-surcharge-cost">${pdict.totals.shippingSurcharge}</span></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-8">
+        <strong>${Resource.msg('label.order.estimatedtotal','confirmation',null)}</strong>
+    </div>
+    <div class="col-4">
+        <isif condition="${pdict.totals.grandTotal != '-'}">
+            <p class="text-right grand-total">${pdict.totals.grandTotal}</p>
+        <iselse>
+            <p class="text-right grand-total">${pdict.totals.subTotal}</p>
+        </isif>
+    </div>
+</div>

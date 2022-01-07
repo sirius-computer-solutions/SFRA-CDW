@@ -1,0 +1,323 @@
+
+
+<html xmlns:wairole="http://www.w3.org/2005/01/wai-rdf/GUIRoleTaxonomy#" xmlns:waistate="http://www.w3.org/2005/07/aaa">
+    
+    <head>
+        <title>
+            ${Resource.msg('msg.placed.order.thank.you', 'confirmation', null)}
+        </title>
+    </head>
+
+    <body style="font-size: 12px; font-weight: normal; font-family: Arial,Verdana,Helvetica,sans-serif; margin: 0; padding: 0;  background-color: #ffffff; line-height: 1.4em; " role="document">
+        <span role="main">
+        <table align="center" width="700px" border="0" cellspacing="0" cellpadding="0" style="height: 100%; background-color: #ffffff; padding: 25px 0 50px; border: 2px 2px 2px 2px solid #ebebeb;" role="presentation">
+            <tr>
+            <td style="margin: 0; padding: 0; border: 2px solid #ececec; width: 600px;" align="center">
+                <table style="border-collapse: collapse; border-spacing: 0; margin-right:20px;" role="presentation">
+                    <tr style="">
+                        <a id="user-reg-email-banner" href="${pdict.url}" title="Email Banner">
+                            <img src="${URLUtils.httpsStatic('/images/email_template/emailLogo.png')}" alt="Email Banner">
+                        </a>
+                    </tr>
+                    
+                    <tr style="">
+                        <td style="margin: 0; padding: 0px 0px 0px 0px;width: 600px;">
+                            <p style="font-size: 24px; color: #e7131a; text-align: center;margin: 5px;"><i>${Resource.msg('msg.placed.order.thank.you', 'confirmation', null)}</i></p>
+                            <p style="text-align: center;color: #aaabae; margin: 0px;">${Resource.msg('msg.placed.order.thank.you.details', 'confirmation', null)}</p>
+                        </td>
+
+                    </tr>                                    
+                    <tr>
+                        <td>
+                            <table style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 600px; color: #404040; font-size: 12px;" role="presentation">
+                                <tr>
+                                    <td style="padding: 0px 0 0 20px;">
+                                    
+                                        <p style="font-size: 24px"><strong>${Resource.msg('label.order.details.heading', 'confirmation', null)}</strong></p>
+                                        
+                                        <table cellpadding="5" align="left" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 600px; font-size: 12px; text-align: left; background: #f7f7f7; border: 2px solid #ebebeb;">
+                                            <tr>
+                                                <td style="width:125px;" align="left"><strong>${Resource.msg('label.order.number', 'confirmation', null)}</strong>&nbsp;
+                                                    <a id="user-reg-email-banner" href="${pdict.lurl}" title="Email Banner">
+                                                        <span style="color: #e7131a;">${pdict.order.orderNumber}</span>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left"><strong>${Resource.msg('label.order.date', 'confirmation', null)}&nbsp;</strong><isprint value="${pdict.order.creationDate}" style="DATE_LONG"/></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 600px; color: #404040; font-size: 12px;" role="presentation">
+                                <tr>
+                                    <td style="padding: 0px 0 0 20px;">
+                                        <p style="font-size: 24px"><strong>${Resource.msg('label.order.items.heading', 'confirmation', null)}</strong></p>
+                                        <isloop items="${pdict.order.shipping}" var="shippingModel" status="shippingLoop">
+                                            <table cellpadding="5" align="left" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 600px; font-size: 12px; text-align: left;">
+                                                <tr>
+                                                    <td>
+                                                        <span>${shippingModel.selectedShippingMethod.displayName}
+                                                        <isif condition="${shippingModel.selectedShippingMethod.estimatedArrivalTime}">
+                                                            (${shippingModel.selectedShippingMethod.estimatedArrivalTime})
+                                                        </isif>
+                                                        </span><img style="width: 15px; " src="${URLUtils.httpsStatic('/images/email_template/truck-solid.png')}" alt="Shipping">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table cellpadding="5" align="left" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 600px; font-size: 12px; text-align: left;">
+                                            
+                                                <tr style="background: #717372; color: white;">
+                                                    <th style="width:125px;border: 3px solid #717372;">
+                                                        <strong>${Resource.msg('label.order.items.heading.product', 'confirmation', null)}</strong>
+                                                    </th>
+                                                    <th style="width:125px;border: 3px solid #717372;">
+                                                        
+                                                    </th>
+                                                    <th style="width:125px;border: 3px solid #717372;">
+                                                            <strong>${Resource.msg('label.order.items.heading.availability', 'confirmation', null)}</strong>
+                                                    </th>
+                                                    <th style="width:125px;border: 3px solid #717372;">
+                                                            <strong>${Resource.msg('label.order.items.heading.quantity', 'confirmation', null)}</strong>
+                                                    </th>
+                                                    <th style="width:125px;border: 3px solid #717372;">
+                                                            <strong>${Resource.msg('label.order.items.heading.each', 'confirmation', null)}</strong>
+                                                    </th>
+                                                    <th style="width:125px;border: 3px solid #717372;">
+                                                            <strong>${Resource.msg('label.order.items.heading.total', 'confirmation', null)}</strong>
+                                                    </th>
+                                                </tr>
+                                                <isloop items="${pdict.order.items.items}" var="lineItem">
+                                                <tr>
+                                                    <td>
+                                                        <div class="item-image">
+                                                            <img class="product-image"
+                                                                src="${lineItem.images.small[0].absURL}"
+                                                                alt="${lineItem.productName}"
+                                                                title="${lineItem.productName}" 
+                                                                onerror="this.src='${URLUtils.staticURL('/images/img-na.png')}'"
+                                                                width="80"
+                                                                height="80"
+                                                                style="width:80px; height:80px;"/>                   
+                                                        </div> 
+                                                    </td>
+                                                    <td>                           
+                                                        <span>
+                                                            <a href="${URLUtils.abs('Product-Show', 'pid', lineItem.id)}" style="text-decoration:none; color: #222">
+                                                                ${lineItem.productName}
+                                                            </a>  
+                                                            <br/>
+                                                        </span>
+                                                        <isif condition="${lineItem.productType === 'bundle'}">    
+                                                            <isloop items="${lineItem.bundledProductLineItems}" var="bundledLineItem">
+                                                                ${Resource.msg('label.order.bundled.item.name', 'confirmation', null)}: ${bundledLineItem.productName}
+                                                                    <isloop items="${bundledLineItem.variationAttributes}" var="attribute">
+                                                                        ${attribute.displayName}: ${attribute.displayValue}<br/>
+                                                                    </isloop>
+                                                            </isloop>
+                                                        <iselse/>
+                                                            <isloop items="${lineItem.variationAttributes}" var="attribute">
+                                                                ${attribute.displayName}: ${attribute.displayValue}<br/>
+                                                            </isloop>
+                                                        </isif>
+                                                        <isif condition="${!empty(lineItem.productBrandName)}">
+                                                            <span style="color: #aaabae;">
+                                                                ${Resource.msg('label.order.brand','confirmation', null)}<isprint value="${lineItem.productBrandName}" encoding="off" />
+                                                            </span>  
+                                                        </isif>
+                                                        <span style="color: #aaabae;">
+                                                            ${Resource.msg('label.order.sku','confirmation', null)}<isprint value="${lineItem.manufacturerSKU}" encoding="on" />
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <p>
+                                                            <isset name="availability" value="${pdict.lineItemsAvailabilityMap[lineItem.id]}" scope="page" />
+                                                            <isif condition="${!empty(availability)}">
+                                                                <isloop items="${availability.messages}" var="message">
+                                                                    <div class="availability-msg-content"><isprint value="${message}" encoding="off" /></div>
+                                                                </isloop> 
+                                                            </isif>
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p><isprint value="${lineItem.quantity}" formatter="##" /></p>
+                                                    </td>
+                                                    <td>
+                                                        <isprint value="${lineItem.price.sales.formatted}" formatter="##" />
+                                                    </td>
+                                                    <td>
+                                                        <isprint value="${lineItem.priceTotal.price}" formatter="##" />
+                                                    </td>
+                                                </tr>
+                                                <isif condition="${lineItem.bonusProductLineItemUUID === 'bonus'}">
+                                                    <isloop items="${lineItem.bonusProducts}" var="bonusProduct" status="loopState">
+                                                        <isif condition="${loopState.first}">
+                                                            <tr>
+                                                                <td>${Resource.msg('text.lineitem.bonus.msg','cart',null)}</td>
+                                                            </tr>
+                                                        </isif>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="item-image">
+                                                                    <img class="product-image"
+                                                                        src="${bonusProduct.images.small[0].absURL}"
+                                                                        alt="${bonusProduct.productName}"
+                                                                        title="${bonusProduct.productName}" 
+                                                                        onerror="this.src='${URLUtils.staticURL('/images/img-na.png')}'"
+                                                                        width="80"
+                                                                        height="80"
+                                                                        style="width:80px; height:80px;"/>                   
+                                                                </div> 
+                                                            </td>
+                                                            <td>                           
+                                                                <span>
+                                                                    <a href="${URLUtils.abs('Product-Show', 'pid', bonusProduct.id)}" style="text-decoration:none; color: #222">
+                                                                        ${bonusProduct.productName}
+                                                                    </a>
+                                                                    <br/>
+                                                                </span>
+
+                                                                <isloop items="${bonusProduct.variationAttributes}" var="attribute">
+                                                                    ${attribute.displayName}: ${attribute.displayValue}<br/>
+                                                                </isloop>
+                                                                <isif condition="${!empty(bonusProduct.productBrandName)}">
+                                                                    <span style="color: #aaabae;">
+                                                                        ${Resource.msg('label.order.brand','confirmation', null)}<isprint value="${bonusProduct.productBrandName}" encoding="off" />
+                                                                    </span>  
+                                                                </isif>
+                                                                <span style="color: #aaabae;">
+                                                                    ${Resource.msg('label.order.sku','confirmation', null)}<isprint value="${bonusProduct.manufacturerSKU}" encoding="on" />
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <iscomment>availaility message not available for bonus products</iscomment>
+                                                            </td>
+                                                            <td>
+                                                                <p><isprint value="${bonusProduct.quantity}" formatter="##" /></p>
+                                                            </td>
+                                                            <td>
+                                                                <isprint value="${bonusProduct.bonusUnitPrice}" formatter="##" />
+                                                            </td>
+                                                            <td>
+                                                                <isprint value="${bonusProduct.priceTotal.price}" formatter="##" />
+                                                            </td>
+                                                        </tr>
+                                                    </isloop>
+                                                </isif>
+                                                </isloop>
+                                            </table>
+                                        </isloop>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 600px; color: #404040; font-size: 12px;" role="presentation">
+                                <tr>
+                                    <td style="padding: 0px 0 0 20px; ">
+                                    
+                                        <p style="border-top: 2px solid #ebebeb;"></p>
+                                        <p style="font-size: 24px;"><strong>${Resource.msg('label.order.totals.header.email', 'confirmation', null)}</strong></p>
+                                        
+                                        <table cellpadding="5" align="left" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 600px; font-size: 12px; text-align: left;">
+                                            
+                                            <tr align= "right">
+                                                <th style="width:80%;">${Resource.msg('label.order.sub.total.email','confirmation', null)}</th>
+                                                <td>${pdict.order.totals.subTotal}</td>
+                                            </tr>
+                                            <isif condition="${pdict.order.totals.orderLevelDiscountTotal.value !== 0}">
+                                            <tr align= "right">
+                                                <th style="width:80%;">${Resource.msg('label.order.discount', 'common', null)}</th>
+                                                <td>${pdict.order.totals.orderLevelDiscountTotal.formatted}</td>
+                                            </tr>
+                                            </isif>
+                                            <tr align= "right">
+                                                <th style="width:80%;">${Resource.msg('label.order.shipping.cost','confirmation', null)}</th>
+                                                <td>${pdict.order.totals.shippingTotalLessSurcharge} </td>
+                                            </tr>
+                                            <iscomment> <isif condition="${pdict.order.totals.shippingLevelDiscountTotal.value !== 0}">
+                                            <tr align= "right">
+                                                <th style="width:80%;">${Resource.msg('label.shipping.discount', 'common', null)}</th>
+                                                <td>${pdict.order.totals.shippingLevelDiscountTotal.formatted}</td>
+                                            </tr>
+                                            </isif> </iscomment>
+                                            <tr align= "right">
+                                                <th style="width:80%;">${Resource.msg('label.order.shippingsurcharge.cost', 'confirmation', null)}</th>
+                                                <td>${pdict.order.totals.shippingSurcharge}</td>
+                                            </tr>
+                                            <tr align= "right" style="border-bottom: 2px solid #ebebeb;">
+                                                <th style="width:80%;">${Resource.msg('label.order.sales.tax','confirmation', null)}</th>
+                                                <td>${pdict.order.totals.totalTax}</td>
+                                            </tr>
+                                            <tr align= "right">
+                                                <th style="width:80%;"><strong>${Resource.msg('label.order.totals.email','confirmation', null)}</strong></th>
+                                                <td><span style="color: #e7131a;"><strong>${pdict.order.totals.grandTotal}</strong></span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                                
+                            <table style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 600px; color: #404040; font-size: 12px;" role="presentation">
+                                <tr>
+                                    <td style="padding: 0px 0 0 20px;">
+                                        <p style="font-size: 24px"><strong>${Resource.msg('label.order.address.email', 'confirmation', null)}:</strong></p>
+                                        <table cellpadding="5" align="left" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 600px; font-size: 12px; text-align: left;">
+                                            <tr>
+                                                <td style="padding: 0px 0px 0px 5px;">
+                                                    <isif condition="${pdict.order.shipping[0] && pdict.order.shipping[0].selectedShippingMethod.storePickupEnabled === true}">
+                                                        <strong>${Resource.msg('label.instore.pickup.from', 'instorePickup', null)}</strong>
+                                                    <iselse>
+                                                        <strong>${Resource.msg('label.order.shipping.address', 'confirmation', null)}</strong> <img style="width: 15px; " src="${URLUtils.httpsStatic('/images/email_template/truck-solid.png')}" alt="Shipping">
+                                                    </isif>
+                                                    <isset name="address" value="${pdict.order.shipping[0].shippingAddress}" scope="page"/>
+                                                    <isinclude template="checkout/addressSummary" />
+                                                    <span style="color: #0779ca;">${pdict.order.orderEmail}</span>
+                                                </td>
+                                                <td>
+                                                    <!--- Billing Address --->
+                                                    <strong>${Resource.msg('label.order.billing.address', 'confirmation', null)}</strong> <img style="width: 15px; " src="${URLUtils.httpsStatic('/images/email_template/credit-card-regular.png')}" alt="Billing">
+                                                    <isset name="address" value="${pdict.order.billing.billingAddress.address}" scope="page"/>
+                                                    <isinclude template="checkout/addressSummary" />
+                                                    <span style="color: #0779ca;">${pdict.order.orderEmail}</span>
+                                                    <!--- Payment information --->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0px 0 0 20px;">
+                                        <p style="font-size: 24px"><strong>${Resource.msg('label.order.payment.info', 'confirmation', null)}</strong> <br/></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0px 0 25px 25px;">
+                                        <isinclude template="checkout/confirmation/confirmationPaymentInfo"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+
+            </tr>
+            <tr>
+                <td align="center">
+                    <table style="border-collapse: collapse; border-spacing: 0; text-align: center; font-size: 9px; color: gray; padding: 25px 0 0; margin: 0 auto; width: 600px;" role="presentation">
+                        <tr>
+                            <td>
+                                <isinclude template="components/email/emailFooter" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        </span>
+    </body>
+</html>
+
+
+       
+

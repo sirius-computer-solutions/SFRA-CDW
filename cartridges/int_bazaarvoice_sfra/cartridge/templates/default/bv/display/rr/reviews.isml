@@ -1,0 +1,25 @@
+<!--- TEMPLATENAME: reviews.isml
+Embeds the container that reviews are injected to and the javascript that accesses the review content.
+ --->
+
+<isif condition="${pdict.bvDisplay.rr.enabled}">
+	<!-- Reviews -->
+	<div class="col-sm-12 col-md-8 col-lg-9 value content customer-reviews">
+		<div data-bv-show="reviews" data-bv-productId="${pdict.bvDisplay.bvPid}">
+			<isif condition="${pdict.bvDisplay.rr.seo && pdict.bvDisplay.rr.seo.reviews}">
+		    	<isprint value="${pdict.bvDisplay.rr.seo.reviews}" encoding="off"/>
+		    </isif>
+		</div>
+	</div>
+	
+    <script>
+		// If the action bar exists, remove it
+		window.onload = function() {
+		   if(jQuery('.bv-action-bar').length){
+		     jQuery('.bv-action-bar').remove();
+		   }
+		};
+	</script>
+	<!-- End Reviews -->
+</isif>
+

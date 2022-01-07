@@ -1,0 +1,30 @@
+<div class="line-item-header">
+    <!--- product name--->
+    <div class="line-item-name">
+        <a href="${URLUtils.url('Product-Show', 'pid', item.pid)}">
+            <isprint value="${item.productName}" encoding="on" />
+            <p class="line-item-info">
+                <span class="line-item-brand greytext d-block d-lg-inline-block mr-lg-2">${Resource.msg('label.order.brand','confirmation', null)}<isprint value="${item.productBrandName}" encoding="off" /></span>
+                <span class="line-item-model greytext d-block d-lg-inline-block ">${Resource.msg('label.order.model','confirmation', null)}<isprint value="${item.manufacturerSKU}" encoding="off" /></span>
+            </p>
+        </a>
+    </div>
+    <isif condition=${!pdict.wishlist.publicView}>
+        <!--- remove wishlist icon--->
+        <div class="d-lg-none"> <!---hide lg and xl--->
+        <button type="button" class="remove-btn remove-from-wishlist btn btn-light"
+            data-url="${URLUtils.url('Wishlist-RemoveProduct','pid', item.pid)}"
+            aria-label="remove">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="hidden-md-down"> <!---hide medium, sm, xs--->
+        <button type="button" class="remove-btn-lg remove-from-wishlist btn btn-light"
+            data-url="${URLUtils.url('Wishlist-RemoveProduct','pid', item.pid)}"
+            aria-label="remove">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+    </isif>
+</div>
+

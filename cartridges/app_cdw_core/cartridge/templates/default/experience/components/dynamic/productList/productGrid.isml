@@ -1,0 +1,27 @@
+<isinclude template="experience/components/dynamic/productList/productTiles" />
+
+    <!--- More button --->
+    <div class="col-12 grid-footer"
+        data-sort-options="${JSON.stringify(pdict.productSearch.productSort)}"
+        data-page-size="${pdict.productSearch.pageSize}"
+        data-page-number="${pdict.productSearch.pageNumber}"
+    >
+
+
+    <!--- More button --->
+    <isif condition="${pdict.productSearch.showMoreUrl !== ''}">
+        <div class="show-more">
+            <isloop items="${pdict.productSearch.showMoreUrl}" var="page" status="loopstatus">
+                    <div class="plp-page-number text-right d-inline">
+                    <isif condition="${page.pageSelected}">
+                        <button class="btn page-number-button selected" data-url="${page.pageURL}">
+                    <iselse/>
+                        <button class="btn page-number-button" data-url="${page.pageURL}">
+                    </isif>
+                            ${page.pageNumber}
+                        </button>
+                    </div>
+            </isloop>
+        </div>            
+    </isif>
+</div>

@@ -1,0 +1,9 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/listAllSubCategoriesByCategory.css');
+</isscript>
+
+<div class="container">
+           <isset name="parentCategory" value="${pdict.category}" scope="page" />
+        <isinclude template="components/category/listAllSubCategories" />
+</div>

@@ -1,0 +1,75 @@
+<header data-image-na="${URLUtils.staticURL('/images/img-na.png')}">
+    <isinclude template="/components/header/skipNav" />
+    <div class="header-banner d-block">
+        <div class="container">
+            <div class="content">
+                <isslot id="header-banner-m" description="Slot above the site header" context="global" />
+            </div>
+
+        </div>
+    </div>
+    <nav role="navigation">
+        <div class="header container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="navbar-header brand col-xl-4 col-sm-5 col-6 px-0">
+                        <a class="logo-home" href="/"
+                            title="${Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg(
+                                   'global.home', 'common', null))}">
+                            <img src="${URLUtils.staticURL('/images/AcmeToolsLogo.svg')}"
+                                alt="${Resource.msg('global.storename', 'common', null)}" />
+                        </a>
+                    </div>
+                    <div class="navbar-header d-sm-flex d-md-block align-items-center justify-content-between">
+
+                        <div class="pull-left">
+                            <button class="navbar-toggler d-md-none" type="button" aria-controls="sg-navbar-collapse"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                &#9776; <span class="hidden-sm-down">${Resource.msg('header.menu', 'common', null)}</span>
+                            </button>
+
+                        </div>
+                        <div class="pull-right">
+                            <div class="search">
+                            </div>
+                            <div class="minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+                                <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
+                            </div>
+                        </div>
+                        <isset name="contactAccountManagerModalID" value="contactAccountManagerModal-desktop" scope="page" />
+                        <div class="desktop-util">
+                            <isinclude template="components/header/utility" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md float-md-right d-none d-md-block">
+                    <p class="slogan text-right">${Resource.msg('header.doyourbestwork', 'common', null)}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-background"></div>
+        <div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown d-none d-md-block"
+            id="sg-navbar-collapse">
+            <div class="container">
+                <div class="row">
+                    <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}" />
+
+                </div>
+            </div>
+        </div>
+        <div class="search-mobile d-md-none justify-content-center">
+            <isinclude template="components/header/search" />
+        </div>
+    </nav>
+    <isif condition="${pdict.displayCommonBanner && pdict.displayCommonBanner === 'Yes'}">
+        <div class="global-header-banner justify-content-center">
+            <isslot id="global-header-banner" description="Global Header Banner" context="global" />
+        </div>
+    </isif>
+    <div class="justify-content-center">
+        <isinclude template="components/content/headerBannerContentAsset" />
+    </div>    
+</header>

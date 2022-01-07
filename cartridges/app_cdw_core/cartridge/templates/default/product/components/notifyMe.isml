@@ -1,0 +1,41 @@
+<isset name="productNotInStock" value="${true}" scope="page"/>
+<isif condition="${product.availability.messages.length>0}">
+    <isloop items="${product.availability.messages}" var="invMessage" status="loopstatus">
+        <isif condition="${invMessage.indexOf(Resource.msg('label.instock.text', 'common', null)) !=-1}" >
+            <isset name="productNotInStock" value="${false}" scope="page"/>
+            <isbreak/>
+        </isif>
+    </isloop>
+</isif>
+
+<div id="pdpNotifyMe" <isif condition="${isCallForPriceProduct || productNotInStock || !product.buyable}">class=""<iselse/>class="d-none"</isif> >
+    <form role="form"  >  
+        <div class="row justify-content-end"> 
+        <div class="col">
+            <div class="form-group custom-control custom-checkbox display-none">
+                <input
+                    type="checkbox" name="addtoemaillist"
+                    class="custom-control-input" id="addtoemaillist" data-vall="sdsdd"
+                    checked
+                >
+            </div>
+            <div class="text-right">
+                <label class="notify-me-text float-right text-right">
+                    ${Resource.msg('description.notify.me.signup', 'forms', null)}
+                </label>
+            </div> 
+            </div>           
+        </div>
+        <div class="row justify-content-end notify-me-action">                        
+            <div class="form-group notify-me-email mt-1 col-6 pr-0">
+                <input type="text" class="form-control" name="notifyMeEmail" placeholder="${Resource.msg('placeholdertext.form.notify.me.email', 'product', null)}">
+                <div class="invalid-notify-me-email invalid-feedback">${Resource.msg('error.form.notify.me.email', 'product', null)}</div>                                                                                        
+            </div>
+            <div class="form-group notify-me-btn col-6">
+                <button type="submit" class="btn btn-outline-primary btn-notify-me-submit" data-target="" data-pid="${product.id}" data-url="${URLUtils.url('CustomerService-NotifyMe')}">
+                    ${Resource.msg('notify.me.button', 'product', null)}
+                </button>
+            </div>
+        </div>  
+    </form>
+</div>

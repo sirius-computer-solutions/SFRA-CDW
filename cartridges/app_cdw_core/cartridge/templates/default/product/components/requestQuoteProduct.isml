@@ -1,0 +1,9 @@
+<div class="row cart-and-ipay">
+    
+    <div class="col-sm-12">
+
+        <a class="btn btn-primary request-quote-product" href="${URLUtils.https('CustomerService-RQLanding','productId',product.id,'productQty','1')}" role="button" aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">
+            ${Resource.msg('request.quote.produt', 'product', null)}
+        </a>
+    </div>
+</div>    

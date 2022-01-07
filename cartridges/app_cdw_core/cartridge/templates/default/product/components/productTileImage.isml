@@ -1,0 +1,33 @@
+<div class="image-container">
+    <isif condition="${product.images.medium[0] && product.images.medium[0].url}">
+        <isset name="imageURL" value="${product.images.medium[0].url}" scope="page"/>
+    <iselse>
+        <isset name="imageURL" value="${URLUtils.staticURL('/images/img-na.png')}" scope="page"/>
+    </isif>
+    <a href="${pdict.urls.product}">
+        <img class="tile-image"
+             src="${imageURL}"
+             alt="${product.productName}"
+             title="${product.productName}"
+             onerror="this.src='${URLUtils.staticURL('/images/img-na.png')}'"
+             loading="lazy"
+             />
+    </a>
+    <isif condition="${'QuickView' in dw.system.Site.current.preferences.custom && dw.system.Site.current.preferences.custom.QuickView!=''}">
+        <isif condition="${pdict.display.showQuickView !== false}">
+            <a class="quickview hidden-sm-down" href="${pdict.urls.quickView}"
+            data-toggle="modal"
+            data-target="#quickViewModal"
+            title="${Resource.msgf('button.quickview', 'common', null, product.productName)}"
+            aria-label="${Resource.msgf('button.quickview', 'common', null, product.productName)}"
+            >
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
+                    <i class="fa fa-expand fa-stack-1x"></i>
+                </span>
+            </a>
+        </isif>
+    </isif>
+
+    
+</div>

@@ -1,0 +1,159 @@
+{
+  "name": "Promotional Content Tile/Banner",
+  "description": "Image with text component used on product listing page",
+  "group": "commerce_assets",
+  "attribute_definition_groups": [
+    {
+      "id": "ITCImage",
+      "attribute_definitions": [
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "alt",
+          "name": "Alt Text",
+          "description": "The image alt text shown by the component.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "ITCText",
+          "name": "Text Below Image",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "imageLink",
+          "name": "Image Link",
+          "type": "url",
+          "required": false
+        },
+        {
+          "id": "overlayImage",
+          "name": "Overlay Image",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "imageTextOverLay1",
+          "name": "First Image Text Overlay",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "imageTextOverLay2",
+          "name": "Second Image Text Overlay",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "textOverLayOrientation",
+          "name": "Button Overlay Orientation",
+          "type": "enum",
+          "values": ["horizontal", "vertical"],
+          "required": false
+        }]
+    },
+    {
+      "id": "FirstTextOverLays",
+      "name": "First Button Text Overlays",
+      "description": "First Text Overlays configuration for this image.",
+      "attribute_definitions": [
+        {
+          "id": "textOverlay1",
+          "name": "First Text Overlay",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "textOverlayLink1",
+          "name": "First Button Text Overlay Link",
+          "type": "url",
+          "required": false
+        },
+        {
+          "id": "textOverlayButtonColor1",
+          "name": "First Text Overlay Button Color",
+          "type": "string",
+          "required": false
+        }]
+    },    
+    {
+      "id": "SecondTextOverLays",
+      "name": "Second Button Text Overlays",
+      "description": "Second Button Text Overlays configuration for this image.",
+      "attribute_definitions": [
+        {
+          "id": "textOverlay2",
+          "name": "Second Button Text Overlay",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "textOverlayLink2",
+          "name": "Second Button Text Overlay Link",
+          "type": "url",
+          "required": false
+        },
+        {
+          "id": "textOverlayButtonColor2",
+          "name": "Second Text Overlay Button Color",
+          "type": "string",
+          "required": false
+        }]
+    },
+      {
+        "id": "ThirdTextOverLays",
+        "name": "Third Button Text Overlays",
+        "description": "Third Button Text Overlays configuration for this image.",
+        "attribute_definitions": [
+        {
+          "id": "textOverlay3",
+          "name": "Third Button Text Overlay",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "textOverlayLink3",
+          "name": "Third Button Text Overlay Link",
+          "type": "url",
+          "required": false
+        },
+        {
+          "id": "textOverlayButtonColor3",
+          "name": "Third Text Overlay Button Color",
+          "type": "string",
+          "required": false
+        }]
+    },
+      {
+        "id": "FourthTextOverLays",
+        "name": "Fourth Button Text Overlays",
+        "description": "Fourth Button Text Overlays configuration for this image.",
+        "attribute_definitions": [
+        {
+          "id": "textOverlay4",
+          "name": "Fourth Button Text Overlay",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "textOverlayLink4",
+          "name": "Fourth Button Text Overlay Link",
+          "type": "url",
+          "required": false
+        },
+        {
+          "id": "textOverlayButtonColor4",
+          "name": "Fourth Text Overlay Button Color",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

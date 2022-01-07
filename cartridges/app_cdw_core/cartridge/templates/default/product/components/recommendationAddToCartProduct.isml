@@ -1,0 +1,24 @@
+<div class="row cart-and-ipay">
+<isset name="callForPrice" value="${false}" scope="page" />
+<isif condition="${'callForPrice' in product}">
+    <isset name="callForPrice" value="${product.callForPrice}" scope="page" />
+</isif>
+<isif condition="${!callForPrice || callForPrice == 'N'}">
+    <isset name="disableAddToCartPrice" value="${!product.price || !product.price.sales || !product.price.sales.value}" scope="page" />
+    <isif condition="${'availability' in product && 'messages' in product.availability &&  product.availability.messages.length>0 && (product.availability.messages[0].indexOf('Pre-Order')!=-1)}">
+        <button class="add-to-cart btn-pre-order btn btn-primary-reverse"
+            data-rec-product-id="${product.id}"
+            ${!product.readyToOrder || !product.available || disableAddToCartPrice || callForPrice  || !product.buyable ? "disabled" : ""}
+            >
+            <isprint value="${Resource.msg('label.pre.order.add2cart', 'common', null)}" encoding="off" />
+        </button>
+    <iselse/>
+        <button class="add-to-cart btn btn-primary-reverse recommendations"
+            data-rec-product-id="${product.id}"
+            ${!product.readyToOrder || !product.available || disableAddToCartPrice || callForPrice || !product.buyable ? "disabled" : ""}
+           >
+            <isprint value="${Resource.msg('button.addtocart', 'common', null)}" encoding="off" />
+        </button>
+    </isif>
+</isif>
+</div>    

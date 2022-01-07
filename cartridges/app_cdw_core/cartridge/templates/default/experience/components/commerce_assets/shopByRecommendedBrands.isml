@@ -1,0 +1,57 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/recommendedCategoriesByCarousel.css');
+</isscript>
+<div class="container">
+    <div class="shop-category-component ${pdict.image && pdict.applyImageShade ? 'shop-category-component-filter' : ''}"
+        <isif condition="${pdict.image}">
+            style="background-image: url('${pdict.image.url}');
+                   background-position-x: ${pdict.image.focalPointX};
+                   background-position-y: ${pdict.image.focalPointY};"
+        </isif>
+    >
+
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center carousel-title"><isprint value="${pdict.textHeadline}" encoding="off"></h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="shop-by-brand-carousel">
+                    <div id="shopByBrandCarousel" class="acme-carousel" data-column-count-by-width='{"0": 2,"750": 3,"1200": 6}' data-interval="false">
+                        <div class="acme-carousel-inner">
+                            <isloop items="${pdict.categories}" var="category">
+                                <div class='acme-carousel-item' >
+                                    <isif condition="${category.custom.alternativeUrl}">
+                                        <isset name="altURL" value="${category.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+                                        <isif condition="${altURL.includes('?')}">
+                                            <a href="${altURL}&oci=${category.id}" title="${category.name}">
+                                        <iselse/>
+                                                <a href="${altURL}?oci=${category.id}" title="${category.name}">
+                                        </isif>
+                                    <iselse/>
+                                        <a href="${URLUtils.url('Search-Show', 'cgid', category.id)}" title="${category.name}">    
+                                    </isif>
+                                        <span class="carousel-image-wrapper"> 
+                                            <img class="tile-image" src="${category.thumbnail.url}" alt="${category.name}" onerror="this.src='${URLUtils.staticURL('/images/img-na.png')}'"  />
+                                        </span>
+                                    </a>
+                                </div>
+                            </isloop>
+                        </div>
+                        <a class="carousel-control-prev" href="${"#"}shopByBrandCarousel" role="button" data-slide="prev">
+                            <span class="fas icon-prev" aria-hidden="true"></span>
+                            <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+                        </a>
+                        <a class="carousel-control-next" href="${"#"}shopByBrandCarousel" role="button" data-slide="next">
+                            <span class="fas icon-next" aria-hidden="true"></span>
+                            <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

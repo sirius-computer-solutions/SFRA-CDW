@@ -1,0 +1,98 @@
+input[type="checkbox"], input[type="date"], input[type="email"], input[type="password"], input[type="radio"], input[type="range"], input[type="search"], input[type="submit"], input[type="tel"], input[type="text"], input:-webkit-autofill, select.form-control, textarea.form-control {
+    background-color: $light-gray !important;
+    border-color: $horizontal-rule-grey;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.form-group {
+    margin-bottom: 1.5em;
+    input {
+        border-radius: 0;
+    }
+    label {
+        font-weight: 500;
+        margin-bottom: .25em;
+    }
+}
+.form-control {
+    &:focus {
+        border-color: $grey8;
+        border-width: 2px;
+    }
+}
+
+.site-search {
+    .form-control {
+        border-radius: 0;
+        width: 18.75em;
+    }
+    .fa-search {
+        &:before {
+            font-size: 1.1em;
+        }
+    }    
+    @include media-breakpoint-down(md) {
+        .form-control {
+            width: 14em;
+        }
+    }
+}
+
+form {
+    legend {
+        font-size: 1em;
+        line-height: 1.2em;
+        padding-bottom: 2em;
+    }
+}
+
+.was-validated textarea.form-control:invalid, textarea.form-control.is-invalid {
+    background: none; 
+    padding-right: .75em;
+}
+
+.form-group {
+    &.required .form-control-label::before {
+        content: "*";
+        color: $danger;
+    }
+}
+
+.remember-me-forget-password-section{
+    margin-bottom: 1.2em;
+    .remember-me{
+        margin-bottom: .2em;
+    }
+}
+
+.expiration-container{
+    .month-section, .year-section{
+        @media screen and (max-width: 375px) {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}
+// B2B User - Profile picture sizing
+.acct_mgr_pic{
+    .acct-mgr-image{
+       max-width: 90px;
+       height: auto;
+    }
+}
+.account-manager-image {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}

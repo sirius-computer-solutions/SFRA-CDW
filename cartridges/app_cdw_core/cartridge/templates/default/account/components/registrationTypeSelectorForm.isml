@@ -1,0 +1,16 @@
+
+<div class="user-account-type-selector">
+    <label class="form-control-label" for="userAccountType">
+        ${Resource.msg('label.input.selectAccountType.b2bUserRegistration', 'b2bUserRegistration', null)}
+    </label>
+    <select type="text" id="userAccountType" class="form-control custom-select">
+        <option value="">${Resource.msg('label.input.selectAccountType.selectAccountOption.b2bUserRegistration', 'b2bUserRegistration', null)}</option>
+        <option value="IND">${Resource.msg('label.input.selectAccountType.individualUseOption.b2bUserRegistration', 'b2bUserRegistration', null)}</option>
+        <option value="B2B-NEW">${Resource.msg('label.input.selectAccountType.businessUseNewOption.b2bUserRegistration', 'b2bUserRegistration', null)}</option>
+        <option value="B2B-EXISTING">${Resource.msg('label.input.selectAccountType.businessUseExistingOption.b2bUserRegistration', 'b2bUserRegistration', null)}</option>
+        <option value="GOVT-NEW">${Resource.msg('label.input.selectAccountType.governmentUseNewOption.b2bUserRegistration', 'b2bUserRegistration', null)}</option>
+        <option value="GOVT-EXISTING">${Resource.msg('label.input.selectAccountType.governmentUseExistingOption.b2bUserRegistration', 'b2bUserRegistration', null)}</option>
+    </select>
+</div>
+<br/>
+<br/>

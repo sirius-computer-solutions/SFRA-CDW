@@ -1,0 +1,20 @@
+<div class="card-body">
+    <isif condition="${pdict.showMap === 'true'}">
+        <h1>${Resource.msg('title.hero.text', 'storeLocator', null)}</h1>
+        <p>${Resource.msg('msg.find.store','storeLocator',null)}</p>
+        <button type="submit" class="btn btn-primary btn-block detect-location" data-action="${pdict.stores.actionUrl}">
+            <i class="fas fa-location-arrow"></i> ${Resource.msg('button.use.my.location','storeLocator',null)}
+        </button>
+    </isif>
+    <${pdict.isForm === 'true' ? 'form' : 'div'} action="${pdict.stores.actionUrl}" class="store-locator" method="get" name="storelocator">
+        <div class="form-group required">
+            <label class="form-control-label sr-only" for="store-postal-code">${Resource.msg('field.zip.postal.code','storeLocator',null)}</label>
+            <input autofocus type="text" class="form-control" id="store-postal-code" placeholder="${Resource.msg('field.zip.postal.code','storeLocator',null)}" name="postalCode" 
+                value="${pdict.currentZipCode||''}" autocomplete="off" aria-describedby="store-locator-zip-error" required>
+            <div id="store-locator-zip-error" class="invalid-feedback"></div>
+        </div>
+        <button class="btn btn-outline-primary btn-block btn-storelocator-search" type="submit">
+            ${Resource.msg('button.find.stores','storeLocator',null)}
+        </button>
+    </${pdict.isForm === 'true' ? 'form' : 'div'}>
+</div>

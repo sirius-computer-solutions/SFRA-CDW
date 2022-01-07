@@ -1,0 +1,101 @@
+<!-- TEMPLATE NAME: templates/default/common/layout/pdStorePage.isml -->
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<!-- Include Page Designer Campaign Banner JavaScript and Styles only once here rather than at component level. -->
+<!-- There should only be one Campagin Banner added on a PD page. Multiple Banners is unsupported at the moment. -->
+
+<isif condition="${pdict.resetEditPDMode}">
+    <script> var resetCampaignBannerSessionToken = true; </script>
+</isif>
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/campaignBanner.css');
+    assets.addCss('/css/experience/components/commerceLayouts/carousel.css');
+    assets.addJs('/js/campaignBanner.js');
+    assets.addJs('/js/timelinexml.min.js');
+</isscript>
+
+<!DOCTYPE html>
+<html lang="${require('dw/util/Locale').getLocale(request.getLocale()).getLanguage()}">
+    <head>
+        <!--[if gt IE 9]><!-->
+            <isinclude sf-toolkit="off" template="/common/scripts" />
+        <!--<![endif]-->
+        <isinclude template="/common/htmlHead" />
+        <isif condition="${pdict.canonicalUrl}" >
+            <link rel="canonical" href="${pdict.canonicalUrl}"/>
+            <isif condition="${pdict.canonicalUrl ==='/'}">
+                <isscript>
+                    var Site = require('dw/system/Site');
+                    var URLUtils = require('dw/web/URLUtils');
+                    var siteHostName = Site.current.getCustomPreferenceValue('siteHostName') || 'https://www.acmetools.com';
+                    var schemaDataVar =    {
+                                "@context": "https://schema.org",
+                                "@type": "Corporation",
+                                "name": "Acme Tools",
+                                "url": siteHostName,
+                                "logo": siteHostName + URLUtils.staticURL('/images/AcmeToolsLogo.svg').toString(),
+                                "sameAs": [
+                                    "https://facebook.com/acmetools",
+                                    "https://instagram.com/acmetools",
+                                    "https://twitter.com/acmetools",
+                                    "https://www.linkedin.com/company/acmetools.com/",
+                                    "https://www.youtube.com/acmetoolstv",
+                                    "https://www.pinterest.com/acmetools/",
+                                    "https://www.tiktok.com/@acmetools"
+                                ],
+                                "contactPoint": [
+                                    {
+                                    "@type": "ContactPoint",
+                                    "telephone": "1-877-345-2263",
+                                    "contactType": "customer service",
+                                    "email": "support@acmetools.com",
+                                    "contactOption": "TollFree",
+                                    "areaServed": "US"
+                                    }
+                                ],
+                                "potentialAction": {
+                                    "@type": "SearchAction",
+                                    "target": "https://www.acmetools.com/search?q={search_term_string}",
+                                    "query-input": "required name=search_term_string"
+                                }
+                            } ;    
+                </isscript>
+                <script type="application/ld+json">
+                    <isprint value="${JSON.stringify(schemaDataVar)}" encoding="off" />
+                </script>
+            </isif>
+        </isif>
+        <isinclude template="/components/schema" />
+        <isactivedatahead/>
+    </head>
+    <body>
+        ${dw.system.HookMgr.callHook('app.template.beforeHeader', 'beforeHeader', pdict) || ''}
+        <isinclude template="/common/datalayer" />
+
+        <div class="page" data-action="${pdict.action}" data-querystring="${pdict.queryString}" >
+            <isinclude template="/components/header/pdStorePageHeader" />
+            <div role="main" id="maincontent">
+                <isreplace/>
+            </div>
+            <isinclude template="/components/footer/pageFooter" />
+        </div>
+        <div class="error-messaging"></div>
+        <div class="modal-background"></div>
+        <iscontentasset aid="cookie_hint" />
+         <!--[if lt IE 10]>
+            <isinclude sf-toolkit="off" template="/common/scripts" />
+        <![endif]-->
+        <iscomment>
+            hook for Marketing Cloud connector & other integration which need to inject
+            logic at the page end
+            IMPORTANT: Note that this hook will be called to cached as well as uncached pages
+                        which means you need to put privacy information into another remote include
+        </iscomment>
+        ${dw.system.HookMgr.callHook('app.template.afterFooter', 'afterFooter', pdict) || ''}
+        <isinclude url="${URLUtils.url('ConsentTracking-Check')}"/>
+    </body>
+</html>

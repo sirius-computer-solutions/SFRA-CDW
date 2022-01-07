@@ -1,0 +1,21 @@
+<isif condition="${pdict.accountManagerId !== null}">
+    <div class="acct_mgr">
+        <div class="acct_mgr_container d-inline-block">
+            <span class="acct_mgr_heading">${Resource.msg('label.header.accountmanager', 'b2bUserRegistration', null)}</span><br />
+            <span class="acct_mgr_info">
+                <a  id="contact-account-manager"
+                    title="${Resource.msg('label.header.accountmanager', 'b2bUserRegistration', null)}"
+                    data-toggle="modal"
+                    href="${URLUtils.url('Account-ContactAccountManagerDialogForm')}"
+                    data-target="#contactAccountManagerModal-desktop">
+                    ${Resource.msgf('label.header.contact.accountmanager', 'b2bUserRegistration', null, pdict.accountManagerName)}
+                </a>
+            </span>
+        </div>    
+            <div class="acct_mgr_pic float-right ml-2 mr-3">
+                <isset name="accountManagerImagePath" value="${'images/accountManager/' + pdict.accountManagerId + '.jpg'}" scope="page" />
+                <img class="acct_mgr-image" src="${URLUtils.staticURL(URLUtils.CONTEXT_LIBRARY, '', accountManagerImagePath)}" alt="${pdict.accountManagerId}" onerror="this.src='${URLUtils.staticURL('/images/img-na.png')}'"  />
+            </div>        
+    </div>
+<isinclude template="account/b2b/contactAccountManagerModal" />      
+</isif>

@@ -1,0 +1,6 @@
+<isset name="sortOrderWithDelimiter" value="" scope="page"/>
+<isif condition="${slotcontent}">
+    <isloop items="${slotcontent.content}" var="category">
+        <isset name="sortOrderWithDelimiter" value="${sortOrderWithDelimiter+":"+category.ID}" scope="page"/>
+    </isloop>
+</isif>

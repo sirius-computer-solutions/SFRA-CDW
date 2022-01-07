@@ -1,0 +1,18 @@
+{
+    "name": "2 Row X 1 Columns (Mobile), 1 Row X 2 Columns 2/3 Layout (Desktop)",
+    "description": "This is a layout component of 2 Row x 1 Col (Mobile), 1 Row x 2 Col (Desktop) layout 2/3",
+    "group": "commerce_layouts",
+    "attribute_definition_groups": [],
+    "region_definitions": [
+        {
+            "id":"column1",
+            "name":"Column 1",
+            "component_type_exclusions": []
+        },
+        {
+            "id":"column2",
+            "name":"Column 2",
+            "component_type_exclusions": []
+        }
+    ]
+}

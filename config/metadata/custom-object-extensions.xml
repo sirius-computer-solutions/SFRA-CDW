@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <custom-type type-id="Message">
+        <display-name xml:lang="x-default">Message</display-name>
+        <description xml:lang="x-default">Message ID for the message custom object</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <retention-days>1</retention-days>
+        <key-definition attribute-id="messageId">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="errorReason">
+                <display-name xml:lang="x-default">Error Reason</display-name>
+                <description xml:lang="x-default">Error reason present when messageStatus = 2</description>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="message">
+                <display-name xml:lang="x-default">Message</display-name>
+                <description xml:lang="x-default">Actual Message, possible values, XML, JSON or flat file entry</description>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="messageStatus">
+                <display-name xml:lang="x-default">Message Status</display-name>
+                <description xml:lang="x-default">Message Status, 0- New, 1-Processed, 2-Error</description>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">New</display>
+                        <value>0</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Processed</display>
+                        <value>1</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Error</display>
+                        <value>2</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="messageType">
+                <display-name xml:lang="x-default">Message Type</display-name>
+                <description xml:lang="x-default">Message Type, Possible Values  [REQUEST_QUOTE, REQUEST_CATALOG, NEWSLETTER]</description>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Request Quote</display>
+                        <value>REQUEST_QUOTE</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Request Catalog</display>
+                        <value>REQUEST_CATALOG</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Newsletter</display>
+                        <value>NEWSLETTER</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Message Details">
+                <display-name xml:lang="x-default">Message Details</display-name>
+                <attribute attribute-id="messageId"/>
+                <attribute attribute-id="messageStatus"/>
+                <attribute attribute-id="creationDate" system="true"/>
+                <attribute attribute-id="messageType"/>
+                <attribute attribute-id="lastModified" system="true"/>
+                <attribute attribute-id="message"/>
+                <attribute attribute-id="errorReason"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="B2BOrganization">
+        <display-name xml:lang="x-default">B2B Organization</display-name>
+        <description xml:lang="x-default">This custom object maintains the details of the B2B Organization</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="accountNumber">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="accountAdminLoginId">
+                <display-name xml:lang="x-default">B2B Account Admin Login Id</display-name>
+                <description xml:lang="x-default">The login id of the B2B account administrator</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="organizationName">
+                <display-name xml:lang="x-default">B2B Organization Name</display-name>
+                <description xml:lang="x-default">The B2B Organization Name</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="B2BOrganization Details">
+                <display-name xml:lang="x-default">B2BOrganization Details</display-name>
+                <attribute attribute-id="accountAdminLoginId"/>
+                <attribute attribute-id="accountNumber"/>
+                <attribute attribute-id="creationDate" system="true"/>
+                <attribute attribute-id="lastModified" system="true"/>
+                <attribute attribute-id="organizationName"/>
+            </attribute-group> 
+        </group-definitions>
+    </custom-type>    
+</metadata>

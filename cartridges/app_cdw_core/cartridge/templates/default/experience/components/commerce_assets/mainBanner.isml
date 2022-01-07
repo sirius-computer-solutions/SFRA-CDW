@@ -1,0 +1,39 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/imageAndTextCommon.css');
+</isscript>
+
+<div class="mainbanner-container">
+    <a href="${pdict.shopNowLink}">
+        <div class="row image-cta">
+            <div class="col-12 image-wrapper px-0">
+                <div class="mainbanner-figure image-component">
+                        <picture>
+                            <source srcset="${pdict.image.src.tablet}" media="(min-width: 768px)" />
+                            <source srcset="${pdict.image.src.desktop}" media="(min-width: 1024px)" />
+                            <img class="mainbanner-image image-fluid common-image-component common-image-filter" src="${pdict.image.src.mobile}"
+                                style="--focal-point-x:${pdict.image.focalPointX}; --focal-point-y:${pdict.image.focalPointY}" <isif
+                                condition="${pdict.image.alt}">alt="${pdict.image.alt}" title="${pdict.image.alt}"</isif>
+                            />
+                        </picture>                           
+                    <div class="image-heading-container orientation-container">
+                        <div class="row image-heading-text">
+                            <div class="col-12 text-center">
+                                <div class="orientation ${pdict.textOverLayOrientation}">
+                                    <span class="text-overlay1"><isprint value="${pdict.heading}" encoding="off"/></span>
+                                    <span class="text-overlay2"><isprint value="${pdict.textOverlay1}" encoding="off"/></span>
+                                    <span class="mainbanner-sub-text">
+                                        <p class="link-large btn btn-primary" style="background-color:${pdict.textOverlayButtonColor}">
+                                            ${Resource.msg('pd.main.banner.shop.now', 'pageDesigner', null)}
+                                        </p>
+                                    </span>
+                                </div>
+                                
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

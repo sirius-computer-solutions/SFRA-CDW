@@ -1,0 +1,37 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/account.css');
+        assets.addJs('/js/login.js');
+        assets.addJs('/js/manageBuyers.js');
+    </isscript>
+    <div class="account">
+        
+    <div class="container">
+        <!---Breadcrumbs--->
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+        <h1>${Resource.msg('label.b2b.manage.buyers', 'account', null)}</h1>
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                    <isif condition="${pdict.customerNo}">
+                        <isif condition="${pdict.b2bAdmin}">
+                            <h2>${Resource.msg('label.b2b.manage.buyers.editadmin','account',null)}</h2>
+                        <iselse/>
+                            <h2>${Resource.msg('label.b2b.manage.buyers.editbuyer','account',null)}</h2>    
+                        </isif>
+                        
+                    <iselse>
+                        <h2>${Resource.msg('label.b2b.manage.buyers.addbuyer','account',null)}</h2>
+                    </isif>
+                    </div>
+                    <div class="card-body">
+                        <isinclude template="account/b2b/buyerForm"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+</isdecorate>

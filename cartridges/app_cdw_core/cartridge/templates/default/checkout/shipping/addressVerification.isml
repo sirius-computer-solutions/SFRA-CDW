@@ -1,0 +1,20 @@
+<h2 class="card-header" style="font-size: 1.5rem; display: none;">${Resource.msg('checkout.avs.heading', 'checkout', null)}</h2>
+
+<div class="px-4 py-2 shipping-avs-list">
+    <!-- Populated by client -->
+</div>
+
+<!---------------------------------------------------------------------------------->
+<!-- Template used by client to draw avs suggestions                              -->
+<!---------------------------------------------------------------------------------->
+<div id="shipping-avs-template" class="card-body" style="display:none;" >
+    <p class="shipping-avs-similar" style="display:none;">${Resource.msg('checkout.avs.similar', 'checkout', null)}</p>
+    <p class="shipping-avs-invalid" style="display:none;">${Resource.msg('checkout.avs.invalid', 'checkout', null)}</p>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" id="shippingAVSRadioButton" />
+        <label class="form-check-label shipping-avs-option" for="shippingAVSRadioButton">
+            <span class="display-name"></span>
+            <p class="line-item-name wrap-address"></p>
+        </label>
+    </div>
+</div>

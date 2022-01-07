@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with Altova MapForce 2021r3 -->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="31">
+	<settings>
+		<deployment path="/public/Acme/Shipping.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
+	</settings>
+	<resources/>
+	<component name="defaultmap" uid="1" editable="1">
+		<properties SelectedLanguage="builtin"/>
+		<structure>
+			<children>
+				<component name="input" library="core" uid="20" kind="6">
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="69"/>
+					</targets>
+					<view ltx="-194" lty="183" rbx="-117" rby="222"/>
+					<data>
+						<input datatype="string"/>
+						<parameter usageKind="input" name="input"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="34" kind="2">
+					<targets>
+						<datapoint pos="0" key="70"/>
+					</targets>
+					<view ltx="437" lty="121" rbx="580" rby="139"/>
+					<data>
+						<constant value="3 Day Air (Business Days)" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="33" kind="2">
+					<targets>
+						<datapoint pos="0" key="81"/>
+					</targets>
+					<view ltx="437" lty="88" rbx="592" rby="106"/>
+					<data>
+						<constant value="FEDEX_EXPRESS_SAVER" datatype="string"/>
+					</data>
+				</component>
+				<component name="format-file-name" library="user" uid="32" kind="19" visible="0">
+					<view ltx="545" lty="10" rbx="646" rby="27"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="input" inpkey="82" componentid="24"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="83" componentid="25"/>
+						</root>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="12" kind="2">
+					<targets>
+						<datapoint pos="0" key="32"/>
+					</targets>
+					<view ltx="469" lty="613" rbx="556" rby="631"/>
+					<data>
+						<constant value="GROUND" datatype="string"/>
+					</data>
+				</component>
+				<component name="format-file-name" library="user" uid="36" kind="19" visible="0">
+					<view ltx="545" lty="505" rbx="646" rby="522"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="input" inpkey="88" componentid="24"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="89" componentid="25"/>
+						</root>
+					</data>
+				</component>
+				<component name="format-file-name" library="user" uid="37" kind="19" visible="0">
+					<view ltx="1117" rbx="1218" rby="17"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="input" inpkey="91" componentid="24"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="92" componentid="25"/>
+						</root>
+					</data>
+				</component>
+				<component name="format-file-name" library="user" uid="38" kind="19" visible="0">
+					<view ltx="1109" lty="305" rbx="1210" rby="322"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="input" inpkey="94" componentid="24"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="95" componentid="25"/>
+						</root>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="40" kind="2">
+					<targets>
+						<datapoint pos="0" key="99"/>
+					</targets>
+					<view ltx="1042" lty="759" rbx="1197" rby="777"/>
+					<data>
+						<constant value="Express Ground Shipping" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="19" kind="2">
+					<targets>
+						<datapoint pos="0" key="67"/>
+					</targets>
+					<view ltx="1076" lty="692" rbx="1159" rby="710"/>
+					<data>
+						<constant value="EXPRESS" datatype="string"/>
+					</data>
+				</component>
+				<component name="format-file-name" library="user" uid="39" kind="19" visible="0">
+					<view ltx="1103" lty="591" rbx="1204" rby="608"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="input" inpkey="97" componentid="24"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="98" componentid="25"/>
+						</root>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="10" kind="2">
+					<targets>
+						<datapoint pos="0" key="21"/>
+					</targets>
+					<view ltx="448" lty="444" rbx="604" rby="462"/>
+					<data>
+						<constant value="Standard Ground Shipping" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="14" kind="2">
+					<targets>
+						<datapoint pos="0" key="44"/>
+					</targets>
+					<view ltx="1076" lty="158" rbx="1227" rby="176"/>
+					<data>
+						<constant value="PRIORITY_OVERNIGHT" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="15" kind="2">
+					<targets>
+						<datapoint pos="0" key="43"/>
+					</targets>
+					<view ltx="1083" lty="216" rbx="1224" rby="234"/>
+					<data>
+						<constant value="Priority Overnight (Business Days, Signature Required)" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="17" kind="2">
+					<targets>
+						<datapoint pos="0" key="56"/>
+					</targets>
+					<view ltx="1109" lty="527" rbx="1177" rby="545"/>
+					<data>
+						<constant value="Truck" datatype="string"/>
+					</data>
+				</component>
+				<component name="format-file-name" library="user" uid="35" kind="19" visible="0">
+					<view ltx="559" lty="277" rbx="660" rby="294"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="input" inpkey="84" componentid="24"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="85" componentid="25"/>
+						</root>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="9" kind="2">
+					<targets>
+						<datapoint pos="0" key="2"/>
+					</targets>
+					<view ltx="448" lty="403" rbx="570" rby="421"/>
+					<data>
+						<constant value="FEDEX_GROUND" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="41" kind="2">
+					<targets>
+						<datapoint pos="0" key="100"/>
+					</targets>
+					<view ltx="448" lty="376" rbx="509" rby="394"/>
+					<data>
+						<constant value="true" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="42" kind="2">
+					<targets>
+						<datapoint pos="0" key="101"/>
+					</targets>
+					<view ltx="271" lty="481" rbx="334" rby="499"/>
+					<data>
+						<constant value="false" datatype="string"/>
+					</data>
+				</component>
+				<component name="shipping-old" library="xml" uid="4" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1" DynamicFilenames="1"/>
+					<view ltx="726" lty="257" rbx="1026" rby="457"/>
+					<data>
+						<root scrollposition="34">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.w3.org/XML/1998/namespace"/>
+									<namespace uid="http://www.demandware.com/xml/impex/shipping/2007-03-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="3" inpkey="86" expanded="1">
+								<entry name="document" ns="3" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="shipping" ns="2" inpkey="11" expanded="1">
+										<entry name="shipping-method" ns="2" inpkey="12" expanded="1">
+											<entry name="method-id" type="attribute" inpkey="13"/>
+											<entry name="default" type="attribute" inpkey="14"/>
+											<entry name="display-name" ns="2" inpkey="15" expanded="1">
+												<entry name="lang" ns="1" type="attribute">
+													<inputnodefunctions>
+														<rule applyto="self">
+															<default value="x-default"/>
+														</rule>
+													</inputnodefunctions>
+												</entry>
+											</entry>
+											<entry name="online-flag" ns="2" inpkey="16"/>
+											<entry name="price-table" ns="2" inpkey="17"/>
+											<entry name="product-cost-groups" ns="2" inpkey="18"/>
+											<entry name="custom-attributes" ns="2" inpkey="19"/>
+											<entry name="currency" ns="2" inpkey="20"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\shipping-old.xsd" instanceroot="{http://www.demandware.com/xml/impex/shipping/2007-03-31}shipping" outputinstance="FEDEX_GROUND.xml"/>
+					</data>
+				</component>
+				<component name="shipping-old" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" DynamicFilenames="1"/>
+					<view ltx="726" lty="10" rbx="1026" rby="210"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.w3.org/XML/1998/namespace"/>
+									<namespace uid="http://www.demandware.com/xml/impex/shipping/2007-03-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="3" inpkey="71" expanded="1">
+								<entry name="document" ns="3" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="shipping" ns="2" inpkey="1" expanded="1">
+										<entry name="shipping-method" ns="2" inpkey="72" expanded="1">
+											<entry name="method-id" type="attribute" inpkey="73"/>
+											<entry name="default" type="attribute" inpkey="74"/>
+											<entry name="display-name" ns="2" inpkey="75" expanded="1">
+												<entry name="lang" ns="1" type="attribute">
+													<inputnodefunctions>
+														<rule applyto="self">
+															<default value="x-default"/>
+														</rule>
+													</inputnodefunctions>
+												</entry>
+											</entry>
+											<entry name="online-flag" ns="2" inpkey="76"/>
+											<entry name="price-table" ns="2" inpkey="77"/>
+											<entry name="product-cost-groups" ns="2" inpkey="78"/>
+											<entry name="custom-attributes" ns="2" inpkey="79"/>
+											<entry name="currency" ns="2" inpkey="80"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\shipping-old.xsd" instanceroot="{http://www.demandware.com/xml/impex/shipping/2007-03-31}shipping" inputinstance="FEDEX_EXPRESS_SAVER-2021-07-15-174924_1.xml" outputinstance="FEDEX_EXPRESS_SAVER-2021-07-15-174924_1.xml"/>
+					</data>
+				</component>
+				<component name="shipping-old" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" DynamicFilenames="1"/>
+					<view ltx="65" lty="121" rbx="365" rby="321"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace uid="http://www.demandware.com/xml/impex/shipping/2007-03-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" inpkey="68" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="shipping" outkey="3" expanded="1">
+										<entry name="shipping-method" outkey="4" expanded="1">
+											<entry name="online-flag" outkey="6"/>
+											<entry name="price-table" outkey="7"/>
+											<entry name="product-cost-groups" outkey="8"/>
+											<entry name="custom-attributes" outkey="9"/>
+											<entry name="currency" outkey="10"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\shipping-old.xsd" instanceroot="{http://www.demandware.com/xml/impex/shipping/2007-03-31}shipping" inputinstance="FEDEX_EXPRESS_SAVER-2021-07-15-174924_1.xml"/>
+					</data>
+				</component>
+				<component name="shipping-old" library="xml" uid="11" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" DynamicFilenames="1"/>
+					<view ltx="726" lty="496" rbx="1026" rby="696"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.w3.org/XML/1998/namespace"/>
+									<namespace uid="http://www.demandware.com/xml/impex/shipping/2007-03-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="3" inpkey="87" expanded="1">
+								<entry name="document" ns="3" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="shipping" ns="2" inpkey="27" expanded="1">
+										<entry name="shipping-method" ns="2" inpkey="30" expanded="1">
+											<entry name="method-id" type="attribute" inpkey="24"/>
+											<entry name="default" type="attribute" inpkey="29"/>
+											<entry name="display-name" ns="2" inpkey="22" expanded="1">
+												<entry name="lang" ns="1" type="attribute">
+													<inputnodefunctions>
+														<rule applyto="self">
+															<default value="x-default"/>
+														</rule>
+													</inputnodefunctions>
+												</entry>
+											</entry>
+											<entry name="online-flag" ns="2" inpkey="23"/>
+											<entry name="price-table" ns="2" inpkey="28"/>
+											<entry name="product-cost-groups" ns="2" inpkey="25"/>
+											<entry name="custom-attributes" ns="2" inpkey="26"/>
+											<entry name="currency" ns="2" inpkey="31"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\shipping-old.xsd" instanceroot="{http://www.demandware.com/xml/impex/shipping/2007-03-31}shipping" outputinstance="GROUND.xml"/>
+					</data>
+				</component>
+				<component name="shipping-old" library="xml" uid="13" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" DynamicFilenames="1"/>
+					<view ltx="1264" lty="10" rbx="1564" rby="210"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.w3.org/XML/1998/namespace"/>
+									<namespace uid="http://www.demandware.com/xml/impex/shipping/2007-03-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="3" inpkey="90" expanded="1">
+								<entry name="document" ns="3" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="shipping" ns="2" inpkey="42" expanded="1">
+										<entry name="shipping-method" ns="2" inpkey="33" expanded="1">
+											<entry name="method-id" type="attribute" inpkey="38"/>
+											<entry name="default" type="attribute" inpkey="40"/>
+											<entry name="display-name" ns="2" inpkey="35" expanded="1">
+												<entry name="lang" ns="1" type="attribute">
+													<inputnodefunctions>
+														<rule applyto="self">
+															<default value="x-default"/>
+														</rule>
+													</inputnodefunctions>
+												</entry>
+											</entry>
+											<entry name="online-flag" ns="2" inpkey="41"/>
+											<entry name="price-table" ns="2" inpkey="37"/>
+											<entry name="product-cost-groups" ns="2" inpkey="36"/>
+											<entry name="custom-attributes" ns="2" inpkey="34"/>
+											<entry name="currency" ns="2" inpkey="39"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\shipping-old.xsd" instanceroot="{http://www.demandware.com/xml/impex/shipping/2007-03-31}shipping" outputinstance="PRIORITY_OVERNIGHT.xml"/>
+					</data>
+				</component>
+				<component name="shipping-old" library="xml" uid="16" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" DynamicFilenames="1"/>
+					<view ltx="1264" lty="295" rbx="1564" rby="495"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.w3.org/XML/1998/namespace"/>
+									<namespace uid="http://www.demandware.com/xml/impex/shipping/2007-03-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="3" inpkey="93" expanded="1">
+								<entry name="document" ns="3" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="shipping" ns="2" inpkey="55" expanded="1">
+										<entry name="shipping-method" ns="2" inpkey="47" expanded="1">
+											<entry name="method-id" type="attribute" inpkey="48"/>
+											<entry name="default" type="attribute" inpkey="54"/>
+											<entry name="display-name" ns="2" inpkey="46" expanded="1">
+												<entry name="lang" ns="1" type="attribute">
+													<inputnodefunctions>
+														<rule applyto="self">
+															<default value="x-default"/>
+														</rule>
+													</inputnodefunctions>
+												</entry>
+											</entry>
+											<entry name="online-flag" ns="2" inpkey="52"/>
+											<entry name="price-table" ns="2" inpkey="51"/>
+											<entry name="product-cost-groups" ns="2" inpkey="53"/>
+											<entry name="custom-attributes" ns="2" inpkey="49"/>
+											<entry name="currency" ns="2" inpkey="50"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\shipping-old.xsd" instanceroot="{http://www.demandware.com/xml/impex/shipping/2007-03-31}shipping" outputinstance="Truck.xml"/>
+					</data>
+				</component>
+				<component name="shipping-old" library="xml" uid="18" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" DynamicFilenames="1"/>
+					<view ltx="1264" lty="553" rbx="1564" rby="753"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.w3.org/XML/1998/namespace"/>
+									<namespace uid="http://www.demandware.com/xml/impex/shipping/2007-03-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="3" inpkey="96" expanded="1">
+								<entry name="document" ns="3" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="shipping" ns="2" inpkey="66" expanded="1">
+										<entry name="shipping-method" ns="2" inpkey="65" expanded="1">
+											<entry name="method-id" type="attribute" inpkey="62"/>
+											<entry name="default" type="attribute" inpkey="64"/>
+											<entry name="display-name" ns="2" inpkey="63" expanded="1">
+												<entry name="lang" ns="1" type="attribute">
+													<inputnodefunctions>
+														<rule applyto="self">
+															<default value="x-default"/>
+														</rule>
+													</inputnodefunctions>
+												</entry>
+											</entry>
+											<entry name="online-flag" ns="2" inpkey="57"/>
+											<entry name="price-table" ns="2" inpkey="60"/>
+											<entry name="product-cost-groups" ns="2" inpkey="61"/>
+											<entry name="custom-attributes" ns="2" inpkey="58"/>
+											<entry name="currency" ns="2" inpkey="59"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\shipping-old.xsd" instanceroot="{http://www.demandware.com/xml/impex/shipping/2007-03-31}shipping" outputinstance="PRIORITY_GROUND.xml"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="3" to="1"/>
+			<edge from="3" to="11"/>
+			<edge from="4" to="12"/>
+			<edge from="2" to="13"/>
+			<edge from="100" to="14"/>
+			<edge from="21" to="15"/>
+			<edge from="6" to="16"/>
+			<edge from="7" to="17"/>
+			<edge from="8" to="18">
+				<data type="2"/>
+			</edge>
+			<edge from="9" to="19">
+				<data type="2"/>
+			</edge>
+			<edge from="10" to="20"/>
+			<edge from="21" to="22"/>
+			<edge from="6" to="23"/>
+			<edge from="32" to="24"/>
+			<edge from="8" to="25">
+				<data type="2"/>
+			</edge>
+			<edge from="9" to="26">
+				<data type="2"/>
+			</edge>
+			<edge from="3" to="27"/>
+			<edge from="7" to="28"/>
+			<edge from="101" to="29"/>
+			<edge from="4" to="30"/>
+			<edge from="10" to="31"/>
+			<edge from="4" to="33"/>
+			<edge from="9" to="34">
+				<data type="2"/>
+			</edge>
+			<edge from="43" to="35"/>
+			<edge from="8" to="36">
+				<data type="2"/>
+			</edge>
+			<edge from="7" to="37"/>
+			<edge from="44" to="38"/>
+			<edge from="10" to="39"/>
+			<edge from="101" to="40"/>
+			<edge from="6" to="41"/>
+			<edge from="3" to="42"/>
+			<edge from="56" to="46"/>
+			<edge from="4" to="47"/>
+			<edge from="56" to="48"/>
+			<edge from="9" to="49">
+				<data type="2"/>
+			</edge>
+			<edge from="10" to="50"/>
+			<edge from="7" to="51"/>
+			<edge from="6" to="52"/>
+			<edge from="8" to="53">
+				<data type="2"/>
+			</edge>
+			<edge from="101" to="54"/>
+			<edge from="3" to="55"/>
+			<edge from="6" to="57"/>
+			<edge from="9" to="58">
+				<data type="2"/>
+			</edge>
+			<edge from="10" to="59"/>
+			<edge from="7" to="60"/>
+			<edge from="8" to="61">
+				<data type="2"/>
+			</edge>
+			<edge from="67" to="62"/>
+			<edge from="99" to="63"/>
+			<edge from="101" to="64"/>
+			<edge from="4" to="65"/>
+			<edge from="3" to="66"/>
+			<edge from="69" to="68"/>
+			<edge from="83" to="71"/>
+			<edge from="4" to="72"/>
+			<edge from="81" to="73"/>
+			<edge from="101" to="74"/>
+			<edge from="70" to="75"/>
+			<edge from="6" to="76"/>
+			<edge from="7" to="77"/>
+			<edge from="8" to="78">
+				<data type="2"/>
+			</edge>
+			<edge from="9" to="79">
+				<data type="2"/>
+			</edge>
+			<edge from="10" to="80"/>
+			<edge from="81" to="82"/>
+			<edge from="2" to="84"/>
+			<edge from="85" to="86"/>
+			<edge from="89" to="87"/>
+			<edge from="32" to="88"/>
+			<edge from="92" to="90"/>
+			<edge from="44" to="91"/>
+			<edge from="95" to="93"/>
+			<edge from="56" to="94"/>
+			<edge from="98" to="96"/>
+			<edge from="67" to="97"/>
+		</connections>
+	</component>
+	<component name="format-file-name" library="user" uid="21" inline="1" editable="1">
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="23" kind="2">
+					<targets>
+						<datapoint pos="0" key="11"/>
+					</targets>
+					<view ltx="399" lty="452" rbx="461" rby="469"/>
+					<data>
+						<constant value=".xml" datatype="string"/>
+					</data>
+				</component>
+				<component name="result" library="core" uid="25" kind="7">
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<view ltx="997" lty="276" rbx="1054" rby="314"/>
+					<data>
+						<output datatype="string"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="format-dateTime" library="core" uid="26" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+						<datapoint pos="1" key="8"/>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="444" lty="96" rbx="556" rby="166"/>
+				</component>
+				<component name="constant" library="core" uid="27" kind="2">
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view ltx="237" lty="162" rbx="382" rby="179"/>
+					<data>
+						<constant value="[D,2][M,2][Y][H,2][m][s]" datatype="string"/>
+					</data>
+				</component>
+				<component name="now" library="lang" uid="29" kind="5">
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="237" lty="82" rbx="287" rby="120"/>
+				</component>
+				<component name="input" library="core" uid="24" kind="6">
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view ltx="166" lty="276" rbx="251" rby="314"/>
+					<data>
+						<input datatype="string"/>
+						<parameter usageKind="input" name="input"/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="28" kind="5" growable="1" growablebasename="value">
+					<sources>
+						<datapoint pos="0" key="10"/>
+						<datapoint pos="1" key="13"/>
+						<datapoint pos="2" key="2"/>
+						<datapoint pos="3" key="12"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="580" lty="323" rbx="672" rby="413"/>
+				</component>
+				<component name="constant" library="core" uid="30" kind="2">
+					<targets>
+						<datapoint pos="0" key="14"/>
+					</targets>
+					<view ltx="399" lty="366" rbx="445" rby="383"/>
+					<data>
+						<constant value="-" datatype="string"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+			<edge from="7" to="8"/>
+			<edge from="9" to="10"/>
+			<edge from="11" to="12"/>
+			<edge from="14" to="13"/>
+		</connections>
+	</component>
+</mapping>

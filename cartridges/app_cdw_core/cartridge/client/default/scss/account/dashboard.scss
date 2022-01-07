@@ -1,0 +1,99 @@
+@import "~base/variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "account"; 
+
+.card-footer-border { 
+    &:last-child {
+        border: none;
+        padding-top: 1.25em;
+    }
+}
+
+.card-make-default-link {
+    margin-top: 1rem;
+}
+
+.dashboard-cards-block-title {
+    font-weight: bold;
+}
+
+.dashboard-order-card-status {
+    text-transform: capitalize;
+}
+
+.dashboard-order-card-image {
+    width: 7rem;
+}
+
+.account-landing-ordercard {
+    padding: 0;
+    height: 1rem;
+    margin-left: 1.25rem;
+    border-bottom: 0 none;
+    margin-top: 1rem;
+
+    h4 {
+        font-size: 1.2rem;
+    }
+}
+
+div.order-number {
+    padding-top: 0.2rem;
+}
+
+.dashboard-cards-block-title {
+    margin-bottom: 1em;
+}
+
+.account-wishlist-item {
+    border-bottom: 1px solid $grey3;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-top: 0 none;
+    margin-right: 0.15rem;
+    margin-left: 0.15rem;
+
+    .line-item-header {
+        margin-bottom: 0.1rem;
+    }
+
+    .account-wl-attributes {
+        padding-left: 0;
+    }
+
+    .account-wl-image {
+        padding-right: 1.5rem;     
+        img {
+            max-height: 80px;
+        }
+    }
+}
+
+.btn-outline-primary {
+    color: $black !important;
+    text-decoration: none !important;
+    &:hover {
+        color: $white !important;
+    }
+}
+
+.account-wishlist-item:last-child {
+    border: 0 none;
+}
+
+.account-wishlist-item .remove-from-wishlist {
+    color: $grey4;
+    font-size: 1.65em;
+    padding: 0;
+    position: absolute;
+    border: none;
+    background-color: $white;
+    top: -0.625rem;
+    right: 1.25rem;
+    z-index: 1;
+}
+
+.account .card-body {
+    padding-bottom: 0;
+}

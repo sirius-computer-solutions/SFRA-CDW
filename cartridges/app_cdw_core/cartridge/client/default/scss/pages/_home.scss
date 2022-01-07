@@ -1,0 +1,5 @@
+.page{
+    @include media-breakpoint-down(xs){
+    overflow-x: hidden;
+    }
+}

@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-md bg-inverse col-12">
+    <div class="close-menu d-lg-none clearfix">
+        <div class="back pull-left">
+            <button role="button" aria-label="${Resource.msg('label.header.menu.back', 'common', null)}">
+                <span class="caret-left"></span>
+                ${Resource.msg('link.header.menu.back', 'common', null)}
+            </button>
+        </div>
+        <div class="close-button pull-right">
+            <button role="button" aria-label="${Resource.msg('label.header.menu.close', 'common', null)}">
+                ${Resource.msg('link.header.menu.close', 'common', null)}
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <div class="menu-group navbar-collapse" role="navigation">
+        <ul class="navbar-nav mr-auto" role="menu">
+            <isif condition="${pdict.categories}">
+        
+                <isloop items="${pdict.categories}" var="category">
+                
+                    <isif condition="${category.subCategories}">
+                        <li class="nav-item dropdown menu-large menu-${category.id}" role="presentation">
+                            <a href="<isprint value="${category.url}" encoding="htmldoublequote"/>" class="nav-link dropdown-toggle" data-disable-flyout-delay="true" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">${category.name}</a>
+                            <isset name="menuItem" value="${category}" scope="page" />
+                            <isset name="menuItemViewAll" value="${category}" scope="page" />
+                            <isif condition="${'showBrandHeaderNav' in category && category.showBrandHeaderNav}">
+                                <isinclude template="components/header/brandMenuItem" />
+                            <iselse>
+                                <isinclude template="components/header/menuItem" />
+                            </isif>
+                        </li>
+                    <iselse/>
+                        <li class="nav-item" role="presentation">
+                            <a href="<isprint value="${category.url}" encoding="htmldoublequote"/>" class="nav-link" role="menuitem" tabindex="0">${category.name}</a>
+                        </li>
+                    </isif>
+                
+                </isloop>
+            </isif>
+           
+        </ul>
+        <div class="d-none d-md-block">
+            <isinclude template="components/header/search" />
+        </div>  
+        <isset name="contactAccountManagerModalID" value="contactAccountManagerModal-mobile" scope="page" />
+        <div class="d-block d-md-none">
+            <isinclude template="components/header/utility" />
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="CustomFeedConfig" object-id="GoogleShopping">
+        <object-attribute attribute-id="configuration">&lt;?xml version="1.0"?&gt;&#13;
+&lt;rss version="2.0" xmlns:g="http://base.google.com/ns/1.0"&gt;&#13;
+    &lt;channel&gt;&#13;
+        &lt;title&gt;&lt;![CDATA[My Store]]&gt;&lt;/title&gt;&#13;
+        &lt;link href="http://www.mystore.com/" rel="alternate" type="text/html"/&gt;&#13;
+        &lt;updated&gt;2013-06-01T00:30:02Z&lt;/updated&gt;&#13;
+        &lt;author&gt;&#13;
+            &lt;name&gt;&lt;![CDATA[My Store]]&gt;&lt;/name&gt;&#13;
+        &lt;/author&gt;&#13;
+{{block type="product"}}&#13;
+            &lt;item&gt;&#13;
+                &lt;g:id&gt;{{var:ID}}&lt;/g:id&gt;&#13;
+                &lt;g:brand&gt;&lt;![CDATA[{{var:custom:brand}}]]&gt;&lt;/g:brand&gt;&#13;
+                &lt;title&gt;&lt;![CDATA[{{var:name}} - {{var:custom:color}} - {{var:custom:size}}]]&gt;&lt;/title&gt;&#13;
+                &lt;g:age_group&gt;{{var:custom:age}}&lt;/g:age_group&gt;&#13;
+                &lt;g:gender&gt;{{var:custom:gender}}&lt;/g:gender&gt;&#13;
+                &lt;g:product_type&gt;&lt;![CDATA[{{var:custom:productGroup}}]]&gt;&lt;/g:product_type&gt;&#13;
+                &lt;g:google_product_category&gt;&lt;![CDATA[{{var:custom:googleProductCategories}}]]&gt;&lt;/g:google_product_category&gt;&#13;
+                &lt;description&gt;&lt;![CDATA[{{var:shortDescription}}]]&gt; &lt;/description&gt;&#13;
+                &lt;g:color&gt;{{var:custom:color}}&lt;/g:color&gt;&#13;
+                &lt;g:size&gt;{{var:custom:size}}&lt;/g:size&gt;&#13;
+                &lt;link&gt;{{var:url}}&lt;/link&gt;&#13;
+                &lt;g:image_link&gt;{{var:image}}&lt;/g:image_link&gt;&#13;
+                &lt;g:condition&gt;new&lt;/g:condition&gt;&#13;
+                &lt;g:price&gt;{{var:pricevalue}} EUR&lt;/g:price&gt;&#13;
+                &lt;g:availability&gt;in stock&lt;/g:availability&gt;&#13;
+                &lt;g:shipping&gt;&#13;
+                    &lt;g:country&gt;DE&lt;/g:country&gt;&#13;
+                    &lt;g:service&gt;Standard&lt;/g:service&gt;&#13;
+                    &lt;g:price&gt;2.95 EUR&lt;/g:price&gt;&#13;
+                &lt;/g:shipping&gt;&#13;
+                &lt;g:mpn&gt;{{var:EAN}}&lt;/g:mpn&gt;&#13;
+                &lt;g:gtin&gt;{{var:EAN}}&lt;/g:gtin&gt;&#13;
+                &lt;g:adwords_grouping&gt;&lt;![CDATA[{{var:custom:garmentType}}]]&gt;&lt;/g:adwords_grouping&gt;&#13;
+                &lt;g:adwords_labels&gt;Electronics&lt;/g:adwords_labels&gt;&#13;
+                &lt;g:adwords_labels&gt;&lt;![CDATA[{{var:custom:productGroup}}]]&gt;&lt;/g:adwords_labels&gt;&#13;
+            &lt;/item&gt;&#13;
+{{/block}}&#13;
+    &lt;/channel&gt;&#13;
+&lt;/rss&gt;</object-attribute>
+        <object-attribute attribute-id="fileName">googleshopping_{{countrycode}}_{{timestamp format="yyyMMdd"}}.xml</object-attribute>
+        <object-attribute attribute-id="folderName">IMPEX/src/feeds</object-attribute>
+        <object-attribute attribute-id="type">XML</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="CustomFeedConfig" object-id="MyCSVExport">
+        <object-attribute attribute-id="configuration">separator ;&#13;
+SKU;Name;Price in EUR&#13;
+ID;name;pricevalue</object-attribute>
+        <object-attribute attribute-id="fileEncoding">ISO-8859-1</object-attribute>
+        <object-attribute attribute-id="fileName">mycsv_{{timestamp}}.csv</object-attribute>
+        <object-attribute attribute-id="folderName">IMPEX/</object-attribute>
+        <object-attribute attribute-id="type">CSV</object-attribute>
+    </custom-object>
+
+</custom-objects>

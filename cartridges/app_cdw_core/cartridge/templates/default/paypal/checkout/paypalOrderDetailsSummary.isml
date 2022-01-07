@@ -1,0 +1,8 @@
+<div>
+    <div>
+        <span>
+            ${payment.paypalEmail} <br />
+            ${payment.paymentMethod + '/' + payment.paymentAmount}
+        </span>
+    </div>
+</div>

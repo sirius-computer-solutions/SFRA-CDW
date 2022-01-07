@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/main_array",
+  "definitions": {
+    "main_array": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/digitalassets_obj"
+          }
+        ]
+      }
+    },
+
+
+    "array_string": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+
+    
+    "digitalassets_obj": {
+      "type": "object",
+      "required": ["digital_assets"],
+      "additionalProperties": false,
+      "properties": {
+        "digital_assets": {
+          "type": "array",
+          "title": "digital_assets",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "salsify:id": {
+                "type": "string"
+              },
+              "salsify:name": {
+                "type": "string"
+              },
+              "salsify:created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "salsify:updated_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "salsify:status": {
+                "type": "string"
+              },
+              "salsify:asset_height": {
+                "type": "number"
+              },
+              "salsify:asset_width": {
+                "type": "number"
+              },
+              "salsify:asset_resource_type": {
+                "type": "string"
+              },
+              "salsify:filename": {
+                "type": "string"
+              },
+              "salsify:bytes": {
+                "type": "number"
+              },
+              "salsify:format": {
+                "type": "string"
+              },
+              "salsify:etag": {
+                "type": "string"
+              },
+              "salsify:system_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

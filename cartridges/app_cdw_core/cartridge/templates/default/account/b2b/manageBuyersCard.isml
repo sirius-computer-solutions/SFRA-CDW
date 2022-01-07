@@ -1,0 +1,25 @@
+<isif condition="${pdict.CurrentCustomer && pdict.CurrentCustomer.profile && pdict.CurrentCustomer.profile.custom && pdict.CurrentCustomer.profile.custom.b2bUser && 
+                   pdict.CurrentCustomer.profile.custom.b2bAdmin && pdict.CurrentCustomer.profile.custom.b2bAccountNumber !== ""}">
+    <isset name="accountNumber" value="${pdict.CurrentCustomer.profile.custom.b2bAccountNumber}" scope="page" />
+    <isset name="organizationName" value="${pdict.CurrentCustomer.profile.custom.b2bOrganizationName}" scope="page" /> 
+</isif>
+
+<div class="card">
+    <div class="card-header clearfix">
+        <h2 class="pull-left">${Resource.msg('label.b2b.manage.buyers','account',null)}</h2>
+        <isif condition="${accountNumber != ''}">
+            <a href="${pdict.viewBuyerListUrl}" class="pull-right btn btn-primary btn-small btn-small-rounded" aria-label="${Resource.msg('label.b2b.view.buyer.list','account',null)}">${Resource.msg('link.view','account',null)}</a>
+        </isif>
+    </div>
+    <isif condition="${accountNumber != ''}">
+        <div class="card-body card-info-group">
+            <div class="dashboard-cards-block-title">${organizationName}</div>
+            <div class="dashboard-info">${Resource.msg('label.b2b.account.number','account',null)} ${accountNumber}</div>
+       </div>
+    </isif>
+    <isif condition="${pdict.addBuyerUrl}">
+        <div class="card-footer card-footer-border text-center">
+            <a href="${pdict.addBuyerUrl}" class="card-link btn btn-outline-primary" aria-label="${Resource.msg('label.b2b.add.new.buyer','account',null)}">${Resource.msg('link.addnew.buyer','account',null)}</a>
+        </div>
+    </isif>
+</div>

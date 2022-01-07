@@ -1,0 +1,71 @@
+.store-locator-container {
+    
+    .card {
+        border: 1px solid $grey3;
+        border-radius: .125em;
+        &-header {
+            border-radius: none;
+        }
+        &-body {
+            h1 {
+                font-size: 1.5em;
+            }
+            label:not(.form-check-label) {
+                margin-top: .7em;
+            }
+        }
+    }
+    .detect-location {
+        margin-bottom: 1em;
+        i {
+            font-size: .75em;
+        }
+    }
+    
+
+    .store-name {
+        font-weight: 600;
+    }
+
+    .store-details {
+        display: block;
+        @include media-breakpoint-up(md) {
+            margin-left: 2.5em;
+        }
+    }
+
+    .striped {
+        > div:nth-of-type(odd) {
+            background-color: $table-accent-bg;
+        }
+    }
+
+    .search-form {
+        width: 100%;
+        margin-bottom: 4rem;
+    }
+
+    .select-store {
+        @include media-breakpoint-up(sm) {
+            margin-top: -3rem;
+        }
+    }
+
+    .custom-radio {
+        .store-details {
+            margin-left: 1.125em;
+        }
+    }
+
+    .store-locator-no-results {
+        display: none;
+    }
+
+    .results {
+        @include media-breakpoint-up(md) {
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 21.875em;
+        }
+    }
+}

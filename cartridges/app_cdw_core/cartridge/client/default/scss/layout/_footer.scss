@@ -1,0 +1,206 @@
+@import "../components/toastMessage";
+
+footer {
+    
+    box-shadow: 0px 0px 15px -6px black;
+    padding: 6px 0 0;
+    background: $grey2;
+    ul {
+        list-style-type:none;
+        padding: 0;
+        li {
+            margin: 0;
+            height: 1.875rem;
+        }
+    }
+    &.checkout-footer {
+        box-shadow: none;
+        position: relative;
+        z-index: 3;
+        background: transparent;
+        @include media-breakpoint-down(sm) {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+    form {
+        padding: 0 0 2em;
+        .email-description {
+            padding-bottom: 1em;
+        }
+        
+    }
+    .footer-item {
+        border-left: 2px solid $grey6;
+        @include media-breakpoint-down(xs) {
+            border: none;
+        }
+        &:first-child {
+            border-left: initial; 
+        }
+    }
+    .footer-container .footer-item.collapsible-xs {
+        button {
+            font-family: var(--skin-body-font);
+            padding: 8px;
+
+            @include media-breakpoint-down(xs) {
+                font-family: var(--skin-header-font);
+                font-weight: 400;
+                font-size: 1.5em;
+                padding-left: 0;
+                text-transform: uppercase;
+            }
+            i {
+                margin-left: 8px;
+            }
+        }
+        &:not(.active) button {
+                border-bottom: 1px solid $grey4;
+            }
+            
+        .menu-footer {
+            @include media-breakpoint-down(xs) {
+            border-bottom: 1px solid $grey4;
+            padding-bottom: 1em;
+            }
+        }
+    }
+    .social-links {
+        @include media-breakpoint-down(sm) {
+            float: none;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            
+            li {
+                width: auto;
+                display: inline-block;
+                margin: .313em 0;
+            }
+            span {
+                display: none;
+            }
+        }
+        a {
+        font-size: 1em;
+        vertical-align: middle; 
+        line-height: 1.5em;
+        vertical-align: top;
+            &:hover {
+                color: $grey8;
+                text-decoration: none;
+                & span {
+                    border-bottom: 1px solid $grey5;
+                }
+            }
+        }
+        i {
+            font-size: 1.5em;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+    .catalog {
+        padding: 0 0 70px 0;
+        h3 a {
+            color: $black;
+        }
+        a {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            line-height: 1.25em;
+        }
+        &:after {
+                content: '';
+                background: url(../images/free-catalog.png) left top no-repeat;
+                background-size: 76px 70px;
+                width: 76px;
+                height: 70px;
+                display: inline-block;
+            }
+    }
+    .copyright-notice {
+        margin: 0;
+        padding: 0;
+        .copyright {
+            background: $navy; 
+            color: $white;
+            line-height: 2em;
+            margin: 0;
+        }
+         .partners {
+            @extend .container;
+            content: "."; 
+            display: block; 
+            overflow: auto;
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            ul {
+                li{
+                    float: left; 
+                    margin: 0 15px 0 0; 
+                    display: inline-block;
+                }
+                &.accepted_ccds{
+                    display: inline-block; 
+                    float: left; 
+                    padding: 0;
+                }
+                &.acme_partners { 
+                    margin-left:68px;
+                    display: inline-block;
+                }
+            }
+            @include media-breakpoint-down(md) {
+                
+                ul.accepted_ccds{
+                    float:none;
+                }
+                ul.acme_partners{
+                    
+                }
+                ul li {
+                    
+                    margin: 0 8px 0 0;
+                }
+                ul li.bbb { 
+                    margin-left: 0;
+                }
+            }
+
+        }
+    }
+}
+
+.back-to-top {
+    margin: .1em .313em;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    i {
+            &.fa-arrow-up {
+                color: $white;
+            }
+
+            &.fa-circle {
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+                color: $acme-blue;
+            }
+            &::before {
+                padding-right: 0;
+            }
+        }
+}
+
+.email-signup-message {
+    @include toast-message();
+}
+
+.email-signup-alert {
+    @include toast-alert();
+}

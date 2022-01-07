@@ -1,0 +1,5 @@
+<div class="row tile-body-footer">
+    <div class="compare col-sm-6 hidden-xs-down">
+        <isinclude template="product/components/compare" />
+    </div>
+</div>

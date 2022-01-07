@@ -1,0 +1,105 @@
+<isdecorate template="common/layout/page">
+<isscript>
+    var assets = require('*/cartridge/scripts/assets');
+   assets.addCss('/css/pages/sitemap.css');
+</isscript>
+
+<div class="container">
+   <section class="html-block-list max-width--medium gutter--normal sitemap-container row">
+      <iscomment> sitemap level one  </iscomment>
+      <isif condition="${pdict.categories}">
+         <isloop items="${pdict.categories[0]}" var="category" status="loopcounter">
+            <isif condition="${(!empty(category.subCategories)) && category.siteMapIncluded!=0}">
+               <div class="sitemap-category-container col-6 col-sm-3">
+                  <div class="sitemap__header">
+                     <isif condition="${category.online}">
+                        <isif condition="${category.custom.alternativeUrl}">
+                           <isset name="topCatAltURL" value="${category.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+                           <isif condition="${topCatAltURL.includes('?')}">
+                              <h2><a href="${topCatAltURL}&oci=${category.ID}" title="${category.displayName}"><isprint value="${category.displayName}" encoding="htmlcontent"/></a></h2>
+                           <iselse/>
+                              <h2><a href="${topCatAltURL}?oci=${category.ID}" title="${category.displayName}"><isprint value="${category.displayName}" encoding="htmlcontent"/></a></h2>
+                           </isif>
+                        <iselse/>
+                           <h2><a href="${URLUtils.url('Search-Show', 'cgid', category.ID)}" aria-label="${category.displayName}">${category.displayName}</a></h2>
+                        </isif>
+                     <iselseif condition="${category.ID.indexOf('INCLUDESM_')!=-1}"/>
+                        <h2>${category.displayName}</h2>
+                     </isif>
+                  </div>
+                  <div class="sitemap__section-container">
+                     <div class="sitemap__list-container">
+                        <isif condition="${!empty(category.subCategories)}">
+                           <ul class="sitemap__list">
+                              <isloop items="${category.subCategories}" var="item">
+                                 <isif condition="${!empty(item.subCategories)}">
+                                    <div class="sitemap-sub-category">
+                                       <isif condition="${category.siteMapIncluded!=0 && item.siteMapIncluded!=0 && category.online==true && item.online==true}">
+                                          <isif condition="${item.custom.alternativeUrl}">
+                                             <isset name="catAltURL" value="${item.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+                                                <isif condition="${catAltURL.includes('?')}">
+                                                   <h2><a href="${catAltURL}&oci=${item.ID}" title="${item.displayName}"><isprint value="${item.displayName}" encoding="htmlcontent"/></a></h2>
+                                                <iselse/>
+                                                   <h2><a href="${catAltURL}?oci=${item.ID}" title="${item.displayName}"><isprint value="${item.displayName}" encoding="htmlcontent"/></a></h2>
+                                                </isif>
+                                          <iselse/>
+                                             <h2><a href="${URLUtils.url('Search-Show', 'cgid', item.ID)}" aria-label="${item.displayName}">${item.displayName}</a></h2>
+                                          </isif>
+                                          <isloop items="${item.subCategories}" var="subCat">
+                                             <isif condition="${subCat.siteMapIncluded!=0 && subCat.online==true}">
+                                                <isif condition="${subCat.custom.alternativeUrl}">
+                                                   <isset name="subCatAltURL" value="${subCat.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+
+                                                   <isif condition="${subCatAltURL.includes('?')}">
+                                                      <li><a href="${subCatAltURL}&oci=${subCat.ID}" title="${subCat.displayName}"><isprint value="${subCat.displayName}" encoding="htmlcontent"/></a></li>
+                                                   <iselse/>
+                                                      <li><a href="${subCatAltURL}?oci=${subCat.ID}" title="${subCat.displayName}"><isprint value="${subCat.displayName}" encoding="htmlcontent"/></a></li>
+                                                   </isif>
+                                                <iselse/>
+                                                   <li><a href="${URLUtils.url('Search-Show', 'cgid', subCat.ID)}" aria-label="${subCat.displayName}">${subCat.displayName}</a></li>
+                                                </isif>
+                                             </isif>
+                                          </isloop>
+                                       </isif>
+                                    </div>
+                                 <iselse>
+                                    <isif condition="${category.siteMapIncluded!=0 && item.siteMapIncluded!=0 }">
+                                       <isif condition="${category.online}">
+                                          <isif condition="${item.online==true && item.custom.alternativeUrl}">
+                                             <isset name="catAltURL2" value="${item.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+                                             <isif condition="${catAltURL2.includes('?')}">
+                                                <h2><a href="${catAltURL2}&oci=${item.ID}" title="${item.displayName}"><isprint value="${item.displayName}" encoding="htmlcontent"/></a></h2>
+                                             <iselse/>
+                                                <h2><a href="${catAltURL2}?oci=${item.ID}" title="${item.displayName}"><isprint value="${item.displayName}" encoding="htmlcontent"/></a></h2>
+                                             </isif>
+                                          <iselseif condition="${item.online==true}"/>
+                                             <h2><a href="${URLUtils.url('Search-Show', 'cgid', item.ID)}" aria-label="${item.displayName}">${item.displayName}</a></h2>
+                                          </isif>
+                                       <iselseif condition="${category.ID.indexOf('INCLUDESM_')!=-1}"/>
+                                          <isif condition="${item.siteMapIncluded!=0}">
+                                             <isif condition="${item.custom.alternativeUrl}">
+                                                <isset name="altURL" value="${item.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+                                                      <isif condition="${altURL.includes('?')}">
+                                                         <li><a href="${altURL}&oci=${item.ID}" title="${item.displayName}"><isprint value="${item.displayName}" encoding="htmlcontent"/></a></li>
+                                                      <iselse/>
+                                                         <li><a href="${altURL}?oci=${item.ID}" title="${item.displayName}"><isprint value="${item.displayName}" encoding="htmlcontent"/></a></li>
+                                                      </isif>
+                                             <iselse/>
+                                                <li><a href="${item.pageURL}" aria-label="${item.displayName}">${item.displayName}</a></li>
+                                             </isif>
+                                          </isif>
+                                       </isif>
+                                    </isif>
+                                 </isif>
+                              </isloop>
+                           </ul>
+                        </isif>
+                        </div>
+                     </div>
+               </div>
+            </isif>
+         </isloop>
+      </isif>
+   </section>
+</div>
+</isdecorate>

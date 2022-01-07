@@ -1,0 +1,30 @@
+{
+  "name": "Product list page",
+  "description": "A product list page.",
+  "attribute_definitions": [
+    {
+      "id": "category",
+      "name": "Category",
+      "description": "The category to show the product list page for.",
+      "type": "category",
+      "required": true
+    },
+    {
+      "id": "queryString",
+      "name": "QueryString",
+      "description": "QueryString value to handle the brand category alt urls.",
+      "type": "string",
+      "required": false
+    },
+    {
+      "id": "datalayer",
+      "name": "datalayer",
+      "description": "DataLayer",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "supported_object_types": [
+    "category"
+  ]
+}

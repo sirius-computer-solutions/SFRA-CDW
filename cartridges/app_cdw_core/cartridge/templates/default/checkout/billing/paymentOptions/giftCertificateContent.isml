@@ -1,0 +1,46 @@
+<div class="tab-pane gift-certificate-content" id="gift-certificate-content" role="tabpanel">
+    <fieldset class="payment-form-fields">
+
+        <!--- payment method is gift certificate --->
+        <input type="hidden" class="form-control"
+               name="${pdict.forms.billingForm.paymentMethod.htmlName}"
+               value="GIFT_CERTIFICATE"
+        >
+
+        <div class="card-header">
+            <h2 class="card-header-custom"> ${Resource.msg('label.giftcertificate.header','giftCertificate',null)}</h2>
+        </div>
+        <div class="row card-body">
+            <label class="col-12 form-control-label" for="giftcert-code">${Resource.msg('label.addgiftcard','giftCertificate',null)}</label>
+            <div class="col-12 col-sm-8 form-group required">
+                
+                <input
+                    type="text"
+                    required
+                    class="form-control giftcert-input-field"
+                    aria-describedby="form-number-error"
+                    id="giftcert-code"
+                    name="giftCertCode"
+                    placeholder="Enter up to 4 codes"
+                    data-gift-cert-add="${URLUtils.url('GiftCertificate-Add')}" />
+                <div class="invalid-feedback" id="form-number-error"></div>
+                <div class="coupon-error">
+                    <span class="coupon-missing-error invalid-feedback" id="missingGiftCertCode" role="alert" style="display:none">${Resource.msg('error.code.missing', 'giftCertificate', null)}</span>
+                    <span class="coupon-error-message invalid-feedback" id="invalidCouponCode" role="alert" style="display:none">${Resource.msg('error.not.found', 'giftCertificate', null)}</span>
+                    
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-4 form-group">
+                <button class="btn btn-block btn-primary giftcertcode-button" type="submit" name="submit" value="submit">${Resource.msg('button.submit','giftCertificate',null)}</button>
+            </div>
+
+            <div class="summary-section-label" id="gift-card-list">
+                <span class="giftcert-remove-error-message invalid-feedback" role="alert" style="display:none">${Resource.msg('gc.remove.error.not.found', 'giftCertificate', null)}</span>
+                <span class="giftcert-message"></span>
+            </div>
+
+        </div>
+
+    </fieldset>
+</div>

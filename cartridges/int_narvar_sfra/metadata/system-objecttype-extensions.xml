@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+  <type-extension type-id="Order">
+    <custom-attribute-definitions>
+      <attribute-definition attribute-id="narvarApiCallFailedCount">
+        <display-name xml:lang="x-default">Narvar Failed Attempts</display-name>
+        <type>int</type>
+        <mandatory-flag>false</mandatory-flag>
+        <externally-managed-flag>false</externally-managed-flag>
+      </attribute-definition>
+      <attribute-definition attribute-id="narvarApiLastCall">
+        <display-name xml:lang="x-default">Last Successful API call to Narvar</display-name>
+        <type>datetime</type>
+        <mandatory-flag>false</mandatory-flag>
+        <externally-managed-flag>false</externally-managed-flag>
+      </attribute-definition>
+    </custom-attribute-definitions>
+    <group-definitions>
+      <attribute-group group-id="Narvar">
+        <display-name xml:lang="x-default">Narvar</display-name>
+        <attribute attribute-id="narvarApiLastCall" />
+        <attribute attribute-id="narvarApiCallFailedCount" />
+      </attribute-group>
+    </group-definitions>
+  </type-extension>
+  <type-extension type-id="SitePreferences">
+    <custom-attribute-definitions>
+      <attribute-definition attribute-id="narvarFailedAttemptsBeforeBatch">
+        <display-name xml:lang="x-default">Narvar Failed Attempts Before Batch</display-name>
+        <type>int</type>
+        <mandatory-flag>false</mandatory-flag>
+        <externally-managed-flag>false</externally-managed-flag>
+        <default-value>3</default-value>
+      </attribute-definition>
+      <attribute-definition attribute-id="narvarApiEnabled">
+        <display-name xml:lang="x-default">Enable/Disable Narvar APIs</display-name>
+        <description xml:lang="x-default">Enable/Disable Narvar APIs. This will turn on/off all API calls, including any Jobs that are set up.</description>
+        <type>boolean</type>
+        <mandatory-flag>false</mandatory-flag>
+        <externally-managed-flag>false</externally-managed-flag>
+        <default-value>true</default-value>
+      </attribute-definition>
+      <attribute-definition attribute-id="narvarBulkUploadEnabled">
+        <display-name xml:lang="x-default">Enable/Disable bulk upload to Narvar</display-name>
+        <description xml:lang="x-default">Enable/Disable bulk upload to Narvar. This will turn on/off bulk upload to Narvar</description>
+        <type>boolean</type>
+        <mandatory-flag>false</mandatory-flag>
+        <externally-managed-flag>false</externally-managed-flag>
+        <default-value>true</default-value>
+      </attribute-definition>
+      <attribute-definition attribute-id="enableInfoLogToNarvar">
+        <display-name xml:lang="x-default">Enable/Disable Info Logs to send to Narvar</display-name>
+        <description xml:lang="x-default">Enable/Disable Info Logs to send to Narvar. This will turn on/off all info logs being sent to Narvar.</description>
+        <type>boolean</type>
+        <mandatory-flag>false</mandatory-flag>
+        <externally-managed-flag>false</externally-managed-flag>
+        <default-value>false</default-value>
+      </attribute-definition>
+    </custom-attribute-definitions>
+    <group-definitions>
+      <attribute-group group-id="Narvar">
+        <display-name xml:lang="x-default">Narvar</display-name>
+        <attribute attribute-id="narvarApiEnabled" />
+        <attribute attribute-id="narvarBulkUploadEnabled" />
+        <attribute attribute-id="enableInfoLogToNarvar" />
+        <attribute attribute-id="narvarFailedAttemptsBeforeBatch" />
+      </attribute-group>
+    </group-definitions>
+  </type-extension>
+  <type-extension type-id="ShippingMethod">
+    <custom-attribute-definitions>
+      <attribute-definition attribute-id="narvarCarrrierCode">
+        <display-name xml:lang="x-default">Narvar Carrier Code</display-name>
+        <type>string</type>
+        <localizable-flag>false</localizable-flag>
+        <mandatory-flag>false</mandatory-flag>
+        <externally-managed-flag>false</externally-managed-flag>
+        <min-length>0</min-length>
+      </attribute-definition>
+      <attribute-definition attribute-id="narvarServiceCode">
+        <display-name xml:lang="x-default">Narvar Service Code</display-name>
+        <type>string</type>
+        <localizable-flag>false</localizable-flag>
+        <mandatory-flag>false</mandatory-flag>
+        <externally-managed-flag>false</externally-managed-flag>
+        <min-length>0</min-length>
+      </attribute-definition>
+    </custom-attribute-definitions>
+    <group-definitions>
+      <attribute-group group-id="Narvar">
+        <display-name xml:lang="x-default">Narvar</display-name>
+        <attribute attribute-id="narvarCarrrierCode"/>
+        <attribute attribute-id="narvarServiceCode"/>
+      </attribute-group>
+    </group-definitions>
+  </type-extension>
+  <custom-type type-id="NarvarJobsLastCall">
+    <display-name xml:lang="x-default">Narvar Jobs Last Call</display-name>
+    <description xml:lang="x-default">Narvar Jobs Last Call</description>
+    <staging-mode>no-staging</staging-mode>
+    <storage-scope>site</storage-scope>
+    <key-definition attribute-id="jobType">
+      <display-name xml:lang="x-default">Job Type</display-name>
+      <type>string</type>
+      <min-length>0</min-length>
+    </key-definition>
+    <attribute-definitions>
+      <attribute-definition attribute-id="lastAPICall">
+        <display-name xml:lang="x-default">Last API Call</display-name>
+        <type>datetime</type>
+        <localizable-flag>false</localizable-flag>
+        <mandatory-flag>false</mandatory-flag>
+        <externally-managed-flag>false</externally-managed-flag>
+      </attribute-definition>
+    </attribute-definitions>
+    <group-definitions>
+      <attribute-group group-id="General">
+        <display-name xml:lang="x-default">General</display-name>
+        <attribute attribute-id="jobType" />
+        <attribute attribute-id="lastAPICall" />
+      </attribute-group>
+    </group-definitions>
+  </custom-type> 
+</metadata>

@@ -1,0 +1,38 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/imageAndTextCommon.css');
+</isscript>
+
+<div class="row image-cta">
+    <div class="col-12 image-wrapper">
+        <a href="${pdict.link}"
+            aria-label="${Resource.msgf('pd.ITC.image.link', 'pageDesigner', null, pdict.alt ? pdict.alt : imageName)}">
+            <div class="image-component">
+                <picture>
+                    <source srcset="${pdict.image.src.tablet}" media="(min-width: 768px)" />
+                    <source srcset="${pdict.image.src.desktop}" media="(min-width: 1024px)" />
+                    <isset name="imageName" value="${Resource.msg('pd.ITC.image.alt', 'pageDesigner', null)}"
+                        scope="page" />
+                    
+                        <img class="ITC-image image-fluid common-image-component ${pdict.textOverlay1 ? 'common-image-filter' : ''}"
+                            src="${pdict.image.src.mobile}"
+                            style="--focal-point-x:${pdict.image.focalPointX}; --focal-point-y:${pdict.image.focalPointY}"
+                            alt="${pdict.alt ? pdict.alt : imageName}" title="${pdict.alt ? pdict.alt : imageName}" />
+                </picture>    
+            </div>
+            <div class="image-heading-container">
+                <div class="row image-text">
+                    <div class="col-12 text-sm-left text-center">
+                        <div class="text-overlay1"><isprint value="${pdict.textOverlay1 ? pdict.textOverlay1 : ''}" encoding="off" /></div>
+                        <div class="text-overlay2"><isprint value="${pdict.textOverlay2 ? pdict.textOverlay2 : ''}" encoding="off" /></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <div class="col-12 ITC-text-underneath image-text-heading">
+            <span>
+                <isprint value="${pdict.ITCText ? pdict.ITCText : ''}" encoding="off" />
+            </span>
+        </div>
+    </div>
+</div>

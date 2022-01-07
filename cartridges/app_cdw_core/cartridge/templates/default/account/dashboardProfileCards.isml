@@ -1,0 +1,41 @@
+
+<isset name="displayManageBuyersOption" value="false" scope="page" />
+<isif condition="${pdict.CurrentCustomer && pdict.CurrentCustomer.profile && pdict.CurrentCustomer.profile.custom && pdict.CurrentCustomer.profile.custom.b2bUser && 
+                   pdict.CurrentCustomer.profile.custom.b2bAdmin && pdict.CurrentCustomer.profile.custom.b2bAccountNumber !== ""}">
+    <isset name="displayManageBuyersOption" value="true" scope="page" />
+</isif>
+
+<div class="row justify-content-center">
+    <div class="col-sm-6">
+        <!---Profile--->
+        <isinclude template="account/profileCard"/>
+
+        <isif condition="${!pdict.account.isExternallyAuthenticated}">
+            <!---Password--->
+            <isinclude template="account/passwordCard"/>
+        </isif>
+
+        <!---Address Book--->
+        <isinclude template="account/addressBookCard"/>
+    </div>
+    <div class="col-sm-6">
+        <!---Order History--->
+        <iscomment> <isif condition="${pdict.account.orderHistory}"> </iscomment>
+        <isset name="order" value="${pdict.account.orderHistory}" scope="page"/>
+        <isinclude template="account/order/orderHistoryCard"/>
+        <iscomment> </isif> </iscomment>
+        <!---Payment--->
+        <isinclude template="account/paymentCard"/>
+
+        <isif condition="${pdict.account.wishlist}">
+            <!---Wishlist--->
+            <div class="wishlist-account-card" data-error-msg="${Resource.msg('wishlist.removefromwishlist.failure.msg','wishlist',null)}">
+                <isinclude template="account/wishlist/listCards"/>
+            </div>
+        </isif>
+        <!---B2B Manage Buyers---> 
+        <isif condition="${displayManageBuyersOption === 'true'}">
+            <isinclude template="account/b2b/manageBuyersCard"/>
+        </isif>
+    </div>
+</div>

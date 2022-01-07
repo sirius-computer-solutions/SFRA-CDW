@@ -1,0 +1,88 @@
+    <isif condition="${pdict.selectedStoreId}">
+        <div class="row cart-and-ipay">
+            
+                <div class="store-pickup">
+                    <isif condition="${pdict.selectedStoreId}">
+                        <button class="btn btn btn-outline-primary bopis-add-to-cart float-right btn-bopis-add-cart display-block bopis-styling"
+                    <iselse/>
+                        <button class="btn btn btn-outline-primary bopis-add-to-cart float-right btn-bopis-add-cart display-none bopis-styling"
+                    </isif>
+                            data-toggle="modal" data-target="#chooseBonusProductModal"
+                            data-pid="${pdict.currentProductId}"
+                            ${pdict.availabilityForSelectedStore == Resource.msg('store.product.inventory.not.available','storeLocator',null) ? "disabled" : ""}>
+                            ${pdict.availabilityForSelectedStore == Resource.msg('store.product.inventory.not.available','storeLocator',null) ? Resource.msgf('button.bopis.notavail.addtocart', 'common', null,pdict.storeName) : Resource.msgf('button.bopis.addtocart', 'common', null,pdict.storeName)} 
+                        </button>
+
+                </div>    
+        </div>
+
+
+        <div class="row">
+            <div class="store-pickup">
+            <isif condition="${pdict.selectedStoreId}">
+                    <button class="btn btn-inline-block btn-outline-primary btn-get-in-store-inventory display-none"
+            <iselse/>
+                    <button class="btn btn-inline-block btn-outline-primary btn-get-in-store-inventory"
+            </isif>    
+                        data-action-url="${pdict.pickUpInStore.actionUrl}"
+                        data-ats-action-url="${pdict.pickUpInStore.atsActionUrl}"
+                        data-modal-close-text=${Resource.msg('label.modal.close.text','instorePickup',null)}
+                        type="submit"
+                       <isif condition="${pdict.product}">
+                        ${!pdict.product.readyToOrder || !pdict.product.available || !pdict.product.availableForInStorePickup ? "disabled" : ""}>
+                       </isif>
+                    ${Resource.msg('button.availability.select.store','instorePickup',null)}
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="change-store-section pt-1 pl-3">
+                <button class="btn btn-inline-block btn-link change-store"
+                    data-action-url="${pdict.pickUpInStore.actionUrl}" type="submit">
+                    <em>${Resource.msg('button.change.store', 'instorePickup', null)}</em>
+                </button>
+            </div>  
+        </div>
+    </isif>
+
+        <div class="row">
+            <div class="col">
+            <isif condition="${pdict.selectedStoreId}">
+                <div class="card selected-store-with-inventory display-none">
+            <iselse/>
+                <div class="card selected-store-with-inventory display-none">
+            </isif>
+                    <div class="card-header pb-1">
+                        <h5 class="pull-left">${Resource.msg('msg.in.store.inventory.selected.store.title','instorePickup',null)}</h5>
+
+                        <button type="button" class="close pull-right">
+                            <span class="close" id="remove-store-selection">&times;</span>
+                        </button>
+                    </div>
+
+                    <!-- for placing the selected store details on PDP page-->
+                    <div class="card-body pt-2 pb-0">                       
+                        <isif condition="${pdict.selectedStoreId}">
+                            <isset name="store" value="${pdict.store}" scope="page" />
+                            <isinclude template="storeLocator/storeDetails" />
+                                <div class="store-inventory-status">
+                                <isif condition="${pdict.availabilityForSelectedStore === Resource.msg('store.product.inventory.available','storeLocator',null)}">
+                                    <span class="availability-msg-content">${Resource.msg('store.details.inventory.instock', 'storeLocator', null)}</span>
+                                <iselseif condition="${pdict.availabilityForSelectedStore === Resource.msg('store.product.inventory.not.available','storeLocator',null)}" />
+                                    <span class="non-availability-msg-content">${Resource.msg('store.details.inventory.oos', 'storeLocator', null)}</span>
+                                </isif>
+                            </div>                   
+                        </isif>
+                        
+                    </div>
+                        <div class="change-store-section pt-2 pl-3">
+                            <button class="btn btn-inline-block btn-outline-primary change-store"
+                                data-action-url="${pdict.pickUpInStore.actionUrl}" type="submit">
+                                ${Resource.msg('button.change.store', 'instorePickup', null)}
+                            </button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    

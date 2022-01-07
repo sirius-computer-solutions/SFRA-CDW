@@ -1,0 +1,52 @@
+<div class="product-line-item pr-0">
+    <div class="row">    
+        <div class="col-7 col-sm-8">  
+            <div class="line-item-header">
+                <isif condition=${miniCart}>
+                    <div class="line-item-name">
+                        <span>${nestedLineItem.productName}</span>
+                    </div>
+                </isif>
+            </div>
+            
+            <div class="item-image">
+                <img class="product-image"
+                    src="${nestedLineItem.images.small[0].url}"
+                    alt="${nestedLineItem.images.small[0].alt}"
+                    title="${nestedLineItem.images.small[0].title}"
+                    onerror="this.src='${URLUtils.staticURL('/images/img-na.png')}'">
+            </div>
+            <div class="item-attributes">
+                <isloop items="${nestedLineItem.variationAttributes}" var="attribute">
+                    <p class="line-item-attributes">${attribute.displayName}: ${attribute.displayValue}</p>
+                </isloop>
+
+                <div class="item-options">
+                    <isloop items="${nestedLineItem.options}" var="option">
+                        <div class="line-item-option">${option.displayName}</div>
+                    </isloop>
+                </div>
+            </div>
+        </div>
+      
+        <!--- line item total price --->
+        <div class="col-5 col-sm-4 line-item-total-price text-right">
+            <div class="item-total-${nestedLineItem.UUID} price">
+                <div class="pricing line-item-total-price-amount item-total-${nestedLineItem.UUID}">${nestedLineItem.priceTotal.price}</div>
+            </div>
+        </div>   
+    </div>
+
+    <div class="row">
+        <!--- quantity --->
+        <div class="col-4 line-item-quantity justify-content-center flex">
+            <p class="line-item-pricing-info">
+                <span class="line-item-total-text qty-card-quantity-label">
+                ${Resource.msg('field.selectqty','cart',null)}
+                </span>
+                <span class="pricing qty-card-quantity-count"><isprint value="${nestedLineItem.quantity}" formatter="##" /></span>
+            </p>
+        </div>
+    </div>    
+
+</div>

@@ -1,0 +1,33 @@
+
+<div>
+    <div class="utility-nav float-right text-right col-sm-6 col-md-9 col-10 clearfix">
+        <ul>
+            <li class="utility-row">
+                <ul>
+                    <li><a href="${URLUtils.https('Order-History')}">${Resource.msg('global.orderstatus', 'common', null)}</a></li>
+                    <li>
+                        <isinclude url="${URLUtils.url('Account-Header')}" />
+                    </li>
+                    <li><a href="/customerservice.html">${Resource.msg('global.customerservice', 'common', null)}</a></li>
+                </ul>
+            </li>  
+            <li class="utility-row last">
+                <ul>
+                    <li><a href="${URLUtils.https('Stores-Find','showMap','true','horizontalView','true','isForm','true','radius','250')}">${Resource.msg('global.locations', 'common', null)}</a></li>
+                    <li><a href="${URLUtils.https('CustomerService-RQLanding')}">${Resource.msg('global.requestquote', 'common', null)}</a></li>
+                    <li>
+                        <a href="${URLUtils.https('Wishlist-Show')}">
+                            ${Resource.msg('link.wishlist.myaccount', 'account', null)}
+                        </a>
+                    </li>
+                </ul>
+            </li>     
+               
+        </ul>
+
+            <isinclude
+                url="${URLUtils.url('Account-B2BAccountManagerHeader', 'contactAccountManagerModalID', contactAccountManagerModalID)}" />
+    </div>
+</div>
+           
+

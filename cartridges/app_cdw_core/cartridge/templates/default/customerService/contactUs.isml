@@ -1,0 +1,146 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/customerService.js');
+        assets.addCss('/css/contactUs.css');
+    </isscript>
+
+
+    <div class="hero slant-down contact-us-banner">
+        <h1 class="page-title text-center">${Resource.msg('title.contact.us.page', 'customerService', null)}</h1>
+        
+    </div>
+  
+  
+    
+    
+
+    <div class="container contact-us-landing-page">
+    <div class="header-details contact-us-details">
+        <isslot id="contact-us-m1" description="Contact Us Landing Page Content" context="global" />
+        <isslot id="contact-us-m2" description="Contact Us Landing Page Details Content" context="global" />
+    </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-6">
+                
+                <div class="card">
+                    <div class="card-body">
+                        <form action="${pdict.actionUrl}" class="contact-us" method="POST" name="contact-us">
+                            <!--- contact us first name, last name --->
+                            <isinclude template="customerService/customerServiceCommonForm" />
+                            
+                            <div class="row contact-us-phone">
+                                <div class="col">
+                                    <div class="form-group required">
+                                        <label class="form-control-label" for="contact-phone">
+                                            ${Resource.msg('label.input.contact-us-phone', 'customerService', null)}
+                                        </label>
+                                        <input type="tel" required class="form-control required" aria-describedby="form-contact-phone-error" id="contact-phone" name="contactPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12">
+                                        <div class="invalid-feedback" id="form-contact-phone-error"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="form-group custom-control custom-checkbox">
+                            <input
+                                type="checkbox" <isif condition="${customer.registered && customer.profile.custom.newsletterSignUp}">checked<iselseif condition="${!customer.registered}">checked<iselse></isif>
+                                class="custom-control-input" id="add-to-email-list" name="contactAddToEmail"
+                            >
+                            <label class="custom-control-label" for="add-to-email-list">
+                                <label class="form-control-label" for="contact-addToEmail">
+                                            ${Resource.msg('description.checkbox.emailsignup.profile', 'forms', null)}
+                                </label>
+                            </label>
+                        </div>                        
+                            <!--- contact us topic --->
+                            <div class="row contact-us-topic">
+                                <div class="col">
+                                    <div class="form-group required">
+                                        <label class="form-control-label" for="contact-topic">
+                                            ${Resource.msg('label.input.contact-us-topic', 'customerService', null)}
+                                        </label>
+                                        <select type="text" required class="form-control required" id="contact-topic" name="contactTopic">
+                                            <option value="" default>${Resource.msg('label.input.contact-topic-select-one', 'customerService', null)}</option>
+                                            <option value="${Resource.msg('label.input.contact-topic-order-status', 'customerService', null)}">
+                                                ${Resource.msg('label.input.contact-topic-order-status', 'customerService', null)}
+                                            </option>
+                                            <option value="${Resource.msg('label.input.contact-topic-change-cancel-order-status', 'customerService', null)}">
+                                                ${Resource.msg('label.input.contact-topic-change-cancel-order-status', 'customerService', null)}
+                                            </option>
+                                            <option value="${Resource.msg('label.input.contact-topic-remove-from-catalog', 'customerService', null)}">
+                                                ${Resource.msg('label.input.contact-topic-remove-from-catalog', 'customerService', null)}
+                                            </option>
+                                            <option value="${Resource.msg('label.input.contact-topic-remove-from-email', 'customerService', null)}">
+                                                ${Resource.msg('label.input.contact-topic-remove-from-email', 'customerService', null)}
+                                            </option>
+                                            <option value="${Resource.msg('label.input.contact-topic-website-error', 'customerService', null)}">
+                                                ${Resource.msg('label.input.contact-topic-website-error', 'customerService', null)}
+                                            </option>
+                                            <option value="${Resource.msg('label.input.contact-topic-product-inquiry', 'customerService', null)}">
+                                                ${Resource.msg('label.input.contact-topic-product-inquiry', 'customerService', null)}
+                                            </option>
+                                            <option value="${Resource.msg('label.input.contact-topic-returns', 'customerService', null)}">
+                                                ${Resource.msg('label.input.contact-topic-returns', 'customerService', null)}
+                                            </option>
+                                            <option value="${Resource.msg('label.input.contact-topic-other', 'customerService', null)}">
+                                                ${Resource.msg('label.input.contact-topic-other', 'customerService', null)}
+                                            </option>
+
+                                        </select>
+                                        <div class="invalid-feedback" id="form-contact-us-topic-error"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--- contact us comment --->
+                            <div class="row contact-us-comment">
+                                <div class="col">
+                                    <div class="form-group required">
+                                        <label class="form-control-label" for="contact-comment">
+                                            ${Resource.msg('label.input.contact-us-comment', 'customerService', null)}
+                                        </label>
+                                        <textarea class="form-control" required id="contact-comment" name="contactComment" rows="4" maxlength="250"></textarea>
+                                        <div class="invalid-feedback" id="form-contact-us-comment-error"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row contact-us-orderNumber">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="contact-orderNumber">
+                                            ${Resource.msg('label.input.contact-us-orderNumber', 'customerService', null)}
+                                        </label>
+                                        <input type="text" class="form-control" id="contact-orderNumber" name="contactOrderNumber">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row contact-us-customerNumber">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="contact-customerNumber">
+                                            ${Resource.msg('label.input.contact-us-customerNumber', 'customerService', null)}
+                                        </label>
+                                        <input type="tel" class="form-control" id="contact-customerNumber" name="contactCustomerNumber">
+                                    </div>
+                                </div>
+                            </div>                            
+
+                            <!--- contact us submit --->
+                            <div class="row contact-us-submnit">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <button class="btn btn-block btn-primary subscribe-contact-us btn-block" type="submit" name="submit" value="submit">
+                                            ${Resource.msg('label.input.contact-us-submit', 'customerService', null)}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

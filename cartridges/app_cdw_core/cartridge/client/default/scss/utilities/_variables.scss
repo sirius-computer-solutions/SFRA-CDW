@@ -1,0 +1,122 @@
+@import "bootstrap/scss/functions";
+
+// font-awesome font file locations in relation to target location of the css file.
+$fa-font-path: "../fonts" !default;
+
+// flag icons location in relation to target location of the css file.
+$flag-icon-css-path: "../fonts/flags/" !default;
+
+$white: #fff !default;
+$black: #000 !default;
+$acme-blue: #0779CA !default;
+$green: #208920 !default;
+$light-green: #32A800 !default;
+$yellow: #FBB03B !default; // always with a black background, headings, banner, ratings
+// primary is replaced by css variable --skin-primary-color-1
+$primary: #f6f6f6 !default; // links, primary button
+$acme-red: #E7131A !default; // headings, pricing
+$danger: $acme-red !default;
+$state-danger-text: $acme-red !default;
+$success: $green !default;
+$light-blue: #a9d1ef !default;  
+$hover-blue: #066AB1 !default;
+$navy: #002939 !default;
+
+// Consolidated values
+$grey1: #fbfbfb !default; // containers background
+$grey2: #ececec !default; // minimize buttons, background
+$grey3: #c9c9c9 !default; // containers stroke
+$grey4: #b3b3b3 !default;
+$grey5: #a6a6a6 !default; // containers stroke
+$grey6: #707372 !default; // Coyote Gray - subheadings, borders, espots
+$grey7: #4d4d4d !default; // text color
+$grey8: #222 !default; // body copy, headings, links
+$grey-transparent-1: rgba(0, 0, 0, 0.65) !default;
+$grey-transparent-2: rgba(0, 0, 0, 0.25) !default;
+
+$light-gray: #fbfbfb !default;
+$slightly-darker-gray: $grey4 !default;
+$dark-gray: $grey7 !default;
+$darker-gray: $grey8 !default;
+$horizontal-rule-grey: $grey3 !default;
+$product-number-grey: $grey3 !default;
+$horizontal-border-grey: $grey4 !default;
+$menu-link: $grey6 !default;
+$close-menu-bg: $grey2 !default;
+$link-color: $dark-gray !default;
+$hr-border-color: $grey3 !default;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 544px,
+    md: 769px,
+    lg: 992px,
+    xl: 1200px
+) !default;
+
+$container-max-widths: (
+    md: 740px,
+    lg: 980px,
+    xl: 1200px
+) !default;
+
+$border-radius: 0 !default;
+$border-radius-lg: $border-radius !default;
+$border-radius-sm: $border-radius !default;
+
+$state-danger-text: #fff !default;
+$alert-success-text: #fff !default;
+
+$base-font-family: "myriad-pro-n4", "myriad-pro", 'Helvetica Neue', 'Arial', sans-serif;
+
+
+// Font sizes
+$base-font-size: 1rem !default;
+$base16-14px: 0.875em !default;
+$xl-font-size: $base-font-size * 1.67 !default;
+$lg-font-size: $base-font-size * 1.5 !default;
+
+$heading-1-font-size: $base-font-size * 4 !default;
+$heading-2-font-size: $base-font-size * 3 !default;
+$heading-3-font-size: $xl-font-size !default;
+$heading-4-font-size: $lg-font-size !default;
+
+// Bootstrap overrides
+$body-bg: $grey1 !default;
+$card-cap-bg: $white !default;
+
+// Tabs
+$nav-tabs-border-width: 0 !default;
+$nav-tabs-border-radius: 0 !default;
+$nav-tabs-active-link-hover-bg: transparent !default;
+
+// breadcrumb
+$breadcrumb-bg: transparent !default;
+
+// Main Banner
+$banner-font: $base-font-family !default;
+$banner-heading-text-color: $white !default;
+$banner-sub-text-color: $white !default;
+//$banner-sub-text-font-size: $xl-font-size !default;
+
+// Image Text Component
+$image-text-font: $base-font-family !default;
+
+// Link Banner Component
+$shop-category-font: $base-font-family !default;
+$shop-category-font-size: $base-font-size !default;
+$shop-category-header-color: $grey1 !default;
+$shop-category-header-font-color-other: $white !default;
+//$shop-category-header-font-weight: $font-weight-heavier !default;
+$shop-category-label-a-color: $grey1 !default;
+$shop-category-label-a-color-other: $white !default;
+
+// table border
+$table-border-color: $grey2 !default;
+$font-family-sans-serif: "myriad-pro-n4", "myriad-pro", 'Helvetica Neue', 'Arial', sans-serif;
+$font-family-header: "myriad-pro-condensed-n7", "myriad-pro-condensed", 'Helvetica Neue', 'Arial', sans-serif;
+$svg-check: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23000' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3E%3C/svg%3E") !default;
+
+$facebook-icon-color: #385A94;
+$twitter-icon-color: #469BE4;
+$pinterest-icon-color: #BA3534;

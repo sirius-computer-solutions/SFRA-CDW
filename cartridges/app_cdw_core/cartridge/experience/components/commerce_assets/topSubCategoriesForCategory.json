@@ -1,0 +1,22 @@
+{
+    "name": "Top SubCategories for a Category",
+    "description": "Top SubCategories for a Category for Super Cat Landing and Brand Landing Pages.",
+    "group": "commerce_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "topSubCategoriesForCategory",
+            "name": "topSubCategoriesForCategory",
+            "description": "Specify the Category to pull the top 4 subcategories underneath.",
+            "attribute_definitions": [
+                {
+                    "id": "category",
+                    "name": "Category",
+                    "description": "Select Category to pull the top 4 subcategories underneath.",
+                    "type": "category",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

@@ -1,0 +1,335 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/main_array",
+  "definitions": {
+    "main_array": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/header_obj"
+          },
+          {
+            "$ref": "#/definitions/attributes_obj"
+          },
+          {
+            "$ref": "#/definitions/attributevalue_obj"
+          },
+          {
+            "$ref": "#/definitions/digitalassets_obj"
+          },
+          {
+            "$ref": "#/definitions/products_obj"
+          }
+        ]
+      }
+    },
+
+    "header_obj": {
+      "type": "object",
+      "required": ["header"],
+      "additionalProperties": false,
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/header"
+        }
+      }
+    },
+
+    "header": {
+      "title": "header",
+      "type": "object",
+      "required": ["version", "scope"],
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/definitions/array_string"
+        }
+      }
+    },
+
+    "array_string": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+
+    "attributes_obj": {
+      "type": "object",
+      "required": ["attributes"],
+      "additionalProperties": false,
+      "properties": {
+        "attributes": {
+          "type": "array",
+          "title": "attributes",
+          "items": {
+            "$ref": "#/definitions/attributes"
+          }
+        }
+      }
+    },
+
+    "attributes": {
+      "type": "object",
+      "required": [
+        "salsify:id",
+        "salsify:name",
+        "salsify:data_type",
+		"salsify:help_text",
+        "salsify:entity_types",
+        "salsify:is_facetable",
+        "salsify:attribute_group",
+        "salsify:manage_permissions",
+        "salsify:read_permissions",
+        "salsify:hidden_permissions",
+        "salsify:created_at",
+        "salsify:updated_at"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "salsify:id": {
+          "type": "string"
+        },
+        "salsify:name": {
+          "type": "string"
+        },
+        "salsify:data_type": {
+          "type": "string"
+        },
+		"salsify:help_text": {
+          "type": ["string","null"]
+        },
+        "salsify:entity_types": {
+          "$ref": "#/definitions/array_string"
+        },
+        "salsify:is_facetable": {
+          "type": "boolean"
+        },
+        "salsify:attribute_group": {
+          "type": "string"
+        },
+        "salsify:created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "salsify:updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "salsify:type": {
+          "type": "string"
+        },
+        "salsify:system_id": {
+          "type": "string"
+        },
+        "MapToAttribute": {
+          "type": "string"
+        },
+        "MapToWCE": {
+          "type": "string"
+        },
+        "ImportLevel": {
+          "type": "string"
+        }
+      }
+    },
+
+    "products_obj": {
+      "type": "object",
+      "required": ["products"],
+      "additionalProperties": false,
+      "properties": {
+        "products": {
+          "type": "array",
+          "title": "products",
+          "items": {
+            "$ref": "#/definitions/products"
+          }
+        }
+      }
+    },
+
+    "products": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "salsify:id": {
+          "type": "string"
+        },
+		"Import to WCE?": {
+          "type": "boolean"
+        },
+        "salsify:created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "salsify:updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "salsify:version": {
+          "type": "number"
+        },
+        "salsify:profile_asset_id": {
+          "type": "null"
+        },
+        "salsify:system_id": {
+          "type": "string"
+        },
+        "Search Keywords": {
+          "type": "string"
+        },
+        "Main Product Image": {
+          "type": "string"
+        },
+        "MFG Name": {
+          "type": "string"
+        },
+        "product_type": {
+          "type": "string"
+        },
+		"Defining Attribute": {
+          "type": "string"
+        },
+		"Product Name": {
+          "type": "string"
+        },
+		"UPC": {
+          "type": "string"
+        },
+        "Marketing Copy": {
+          "type": "string"
+        },
+        "MFG Part # (OEM)": {
+          "type": "string"
+        },
+        "Short Description": {
+          "type": "string"
+        },
+        "BUYABLE": {
+          "type": "boolean"
+        },
+        "MFG Part # Character Count": {
+          "type": "string"
+        },
+        "SEO Brand Name Display": {
+          "type": "string"
+        },
+        "  SEO URL Keyword Character Count": {
+          "type": "string"
+        },
+        "SEO URL Keywword": {
+          "type": "string"
+        },
+		"Acme Tools Salesforce Category": {
+          "type": "string",
+		  "optional": true
+        }
+      }
+    },
+
+    "attributevalue_obj": {
+      "type": "object",
+      "required": ["attribute_values"],
+      "additionalProperties": false,
+      "properties": {
+        "attribute_values": {
+          "type": "array",
+          "title": "attribute_values",
+          "items": {
+            "type": "object",
+            "required": [
+              "salsify:id",
+              "salsify:attribute_id",
+              "salsify:name",
+              "salsify:created_at",
+              "salsify:updated_at"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "salsify:id": {
+                "type": "string"
+              },
+              "salsify:attribute_id": {
+                "type": "string"
+              },
+              "salsify:name": {
+                "type": "string"
+              },
+              "salsify:created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "salsify:updated_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      }
+    },
+    "digitalassets_obj": {
+      "type": "object",
+      "required": ["digital_assets"],
+      "additionalProperties": false,
+      "properties": {
+        "digital_assets": {
+          "type": "array",
+          "title": "digital_assets",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "salsify:id": {
+                "type": "string"
+              },
+              "salsify:name": {
+                "type": "string"
+              },
+              "salsify:created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "salsify:updated_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "salsify:status": {
+                "type": "string"
+              },
+              "salsify:asset_height": {
+                "type": "number"
+              },
+              "salsify:asset_width": {
+                "type": "number"
+              },
+              "salsify:asset_resource_type": {
+                "type": "string"
+              },
+              "salsify:filename": {
+                "type": "string"
+              },
+              "salsify:bytes": {
+                "type": "number"
+              },
+              "salsify:format": {
+                "type": "string"
+              },
+              "salsify:etag": {
+                "type": "string"
+              },
+              "salsify:system_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

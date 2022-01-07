@@ -1,0 +1,20 @@
+<div class="line-item-name">
+    <a href="${URLUtils.url('Product-Show', 'pid', lineItem.id)}">
+        <isprint value="${lineItem.productName}" encoding="off" />
+    </a>
+    <p class="greytext">${Resource.msg('label.order.brand','confirmation', null)}<isprint value="${lineItem.productBrandName}" encoding="off" />&nbsp;&nbsp;&nbsp;${Resource.msg('label.order.model','confirmation', null)}<isprint value="${lineItem.manufacturerSKU}" encoding="off" /></p>
+</div>
+<iscomment>
+<isif condition="${!lineItem.isBonusProductLineItem}"/>
+    <div class="remove-line-item">
+        <button type="button" class="remove-btn remove-product btn btn-light" data-toggle="modal"
+                data-target="#removeProductModal" data-pid="${lineItem.id}"
+                data-name="${lineItem.productName}"
+                data-action="${pdict.actionUrls.removeProductLineItemUrl}"
+                data-uuid="${lineItem.UUID}"
+                aria-label="${Resource.msgf('text.remove.line.item','cart', null, lineItem.productName)}">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</isif>
+</iscomment>

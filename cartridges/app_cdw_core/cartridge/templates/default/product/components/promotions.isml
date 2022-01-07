@@ -1,0 +1,78 @@
+<isset name="promotionMessage" value="" scope="page" />
+<isif condition="${!empty(callingPage) && callingPage == 'productListing'}">
+        <isif condition="${product.promotions}">
+            <isset name="displayPromotionsCount" value="${0}" scope="page" />
+            <isloop items="${product.promotions}" var="promotion" status="promdet">
+                <isif condition="${displayPromotionsCount == 0 && !promotion.displayInPLPAsSeparate}">
+                     <isset name="promotionMessage" value="${promotion.calloutMsg}" scope="page" />
+                     <isset name="promotionURL" value="${URLUtils.url('Search-Show', 'pmid', promotion.id)}" scope="page" />
+                     <isset name="displayPromotionsCount" value="${displayPromotionsCount+1}" scope="page" />
+                <iselseif condition="${!promotion.displayInPLPAsSeparate}">
+                    <isset name="displayPromotionsCount" value="${displayPromotionsCount+1}" scope="page" />
+                </isif>
+            </isloop>
+
+            <div class="col-12 promotion-styling">
+                <isif condition="${displayPromotionsCount > 1}">
+                    <div class="d-flex align-items-baseline">
+                        <i class="fas fa-tag promotion-icon"></i>
+                        <a href="${pdict.urls.product}" data-bs-toggle="tooltip" data-bs-placement="right" title="${Resource.msg('more.promo.available','common',null)}">
+                                ${Resource.msg('more.promo.available','common',null)}
+                        </a>
+                    </div>
+                <iselse/>
+                    <isif condition="${!empty(promotionMessage)}">
+                        <div class="d-flex align-items-baseline">
+                            <i class="fas fa-tag promotion-icon"></i>
+                            <a href="${promotionURL}" data-bs-toggle="tooltip" data-bs-placement="right" title="${promotionMessage.toString().replace(/<[A-Za-z/]+>/g,"")}">
+                                    <isprint value="${promotionMessage}" encoding="off" />
+                            </a>
+                        </div>
+                    </isif>
+                </isif>
+            </div>
+        </isif>
+
+<iselse/>
+    <isif condition="${product.promotions}">
+        <isloop items="${product.promotions}" var="promotion" status="promdet">
+            <isif condition="${!promotion.displayInPLPAsSeparate}">
+                <div class="row">
+                    <div class="col-12 px-0">
+                        <button class="title callout btn text-left btn-block btn_link"
+                                data-toggle="modal" data-target="${"#"}promotion-details-${promdet.index}">
+                                    <div class="d-flex align-items-baseline">
+                                        <i class="fas fa-tag promotion-icon"></i><isprint value="${promotion.calloutMsg}" encoding="off" />
+                                    </div>
+                        </button>
+                    </div>
+                    
+                </div>
+                <div class="modal" tabindex="-1" role="dialog" id="promotion-details-${promdet.index}" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <strong><isprint value="${promotion.calloutMsg}" encoding="off" /></strong>
+                                <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <a href="${URLUtils.url('Search-Show', 'pmid', promotion.id)}" data-bs-toggle="tooltip"
+                                    data-bs-placement="right" title='<isif condition="${!empty(promotionMessage)}">${promotionMessage.toString().replace(/<[A-Za-z/]+>/g, "")}</isif>'>
+                                    <isprint value="${promotion.details}" encoding="off" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </isif>
+        </isloop>
+    </isif>
+</isif>
+
+
+
+
+
+

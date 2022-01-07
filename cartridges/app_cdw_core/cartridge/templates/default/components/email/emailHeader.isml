@@ -1,0 +1,3 @@
+            <a id="user-reg-email-banner" href="https://www.acmetools.com" title="Email Banner">
+                <img src="${URLUtils.httpsStatic('/images/email_template/emailLogo.png')}" alt="Email Banner">
+            </a> 

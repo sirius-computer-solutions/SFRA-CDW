@@ -1,0 +1,26 @@
+<div class="row cart-and-ipay">
+    <div class="col-sm-12">
+            <input type="hidden" class="add-to-cart-url" value="${pdict.addToCartUrl}"/>
+            <isset name="disableAddToCartPrice" value="${!product.price || !product.price.sales || !product.price.sales.value}" scope="page" />
+            <isif condition="${'availability' in product && 'messages' in product.availability &&  product.availability.messages.length>0 && (product.availability.messages[0].indexOf('Pre-Order')!=-1)}">
+                <button class="add-to-cart btn-pre-order  btn btn-primary"
+                    data-toggle="modal" data-target="#chooseBonusProductModal"
+                    data-pid="${product.id}"
+                    ${!product.readyToOrder || !product.available || disableAddToCartPrice|| bopisOnly || requestQuoteOnly  || !product.buyable  ? "disabled" : ""}
+                    id="pdpAddToCart"  >
+                    <isprint value="${Resource.msg('label.pre.order.add2cart', 'common', null)}" encoding="off" />  
+                </button>
+            <iselse/>
+                <button class="btn btn-primary add-to-cart "
+                    data-toggle="modal" data-target="#chooseBonusProductModal"
+                    data-pid="${product.id}"
+                    ${!product.readyToOrder || !product.available || disableAddToCartPrice || bopisOnly || requestQuoteOnly  || !product.buyable? "disabled" : ""}
+                    id="pdpAddToCart" >
+                    <isprint value="${Resource.msg('button.addtocart', 'common', null)}" encoding="off" />  
+                </button>
+                 
+            </isif>
+
+        <isinclude template="product/components/addToCartButtonExtension"/>
+    </div>
+</div>    

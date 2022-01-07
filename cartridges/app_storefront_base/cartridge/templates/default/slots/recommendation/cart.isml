@@ -1,0 +1,45 @@
+<isif condition="${slotcontent}">
+    <hr />
+
+    <div class="recommendations">
+
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center carousel-title">${Resource.msg('label.recommendations', 'cart', null)}</h3>
+            </div>
+        </div>
+        <isset name="end" value="${2}" scope="page" />
+
+        <div class="row">
+            <div class="col-12">
+                <div class="cart-recommendations-carousel">
+                    <div id="cartRecommendations" class="acme-carousel" data-column-count-by-width='{"0": 2,"451": 3,"651": 4,"992": 5,"1200": 6}' data-interval="false">
+                        <div class="acme-carousel-inner">
+                            <isloop items="${slotcontent.content}" var="product" begin="0" end="${end}">
+                                <isobject object="${product}" view="recommendation">
+                                    <div class='acme-carousel-item' >
+                                        <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'swatches', true, 'ratings', true, 'compare', false, 'showQuickView', false)}" />
+                                    </div>
+                                </isobject>
+                            </isloop>
+                        </div>
+                        <a class="carousel-control-prev" href="${"#"}cartRecommendations" role="button" data-slide="prev">
+                            <span class="fa icon-prev" aria-hidden="true"></span>
+                            <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+                        </a>
+                        <a class="carousel-control-next" href="${"#"}cartRecommendations" role="button" data-slide="next">
+                            <span class="fa icon-next" aria-hidden="true"></span>
+                            <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</isif>
+
+<script>
+$(function() {
+    $('.acme-carousel').trigger('acme-carousel:init')
+});
+</script>

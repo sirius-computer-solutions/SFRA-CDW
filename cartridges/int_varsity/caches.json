@@ -1,0 +1,12 @@
+{
+    "caches": [
+        {
+            "id": "zipCode",
+            "expireAfterSeconds": 10800
+        },
+        {
+            "id": "varsityResponse",
+            "expireAfterSeconds": 10800
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+<isset name="contentBanners" value="${pdict.contentBannerAssetIds}" scope="page" />
+<isif condition="${!empty(contentBanners)}">
+    <isset name="contentBannerClass" value="" scope="page"/>
+    <isset name="showBanners" value="${false}" scope="page" />
+
+
+    <isloop alias="contentBanner" items="${contentBanners}" status="loopstatus">
+        <isset name="tempContentBanner" value="${dw.content.ContentMgr.getContent(contentBanner)}" scope="page" />
+        <isif condition="${tempContentBanner && tempContentBanner.isOnline()}">
+            <isset name="showcontentBanners" value="${true}" scope="page" />
+            <isbreak/>
+        </isif>
+    </isloop>
+
+    <isif condition="${showcontentBanners}">
+        <section id="content-banner">
+            <div class="content-banner__container">
+                <isif condition="${contentBanners.length > 2}">
+                    <isset name="contentBannerClass" value="content-banner--show-three" scope="page"/>
+                </isif>
+                <isloop alias="cBanner" items="${contentBanners}" status="loopstatus" end="${2}">
+                    <isset name="banner" value="${dw.content.ContentMgr.getContent(cBanner)}" scope="page" />
+                    <isif condition="${!empty(banner) && banner.isOnline()}">
+                        <div class="content-banner ${contentBannerClass}" id="${banner.ID}">
+                            <isif condition="${!empty(banner.custom.body)}">
+                                <div class="content-banner__description"><isprint value="${banner.custom.body}" encoding="off"></div>
+                            </isif>
+                        </div>
+                    </isif>
+                </isloop>
+            </div>
+        </section>
+    </isif>
+</isif>

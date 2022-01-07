@@ -1,0 +1,866 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with Altova MapForce 2021r3 -->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="26">
+	<settings>
+		<deployment path="/public/Acme/attribute-definitions-merge-metadata.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
+	</settings>
+	<resources/>
+	<component name="defaultmap" uid="1" editable="1" blackbox="0">
+		<properties SelectedLanguage="builtin"/>
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="15" kind="2">
+					<targets>
+						<datapoint pos="0" key="58"/>
+					</targets>
+					<view ltx="732" lty="348" rbx="814" rby="365"/>
+					<data>
+						<constant value="Product" datatype="string"/>
+					</data>
+				</component>
+				<component name="type-extension" library="core" uid="6" kind="3">
+					<sources>
+						<datapoint pos="0" key="53"/>
+						<datapoint pos="1" key="55"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="57"/>
+						<datapoint/>
+					</targets>
+					<view ltx="597" lty="62" rbx="710" rby="116"/>
+				</component>
+				<component name="is-product-type" library="user" uid="17" kind="19" visible="0" blackbox="0">
+					<view ltx="500" lty="141" rbx="601" rby="158"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="input" inpkey="67" componentid="14"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="68" componentid="9"/>
+						</root>
+					</data>
+				</component>
+				<component name="format-filename" library="user" uid="31" kind="19" visible="0" blackbox="0">
+					<view ltx="1404" lty="125" rbx="1505" rby="142"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="input" inpkey="107" componentid="24"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="108" componentid="25"/>
+						</root>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="33" kind="2">
+					<targets>
+						<datapoint pos="0" key="112"/>
+					</targets>
+					<view ltx="1033" lty="163" rbx="1073" rby="180"/>
+					<data>
+						<constant value="1" datatype="decimal"/>
+					</data>
+				</component>
+				<component name="item-at" library="core" uid="32" kind="5">
+					<sources>
+						<datapoint pos="0" key="111"/>
+						<datapoint pos="1" key="109"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="110"/>
+					</targets>
+					<view ltx="1162" lty="182" rbx="1272" rby="236"/>
+				</component>
+				<component name="item-at" library="core" uid="34" kind="5">
+					<sources>
+						<datapoint pos="0" key="113"/>
+						<datapoint pos="1" key="114"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="115"/>
+					</targets>
+					<view ltx="1162" lty="241" rbx="1272" rby="295"/>
+				</component>
+				<component name="item-at" library="core" uid="35" kind="5">
+					<sources>
+						<datapoint pos="0" key="116"/>
+						<datapoint pos="1" key="117"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="118"/>
+					</targets>
+					<view ltx="1162" lty="302" rbx="1272" rby="356"/>
+				</component>
+				<component name="item-at" library="core" uid="36" kind="5">
+					<sources>
+						<datapoint pos="0" key="119"/>
+						<datapoint pos="1" key="120"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="121"/>
+					</targets>
+					<view ltx="1162" lty="375" rbx="1272" rby="429"/>
+				</component>
+				<component name="item-at" library="core" uid="37" kind="5">
+					<sources>
+						<datapoint pos="0" key="122"/>
+						<datapoint pos="1" key="123"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="124"/>
+					</targets>
+					<view ltx="1162" lty="447" rbx="1272" rby="501"/>
+				</component>
+				<component name="item-at" library="core" uid="38" kind="5">
+					<sources>
+						<datapoint pos="0" key="125"/>
+						<datapoint pos="1" key="126"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="127"/>
+					</targets>
+					<view ltx="1162" lty="513" rbx="1272" rby="567"/>
+				</component>
+				<component name="item-at" library="core" uid="39" kind="5">
+					<sources>
+						<datapoint pos="0" key="128"/>
+						<datapoint pos="1" key="129"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="130"/>
+					</targets>
+					<view ltx="1162" lty="584" rbx="1272" rby="638"/>
+				</component>
+				<component name="item-at" library="core" uid="40" kind="5">
+					<sources>
+						<datapoint pos="0" key="131"/>
+						<datapoint pos="1" key="132"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="133"/>
+					</targets>
+					<view ltx="1162" lty="663" rbx="1272" rby="717"/>
+				</component>
+				<component name="item-at" library="core" uid="41" kind="5">
+					<sources>
+						<datapoint pos="0" key="134"/>
+						<datapoint pos="1" key="135"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="136"/>
+					</targets>
+					<view ltx="1162" lty="741" rbx="1272" rby="795"/>
+				</component>
+				<component name="group-by" library="core" uid="19" kind="5">
+					<sources>
+						<datapoint pos="0" key="80"/>
+						<datapoint pos="1" key="81"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="78"/>
+						<datapoint pos="1" key="79"/>
+					</targets>
+					<view ltx="1133" lty="62" rbx="1251" rby="116"/>
+				</component>
+				<component name="group-by" library="core" uid="42" kind="5">
+					<sources>
+						<datapoint pos="0" key="138"/>
+						<datapoint pos="1" key="137"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="140"/>
+						<datapoint pos="1" key="139"/>
+					</targets>
+					<view ltx="1175" lty="865" rbx="1293" rby="919"/>
+				</component>
+				<component name="constant" library="core" uid="20" kind="2">
+					<targets>
+						<datapoint pos="0" key="106"/>
+					</targets>
+					<view ltx="1317" lty="62" rbx="1479" rby="79"/>
+					<data>
+						<constant value="new-full-product-metadata_" datatype="string"/>
+					</data>
+				</component>
+				<component name="metadata" library="xml" uid="4" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" PassThrough="1"/>
+					<view ltx="799" lty="264" rbx="1023" rby="929"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.demandware.com/xml/impex/metadata/2006-10-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="2" expanded="1">
+								<entry name="document" ns="2" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="metadata" ns="1" expanded="1">
+										<entry name="type-extension" ns="1" inpkey="59" expanded="1">
+											<entry name="type-id" type="attribute" inpkey="60" outkey="92"/>
+											<entry name="system-attribute-definitions" ns="1" inpkey="61" outkey="93"/>
+											<entry name="custom-attribute-definitions" ns="1">
+												<entry name="attribute-definition" ns="1" inpkey="62" outkey="94" expanded="1">
+													<entry name="attribute-id" type="attribute" outkey="95"/>
+													<entry name="display-name" ns="1" outkey="96"/>
+													<entry name="type" ns="1" outkey="97"/>
+													<entry name="localizable-flag" ns="1" outkey="98"/>
+													<entry name="site-specific-flag" ns="1" outkey="99"/>
+													<entry name="mandatory-flag" ns="1" outkey="100"/>
+													<entry name="visible-flag" ns="1" outkey="101"/>
+													<entry name="externally-managed-flag" ns="1" outkey="102"/>
+													<entry name="order-required-flag" ns="1" outkey="103"/>
+													<entry name="externally-defined-flag" ns="1" outkey="104"/>
+												</entry>
+												<entry name="attribute-definition" ns="1" inpkey="63" clone="1"/>
+											</entry>
+											<entry name="group-definitions" ns="1" expanded="1">
+												<entry name="attribute-group" ns="1" inpkey="64" outkey="144" expanded="1">
+													<entry name="group-id" type="attribute" outkey="145"/>
+													<entry name="attribute" ns="1" outkey="146" expanded="1"/>
+												</entry>
+												<entry name="attribute-group" ns="1" inpkey="65" clone="1"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\metadata.xsd" instanceroot="{http://www.demandware.com/xml/impex/metadata/2006-10-31}metadata" outputinstance="intermediate-metadata-file.xml"/>
+					</data>
+				</component>
+				<component name="metadata" library="xml" uid="18" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1" DynamicFilenames="1"/>
+					<view ltx="1404" lty="241" rbx="1762" rby="964"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.demandware.com/xml/impex/metadata/2006-10-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="2" inpkey="105" expanded="1">
+								<entry name="document" ns="2" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="metadata" ns="1" expanded="1">
+										<entry name="type-extension" ns="1" expanded="1">
+											<entry name="type-id" type="attribute" inpkey="76"/>
+											<entry name="system-attribute-definitions" ns="1" inpkey="72"/>
+											<entry name="custom-attribute-definitions" ns="1">
+												<entry name="attribute-definition" ns="1" inpkey="73" expanded="1">
+													<entry name="attribute-id" type="attribute" inpkey="82"/>
+													<entry name="display-name" ns="1" inpkey="83"/>
+													<entry name="type" ns="1" inpkey="84"/>
+													<entry name="localizable-flag" ns="1" inpkey="85"/>
+													<entry name="site-specific-flag" ns="1" inpkey="86"/>
+													<entry name="mandatory-flag" ns="1" inpkey="87"/>
+													<entry name="visible-flag" ns="1" inpkey="88"/>
+													<entry name="externally-managed-flag" ns="1" inpkey="89"/>
+													<entry name="order-required-flag" ns="1" inpkey="90"/>
+													<entry name="externally-defined-flag" ns="1" inpkey="91"/>
+												</entry>
+											</entry>
+											<entry name="group-definitions" ns="1" expanded="1">
+												<entry name="attribute-group" ns="1" inpkey="75" expanded="1">
+													<entry name="group-id" type="attribute" inpkey="141"/>
+													<entry name="display-name" ns="1" inpkey="142"/>
+													<entry name="attribute" ns="1" inpkey="143" expanded="1"/>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\metadata.xsd" instanceroot="{http://www.demandware.com/xml/impex/metadata/2006-10-31}metadata" outputinstance="metadata.xml"/>
+					</data>
+				</component>
+				<component name="metadata" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" DynamicFilenames="1"/>
+					<view ltx="143" lty="62" rbx="421" rby="268"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.demandware.com/xml/impex/metadata/2006-10-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="2" inpkey="149" expanded="1">
+								<entry name="document" ns="2" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="metadata" ns="1" expanded="1">
+										<entry name="type-extension" ns="1" outkey="1" expanded="1">
+											<entry name="type-id" type="attribute" outkey="2"/>
+											<entry name="system-attribute-definitions" ns="1" outkey="69"/>
+											<entry name="custom-attribute-definitions" ns="1" expanded="1">
+												<entry name="attribute-definition" ns="1" outkey="22"/>
+											</entry>
+											<entry name="group-definitions" ns="1" expanded="1">
+												<entry name="attribute-group" ns="1" outkey="70"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\metadata.xsd" instanceroot="{http://www.demandware.com/xml/impex/metadata/2006-10-31}metadata" inputinstance="attributes-merge\Product-export-metaData.xml"/>
+					</data>
+				</component>
+				<component name="metadata" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" DynamicFilenames="1"/>
+					<view ltx="143" lty="358" rbx="421" rby="564"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.demandware.com/xml/impex/metadata/2006-10-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" inpkey="150" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="metadata" expanded="1">
+										<entry name="type-extension" expanded="1">
+											<entry name="custom-attribute-definitions" expanded="1">
+												<entry name="attribute-definition" outkey="5"/>
+											</entry>
+											<entry name="group-definitions" expanded="1">
+												<entry name="attribute-group" outkey="66"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\metadata.xsd" instanceroot="{http://www.demandware.com/xml/impex/metadata/2006-10-31}metadata" inputinstance="..\..\..\..\Users\admin\Desktop\QA-load-20July\product-variation-feed\AttributeDefinition_20072021192848.xml"/>
+					</data>
+				</component>
+				<component name="attributeExportFull" library="core" uid="43" kind="6">
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="148"/>
+					</targets>
+					<view ltx="-71" lty="205" rbx="83" rby="243"/>
+					<data>
+						<input datatype="string"/>
+						<parameter usageKind="input" name="attributeExportFull"/>
+					</data>
+				</component>
+				<component name="inputFile" library="core" uid="44" kind="6">
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="147"/>
+					</targets>
+					<view ltx="-71" lty="492" rbx="32" rby="530"/>
+					<data>
+						<input datatype="string"/>
+						<parameter usageKind="input" name="inputFile"/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges>
+					<edge edgekey="61">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="62">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="63">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="64">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="65">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="72">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+					<edge edgekey="143">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+				</edges>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="53"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="68">
+						<edges>
+							<edge vertexkey="55"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="57">
+						<edges>
+							<edge vertexkey="59"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="58">
+						<edges>
+							<edge vertexkey="60"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="69">
+						<edges>
+							<edge vertexkey="61" edgekey="61"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="22">
+						<edges>
+							<edge vertexkey="62" edgekey="62"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="63" edgekey="63"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="70">
+						<edges>
+							<edge vertexkey="64" edgekey="64"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="66">
+						<edges>
+							<edge vertexkey="65" edgekey="65"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="67"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="93">
+						<edges>
+							<edge vertexkey="72" edgekey="72"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="78">
+						<edges>
+							<edge vertexkey="73"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="140">
+						<edges>
+							<edge vertexkey="75"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="92">
+						<edges>
+							<edge vertexkey="76"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="94">
+						<edges>
+							<edge vertexkey="80"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="95">
+						<edges>
+							<edge vertexkey="81"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="79">
+						<edges>
+							<edge vertexkey="82"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="110">
+						<edges>
+							<edge vertexkey="83"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="115">
+						<edges>
+							<edge vertexkey="84"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="118">
+						<edges>
+							<edge vertexkey="85"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="121">
+						<edges>
+							<edge vertexkey="86"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="124">
+						<edges>
+							<edge vertexkey="87"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="127">
+						<edges>
+							<edge vertexkey="88"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="130">
+						<edges>
+							<edge vertexkey="89"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="133">
+						<edges>
+							<edge vertexkey="90"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="136">
+						<edges>
+							<edge vertexkey="91"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="108">
+						<edges>
+							<edge vertexkey="105"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="106">
+						<edges>
+							<edge vertexkey="107"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="112">
+						<edges>
+							<edge vertexkey="109"/>
+							<edge vertexkey="114"/>
+							<edge vertexkey="117"/>
+							<edge vertexkey="120"/>
+							<edge vertexkey="123"/>
+							<edge vertexkey="126"/>
+							<edge vertexkey="129"/>
+							<edge vertexkey="132"/>
+							<edge vertexkey="135"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="96">
+						<edges>
+							<edge vertexkey="111"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="97">
+						<edges>
+							<edge vertexkey="113"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="98">
+						<edges>
+							<edge vertexkey="116"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="99">
+						<edges>
+							<edge vertexkey="119"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="100">
+						<edges>
+							<edge vertexkey="122"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="101">
+						<edges>
+							<edge vertexkey="125"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="102">
+						<edges>
+							<edge vertexkey="128"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="103">
+						<edges>
+							<edge vertexkey="131"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="104">
+						<edges>
+							<edge vertexkey="134"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="145">
+						<edges>
+							<edge vertexkey="137"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="144">
+						<edges>
+							<edge vertexkey="138"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="139">
+						<edges>
+							<edge vertexkey="141"/>
+							<edge vertexkey="142"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="146">
+						<edges>
+							<edge vertexkey="143" edgekey="143"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="148">
+						<edges>
+							<edge vertexkey="149"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="147">
+						<edges>
+							<edge vertexkey="150"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+	<component name="is-product-type" library="user" uid="7" inline="1" editable="1" blackbox="0">
+		<structure>
+			<children>
+				<component name="result" library="core" uid="9" kind="7">
+					<sources>
+						<datapoint pos="0" key="10"/>
+					</sources>
+					<view ltx="1087" lty="252" rbx="1144" rby="290"/>
+					<data>
+						<output datatype="string"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="string-compare-ignore-case" library="lang" uid="11" kind="5">
+					<sources>
+						<datapoint pos="0" key="2"/>
+						<datapoint pos="1" key="8"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="488" lty="273" rbx="657" rby="327"/>
+				</component>
+				<component name="constant" library="core" uid="12" kind="2">
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="668" lty="382" rbx="708" rby="399"/>
+					<data>
+						<constant value="0" datatype="decimal"/>
+					</data>
+				</component>
+				<component name="equal" library="core" uid="13" kind="5">
+					<sources>
+						<datapoint pos="0" key="6"/>
+						<datapoint pos="1" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view ltx="726" lty="273" rbx="782" rby="327"/>
+				</component>
+				<component name="input" library="core" uid="14" kind="6">
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="252" lty="273" rbx="337" rby="311"/>
+					<data>
+						<input datatype="string"/>
+						<parameter usageKind="input" name="input"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="10" kind="2">
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view ltx="347" lty="340" rbx="429" rby="357"/>
+					<data>
+						<constant value="Product" datatype="string"/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="2"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="4"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="6"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="8"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="10"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+	<component name="format-filename" library="user" uid="21" inline="1" editable="1" blackbox="0">
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="23" kind="2">
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="451" lty="502" rbx="513" rby="519"/>
+					<data>
+						<constant value=".xml" datatype="string"/>
+					</data>
+				</component>
+				<component name="input" library="core" uid="24" kind="6">
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view ltx="451" lty="336" rbx="536" rby="374"/>
+					<data>
+						<input datatype="string"/>
+						<parameter usageKind="input" name="input"/>
+					</data>
+				</component>
+				<component name="result" library="core" uid="25" kind="7">
+					<sources>
+						<datapoint pos="0" key="12"/>
+					</sources>
+					<view ltx="1049" lty="326" rbx="1106" rby="364"/>
+					<data>
+						<output datatype="string"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="format-dateTime" library="core" uid="26" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+						<datapoint pos="1" key="2"/>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view ltx="496" lty="146" rbx="608" rby="216"/>
+				</component>
+				<component name="constant" library="core" uid="27" kind="2">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="289" lty="212" rbx="434" rby="229"/>
+					<data>
+						<constant value="[D,2][M,2][Y][H,2][m][s]" datatype="string"/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="28" kind="5" growable="1" growablebasename="value">
+					<sources>
+						<datapoint pos="0" key="10"/>
+						<datapoint pos="1" key="8"/>
+						<datapoint pos="2" key="6"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="11"/>
+					</targets>
+					<view ltx="632" lty="373" rbx="724" rby="446"/>
+				</component>
+				<component name="now" library="lang" uid="29" kind="5">
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="289" lty="132" rbx="339" rby="170"/>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="2"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="4"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="6"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="8"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="10"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="12"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

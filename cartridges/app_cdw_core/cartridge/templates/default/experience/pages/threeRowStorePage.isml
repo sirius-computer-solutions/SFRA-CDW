@@ -1,0 +1,13 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+
+<isdecorate template="common/layout/pdStorePage">
+    <div class="storepage" id="${pdict.page.ID}">
+            <div class="hero-container">
+                <isprint value="${pdict.regions.top.render()}" encoding="off" />
+            </div>
+        <div class="container">        
+                <isprint value="${pdict.regions.main.render()}" encoding="off" />
+                <isprint value="${pdict.regions.bottom.render()}" encoding="off" />
+        </div>             
+    </div>
+</isdecorate>

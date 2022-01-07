@@ -1,0 +1,11 @@
+ <style>
+    body { 
+        background: url( ${pdict.image.src.desktop});
+        background-color: black;
+        background-size: 100%;
+        background-position: top;
+    }
+    div[role="main"] .container {
+        background: #fff;
+    }
+</style>

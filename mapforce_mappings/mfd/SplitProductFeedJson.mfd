@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with Altova MapForce 2021r3 -->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="26">
+	<settings>
+		<deployment path="/public/SplitProductFeedJson.mapping" server="localhost" port="8082" user="/root" toolversion="2021r3"/>
+	</settings>
+	<resources/>
+	<component name="defaultmap" uid="1" editable="1" blackbox="0">
+		<properties SelectedLanguage="builtin"/>
+		<structure>
+			<children>
+				<component name="acmejson_2" library="json" uid="2" kind="31">
+					<properties XSLTTargetEncoding="UTF-8" DynamicFilenames="1"/>
+					<view ltx="127" lty="121" rbx="353" rby="321"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" inpkey="131" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="root" expanded="1">
+										<entry name="array" expanded="1">
+											<entry name="item" type="json-item" expanded="1">
+												<entry name="object" expanded="1">
+													<entry name="anyOf1" type="json-subtype" outkey="35">
+														<entry name="attributes" type="json-property" expanded="1">
+															<entry name="array" outkey="36">
+																<entry name="item" type="json-item" expanded="1">
+																	<entry name="object" outkey="37">
+																		<entry name="salsify:id" type="json-property" expanded="1">
+																			<entry name="string" outkey="38"/>
+																		</entry>
+																		<entry name="salsify:name" type="json-property" expanded="1">
+																			<entry name="string" outkey="39"/>
+																		</entry>
+																		<entry name="salsify:data_type" type="json-property" expanded="1">
+																			<entry name="string" outkey="40"/>
+																		</entry>
+																		<entry name="salsify:help_text" type="json-property" expanded="1">
+																			<entry name="string" outkey="41"/>
+																			<entry name="null" outkey="42"/>
+																		</entry>
+																		<entry name="salsify:entity_types" type="json-property" expanded="1">
+																			<entry name="array" outkey="43">
+																				<entry name="item" type="json-item" expanded="1">
+																					<entry name="string" outkey="44"/>
+																				</entry>
+																			</entry>
+																		</entry>
+																		<entry name="salsify:is_facetable" type="json-property" expanded="1">
+																			<entry name="boolean" outkey="45"/>
+																		</entry>
+																		<entry name="salsify:attribute_group" type="json-property" expanded="1">
+																			<entry name="string" outkey="46"/>
+																		</entry>
+																		<entry name="salsify:created_at" type="json-property" expanded="1">
+																			<entry name="string" outkey="47"/>
+																		</entry>
+																		<entry name="salsify:updated_at" type="json-property" expanded="1">
+																			<entry name="string" outkey="48"/>
+																		</entry>
+																		<entry name="salsify:type" type="json-property" expanded="1">
+																			<entry name="string" outkey="49"/>
+																		</entry>
+																		<entry name="salsify:system_id" type="json-property" expanded="1">
+																			<entry name="string" outkey="50"/>
+																		</entry>
+																		<entry name="MapToAttribute" type="json-property" expanded="1">
+																			<entry name="string" outkey="51"/>
+																		</entry>
+																		<entry name="MapToWCE" type="json-property" expanded="1">
+																			<entry name="string" outkey="52"/>
+																		</entry>
+																		<entry name="ImportLevel" type="json-property" expanded="1">
+																			<entry name="string" outkey="53"/>
+																		</entry>
+																		<entry name="salsify:manage_permissions" type="json-property" expanded="1"/>
+																		<entry name="salsify:read_permissions" type="json-property" expanded="1"/>
+																		<entry name="salsify:hidden_permissions" type="json-property" expanded="1"/>
+																		<entry name="property" ns="1" type="json-property" outkey="54">
+																			<entry name="name" ns="1" type="json-propertyname" outkey="55"/>
+																			<entry name="string" outkey="56"/>
+																			<entry name="number" outkey="57"/>
+																			<entry name="boolean" outkey="58"/>
+																			<entry name="null" outkey="59"/>
+																			<entry name="array" outkey="60">
+																				<entry name="item" type="json-item" outkey="61">
+																					<entry name="string" outkey="62"/>
+																					<entry name="number" outkey="63"/>
+																					<entry name="boolean" outkey="64"/>
+																					<entry name="null" outkey="65"/>
+																					<entry name="array" outkey="66"/>
+																					<entry name="object" outkey="67"/>
+																				</entry>
+																			</entry>
+																			<entry name="object" outkey="68"/>
+																		</entry>
+																	</entry>
+																</entry>
+															</entry>
+														</entry>
+													</entry>
+													<entry name="anyOf3" type="json-subtype" outkey="69">
+														<entry name="digital_assets" type="json-property" expanded="1">
+															<entry name="array" outkey="70">
+																<entry name="item" type="json-item" expanded="1">
+																	<entry name="object" outkey="71">
+																		<entry name="salsify:id" type="json-property" expanded="1">
+																			<entry name="string" outkey="72"/>
+																		</entry>
+																		<entry name="salsify:name" type="json-property" expanded="1">
+																			<entry name="string" outkey="73"/>
+																		</entry>
+																		<entry name="salsify:created_at" type="json-property" expanded="1">
+																			<entry name="string" outkey="74"/>
+																		</entry>
+																		<entry name="salsify:updated_at" type="json-property" expanded="1">
+																			<entry name="string" outkey="75"/>
+																		</entry>
+																		<entry name="salsify:status" type="json-property" expanded="1">
+																			<entry name="string" outkey="76"/>
+																		</entry>
+																		<entry name="salsify:asset_height" type="json-property" expanded="1">
+																			<entry name="number" outkey="77"/>
+																		</entry>
+																		<entry name="salsify:asset_width" type="json-property" expanded="1">
+																			<entry name="number" outkey="78"/>
+																		</entry>
+																		<entry name="salsify:asset_resource_type" type="json-property" expanded="1">
+																			<entry name="string" outkey="79"/>
+																		</entry>
+																		<entry name="salsify:filename" type="json-property" expanded="1">
+																			<entry name="string" outkey="80"/>
+																		</entry>
+																		<entry name="salsify:bytes" type="json-property" expanded="1">
+																			<entry name="number" outkey="81"/>
+																		</entry>
+																		<entry name="salsify:format" type="json-property" expanded="1">
+																			<entry name="string" outkey="82"/>
+																		</entry>
+																		<entry name="salsify:etag" type="json-property" expanded="1">
+																			<entry name="string" outkey="83"/>
+																		</entry>
+																		<entry name="salsify:system_id" type="json-property" expanded="1">
+																			<entry name="string" outkey="84"/>
+																		</entry>
+																		<entry name="property" ns="1" type="json-property" outkey="85">
+																			<entry name="name" ns="1" type="json-propertyname" outkey="86"/>
+																			<entry name="string" outkey="87"/>
+																			<entry name="number" outkey="88"/>
+																			<entry name="boolean" outkey="89"/>
+																			<entry name="null" outkey="90"/>
+																			<entry name="array" outkey="91">
+																				<entry name="item" type="json-item" outkey="92">
+																					<entry name="string" outkey="93"/>
+																					<entry name="number" outkey="94"/>
+																					<entry name="boolean" outkey="95"/>
+																					<entry name="null" outkey="96"/>
+																					<entry name="array" outkey="97"/>
+																					<entry name="object" outkey="98"/>
+																				</entry>
+																			</entry>
+																			<entry name="object" outkey="99"/>
+																		</entry>
+																	</entry>
+																</entry>
+															</entry>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<json schema="schema\acmejson_2.schema.json" inputinstance="..\..\FullExport-Asof8-6-21\product-feed-8.json" outputinstance="..\..\FullExport-Asof8-6-21\product-feed-8.json"/>
+					</data>
+				</component>
+				<component name="attributes" library="json" uid="3" kind="31">
+					<properties XSLTTargetEncoding="UTF-8" PrettyPrint="0"/>
+					<view ltx="619" lty="34" rbx="817" rby="234"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="root" expanded="1">
+										<entry name="array" expanded="1">
+											<entry name="item" type="json-item" expanded="1">
+												<entry name="object" expanded="1">
+													<entry name="anyOf0" type="json-subtype" inpkey="1">
+														<entry name="attributes" type="json-property" expanded="1">
+															<entry name="array" inpkey="2">
+																<entry name="item" type="json-item" expanded="1">
+																	<entry name="object" inpkey="3">
+																		<entry name="salsify:id" type="json-property" expanded="1">
+																			<entry name="string" inpkey="4"/>
+																		</entry>
+																		<entry name="salsify:name" type="json-property" expanded="1">
+																			<entry name="string" inpkey="5"/>
+																		</entry>
+																		<entry name="salsify:data_type" type="json-property" expanded="1">
+																			<entry name="string" inpkey="6"/>
+																		</entry>
+																		<entry name="salsify:help_text" type="json-property" expanded="1">
+																			<entry name="string" inpkey="7"/>
+																			<entry name="null" inpkey="8"/>
+																		</entry>
+																		<entry name="salsify:entity_types" type="json-property" expanded="1">
+																			<entry name="array" inpkey="9">
+																				<entry name="item" type="json-item" expanded="1">
+																					<entry name="string" inpkey="10"/>
+																				</entry>
+																			</entry>
+																		</entry>
+																		<entry name="salsify:is_facetable" type="json-property" expanded="1">
+																			<entry name="boolean" inpkey="11"/>
+																		</entry>
+																		<entry name="salsify:attribute_group" type="json-property" expanded="1">
+																			<entry name="string" inpkey="12"/>
+																		</entry>
+																		<entry name="salsify:created_at" type="json-property" expanded="1">
+																			<entry name="string" inpkey="13"/>
+																		</entry>
+																		<entry name="salsify:updated_at" type="json-property" expanded="1">
+																			<entry name="string" inpkey="14"/>
+																		</entry>
+																		<entry name="salsify:type" type="json-property" expanded="1">
+																			<entry name="string" inpkey="15"/>
+																		</entry>
+																		<entry name="salsify:system_id" type="json-property" expanded="1">
+																			<entry name="string" inpkey="16"/>
+																		</entry>
+																		<entry name="MapToAttribute" type="json-property" expanded="1">
+																			<entry name="string" inpkey="17"/>
+																		</entry>
+																		<entry name="MapToWCE" type="json-property" expanded="1">
+																			<entry name="string" inpkey="18"/>
+																		</entry>
+																		<entry name="ImportLevel" type="json-property" expanded="1">
+																			<entry name="string" inpkey="19"/>
+																		</entry>
+																		<entry name="property" ns="1" type="json-property" inpkey="20">
+																			<entry name="name" ns="1" type="json-propertyname" inpkey="21"/>
+																			<entry name="string" inpkey="22"/>
+																			<entry name="number" inpkey="23"/>
+																			<entry name="boolean" inpkey="24"/>
+																			<entry name="null" inpkey="25"/>
+																			<entry name="array" inpkey="26">
+																				<entry name="item" type="json-item" inpkey="27">
+																					<entry name="string" inpkey="28"/>
+																					<entry name="number" inpkey="29"/>
+																					<entry name="boolean" inpkey="30"/>
+																					<entry name="null" inpkey="31"/>
+																					<entry name="array" inpkey="32"/>
+																					<entry name="object" inpkey="33"/>
+																				</entry>
+																			</entry>
+																			<entry name="object" inpkey="34"/>
+																		</entry>
+																	</entry>
+																</entry>
+															</entry>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<json schema="schema\attributes.json" outputinstance="Attributes"/>
+					</data>
+				</component>
+				<component name="file" library="core" uid="5" kind="6">
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="132"/>
+					</targets>
+					<view lty="174" rbx="73" rby="212"/>
+					<data>
+						<input datatype="string" previewvalue="E:/MyWork/catalogload/input/product-feed-*.json" usepreviewvalue="1"/>
+						<parameter usageKind="input" name="file"/>
+					</data>
+				</component>
+				<component name="digital_assets" library="json" uid="4" kind="31">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1" PrettyPrint="0"/>
+					<view ltx="619" lty="329" rbx="836" rby="529"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="root" expanded="1">
+										<entry name="array" expanded="1">
+											<entry name="item" type="json-item" expanded="1">
+												<entry name="object" expanded="1">
+													<entry name="anyOf0" type="json-subtype" inpkey="100">
+														<entry name="digital_assets" type="json-property" expanded="1">
+															<entry name="array" inpkey="101">
+																<entry name="item" type="json-item" expanded="1">
+																	<entry name="object" inpkey="102">
+																		<entry name="salsify:id" type="json-property" expanded="1">
+																			<entry name="string" inpkey="103"/>
+																		</entry>
+																		<entry name="salsify:name" type="json-property" expanded="1">
+																			<entry name="string" inpkey="104"/>
+																		</entry>
+																		<entry name="salsify:created_at" type="json-property" expanded="1">
+																			<entry name="string" inpkey="105"/>
+																		</entry>
+																		<entry name="salsify:updated_at" type="json-property" expanded="1">
+																			<entry name="string" inpkey="106"/>
+																		</entry>
+																		<entry name="salsify:status" type="json-property" expanded="1">
+																			<entry name="string" inpkey="107"/>
+																		</entry>
+																		<entry name="salsify:asset_height" type="json-property" expanded="1">
+																			<entry name="number" inpkey="108"/>
+																		</entry>
+																		<entry name="salsify:asset_width" type="json-property" expanded="1">
+																			<entry name="number" inpkey="109"/>
+																		</entry>
+																		<entry name="salsify:asset_resource_type" type="json-property" expanded="1">
+																			<entry name="string" inpkey="110"/>
+																		</entry>
+																		<entry name="salsify:filename" type="json-property" expanded="1">
+																			<entry name="string" inpkey="111"/>
+																		</entry>
+																		<entry name="salsify:bytes" type="json-property" expanded="1">
+																			<entry name="number" inpkey="112"/>
+																		</entry>
+																		<entry name="salsify:format" type="json-property" expanded="1">
+																			<entry name="string" inpkey="113"/>
+																		</entry>
+																		<entry name="salsify:etag" type="json-property" expanded="1">
+																			<entry name="string" inpkey="114"/>
+																		</entry>
+																		<entry name="salsify:system_id" type="json-property" expanded="1">
+																			<entry name="string" inpkey="115"/>
+																		</entry>
+																		<entry name="property" ns="1" type="json-property" inpkey="116">
+																			<entry name="name" ns="1" type="json-propertyname" inpkey="117"/>
+																			<entry name="string" inpkey="118"/>
+																			<entry name="number" inpkey="119"/>
+																			<entry name="boolean" inpkey="120"/>
+																			<entry name="null" inpkey="121"/>
+																			<entry name="array" inpkey="122">
+																				<entry name="item" type="json-item" inpkey="123">
+																					<entry name="string" inpkey="124"/>
+																					<entry name="number" inpkey="125"/>
+																					<entry name="boolean" inpkey="126"/>
+																					<entry name="null" inpkey="127"/>
+																					<entry name="array" inpkey="128"/>
+																					<entry name="object" inpkey="129"/>
+																				</entry>
+																			</entry>
+																			<entry name="object" inpkey="130"/>
+																		</entry>
+																	</entry>
+																</entry>
+															</entry>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<json schema="schema\digital_assets.json" outputinstance="DigitalAssets"/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="35">
+						<edges>
+							<edge vertexkey="1"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="36">
+						<edges>
+							<edge vertexkey="2"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="37">
+						<edges>
+							<edge vertexkey="3"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="38">
+						<edges>
+							<edge vertexkey="4"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="39">
+						<edges>
+							<edge vertexkey="5"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="40">
+						<edges>
+							<edge vertexkey="6"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="41">
+						<edges>
+							<edge vertexkey="7"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="42">
+						<edges>
+							<edge vertexkey="8"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="43">
+						<edges>
+							<edge vertexkey="9"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="44">
+						<edges>
+							<edge vertexkey="10"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="45">
+						<edges>
+							<edge vertexkey="11"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="46">
+						<edges>
+							<edge vertexkey="12"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="47">
+						<edges>
+							<edge vertexkey="13"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="48">
+						<edges>
+							<edge vertexkey="14"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="49">
+						<edges>
+							<edge vertexkey="15"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="50">
+						<edges>
+							<edge vertexkey="16"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="51">
+						<edges>
+							<edge vertexkey="17"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="52">
+						<edges>
+							<edge vertexkey="18"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="53">
+						<edges>
+							<edge vertexkey="19"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="54">
+						<edges>
+							<edge vertexkey="20"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="55">
+						<edges>
+							<edge vertexkey="21"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="56">
+						<edges>
+							<edge vertexkey="22"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="57">
+						<edges>
+							<edge vertexkey="23"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="58">
+						<edges>
+							<edge vertexkey="24"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="59">
+						<edges>
+							<edge vertexkey="25"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="60">
+						<edges>
+							<edge vertexkey="26"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="61">
+						<edges>
+							<edge vertexkey="27"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="62">
+						<edges>
+							<edge vertexkey="28"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="63">
+						<edges>
+							<edge vertexkey="29"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="64">
+						<edges>
+							<edge vertexkey="30"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="65">
+						<edges>
+							<edge vertexkey="31"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="66">
+						<edges>
+							<edge vertexkey="32"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="67">
+						<edges>
+							<edge vertexkey="33"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="68">
+						<edges>
+							<edge vertexkey="34"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="69">
+						<edges>
+							<edge vertexkey="100"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="70">
+						<edges>
+							<edge vertexkey="101"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="71">
+						<edges>
+							<edge vertexkey="102"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="72">
+						<edges>
+							<edge vertexkey="103"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="73">
+						<edges>
+							<edge vertexkey="104"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="74">
+						<edges>
+							<edge vertexkey="105"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="75">
+						<edges>
+							<edge vertexkey="106"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="76">
+						<edges>
+							<edge vertexkey="107"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="77">
+						<edges>
+							<edge vertexkey="108"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="78">
+						<edges>
+							<edge vertexkey="109"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="79">
+						<edges>
+							<edge vertexkey="110"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="80">
+						<edges>
+							<edge vertexkey="111"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="81">
+						<edges>
+							<edge vertexkey="112"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="82">
+						<edges>
+							<edge vertexkey="113"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="83">
+						<edges>
+							<edge vertexkey="114"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="84">
+						<edges>
+							<edge vertexkey="115"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="85">
+						<edges>
+							<edge vertexkey="116"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="86">
+						<edges>
+							<edge vertexkey="117"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="87">
+						<edges>
+							<edge vertexkey="118"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="88">
+						<edges>
+							<edge vertexkey="119"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="89">
+						<edges>
+							<edge vertexkey="120"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="90">
+						<edges>
+							<edge vertexkey="121"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="91">
+						<edges>
+							<edge vertexkey="122"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="92">
+						<edges>
+							<edge vertexkey="123"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="93">
+						<edges>
+							<edge vertexkey="124"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="94">
+						<edges>
+							<edge vertexkey="125"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="95">
+						<edges>
+							<edge vertexkey="126"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="96">
+						<edges>
+							<edge vertexkey="127"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="97">
+						<edges>
+							<edge vertexkey="128"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="98">
+						<edges>
+							<edge vertexkey="129"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="99">
+						<edges>
+							<edge vertexkey="130"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="132">
+						<edges>
+							<edge vertexkey="131"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

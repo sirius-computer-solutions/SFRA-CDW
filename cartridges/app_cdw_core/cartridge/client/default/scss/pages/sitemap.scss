@@ -1,0 +1,44 @@
+.sitemap-container{
+    padding-top: 0.5rem;
+    display: table;
+}
+.sitemap-category-container{
+    vertical-align: top;
+    float: left;
+    margin-bottom: 0.2rem;
+
+    .sitemap__header{
+        margin-left: 25px;
+        margin-bottom: -5px;
+        h2{
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+    .sitemap__list{
+        list-style-type: none;
+        padding-left: 1.5em;
+        h2{
+            font-size: 20px;
+            font-weight: 600;
+        }
+        li{
+            a{
+                word-break: break-word;
+                font: 400 14px/1em "myriad-pro-n4", "myriad-pro", 'Helvetica Neue', 'Arial', sans-serif;
+            }
+        }
+    }
+    .sitemap-sub-category{
+        padding-top: 2px;
+        h2{
+            margin-bottom: 5px;
+        }
+    }
+    // To adjust spacing 
+    .sitemap-sub-category:not(:first-child){
+        h2{
+            margin-top:3px;
+        }
+    }
+}

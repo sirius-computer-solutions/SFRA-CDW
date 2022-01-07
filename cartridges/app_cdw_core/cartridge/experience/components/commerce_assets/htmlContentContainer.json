@@ -1,0 +1,23 @@
+{
+    "name": "HTML Markup Area",
+    "description": "This is the RichText Component, can be used as blank canvas",
+    "group": "commerce_assets",
+    "attribute_definition_groups": [
+      {
+        "id": "textContent",
+        "name": "Rich Text Content",
+        "description": "The Rich Text content to show in this component",
+        "attribute_definitions": [
+          {
+            "id": "richText",
+            "name": "content",
+            "description": "This is the rich text content area",
+            "type": "text",
+            "required": true
+          }
+        ]
+      }
+    ],
+    "region_definitions": []
+  }
+  

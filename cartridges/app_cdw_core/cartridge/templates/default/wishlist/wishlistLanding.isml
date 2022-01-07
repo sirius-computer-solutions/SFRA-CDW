@@ -1,0 +1,27 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/wishlist.css');
+        assets.addJs('/js/wishlist.js');
+        assets.addCss('/css/login.css');
+        assets.addJs('/js/login.js');
+        assets.addJs('https://www.google.com/recaptcha/api.js');
+    </isscript>
+
+    <div class="container ${pdict.loggedIn ? '' : 'login-page'}">
+        <!---Breadcrumbs--->
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+  
+        <div class="row justify-content-left">
+            <div class="col-12 col-sm-4 col-md-3">
+                <h1>${Resource.msg('wishlist.hero.image.header', 'wishlist', null)}</h1>
+            </div>
+        </div>        
+        <isif condition="${pdict.loggedIn}">
+            <isinclude template="wishlist/components/wishlist" />
+        <iselse>
+            <isinclude template="wishlist/components/login" />
+        </isif>
+        <isinclude template="product/components/overSellConfirmationModal"/>
+    </div>
+</isdecorate>

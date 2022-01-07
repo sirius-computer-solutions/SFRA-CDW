@@ -1,0 +1,62 @@
+<footer id="footercontent">
+    <div class="container">
+        <div class="footer-container row">
+            <div class="footer-item col-sm collapsible-xs d-none d-sm-block">
+                        <form role="form" >
+                                        
+                                        <div class="h2">${Resource.msg('header.form.emailsignup', 'homePage', null)}</div>
+                                        <div class="email-description">${Resource.msg('description.form.emailsignup', 'homePage', null)}</div>
+                                        <div class="form-group">
+                                        <label for="hpEmailSignUp">${Resource.msg('footer.email', 'common', null)}</label>
+                                        <input type="text" class="form-control" name="hpEmailSignUp"
+                                            placeholder="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}">
+                                        <div class="invalid-footer-email invalid-feedback">${Resource.msg('error.form.emailsignup', 'homePage', null)}</div>                                            
+                                        </div>
+                                        <div class="form-group">
+                                        <label for="hpZipSignUp">${Resource.msg('footer.zipcode', 'common', null)}</label>
+                                        <input type="text" class="form-control" name="hpZipSignUp"
+                                            placeholder="${Resource.msg('placeholdertext.form.zipsignup', 'homePage', null)}">
+                                        <div class="invalid-footer-zipCode invalid-feedback">${Resource.msg('error.form.zipsignup', 'homePage', null)}</div>                                                                                        
+                                        </div>
+                                        <span class="input-group">
+                                            <button type="submit" class="btn btn-secondary subscribe-email" 
+                                                data-href="${URLUtils.url('CustomerService-NLSubscribe')}">${Resource.msg('button.form.emailsignup', 'homePage', null)} <i class="far fa-envelope"></i></button>
+                                        </span>
+                                
+                        </form>
+                <div class="d-none d-md-block">    
+                <iscontentasset aid="footer-social-email" />
+                </div>
+            </div>
+            <div class="footer-item col-sm store collapsible-xs">
+                <iscontentasset aid="footer-about" />
+            </div>
+            <div class="footer-item col-sm collapsible-xs">
+                <iscontentasset aid="footer-support" />
+            </div>
+        </div>
+        <div class="row justify-content-end top-social-icons-container">
+            <div class="push-sm-7 push-lg-8 social">
+                
+                <button class="back-to-top" title="${Resource.msg('button.back_to_top', 'common', null)}" aria-label="${Resource.msg('button.back_to_top', 'common', null)}">
+                    <span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
+                        <i class="fa fa-arrow-up fa-stack-1x"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="d-md-none w-100">
+                <isslot id="footer-column-m" description="Content in column 1 of the Footer" context="global" />
+            </div>
+        </div>
+    </div>
+    <div class="copyright-notice">
+        <iscontentasset aid="footer-partners" />
+        <iscontentasset aid="footer-copy" />
+        
+    </div>
+</footer>
+
+
+
+

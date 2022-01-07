@@ -1,0 +1,22 @@
+<iscomment>
+    This template is created to render payment information in the order confirmation email.
+</iscomment>
+    <isloop items="${pdict.order.billing.payment.selectedPaymentInstruments}" var="payment">
+        <isif condition="${payment.paymentMethod === 'GIFT_CERTIFICATE'}">
+            <isinclude template="checkout/billing/paymentOptions/giftCertificateSummary" />
+        </isif>
+        <isif condition="${payment.paymentMethod === 'CREDIT_CARD'}">
+            <isinclude template="checkout/billing/paymentOptions/creditCardSummary" />
+        </isif>
+        <isif condition="${payment.paymentMethod === 'PayPal' && pdict.paypal}">
+            <isinclude template="paypal/checkout/paypalSummary" />
+        </isif>
+        <isif condition="${payment.paymentMethod === 'STORE_CREDIT'}">
+            <isinclude template="checkout/billing/paymentOptions/storeCreditSummary" />
+        </isif>        
+    </isloop>
+    <div class="web-reference-number">
+        <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments && pdict.order.billing.payment.selectedPaymentInstruments[0].webReference}">
+                ${Resource.msg('label.webReferenceNumber', 'storeCredit', null)}:  ${pdict.order.billing.payment.selectedPaymentInstruments[0].webReference}
+        </isif>
+    </div>

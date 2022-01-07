@@ -1,0 +1,44 @@
+<div class="row hidden-xs-down">
+    <div class="col" role="navigation" aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+            <isloop items="${pdict.breadcrumbs}" var="breadcrumbValue" status="loopState">
+                <li class="breadcrumb-item">
+                    <isif condition="${loopState.last}">
+                        <isprint value="${breadcrumbValue.htmlValue}" encoding="on" />
+                    <iselse>
+                        <a href="${breadcrumbValue.url}">
+                            ${breadcrumbValue.htmlValue}
+                        </a>
+                    </isif>
+                </li>
+            </isloop>
+        </ol>
+    </div>
+</div>
+<isif condition="${pdict.breadcrumbs && pdict.breadcrumbs.length >0}">
+    <isscript>
+        var collections = require('*/cartridge/scripts/util/collections');
+        var URLUtils = require('dw/web/URLUtils');
+        var Site = require('dw/system/Site');
+        var schema = {
+            '@context': 'http://schema.org/',
+            '@type': 'BreadcrumbList',
+            itemListElement: []
+        };
+        var siteHostName = Site.current.getCustomPreferenceValue('siteHostName') || 'https://www.acmetools.com';
+        collections.forEach(pdict.breadcrumbs, function (breadcrumb, index) {       
+            var urlBreadcrumb = breadcrumb.url.toString();
+            if(!urlBreadcrumb.startsWith('http') && !empty(urlBreadcrumb))
+                urlBreadcrumb = siteHostName + urlBreadcrumb;
+            schema.itemListElement.push({
+                '@type': 'ListItem',
+                position: index + 1,
+                name: breadcrumb.htmlValue,
+                item: urlBreadcrumb
+            });
+        });
+    </isscript>
+    <script type="application/ld+json">
+        <isprint value="${JSON.stringify(schema)}" encoding="off" />
+    </script>
+</isif>

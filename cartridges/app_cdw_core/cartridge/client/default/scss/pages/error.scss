@@ -1,0 +1,64 @@
+@import "../skin/skinVariables";
+@import "../utilities/variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+
+.error-background{
+    background-image: url('../../images/genericError.jpeg') !important;
+    background-position: center;
+    margin-top: 0.7rem;
+    min-height: 500px;
+    padding-right: 0;
+    padding-left: 0;
+
+    @include media-breakpoint-down(sm){
+        margin-top: 0;
+    }
+
+    .error-title{
+        display: inline-block;
+        font: 700 2.5em myriad-pro-condensed-n7,myriad-pro-condensed,Helvetica Neue,Arial,sans-serif;
+        color: $white;
+        background-color: $black;
+        padding: 0.5rem 3rem 0.5rem 2rem;
+        margin-top: 2rem;
+
+        @include media-breakpoint-down(xs){
+            width: 100%;
+            font-size: 2.2rem;
+        }
+        
+        @media screen and (max-width: 375px) {
+            font-size: 2.1rem;
+        }
+
+    }
+
+    .error-500-container{
+        padding: 0.7rem;
+        padding-left: 0;
+
+        .error-code{
+            color: $grey5;
+            font-family: 'Zilla Slab', serif;
+            font-weight: 600;
+        }
+        
+    }
+    
+    .error-message{
+        // font: 500 2.3em/2rem "myriad-pro-n4", "myriad-pro", 'Helvetica Neue', 'Arial', sans-serif;
+        font: 500 2.3em/2rem myriad-pro-condensed-n7,myriad-pro-condensed,Helvetica Neue,Arial,sans-serif;
+        margin-top: .225rem;
+        margin-bottom: 0.525rem;
+        line-height: 2.4rem;
+
+        @include media-breakpoint-down(xs){
+            font-size: 1.8rem;
+        }
+        @media screen and (max-width: 375px) {
+            font-size: 1.6rem;
+        }
+    }
+}
+

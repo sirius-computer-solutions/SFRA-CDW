@@ -1,0 +1,98 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/orderHistory.js');
+        assets.addCss('/css/account/profile.css');
+    </isscript>
+
+    <div class="container">
+        <!---Breadcrumbs--->
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+        <div class="row justify-content-left">
+            <div class="col-xs-12 col-sm-10 col-md-8">
+                <h1>${Resource.msg('label.orderhistory','account',null)}</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-6">
+            &nbsp;
+            </div>
+        </div> 
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-6">
+            &nbsp;
+            </div>
+        </div>         
+        <isif condition="${pdict.filterValues}">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="form-group">
+                        <iscomment> <label class="form-control-label" for="order-history-query">
+                            ${Resource.msg('label.input.order-history-query', 'order', null)}
+                        </label> </iscomment>
+                        <input type="text" placeholder="Order/Invoice/PO Number" required class="form-control order-history-query-text" aria-describedby="form-order-history-query-error" id="order-history-query" name="orderHistoryQuery">
+                        <div class="invalid-feedback" id="form-order-history-query-error"></div>
+                    </div>
+                    
+                </div>                
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="form-group">
+                        <select class="form-control custom-select order-history-filter-select" aria-label="${Resource.msg('label.filter.order.history','account',null)}">
+                            <isloop items="${pdict.filterValues}" var="filterValue">
+                                <option
+                                    value="${filterValue.optionValue}"
+                                    <isif condition="${pdict.orderFilter === filterValue.displayValue
+                                        || pdict.filterValues === Resource.msg('orderhistory.sixmonths.option','order',null)
+                                        || pdict.filterValues === Resource.msg('orderhistory.twelvemonths.option','order',null)}"> selected</isif>>
+                                        ${filterValue.displayValue}
+                                </option>
+                            </isloop>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-sm-2 col-md-2">
+                    <div class="form-group">
+                        <button class="btn btn-block btn-primary btn-order-history-filter" type="submit" name="submit" value="submit" data-url="${URLUtils.url('Order-History')}">
+                            ${Resource.msg('label.input.order.history.filter.btn', 'order', null)}
+                        </button>
+                    </div>
+                </div>            
+            </div>            
+        <iselse/>
+            <isif condition="${customer.registered}">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-8 col-md-6 mb-4 text-center">
+                        <h3>
+                            ${Resource.msg('label.input.order.history.empty', 'order', null)}
+                        </h3>
+                    </div>
+                </div>
+            </isif>
+        </isif>
+
+
+        
+        <div class="row justify-content-center">
+            <div class="container order-list-container">
+                <isinclude template="account/order/orderList"/>
+            </div>
+        </div>
+        <isif condition="${customer.registered}">
+            <div class="row justify-content-center">
+                <div class="col-sm-8 col-md-6 text-center">
+                    
+                        <a class="btn btn-outline-primary" href="${URLUtils.url('Account-Show')}" class="normal">
+                            ${Resource.msg('link.profile.backtomyaccount','account',null)}
+                        </a>
+                    
+                </div>
+            </div>
+        </isif>
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-6">
+            &nbsp;
+            </div>
+        </div>        
+    </div>
+</isdecorate>

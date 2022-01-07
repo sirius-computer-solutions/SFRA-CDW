@@ -1,0 +1,24 @@
+    <iscomment> Logic to get the brand selected</iscomment>
+    <isset name="brandBasedContentAsset" value="" scope="page"/>
+    <isloop items="${pdict.productSearch.refinements}" var="refinement">
+        <isif condition="${refinement.isAttributeRefinement || refinement.isPromotionRefinement}">
+            <isif condition="${refinement.values[0].id == 'acme-tools-brand-name'}">
+                <isloop items="${refinement.values}" var="refinementValue">
+                    <isif condition="${refinementValue.selected && refinementValue.selectable}">
+                            <isset name="brandBasedContentAsset" value="${refinementValue.displayValue.toLowerCase().replace(' ','-')+'-'+pdict.productSearch.category.id.toLowerCase()}" scope="page"/>
+                            <isset name="brandBasedContentAsset1" value="${refinementValue.displayValue.toLowerCase().replace(' ','-')+'-'+pdict.productSearch.category.id.toLowerCase()+'-1'}" scope="page"/>
+                            <isset name="brandBasedContentAsset2" value="${refinementValue.displayValue.toLowerCase().replace(' ','-')+'-'+pdict.productSearch.category.id.toLowerCase()+'-2'}" scope="page"/>
+                            <isset name="brandBasedContentAsset3" value="${refinementValue.displayValue.toLowerCase().replace(' ','-')+'-'+pdict.productSearch.category.id.toLowerCase()+'-3'}" scope="page"/>
+                    </isif>
+                </isloop>
+            </isif>
+        </isif>
+    </isloop>
+    
+    <isinclude template="/components/modules" />
+    <isif condition="${!empty(brandBasedContentAsset)}">
+        <iscontentasset aid="${brandBasedContentAsset}" />
+        <iscontentasset aid="${brandBasedContentAsset1}" />
+        <iscontentasset aid="${brandBasedContentAsset2}" />
+        <iscontentasset aid="${brandBasedContentAsset3}" />
+    </isif>

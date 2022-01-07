@@ -1,0 +1,67 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/manageBuyers.js'); 
+        assets.addCss('/css/account/account.css');
+    </isscript>
+    <div class="account">
+        
+    <div class="container">
+        <!---Breadcrumbs--->
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+        <h1>${Resource.msg('label.b2b.manage.buyers.buyerlist', 'account', null)}</h1>
+        <isif condition="${pdict.buyerList.length === 0}">
+             <div class="row justify-content-center">
+                 <div class="col">
+                     <h3>${Resource.msg('msg.b2b.no.account.buyers','account',null)}</h3>
+                 </div>
+            </div>
+        </isif>
+        <!--- Rows for buyers in the Buyers List --->
+        <isloop items="${pdict.buyerList}" var="buyer">
+            <div class="row justify-content-center" id="customer-${buyer.customerNo}">
+                <div class="col-sm-8 col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="col-10 pl-0 address-heading pull-left">${buyer.firstName} ${buyer.lastName} <isif condition="${buyer.buyerAdmin}"> (${Resource.msg('label.b2b.manage.buyers.adminbuyer','account',null)})</isif></h2>
+                            <a href="${URLUtils.url('B2BBuyer-EditBuyer', 'customerNo', buyer.customerNo)}" class="pull-right btn btn-primary btn-small btn-small-rounded" aria-label="Edit Buyer">${Resource.msg('link.edit','account',null)}</a>
+                        </div>
+                        <div class="card-body card-body-positioning">
+                            <div>${buyer.logonId}</div>
+                            <div>${buyer.email}</div>
+                            <div>${buyer.phone}</div>
+                            <isif condition="${!buyer.buyerAdmin}">
+                                <div>
+                                    <isif condition="${buyer.enabled}">
+                                        <div class="card-make-default-link">
+                                            <a href="${URLUtils.url('B2BBuyer-DisableAccount', 'customerNo', buyer.customerNo)}" class="normal" aria-label="${Resource.msg('link.b2b.manage.buyers.disableaccount','account',null)}">${Resource.msg('link.b2b.manage.buyers.disableaccount','account',null)}</a>
+                                        </div>
+                                    <iselse> 
+                                        <div class="card-make-default-link">
+                                            <a href="${URLUtils.url('B2BBuyer-EnableAccount', 'customerNo', buyer.customerNo)}" class="normal" aria-label="${Resource.msg('link.b2b.manage.buyers.enableaccount','account',null)}">${Resource.msg('link.b2b.manage.buyers.enableaccount','account',null)}</a>
+                                        </div>
+                                    </isif>
+                                </div>
+                            </isif>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </isloop>
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-6">
+                <div class="row manage-buyer">
+                    <div class="col text-center manage-buyer-buttons">
+                        <a href="${URLUtils.url('Account-Show')}" class="btn btn-block btn-outline-primary text-center back-to-account-link" aria-label="${Resource.msg('label.b2b.manage.buyers.myaccount','account', null)}">
+                            ${Resource.msg('link.b2b.manage.buyers.backtomyaccount','account',null)}
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="${URLUtils.url('B2BBuyer-AddBuyer')}" class="btn btn-save btn-block btn-primary" aria-label="${Resource.msg('label.b2b.manage.buyers.addbuyer','account',null)}">${Resource.msg('button.addnew.buyer','account',null)}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+</isdecorate>

@@ -1,0 +1,51 @@
+<div class="row justify-content-center ">
+    <div class="col-sm-8 col-md-7">
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-6">
+            &nbsp;
+            </div>
+        </div> 
+        <div class="row wishlist-header">
+            <div class="col-12 col-sm-6">
+                <h2 class="wishlist-owner">${Resource.msgf('wishlist.owner.name', 'wishlist', null, pdict.wishlist.owner.firstName)}</h2>
+            </div>
+            <isif condition=${!pdict.wishlist.publicView}>
+
+                    <div class="col-12 col-sm-6 hide-from-public">
+                        <div class="custom-control custom-checkbox wishlist-hide">
+                            <input ${!pdict.wishlist.publicList ? 'checked="checked"' : ''} class="custom-control-input" type="checkbox" value="" id="isPublicList" name="isPublicList" data-id="${pdict.wishlist.UUID}" data-url="${URLUtils.url('ProductList-TogglePublic', 'type', 10)}">
+                            <label for="isPublicList" class="custom-control-label wishlist-checkbox">
+                                ${Resource.msg('checkbox.wishlist.makePublic', 'wishlist', null)}
+                            </label>
+                        </div>
+                    </div>
+                
+            </isif>
+        </div>   
+        <div class="row">
+            <div class="col-12"><hr class="wishlist-line-item-divider line-dotted"></div>
+        </div>                 
+        <isinclude template="wishlist/components/list">
+        
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-6">
+            &nbsp;
+            </div>
+        </div>  
+
+        <isif condition=${!pdict.wishlist.publicView}>
+            <div class="row">
+                <div class="col text-center">
+                    <a class="btn btn-outline-primary" href="${URLUtils.url('Account-Show')}" title="${Resource.msgf('link.wishlist.myaccount', 'wishlist', null)}">
+                        ${Resource.msgf('link.wishlist.myaccount', 'wishlist', null)}
+                    </a>
+                </div>
+            </div>
+        </isif>
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-6">
+            &nbsp;
+            </div>
+        </div>          
+    </div>
+</div>

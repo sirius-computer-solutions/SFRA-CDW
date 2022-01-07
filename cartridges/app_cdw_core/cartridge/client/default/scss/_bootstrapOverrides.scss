@@ -1,0 +1,321 @@
+@mixin vertically-center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel, .acme-carousel {
+    padding: 0 20px;
+    .icon-prev,
+    .icon-next {
+        background-color: $white;
+        font-size: 1.875em;
+        // width and height here need to use rem units because the font size used here is 30px
+        height: 3rem;
+        padding-top: 0.24em;
+        width: 3rem;
+
+        &::before {
+            color: black;
+        }
+    }
+
+    .icon-prev {
+        &::before {
+            content: '\f104';
+        }
+    }
+
+    .icon-next {
+        &::before {
+            content: '\f105';
+        }
+    }
+
+    .carousel-control-prev {
+        width: 2rem;
+        justify-content: flex-start;
+    }
+
+    .carousel-control-next {
+        width: 2rem; 
+        justify-content: flex-end;
+    }
+    @include media-breakpoint-up(sm) {
+        .carousel-control-next{
+            right: -.5em;
+        }
+        .carousel-control-prev{
+            left: -.5em;
+        }
+    }
+}
+
+.acme-carousel {
+    margin-bottom: 1em;
+    padding: 0 1em;
+    overflow: hidden;
+    position: relative;
+    .icon-prev,
+    .icon-next {
+        background-color: transparent;
+    }
+    .acme-carousel-row {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 0 0 100%;
+    }
+    .product-tile .tile-body {
+        padding: 0 .25em;
+    }
+}
+
+.carousel-indicators img {
+    cursor: pointer;
+}
+
+.pdp-image {
+    padding-bottom: 70px;
+    .acme-carousel {
+        margin: 0 20px;
+        padding: 0;
+        
+        .carousel-control-next {
+            right: -10px;
+        }
+        
+        .carousel-control-prev {
+            left: -10px;
+        }
+        
+        .acme-carousel-item {
+            > iframe, > img {
+                @include vertically-center;
+            }
+        }
+        .image-zoom {
+            img {
+                max-width: 100%;
+                max-height: 85vh;
+            }
+        }
+    }
+
+    .carousel-indicators {
+        bottom: -20px !important;
+        img {
+            width:50px;
+            max-height:50px;
+            border: 2px white solid;
+            object-fit: contain;
+        }
+    }
+}
+
+.pdp-carousel {
+    .acme-carousel-item {
+        a {
+            display: inline-flex;
+            height: 100%;
+            width: 100%;
+            @include media-breakpoint-down(sm) {
+                pointer-events: none;
+            }
+        }
+        img, iframe {
+            -webkit-align-self: center;
+            align-self: center;
+            object-fit: contain;
+        }
+    }
+    .modal-overlay {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: block;
+        height: 100vh;
+        background: transparent;
+    }
+
+    img:not([src]):not(.set) {
+        color: transparent;
+        background: lightgray;
+        height: 100%;
+    }
+}
+
+.product-quickview {
+    .primary-images {
+        padding-bottom: .5em;
+    }
+    .carousel-indicators {
+        display: block; 
+    }
+}
+
+.acme-carousel-inner { 
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: all 500ms ease 0s;
+    .no-transition {
+        transition: none;
+    }
+}
+
+.acme-carousel-item {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    &.active {
+        display: inline-block;
+    }
+    img {
+        max-width: 100% !important;
+    }
+}
+
+#shopByBrandCarousel {
+    .acme-carousel-item {
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: visible;
+    }
+
+    .tile-image {
+        padding: 0 2rem;
+        width: 100%;
+        max-width: calc(250px + 4rem) !important;
+        max-height: 150px;
+        object-fit: contain;
+    }
+    .category-tile-name {
+        display: none;
+    }
+}
+
+#recommendedCategoriesByCarousel {
+    img.img-fluid {
+        padding: 15px;
+    }
+}
+.recommended-categories-carousel {
+    .acme-carousel-item {
+        padding: 0 20px;
+        visibility: visible;
+    }
+}
+
+.recommendations {
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: 5%;
+        margin-top: 5em;
+        margin-bottom: 7em;
+    }
+    @include media-breakpoint-up(sm) {
+        .carousel-control-next{
+            right: -.5em;
+        }
+        .carousel-control-prev{
+            left: -.5em; 
+        }
+    }
+}
+
+
+.nav-tabs {
+    border-bottom: $border-width solid $grey3;
+
+    .nav-link {
+        font-size: 1.1rem;
+        color: $nav-tabs-link-hover-border-color;
+
+        &.active {
+            border-bottom: 0.188em solid  #{var(--skin-primary-color-1)};
+        }
+    }
+}
+
+.card {
+    margin-bottom: 1em;
+}
+
+.card-header h4 {
+    margin-bottom: 0;
+}
+
+.modal .modal-body {
+    flex: 0 0 auto;
+}
+
+dt {
+    color: $gray-700;
+    font-weight: normal;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border: 1px solid $grey6;
+    background: $grey1; /* For browsers that do not support gradients */
+    background: linear-gradient($grey1, $grey3); /* Standard syntax */
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+    border: 1px solid $grey6;
+    background-image: $svg-check;
+}
+
+.custom-radio .custom-control-label::before {
+    border: 1px solid black;
+    background: $grey3; /* For browsers that do not support gradients */
+    background: linear-gradient($grey3, $grey5); /* Standard syntax */
+}
+
+.custom-select.is-invalid, .was-validated .custom-select:invalid { 
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center/8px 10px;
+}
+
+
+.tile-body {
+    .row.collapsible-xl {
+        justify-content: center;
+    }
+}
+
+.order-list-container {
+    .img-fluid {
+        max-height: 150px;
+    }
+}
+
+body {
+    .alert {
+        padding: .75rem 1.25rem;
+        &-danger {
+            color: #780a0e;
+            border-radius: 0;
+            border: 1px solid #f8bdbf;
+            background-color: #fad0d1;
+        }
+        &-dismissible {
+            padding-right: 4rem; 
+        }
+        &-success{
+            color:#155724;
+            background-color:#d4edda;
+            border-color:#c3e6cb} 
+
+        &-info{
+            color: #0c5460;
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+        }
+    }
+}
+

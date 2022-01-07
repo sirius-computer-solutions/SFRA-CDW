@@ -1,0 +1,26 @@
+<isdecorate template="common/layout/page">
+
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/dashboard.css');
+        assets.addJs('/js/wishlist.js');
+    </isscript>
+
+   <div class="container">
+    <!---Breadcrumbs--->
+    <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+
+    <div class="account">
+        <h1 class="page-title">${Resource.msg('page.heading.dashboard','account',null)}</h1>
+    
+
+    
+        
+        <isinclude template="account/dashboardProfileCards"/>
+        </div>
+    </div>
+</isdecorate>

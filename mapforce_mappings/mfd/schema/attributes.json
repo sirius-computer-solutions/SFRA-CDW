@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/main_array",
+  "definitions": {
+    "main_array": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+      
+          {
+            "$ref": "#/definitions/attributes_obj"
+          }
+        ]
+      }
+    },
+
+	"array_string": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+
+    "attributes_obj": {
+      "type": "object",
+      "required": ["attributes"],
+      "additionalProperties": false,
+      "properties": {
+        "attributes": {
+          "type": "array",
+          "title": "attributes",
+          "items": {
+            "$ref": "#/definitions/attributes"
+          }
+        }
+      }
+    },
+
+	
+    "attributes": {
+      "type": "object",
+      "required": [
+        "salsify:id",
+        "salsify:name",
+        "salsify:data_type",
+		"salsify:help_text",
+        "salsify:entity_types",
+        "salsify:is_facetable",
+        "salsify:attribute_group",
+        "salsify:created_at",
+        "salsify:updated_at"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "salsify:id": {
+          "type": "string"
+        },
+        "salsify:name": {
+          "type": "string"
+        },
+        "salsify:data_type": {
+          "type": "string"
+        },
+		"salsify:help_text": {
+          "type": ["string","null"]
+        },
+        "salsify:entity_types": {
+          "$ref": "#/definitions/array_string"
+        },
+        "salsify:is_facetable": {
+          "type": "boolean"
+        },
+        "salsify:attribute_group": {
+          "type": "string"
+        },
+        "salsify:created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "salsify:updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "salsify:type": {
+          "type": "string"
+        },
+        "salsify:system_id": {
+          "type": "string"
+        },
+        "MapToAttribute": {
+          "type": "string"
+        },
+        "MapToWCE": {
+          "type": "string"
+        },
+        "ImportLevel": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

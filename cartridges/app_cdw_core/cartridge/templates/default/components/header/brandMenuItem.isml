@@ -1,0 +1,45 @@
+
+
+<ul class="dropdown-menu w-100 megamenu m-0 p-0" role="menu" aria-hidden="true" aria-label="${menuItem.id}">
+    <div class="row m-0">
+        <isloop items="${menuItem.subCategories}" var="category"  status="loopStatus">
+            
+                <isif condition="${loopStatus.index<6}">
+                    <isif condition="${loopStatus.index===0}"><div class="col-12 col-md-9 p-0"></isif>
+                    <isif condition="${loopStatus.index%3===0}">
+                        <div class="row m-0">
+                    </isif>
+                    
+                    <div class="col-12 col-md-4 brand-item">
+                        <isif condition="${category.thumbnail!=null && category.thumbnail.getURL()!=null}">
+                        <li class="dropdown-item dropdown l2" role="presentation">
+                           <a href="${category.url}" id="${category.id}" class="nav-link pl-0" role="menuitem"
+                                    tabindex="0">
+                            <img class="tile-image w-50 d-none d-md-block" src="${category.thumbnail.getURL()}" alt="${category.displayName}" />
+                            <span class="d-block d-md-none">${category.displayName}</span>
+                           </a>
+                        </li>
+                        </isif>
+                        <isloop items="${category.subCategories}" var="subCategories" >
+                            <li class="dropdown-item dropdown text-left d-none d-md-block" role="presentation"> 
+                                <a href="${subCategories.url}" id="${subCategories.id}" class="dropdown-link" role="menuitem"
+                                   tabindex="0" data-category-name="${subCategories.name}" >${subCategories.name}</a>
+                            </li>    
+                        </isloop>
+                    </div>
+                    <isif condition="${(loopStatus.index+1)%3===0 ||loopStatus.last}"></div></isif>
+                    <isif condition="${loopStatus.index===5||loopStatus.last}"></div></isif>
+                    
+                </isif>
+                <isif condition="${loopStatus.index>=6}">
+                    <isif condition="${loopStatus.index===6}"><div class="col-12 col-md-3 brand-list pt-3"></isif>
+                    <li class="dropdown-item dropdown" role="presentation">
+                        <a href="${category.url}" id="${category.id}" class="dropdown-link" role="menuitem"
+                            tabindex="0">${category.name}</a>
+                    </li>
+                </isif> 
+            
+        </isloop>
+    </div> 
+   
+</ul>

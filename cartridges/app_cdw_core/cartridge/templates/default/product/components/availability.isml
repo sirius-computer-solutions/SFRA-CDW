@@ -1,0 +1,42 @@
+<iscomment>
+<div class="col-4">
+    <span class="availability non-input-label">
+         ${Resource.msg('label.availability', 'common', null)}: 
+    </span>
+</div>
+</iscomment>
+<isif condition="${pdict.product}">
+    <isset name="product" value="${pdict.product}" scope="page" />
+</isif>
+<div class="availability-styling mb-0">
+    <ul class="list-unstyled availability-msg mb-2">
+        <li>
+            <isif condition="${!product.readyToOrder}">
+                <div>${Resource.msg('info.selectforstock', 'product', 'Select Styles for Availability')}</div>
+            <iselseif condition="${product.availability}">
+                <isloop items="${product.availability.messages}" var="message">
+                    <div class="availability-msg-content"><isprint value="${message}" encoding="off" /></div>
+                </isloop>
+            </isif>
+        </li>
+    </ul>
+    <isif condition="${pdict.callingPage == 'PDP' && dw.system.Site.getCurrent().getCustomPreferenceValue('enableVarsity') && product.available && pdict.isCallForPriceProduct == 'false'}">
+        
+            <div class='estimated-arrival pb-2 <isif condition="${pdict.shipsTruck == 'true' || product.availability.inStock != true}">d-none</isif>'   id="estArrivalPDP" >
+                <iscache minute="0" type="relative"/>
+                <isscript>
+                    var zipcode = request.httpCookies.zipCode ? request.httpCookies.zipCode.value : request.geolocation.postalCode;
+                </isscript>
+
+                <isif condition="${(typeof zipcode!=='undefined') && zipcode!=null}">
+                    <isinclude url="${URLUtils.url('Product-GetArrivalDate', 'zipcode', zipcode.toString())}"/>  
+                <iselse>
+                    <isinclude url="${URLUtils.url('Product-GetArrivalDate', 'zipcode', '')}"/>   
+                </isif>
+                            
+            </div>
+            <isinclude template="product/components/zipCodeModal"/>
+        
+    </isif>
+</div>
+

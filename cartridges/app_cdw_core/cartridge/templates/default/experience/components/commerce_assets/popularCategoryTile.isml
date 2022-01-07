@@ -1,0 +1,27 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/popularCategory.css');
+</isscript>
+<div class="container">
+    <div class="col-sm-6 col-md-3 category-item">
+        <isif condition="${pdict.category.custom.alternativeUrl}">
+            <isset name="altURL" value="${pdict.category.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+            <isif condition="${altURL.includes('?')}">
+                <a href="${altURL}&oci=${pdict.category.ID}" title="${pdict.category.displayName}">
+            <iselse/>
+                    <a href="${altURL}?oci=${pdict.category.ID}" title="${pdict.category.displayName}">
+            </isif>
+        <iselse/>
+            <a href="${URLUtils.url('Search-Show', 'cgid', pdict.category.ID)}" title="${pdict.category.displayName}">    
+        </isif>
+        
+            <div class="category-tile">
+                <img class="img-fluid" src="${pdict.category.custom.slotBannerImage.getURL()}" alt="${pdict.category.displayName}"/>
+            </div>
+            <div class="top-category-tile-name">
+                    <isprint value="${pdict.category.displayName}" encoding="off"/>                  
+            </div>
+        </a>
+    </div>
+</div>
+

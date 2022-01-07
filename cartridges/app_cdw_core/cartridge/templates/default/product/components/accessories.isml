@@ -1,0 +1,2 @@
+
+<isset name="accessories" value="${pdict.recommendations}" scope="page"/>

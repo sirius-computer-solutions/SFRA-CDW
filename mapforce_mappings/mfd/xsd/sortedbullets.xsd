@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
+	<xs:element name="attribute-group">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="display-name">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute ref="xml:lang" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="attribute" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="attribute-id" use="required" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="group-id" use="required" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

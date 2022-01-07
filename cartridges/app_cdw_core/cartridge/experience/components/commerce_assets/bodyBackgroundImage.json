@@ -1,0 +1,19 @@
+{
+  "name": "Body Background Image",
+  "description": "This is a component to enable background image for the whole body.",
+  "group": "commerce_assets",
+  "attribute_definition_groups": [
+    {
+      "id": "backgroundImage",
+      "attribute_definitions": [
+        {
+          "id": "backgroundImage",
+          "name": "BodyBackgroundImage",
+          "type": "image",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

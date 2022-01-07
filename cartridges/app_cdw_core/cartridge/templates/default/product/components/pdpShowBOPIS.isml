@@ -1,0 +1,19 @@
+<isif condition="${pdict.showBOPIS}">
+    <div class="row">
+        <div class="col-12 font-small-bold pb-2">
+            <!-- Cart and [Optionally] Apple Pay -->
+            <div class="row bopis-product-message">
+                <i class="fas fa-map-marker-alt"></i>  
+                <div class="bopis-message">
+                    ${Resource.msg('bopis.product.message', 'product', null)}
+                </div>    
+                <div class="bopis-message-change-location">                                      
+                    <button class="btn btn-inline-block btn-link change-store font-small-bold"
+                        <isif condition="${pdict.pickUpInStore}"> data-action-url="${pdict.pickUpInStore.actionUrl}" type="submit"> </isif>
+                        <em>${Resource.msg('button.change.store', 'instorePickup', null)}</em>
+                    </button>
+                </div>
+            </div>                                
+        </div>                              
+    </div>    
+</isif>

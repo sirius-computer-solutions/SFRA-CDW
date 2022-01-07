@@ -1,0 +1,30 @@
+<div class="quantity-form">
+    <label class="line-item-pricing-info quantity-label" for="quantity-${lineItem.UUID}">${Resource.msg('field.selectquantity','cart',null)}</label>
+    <isset name="quantityElementName" value="${'quantity-'+lineItem.UUID}" scope="page"/>  
+    <isset name="quantity" value="${lineItem.quantity.toString().replace('.0', '')}" scope="page" /> 
+    <input type="number" class="form-control quantity custom-select"
+            data-uuid="${lineItem.UUID}"
+            data-pid="${lineItem.id}"
+            data-action="${pdict.actionUrls.updateQuantityUrl}"
+            data-pre-select-qty="${lineItem.quantity}"
+            id="quantity-${lineItem.UUID}"
+            name="quantity-${lineItem.UUID}"
+            aria-label="quantity: ${StringUtils.formatInteger(lineItem.quantity)}"
+            min="${lineItem.quantityOptions.minOrderQuantity}"
+            max="${lineItem.quantityOptions.maxOrderQuantity}"
+            onchange="javascript:if($('${"#"}${quantityElementName}').val().trim()=='' || $('${"#"}${quantityElementName}').val()*1<0 ){$('${"#"}${quantityElementName}').val('1');}" 
+            oninput="javascript: if (this.value.length > 4) this.value = this.value.slice(0, 4);" 
+            onkeydown="javascript:if(event.keyCode ==69){event.preventDefault();}"
+            value='${quantity}'/>
+            <isif condition=${typeof miniCart !== 'undefined' && miniCart}>
+    <isif condition="${!lineItem.isBonusProductLineItem}" />
+    <div class="remove-line-item">
+        <button type="button" class="remove-btn remove-product btn btn-light" data-toggle="modal"
+            data-target="#removeProductModal" data-pid="${lineItem.id}" data-name="${lineItem.productName}"
+            data-action="${pdict.actionUrls.removeProductLineItemUrl}" data-uuid="${lineItem.UUID}">
+            ${Resource.msg('text.remove.line.item', 'cart', null)}
+        </button>
+    </div>
+    </isif>
+    </isif>
+</div>

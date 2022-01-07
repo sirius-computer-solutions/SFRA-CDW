@@ -1,0 +1,34 @@
+<isloop items="${pdict.order.billing.payment.applicablePaymentMethods}" var="paymentOption" status="loopSate">
+    <isif condition="${paymentOption.ID === 'CREDIT_CARD'}">
+        <isinclude template="checkout/billing/paymentOptions/creditCardContent" />
+    </isif>
+    <isif condition="${paymentOption.ID === 'PayPal' && pdict.paypal}">
+        <isif condition="${(dw.system.Site.getCurrent().getCustomPreferenceValue('PP_API_Button_Location')||'None').toString().indexOf('Billing')!=-1}">
+            <isinclude template="paypal/checkout/paypalContent" />
+        </isif>
+    </isif>
+    <isif condition="${paymentOption.ID === 'STORE_CREDIT'}">
+        <isif condition="${pdict.customer.registeredUser && customer.profile && customer.profile.custom && customer.profile.custom.b2bUser && customer.profile.custom.b2bAccountNumber
+                        && customer.profile.custom.b2bPayByTerms && customer.profile.custom.b2bWebEnabled && paymentOption.ID === 'STORE_CREDIT'}">
+            <isinclude template="checkout/billing/paymentOptions/storeCreditContent" />
+        </isif>
+    </isif>    
+</isloop>
+<fieldset class="payment-form-fields mt-3">
+    <div class="form-group <isif condition="${customer.profile && customer.profile.custom.b2bUser && customer.profile.custom.b2bAccountNumber && customer.profile.custom.b2bCreditLimit 
+                            && customer.profile.custom.b2bWebEnabled && customer.profile.custom.b2bPORequired}">
+                            </isif>"
+                            >
+        <label class="form-control-label" for="webReferenceNumber">${Resource.msg('label.webReferenceNumber','storeCredit',null)}</label>
+        <input
+            type="text"
+            class="form-control webReferenceNumber-input-field"
+            aria-describedby="form-number-error"
+            id="webReferenceNumber"
+            name="webReferenceNumber"
+            pattern="[0-9]{5}"
+            placeholder="PO#" 
+            maxlength="20"/>
+        <div class="invalid-feedback" id="form-number-error"></div>
+    </div>  
+</fieldset>

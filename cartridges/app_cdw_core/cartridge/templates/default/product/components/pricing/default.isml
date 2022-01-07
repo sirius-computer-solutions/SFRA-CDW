@@ -1,0 +1,85 @@
+    <isif condition="${pdict.product}">    
+        <isset name="price" value="${pdict.product.price}" scope="page" />
+    </isif>
+    <isif condition="${pdict.rebateForm}">    
+        <isset name="rebateForm" value="${pdict.rebateForm}" scope="page" />
+    </isif>
+    
+    <isset name="finalOrigPrice" value="${price}" scope="page" />
+    <isset name="hasWasPrice" value="${false}" scope="page" />
+    <isset name="showListPrice" value="${true}" scope="page" />
+    <isset name="showWasPrice" value="${true}" scope="page" />
+    <isset name="seePriceInCart" value="${finalOrigPrice.seePriceInCart}" scope="page" />
+    <isif condition="${'display' in pdict && 'showWasPrice' in pdict.display && (pdict.display.showWasPrice===false || pdict.display.showWasPrice ==='false')}">
+            <isset name="showWasPrice" value="${false}" scope="page" />
+    </isif>
+    <isif condition="${'display' in pdict && 'showListPrice' in pdict.display && (pdict.display.showListPrice===false || pdict.display.showListPrice ==='false')}">
+            <isset name="showListPrice" value="${false}" scope="page" />
+    </isif>
+    <isif condition="${typeof lineItem !== 'undefined'}">
+        <isset name="showListPrice" value="${false}" scope="page" />
+        <isset name="showWasPrice" value="${false}" scope="page" />
+        <isset name="seePriceInCart" value="${false}" scope="page" />
+    </isif>
+
+    <isif condition="${seePriceInCart}">
+        <isif condition="${'display' in pdict && 'isPDP' in pdict.display && pdict.display.isPDP}">
+                <isslot id="see-price-in-cart" description="See Price in Cart" context="global" context-object="${pdict.product.raw}" />
+        <iselse/>
+            <span class="list">${Resource.msg('label.see.price.in.cart', 'pricing', null)}</span>
+        </isif>
+    <iselse/>
+        <isif condition="${showListPrice&& finalOrigPrice.list !== null}">
+            <isset name="price" value="${finalOrigPrice.list}" scope="page" />
+            <isif condition="${!empty(price) && price.formatted}">
+                <span class="list">${Resource.msg('label.price.list', 'pricing', null)}</span>
+                <span class="list">
+                    <span class="value" content="${price.decimalPrice}">
+                        <isinclude template="/product/components/pricing/formatted" />
+                    </span>
+                </span>
+                <br/>
+            </isif>
+        </isif>
+        
+        <isif condition="${showWasPrice && finalOrigPrice.wasPrice !== null && finalOrigPrice.wasPrice.value > 0 && finalOrigPrice.wasPrice.value > finalOrigPrice.sales.value}">
+            <isset name="price" value="${finalOrigPrice.wasPrice}" scope="page" />
+            <isset name="hasWasPrice" value="${true}" scope="page" />
+            <span class="list was">${Resource.msg('label.price.was', 'pricing', null)}</span>
+            <span class="list was">
+                <span class="value" content="${price.value}">
+                    <isinclude template="/product/components/pricing/formatted" />
+                </span>
+            </span>
+            <br/>
+        </isif>
+
+        <isset name="price" value="${finalOrigPrice.sales}" scope="page" />
+        <span class="sales">
+            <isif condition="${typeof lineItem !== 'undefined'}">
+            
+                    <isset name="totalPrice" value="${lineItem.priceTotal.price.replace('$', '')}" scope="page" /> 
+                    <isif condition="${lineItem.priceTotal.nonAdjustedPrice}">
+                        <isset name="totalPrice" value="${lineItem.priceTotal.nonAdjustedPrice.replace('$', '')}" scope="page" /> 
+                    </isif>
+                    <isset name="totalPrice" value="${totalPrice.replace(/,/g, '')}" scope="page" /> 
+                    <isset name="unitPrice" value="${totalPrice/lineItem.quantity}" scope="page" /> 
+                    $<isprint value="${unitPrice}"  encoding="off" />
+                  
+            <iselse/>
+                <isif condition="${!empty(price) && price.formatted}">
+                    <isif condition="${hasWasPrice}" >
+                        <span class="list">${Resource.msg('label.price.sale', 'pricing', null)}</span>
+                    </isif>
+                    <span class="value" content="${price.decimalPrice}"></span>
+                    <isinclude template="/product/components/pricing/formatted" />    
+                </isif>
+            </isif>        
+
+        </span>
+        <isif condition="${typeof rebateForm !== 'undefined'}">
+            <isif condition="${rebateForm.toString().trim() !==''}" >
+                <p class="rebate-available"><a id="rebateFormLink" target="_blank" href="${URLUtils.staticURL(URLUtils.CONTEXT_CATALOG, '', rebateForm)}">${Resource.msg('rebateform.label', 'product', null)} </a></p>
+            </isif>
+        </isif>
+    </isif>        

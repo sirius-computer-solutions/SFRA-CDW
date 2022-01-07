@@ -1,0 +1,122 @@
+body, nav { background: $white; }
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+#maincontent > .container {
+    background: $white;
+}
+
+.visuallyhidden {
+    border:0;
+    clip:rect(0 0 0 0);
+    height:1px;
+    margin:-1px;
+    overflow:hidden;
+    padding:0;
+    position:absolute;
+    width:1px !important;
+}
+.clear { 
+    @include breakpoint(ablet) {
+    clear:both;
+    }
+}  
+
+.breadcrumb {
+    padding: .75rem 0 .75rem;
+    margin-bottom: 0;
+    font-size: .875em;
+}
+
+.header-details {
+    padding: 0 5%;
+    @include media-breakpoint-down(md) {
+        padding: 0 5%;
+    }
+    i {
+        padding-top: .25em;
+    }
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.more-info {
+    color: $acme-blue;
+    font-style: italic;
+}
+
+.info-icon {
+    .tooltip {
+        min-width: 8.5em;
+        margin-right: 4px;
+    }
+}
+
+.pull-right {
+    float: right;
+}
+.pull-left {
+    float: left;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-dialog {
+    @include media-breakpoint-up(sm) {
+        max-width: 680px;
+    }
+    &.full-width {
+        max-width: 88% !important;
+        margin: 1em auto;
+        @include media-breakpoint-up(sm) {
+        max-width: 75% !important;
+        }
+    }
+}
+
+.vhidden {
+    visibility: hidden !important;
+}
+
+.content-page {
+    font-size: .938em;
+    line-height: 1.7em;
+    h2 {
+    font: 600 1.313em/1em "myriad-pro-n6", "myriad-pro", 'Helvetica Neue', 'Arial', sans-serif;
+    color: $grey7;
+    padding: 10px 0 0;
+    }
+    p {
+        font-size: .938em;
+        margin: 10px 0;
+        line-height: 1.7em;
+    }
+}
+
+.modal-background {
+    z-index: 1;
+}
+
+.ptop5 { padding-top: 5px; }
+.mtop5 { margin-top: 5px; }
+.strike-through {text-decoration: line-through;}
+
+ 
+h2.modal-title {
+    font-family: var(--skin-header-font);
+    font-weight: 600;
+    font-size: 1.5rem; 
+}
+

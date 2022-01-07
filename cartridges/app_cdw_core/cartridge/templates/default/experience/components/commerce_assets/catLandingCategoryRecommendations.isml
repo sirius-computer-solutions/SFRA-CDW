@@ -1,0 +1,48 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/recommendedCategoriesByCarousel.css');
+</isscript>
+<div class="container">
+    <div class="row shop-category-component ${pdict.image && pdict.applyImageShade ? 'shop-category-component-filter' : ''}"
+        <isif condition="${pdict.image}">
+            style="background-image: url('${pdict.image.url}');
+                   background-position-x: ${pdict.image.focalPointX};
+                   background-position-y: ${pdict.image.focalPointY};"
+        </isif>
+    >
+        <div class="col-auto shop-category-header
+                    ${pdict.image && pdict.changeTextColor ? 'shop-category-header-text-color-other' : ''}
+                    text-center mw-100 m-auto"
+        >
+            <isprint value="${pdict.textHeadline}" encoding="off">
+        </div>
+    </div>    
+    <div class="category-slot">
+        <div class="row">
+            <isloop items="${pdict.categories}" var="category">
+                <isif condition="${category.thumbnail}">
+                    <div class="col-sm-6 col-md-3 category-item">
+                        <isif condition="${category.custom.alternativeUrl}">
+                            <isset name="altURL" value="${category.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+                            <isif condition="${altURL.includes('?')}">
+                                <a href="${altURL}&oci=${category.ID}" title="${category.displayName}">
+                            <iselse/>
+                                    <a href="${altURL}?oci=${category.ID}" title="${category.displayName}">
+                            </isif>
+                        <iselse/>
+                            <a href="${URLUtils.url('Search-Show', 'cgid', category.ID)}" title="${category.displayName}">    
+                        </isif>
+                        
+                            <div class="category-tile">
+                                <img class="img-fluid" src="${category.thumbnail.getURL()}" alt="${category.displayName}"/>
+                            </div>
+                            <div class="top-category-tile-name">
+                                    <isprint value="${category.displayName}" encoding="off"/>                  
+                            </div>
+                        </a>
+                    </div>
+                </isif>
+            </isloop>
+        </div>
+    </div>
+</div>

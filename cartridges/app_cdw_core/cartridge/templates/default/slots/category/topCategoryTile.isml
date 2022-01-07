@@ -1,0 +1,39 @@
+<isif condition="${slotcontent}">
+
+    <iscomment> Render a tile of the category Name and the Category Landing Slot Image field </iscomment>
+
+    <div class="category-slot">
+
+        <isif condition="${slotcontent && slotcontent.calloutMsg}">
+            <h2>
+                <isprint value="${slotcontent.calloutMsg}" encoding="off"/>
+            </h2>
+        </isif>
+
+        <div class="row">
+            <isloop items="${slotcontent.content}" var="category">
+                    <div class="col-6 col-md-3 category-item">
+                        <isif condition="${category.custom.alternativeUrl}">
+                            <isset name="altURL" value="${category.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+                            <isif condition="${altURL.includes('?')}">
+                                <a href="${altURL}&oci=${category.ID}" title="${category.displayName}">
+                            <iselse/>
+                                    <a href="${altURL}?oci=${category.ID}" title="${category.displayName}">
+                            </isif>
+                        <iselse/>
+                            <a href="${URLUtils.url('Search-Show', 'cgid', category.ID)}" title="${category.displayName}">    
+                        </isif>
+                        
+                            <div class="category-tile">
+                                <img class="img-fluid" src="${category.image.getURL()}" alt="${category.displayName}"/>
+                            </div>
+                            <div class="top-category-tile-name">
+                                    <isprint value="${category.displayName}" encoding="off"/>                  
+                            </div>
+                        </a>
+                    </div>
+            </isloop>
+        </div>
+    </div>
+
+</isif>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  MapForce Project File  -->
+<Project Expanded="Yes" Type="Root" language="builtin" OutputDir="output\" Title="acme-latest" OutputName="acme-latest" Version="6">
+	<Folder FolderName="sfcc-catalog-load" Expanded="Yes" Type="VirtualFolder">
+		<File Type="Mapping" FilePath="mfd\attribute-definitions-merge-product-attributes.mfd"/>
+		<File Type="Mapping" FilePath="mfd\attribute-definitions-merge.mfd"/>
+		<File Type="Mapping" FilePath="mfd\attribute-definitions-new.mfd"/>
+		<File Type="Mapping" FilePath="mfd\categories-update.mfd"/>
+		<File Type="Mapping" FilePath="mfd\categories.mfd"/>
+		<File Type="Mapping" FilePath="mfd\CategoryAssignment.mfd"/>
+		<File Type="Mapping" FilePath="mfd\master-categories.mfd"/>
+		<File Type="Mapping" FilePath="mfd\product.mfd"/>
+		<File Type="Mapping" FilePath="mfd\variation-product.mfd"/>
+	</Folder>
+	<Folder FolderName="full-load" Expanded="Yes" Type="VirtualFolder">
+		<File Type="Mapping" FilePath="mfd\CategoryAssignment-full-load.mfd"/>
+		<File Type="Mapping" FilePath="mfd\product-full-load.mfd"/>
+		<File Type="Mapping" FilePath="mfd\variation-product-full-load.mfd"/>
+	</Folder>
+	<Folder FolderName="categoryAttributes" Expanded="Yes" Type="VirtualFolder">
+		<File Type="Mapping" FilePath="mfd\CategoryAttributes.mfd"/>
+	</Folder>
+	<Folder FolderName="Shipping" Expanded="Yes" Type="VirtualFolder">
+		<File Type="Mapping" FilePath="mfd\Shipping-old.mfd"/>
+		<File Type="Mapping" FilePath="mfd\Shipping.mfd"/>
+	</Folder>
+</Project>

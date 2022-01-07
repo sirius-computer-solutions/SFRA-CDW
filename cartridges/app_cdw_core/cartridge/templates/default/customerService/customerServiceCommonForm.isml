@@ -1,0 +1,168 @@
+    <div class="row contact-us-name">
+        <div class="col-sm-6">
+            <div class="form-group required">
+                <label class="form-control-label" for="contact-first-name">
+                    ${Resource.msg('label.input.contact-us-first-name', 'customerService', null)}
+                </label>
+                <input type="text" required class="form-control required" aria-describedby="form-contact-first-name-error" id="contact-first-name" name="contactFirstName">
+                <div class="invalid-feedback" id="form-contact-first-name-error"></div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group required">
+                <label class="form-control-label" for="contact-last-name">
+                    ${Resource.msg('label.input.contact-us-last-name', 'customerService', null)}
+                </label>
+                <input type="text" required class="form-control required" aria-describedby="form-contact-last-name-error" id="contact-last-name" name="contactLastName">
+                <div class="invalid-feedback" id="form-contact-last-name-error"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row contact-us-company">
+        <div class="col">
+            <div class="form-group">
+                <label class="form-control-label" for="contact-company">
+                    ${Resource.msg('label.input.contact-us-company', 'customerService', null)}
+                </label>
+                <input type="text"  class="form-control" id="contact-company" name="contactCompany">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="row contact-us-streetaddress">
+        <div class="col">
+            <div class="form-group required">
+                <label class="form-control-label" for="contact-streetaddress">
+                    ${Resource.msg('label.input.contact-us-streetaddress', 'customerService', null)}
+                </label>
+                <input type="text" required class="form-control required" aria-describedby="form-contact-streetadress-error" id="contact-streetaddress" name="contactStreetAddress">
+                <div class="invalid-feedback" id="form-contact-streetaddress-error"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row contact-us-zipCode">
+        <div class="col">
+            <div class="form-group required">
+                <label class="form-control-label" for="contact-zipCode">
+                    ${Resource.msg('label.input.contact-us-zipCode', 'customerService', null)}
+                </label>
+                <input type="text" required class="form-control required" aria-describedby="form-contact-zipCode-error" id="contact-zipCode" name="contactZipCode" pattern="[0-9]{5}">
+                <span>${Resource.msg('example.postalcode','forms',null)}</span>
+                <div class="invalid-feedback" id="form-contact-zipCode-error"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row contact-us-city">
+        <div class="col">
+            <div class="form-group required">
+                <label class="form-control-label" for="contact-city">
+                    ${Resource.msg('label.input.contact-us-city', 'customerService', null)}
+                </label>
+                <input type="text" required class="form-control required" aria-describedby="form-contact-city-error" id="contact-city" name="contactCity">
+                <div class="invalid-feedback" id="form-contact-city-error"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row contact-us-state">
+        <div class="col">
+            <div class="form-group required">
+                <label class="form-control-label" for="contact-state">
+                    ${Resource.msg('label.input.contact-us-state', 'customerService', null)}
+                </label>
+                
+                <select class="form-control" required class="form-control required" aria-describedby="form-contact-state-error" id="contact-state" name="contactState" encoding="off" >                
+ 
+                        <option value="">${Resource.msg('resource.select', 'forms', null)}</option>
+
+                      <!-- regular US states -->
+                      <option optionid="AL" 	${Resource.msg('state.us.alabama', 'forms', null)} 		value="AL">${Resource.msg('state.us.alabama', 'forms', null)} </option>
+                      <option optionid="AK" 	${Resource.msg('state.us.alaska', 'forms', null)} 		value="AK">${Resource.msg('state.us.alaska', 'forms', null)} </option>
+                      <option optionid="AS" 	${Resource.msg('state.us.americansamoa', 'forms', null)} 	value="AS">${Resource.msg('state.us.americansamoa', 'forms', null)} </option>
+                      <option optionid="AZ" 	${Resource.msg('state.us.arizona', 'forms', null)} 		value="AZ">${Resource.msg('state.us.arizona', 'forms', null)} </option>
+                      <option optionid="AR" 	${Resource.msg('state.us.arkansas', 'forms', null)} 		value="AR">${Resource.msg('state.us.arkansas', 'forms', null)} </option>
+                      <option optionid="CA" 	${Resource.msg('state.us.california', 'forms', null)} 	value="CA">${Resource.msg('state.us.california', 'forms', null)} </option>
+                      <option optionid="CO" 	${Resource.msg('state.us.colorado', 'forms', null)} 		value="CO">${Resource.msg('state.us.colorado', 'forms', null)} </option>
+                      <option optionid="CT" 	${Resource.msg('state.us.connecticut', 'forms', null)} 	value="CT">${Resource.msg('state.us.connecticut', 'forms', null)} </option>
+                      <option optionid="DE" 	${Resource.msg('state.us.delaware', 'forms', null)} 		value="DE">${Resource.msg('state.us.delaware', 'forms', null)} </option>
+                      <option optionid="DC" 	${Resource.msg('state.us.dc', 'forms', null)} 			value="DC">${Resource.msg('state.us.dc', 'forms', null)} </option>
+                      <option optionid="FL" 	${Resource.msg('state.us.florida', 'forms', null)} 		value="FL">${Resource.msg('state.us.florida', 'forms', null)} </option>
+                      <option optionid="GA" 	${Resource.msg('state.us.georgia', 'forms', null)} 		value="GA">${Resource.msg('state.us.georgia', 'forms', null)} </option>
+                      <option optionid="GU" 	${Resource.msg('state.us.guam', 'forms', null)} 			value="GU">${Resource.msg('state.us.guam', 'forms', null)} </option>
+                      <option optionid="HI" 	${Resource.msg('state.us.hawaii', 'forms', null)}		value="HI">${Resource.msg('state.us.hawaii', 'forms', null)} </option>
+                      <option optionid="ID" 	${Resource.msg('state.us.idaho', 'forms', null)} 			value="ID">${Resource.msg('state.us.idaho', 'forms', null)} </option>
+                      <option optionid="IL"	${Resource.msg('state.us.illinois', 'forms', null)} 		value="IL">${Resource.msg('state.us.illinois', 'forms', null)} </option>
+                      <option optionid="IN"	${Resource.msg('state.us.indiana', 'forms', null)} 		value="IN">${Resource.msg('state.us.indiana', 'forms', null)} </option>
+                      <option optionid="IA"	${Resource.msg('state.us.iowa', 'forms', null)} 			value="IA">${Resource.msg('state.us.iowa', 'forms', null)} </option>
+                      <option optionid="KS"	${Resource.msg('state.us.kansas', 'forms', null)} 		value="KS">${Resource.msg('state.us.kansas', 'forms', null)} </option>
+                      <option optionid="KY"	${Resource.msg('state.us.kentucky', 'forms', null)} 		value="KY">${Resource.msg('state.us.kentucky', 'forms', null)} </option>
+                      <option optionid="LA"	${Resource.msg('state.us.louisiana', 'forms', null)} 		value="LA">${Resource.msg('state.us.louisiana', 'forms', null)} </option>
+                      <option optionid="ME"	${Resource.msg('state.us.maine', 'forms', null)} 			value="ME">${Resource.msg('state.us.maine', 'forms', null)} </option>
+                      <option optionid="MD"	${Resource.msg('state.us.maryland', 'forms', null)} 		value="MD">${Resource.msg('state.us.maryland', 'forms', null)} </option>
+                      <option optionid="MA"	${Resource.msg('state.us.massachusetts', 'forms', null)}	value="MA">${Resource.msg('state.us.massachusetts', 'forms', null)} </option>
+                      <option optionid="MI"	${Resource.msg('state.us.michigan', 'forms', null)} 		value="MI">${Resource.msg('state.us.michigan', 'forms', null)} </option>
+                      <option optionid="MN"	${Resource.msg('state.us.minnesota', 'forms', null)}		value="MN">${Resource.msg('state.us.minnesota', 'forms', null)} </option>
+                      <option optionid="MS"	${Resource.msg('state.us.mississippi', 'forms', null)} 	value="MS">${Resource.msg('state.us.mississippi', 'forms', null)} </option>
+                      <option optionid="MO"	${Resource.msg('state.us.missouri', 'forms', null)} 		value="MO">${Resource.msg('state.us.missouri', 'forms', null)} </option>
+                      <option optionid="MT"	${Resource.msg('state.us.montana', 'forms', null)}		value="MT">${Resource.msg('state.us.montana', 'forms', null)} </option>
+                      <option optionid="NE"	${Resource.msg('state.us.nebraska', 'forms', null)} 		value="NE">${Resource.msg('state.us.nebraska', 'forms', null)} </option>
+                      <option optionid="NV"	${Resource.msg('state.us.nevada', 'forms', null)} 		value="NV">${Resource.msg('state.us.nevada', 'forms', null)} </option>
+                      <option optionid="NH"	${Resource.msg('state.us.newhampshire', 'forms', null)} 	value="NH">${Resource.msg('state.us.newhampshire', 'forms', null)} </option>
+                      <option optionid="NJ"	${Resource.msg('state.us.newjersey', 'forms', null)} 		value="NJ">${Resource.msg('state.us.newjersey', 'forms', null)} </option>
+                      <option optionid="NM"	${Resource.msg('state.us.newmexico', 'forms', null)} 		value="NM">${Resource.msg('state.us.newmexico', 'forms', null)} </option>
+                      <option optionid="NY"	${Resource.msg('state.us.newyork', 'forms', null)} 		value="NY">${Resource.msg('state.us.newyork', 'forms', null)} </option>
+                      <option optionid="NC"	${Resource.msg('state.us.northcarolina', 'forms', null)} 	value="NC">${Resource.msg('state.us.northcarolina', 'forms', null)} </option>
+                      <option optionid="ND"	${Resource.msg('state.us.northdakota', 'forms', null)} 	value="ND">${Resource.msg('state.us.northdakota', 'forms', null)} </option>
+                      <option optionid="OH"	${Resource.msg('state.us.ohio', 'forms', null)} 			value="OH">${Resource.msg('state.us.ohio', 'forms', null)} </option>
+                      <option optionid="OK"	${Resource.msg('state.us.oklahoma', 'forms', null)} 		value="OK">${Resource.msg('state.us.oklahoma', 'forms', null)} </option>
+                      <option optionid="OR"	${Resource.msg('state.us.oregon', 'forms', null)} 		value="OR">${Resource.msg('state.us.oregon', 'forms', null)} </option>
+                      <option optionid="PA"	${Resource.msg('state.us.pennsylvania', 'forms', null)} 	value="PA">${Resource.msg('state.us.pennsylvania', 'forms', null)} </option>
+                      <option optionid="PR"	${Resource.msg('state.us.puertorico', 'forms', null)} 	value="PR">${Resource.msg('state.us.puertorico', 'forms', null)} </option>
+                      <option optionid="RI"	${Resource.msg('state.us.rhodeisland', 'forms', null)} 	value="RI">${Resource.msg('state.us.rhodeisland', 'forms', null)} </option>
+                      <option optionid="SC"	${Resource.msg('state.us.southcarolina', 'forms', null)} 	value="SC">${Resource.msg('state.us.southcarolina', 'forms', null)} </option>
+                      <option optionid="SD"	${Resource.msg('state.us.southdakota', 'forms', null)} 	value="SD">${Resource.msg('state.us.southdakota', 'forms', null)} </option>
+                      <option optionid="TN" 	${Resource.msg('state.us.tennessee', 'forms', null)} 		value="TN">${Resource.msg('state.us.tennessee', 'forms', null)} </option>
+                      <option optionid="TX" 	${Resource.msg('state.us.texas', 'forms', null)} 			value="TX">${Resource.msg('state.us.texas', 'forms', null)} </option>
+                      <option optionid="UT" 	${Resource.msg('state.us.utah', 'forms', null)} 			value="UT">${Resource.msg('state.us.utah', 'forms', null)} </option>
+                      <option optionid="VT" 	${Resource.msg('state.us.vermont', 'forms', null)} 		value="VT">${Resource.msg('state.us.vermont', 'forms', null)} </option>
+                      <option optionid="VI" 	${Resource.msg('state.us.virginislands', 'forms', null)}	value="VI">${Resource.msg('state.us.virginislands', 'forms', null)} </option>
+                      <option optionid="VA" 	${Resource.msg('state.us.virginia', 'forms', null)} 		value="VA">${Resource.msg('state.us.virginia', 'forms', null)} </option>
+                      <option optionid="WA" 	${Resource.msg('state.us.washington', 'forms', null)} 	value="WA">${Resource.msg('state.us.washington', 'forms', null)} </option>
+                      <option optionid="WV" 	${Resource.msg('state.us.westvirginia', 'forms', null)} 	value="WV">${Resource.msg('state.us.westvirginia', 'forms', null)} </option>
+                      <option optionid="WI" 	${Resource.msg('state.us.wisconsin', 'forms', null)} 		value="WI">${Resource.msg('state.us.wisconsin', 'forms', null)} </option>
+                      <option optionid="WY" 	${Resource.msg('state.us.wyoming', 'forms', null)} 		value="WY">${Resource.msg('state.us.alaska', 'wyoming', null)} </option>
+
+                      <!-- APO/FPO -->
+                      <option optionid="AE" 	${Resource.msg('state.us.armedforcesafrica', 'forms', null)} 		value="AE">${Resource.msg('state.us.armedforcesafrica', 'forms', null)} </option>
+                      <option optionid="AA" 	${Resource.msg('state.us.armedforcesamerica', 'forms', null)} 	value="AA">${Resource.msg('state.us.armedforcesamerica', 'forms', null)} </option>
+                      <option optionid="AE" 	${Resource.msg('state.us.armedforcescanada', 'forms', null)} 		value="AE">${Resource.msg('state.us.armedforcescanada', 'forms', null)} </option>
+                      <option optionid="AE" 	${Resource.msg('state.us.armedforceseurope', 'forms', null)} 		value="AE">${Resource.msg('state.us.armedforceseurope', 'forms', null)} </option>
+                      <option optionid="AE" 	${Resource.msg('state.us.armedforcesmiddleeast', 'forms', null)} 	value="AE">${Resource.msg('state.us.armedforcesmiddleeast', 'forms', null)} </option>
+                      <option optionid="AP" 	${Resource.msg('state.us.armedforcespacific', 'forms', null)} 	value="AP">${Resource.msg('state.us.armedforcespacific', 'forms', null)} </option>
+
+                      <!-- Other -->
+                      <option optionid="OTHER" ${Resource.msg('state.us.other', 'forms', null)} 				value="OTHER">${Resource.msg('state.us.other', 'forms', null)} </option>
+
+                </select>
+                    
+
+                <div class="invalid-feedback" id="form-contact-state-error"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--- contact us email --->
+    <div class="row contact-us-email">
+        <div class="col">
+            <div class="form-group required">
+                <label class="form-control-label" for="contact-email">
+                    ${Resource.msg('label.input.contact-us-email', 'customerService', null)}
+                </label>
+                <input type="email" required class="form-control required" aria-describedby="form-contact-email-error" id="contact-email" name="contactEmail">
+                <div class="invalid-feedback" id="form-contact-email-error"></div>
+            </div>
+        </div>
+    </div>

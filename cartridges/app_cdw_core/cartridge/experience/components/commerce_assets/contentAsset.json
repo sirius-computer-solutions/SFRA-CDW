@@ -1,0 +1,39 @@
+{
+    "name": "Content Asset",
+    "description": "Content Asset Component to manage the HTML content within PageDesigner",
+    "group": "commerce_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "dynamicCategoryContentAsset",
+            "description": "Determines content asset for html content",
+            "attribute_definitions": [
+                {
+                    "id": "category",
+                    "name": "Category",
+                    "type": "category",
+                    "required": false,
+                    "dynamic_lookup": {
+                        "aspect_attribute_alias" : "category"
+                    }
+                },
+                {
+                    "id": "contentAsset",
+                    "name": "Content Asset name",
+                    "description": "Content Asset Name to render within Page Designer. Make sure you create content asset before testing.",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "queryString",
+                    "name": "QueryString",
+                    "type": "string",
+                    "required": false,
+                    "dynamic_lookup":{
+                        "aspect_attribute_alias": "queryString"
+                    }
+                }  
+            ]
+        }
+    ],
+    "region_definitions": []
+}

@@ -1,0 +1,8 @@
+
+<span class="datalayer d-none" 
+    data-tracking-view="${ JSON.stringify(require('*/cartridge/scripts/datalayer.js').getDatalayerView()) }"
+    data-tracking-event="${ JSON.stringify(require('*/cartridge/scripts/datalayer.js').getDatalayerEvent()) }" >
+</span>
+
+
+<isinclude template="/tracking/customTrackingProvider" />

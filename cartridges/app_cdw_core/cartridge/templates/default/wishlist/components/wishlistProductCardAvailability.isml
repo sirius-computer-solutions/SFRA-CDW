@@ -1,0 +1,16 @@
+
+
+<div class="line-item-availability availability-${item.UUID}">
+    <isloop items="${item.availability.messages}" var="message">
+        <p class="line-item-attributes"><isprint value="${message}" encoding="off" /></p>
+    </isloop>
+
+    <isif condition="${item.availability.inStock == true}">
+        <isif condition="${shoppingCart && dw.system.Site.getCurrent().getCustomPreferenceValue('enableVarsity')}">
+            <div class="estimated-arrival">
+                <isinclude url="${URLUtils.url('Product-GetArrivalDate')}"/>
+            </div>
+            <isinclude template="product/components/zipCodeModal"/>
+        </isif>
+    </isif>    
+</div>

@@ -1,0 +1,2541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with Altova MapForce 2021r3 -->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="31">
+	<resources/>
+	<component name="defaultmap" uid="1" editable="1">
+		<properties SelectedLanguage="builtin"/>
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="607" kind="2">
+					<targets>
+						<datapoint pos="0" key="23"/>
+					</targets>
+					<view ltx="1958" lty="600" rbx="2021" rby="617"/>
+					<data>
+						<constant value="true" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="608" kind="2">
+					<targets>
+						<datapoint pos="0" key="36"/>
+					</targets>
+					<view ltx="1678" lty="345" rbx="1746" rby="362"/>
+					<data>
+						<constant value="large" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="609" kind="2">
+					<targets>
+						<datapoint pos="0" key="19"/>
+					</targets>
+					<view ltx="1678" lty="375" rbx="1761" rby="392"/>
+					<data>
+						<constant value="medium" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="610" kind="2">
+					<targets>
+						<datapoint pos="0" key="71"/>
+					</targets>
+					<view ltx="888" lty="1064" rbx="994" rby="1081"/>
+					<data>
+						<constant value="digital_asset" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="611" kind="2">
+					<targets>
+						<datapoint pos="0" key="44"/>
+					</targets>
+					<view ltx="1177" lty="1064" rbx="1217" rby="1081"/>
+					<data>
+						<constant value="0" datatype="decimal"/>
+					</data>
+				</component>
+				<component name="string-compare" library="lang" uid="612" kind="5">
+					<sources>
+						<datapoint pos="0" key="79"/>
+						<datapoint pos="1" key="72"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="57"/>
+					</targets>
+					<view ltx="1066" lty="1011" rbx="1171" rby="1065"/>
+				</component>
+				<component name="equal" library="core" uid="613" kind="5">
+					<sources>
+						<datapoint pos="0" key="58"/>
+						<datapoint pos="1" key="45"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="85"/>
+					</targets>
+					<view ltx="1215" lty="1001" rbx="1271" rby="1055"/>
+				</component>
+				<component name="joined" library="core" uid="614" kind="3">
+					<sources>
+						<datapoint pos="0" key="90"/>
+						<datapoint pos="1" key="81"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="76"/>
+						<datapoint pos="1" key="113"/>
+					</targets>
+					<view ltx="1248" lty="1176" rbx="1361" rby="1230"/>
+				</component>
+				<component name="joined" library="core" uid="615" kind="3">
+					<sources>
+						<datapoint pos="0" key="83"/>
+						<datapoint pos="1" key="86"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="65"/>
+						<datapoint pos="1" key="55"/>
+					</targets>
+					<view ltx="1158" lty="763" rbx="1271" rby="817"/>
+				</component>
+				<component name="document" library="xml" uid="616" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="1427" lty="1311" rbx="1690" rby="1408"/>
+					<data>
+						<root scrollposition="7">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+								<entry name="root" expanded="1">
+									<entry name="subcategories" inpkey="114" outkey="115" expanded="1">
+										<entry name="name" outkey="91" expanded="1">
+											<entry name="#text" inpkey="112">
+												<inputnodefunctions>
+													<rule applyto="self">
+														<function name="DD85E192-B1EF-4ECA-B5B3-19DE76089545"/>
+													</rule>
+												</inputnodefunctions>
+											</entry>
+										</entry>
+										<entry name="value" inpkey="106" outkey="119">
+											<inputnodefunctions>
+												<rule applyto="self">
+													<function name="36C4C687-DF82-48EB-9E9E-D48372EFC54F"/>
+												</rule>
+											</inputnodefunctions>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="mfd\xsd\subcategories.xsd"/>
+						<parameter usageKind="variable">
+							<root>
+								<entry name="root"/>
+							</root>
+						</parameter>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="617" kind="2">
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="1750" lty="1081" rbx="1890" rby="1098"/>
+					<data>
+						<constant value="acme-catalog-m-en" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="618" kind="2">
+					<targets>
+						<datapoint pos="0" key="17"/>
+					</targets>
+					<view ltx="1780" lty="438" rbx="1920" rby="455"/>
+					<data>
+						<constant value="acme-catalog-m-en" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="619" kind="2">
+					<targets>
+						<datapoint pos="0" key="31"/>
+					</targets>
+					<view ltx="1678" lty="552" rbx="1834" rby="569"/>
+					<data>
+						<constant value="availableForInStorePickup" datatype="string"/>
+					</data>
+				</component>
+				<component name="get-exists-value" library="user" uid="620" kind="19" visible="0">
+					<view ltx="1177" lty="839" rbx="1293" rby="890"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="string" inpkey="73" componentid="92"/>
+							<entry name="boolean" inpkey="62" componentid="96"/>
+							<entry name="number" inpkey="64" componentid="98"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="51" componentid="91"/>
+						</root>
+					</data>
+				</component>
+				<component name="filter" library="core" uid="621" kind="3">
+					<sources>
+						<datapoint/>
+						<datapoint pos="1" key="30"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1"/>
+						<datapoint/>
+					</targets>
+					<view ltx="1008" lty="177" rbx="1121" rby="231"/>
+				</component>
+				<component name="constant" library="core" uid="622" kind="2">
+					<targets>
+						<datapoint pos="0" key="107"/>
+					</targets>
+					<view ltx="1579" lty="84" rbx="1666" rby="101"/>
+					<data>
+						<constant value="Product_" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="623" kind="2">
+					<targets>
+						<datapoint pos="0" key="47"/>
+					</targets>
+					<view ltx="1678" lty="410" rbx="1746" rby="427"/>
+					<data>
+						<constant value="small" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="624" kind="2">
+					<targets>
+						<datapoint pos="0" key="109"/>
+					</targets>
+					<view ltx="1780" lty="801" rbx="1905" rby="818"/>
+					<data>
+						<constant value="package-weight" datatype="string"/>
+					</data>
+				</component>
+				<component name="format-filename" library="user" uid="625" kind="19" visible="0">
+					<view ltx="1703" lty="84" rbx="1804" rby="101"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="input" inpkey="108" componentid="374"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="87" componentid="375"/>
+						</root>
+					</data>
+				</component>
+				<component name="is-attr-acme-tools-brand-name" library="user" uid="626" kind="19" visible="0">
+					<view ltx="1731" lty="728" rbx="1856" rby="745"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="attr_name" inpkey="126" componentid="569"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="147" componentid="568"/>
+						</root>
+					</data>
+				</component>
+				<component name="get-exists-string-value" library="user" uid="627" kind="19" visible="0">
+					<view ltx="1189" lty="600" rbx="1256" rby="617"/>
+					<data>
+						<root>
+							<header>
+								<namespaces/>
+							</header>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="144" componentid="538"/>
+						</root>
+					</data>
+				</component>
+				<component name="subcategories" library="core" uid="628" kind="3">
+					<sources>
+						<datapoint pos="0" key="133"/>
+						<datapoint pos="1" key="148"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="153"/>
+						<datapoint/>
+					</targets>
+					<view ltx="1731" lty="650" rbx="1844" rby="704"/>
+				</component>
+				<component name="document" library="xml" uid="629" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="1405" lty="948" rbx="1656" rby="1064"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+								<entry name="root" expanded="1">
+									<entry name="subcategories" inpkey="66" outkey="74" expanded="1">
+										<entry name="name" inpkey="84"/>
+										<entry name="value" inpkey="70"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="mfd\xsd\subcategories.xsd"/>
+						<parameter usageKind="variable">
+							<root>
+								<entry name="root"/>
+							</root>
+						</parameter>
+					</data>
+				</component>
+				<component name="join" library="core" uid="630" kind="32">
+					<view ltx="855" lty="1202" rbx="1005" rby="1402"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="document" ns="1" expanded="1">
+								<entry name="tuple" ns="1" outkey="89" expanded="1">
+									<entry name="dynamic_tree_node0" ns="1" expanded="1">
+										<entry name="subcategories" inpkey="75">
+											<entry name="name" outkey="94">
+												<entry name="#text" outkey="111"/>
+											</entry>
+										</entry>
+									</entry>
+									<entry name="dynamic_tree_node1" ns="1" expanded="1">
+										<entry name="object" expanded="1">
+											<entry name="salsify:filename" type="json-property" expanded="1">
+												<entry name="string" outkey="103"/>
+											</entry>
+											<entry name="salsify:format" type="json-property" expanded="1">
+												<entry name="string" outkey="101"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<join>
+							<joinkeys>
+								<keypair>
+									<first-key path-id="1"/>
+									<second-key path-id="2"/>
+								</keypair>
+							</joinkeys>
+							<keypaths>
+								<header>
+									<namespaces>
+										<namespace/>
+									</namespaces>
+								</header>
+								<entry>
+									<condition/>
+									<entry name="salsify:id" type="json-property">
+										<condition/>
+										<entry name="string" outkey="2">
+											<condition/>
+										</entry>
+									</entry>
+									<entry name="value" outkey="1">
+										<condition/>
+									</entry>
+								</entry>
+							</keypaths>
+						</join>
+					</data>
+				</component>
+				<component name="isImage" library="user" uid="631" kind="19" visible="0">
+					<view ltx="1081" lty="1321" rbx="1210" rby="1355"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="file_format" inpkey="102" componentid="148"/>
+							<entry name="attr_name" inpkey="95" componentid="214"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="80" componentid="152"/>
+						</root>
+					</data>
+				</component>
+				<component name="document" library="xml" uid="632" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="1427" lty="1159" rbx="1690" rby="1273"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+								<entry name="root" expanded="1">
+									<entry name="subcategories" inpkey="77" outkey="33" expanded="1">
+										<entry name="value" inpkey="104" outkey="27">
+											<inputnodefunctions>
+												<rule applyto="self">
+													<function name="02BCAEB0-E799-4458-87F1-18C6E40AA983"/>
+												</rule>
+											</inputnodefunctions>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="mfd\xsd\subcategories.xsd"/>
+						<parameter usageKind="variable">
+							<root>
+								<entry name="root"/>
+							</root>
+						</parameter>
+					</data>
+				</component>
+				<component name="join" library="core" uid="633" kind="32">
+					<view ltx="901" lty="290" rbx="1068" rby="490"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.altova.com/mapforce"/>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="document" expanded="1">
+								<entry name="tuple" expanded="1">
+									<entry name="dynamic_tree_node0" expanded="1"/>
+									<entry name="dynamic_tree_node1" expanded="1">
+										<entry name="object" ns="1">
+											<entry name="salsify:filename" ns="1" type="json-property" expanded="1">
+												<entry name="string" ns="1" outkey="99"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<join>
+							<joinkeys>
+								<keypair>
+									<first-key path-id="1"/>
+									<second-key path-id="2"/>
+								</keypair>
+							</joinkeys>
+							<keypaths>
+								<header>
+									<namespaces>
+										<namespace/>
+									</namespaces>
+								</header>
+								<entry outkey="1">
+									<condition/>
+									<entry name="salsify:id" type="json-property">
+										<condition/>
+										<entry name="string" outkey="2">
+											<condition/>
+										</entry>
+									</entry>
+								</entry>
+							</keypaths>
+						</join>
+					</data>
+				</component>
+				<component name="equal" library="core" uid="634" kind="5">
+					<sources>
+						<datapoint/>
+						<datapoint pos="1" key="123"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="6"/>
+					</targets>
+					<view ltx="1654" lty="264" rbx="1710" rby="318"/>
+				</component>
+				<component name="constant" library="core" uid="635" kind="2">
+					<targets>
+						<datapoint pos="0" key="122"/>
+					</targets>
+					<view ltx="1590" lty="301" rbx="1637" rby="318"/>
+					<data>
+						<constant value="Y" datatype="string"/>
+					</data>
+				</component>
+				<component name="document" library="xml" uid="636" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="1132" lty="296" rbx="1395" rby="410"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+								<entry name="root" expanded="1">
+									<entry name="subcategories" expanded="1">
+										<entry name="value" inpkey="100" outkey="4">
+											<inputnodefunctions>
+												<rule applyto="self">
+													<function name="F5E44AEF-37B6-4F70-8505-E069B1EEA220"/>
+												</rule>
+											</inputnodefunctions>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="mfd\xsd\subcategories.xsd"/>
+						<parameter usageKind="variable">
+							<root>
+								<entry name="root"/>
+							</root>
+						</parameter>
+					</data>
+				</component>
+				<component name="parse-s2k-date" library="user" uid="637" kind="19" visible="0">
+					<view ltx="1215" lty="241" rbx="1282" rby="258"/>
+					<data>
+						<root>
+							<header>
+								<namespaces/>
+							</header>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="21" componentid="607"/>
+						</root>
+					</data>
+				</component>
+				<component name="parse-s2k-date" library="user" uid="638" kind="19" visible="0">
+					<view ltx="1157" lty="501" rbx="1224" rby="518"/>
+					<data>
+						<root>
+							<header>
+								<namespaces/>
+							</header>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="163" componentid="607"/>
+						</root>
+					</data>
+				</component>
+				<component name="document" library="xml" uid="639" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="1382" lty="552" rbx="1645" rby="625"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+								<entry name="root" expanded="1">
+									<entry name="subcategories" inpkey="174" outkey="129">
+										<entry name="name" outkey="135">
+											<inputnodefunctions>
+												<rule applyto="self">
+													<default value="w1cctd"/>
+												</rule>
+											</inputnodefunctions>
+										</entry>
+										<entry name="value" inpkey="164" outkey="141"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="mfd\xsd\subcategories.xsd"/>
+						<parameter usageKind="variable">
+							<root>
+								<entry name="root"/>
+							</root>
+						</parameter>
+					</data>
+				</component>
+				<component name="document" library="xml" uid="640" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="1382" lty="451" rbx="1645" rby="523"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+								<entry name="root" expanded="1">
+									<entry name="subcategories" inpkey="162" outkey="137">
+										<entry name="name" outkey="127">
+											<inputnodefunctions>
+												<rule applyto="self">
+													<default value="w1dscdt"/>
+												</rule>
+											</inputnodefunctions>
+										</entry>
+										<entry name="value" inpkey="143" outkey="139"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="mfd\xsd\subcategories.xsd"/>
+						<parameter usageKind="variable">
+							<root>
+								<entry name="root"/>
+							</root>
+						</parameter>
+					</data>
+				</component>
+				<component name="document" library="xml" uid="641" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="1382" lty="663" rbx="1645" rby="736"/>
+					<data>
+						<root scrollposition="15">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+								<entry name="root" expanded="1">
+									<entry name="subcategories" inpkey="167" outkey="168" expanded="1">
+										<entry name="name" outkey="160">
+											<inputnodefunctions>
+												<rule applyto="self">
+													<default value="country-of-origin"/>
+												</rule>
+											</inputnodefunctions>
+										</entry>
+										<entry name="value" inpkey="166" outkey="172"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="mfd\xsd\subcategories.xsd"/>
+						<parameter usageKind="variable">
+							<root>
+								<entry name="root"/>
+							</root>
+						</parameter>
+					</data>
+				</component>
+				<component name="document" library="xml" uid="643" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="1405" lty="815" rbx="1656" rby="907"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+								<entry name="root" expanded="1">
+									<entry name="subcategories" inpkey="56" outkey="25" expanded="1">
+										<entry name="name" inpkey="60" outkey="40">
+											<inputnodefunctions>
+												<rule applyto="self">
+													<function name="DD6B436E-7436-43CA-AE5E-D1A5F2E9CBCE"/>
+												</rule>
+											</inputnodefunctions>
+										</entry>
+										<entry name="value" inpkey="52" outkey="38"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="mfd\xsd\subcategories.xsd"/>
+						<parameter usageKind="variable">
+							<root>
+								<entry name="root"/>
+							</root>
+						</parameter>
+					</data>
+				</component>
+				<component name="map-country-name" library="user" uid="644" kind="19" visible="0">
+					<view ltx="924" lty="552" rbx="1036" rby="569"/>
+					<data>
+						<root>
+							<header>
+								<namespaces/>
+							</header>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="country_name" outkey="165" componentid="643"/>
+						</root>
+					</data>
+				</component>
+				<component name="filter" library="core" uid="645" kind="3">
+					<sources>
+						<datapoint/>
+						<datapoint pos="1" key="118"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="131"/>
+						<datapoint/>
+					</targets>
+					<view ltx="760" lty="801" rbx="873" rby="855"/>
+				</component>
+				<component name="join" library="core" uid="646" kind="32">
+					<view ltx="901" lty="763" rbx="1051" rby="963"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="document" ns="1" expanded="1">
+								<entry name="tuple" ns="1" outkey="82" expanded="1">
+									<entry name="dynamic_tree_node0" ns="1" expanded="1">
+										<entry name="property" ns="1" type="json-property" expanded="1">
+											<entry name="string" outkey="69"/>
+											<entry name="number" outkey="63"/>
+											<entry name="boolean" outkey="61"/>
+										</entry>
+									</entry>
+									<entry name="dynamic_tree_node1" ns="1" expanded="1">
+										<entry name="object" inpkey="132" show-schema-children="0">
+											<entry name="salsify:id" type="json-property" expanded="1" show-schema-children="0">
+												<entry name="string" outkey="59" show-schema-children="0"/>
+											</entry>
+											<entry name="salsify:data_type" type="json-property" expanded="1" show-schema-children="0">
+												<entry name="string" outkey="78" show-schema-children="0"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<join>
+							<joinkeys>
+								<keypair>
+									<first-key path-id="1"/>
+									<second-key path-id="2"/>
+								</keypair>
+							</joinkeys>
+							<keypaths>
+								<header>
+									<namespaces>
+										<namespace/>
+										<namespace uid="http://www.altova.com/mapforce"/>
+									</namespaces>
+								</header>
+								<entry>
+									<condition/>
+									<entry name="name" ns="1" type="json-propertyname" outkey="1">
+										<condition/>
+									</entry>
+									<entry name="salsify:id" type="json-property">
+										<condition/>
+										<entry name="string" outkey="2">
+											<condition/>
+										</entry>
+									</entry>
+								</entry>
+							</keypaths>
+						</join>
+					</data>
+				</component>
+				<component name="can-import-attribute" library="user" uid="647" kind="19" visible="0">
+					<view ltx="743" lty="897" rbx="810" rby="914"/>
+					<data>
+						<root>
+							<header>
+								<namespaces/>
+							</header>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="117" componentid="372"/>
+						</root>
+					</data>
+				</component>
+				<component name="can-import-sku" library="user" uid="648" kind="19" visible="0">
+					<view ltx="790" lty="175" rbx="857" rby="192"/>
+					<data>
+						<root>
+							<header>
+								<namespaces/>
+							</header>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="29" componentid="200"/>
+						</root>
+					</data>
+				</component>
+				<component name="Salsify-Properties-Export" library="xlsx" uid="3" kind="26">
+					<view ltx="63" lty="368" rbx="361" rby="568"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1">
+									<entry name="Workbook" expanded="1">
+										<entry name="Worksheet" expanded="1" displayselectionmode="selection">
+											<entry name="Row" expanded="1">
+												<entry name="Cell" datatype="string"/>
+											</entry>
+										</entry>
+										<entry name="Worksheet" expanded="1">
+											<condition>
+												<expression>
+													<function name="equal-ignorecase" library="xlsx">
+														<expression>
+															<attribute name="Name"/>
+														</expression>
+														<expression>
+															<constant value="Sheet1"/>
+														</expression>
+													</function>
+												</expression>
+											</condition>
+											<ranges>
+												<range id="1" start="1"/>
+											</ranges>
+											<entry name="Row" expanded="1" displayselectionmode="selection">
+												<entry name="Cell" datatype="string"/>
+											</entry>
+											<entry name="Row" expanded="1">
+												<condition>
+													<expression>
+														<function name="is-range-id">
+															<expression>
+																<constant value="1" datatype="long"/>
+															</expression>
+														</function>
+													</expression>
+												</condition>
+												<entry name="Cell" datatype="string"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<excel inputinstance="..\input\csv-input\Salsify-Properties-Export.xlsx" outputinstance="..\input\csv-input\Salsify-Properties-Export.xlsx"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="653" kind="2">
+					<targets>
+						<datapoint pos="0" key="175"/>
+					</targets>
+					<view ltx="386" lty="290" rbx="552" rby="307"/>
+					<data>
+						<constant value="Acme Tools Part Number" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="654" kind="2">
+					<targets>
+						<datapoint pos="0" key="176"/>
+					</targets>
+					<view ltx="458" lty="105" rbx="498" rby="122"/>
+					<data>
+						<constant value="0" datatype="decimal"/>
+					</data>
+				</component>
+				<component name="string-compare" library="lang" uid="652" kind="5">
+					<sources>
+						<datapoint pos="0" key="177"/>
+						<datapoint pos="1" key="178"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="179"/>
+					</targets>
+					<view ltx="481" lty="192" rbx="586" rby="246"/>
+				</component>
+				<component name="equal" library="core" uid="650" kind="5">
+					<sources>
+						<datapoint pos="0" key="180"/>
+						<datapoint pos="1" key="181"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="182"/>
+					</targets>
+					<view ltx="557" lty="68" rbx="613" rby="122"/>
+				</component>
+				<component name="product-feed-1" library="xlsx" uid="5" kind="26">
+					<view ltx="63" lty="57" rbx="361" rby="257"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1">
+									<entry name="Workbook" expanded="1">
+										<entry name="Worksheet" expanded="1" displayselectionmode="selection">
+											<entry name="Row" expanded="1">
+												<entry name="Cell" datatype="string"/>
+											</entry>
+										</entry>
+										<entry name="Worksheet" expanded="1">
+											<condition>
+												<expression>
+													<function name="equal-ignorecase" library="xlsx">
+														<expression>
+															<attribute name="Name"/>
+														</expression>
+														<expression>
+															<constant value="product-feed-1"/>
+														</expression>
+													</function>
+												</expression>
+											</condition>
+											<ranges>
+												<range id="1" start="1"/>
+											</ranges>
+											<entry name="Row" expanded="1" displayselectionmode="selection">
+												<entry name="Cell" datatype="string"/>
+											</entry>
+											<entry name="Row" expanded="1">
+												<condition>
+													<expression>
+														<function name="is-range-id">
+															<expression>
+																<constant value="1" datatype="long"/>
+															</expression>
+														</function>
+													</expression>
+												</condition>
+												<entry name="Cell" outkey="183" expanded="1" datatype="string">
+													<entry name="c" type="attribute" outkey="184"/>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<excel inputinstance="..\input\csv-input\product-feed-1.xlsx" outputinstance="..\input\csv-input\product-feed-1.xlsx"/>
+					</data>
+				</component>
+				<component name="Cells" library="core" uid="656" kind="3">
+					<sources>
+						<datapoint pos="0" key="185"/>
+						<datapoint pos="1" key="186"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="187"/>
+						<datapoint/>
+					</targets>
+					<view ltx="710" lty="21" rbx="823" rby="75"/>
+				</component>
+				<component name="catalog" library="xml" uid="642" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1" DynamicFilenames="1"/>
+					<view ltx="1947" lty="89" rbx="2260" rby="889"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.demandware.com/xml/impex/catalog/2006-10-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="2" inpkey="88" expanded="1">
+								<entry name="document" ns="2" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="catalog" ns="1" expanded="1">
+										<entry name="catalog-id" type="attribute" inpkey="18"/>
+										<entry name="product" ns="1" inpkey="2" expanded="1">
+											<entry name="product-id" type="attribute" inpkey="188">
+												<inputnodefunctions>
+													<rule applyto="self">
+														<function name="CA2BAE31-4B35-4ADF-B3E3-61914A6977CA"/>
+													</rule>
+												</inputnodefunctions>
+											</entry>
+											<entry name="min-order-quantity" ns="1">
+												<inputnodefunctions>
+													<rule applyto="self">
+														<default value="1"/>
+													</rule>
+												</inputnodefunctions>
+											</entry>
+											<entry name="step-quantity" ns="1">
+												<inputnodefunctions>
+													<rule applyto="self">
+														<default value="1"/>
+													</rule>
+												</inputnodefunctions>
+											</entry>
+											<entry name="online-flag" ns="1" inpkey="7"/>
+											<entry name="online-to" ns="1" inpkey="22"/>
+											<entry name="images" ns="1">
+												<entry name="image-group" ns="1" expanded="1">
+													<entry name="view-type" type="attribute" inpkey="37"/>
+													<entry name="image" ns="1" inpkey="34">
+														<entry name="path" type="attribute" inpkey="28">
+															<inputnodefunctions>
+																<rule applyto="self">
+																	<function name="F9D09333-77BB-4D98-A461-48A93ED9CAA5"/>
+																</rule>
+															</inputnodefunctions>
+														</entry>
+													</entry>
+													<entry name="image" ns="1" inpkey="146" expanded="1" clone="1">
+														<entry name="path" type="attribute" inpkey="35">
+															<inputnodefunctions>
+																<rule applyto="self">
+																	<function name="60BE66CF-80E4-4C11-BF7F-09DF5D8215F6"/>
+																</rule>
+															</inputnodefunctions>
+														</entry>
+													</entry>
+												</entry>
+												<entry name="image-group" ns="1" expanded="1" clone="1">
+													<entry name="view-type" type="attribute" inpkey="20"/>
+													<entry name="image" ns="1" inpkey="46" expanded="1">
+														<entry name="path" type="attribute" inpkey="43">
+															<inputnodefunctions>
+																<rule applyto="self">
+																	<function name="9DDC0BE5-B4E6-4523-9938-15202114CB96"/>
+																</rule>
+															</inputnodefunctions>
+														</entry>
+													</entry>
+													<entry name="image" ns="1" inpkey="124" clone="1">
+														<entry name="path" type="attribute" inpkey="49">
+															<inputnodefunctions>
+																<rule applyto="self">
+																	<function name="845A539C-207C-4D31-B495-4FBA948B058E"/>
+																</rule>
+															</inputnodefunctions>
+														</entry>
+													</entry>
+												</entry>
+												<entry name="image-group" ns="1" expanded="1" clone="1">
+													<entry name="view-type" type="attribute" inpkey="48"/>
+													<entry name="image" ns="1" inpkey="54" expanded="1">
+														<entry name="path" type="attribute" inpkey="50">
+															<inputnodefunctions>
+																<rule applyto="self">
+																	<function name="FF35CB8F-B529-4975-A874-3FD5C87E714F"/>
+																</rule>
+															</inputnodefunctions>
+														</entry>
+													</entry>
+													<entry name="image" ns="1" inpkey="156" expanded="1" clone="1">
+														<entry name="path" type="attribute" inpkey="53">
+															<inputnodefunctions>
+																<rule applyto="self">
+																	<function name="54BE38A2-AF2A-47FE-940E-5B98EC3C5BFC"/>
+																</rule>
+															</inputnodefunctions>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+											<entry name="image" ns="1" inpkey="5">
+												<inputnodefunctions>
+													<rule applyto="self">
+														<function name="B14F0B9F-656B-43B3-A411-81C118BFE43F"/>
+													</rule>
+												</inputnodefunctions>
+											</entry>
+											<entry name="thumbnail" ns="1" inpkey="16">
+												<inputnodefunctions>
+													<rule applyto="self">
+														<function name="078C7A18-2E41-41E6-BDD4-9D3FD4C74B62"/>
+													</rule>
+												</inputnodefunctions>
+											</entry>
+											<entry name="custom-attributes" ns="1">
+												<entry name="custom-attribute" ns="1" inpkey="169">
+													<entry name="attribute-id" type="attribute" inpkey="161"/>
+													<entry name="value" ns="1" inpkey="173"/>
+												</entry>
+												<entry name="custom-attribute" ns="1" inpkey="138" clone="1">
+													<entry name="attribute-id" type="attribute" inpkey="128"/>
+													<entry name="value" ns="1" inpkey="140"/>
+												</entry>
+												<entry name="custom-attribute" ns="1" inpkey="130" clone="1">
+													<entry name="attribute-id" type="attribute" inpkey="136"/>
+													<entry name="value" ns="1" inpkey="142"/>
+												</entry>
+												<entry name="custom-attribute" ns="1" inpkey="26" clone="1">
+													<entry name="attribute-id" type="attribute" inpkey="41"/>
+													<entry name="value" ns="1" inpkey="39"/>
+												</entry>
+												<entry name="custom-attribute" ns="1" inpkey="154" clone="1">
+													<entry name="attribute-id" type="attribute">
+														<inputnodefunctions>
+															<rule applyto="self">
+																<default value="acme-tools-brand-name-2"/>
+															</rule>
+														</inputnodefunctions>
+													</entry>
+													<entry name="value" ns="1" inpkey="157"/>
+												</entry>
+												<entry name="custom-attribute" ns="1" clone="1">
+													<entry name="attribute-id" type="attribute" inpkey="110"/>
+													<entry name="value" ns="1">
+														<inputnodefunctions>
+															<rule applyto="self">
+																<default value="1"/>
+															</rule>
+														</inputnodefunctions>
+													</entry>
+												</entry>
+												<entry name="custom-attribute" ns="1" inpkey="116" clone="1">
+													<entry name="attribute-id" type="attribute" inpkey="92"/>
+													<entry name="value" ns="1" inpkey="120"/>
+												</entry>
+												<entry name="custom-attribute" ns="1" clone="1">
+													<entry name="attribute-id" type="attribute" inpkey="32"/>
+													<entry name="value" ns="1" inpkey="24"/>
+												</entry>
+											</entry>
+											<entry name="variations" ns="1">
+												<entry name="variants" ns="1" expanded="1">
+													<entry name="variant" ns="1" expanded="1"/>
+												</entry>
+											</entry>
+											<entry name="classification-category" ns="1" inpkey="145">
+												<inputnodefunctions>
+													<rule applyto="self">
+														<function name="C50EBA03-8427-4DCA-A986-A838FB1C9519"/>
+													</rule>
+												</inputnodefunctions>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="mfd\xsd/catalog.xsd" instanceroot="{http://www.demandware.com/xml/impex/catalog/2006-10-31}catalog"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="4" to="5"/>
+			<edge from="6" to="7"/>
+			<edge from="4" to="16"/>
+			<edge from="17" to="18"/>
+			<edge from="19" to="20"/>
+			<edge from="21" to="22"/>
+			<edge from="23" to="24"/>
+			<edge from="25" to="26"/>
+			<edge from="27" to="28"/>
+			<edge from="29" to="30"/>
+			<edge from="31" to="32"/>
+			<edge from="33" to="34"/>
+			<edge from="4" to="35"/>
+			<edge from="36" to="37"/>
+			<edge from="38" to="39"/>
+			<edge from="40" to="41"/>
+			<edge from="27" to="43"/>
+			<edge from="44" to="45"/>
+			<edge from="33" to="46"/>
+			<edge from="47" to="48"/>
+			<edge from="4" to="49"/>
+			<edge from="27" to="50"/>
+			<edge from="51" to="52"/>
+			<edge from="4" to="53"/>
+			<edge from="33" to="54"/>
+			<edge from="55" to="56"/>
+			<edge from="57" to="58"/>
+			<edge from="59" to="60"/>
+			<edge from="61" to="62"/>
+			<edge from="63" to="64"/>
+			<edge from="65" to="66"/>
+			<edge from="69" to="70"/>
+			<edge from="71" to="72"/>
+			<edge from="69" to="73"/>
+			<edge from="74" to="75">
+				<data type="2"/>
+			</edge>
+			<edge from="76" to="77"/>
+			<edge from="78" to="79"/>
+			<edge from="80" to="81"/>
+			<edge from="82" to="83"/>
+			<edge from="59" to="84"/>
+			<edge from="85" to="86"/>
+			<edge from="87" to="88"/>
+			<edge from="89" to="90"/>
+			<edge from="91" to="92"/>
+			<edge from="94" to="95"/>
+			<edge from="99" to="100"/>
+			<edge from="101" to="102"/>
+			<edge from="103" to="104"/>
+			<edge from="103" to="106"/>
+			<edge from="107" to="108"/>
+			<edge from="109" to="110"/>
+			<edge from="111" to="112"/>
+			<edge from="113" to="114"/>
+			<edge from="115" to="116"/>
+			<edge from="117" to="118"/>
+			<edge from="119" to="120"/>
+			<edge from="122" to="123"/>
+			<edge from="4" to="124"/>
+			<edge from="40" to="126"/>
+			<edge from="127" to="128"/>
+			<edge from="129" to="130"/>
+			<edge from="131" to="132">
+				<data type="2"/>
+			</edge>
+			<edge from="25" to="133"/>
+			<edge from="135" to="136"/>
+			<edge from="137" to="138"/>
+			<edge from="139" to="140"/>
+			<edge from="141" to="142"/>
+			<edge from="21" to="143"/>
+			<edge from="144" to="145"/>
+			<edge from="4" to="146"/>
+			<edge from="147" to="148"/>
+			<edge from="153" to="154"/>
+			<edge from="4" to="156"/>
+			<edge from="38" to="157"/>
+			<edge from="160" to="161"/>
+			<edge from="21" to="162"/>
+			<edge from="163" to="164"/>
+			<edge from="165" to="166"/>
+			<edge from="165" to="167"/>
+			<edge from="168" to="169"/>
+			<edge from="172" to="173"/>
+			<edge from="163" to="174"/>
+			<edge from="184" to="177"/>
+			<edge from="175" to="178"/>
+			<edge from="179" to="180"/>
+			<edge from="176" to="181"/>
+			<edge from="183" to="185"/>
+			<edge from="182" to="186"/>
+			<edge from="187" to="188"/>
+		</connections>
+	</component>
+	<component name="02BCAEB0-E799-4458-87F1-18C6E40AA983" library="mapforce_nodefunction" uid="186" editable="1">
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="176" kind="2">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="379" lty="170" rbx="425" rby="187"/>
+					<data>
+						<constant value="32" datatype="decimal"/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="181" kind="5">
+					<sources>
+						<datapoint pos="0" key="6"/>
+						<datapoint pos="1" key="14"/>
+						<datapoint pos="2" key="17"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="656" lty="242" rbx="757" rby="312"/>
+				</component>
+				<component name="result" library="core" uid="183" kind="7">
+					<sources>
+						<datapoint pos="0" key="22"/>
+					</sources>
+					<view ltx="1158" lty="242" rbx="1215" rby="280"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="right-trim" library="lang" uid="180" kind="5">
+					<sources>
+						<datapoint pos="0" key="10"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="530" lty="274" rbx="609" rby="312"/>
+				</component>
+				<component name="left-trim" library="lang" uid="179" kind="5">
+					<sources>
+						<datapoint pos="0" key="12"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view ltx="440" lty="274" rbx="519" rby="312"/>
+				</component>
+				<component name="normalize-space" library="core" uid="182" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="15"/>
+					</targets>
+					<view ltx="789" lty="254" rbx="899" rby="292"/>
+				</component>
+				<component name="char-from-code" library="core" uid="177" kind="5">
+					<sources>
+						<datapoint pos="0" key="2"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view ltx="477" lty="149" rbx="583" rby="187"/>
+				</component>
+				<component name="constant" library="core" uid="178" kind="2">
+					<targets>
+						<datapoint pos="0" key="13"/>
+					</targets>
+					<view ltx="579" lty="73" rbx="625" rby="90"/>
+					<data>
+						<constant value="-" datatype="string"/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="184" kind="5">
+					<sources>
+						<datapoint pos="0" key="16"/>
+						<datapoint pos="1" key="8"/>
+						<datapoint pos="2" key="18"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="21"/>
+					</targets>
+					<view ltx="962" lty="222" rbx="1063" rby="292"/>
+				</component>
+				<component name="raw_value" library="core" uid="185" kind="6">
+					<targets>
+						<datapoint pos="0" key="19"/>
+					</targets>
+					<view ltx="76" lty="274" rbx="154" rby="312"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+			<edge from="7" to="8"/>
+			<edge from="9" to="10"/>
+			<edge from="19" to="12"/>
+			<edge from="13" to="14"/>
+			<edge from="15" to="16"/>
+			<edge from="7" to="17"/>
+			<edge from="13" to="18"/>
+			<edge from="21" to="22"/>
+		</connections>
+	</component>
+	<component name="9DDC0BE5-B4E6-4523-9938-15202114CB96" library="mapforce_nodefunction" uid="267" editable="1">
+		<structure>
+			<children>
+				<component name="raw_value" library="core" uid="264" kind="6">
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="278" lty="159" rbx="356" rby="197"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="265" kind="5" growable="1" growablebasename="value">
+					<sources>
+						<datapoint pos="0" key="2"/>
+						<datapoint pos="1" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="525" lty="128" rbx="607" rby="184"/>
+				</component>
+				<component name="result" library="core" uid="266" kind="7">
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<view ltx="1003" lty="146" rbx="1060" rby="184"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="263" kind="2">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="257" lty="115" rbx="422" rby="132"/>
+					<data>
+						<constant value="images/catalog/product/full/" datatype="string"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+		</connections>
+	</component>
+	<component name="F5E44AEF-37B6-4F70-8505-E069B1EEA220" library="mapforce_nodefunction" uid="268" editable="1">
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="176" kind="2">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="379" lty="170" rbx="425" rby="187"/>
+					<data>
+						<constant value="32" datatype="decimal"/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="181" kind="5">
+					<sources>
+						<datapoint pos="0" key="6"/>
+						<datapoint pos="1" key="14"/>
+						<datapoint pos="2" key="17"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="656" lty="242" rbx="757" rby="312"/>
+				</component>
+				<component name="result" library="core" uid="183" kind="7">
+					<sources>
+						<datapoint pos="0" key="22"/>
+					</sources>
+					<view ltx="1158" lty="242" rbx="1215" rby="280"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="right-trim" library="lang" uid="180" kind="5">
+					<sources>
+						<datapoint pos="0" key="10"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="530" lty="274" rbx="609" rby="312"/>
+				</component>
+				<component name="left-trim" library="lang" uid="179" kind="5">
+					<sources>
+						<datapoint pos="0" key="12"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view ltx="440" lty="274" rbx="519" rby="312"/>
+				</component>
+				<component name="normalize-space" library="core" uid="182" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="15"/>
+					</targets>
+					<view ltx="789" lty="254" rbx="899" rby="292"/>
+				</component>
+				<component name="char-from-code" library="core" uid="177" kind="5">
+					<sources>
+						<datapoint pos="0" key="2"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view ltx="477" lty="149" rbx="583" rby="187"/>
+				</component>
+				<component name="constant" library="core" uid="178" kind="2">
+					<targets>
+						<datapoint pos="0" key="13"/>
+					</targets>
+					<view ltx="579" lty="73" rbx="625" rby="90"/>
+					<data>
+						<constant value="-" datatype="string"/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="184" kind="5">
+					<sources>
+						<datapoint pos="0" key="16"/>
+						<datapoint pos="1" key="8"/>
+						<datapoint pos="2" key="18"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="21"/>
+					</targets>
+					<view ltx="962" lty="222" rbx="1063" rby="292"/>
+				</component>
+				<component name="raw_value" library="core" uid="185" kind="6">
+					<targets>
+						<datapoint pos="0" key="19"/>
+					</targets>
+					<view ltx="76" lty="274" rbx="154" rby="312"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+			<edge from="7" to="8"/>
+			<edge from="9" to="10"/>
+			<edge from="19" to="12"/>
+			<edge from="13" to="14"/>
+			<edge from="15" to="16"/>
+			<edge from="7" to="17"/>
+			<edge from="13" to="18"/>
+			<edge from="21" to="22"/>
+		</connections>
+	</component>
+	<component name="54BE38A2-AF2A-47FE-940E-5B98EC3C5BFC" library="mapforce_nodefunction" uid="288" editable="1">
+		<structure>
+			<children>
+				<component name="raw_value" library="core" uid="285" kind="6">
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="223" lty="143" rbx="301" rby="181"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="286" kind="5" growable="1" growablebasename="value">
+					<sources>
+						<datapoint pos="0" key="2"/>
+						<datapoint pos="1" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="470" lty="112" rbx="552" rby="168"/>
+				</component>
+				<component name="result" library="core" uid="287" kind="7">
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<view ltx="948" lty="130" rbx="1005" rby="168"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="284" kind="2">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="202" lty="99" rbx="367" rby="116"/>
+					<data>
+						<constant value="images/catalog/product/full/" datatype="string"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+		</connections>
+	</component>
+	<component name="845A539C-207C-4D31-B495-4FBA948B058E" library="mapforce_nodefunction" uid="289" editable="1">
+		<structure>
+			<children>
+				<component name="raw_value" library="core" uid="271" kind="6">
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="252" lty="181" rbx="330" rby="219"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="272" kind="5" growable="1" growablebasename="value">
+					<sources>
+						<datapoint pos="0" key="2"/>
+						<datapoint pos="1" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="499" lty="150" rbx="581" rby="206"/>
+				</component>
+				<component name="result" library="core" uid="273" kind="7">
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<view ltx="977" lty="168" rbx="1034" rby="206"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="270" kind="2">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="231" lty="137" rbx="396" rby="154"/>
+					<data>
+						<constant value="images/catalog/product/full/" datatype="string"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+		</connections>
+	</component>
+	<component name="60BE66CF-80E4-4C11-BF7F-09DF5D8215F6" library="mapforce_nodefunction" uid="290" editable="1">
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="256" kind="2">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="257" lty="84" rbx="422" rby="101"/>
+					<data>
+						<constant value="images/catalog/product/full/" datatype="string"/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="258" kind="5" growable="1" growablebasename="value">
+					<sources>
+						<datapoint pos="0" key="2"/>
+						<datapoint pos="1" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="525" lty="97" rbx="607" rby="153"/>
+				</component>
+				<component name="result" library="core" uid="259" kind="7">
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<view ltx="1003" lty="115" rbx="1060" rby="153"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="raw_value" library="core" uid="257" kind="6">
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="278" lty="128" rbx="356" rby="166"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+		</connections>
+	</component>
+	<component name="FF35CB8F-B529-4975-A874-3FD5C87E714F" library="mapforce_nodefunction" uid="291" editable="1">
+		<structure>
+			<children>
+				<component name="raw_value" library="core" uid="278" kind="6">
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="241" lty="134" rbx="319" rby="172"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="279" kind="5" growable="1" growablebasename="value">
+					<sources>
+						<datapoint pos="0" key="2"/>
+						<datapoint pos="1" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="488" lty="103" rbx="570" rby="159"/>
+				</component>
+				<component name="result" library="core" uid="280" kind="7">
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<view ltx="966" lty="121" rbx="1023" rby="159"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="277" kind="2">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="220" lty="90" rbx="385" rby="107"/>
+					<data>
+						<constant value="images/catalog/product/full/" datatype="string"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+		</connections>
+	</component>
+	<component name="B14F0B9F-656B-43B3-A411-81C118BFE43F" library="mapforce_nodefunction" uid="295" editable="1">
+		<structure>
+			<children>
+				<component name="raw_value" library="core" uid="292" kind="6">
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="236" lty="150" rbx="314" rby="188"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="293" kind="5" growable="1" growablebasename="value">
+					<sources>
+						<datapoint pos="0" key="2"/>
+						<datapoint pos="1" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="483" lty="119" rbx="565" rby="175"/>
+				</component>
+				<component name="result" library="core" uid="294" kind="7">
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<view ltx="961" lty="137" rbx="1018" rby="175"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="291" kind="2">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="215" lty="106" rbx="380" rby="123"/>
+					<data>
+						<constant value="images/catalog/product/full/" datatype="string"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+		</connections>
+	</component>
+	<component name="DD6B436E-7436-43CA-AE5E-D1A5F2E9CBCE" library="mapforce_nodefunction" uid="296" editable="1">
+		<structure>
+			<children>
+				<component name="lowercase" library="lang" uid="125" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view ltx="365" lty="302" rbx="444" rby="340"/>
+				</component>
+				<component name="constant" library="core" uid="126" kind="2">
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view ltx="398" lty="198" rbx="444" rby="215"/>
+					<data>
+						<constant value="32" datatype="decimal"/>
+					</data>
+				</component>
+				<component name="char-from-code" library="core" uid="127" kind="5">
+					<sources>
+						<datapoint pos="0" key="10"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="496" lty="177" rbx="602" rby="215"/>
+				</component>
+				<component name="constant" library="core" uid="128" kind="2">
+					<targets>
+						<datapoint pos="0" key="11"/>
+					</targets>
+					<view ltx="598" lty="101" rbx="644" rby="118"/>
+					<data>
+						<constant value="-" datatype="string"/>
+					</data>
+				</component>
+				<component name="left-trim" library="lang" uid="129" kind="5">
+					<sources>
+						<datapoint pos="0" key="8"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="16"/>
+					</targets>
+					<view ltx="459" lty="302" rbx="538" rby="340"/>
+				</component>
+				<component name="right-trim" library="lang" uid="130" kind="5">
+					<sources>
+						<datapoint pos="0" key="17"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="14"/>
+					</targets>
+					<view ltx="549" lty="302" rbx="628" rby="340"/>
+				</component>
+				<component name="replace" library="lang" uid="131" kind="5">
+					<sources>
+						<datapoint pos="0" key="15"/>
+						<datapoint pos="1" key="20"/>
+						<datapoint pos="2" key="6"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="18"/>
+					</targets>
+					<view ltx="675" lty="270" rbx="776" rby="340"/>
+				</component>
+				<component name="normalize-space" library="core" uid="132" kind="5">
+					<sources>
+						<datapoint pos="0" key="19"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="21"/>
+					</targets>
+					<view ltx="808" lty="282" rbx="918" rby="320"/>
+				</component>
+				<component name="result" library="core" uid="123" kind="7">
+					<sources>
+						<datapoint pos="0" key="24"/>
+					</sources>
+					<view ltx="1177" lty="270" rbx="1234" rby="308"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="133" kind="5">
+					<sources>
+						<datapoint pos="0" key="22"/>
+						<datapoint pos="1" key="13"/>
+						<datapoint pos="2" key="12"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="981" lty="250" rbx="1082" rby="320"/>
+				</component>
+				<component name="raw_value" library="core" uid="122" kind="6">
+					<targets>
+						<datapoint pos="0" key="23"/>
+					</targets>
+					<view ltx="95" lty="302" rbx="173" rby="340"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="23" to="4"/>
+			<edge from="5" to="6"/>
+			<edge from="7" to="8"/>
+			<edge from="9" to="10"/>
+			<edge from="11" to="12"/>
+			<edge from="5" to="13"/>
+			<edge from="14" to="15"/>
+			<edge from="16" to="17"/>
+			<edge from="18" to="19"/>
+			<edge from="11" to="20"/>
+			<edge from="21" to="22"/>
+			<edge from="1" to="24"/>
+		</connections>
+	</component>
+	<component name="F9D09333-77BB-4D98-A461-48A93ED9CAA5" library="mapforce_nodefunction" uid="297" editable="1">
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="252" kind="2">
+					<targets>
+						<datapoint pos="0" key="2"/>
+					</targets>
+					<view ltx="50" rbx="215" rby="17"/>
+					<data>
+						<constant value="images/catalog/product/full/" datatype="string"/>
+					</data>
+				</component>
+				<component name="raw_value" library="core" uid="248" kind="6">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="71" lty="44" rbx="149" rby="82"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="251" kind="5" growable="1" growablebasename="value">
+					<sources>
+						<datapoint pos="0" key="4"/>
+						<datapoint pos="1" key="5"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="6"/>
+					</targets>
+					<view ltx="318" lty="13" rbx="400" rby="69"/>
+				</component>
+				<component name="result" library="core" uid="249" kind="7">
+					<sources>
+						<datapoint pos="0" key="3"/>
+					</sources>
+					<view ltx="796" lty="31" rbx="853" rby="69"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="6" to="3"/>
+			<edge from="2" to="4"/>
+			<edge from="1" to="5"/>
+		</connections>
+	</component>
+	<component name="36C4C687-DF82-48EB-9E9E-D48372EFC54F" library="mapforce_nodefunction" uid="326" editable="1">
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="189" kind="2">
+					<targets>
+						<datapoint pos="0" key="14"/>
+					</targets>
+					<view ltx="373" lty="168" rbx="419" rby="185"/>
+					<data>
+						<constant value="32" datatype="decimal"/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="190" kind="5">
+					<sources>
+						<datapoint pos="0" key="8"/>
+						<datapoint pos="1" key="13"/>
+						<datapoint pos="2" key="11"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="650" lty="240" rbx="751" rby="310"/>
+				</component>
+				<component name="right-trim" library="lang" uid="192" kind="5">
+					<sources>
+						<datapoint pos="0" key="10"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view ltx="524" lty="272" rbx="603" rby="310"/>
+				</component>
+				<component name="normalize-space" library="core" uid="194" kind="5">
+					<sources>
+						<datapoint pos="0" key="2"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="17"/>
+					</targets>
+					<view ltx="783" lty="252" rbx="893" rby="290"/>
+				</component>
+				<component name="char-from-code" library="core" uid="195" kind="5">
+					<sources>
+						<datapoint pos="0" key="15"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="471" lty="147" rbx="577" rby="185"/>
+				</component>
+				<component name="constant" library="core" uid="196" kind="2">
+					<targets>
+						<datapoint pos="0" key="12"/>
+					</targets>
+					<view ltx="573" lty="71" rbx="619" rby="88"/>
+					<data>
+						<constant value="-" datatype="string"/>
+					</data>
+				</component>
+				<component name="left-trim" library="lang" uid="193" kind="5">
+					<sources>
+						<datapoint pos="0" key="20"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view ltx="394" lty="272" rbx="473" rby="310"/>
+				</component>
+				<component name="constant" library="core" uid="313" kind="2">
+					<targets>
+						<datapoint pos="0" key="24"/>
+					</targets>
+					<view ltx="203" lty="493" rbx="265" rby="510"/>
+					<data>
+						<constant value=".jpg" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="315" kind="2">
+					<targets>
+						<datapoint pos="0" key="27"/>
+					</targets>
+					<view ltx="203" lty="584" rbx="262" rby="601"/>
+					<data>
+						<constant value=".gif" datatype="string"/>
+					</data>
+				</component>
+				<component name="contains" library="core" uid="312" kind="5">
+					<sources>
+						<datapoint pos="0" key="26"/>
+						<datapoint pos="1" key="25"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="31"/>
+					</targets>
+					<view ltx="311" lty="456" rbx="409" rby="510"/>
+				</component>
+				<component name="contains" library="core" uid="314" kind="5">
+					<sources>
+						<datapoint pos="0" key="29"/>
+						<datapoint pos="1" key="28"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="32"/>
+					</targets>
+					<view ltx="311" lty="547" rbx="409" rby="601"/>
+				</component>
+				<component name="result" library="core" uid="191" kind="7">
+					<sources>
+						<datapoint pos="0" key="4"/>
+					</sources>
+					<view ltx="1247" lty="240" rbx="1304" rby="278"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="311" kind="2">
+					<targets>
+						<datapoint pos="0" key="23"/>
+					</targets>
+					<view ltx="203" lty="418" rbx="269" rby="435"/>
+					<data>
+						<constant value=".png" datatype="string"/>
+					</data>
+				</component>
+				<component name="contains" library="core" uid="310" kind="5">
+					<sources>
+						<datapoint pos="0" key="21"/>
+						<datapoint pos="1" key="22"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="30"/>
+					</targets>
+					<view ltx="311" lty="381" rbx="409" rby="435"/>
+				</component>
+				<component name="constant" library="core" uid="323" kind="2">
+					<targets>
+						<datapoint pos="0" key="45"/>
+					</targets>
+					<view ltx="830" lty="547" rbx="893" rby="564"/>
+					<data>
+						<constant value=".pdf" datatype="string"/>
+					</data>
+				</component>
+				<component name="raw_value" library="core" uid="198" kind="6">
+					<targets>
+						<datapoint pos="0" key="19"/>
+					</targets>
+					<view ltx="65" lty="252" rbx="143" rby="290"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+				<component name="logical-or" library="core" uid="317" kind="5" growable="1" growablebasename="value">
+					<sources>
+						<datapoint pos="0" key="33"/>
+						<datapoint pos="1" key="34"/>
+						<datapoint pos="2" key="35"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="36"/>
+					</targets>
+					<view ltx="542" lty="418" rbx="634" rby="491"/>
+				</component>
+				<component name="constant" library="core" uid="321" kind="2">
+					<targets>
+						<datapoint pos="0" key="37"/>
+					</targets>
+					<view ltx="709" lty="474" rbx="874" rby="491"/>
+					<data>
+						<constant value="images/catalog/product/full/" datatype="string"/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="320" kind="5" growable="1" growablebasename="value">
+					<sources>
+						<datapoint pos="0" key="38"/>
+						<datapoint pos="1" key="39"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="40"/>
+					</targets>
+					<view ltx="931" lty="435" rbx="1013" rby="491"/>
+				</component>
+				<component name="contains" library="core" uid="322" kind="5">
+					<sources>
+						<datapoint pos="0" key="47"/>
+						<datapoint pos="1" key="46"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="48"/>
+					</targets>
+					<view ltx="931" lty="513" rbx="1029" rby="567"/>
+				</component>
+				<component name="constant" library="core" uid="324" kind="2">
+					<targets>
+						<datapoint pos="0" key="51"/>
+					</targets>
+					<view ltx="725" lty="623" rbx="885" rby="640"/>
+					<data>
+						<constant value="assets/catalog/product/" datatype="string"/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="325" kind="5" growable="1" growablebasename="value">
+					<sources>
+						<datapoint pos="0" key="52"/>
+						<datapoint pos="1" key="53"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="50"/>
+					</targets>
+					<view ltx="947" lty="584" rbx="1029" rby="640"/>
+				</component>
+				<component name="replace" library="lang" uid="197" kind="5">
+					<sources>
+						<datapoint pos="0" key="18"/>
+						<datapoint pos="1" key="6"/>
+						<datapoint pos="2" key="16"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="956" lty="220" rbx="1057" rby="290"/>
+				</component>
+				<component name="if-else" library="core" uid="318" kind="4">
+					<sources>
+						<datapoint pos="0" key="54"/>
+						<datapoint pos="1" key="49"/>
+						<datapoint pos="2" key="41"/>
+						<datapoint pos="3" key="42"/>
+						<datapoint pos="4" key="43"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="44"/>
+					</targets>
+					<view ltx="1109" lty="418" rbx="1216" rby="525"/>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="44" to="4"/>
+			<edge from="5" to="6"/>
+			<edge from="7" to="8"/>
+			<edge from="9" to="10"/>
+			<edge from="5" to="11"/>
+			<edge from="12" to="13"/>
+			<edge from="14" to="15"/>
+			<edge from="12" to="16"/>
+			<edge from="17" to="18"/>
+			<edge from="19" to="20"/>
+			<edge from="19" to="21"/>
+			<edge from="23" to="22"/>
+			<edge from="24" to="25"/>
+			<edge from="19" to="26"/>
+			<edge from="27" to="28"/>
+			<edge from="19" to="29"/>
+			<edge from="30" to="33"/>
+			<edge from="31" to="34"/>
+			<edge from="32" to="35"/>
+			<edge from="37" to="38"/>
+			<edge from="3" to="39"/>
+			<edge from="48" to="41"/>
+			<edge from="50" to="42"/>
+			<edge from="3" to="43"/>
+			<edge from="45" to="46"/>
+			<edge from="19" to="47"/>
+			<edge from="40" to="49"/>
+			<edge from="51" to="52"/>
+			<edge from="3" to="53"/>
+			<edge from="36" to="54"/>
+		</connections>
+	</component>
+	<component name="DD85E192-B1EF-4ECA-B5B3-19DE76089545" library="mapforce_nodefunction" uid="327" editable="1">
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="236" kind="2">
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view ltx="451" lty="174" rbx="497" rby="191"/>
+					<data>
+						<constant value="32" datatype="decimal"/>
+					</data>
+				</component>
+				<component name="char-from-code" library="core" uid="237" kind="5">
+					<sources>
+						<datapoint pos="0" key="10"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="549" lty="153" rbx="655" rby="191"/>
+				</component>
+				<component name="constant" library="core" uid="238" kind="2">
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view ltx="651" lty="77" rbx="697" rby="94"/>
+					<data>
+						<constant value="-" datatype="string"/>
+					</data>
+				</component>
+				<component name="normalize-space" library="core" uid="239" kind="5">
+					<sources>
+						<datapoint pos="0" key="12"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="15"/>
+					</targets>
+					<view ltx="861" lty="258" rbx="971" rby="296"/>
+				</component>
+				<component name="result" library="core" uid="240" kind="7">
+					<sources>
+						<datapoint pos="0" key="22"/>
+					</sources>
+					<view ltx="1230" lty="246" rbx="1287" rby="284"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="241" kind="5">
+					<sources>
+						<datapoint pos="0" key="16"/>
+						<datapoint pos="1" key="2"/>
+						<datapoint pos="2" key="20"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="21"/>
+					</targets>
+					<view ltx="1034" lty="226" rbx="1135" rby="296"/>
+				</component>
+				<component name="lowercase" library="lang" uid="242" kind="5">
+					<sources>
+						<datapoint pos="0" key="18"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="418" lty="278" rbx="497" rby="316"/>
+				</component>
+				<component name="left-trim" library="lang" uid="243" kind="5">
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="512" lty="278" rbx="591" rby="316"/>
+				</component>
+				<component name="right-trim" library="lang" uid="244" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="13"/>
+					</targets>
+					<view ltx="602" lty="278" rbx="681" rby="316"/>
+				</component>
+				<component name="replace" library="lang" uid="245" kind="5">
+					<sources>
+						<datapoint pos="0" key="14"/>
+						<datapoint pos="1" key="8"/>
+						<datapoint pos="2" key="19"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="11"/>
+					</targets>
+					<view ltx="728" lty="246" rbx="829" rby="316"/>
+				</component>
+				<component name="raw_value" library="core" uid="246" kind="6">
+					<targets>
+						<datapoint pos="0" key="17"/>
+					</targets>
+					<view ltx="148" lty="278" rbx="226" rby="316"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+			<edge from="7" to="8"/>
+			<edge from="9" to="10"/>
+			<edge from="11" to="12"/>
+			<edge from="13" to="14"/>
+			<edge from="15" to="16"/>
+			<edge from="17" to="18"/>
+			<edge from="1" to="19"/>
+			<edge from="7" to="20"/>
+			<edge from="21" to="22"/>
+		</connections>
+	</component>
+	<component name="078C7A18-2E41-41E6-BDD4-9D3FD4C74B62" library="mapforce_nodefunction" uid="328" editable="1">
+		<structure>
+			<children>
+				<component name="raw_value" library="core" uid="299" kind="6">
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="227" lty="186" rbx="305" rby="224"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="300" kind="5" growable="1" growablebasename="value">
+					<sources>
+						<datapoint pos="0" key="2"/>
+						<datapoint pos="1" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="474" lty="155" rbx="556" rby="211"/>
+				</component>
+				<component name="result" library="core" uid="301" kind="7">
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<view ltx="952" lty="173" rbx="1009" rby="211"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="298" kind="2">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="206" lty="142" rbx="371" rby="159"/>
+					<data>
+						<constant value="images/catalog/product/full/" datatype="string"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+		</connections>
+	</component>
+	<component name="CA2BAE31-4B35-4ADF-B3E3-61914A6977CA" library="mapforce_nodefunction" uid="599" editable="1">
+		<structure>
+			<children>
+				<component name="raw_value" library="core" uid="593" kind="6">
+					<targets>
+						<datapoint pos="0" key="2"/>
+					</targets>
+					<view ltx="40" rbx="118" rby="38"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+				<component name="left-trim" library="lang" uid="596" kind="5">
+					<sources>
+						<datapoint pos="0" key="3"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="4"/>
+					</targets>
+					<view ltx="229" rbx="308" rby="38"/>
+				</component>
+				<component name="right-trim" library="lang" uid="598" kind="5">
+					<sources>
+						<datapoint pos="0" key="5"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="6"/>
+					</targets>
+					<view ltx="489" rbx="568" rby="38"/>
+				</component>
+				<component name="result" library="core" uid="594" kind="7">
+					<sources>
+						<datapoint pos="0" key="1"/>
+					</sources>
+					<view ltx="800" rbx="857" rby="38"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="6" to="1"/>
+			<edge from="2" to="3"/>
+			<edge from="4" to="5"/>
+		</connections>
+	</component>
+	<component name="C50EBA03-8427-4DCA-A986-A838FB1C9519" library="mapforce_nodefunction" uid="606" editable="1">
+		<structure>
+			<children>
+				<component name="result" library="core" uid="601" kind="7">
+					<sources>
+						<datapoint pos="0" key="1"/>
+					</sources>
+					<view ltx="800" rbx="857" rby="38"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="raw_value" library="core" uid="600" kind="6">
+					<targets>
+						<datapoint pos="0" key="2"/>
+					</targets>
+					<view rbx="78" rby="38"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+				<component name="left-trim" library="lang" uid="603" kind="5">
+					<sources>
+						<datapoint pos="0" key="3"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="4"/>
+					</targets>
+					<view ltx="234" rbx="313" rby="38"/>
+				</component>
+				<component name="right-trim" library="lang" uid="605" kind="5">
+					<sources>
+						<datapoint pos="0" key="5"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="6"/>
+					</targets>
+					<view ltx="444" rbx="523" rby="38"/>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="6" to="1"/>
+			<edge from="2" to="3"/>
+			<edge from="4" to="5"/>
+		</connections>
+	</component>
+</mapping>

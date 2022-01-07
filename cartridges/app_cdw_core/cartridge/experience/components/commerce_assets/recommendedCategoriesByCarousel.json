@@ -1,0 +1,196 @@
+{
+    "name": "Recommend Categories in Carousel",
+    "description": "Recommend Categories in Carousel",
+    "group": "commerce_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "recommendedCategoriesByCarousel",
+            "name": "recommendedCategoriesByCarousel",
+            "description": "Specify the Heading to be Displayed",
+            "attribute_definitions": [
+                {
+                    "id": "textHeadline",
+                    "name": "Heading",
+                    "type": "markup",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "backgroundConfiguration",
+            "name": "Background Configuration",
+            "description": "Select the image to be displayed in the background. Select to apply shade over the image by 40% black and changing text color to white.",
+            "attribute_definitions": [
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "description": "Select an image to be displayed on the background",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "applyImageShade",
+                    "name": "Apply image Shade",
+                    "description": "Select to apply a shade of 40 percentage to the background image",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "changeTextColor",
+                    "name": "Change text color to white",
+                    "description": "Select to change the text color to white",
+                    "type": "boolean",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "categorySpec",
+            "name": "Shop Category Specifications",
+            "description": "Specify at least four shop categories to be displayed",
+            "attribute_definitions": [
+                {
+                    "id": "category1",
+                    "name": "Category 01",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": true
+                },
+                {
+                    "id": "category2",
+                    "name": "Category 02",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": true
+                },
+                {
+                    "id": "category3",
+                    "name": "Category 03",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": true
+                },
+                {
+                    "id": "category4",
+                    "name": "Category 04",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": true
+                },
+                {
+                    "id": "category5",
+                    "name": "Category 05",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category6",
+                    "name": "Category 06",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category7",
+                    "name": "Category 07",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category8",
+                    "name": "Category 08",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category9",
+                    "name": "Category 09",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category10",
+                    "name": "Category 10",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category11",
+                    "name": "Category 11",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category12",
+                    "name": "Category 12",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category13",
+                    "name": "Category 13",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category14",
+                    "name": "Category 14",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category15",
+                    "name": "Category 15",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category16",
+                    "name": "Category 16",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category17",
+                    "name": "Category 17",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category18",
+                    "name": "Category 18",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category19",
+                    "name": "Category 19",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "category20",
+                    "name": "Category 20",
+                    "description": "Select Category to be displayed.",
+                    "type": "category",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

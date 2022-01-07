@@ -1,0 +1,50 @@
+<isif condition="${!isCallForPriceProduct}">
+  <isset name="quantityElementName" value="${loopState && loopState.count ? 'quantity-'+loopState.count  : 'quantity-1' }" scope="page"/>  
+  <isset name="maxQuantityElementName" value="${loopState && loopState.count ? 'maxQuantity-'+loopState.count  : 'maxQuantity-1' }" scope="page"/>  
+  <label class="sr-only" for="quantity-${loopState && loopState.count ? loopState.count : '1' }">${Resource.msg('label.quantity', 'common', null)}</label>
+  <div class="input-group">
+    
+    <span class="input-group-btn">
+      <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="${quantityElementName}" onclick="javascript:if(parseInt($('${"#"}${quantityElementName}').val())>1){$('${"#"}${quantityElementName}').val(parseInt($('${"#"}${quantityElementName}').val())-1);}" >
+        <i class="fas fa-minus black"></i>
+        <span class="sr-only">Update quantity: less</span>
+      </button>
+    </span>
+    <span class="input-container">
+      <input onchange="javascript:if($('${"#"}${quantityElementName}').val().trim()=='' || $('${"#"}${quantityElementName}').val()*1<=0 ){$('${"#"}${quantityElementName}').val('1');}" class="quantity-select form-control input-number" align="center" name="${quantityElementName}" id="${quantityElementName}" oninput="javascript: if (this.value.length > 4) this.value = this.value.slice(0, 4);" onkeydown="javascript:if(event.keyCode ==69){event.preventDefault();}"  type="number" value='<isprint value="${product.minOrderQuantity}" style="INTEGER"/>' min="${product.minOrderQuantity}" max="${product.maxOrderQuantity}" data-action="${URLUtils.url('Product-ValidateQty')}" maxlength="4"/>
+      <input name="${maxQuantityElementName}" id="${maxQuantityElementName}" type="hidden" value="${product.maxOrderQuantity}" />
+    </span>
+    
+    
+    <span class="input-group-btn">
+      <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="${quantityElementName}" onclick="javascript:if(parseInt($('${"#"}${quantityElementName}').val())<${product.maxOrderQuantity}){$('${"#"}${quantityElementName}').val(parseInt($('${"#"}${quantityElementName}').val())+1);}">
+        <i class="fas fa-plus"></i>
+        <span class="sr-only">Update quantity: more</span>
+      </button>
+    </span>
+    
+  </div>
+  <isif condition="${product.maxOrderQuantity < 1000}">
+      <span class="visible max-order">
+       <isprint value="${Resource.msgf('product.maxqty.msg', 'product', null , product.maxOrderQuantity)}" encoding="off" />
+       </span>
+       <iselse>
+       <span class="invisible">
+       <isprint value="${Resource.msgf('product.maxqty.msg', 'product', null , product.maxOrderQuantity)}" encoding="off" />
+       </span>
+    </isif>
+
+        
+  <iscomment>
+  <select class="quantity-select custom-select form-control" id="quantity-${loopState && loopState.count ? loopState.count : '1' }">
+      <isloop items="${product.quantities}" var="quantity">
+          <option value="${quantity.value}"
+                  <isif condition="${product.productType !== 'bundle'}">data-url="${quantity.url}"</isif>
+                  ${quantity.selected ? 'selected' : ''}
+          >
+              ${quantity.value}
+          </option>
+      </isloop>
+  </select>
+  </iscomment>
+</isif>

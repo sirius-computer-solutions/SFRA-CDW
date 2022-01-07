@@ -1,0 +1,8 @@
+{
+    "caches": [
+        {
+            "id": "s2kRestAuthorizationToken",
+            "expireAfterSeconds": 10800
+        }
+    ]
+}

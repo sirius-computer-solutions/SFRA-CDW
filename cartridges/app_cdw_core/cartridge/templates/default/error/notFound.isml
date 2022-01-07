@@ -1,0 +1,45 @@
+
+<isdecorate template="common/layout/page">
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/pages/notFound.css');
+</isscript>
+    <div class="container not-found-background">
+        
+        <h1 class="not-found-title">${Resource.msg('heading.error.general', 'error', null)}</h1>
+        <div class="col">
+            <div class="not-found-container">
+                <h2 class='not-found-message'>${Resource.msg('message.page.not.found', 'error', null)}</h2>
+                <div class="error-code">Error code : 404</div>
+
+                <div class="previous-page-link">
+                    <span> ${Resource.msg('message.page.previous.01', 'error', null)} </span>
+                    <a href="javascript:history.back()">${Resource.msg('message.page.previous.02', 'error', null)}</a>
+                    <span> ${Resource.msg('message.page.previous.03', 'error', null)} </span>
+                </div>
+                
+                <div class="redirect-containter">
+                    <div class="row ">
+                        <div class="col-10 col-sm-5 col-md-4 col-lg-3 redirect-button">
+                            <isslot id="404-error-content-1" description="404 Page Content Slot 1" context="global" /> 
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-10 col-sm-5 col-md-4 col-lg-3 redirect-button">
+                            <isslot id="404-error-content-2" description="404 Page Content Slot 2" context="global" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-10 col-sm-5 col-md-4 col-lg-3 redirect-button">
+                            <isslot id="404-error-content-3" description="404 Page Content Slot 3" context="global" />
+                        </div>
+                    </div>
+                                                          
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</isdecorate>

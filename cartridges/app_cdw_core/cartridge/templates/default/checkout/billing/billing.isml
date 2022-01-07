@@ -1,0 +1,150 @@
+<div class="card ghost payment">
+    <div class="card-header">
+        <h2 class="card-header-custom">${Resource.msg('heading.payment', 'checkout', null)}</h2>
+    </div>
+</div>
+
+<div class="card payment-form mb-0">
+    <div class="card-header">
+        <h2 class="card-header-custom">${Resource.msg('heading.paymentinformation', 'checkout', null)}</h2>
+    </div>
+
+    <form autocomplete="on" method="POST" action="${URLUtils.url('CheckoutServices-SubmitPayment')}"
+        data-address-mode="${!pdict.order.billing.billingAddress.address ? 'new' : 'edit'}"
+        <isprint value=${pdict.forms.billingForm.attributes} encoding="off" /> novalidate>
+        <div class="card-body">
+            <fieldset class="billing-address-block">
+                <!-------------------------------------------------------------------------->
+                <!-- Billing Address Selector                                             -->
+                <!-------------------------------------------------------------------------->
+                        
+
+                <fieldset class="address-selector-block">
+                    <div class="form-group">
+
+                        <div class="summary-details billing">
+            
+                            <div class="row">
+                                <div class="col-sm-12">
+                                        <div class="form-group custom-control custom-checkbox pull-left same-as-billing-section" <isif condition="${pdict.order.shipping[0].selectedShippingMethod.storePickupEnabled}">style="display:none"</isif>>
+                                            <input type="checkbox" checked class="custom-control-input shippingAddressAsBillingAddress" id="shippingAddressAsBillingAddress" name="shippingAddressAsBillingAddress" 
+                                                action-url="${URLUtils.url('CheckoutServices-UpdateBillingAsShipping')}">
+                                            <label class="custom-control-label" for="shippingAddressAsBillingAddress">
+                                                ${Resource.msg('description.checkbox.shippingAddressUseAsBillingAddress.profile', 'forms', null)}
+                                            </label>
+                                        </div>                 
+                                </div>
+                            </div>    
+                            <label class="form-control-label" for="billingAddressSelector">
+                                <strong>${Resource.msg('heading.billing.address', 'checkout', null)}</strong>
+                            </label>           
+                            
+                            <div class="same-as-billing-summary" <isif condition="${pdict.order.shipping[0].selectedShippingMethod.storePickupEnabled}">style="display:none"</isif>>                             
+                                <isinclude template="checkout/addressSummary" />
+                                <div class="billing-address-contact-info">
+                                    <span class="order-summary-email">${pdict.order.orderEmail}</span>
+                                    <br/>
+                                    <isif condition="${pdict.order.billing.billingAddress.address !== null}">
+                                        <span class="order-summary-phone">${pdict.order.billing.billingAddress.address.phone}</span>
+                                        <iselse>
+                                        <span class="order-summary-phone"></span>
+                                    </isif>
+                                </div>                                
+                            </div>
+
+
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-------------------------------------------------------------------------->
+                <!-- Billing Address                                                      -->
+                <!-------------------------------------------------------------------------->
+                <fieldset class="billing-address" <isif condition="${pdict.order.shipping[0].selectedShippingMethod.storePickupEnabled}">style="display:block"</isif>>
+                    <isinclude template="checkout/billing/billingAddress" />
+                </fieldset>
+
+                <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+                <input type="hidden" name="localizedNewAddressTitle" value="${Resource.msg('msg.new.address', 'checkout', null)}"/>
+            </fieldset>
+
+
+
+            <!-------------------------------------------------------------------------->
+            <!-- Contact Info (Email and Phone)                                       -->
+            <!-------------------------------------------------------------------------->
+        <fieldset class="contact-info-block">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group
+                            <isif condition=${pdict.forms.billingForm.contactInfoFields.phone.mandatory === true}>required</isif>
+                            ${pdict.forms.billingForm.contactInfoFields.phone.htmlName}">
+                            <label class="form-control-label" for="billing-phoneNumber">${Resource.msg('field.customer.phone.number','checkout',null)}</label>
+
+                            <iscomment> <button type="button" class="info-icon">
+                                <span class="icon" aria-hidden="true">i</span>
+                                <span class="sr-only">${Resource.msg('button.help.assistive.text','common',null)}</span>
+                                <span class="tooltip d-none">
+                                    ${Resource.msg('tooltip.phone.number','creditCard',null)}
+                                </span>
+                            </button> </iscomment>
+
+                            <input type="tel" class="form-control phone" id="billing-phoneNumber"
+                                value="${pdict.order.billing.billingAddress.address
+                                ? pdict.order.billing.billingAddress.address.phone||''
+                                : ''}" <isprint value=${pdict.forms.billingForm.contactInfoFields.phone.attributes} encoding="off"/>
+                                aria-describedby="phoneInvalidMessage" >
+                            <div class="invalid-feedback" id="phoneInvalidMessage"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group
+                            <isif condition=${pdict.forms.billingForm.contactInfoFields.email.mandatory === true}>required</isif>
+                            ${pdict.forms.billingForm.contactInfoFields.email.htmlName}">
+                            <label class="form-control-label" for="email">${Resource.msg('field.customer.email','checkout',null)}</label>
+
+                            <iscomment> <button type="button" class="info-icon">
+                                <span class="icon" aria-hidden="true">i</span>
+                                <span class="sr-only">${Resource.msg('button.help.assistive.text','common',null)}</span>
+                                <span class="tooltip d-none">
+                                    ${Resource.msg('tooltip.email','creditCard',null)}
+                                </span>
+                            </button> </iscomment>
+                            <isset name="orderEmail" value="${pdict.order.orderEmail||''}" scope="page"/>
+
+                            <isif condition="${pdict.customer.registeredUser}">
+                                <isset name="orderEmail" value="${pdict.customer.profile.email}" scope="page"/>
+                            </isif>
+                            <div class="hidden-order-email" attr-value="${orderEmail}"></div>
+                            
+                            <input type="text" class="form-control email" id="email"
+                                value="${pdict.order.orderEmail||''}" <isprint value=${pdict.forms.billingForm.contactInfoFields.email.attributes} encoding="off"/>
+                                aria-describedby="emailInvalidMessage" >
+                            <div class="invalid-feedback" id="emailInvalidMessage"></div>
+                        </div>
+                    </div>                    
+                </div>
+            </fieldset>    
+        </div>      
+
+        <isloop items="${pdict.order.billing.payment.applicablePaymentMethods}" var="paymentOption" status="loopSate">
+            <isif condition="${paymentOption.ID === 'GIFT_CERTIFICATE'}">
+                <isinclude template="checkout/billing/paymentOptions/giftCertificateContent" />
+            </isif>
+        </isloop>
+        
+        <!-------------------------------------------------------------------------->
+        <!-- Payment Options                                                      -->
+        <!-------------------------------------------------------------------------->
+        <div class="card-header">
+            <h2 class="card-header-custom">${Resource.msg('heading.payment', 'checkout', null)}</h2>
+        </div>
+        <div class="card-body">
+            <fieldset>
+                <isinclude template="checkout/billing/paymentOptions" />
+            </fieldset>
+        </div>
+
+    </form>
+    
+</div>

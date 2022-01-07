@@ -1,0 +1,393 @@
+$breakpoint-name: 'sm';
+$breakpoint-name: 'sm' !default;
+$breakpoint-index: index(map-keys($grid-breakpoints), $breakpoint-name);
+$prev-breakpoint: nth(map-keys($grid-breakpoints), $breakpoint-index - 1);
+$next-breakpoint: nth(map-keys($grid-breakpoints), $breakpoint-index + 1);
+$menu-z-index: 4;
+$slide-out-animation: left 0.5s cubic-bezier(0, 1, 0.5, 1);
+
+@mixin caret-left() {
+    border-top: 0.3em solid transparent;
+    border-bottom: 0.3em solid transparent;
+    border-right: 0.3em solid;
+    border-left: 0.3 solid transparent;
+    width: 0;
+    height: 0;
+    display: inline-block;
+    margin-bottom: 0.125em;
+}
+
+@mixin caret-right() {
+    border-top: 0.3em solid transparent;
+    border-bottom: 0.3em solid transparent;
+    border-left: 0.3em solid;
+    position: absolute;
+    right: 0.3em;
+    margin-top: 0.3em;
+}
+
+@each $size in map-keys($grid-breakpoints) {
+
+    @include media-breakpoint-down($size) {
+        .menu-toggleable-left.navbar-toggleable-#{$size} {
+            position: fixed;
+            left: -100%;
+            top: 0;
+            bottom: 0;
+            transition: $slide-out-animation;
+            display: block;
+
+            &.in {
+                min-width: 50%;
+                max-width: 80%;
+                left: 0;
+            }
+        }
+    }
+}
+
+.navbar.bg-inverse {
+    background-color: transparent !important;
+    padding: 0;
+    &:hover, &:focus {
+        background-color: $white;
+    }
+    @include media-breakpoint-up($next-breakpoint) {
+        .navbar-nav .nav-item + .nav-item {
+            margin-left: 0;
+        }
+
+        .navbar-nav .nav-link {
+            padding: 0.8rem;
+        }
+    }
+}
+
+.navbar-expand-md .navbar-nav.nav-center {
+    justify-content: center;
+}
+
+.navbar-expand-md .navbar-nav.nav-spaced {
+    justify-content: space-evenly;
+}
+
+.navbar-expand-md .navbar-nav.nav-right {
+    justify-content: end;
+}
+
+
+@include media-breakpoint-up($next-breakpoint) {
+    nav .nav-item .nav-link:hover,
+    nav .nav-item .nav-link:focus,
+    nav .nav-item.show .nav-link {
+        background-color: transparent;
+        color: $white !important;
+    }
+
+    .nav-item > .nav-link {
+        color: $white;
+        &:hover, &:focus {
+            background:$white;
+        }
+        
+    }
+    .nav-item.show {
+        background: rgba(220, 220, 220, 0.44);
+    }
+}
+
+.menu-background {
+    background-color: $black;
+    display: none;
+    height: 100%;
+    position: fixed;
+    opacity: 0.5;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: $menu-z-index;
+}
+
+.main-menu.menu-toggleable-left {
+
+    @include media-breakpoint-down($breakpoint-name) {
+        background-color: $white;
+        z-index: $menu-z-index;
+    }
+}
+
+.menu-toggleable-left {
+    .close-menu {
+        padding: 15px;
+        background-color: $close-menu-bg;
+        border-bottom: 1px solid $grey3;
+        flex: 0 0 100%;
+        .close-button {
+            button {
+                color: var(--color-grey7);
+                -webkit-appearance: none;
+                border-radius: 0;
+                border: 1px solid var(--color-grey7);
+                background-color: $close-menu-bg;
+            }
+        }
+        @include media-breakpoint-up($next-breakpoint) {
+            display: none;
+        }
+    }
+
+    .menu-group {
+        flex: 0 0 100%;
+    }
+
+    li > .close-menu {
+        margin-right: 0;
+        margin-top: -0.6rem;
+        margin-left: 0;
+    }
+
+    @include media-breakpoint-down($breakpoint-name) {
+        .bg-inverse {
+            background-color: white !important;
+            color: $grey7;
+        }
+    }
+
+    &.in {
+
+        @include media-breakpoint-down($prev-breakpoint) {
+            right: 0;
+            margin-right: 1.25em; /* 20/16 */
+        }
+
+        @include media-breakpoint-down($breakpoint-name) {
+            .nav-item + .nav-item {
+                border-top: 1px solid $grey2;
+            }
+
+            .dropdown {
+                display: block;
+                position: static;
+            }
+
+            .dropdown-toggle {
+                padding-left: 1rem;
+
+                &::after {
+                    @include caret-right();
+                }
+            }
+
+            .nav-item .nav-link {
+                padding-left: 1rem;
+            }
+
+            .show > .dropdown-menu {
+                left: 0;
+            }
+
+            .dropdown-menu {
+                position: absolute;
+                left: -100%;
+                top: 0;
+                width: 100%;
+                border: 0 none;
+                transition: $slide-out-animation;
+                display: block;
+                height: 100vh;
+                overflow-y: auto;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+.multilevel-dropdown {
+    .dropdown-menu {
+        top: 98%;
+        border: 0;
+        border-radius: 0;
+        margin-top: 0;
+
+        @include media-breakpoint-up($next-breakpoint) {
+            box-shadow: 0 3px 5px rgba(43, 36, 25, 0.4);
+        }
+    }
+
+    .dropdown-item.dropdown > .dropdown-toggle::after {
+        @include caret-right();
+    }
+
+    .dropdown-menu > .dropdown > .dropdown-menu {
+
+        @include media-breakpoint-up($next-breakpoint) {
+            top: 0;
+            left: 99%;
+            min-height: 100%;
+            margin-top: 0;
+        }
+    }
+
+    .navbar > .close-menu > .back {
+        display: none;
+    }
+
+    .close-menu .back {
+        .caret-left {
+            @include caret-left();
+        }
+    }
+
+    .dropdown-item {
+        padding: 0 0 0 1em;
+        position: static;
+        background: #fff;
+        &.show, &:focus {
+            @include media-breakpoint-up(md) {
+                background: $grey8;
+                color: $white;
+                > a {
+                    color: $white;
+                }
+            }
+        }
+        &.l2 {
+           
+            @include media-breakpoint-down(sm) {
+                padding-left: 0;
+            }
+        }
+        .dropdown-link {
+            display: block;
+            padding: 0.425em 5em 0.425em 0;
+        }
+
+        + .dropdown-item {
+            border-top: 1px solid $close-menu-bg;
+        }
+
+        &.top-category {
+            font-weight: bold;
+
+            > .nav-link {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.navbar-toggler {
+    margin-top: .25em;
+    font-size: 2rem;
+    color: var(--color-black); 
+    @media screen and (max-width: 425px) {
+        margin-top: 5px;
+    }
+    @media screen and (max-width: 375px) {
+        margin-top: 1px;
+    }
+}
+
+.multilevel-dropdown {
+    .dropdown-menu {
+        li:last-of-type:not(:only-of-type) a[data-category-name="View All "]{
+            font-weight: 700;
+        }
+    }
+    @include media-breakpoint-up($next-breakpoint) {
+        .menu-dbrands {
+            position: static;
+            .brand-item { 
+                padding-bottom: 1em;
+            }
+            .dropdown-menu {
+                top: 100%;
+            }
+            .dropdown-item {
+                display: inline-block;
+                    &+ .dropdown-item {
+                        border: none;
+                        
+                    }
+                .dropdown-link {
+                    padding: .125em 5em .125em 0            
+                    }
+
+                }    
+            }
+        
+            .brand-list {
+                background: $grey2;
+                border-left: 1px solid $grey3; 
+                .dropdown-item {
+                    background: transparent;
+                    &:hover, &:focus {
+                        background: $grey8;
+                        color: var(--skin-menu-color-1-invert);
+                    }
+                    @include media-breakpoint-up(md) {    
+                        &:last-child {
+                            margin-top: 1em;
+                            &:hover, &:focus {
+                                background: transparent;
+                            }
+                            a {
+                                background: $acme-blue; 
+                                color: $white !important;
+                                font-size: .875em;
+                                display: inline-block;
+                                padding: .25em 2.25em;
+                                &:hover {
+                                    background-color: $black;
+                                    text-decoration: none;
+                                }
+                            }  
+                        } 
+                    } 
+                    
+                }
+                        
+            }
+        }
+    @include media-breakpoint-down(sm) {
+        .pb-3, .pt-3 {
+            padding: 0;
+            padding-top: 0 !important;
+            .dropdown-item a {
+                font-weight: 700;
+            }
+        }
+        .menu-dbrands {
+                .brand-item {
+                    border-top: 1px solid var(--color-grey2);
+                }
+                .dropdown-item {
+                    display: none;
+                    &:last-child, &.top-category {
+                        display: block;
+                    }
+            } 
+            .col-12:first-child .dropdown-item {
+                display: block;
+            } 
+        }
+    }
+}
+
+// Background content displayed in the bottom flicker issue 
+@media (max-width: 768.98px){
+    .menu-toggleable-left, .menu-background {
+        bottom: -80px;
+        height: calc(100vh + 80px);
+    }
+
+    .menu-toggleable-left.in .dropdown-menu {
+        height: calc(100vh + 80px);
+        bottom: -80px;
+        padding-bottom: 60px;
+    }  
+    
+    .menu-toggleable-left.in .dropdown-menu li:last-child {
+        margin-bottom: 140px;
+    }
+}

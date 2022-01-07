@@ -1,0 +1,86 @@
+
+   <div class="category-all-sub-categories" id="category-all-sub-categories">
+        <div class="row">
+            <isset name="refinedPage" value="${false}" scope="page" />   
+            <isif condition="${pdict.productSearch && pdict.productSearch!=null}">      
+                <isloop items="${pdict.productSearch.refinements}" var="refinement">
+                        <isif condition="${refinement.isCategoryRefinement}">
+                            <isloop items="${refinement.values}" var="categoryRefinement">
+                                    <isif condition="${categoryRefinement.selected}">
+                                            <isset name="refinedPage" value="${true}" scope="page" />            
+                                            <isset name="subCategoriesToShow" value="${categoryRefinement.subCategories}" scope="page" />
+                                    <iselse/>
+                                        <isloop items="${categoryRefinement.subCategories}" var="categoryRefinementSubCat1">
+                                                <isif condition="${categoryRefinementSubCat1.selected}">
+                                                    <isset name="refinedPage" value="${true}" scope="page" />            
+                                                    <isset name="subCategoriesToShow" value="${categoryRefinementSubCat1.subCategories}" scope="page" />
+                                                <iselse/>
+                                                </isif>
+                                        </isloop>
+                                    </isif>
+                                </isloop>
+                            
+                        </isif>
+                </isloop>
+            </isif>
+
+
+            <isif condition="${pdict.subCategoriesToShow}">
+                <isif condition="${pdict.subCategoriesToShow.length > 0}">
+                    <div class="col-12">
+                        <h3 class="text-center carousel-title">Shop For ${pdict.showSubCatName}</h3>
+                    </div>            
+                </isif>
+                <isloop items="${pdict.subCategoriesToShow}" var="subCategory">
+                
+                    <isif condition="${subCategory.online}">
+                        <div class="col-6 col-md-3 category-item">
+                                <isif condition="${subCategory.custom.alternativeUrl}">
+                                    <isset name="altURL" value="${subCategory.custom.alternativeUrl.toString().replace(/&amp;/g, '&')}" scope="page"/>
+                                    <isif condition="${altURL.includes('?')}">
+                                        <a href="${altURL}&oci=${subCategory.ID}" title="${subCategory.displayName}">
+                                    <iselse/>
+                                        <a href="${altURL}?oci=${subCategory.ID}" title="${subCategory.displayName}">
+                                    </isif>
+                                <iselse/>
+                                        <a href="${URLUtils.url('Search-Show', 'cgid', subCategory.ID)}" title="${subCategory.displayName}">    
+                                </isif>
+                                        <div class="category-tile">
+                                            <isif condition="${subCategory.thumbnail!=null && subCategory.thumbnail.getURL()!=null}">
+                                                <img class="img-fluid" src="${subCategory.thumbnail.getURL()}" alt="${subCategory.displayName}"/>
+                                            </isif>
+                                        </div>
+                                        <div class="top-category-tile-name text-center">
+                                            <isprint value="${subCategory.displayName}" encoding="htmlcontent" />
+                                        </div>
+                                    </a> 
+                        </div>                    
+                    </isif>
+
+                </isloop>    
+            <iselseif condition="${refinedPage}"/>
+                <isif condition="${subCategoriesToShow.length > 0}">
+                    <div class="col-12">
+                        <h3 class="text-center carousel-title">Shop For ${pdict.showSubCatName}</h3>
+                    </div>            
+                </isif>
+                <isloop items="${subCategoriesToShow}" var="subCategory">
+                    <div class="col-6 col-md-3 category-item">
+                            <a href="${subCategory.fullURL}" title="${subCategory.displayName}">    
+                            <div class="category-tile">
+                                <isif condition="${subCategory.thumbnail!=null && subCategory.thumbnail != ""}">
+                                    <img class="img-fluid" src="${subCategory.thumbnail}" alt="${subCategory.displayName}"/>
+                                </isif>
+                            </div>
+                            <div class="top-category-tile-name text-center">
+                                <isprint value="${subCategory.displayValue}" encoding="htmlcontent" />
+                            </div>
+                        </a> 
+                    </div>
+                </isloop>                    
+            <iselse/>
+
+            </isif>
+
+        </div>
+    </div>

@@ -1,0 +1,26 @@
+<div class="modal fade" id="paypal-phonenumber-modal" tabindex="-1" role="dialog" aria-labelledby="removeProductLineItemModal">
+    <input type="hidden" id="checkMobileNumberURL" value="${URLUtils.url('Paypal-CheckMobileNumber')}" />
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header delete-confirmation-header">
+                <h2 class="modal-title" id="addPPPhoneNumber">${Resource.msg('paypal.mobilenumbermodal.header','paypal',null)}</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body delete-confirmation-body">
+                <p>
+                <span class="msg-add-pp-phone" id="addPayPalPhoneNumberMsg" role="alert" style="display:block">${Resource.msg('msg.paypal.phone.add', 'paypal', null)}</span>
+                </p>
+                <div class="input-paypal-phone-add">
+                    <input type="tel" name="phoneNo" id="phoneNo" placeholder="${Resource.msg('paypal.mobilenumbermodal.placeholder', 'paypal', null)}" maxlength="12" size="35" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    <div id="paypalMissingPhoneErrorMessage" style="color: #E7131A;" ></div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button id="savePPPhoneNumberBtn" class="affirm btn btn-primary" data-post-url="${URLUtils.url('Paypal-UpdateMobileNumber')}" autofocus data-dismiss="modal">
+                    ${Resource.msg('paypal.mobilenumbermodal.button.save', 'paypal', null)}
+                </button> 
+            </div>
+        </div>
+    </div>
+</div>

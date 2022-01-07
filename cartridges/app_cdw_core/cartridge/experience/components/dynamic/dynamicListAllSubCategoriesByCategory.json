@@ -1,0 +1,25 @@
+{
+    "name": "List All SubCategories for a Category",
+    "description": "List All SubCategories a Category for Super Cat Landing and Brand Landing Pages.",
+    "group": "dynamic",
+    "attribute_definition_groups": [
+        {
+            "id": "dynamicListAllSubCategoriesByCategory",
+            "name": "dynamicListAllSubCategoriesByCategory",
+            "description": "Specify the Category to pull the all subcategories underneath.",
+            "attribute_definitions": [
+                {
+                    "id": "category",
+                    "name": "Category",
+                    "description": "Select Category to pull the all subcategories underneath.",
+                    "type": "category",
+                    "required": true,
+                    "dynamic_lookup": {
+                        "aspect_attribute_alias" : "category"
+                    }                    
+                }              
+            ]
+        }
+    ],
+    "region_definitions": []
+}

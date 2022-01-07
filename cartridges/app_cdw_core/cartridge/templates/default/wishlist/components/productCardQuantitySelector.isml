@@ -1,0 +1,12 @@
+<div class="quantity-form-wishlist">
+    <label class="line-item-pricing-info quantity-label" for="quantity">${Resource.msg('field.selectquantity','cart',null)}</label>
+
+    <isset name="product" value="${item}" scope="page" />
+    <isset name="isCallForPriceProduct" value="${false}" scope="page" />
+
+    <div class="simple-quantity">
+        <isinclude template="product/components/quantity" />
+    </div>
+</div>
+
+

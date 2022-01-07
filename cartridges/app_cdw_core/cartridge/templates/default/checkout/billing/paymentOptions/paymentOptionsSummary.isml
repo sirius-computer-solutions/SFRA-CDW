@@ -1,0 +1,29 @@
+<div class="payment-details">
+    <isloop items="${pdict.order.billing.payment.selectedPaymentInstruments}" var="payment">
+        <isif condition="${payment.paymentMethod === 'GIFT_CERTIFICATE'}">
+            <isinclude template="checkout/billing/paymentOptions/giftCertificateSummary" />
+        </isif>
+        <isif condition="${payment.paymentMethod === 'CREDIT_CARD'}">
+            <isinclude template="checkout/billing/paymentOptions/creditCardSummary" />
+        </isif>
+        <isif condition="${payment.paymentMethod === 'PayPal' && pdict.paypal}">
+            <isinclude template="paypal/checkout/paypalSummary" />
+        </isif>
+        <isif condition="${payment.paymentMethod === 'PayPal' && pdict.orderDetailsRequest}">
+            <isinclude template="paypal/checkout/paypalOrderDetailsSummary" />
+        </isif>        
+        <isif condition="${payment.paymentMethod === 'STORE_CREDIT'}">
+            <isinclude template="checkout/billing/paymentOptions/storeCreditSummary" />
+        </isif>        
+    </isloop>
+
+    <br>
+    <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments[0] && pdict.order.billing.payment.selectedPaymentInstruments[0].webReference}">
+            <div class="summary-section-label">
+                ${Resource.msg('label.webReferenceNumber', 'storeCredit', null)}:
+            </div> 
+            <div class="web-reference-number">
+                ${pdict.order.billing.payment.selectedPaymentInstruments[0].webReference}
+            </div>
+    </isif>
+</div>

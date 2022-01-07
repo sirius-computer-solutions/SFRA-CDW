@@ -1,0 +1,7 @@
+<div class="credit-card-type">
+    <span>${Resource.msg('label.store.credit.header', 'storeCredit', null)}</span>
+</div>
+
+<iscomment> <div class="credit-card-number">
+    ${payment.custom.storeCreditAccountNumber}
+</div> </iscomment>

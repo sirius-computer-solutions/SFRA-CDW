@@ -1,0 +1,5 @@
+<div id="paginationCanonicalUrl" class="pagination-canonical-url" data-id="${pdict.paginationCanonicalUrl}"></div>
+<isinclude template="search/components/pagination" />
+<isinclude template="search/components/productTiles" />
+<isinclude template="search/components/pagination" />
+

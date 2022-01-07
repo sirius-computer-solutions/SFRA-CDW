@@ -1,0 +1,25 @@
+<span class="estArrival">
+    <isif condition="${pdict.varsityError}">
+        ${Resource.msgf(pdict.responseObj[0], 'product', null)}
+    </isif>
+    ${Resource.msg('estimated.date.zipcode.text', 'product', null)}
+    <isif condition="${!empty(pdict.startDate && pdict.shippingType)}">
+        <span>
+            <isif condition="${!empty(pdict.endDate)}">
+                <isprint value="${Resource.msgf('estimated.date.text.display.with.date.range', 'product', null, pdict.startDate, pdict.endDate, pdict.shippingType)}" encoding="off" />
+                
+            <iselse>
+                <isprint value="${Resource.msgf('estimated.date.text.display.without.date.range', 'product', null, pdict.startDate, pdict.shippingType)}" encoding="off" />
+                
+            </isif>
+            <div class="d-inline-block">
+                <a class="est-zipcode-modal" data-toggle="modal" href="#estArrZipCodeModal"> ${pdict.zipCode}</a>
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+        </span>
+    <iselse>
+        <a class="est-zipcode-modal" data-toggle="modal" href="#estArrZipCodeModal">
+            ${Resource.msg('estimated.date.zipcode.add.button', 'product', null)}
+        </a>
+    </isif>
+</span>

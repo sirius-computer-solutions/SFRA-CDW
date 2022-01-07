@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="BriteVerify_Credentials">
+        <url>https://bpi.briteverify.com/api/v1/fullverify</url>
+        <user-id>1234</user-id>
+        <password encrypted="true" encryption-type="common.export">xgkFzjhn9jRy6ZiVIpHpI7/GljJVhPIbuXx1HimJrDo=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="Fedex_Credentials">
+        <url>https://ws.fedex.com:443</url>
+        <user-id>TTGAk9NbpoL43PTU</user-id>
+        <password encrypted="true" encryption-type="common.export">y1SgtOfE9zdBFa8zf07yn9FNXjRS+A2+C8Q1/+s5IiwwHlzH811WQywAxJbqFqzzVDglsiKt2nz9xhGjgCP91Q==</password>
+        <custom-attributes>
+            <custom-attribute attribute-id="AccountNumber">170705106</custom-attribute>
+            <custom-attribute attribute-id="MeterNumber">101274527</custom-attribute>
+        </custom-attributes>
+    </service-credential>
+
+    <service-credential service-credential-id="GoogleCaptchaCredentials">
+        <url>https://www.google.com/recaptcha/api/siteverify</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">othbNM9lRNT+QdIwmNww/OpE1TDiaQeorx3BZiTLH5o=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="NARVAR_API_CREDS">
+        <url>https://ws-st01.narvar.qa/api/v1/orders/</url>
+        <user-id>73760d5a800041169e230db2ae00b9ec</user-id>
+        <password encrypted="true" encryption-type="common.export">oUWsnZ7BBu043+/hCds1snkcoGS7SufQT+1u8kBHp8mTPvPiDEnAokDoC3G+M18Ux91IbF9uOn1vKllrLy+vYA==</password>
+    </service-credential>
+
+    <service-credential service-credential-id="NARVAR_BULK_API_CREDS">
+        <url>Narvar Endpoint</url>
+        <user-id>Narvar User Id</user-id>
+        <password encrypted="true" encryption-type="common.export">VvfFL8ifK4UlJbYbEHqSHeduGmLqWynzbL+ahWQ3UsY=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="NARVAR_LOGS_API_CREDS">
+        <url>https://commerce-logger-st01.narvar.qa/api/v1/logs</url>
+        <user-id>73760d5a800041169e230db2ae00b9ec</user-id>
+        <password encrypted="true" encryption-type="common.export">DBBqJezx/haEb8wLkrvWunkcoGS7SufQT+1u8kBHp8kTxGIsB+8t0jRz9saWlo+lX2WJLH9jAf4+62s+O+ELVQ==</password>
+    </service-credential>
+
+    <service-credential service-credential-id="Paypal_Sandbox_Credentials">
+        <url>https://api.sandbox.paypal.com/</url>
+        <user-id>ATaA8ZdQpxF1WsOp8fkQGqT2BQcJGWnCvVWtvSZ9Gvc7uAXJ82eOywUfIFXEH02V7JEy3HkDjdgrScCo</user-id>
+        <password encrypted="true" encryption-type="common.export">lM9PpB7Gh5jbHufYtNfPR3ye3jMs4pGoTg3/kaykfK0KTSGzLQiV/2L8d6KXBnOIoOiaXvE1+H1AQJUdCNiXGUSPtjkx9DHf/7PPD7PPv4j61QAI/T2f7OQqd5TEYT/IMdUE1rW/BWHfLHFF6AOoHw==</password>
+    </service-credential>
+
+    <service-credential service-credential-id="Payware_Credentials">
+        <url>https://cert.api.vfipayna.com/IPCHAPI/RH.ASPX</url>
+        <user-id>WEBAPIT</user-id>
+        <password encrypted="true" encryption-type="common.export">zrPAPOhF2m9CKwgJPWur3n2GsL2NrDyx7Zx9qBLr55cAbceJ2ij3qalQkRFpeD7E</password>
+        <custom-attributes>
+            <custom-attribute attribute-id="clientId">16041300010001</custom-attribute>
+            <custom-attribute attribute-id="merchantKey">nsDtA85QgHU50m0cioxH54U418135H01puIosTe4gcrfeT0nQMFp8dHAGDGIUQLB</custom-attribute>
+        </custom-attributes>
+    </service-credential>
+
+    <service-credential service-credential-id="Varsity_Credentials">
+        <url>https://portal.acmetools.com:8523/rest/vtransit/</url>
+        <user-id>1234</user-id>
+        <password encrypted="true" encryption-type="common.export">cOI/n/PZVqFHQI1h+0NB++6r2tiGXsjzJj4OnBZQoEs=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="bazaarvoice.sftp.prd.AcmeTools">
+        <url>sftp.bazaarvoice.com</url>
+        <user-id>TODO</user-id>
+        <password encrypted="true" encryption-type="common.export">eo/vwvM/IsqFylkwktTGKu02EWPMz/IFAPazta1cfRg=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="bazaarvoice.sftp.prd.RefArch">
+        <url>sftp.bazaarvoice.com</url>
+        <user-id>bvp-demandwarec2013sandbox1</user-id>
+        <password encrypted="true" encryption-type="common.export">7uE2FpNExRk9PdUQjyaQsoPIf+/YLr6opRTKoluPojo=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="bazaarvoice.sftp.stg.AcmeTools">
+        <url>sftp-stg.bazaarvoice.com</url>
+        <user-id>acmetools</user-id>
+        <password encrypted="true" encryption-type="common.export">EjFvoidPacLZxC3B1r7goJyaRFYiVNQlys76DmZu65YiYa4b7tZBmisrEtK3Oxt7</password>
+    </service-credential>
+
+    <service-credential service-credential-id="bazaarvoice.sftp.stg.RefArch">
+        <url>sftp-stg.bazaarvoice.com</url>
+        <user-id>bvp-demandwarec2013sandbox2</user-id>
+        <password encrypted="true" encryption-type="common.export">6kvCd4ItypQEvobsLoq2iRbNfqDrK7W2dHNNXZTWeDk=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="feedonomics.ftp.creds">
+        <url/>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">18Shv/p3lbJ51YA38FWEo1kLBZ5wZqXJc6MN/URjDtM=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="int.s2k.http.credentials">
+        <url>https://portal.acmetools.com/WebServicesTest/</url>
+        <user-id>acmetools</user-id>
+        <password encrypted="true" encryption-type="common.export">FwGkqgrXEQhxBOJHfd9zXeiALEiRoiA4htbz6fYDqUYxaCe/lrTtAyJykaMZn53Ddavzt6Xwel8Vj3yU0dxO0w==</password>
+    </service-credential>
+
+    <service-profile service-profile-id="BriteVerify_Profile">
+        <timeout-millis>1000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="Fedex_Profile">
+        <timeout-millis>1000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="NARVAR">
+        <timeout-millis>10000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="PayPal_Profile">
+        <timeout-millis>60000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="Payware_Profile">
+        <timeout-millis>60000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="Varsity_Profile">
+        <timeout-millis>6000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="Vertex">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="bazaarvoice.http">
+        <timeout-millis>500</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>3</cb-calls>
+        <cb-millis>2000</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="bazaarvoice.http.bot">
+        <timeout-millis>2000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>3</cb-calls>
+        <cb-millis>10000</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="bazaarvoice.sftp">
+        <timeout-millis>5000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>3</cb-calls>
+        <cb-millis>20000</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="feedonomics.ftp.profile">
+        <timeout-millis>10000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>10</cb-calls>
+        <cb-millis>1000</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="int.s2k.http.profile">
+        <timeout-millis>60000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service service-id="NARVAR_BULK_INGESTION">
+        <service-type>GENERIC</service-type>
+        <enabled>true</enabled>
+        <log-prefix>NarvarFileUpload</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>NARVAR</profile-id>
+        <credential-id>NARVAR_BULK_API_CREDS</credential-id>
+    </service>
+
+    <service service-id="NARVAR_LOG_INGESTION_AcmeTools">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>Narvar</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>NARVAR</profile-id>
+        <credential-id>NARVAR_LOGS_API_CREDS</credential-id>
+    </service>
+
+    <service service-id="NARVAR_ORDER_INGESTION_AcmeTools">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>Narvar</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>NARVAR</profile-id>
+        <credential-id>NARVAR_API_CREDS</credential-id>
+    </service>
+
+    <service service-id="bazaarvoice.http">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>bazaarvoice_http</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>bazaarvoice.http</profile-id>
+        <credential-id/>
+    </service>
+
+    <service service-id="bazaarvoice.http.bot">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>bazaarvoice_http</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>bazaarvoice.http.bot</profile-id>
+        <credential-id/>
+    </service>
+
+    <service service-id="bazaarvoice.sftp.export.AcmeTools">
+        <service-type>SFTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>bazaarvoice_sftp</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>bazaarvoice.sftp</profile-id>
+        <credential-id>bazaarvoice.sftp.stg.AcmeTools</credential-id>
+    </service>
+
+    <service service-id="bazaarvoice.sftp.export.RefArch">
+        <service-type>SFTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>bazaarvoice_sftp</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>bazaarvoice.sftp</profile-id>
+        <credential-id>bazaarvoice.sftp.stg.RefArch</credential-id>
+    </service>
+
+    <service service-id="bazaarvoice.sftp.import.AcmeTools">
+        <service-type>SFTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>bazaarvoice_sftp</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>bazaarvoice.sftp</profile-id>
+        <credential-id>bazaarvoice.sftp.stg.AcmeTools</credential-id>
+    </service>
+
+    <service service-id="bazaarvoice.sftp.import.RefArch">
+        <service-type>SFTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>bazaarvoice_sftp</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>bazaarvoice.sftp</profile-id>
+        <credential-id>bazaarvoice.sftp.stg.RefArch</credential-id>
+    </service>
+
+    <service service-id="fedex.service.rest">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>Fedex</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Fedex_Profile</profile-id>
+        <credential-id>Fedex_Credentials</credential-id>
+    </service>
+
+    <service service-id="feedonomics.ftp">
+        <service-type>FTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>ftp</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>feedonomics.ftp.profile</profile-id>
+        <credential-id>feedonomics.ftp.creds</credential-id>
+    </service>
+
+    <service service-id="google.recaptcha.https.post">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id/>
+        <credential-id>GoogleCaptchaCredentials</credential-id>
+    </service>
+
+    <service service-id="int.briteverify.rest">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>BriteVerify</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>BriteVerify_Profile</profile-id>
+        <credential-id>BriteVerify_Credentials</credential-id>
+    </service>
+
+    <service service-id="int.payware.http">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>payware</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Payware_Profile</profile-id>
+        <credential-id>Payware_Credentials</credential-id>
+    </service>
+
+    <service service-id="int.s2k.http">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>int.s2k.http.profile</profile-id>
+        <credential-id>int.s2k.http.credentials</credential-id>
+    </service>
+
+    <service service-id="int.varsity.rest">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>Fedex</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Varsity_Profile</profile-id>
+        <credential-id>Varsity_Credentials</credential-id>
+    </service>
+
+    <service service-id="int_paypal.http.rest">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>PayPalRest</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>PayPal_Profile</profile-id>
+        <credential-id>Paypal_Sandbox_Credentials</credential-id>
+    </service>
+
+    <service service-id="vertex.CalculateTax">
+        <service-type>SOAP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>VertexSOAP</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Vertex</profile-id>
+        <credential-id/>
+    </service>
+
+    <service service-id="vertex.LookupTaxAreas">
+        <service-type>SOAP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>VertexSOAP</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Vertex</profile-id>
+        <credential-id/>
+    </service>
+
+</services>

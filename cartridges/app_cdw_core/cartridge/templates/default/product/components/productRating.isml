@@ -1,0 +1,11 @@
+<!-- Bazaarvoice content START -->
+<isscript>
+var assets = require('*/cartridge/scripts/assets');
+if(pdict.bvScout) {
+	assets.addJs(pdict.bvScout);
+}
+</isscript>
+
+<isinclude template="bv/display/pdpSummary"/>
+
+<!-- Bazaarvoice content END -->

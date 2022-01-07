@@ -1,0 +1,14 @@
+<div style="width:482px;padding:0 59px;">
+    <table style="border-collapse:collapse;border-spacing:0;text-align:center;font-size:9px;color:#808080;padding:25px 0 0;margin:0 auto;width:600px;margin-top:10px;"><tbody><tr><td>
+                                    
+
+        <table align="center"><tbody><tr><td><a href="https://www.facebook.com/acmetools" title="Acme Tools on Facebook" rel="nofollow"><img src="${URLUtils.httpsStatic('/images/email_template/fbIcon.png')}" title="Acme Tools on Facebook" alt="fbIcon.png"></a></td>
+            <td><a href="https://twitter.com/acmetools" title="Acme Tools on Twitter" rel="nofollow"><img style="width: 39px; height:32px;" src="${URLUtils.httpsStatic('/images/email_template/twIcon.png')}" title="Acme Tools on Twitter" alt="twIcon.png"></a></td>
+            <td><a href="https://www.youtube.com/acmetoolstv" title="Acme Tools on YouTube" rel="nofollow"><img style="width: 39px; height:32px;"  src="${URLUtils.httpsStatic('/images/email_template/ytIcon.png')}" title="Acme Tools on YouTube" alt="ytIcon.png"></a></td>
+            <td><a href="https://www.instagram.com/acmetools/" title="Acme Tools on Instagram" rel="nofollow"><img style="width: 39px; height:32px;" src="${URLUtils.httpsStatic('/images/email_template/instIcon.png')}" title="Acme Tools on Instagram" alt="instIcon.png"></a></td>
+            <td><a href="https://www.acmetools.com/shop/tools/acme-contact" title="Contact Acme Tools" rel="nofollow"><img style="width: 39px; height:32px;" src="${URLUtils.httpsStatic('/images/email_template/envIcon.png')}" title="Contact Us" alt="envIcon.png"></a></td>
+            <td><a href="https://www.acmetools.com/shop/tools/catalog-request" title="Request Catalog" rel="nofollow"><img style="width: 39px; height:32px;" src="${URLUtils.httpsStatic('/images/email_template/free-catalog.png')}"  title="Request a Catalog" alt="free-catalog.png"></a></td>
+            <td><a href="https://www.acmetools.com/shop/tools/privacy-policy" title="Acme Tools Pricacy Policy" rel="nofollow"><img style="width: 39px; height:32px;" src="${URLUtils.httpsStatic('/images/email_template/privacy.png')}"  title="Privacy Policy" alt="privacy.png"></a></td>
+        </tr></tbody></table></td>
+    </tr></tbody></table>
+</div>

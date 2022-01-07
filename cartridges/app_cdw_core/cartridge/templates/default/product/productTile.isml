@@ -1,0 +1,54 @@
+<div class="product-tile">
+    <isset name="callingPage" value="productListing" scope="page" />
+    <!-- dwMarker="product" dwContentID="${product.uuid}" -->
+    <isinclude template="product/components/productTileImage" />
+    <div class="tile-body">
+        <isif condition="${pdict.display.swatches !== false}">
+            <isinclude template="product/components/productTileSwatch" />
+        </isif>
+
+        <isinclude template="product/components/productTileName" />
+
+        <isset name="isCallForPriceProduct" value="${product.callForPrice}" scope="page" />
+        <isif condition="${pdict.display.availability !== false}">
+            <isinclude url="${URLUtils.url('Product-GetInventory','pid', product.id,'tile',true)}"/>
+        </isif>
+        <isif condition="${pdict.display.promotions !== false}">
+            <isinclude template="product/components/fsPromotions" />
+        </isif>
+        
+        <isif condition="${!isCallForPriceProduct && pdict.display.ratings !== false}">
+          <div class="ratings col-xs-12 col-sm-6">
+                <isinclude template="product/components/ratings" />
+          </div>
+        </isif>
+        
+        <isif condition="${!isCallForPriceProduct}">
+            <isset name="price" value="${product.price}" scope="page" />
+            <isif condition="${product.productType === 'set'}">
+                <isinclude template="product/components/pricing/setPrice" />
+            <iselse>
+                <isinclude template="product/components/pricing/main" />
+            </isif>
+        <iselse/>
+                <div class="call-for-price-plp">
+                    <div>
+                        <isprint value="${Resource.msg('call.for.price.label', 'category', null)}" encoding="off" />
+                    </div>
+                    <div>
+                        <isprint value="${Resource.msg('call.for.price.information', 'category', null)}" encoding="off" />
+                    </div>
+                </div>
+        </isif>
+        <isif condition="${pdict.display.promotions !== false}">
+            <isinclude template="product/components/promotions" />
+        </isif>
+        
+        <isif condition="${'addToCart' in pdict.display && pdict.display.addToCart}">
+            <isinclude template="product/components/recommendationAddToCartProduct" />    
+        </isif>
+        <isinclude template="product/productTileFooter" />
+
+    </div>
+    <!-- END_dwmarker -->
+</div>

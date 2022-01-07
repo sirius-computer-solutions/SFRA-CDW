@@ -1,0 +1,299 @@
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v11/-g5pDUSRgvxvOl5u-a_WHw.woff) format('woff');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+body {
+    font-family: "myriad-pro-n4", "myriad-pro", 'Helvetica Neue', 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-size: 1rem;
+    line-height: 1.3em;
+    letter-spacing: .02em;
+    color: $grey8;
+}
+
+@mixin headings($from: 1, $to: 6){
+    @for $i from $from through $to{
+      h#{$i}{
+        @content
+      }
+    }
+}
+
+
+
+#{headings(1,3)} {
+  font-family: "myriad-pro-n4", "myriad-pro", 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+.card, .footer-item {
+  &#{headings(1,3)}, .h2 {
+  font-family: "myriad-pro-condensed-n7", "myriad-pro-condensed", 'Helvetica Neue', 'Arial', sans-serif;
+  font-weight: 600;
+  }
+}
+
+/*@include headings(){
+    font-family: "myriad-pro-n4", "myriad-pro", 'Helvetica Neue', 'Arial', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+}*/
+
+h1 {
+  font-family: "myriad-pro-n4", "myriad-pro", 'Helvetica Neue', 'Arial', sans-serif;
+  font-weight: 700;
+  color: $grey7;
+  font-size: 1.75em;
+  letter-spacing: normal;
+  padding: .5rem 0 .5rem; 
+}
+
+.product-name {
+  padding: 0 0;
+  font-weight: 700;
+  color: $grey7;
+  font-size: 1.75em;
+  line-height: 1em;
+  font-family: myriad-pro-n7, myriad-pro, "Helvetica Neue", Arial, sans-serif;
+  @include media-breakpoint-down(sm) {
+    font-size: 1.125em;
+    line-height: 1.8rem;
+  }
+  @include media-breakpoint-down(xs) {
+    line-height: 1.4rem;
+  }
+  @media screen and (max-width:375px) {
+    line-height: 1.3rem;
+  }
+}
+
+.header-details {
+  h2 {
+    font: 700 1.1em var(--font-family-sans-serif);
+    color: $grey7; 
+    padding: 0 0 .1em;
+     a {
+      color: var(--color-grey7) !important;
+    }
+  }
+  p { 
+    font-size: .875em;
+  }
+}
+
+.carousel-title {
+    font: 700 1.6875em var(--font-family-sans-serif);
+    padding: 0 0 .1em;
+    color: $grey7; 
+    a {
+      color: var(--color-grey7) !important;
+    }
+}
+
+.navbar {
+  .nav-item, .nav-item a {
+    font-family: myriad-pro-condensed, sans-serif;
+    font-weight: 700;
+    font-size: 1.1em;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+  .dropdown-item, .dropdown-item a {
+    text-transform: none;
+    font-weight: 400;
+    font-family: "myriad-pro-n4", "myriad-pro", trebuchet, sans-serif;
+    font-size: 1em;
+  }
+  @include media-breakpoint-down(sm) {
+    .dropdown-item a {
+      white-space: normal;
+    }
+  }
+  .dropdown {
+    .dropdown-toggle {
+      &:after {
+        color: $yellow;
+      }
+    }
+  }
+  .show > .dropdown-toggle:after {
+        color: $yellow;
+      }
+}
+
+footer {
+  h2, .h2 {
+    font-size: 1.4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.8em;
+    padding-bottom: 6px
+  }
+  h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: myriad-pro-condensed, sans-serif;
+  }
+  .copyright-notice {
+    text-align: center;
+  }
+  .content {
+    font-size: 1em;
+  }
+}
+
+.sales { 
+  color:$acme-red; 
+  font-weight: 600;
+}
+.minicart .cart .sales {
+  font-size: 1rem;
+}
+
+.font-small  {
+    font-size: .875em;
+    color: $grey8;
+  h2 {
+  font-size: 1em;
+  color: $grey8;
+  margin-bottom: 0;
+  }
+  p {
+    font-size: .875em;
+  }
+}
+.font-small-bold, .low-price a {
+  font-size: .875em;
+  font-weight: 600;
+}
+
+.oos {
+        font-weight: 600;
+    }
+  .in-stock {
+      color: $green;
+  }
+  .preorder-oos {
+      color: $green;
+  }
+  i:before {
+      padding-right: .25em;
+  } 
+.fs-promo {
+      color: $acme-blue;
+      i:before {
+          padding-right: .25em;
+      } 
+  }
+  .disclaimer {
+    color: $grey6;
+    font-weight: 500;
+  }
+  .rebate-available {
+    margin-bottom: 0;
+    line-height: 1em;
+    a {
+      color: var(--skin-link-color-1) !important;
+      font-size: .875rem;
+      font-weight: 600;
+    }
+  }
+
+// icons
+
+/* FONT AWESOME CORE
+ * -------------------------- */
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: Font Awesome\ 5 Free;
+  font-weight: 900;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+[class^="red-icon-"],
+[class*=" red-icon-"] {
+  font-family: Font Awesome\ 5 Free;
+  font-weight: 900;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  text-decoration: inherit;
+  display: inline-block;
+  speak: none;
+}
+/* makes the font 33% larger relative to the icon container */
+.icon-large:before {
+  vertical-align: -10%;
+  font-size: 1.3333333333333333em;
+}
+/* makes sure icons active on rollover in links */
+a [class^="icon-"],
+a [class*=" icon-"],
+a [class^="icon-"]:before,
+a [class*=" icon-"]:before {
+  display: inline;
+}
+/* makes sure icons active on rollover in links */
+a [class^="red-icon-"],
+a [class*=" red-icon-"],
+a [class^="red-icon-"]:before,
+a [class*=" red-icon-"]:before {
+  display: inline;
+}
+/* increased font size for icon-large */
+[class^="icon-"].icon-fixed-width,
+[class*=" icon-"].icon-fixed-width {
+  display: inline-block;
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+[class^="icon-"].icon-fixed-width.icon-large,
+[class*=" icon-"].icon-fixed-width.icon-large {
+  width: 1.5714285714285714em;
+}
+
+
+.store-details {
+    line-height: 1.4em;
+    .store-name {
+      font-weight: 600;
+    }
+    .store-hours {
+      padding-bottom: .25em;
+    }
+}
+
+.editorialRichText-component-container {
+  h2 {
+    font: 600 1.5em var(--font-family-sans-serif);
+  }
+  h3 {
+    font: 600 1.25em var(--font-family-sans-serif);
+  }
+  p {
+    font: normal 1em var(--font-family-sans-serif);
+  }
+}
+
+
+header~#maincontent .seo-content a:not(.btn-primary):not(.btn-outline-primary),
+header~#maincontent .storepage .container .experience-bottom a:not(.btn-primary):not(.btn-outline-primary),
+header~#maincontent .container #Category_SEO_Content a:not(.btn-primary):not(.btn-outline-primary) {
+    color: var(--skin-link-color-1);
+    text-decoration: underline;
+}
+header~#maincontent .seo-content a:not(.btn-primary):not(.btn-outline-primary):hover,
+header~#maincontent .storepage .container .experience-bottom a:not(.btn-primary):not(.btn-outline-primary):hover,
+header~#maincontent .container #Category_SEO_Content a:not(.btn-primary):not(.btn-outline-primary):hover {
+    text-decoration: none;
+}

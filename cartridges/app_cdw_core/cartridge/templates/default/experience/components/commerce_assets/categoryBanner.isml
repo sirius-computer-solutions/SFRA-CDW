@@ -1,0 +1,23 @@
+    <isif condition="${pdict.showOrignialslotBannerImage && pdict.orignialslotBannerImage && !pdict.refinedPage}">
+        <div class="hero-bg search-banner" style="overflow: hidden;">    
+            <isif condition="${!empty(pdict.orignialslotBannerImage.url)}">
+                <img src="${pdict.orignialslotBannerImage.url}" alt="${pdict.heading}" style="${pdict.slotBannerStyle}"/>
+            </isif>
+        </div>
+    <iselseif condition="${pdict.slotBannerImage && !pdict.refinedPage}" />
+        <div class="hero-bg search-banner" style="overflow: hidden;">    
+            <isif condition="${!empty(pdict.slotBannerImage.getURL())}">
+                <img src="${pdict.slotBannerImage.getURL()}" alt="${pdict.heading}" style="${pdict.slotBannerStyle}"/>
+            </isif>
+        </div>
+    <iselse/>
+        <div class="hero-bg search-banner" style="overflow: hidden;">   
+            <isif condition="${('refinedKey' in pdict) && pdict.refinedKey!=null && !empty(pdict.refinedKey)}"> 
+                <img class="hero-bg-search-banner-image" src ="${URLUtils.staticURL('/images/spacer.png')}" data-imgsrc="${URLUtils.staticURL(URLUtils.CONTEXT_CATALOG, '', 'images/slot/brand-banners/'+(pdict.refinedKey.toLowerCase().replace(/ /g, '-')).replace(/'/g, '-') +'.jpg')}" alt="${pdict.refinedKey.toLowerCase()}" onerror="this.src='${URLUtils.staticURL('/images/spacer.png')}'">
+            </isif>
+        </div>
+    </isif>
+
+
+
+

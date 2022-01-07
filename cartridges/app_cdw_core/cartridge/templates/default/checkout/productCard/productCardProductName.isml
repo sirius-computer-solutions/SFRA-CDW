@@ -1,0 +1,11 @@
+<div class="line-item-name">
+    <a href="${URLUtils.url('Product-Show', 'pid', lineItem.id)}">
+        <isprint value="${lineItem.productName}" encoding="off" />
+    </a>
+    <isif condition="${lineItem.productBrandName}">
+        <p class="greytext">${Resource.msg('label.order.brand','confirmation', null)}<isprint value="${lineItem.productBrandName}" encoding="off" />&nbsp;&nbsp;&nbsp;${Resource.msg('label.order.model','confirmation', null)}<isprint value="${lineItem.manufacturerSKU}" encoding="off" /></p>    
+    <iselse/>
+        <p class="greytext">${Resource.msg('label.order.model','confirmation', null)}<isprint value="${lineItem.manufacturerSKU}" encoding="off" /></p>
+    </isif>
+    
+</div>

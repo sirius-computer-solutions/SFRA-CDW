@@ -1,0 +1,14 @@
+<!-- Availability -->
+<div class="row availability product-availability" data-ready-to-order="${product.readyToOrder}" data-available="${product.available}">
+            <isif condition="${isCallForPriceProduct}">
+                <div class="availability-styling mb-0">
+                    <ul class="list-unstyled availability-msg mb-2">
+                        <li>
+                            <div class="availability-msg-content"><isprint value="${Resource.msg('label.not.available', 'common',null)}" encoding="off" /></div>
+                        </li>
+                    </ul>
+                </div>
+            <iselse/>    
+                <isinclude url="${URLUtils.url('Product-GetInventory','pid', product.id, 'callingPage', callingPage, 'isCallForPriceProduct', isCallForPriceProduct, 'shipsTruck', shipsTruck)}"/>
+            </isif>
+</div>

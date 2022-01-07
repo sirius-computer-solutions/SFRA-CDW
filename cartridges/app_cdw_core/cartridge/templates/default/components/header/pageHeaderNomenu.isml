@@ -1,0 +1,22 @@
+<header>
+    <isinclude template="/components/header/skipNav" />
+    <div class="header-banner slide-up d-none">
+        <div class="container">
+           
+        </div>
+    </div>
+    <nav role="navigation">
+        <div class="header-checkout header">
+            <div class="container">
+                <div class="col-12">
+                    <div class="navbar-header brand row">
+                        <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
+                            <img src="${URLUtils.staticURL('/images/AcmeToolsLogo.svg')}"
+                                alt="${Resource.msg('global.storename', 'common', null)}" />
+                        </a>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </nav>
+</header>

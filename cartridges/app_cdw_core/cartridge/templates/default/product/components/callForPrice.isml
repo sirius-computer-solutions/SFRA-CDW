@@ -1,0 +1,17 @@
+<div class='col call-for-price-wrapper <isif condition="${!isCallForPriceProduct}"> d-none</isif>'>
+    <div class="price-info-link">
+        <a>
+            ${Resource.msg('callForPrice.click.for.details.message', 'product', null)}
+        </a>
+    </div>
+    <div class="call-for-price-info hidden">
+        <div class="header-bar">
+            <h4 class="p-0 m-0"> ${Resource.msg('callForPrice.price.info.title.message', 'product', null)}  </h4>
+            <a class="call-details-close-btn">
+                ${Resource.msg('estimated.date.zipcode.modal.button.close','product',null)}&nbsp;
+                <i class="icon-remove"></i>
+            </a>
+        </div>
+        <isslot id="call-for-price-info-pdp" description="Call for price information" context="global"/>   
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<table class="table table-striped-column">
+    <colgroup>
+        <col style="width:${100/(pdict.pids.length + 1)}%" />
+        <isloop items="${pdict.pids}" var="productId">
+            <col style="width:${100/(pdict.pids.length + 1)}%" />
+        </isloop>
+    </colgroup>
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <isloop items="${pdict.pids}" var="productId">
+                <td class="product-header"><isinclude url="${URLUtils.url('Tile-Show', 'pid', productId, 'swatches', true, 'ratings', true, 'compare', false)}" />
+                    <div class="text-left"><a href="${URLUtils.url('Product-Show', 'pid', productId)}" 
+                        class="btn btn-primary btn-small" role="button" target="_blank" rel="noopener noreferrer">${Resource.msg('link.view.details','product',null)}</a>
+                    </div>
+                </td>
+                
+            </isloop>
+        </tr>
+    </thead>
+    <tbody>
+        <isloop items="${pdict.attributes}" var="attribute" status="loopState">
+            <tr>
+                <th scope="col"><span class="attr-value">${attribute.displayName}</span></th>
+                <isloop items="${pdict.attributes[loopState.index].values}" var="attrs">
+                    <td style="width:${100/(pdict.pids.length + 1)}%"><span class="attr-value">${attrs.values}</span></td>
+                </isloop>
+            </tr>
+        </isloop>
+    </tbody>
+</table>

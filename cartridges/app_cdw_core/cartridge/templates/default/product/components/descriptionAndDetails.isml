@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col">
+    <div class="pdp-jump-links card-header col d-none d-sm-block mt-4">
+        <ul>
+            <li class="link"><a href="#descriptionPDP">${Resource.msg('label.description', 'product', null)} <i class="fas fa-caret-down"></i></a></li>
+            <li class="link"><a href="#FeaturesPDP">${Resource.msg('label.features', 'product', null)} <i class="fas fa-caret-down"></i></a></li>
+            <li class="link"><a href="#SpecificationsPDP">${Resource.msg('label.specs', 'product', null)} <i class="fas fa-caret-down"></i></a></li>
+            <isif condition="${showManuals}">
+              <li class="link"><a href="#ManualsPDP">${Resource.msg('label.manuals', 'product', null)} <i class="fas fa-caret-down"></i></a></li>
+            </isif>
+            <li class="link"><a href="#fromManufacturer">${Resource.msg('label.from.manufacturer', 'product', null)} <i class="fas fa-caret-down"></i></a></li>
+            <li class="link"><a href="#ReviewsPDP">${Resource.msg('label.customer.reviews', 'product', null)} <i class="fas fa-caret-down"></i></a></li>
+        </ul>
+    </div>
+  </div>  
+</div>
+<div class="row">
+<div class="col">
+  <div id="descriptionPDP" class="description-header card-header">
+      <h2 class="header-styling" aria-label="${Resource.msg('label.description', 'product', null)}">${Resource.msg('label.description', 'product', null)}</h2>
+  </div>
+
+  <div class="card-body">
+    <div>
+        <p><b><isprint value="${product.productName}" encoding="off" /></b></p>     
+        <p><isprint value="${product.longDescription}" encoding="off" /></p>
+        <span class="CaliforniaPropWarning">
+          <isslot id="CaliforniaPropWarning" description="California Proposition 65 Warning" context="global" context-object="${product.raw}" />
+        </span>
+        <span class="CaliforniaPropWarning">
+          <isloop items="${product.attributes}" var="attrGroup">
+              <isif condition="${attrGroup.ID == Resource.msg('label.california.attr.group', 'product', null)}">
+                <isloop items="${attrGroup.attributes}" var="attr" status="attrLoopStatus"> 
+                  <isif condition="${attr.ID == 'california-prop-65-warning-label-(digital-asset)' && attr.value.length>0}" >
+                      <a id="p65WarningLink" target="_blank" href="${URLUtils.staticURL(URLUtils.CONTEXT_CATALOG, '', attr.value[0])}" style="color:#0779CA;">${Resource.msg('label.california.warning.asset', 'product', null)} </a>
+                  </isif>    
+                </isloop>
+              </isif>
+          </isloop>
+        </span>
+    </div>
+  </div>
+  </div>
+</div>
+    <div class="row">
+        <isinclude template="product/components/attributes" />
+    </div>
+
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('enableWebCollage')}">
+  <isinclude template="product/components/fromManufacturerContent" />
+</isif>
+
+<!-- Bazaarvoice content START -->
+  <div class="row reviews <isif condition="${!pdict.bvDisplay.rr.enabled}">hidden-xl-down</isif>" id="ReviewsPDP">
+      <div class="col-12">
+          <div class="card-header">
+              <h4 class="header-styling">
+                ${Resource.msg('label.rr', 'product', null)}
+              </h4>
+          </div>
+      </div>
+      <isinclude template="bv/display/rr/reviews" />      
+  </div>
+
+  <iscomment> <div class="row questions<isif condition="${!pdict.bvDisplay.qa.enabled}">hidden-xl-down</isif>">
+      <div class="col-12">
+          <div class="card-header">
+              <h4>
+                ${Resource.msg('label.qa', 'product', null)}
+              </h4>
+          </div>
+      </div>
+      <isinclude template="bv/display/qa/questions" />
+  </div>   </iscomment>
+<!-- Bazaarvoice content END -->
+

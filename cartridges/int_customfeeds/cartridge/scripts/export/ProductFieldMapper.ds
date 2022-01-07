@@ -1,0 +1,144 @@
+/**
+ * Utility class to map a given field to a product attribute value
+ * 
+ * @namespace
+ */
+var ProductFieldMapper = function(){};
+
+/**
+ * Supported system attributes
+ */
+ProductFieldMapper.SYSTEM_ATTRIBUTES = ['EAN', 'ID', 'UPC', 'brand', 'creationDate', 'facebookEnabled', 
+                                        'lastModified', 'longDescription', 'manifacturerName', 'manifacturerSKU', 
+                                        'minOrderQuantity', 'name', 'onlineFlag', 'onlineFrom', 'onlineTo',
+                                        'pageDescription', 'pageKeywords', 'pageTitle', 'pageURL', 'pinterestEnabled',
+                                        'searchPlacement', 'searchRank', 'searchable', 'searchableIfUnavailable',
+                                        'shortDescription', 'siteMapChangeFrequency', 'siteMapIncluded', 'siteMapPriority', 
+                                        'stepQuantity', 'storeReceipName', 'storeTaxClass', 'taxClassID',
+                                        'template', 'unit'];
+
+/**
+ * Returns the value of the product for the given field. Field is eiher a system
+ * attribute or a custom attribute prefixed with 'custom.'
+ */
+ProductFieldMapper.getField = function(product : dw.catalog.Product, field : String, format : String){
+    // no field, can't do anything
+    if(empty(field) || product == null){
+        return '';
+    }
+    try{
+        // special fields
+        if(field == 'image'){
+            var img = product.getImage(format || 'medium',0);
+            if(img == null){
+                return '';
+            }
+            return img.httpURL;
+        }
+        if(field == 'url'){
+            return dw.web.URLUtils.http('Product-Show','pid',product.ID);
+        }
+        if(field == 'price'){
+            return dw.util.StringUtils.formatMoney(product.priceModel.price);
+        }
+        if(field == 'pricevalue'){
+            if(format){
+                return dw.util.StringUtils.formatNumber(product.priceModel.price.value,format,'en_US');
+            }
+            return dw.util.StringUtils.formatNumber(product.priceModel.price.value,'#.00','en_US');
+        }
+        if(field == 'category'){
+            var pc = product.primaryCategory;
+            if(pc!=null){
+                return pc.displayName;
+            }
+            return '';
+        }
+        if(field == 'googleproductcategories'){
+            var pc = product.primaryCategory;
+            if(pc!=null && 'googleCategory' in pc.custom){
+                return pc.custom.googleCategory;
+            }
+            return '';
+        }
+        if(field == 'inventory.allocation'){
+            var availibity = product.getAvailabilityModel();
+            if(availibity!=null){
+                var inventoryRecord = availibity.getInventoryRecord();
+                if(inventoryRecord!=null && 'allocation' in inventoryRecord){
+                    return inventoryRecord.allocation.value ;
+                }
+            }
+            
+            return '';
+        }
+
+        if(field == 'inventory.ats'){
+            var availibity = product.getAvailabilityModel();
+            if(availibity!=null){
+                var inventoryRecord = availibity.getInventoryRecord();
+                if(inventoryRecord!=null && 'ATS' in inventoryRecord){
+                    return inventoryRecord.ATS.value ;
+                }
+            }
+            
+            return '';
+        }
+        if(field == 'inventory.instockDate'){
+            var availibity = product.getAvailabilityModel();
+            if(availibity!=null){
+                var inventoryRecord = availibity.getInventoryRecord();
+                if(inventoryRecord!=null && 'inStockDate' in inventoryRecord && !empty(inventoryRecord.inStockDate)){
+                    return inventoryRecord.inStockDate ;
+                }
+            }            
+            return '';
+        }
+        // now handle generic attributes
+        var result = '';
+        
+        // handle custom attributes
+        if(field.indexOf('custom.') == 0){
+            var cname = field.substr(7);
+            if(cname in product.custom){
+                result = product.custom[cname];
+            }
+        }
+        // handle system attributes
+        if(ProductFieldMapper.SYSTEM_ATTRIBUTES.indexOf(field) > -1){
+            result = product[field];
+        }
+        if(format && result instanceof Date){
+            result = dw.util.StringUtils.formatCalendar(new dw.util.Calendar(result), format);
+        }
+        return result;
+    }
+    catch(e){
+        dw.system.Logger.getLogger('GlobalFeedExport', 'GlobalFeedExport').error('Error occured while mapping field {0} for product {1}',field, product.ID);
+    }
+    return null;
+};
+
+/**
+ * Parses a given field definition as string and return a field object
+ */
+ProductFieldMapper.parseField = function(attributeAsStr : String){
+    var typeDef = dw.object.SystemObjectMgr.describe('Product');
+    var field = attributeAsStr.split(/(?:\{\{| |\}\})/g).filter(function(t){ return !empty(t)})[0];
+    if(field.indexOf('var:') == 0){
+        field = field.substring(4).replace(':', '.');
+    }
+    var fieldAsJson = {}
+    if(attributeAsStr.indexOf('format="') > -1){
+        fieldAsJson.format = attributeAsStr.split('format="')[1].split('"')[0];
+    }
+    if(field.indexOf('custom.') == 0){
+        if(typeDef.getCustomAttributeDefinition(field.substr(7)) != null){
+            fieldAsJson.attribute = field;
+        }
+    }else{
+        fieldAsJson.attribute = field;
+    }
+    dw.system.Logger.getLogger('GlobalFeedExport', 'GlobalFeedExport').debug('Parsed mapping for field {0} to field {1}', attributeAsStr, JSON.stringify(fieldAsJson));
+    return fieldAsJson;
+}

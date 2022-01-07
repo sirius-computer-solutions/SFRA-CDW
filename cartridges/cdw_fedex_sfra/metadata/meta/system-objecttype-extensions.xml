@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+<type-extension type-id="OrderAddress">
+    <custom-attribute-definitions>
+        <attribute-definition attribute-id="fedexAVS">
+            <display-name xml:lang="x-default">Fedex AVS</display-name>
+            <type>text</type>
+            <mandatory-flag>false</mandatory-flag>
+            <externally-managed-flag>true</externally-managed-flag>
+        </attribute-definition>
+    </custom-attribute-definitions>
+
+</type-extension>
+
+<type-extension type-id="ServiceCredential">
+    <custom-attribute-definitions>
+        <attribute-definition attribute-id="AccountNumber">
+            <display-name xml:lang="x-default">Account Number</display-name>
+            <type>string</type>
+            <mandatory-flag>false</mandatory-flag>
+            <externally-managed-flag>false</externally-managed-flag>
+            <min-length>0</min-length>
+        </attribute-definition>
+        <attribute-definition attribute-id="MeterNumber">
+            <type>string</type>
+            <mandatory-flag>false</mandatory-flag>
+            <externally-managed-flag>false</externally-managed-flag>
+            <min-length>0</min-length>
+        </attribute-definition>
+        <attribute-definition attribute-id="clientId">
+            <display-name xml:lang="x-default">Client ID</display-name>
+            <description xml:lang="x-default">Client ID</description>
+            <type>string</type>
+            <mandatory-flag>false</mandatory-flag>
+            <externally-managed-flag>false</externally-managed-flag>
+            <min-length>0</min-length>
+        </attribute-definition>
+        <attribute-definition attribute-id="merchantKey">
+            <display-name xml:lang="x-default">Merchant Key</display-name>
+            <type>string</type>
+            <mandatory-flag>false</mandatory-flag>
+            <externally-managed-flag>false</externally-managed-flag>
+            <min-length>0</min-length>
+        </attribute-definition>
+    </custom-attribute-definitions>
+    <group-definitions>
+        <attribute-group group-id="ExtraCredentialProperties">
+            <display-name xml:lang="x-default">Extra Credential Properties</display-name>
+            <attribute attribute-id="clientId"/>
+            <attribute attribute-id="merchantKey"/>
+            <attribute attribute-id="AccountNumber"/>
+            <attribute attribute-id="MeterNumber"/>
+        </attribute-group>
+    </group-definitions>
+</type-extension>
+
+<type-extension type-id="Shipment">
+    <custom-attribute-definitions>
+        <attribute-definition attribute-id="fedexRatesCache">
+            <display-name xml:lang="x-default">Fedex Rates Cache</display-name>
+            <type>text</type>
+            <mandatory-flag>false</mandatory-flag>
+            <externally-managed-flag>false</externally-managed-flag>
+        </attribute-definition>
+    </custom-attribute-definitions>
+    <group-definitions>
+        <attribute-group group-id="fedex">
+            <display-name xml:lang="x-default">Fedex</display-name>
+            <attribute attribute-id="fedexRatesCache"/>
+        </attribute-group>
+    </group-definitions>
+</type-extension>
+    
+<type-extension type-id="ShippingMethod">
+    <custom-attribute-definitions>
+        <attribute-definition attribute-id="fedexRates">
+            <display-name xml:lang="x-default">Fedex Rate</display-name>
+            <description xml:lang="x-default">A boolean to indicate this shipping method will have its rates sourced from the Fedex web service.</description>
+            <type>boolean</type>
+            <mandatory-flag>false</mandatory-flag>
+            <externally-managed-flag>false</externally-managed-flag>
+        </attribute-definition>
+        <attribute-definition attribute-id="fedexServiceType">
+            <display-name xml:lang="x-default">Fedex Service Type</display-name>
+            <description xml:lang="x-default">The Fedex ServiceType to use for rate calculations.</description>
+            <type>string</type>
+            <mandatory-flag>false</mandatory-flag>
+            <externally-managed-flag>false</externally-managed-flag>
+        </attribute-definition>
+        <attribute-definition attribute-id="fedexRateDiscount">
+            <display-name xml:lang="x-default">Fedex Rate Discount</display-name>
+            <description xml:lang="x-default">A discount percentage to be applied to the rate as returned by fedex</description>
+            <type>double</type>
+            <localizable-flag>false</localizable-flag>
+            <mandatory-flag>false</mandatory-flag>
+            <externally-managed-flag>false</externally-managed-flag>
+        </attribute-definition>
+    </custom-attribute-definitions>
+    <group-definitions>
+        <attribute-group group-id="shippingMethodAttr">
+            <display-name xml:lang="x-default">Shipping Method Attributes</display-name>
+            <attribute attribute-id="fedexRates"/>
+            <attribute attribute-id="fedexServiceType"/>
+            <attribute attribute-id="fedexRateDiscount"/>
+        </attribute-group>
+    </group-definitions>
+</type-extension>
+
+<type-extension type-id="SitePreferences">
+    <custom-attribute-definitions>
+        <attribute-definition attribute-id="FedexEnabled">
+            <type>boolean</type>
+            <mandatory-flag>false</mandatory-flag>
+            <externally-managed-flag>false</externally-managed-flag>
+        </attribute-definition>
+    </custom-attribute-definitions>
+    <group-definitions>
+        <attribute-group group-id="Storefront Configs">
+            <display-name xml:lang="x-default">Storefront Configurations</display-name>
+            <attribute attribute-id="listPriceDefault"/>
+            <attribute attribute-id="GoogleVerificationTag"/>
+            <attribute attribute-id="countryCode"/>
+            <attribute attribute-id="customerServiceEmail"/>
+            <attribute attribute-id="mapAPI"/>
+            <attribute attribute-id="FedexEnabled"/>
+        </attribute-group>
+    </group-definitions>
+</type-extension>
+</metadata>

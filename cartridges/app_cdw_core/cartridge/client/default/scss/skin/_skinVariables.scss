@@ -1,0 +1,72 @@
+@import "../utilities/variables";
+
+:root {
+    /** ==================================================================== **/
+
+    /** Create Custom CSS Variables from "sfra bootstrap override" variables **/
+
+    /** ==================================================================== **/
+    --color-white: #{$white};
+    --color-black: #{$black};
+    --color-blue: #{$acme-blue};
+    --color-green: #{$green};
+    --color-primary: #{$primary};
+    --color-red: #{$acme-red};
+    --color-success: var(--color-green);
+    --color-danger: var(--color-red);
+    --color-light-blue: #{$light-blue};
+
+    // Consolidated values
+    --color-grey1: #{$grey1};
+    --color-grey2: #{$grey2};
+    --color-grey3: #{$grey3};
+    --color-grey4: #{$grey4};
+    --color-grey5: #{$grey5};
+    --color-grey6: #{$grey6};
+    --color-grey7: #{$grey7};
+    --color-grey8: #{$grey8};
+    --color-grey-transparent-1: rgba(0, 0, 0, 0.65);
+    --color-grey-transparent-2: rgba(0, 0, 0, 0.25);
+    --color-light-gray: var(--color-grey1);
+    --color-slightly-darker-gray: var(--color-grey4);
+    --color-dark-gray: var(--color-grey7);
+    --color-darker-gray: var(--color-grey8);
+    --color-horizontal-rule-grey: var(--color-grey3);
+    --color-product-number-grey: var(--color-grey3);
+    --color-horizontal-border-grey: var(--color-grey4);
+    --color-menu-link: var(--color-grey6);
+    --color-close-menu-bg: var(--color-grey2);
+    --color-link-color: var(--color-dark-gray);
+    --color-hr-border-color: var(--color-grey3);
+
+    --font-family-sans-serif: #{$font-family-sans-serif};
+
+    /** ==================================================================== **/
+
+    /** Define skin named variables here                                    **/
+
+    /** ==================================================================== **/
+    --skin-background-color-1: var(--color-white);
+    --skin-border-color-1: var(--color-white);
+    --skin-main-text-color-1: var(--color-gray7);
+    --skin-main-text-color-2: var(--color-gray7);
+    --skin-menu-color-1: #444;
+    --skin-menu-color-1-invert: var(--color-white);
+    --skin-menu-color-2: #222;
+    --skin-link-color-1: var(--color-blue);
+    --skin-link-color-2: #222;
+    --skin-primary-color-1: var(--color-blue);
+    --skin-primary-color-2: var( --color-blue:);
+    --skin-primary-color-invert-1: var(--color-gray7);
+    --skin-selectbox-background-color-1: var(--color-white);
+    --skin-selectbox-text-color-1: var(--skin-main-text-color-1);
+    --skin-banner-background-color-1:var(--color-black);
+    --skin-banner-background-color-2:var(--color-red);
+    --skin-banner-text-color-1: var(--color-white);
+    --skin-heading-color-1: var(--color-primary);
+    --skin-heading-color-1-invert: var(--color-white);
+    --skin-price-1: var(--color-gray7);
+    --skin-header-font: "myriad-pro-condensed-n7", "myriad-pro-condensed", 'Helvetica Neue', 'Arial', sans-serif;;
+    --skin-body-font: var(--font-family-sans-serif);
+}
+

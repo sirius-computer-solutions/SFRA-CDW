@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with Altova MapForce 2021r3 -->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="31">
+	<resources/>
+	<component name="defaultmap" uid="1" editable="1">
+		<properties SelectedLanguage="builtin"/>
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="180" kind="2">
+					<targets>
+						<datapoint pos="0" key="20"/>
+					</targets>
+					<view ltx="620" lty="-5" rbx="760" rby="12"/>
+					<data>
+						<constant value="acme-catalog-m-en" datatype="string"/>
+					</data>
+				</component>
+				<component name="exists" library="core" uid="186" kind="5">
+					<sources>
+						<datapoint pos="0" key="21"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="22"/>
+					</targets>
+					<view ltx="477" lty="110" rbx="553" rby="148"/>
+				</component>
+				<component name="exists" library="core" uid="185" kind="5">
+					<sources>
+						<datapoint pos="0" key="23"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="24"/>
+					</targets>
+					<view ltx="477" lty="212" rbx="553" rby="250"/>
+				</component>
+				<component name="exists" library="core" uid="184" kind="5">
+					<sources>
+						<datapoint pos="0" key="25"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="26"/>
+					</targets>
+					<view ltx="477" lty="315" rbx="553" rby="353"/>
+				</component>
+				<component name="exists" library="core" uid="183" kind="5">
+					<sources>
+						<datapoint pos="0" key="27"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="28"/>
+					</targets>
+					<view ltx="477" lty="387" rbx="553" rby="425"/>
+				</component>
+				<component name="A" library="core" uid="187" kind="3">
+					<sources>
+						<datapoint pos="0" key="48"/>
+						<datapoint pos="1" key="49"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="50"/>
+						<datapoint/>
+					</targets>
+					<view ltx="477" lty="40" rbx="590" rby="94"/>
+				</component>
+				<component name="exists" library="core" uid="182" kind="5">
+					<sources>
+						<datapoint pos="0" key="29"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="30"/>
+					</targets>
+					<view ltx="477" lty="504" rbx="553" rby="542"/>
+				</component>
+				<component name="E" library="core" uid="190" kind="3">
+					<sources>
+						<datapoint pos="0" key="31"/>
+						<datapoint pos="1" key="32"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="33"/>
+						<datapoint/>
+					</targets>
+					<view ltx="567" lty="462" rbx="680" rby="516"/>
+				</component>
+				<component name="D" library="core" uid="191" kind="3">
+					<sources>
+						<datapoint pos="0" key="34"/>
+						<datapoint pos="1" key="35"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="36"/>
+						<datapoint/>
+					</targets>
+					<view ltx="567" lty="351" rbx="680" rby="405"/>
+				</component>
+				<component name="C" library="core" uid="189" kind="3">
+					<sources>
+						<datapoint pos="0" key="37"/>
+						<datapoint pos="1" key="38"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="39"/>
+						<datapoint/>
+					</targets>
+					<view ltx="567" lty="250" rbx="680" rby="304"/>
+				</component>
+				<component name="catalog" library="xml" uid="179" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="830" lty="-5" rbx="1221" rby="569"/>
+					<data>
+						<root scrollposition="409">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.w3.org/XML/1998/namespace"/>
+									<namespace uid="http://www.demandware.com/xml/impex/catalog/2006-10-31"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="3" expanded="1">
+								<entry name="document" ns="3" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="catalog" ns="2" expanded="1">
+										<entry name="catalog-id" type="attribute" inpkey="6"/>
+										<entry name="category" ns="2" inpkey="7" expanded="1">
+											<entry name="category-id" type="attribute" inpkey="4">
+												<inputnodefunctions>
+													<rule applyto="self">
+														<function name="EBE1AEAB-045B-475F-801C-86FB3596972D"/>
+													</rule>
+												</inputnodefunctions>
+											</entry>
+											<entry name="display-name" ns="2" inpkey="5" expanded="1">
+												<inputnodefunctions>
+													<rule applyto="self">
+														<function name="D27E187B-0372-465A-B688-759DE9187DB3"/>
+													</rule>
+												</inputnodefunctions>
+												<entry name="lang" ns="1" type="attribute">
+													<inputnodefunctions>
+														<rule applyto="self">
+															<default value="x-default"/>
+														</rule>
+													</inputnodefunctions>
+												</entry>
+											</entry>
+											<entry name="description" ns="2" inpkey="51"/>
+											<entry name="parent" ns="2">
+												<inputnodefunctions>
+													<rule applyto="self">
+														<default value="categories"/>
+													</rule>
+												</inputnodefunctions>
+											</entry>
+											<entry name="attribute-groups" ns="2">
+												<entry name="attribute-group" ns="2" expanded="1">
+													<entry name="display-name" ns="2" expanded="1">
+														<entry name="lang" ns="1" type="attribute">
+															<inputnodefunctions>
+																<rule applyto="self">
+																	<default value="x-default"/>
+																</rule>
+															</inputnodefunctions>
+														</entry>
+													</entry>
+													<entry name="attribute" ns="2" expanded="1"/>
+												</entry>
+												<entry name="attribute-group" ns="2" expanded="1" clone="1">
+													<entry name="display-name" ns="2" expanded="1">
+														<entry name="lang" ns="1" type="attribute">
+															<inputnodefunctions>
+																<rule applyto="self">
+																	<default value="x-default"/>
+																</rule>
+															</inputnodefunctions>
+														</entry>
+													</entry>
+													<entry name="attribute" ns="2" expanded="1"/>
+												</entry>
+												<entry name="attribute-group" ns="2" expanded="1" clone="1">
+													<entry name="display-name" ns="2" expanded="1">
+														<entry name="lang" ns="1" type="attribute">
+															<inputnodefunctions>
+																<rule applyto="self">
+																	<default value="x-default"/>
+																</rule>
+															</inputnodefunctions>
+														</entry>
+													</entry>
+													<entry name="attribute" ns="2" expanded="1"/>
+												</entry>
+											</entry>
+										</entry>
+										<entry name="category" ns="2" inpkey="52" expanded="1" clone="1">
+											<entry name="category-id" type="attribute" inpkey="53"/>
+											<entry name="display-name" ns="2" inpkey="54"/>
+											<entry name="description" ns="2" inpkey="55"/>
+											<entry name="parent" ns="2" inpkey="56"/>
+										</entry>
+										<entry name="category" ns="2" inpkey="69" expanded="1" clone="1">
+											<entry name="category-id" type="attribute" inpkey="57"/>
+											<entry name="display-name" ns="2" inpkey="58"/>
+											<entry name="description" ns="2" inpkey="59"/>
+											<entry name="parent" ns="2" inpkey="60"/>
+										</entry>
+										<entry name="category" ns="2" inpkey="70" clone="1">
+											<entry name="category-id" type="attribute" inpkey="61"/>
+											<entry name="display-name" ns="2" inpkey="62"/>
+											<entry name="description" ns="2" inpkey="63"/>
+											<entry name="parent" ns="2" inpkey="64"/>
+										</entry>
+										<entry name="category" ns="2" inpkey="71" expanded="1" clone="1">
+											<entry name="category-id" type="attribute" inpkey="65"/>
+											<entry name="display-name" ns="2" inpkey="66"/>
+											<entry name="description" ns="2" inpkey="67"/>
+											<entry name="parent" ns="2" inpkey="68"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="xsd\catalog.xsd" instanceroot="{http://www.demandware.com/xml/impex/catalog/2006-10-31}catalog" outputinstance="xsd\catalog.xml"/>
+					</data>
+				</component>
+				<component name="B" library="core" uid="188" kind="3">
+					<sources>
+						<datapoint pos="0" key="40"/>
+						<datapoint pos="1" key="41"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="42"/>
+						<datapoint/>
+					</targets>
+					<view ltx="477" lty="153" rbx="590" rby="207"/>
+				</component>
+				<component name="CategoryProperties-WithParent" library="xlsx" uid="2" kind="26">
+					<properties/>
+					<view ltx="39" lty="68" rbx="421" rby="297"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1">
+									<entry name="Workbook" expanded="1">
+										<entry name="Worksheet" expanded="1" displayselectionmode="selection">
+											<entry name="Row" expanded="1">
+												<entry name="Cell" datatype="string"/>
+											</entry>
+										</entry>
+										<entry name="Worksheet" expanded="1">
+											<condition>
+												<expression>
+													<function name="equal-ignorecase" library="xlsx">
+														<expression>
+															<attribute name="Name"/>
+														</expression>
+														<expression>
+															<constant value="Sheet1"/>
+														</expression>
+													</function>
+												</expression>
+											</condition>
+											<ranges>
+												<range id="1" start="2" count="545"/>
+											</ranges>
+											<entry name="Row" expanded="1" displayselectionmode="selection">
+												<entry name="Cell" datatype="string"/>
+											</entry>
+											<entry name="Row" expanded="1">
+												<condition>
+													<expression>
+														<function name="is-range-id">
+															<expression>
+																<constant value="1" datatype="long"/>
+															</expression>
+														</function>
+													</expression>
+												</condition>
+												<entry name="Cell" expanded="1" displayselectionmode="selection" datatype="string"/>
+												<entry name="Cell" outkey="43" expanded="1" datatype="string">
+													<condition>
+														<expression>
+															<function name="logical-and" library="core">
+																<expression>
+																	<function name="equal" library="core">
+																		<expression>
+																			<attribute name="n"/>
+																		</expression>
+																		<expression>
+																			<constant value="1" datatype="long"/>
+																		</expression>
+																	</function>
+																</expression>
+																<expression>
+																	<function name="equal" library="core">
+																		<expression>
+																			<attribute name="t"/>
+																		</expression>
+																		<expression>
+																			<constant value="s"/>
+																		</expression>
+																	</function>
+																</expression>
+															</function>
+														</expression>
+													</condition>
+													<outputnodefunctions>
+														<rule applyto="self">
+															<function name="7BEC5506-C42E-4960-BDDD-3B99FCA5A84D"/>
+														</rule>
+													</outputnodefunctions>
+												</entry>
+												<entry name="Cell" outkey="44" expanded="1" datatype="string">
+													<condition>
+														<expression>
+															<function name="logical-and" library="core">
+																<expression>
+																	<function name="equal" library="core">
+																		<expression>
+																			<attribute name="n"/>
+																		</expression>
+																		<expression>
+																			<constant value="2" datatype="long"/>
+																		</expression>
+																	</function>
+																</expression>
+																<expression>
+																	<function name="equal" library="core">
+																		<expression>
+																			<attribute name="t"/>
+																		</expression>
+																		<expression>
+																			<constant value="s"/>
+																		</expression>
+																	</function>
+																</expression>
+															</function>
+														</expression>
+													</condition>
+													<outputnodefunctions>
+														<rule applyto="self">
+															<function name="D14F27A5-3A8D-4B7F-8724-3E8604F2F626"/>
+														</rule>
+													</outputnodefunctions>
+												</entry>
+												<entry name="Cell" outkey="45" expanded="1" datatype="string">
+													<condition>
+														<expression>
+															<function name="logical-and" library="core">
+																<expression>
+																	<function name="equal" library="core">
+																		<expression>
+																			<attribute name="n"/>
+																		</expression>
+																		<expression>
+																			<constant value="3" datatype="long"/>
+																		</expression>
+																	</function>
+																</expression>
+																<expression>
+																	<function name="equal" library="core">
+																		<expression>
+																			<attribute name="t"/>
+																		</expression>
+																		<expression>
+																			<constant value="s"/>
+																		</expression>
+																	</function>
+																</expression>
+															</function>
+														</expression>
+													</condition>
+													<outputnodefunctions>
+														<rule applyto="self">
+															<function name="006F6F50-6AE2-411B-B376-BB57636E87A8"/>
+														</rule>
+													</outputnodefunctions>
+												</entry>
+												<entry name="Cell" outkey="46" expanded="1" datatype="string">
+													<condition>
+														<expression>
+															<function name="logical-and" library="core">
+																<expression>
+																	<function name="equal" library="core">
+																		<expression>
+																			<attribute name="n"/>
+																		</expression>
+																		<expression>
+																			<constant value="4" datatype="long"/>
+																		</expression>
+																	</function>
+																</expression>
+																<expression>
+																	<function name="equal" library="core">
+																		<expression>
+																			<attribute name="t"/>
+																		</expression>
+																		<expression>
+																			<constant value="s"/>
+																		</expression>
+																	</function>
+																</expression>
+															</function>
+														</expression>
+													</condition>
+													<outputnodefunctions>
+														<rule applyto="self">
+															<function name="DAE8FA00-EB28-47B8-9B97-931B6BDB0F3E"/>
+														</rule>
+													</outputnodefunctions>
+												</entry>
+												<entry name="Cell" outkey="47" expanded="1" datatype="string">
+													<condition>
+														<expression>
+															<function name="logical-and" library="core">
+																<expression>
+																	<function name="equal" library="core">
+																		<expression>
+																			<attribute name="n"/>
+																		</expression>
+																		<expression>
+																			<constant value="5" datatype="long"/>
+																		</expression>
+																	</function>
+																</expression>
+																<expression>
+																	<function name="equal" library="core">
+																		<expression>
+																			<attribute name="t"/>
+																		</expression>
+																		<expression>
+																			<constant value="s"/>
+																		</expression>
+																	</function>
+																</expression>
+															</function>
+														</expression>
+													</condition>
+													<outputnodefunctions>
+														<rule applyto="self">
+															<function name="39811151-C800-442B-9A50-D176214F989F"/>
+														</rule>
+													</outputnodefunctions>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<excel inputinstance="CategoryProperties-WithParent.xlsx"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="50" to="4"/>
+			<edge from="50" to="5"/>
+			<edge from="20" to="6"/>
+			<edge from="50" to="7"/>
+			<edge from="43" to="21"/>
+			<edge from="44" to="23"/>
+			<edge from="45" to="25"/>
+			<edge from="46" to="27"/>
+			<edge from="47" to="29"/>
+			<edge from="47" to="31"/>
+			<edge from="30" to="32"/>
+			<edge from="46" to="34"/>
+			<edge from="28" to="35"/>
+			<edge from="45" to="37"/>
+			<edge from="26" to="38"/>
+			<edge from="44" to="40"/>
+			<edge from="24" to="41"/>
+			<edge from="43" to="48"/>
+			<edge from="22" to="49"/>
+			<edge from="50" to="51"/>
+			<edge from="42" to="52"/>
+			<edge from="42" to="53"/>
+			<edge from="42" to="54"/>
+			<edge from="42" to="55"/>
+			<edge from="43" to="56"/>
+			<edge from="39" to="57"/>
+			<edge from="39" to="58"/>
+			<edge from="39" to="59"/>
+			<edge from="44" to="60"/>
+			<edge from="36" to="61"/>
+			<edge from="36" to="62"/>
+			<edge from="36" to="63"/>
+			<edge from="45" to="64"/>
+			<edge from="33" to="65"/>
+			<edge from="33" to="66"/>
+			<edge from="33" to="67"/>
+			<edge from="46" to="68"/>
+			<edge from="39" to="69"/>
+			<edge from="36" to="70"/>
+			<edge from="33" to="71"/>
+		</connections>
+	</component>
+	<component name="D27E187B-0372-465A-B688-759DE9187DB3" library="mapforce_nodefunction" uid="177" editable="1">
+		<structure>
+			<children>
+				<component name="raw_value" library="core" uid="173" kind="6">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view rbx="78" rby="38"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+				<component name="right-trim" library="lang" uid="176" kind="5">
+					<sources>
+						<datapoint pos="0" key="2"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="427" lty="10" rbx="506" rby="48"/>
+				</component>
+				<component name="result" library="core" uid="174" kind="7">
+					<sources>
+						<datapoint pos="0" key="4"/>
+					</sources>
+					<view ltx="800" rbx="857" rby="38"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+		</connections>
+	</component>
+	<component name="EBE1AEAB-045B-475F-801C-86FB3596972D" library="mapforce_nodefunction" uid="178" editable="1">
+		<structure>
+			<children>
+				<component name="result" library="core" uid="169" kind="7">
+					<sources>
+						<datapoint pos="0" key="1"/>
+					</sources>
+					<view ltx="800" rbx="857" rby="38"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="raw_value" library="core" uid="168" kind="6">
+					<targets>
+						<datapoint pos="0" key="2"/>
+					</targets>
+					<view ltx="33" rbx="111" rby="38"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+				<component name="right-trim" library="lang" uid="171" kind="5">
+					<sources>
+						<datapoint pos="0" key="3"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="4"/>
+					</targets>
+					<view ltx="305" rbx="384" rby="38"/>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="4" to="1"/>
+			<edge from="2" to="3"/>
+		</connections>
+	</component>
+	<component name="7BEC5506-C42E-4960-BDDD-3B99FCA5A84D" library="mapforce_nodefunction" uid="194" editable="1">
+		<structure>
+			<children>
+				<component name="result" library="core" uid="196" kind="7">
+					<sources>
+						<datapoint pos="0" key="1"/>
+					</sources>
+					<view ltx="800" rbx="857" rby="38"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="right-trim" library="lang" uid="198" kind="5">
+					<sources>
+						<datapoint pos="0" key="3"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="4"/>
+					</targets>
+					<view ltx="371" rbx="450" rby="38"/>
+				</component>
+				<component name="left-trim" library="lang" uid="200" kind="5">
+					<sources>
+						<datapoint pos="0" key="5"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="6"/>
+					</targets>
+					<view ltx="205" rbx="284" rby="38"/>
+				</component>
+				<component name="raw_value" library="core" uid="195" kind="6">
+					<targets>
+						<datapoint pos="0" key="2"/>
+					</targets>
+					<view rbx="78" rby="38"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="4" to="1"/>
+			<edge from="6" to="3"/>
+			<edge from="2" to="5"/>
+		</connections>
+	</component>
+	<component name="D14F27A5-3A8D-4B7F-8724-3E8604F2F626" library="mapforce_nodefunction" uid="201" editable="1">
+		<structure>
+			<children>
+				<component name="result" library="core" uid="204" kind="7">
+					<sources>
+						<datapoint pos="0" key="2"/>
+					</sources>
+					<view ltx="980" lty="171" rbx="1037" rby="209"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="right-trim" library="lang" uid="205" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="551" lty="171" rbx="630" rby="209"/>
+				</component>
+				<component name="left-trim" library="lang" uid="206" kind="5">
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="385" lty="171" rbx="464" rby="209"/>
+				</component>
+				<component name="raw_value" library="core" uid="207" kind="6">
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="180" lty="171" rbx="258" rby="209"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+		</connections>
+	</component>
+	<component name="006F6F50-6AE2-411B-B376-BB57636E87A8" library="mapforce_nodefunction" uid="208" editable="1">
+		<structure>
+			<children>
+				<component name="result" library="core" uid="211" kind="7">
+					<sources>
+						<datapoint pos="0" key="2"/>
+					</sources>
+					<view ltx="963" lty="159" rbx="1020" rby="197"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="right-trim" library="lang" uid="212" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="534" lty="159" rbx="613" rby="197"/>
+				</component>
+				<component name="left-trim" library="lang" uid="213" kind="5">
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="368" lty="159" rbx="447" rby="197"/>
+				</component>
+				<component name="raw_value" library="core" uid="214" kind="6">
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="163" lty="159" rbx="241" rby="197"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+		</connections>
+	</component>
+	<component name="DAE8FA00-EB28-47B8-9B97-931B6BDB0F3E" library="mapforce_nodefunction" uid="215" editable="1">
+		<structure>
+			<children>
+				<component name="result" library="core" uid="218" kind="7">
+					<sources>
+						<datapoint pos="0" key="2"/>
+					</sources>
+					<view ltx="941" lty="75" rbx="998" rby="113"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="right-trim" library="lang" uid="219" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="512" lty="75" rbx="591" rby="113"/>
+				</component>
+				<component name="left-trim" library="lang" uid="220" kind="5">
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="346" lty="75" rbx="425" rby="113"/>
+				</component>
+				<component name="raw_value" library="core" uid="221" kind="6">
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="141" lty="75" rbx="219" rby="113"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+		</connections>
+	</component>
+	<component name="39811151-C800-442B-9A50-D176214F989F" library="mapforce_nodefunction" uid="222" editable="1">
+		<structure>
+			<children>
+				<component name="result" library="core" uid="225" kind="7">
+					<sources>
+						<datapoint pos="0" key="2"/>
+					</sources>
+					<view ltx="926" lty="77" rbx="983" rby="115"/>
+					<data>
+						<output datatype="anySimpleType"/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="right-trim" library="lang" uid="226" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="497" lty="77" rbx="576" rby="115"/>
+				</component>
+				<component name="left-trim" library="lang" uid="227" kind="5">
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="331" lty="77" rbx="410" rby="115"/>
+				</component>
+				<component name="raw_value" library="core" uid="228" kind="6">
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="126" lty="77" rbx="204" rby="115"/>
+					<data>
+						<input datatype="anySimpleType"/>
+						<parameter usageKind="input" name="raw_value"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="1" to="2"/>
+			<edge from="3" to="4"/>
+			<edge from="5" to="6"/>
+		</connections>
+	</component>
+</mapping>

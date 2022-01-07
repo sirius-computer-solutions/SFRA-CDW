@@ -1,0 +1,114 @@
+<html xmlns:wairole="http://www.w3.org/2005/01/wai-rdf/GUIRoleTaxonomy#" xmlns:waistate="http://www.w3.org/2005/07/aaa" >
+    
+    <head>
+        <title>
+            ${Resource.msg('email.title.request.quote', 'customerService', null)}
+        </title>
+    </head>
+
+    <body style="font-size: 12px; font-weight: normal; font-family: Arial,Verdana,Helvetica,sans-serif; margin: 0; padding: 0; background: none repeat scroll 0 0 #EEEEEE; line-height: 1.4em; " role="document">
+        <span role="main">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="height: 100%; background-color: #ffffff; padding: 25px 0 50px;" role="presentation">
+            
+            <tr>
+                <td align="center">
+                    <table style="border: 1px solid #cccccc; border-collapse: collapse; border-spacing: 0; margin: 0 auto;" role="presentation">
+                        
+                        <tr>
+                        </tr>
+                        
+                        <tr>
+                        
+                            <td style="margin: 0; padding: 0;">
+                                <table style="border-collapse: collapse; border-spacing: 0;" role="presentation">
+                                    <tr style="">
+                                        <isinclude template="/components/email/emailHeader" />
+                                    </tr>
+                                    <tr style="">
+                                        <td style="margin: 0; padding: 0; border-bottom: 1px solid #cccccc; width: 600px; height: 16px;">
+                                               <isprint value="${pdict.rqEmailContent}" encoding="off"/>
+                                        </td>
+
+                                    </tr>                                     
+                                    <tr>
+                                        <td>
+                                            <table style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 560px; color: #404040; font-size: 12px;" role="presentation">
+                                                <tr>
+                                                    <td style="padding: 20px 0 0 20px;">
+                                                    
+                                                        <p style="font-size:18px">${Resource.msg('email.title.request.quote.from', 'customerService', null)}</p>
+                                                        
+                                                        <table align="left" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; width: 500px; font-size: 12px; text-align: left;">
+                                                            <tr>
+                                                                <th>${Resource.msg('email.name.request.quote', 'customerService', null)}</th>
+                                                                <td>${pdict.firstName}&nbsp;${pdict.lastName}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>${Resource.msg('email.address.request.quote', 'customerService', null)}</th>
+                                                                <td>${pdict.streetAddress}, ${pdict.city}, ${pdict.state}&nbsp;${pdict.zipCode}</td>
+                                                            </tr>
+                                                            <isif condition="${pdict.company && pdict.company != 'undefined' && pdict.company != undefined}">
+                                                                <tr>
+                                                                    <th>${Resource.msg('email.company.request.quote', 'customerService', null)}</th>
+                                                                    <td>${pdict.company}</td>
+                                                                </tr>
+                                                            </isif>                                                                
+                                                            <tr>
+                                                                <th>${Resource.msg('email.email.request.quote', 'customerService', null)}</th>
+                                                                <td>${pdict.email}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>${Resource.msg('email.phone.request.quote', 'customerService', null)}</th>
+                                                                <td>${pdict.phone}</td>
+                                                            </tr>
+
+                                                        </table>
+                                                    
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px 0 0 20px;">
+                                                    <isif condition="${!empty(pdict.products)}">
+                                                            <p>${Resource.msg('email.items.title.request.quote', 'customerService', null)}</p>
+                                                            <table align="left" border="1" cellpadding="3" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; font-size: 12px; text-align: left;">
+                                                                <tr>
+                                                                    <th style="padding:5px;">Model Number</th>
+                                                                    <th style="padding:5px;">Quantity</th>
+                                                                </tr>
+                                                            
+                                                                <isloop items="${pdict.products}" var="product">                                                            
+                                                                    <tr>
+                                                                        <th style="padding:5px;">${product.modelNumber}</th>
+                                                                        <th style="padding:5px;">${product.qty}</th>
+                                                                    </tr>
+                                                                </isloop>                                                            
+                                                            </table>
+                                                            
+                                                    </isif>
+                                                    </td>
+                                                </tr>
+                                                <tr> <td>&nbsp;</td></tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <table style="border-collapse: collapse; border-spacing: 0; text-align: center; font-size: 9px; color: gray; padding: 25px 0 0; margin: 0 auto; width: 600px;" role="presentation">
+                        <tr>
+                            <td>
+                                <isinclude template="components/email/emailFooter" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        </span>
+    </body>
+</html>

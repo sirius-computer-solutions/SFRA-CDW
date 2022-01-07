@@ -1,0 +1,61 @@
+<div class="shipping-content">
+    <form class="shipping-form" autocomplete="on" novalidate
+          action="${shipmentLoopState
+          ? URLUtils.url('CheckoutAddressServices-AddNewAddress')
+          : URLUtils.url('CheckoutShippingServices-SubmitShipping')}"
+          data-address-mode="${shippingModel.matchingAddressId ? 'edit' : 'new'}"
+          <isprint value=${pdict.forms.shippingForm.attributes} encoding="off"/>
+    >
+        <isif condition="${lineItem}">
+            <input name="productLineItemUUID" type="hidden" value="${lineItem.UUID}" />
+        </isif>
+
+        <input name="originalShipmentUUID" type="hidden" value="${shippingModel.UUID}" />
+        <input name="shipmentUUID" type="hidden" value="${shippingModel.UUID}" />
+
+        <div class="shipping-address ${pdict.order.usingMultiShipping ? 'd-none' : ''}">
+            <div class="card-body pb-0">
+                <fieldset class="shipment-selector-block ${(pdict.order.usingMultiShipping || shipmentLoopState) || (pdict.customer.addresses && pdict.customer.addresses.length > 0) && !shippingModel.selectedShippingMethod.storePickupEnabled ? '' : 'd-none'} ">
+                    <isinclude template="checkout/shipping/shipmentSelector" />
+                </fieldset>
+                <fieldset class="shipping-address-block ${shippingModel.selectedShippingMethod.storePickupEnabled ? 'd-none' : ''}">
+                    <isinclude template="checkout/shipping/shippingAddress" />
+                </fieldset>
+            </div>
+            <fieldset class="shipping-address-validation">
+                <isinclude template="checkout/shipping/addressVerification" />
+            </fieldset>
+            <fieldset class="shipping-method-block">
+                <div class="card-header">
+                    <h2 class="card-header-custom"> ${Resource.msg('heading.shipping.method', 'checkout', null)} </h2>
+                </div>
+                <isinclude template="checkout/shipping/shippingMethod" />
+            </fieldset>
+
+            <fieldset class="pickup-in-store" data-storeid="${shippingModel.productLineItems.items[0].fromStoreId}" 
+            data-url="${URLUtils.url('Stores-GetStoreById', 'storeId', shippingModel.productLineItems.items[0].fromStoreId)}">
+                <isif condition="${shippingModel.productLineItems.items[0].fromStoreId}">
+                    <isinclude url="${URLUtils.url('Stores-GetStoreById', 'storeId', shippingModel.productLineItems.items[0].fromStoreId)}"/>
+                </isif>
+            </fieldset>
+
+            <iscomment> <button class="btn btn-block btn-outline-primary btn-margin change-store ${shippingModel.selectedShippingMethod.storePickupEnabled && shippingModel.productLineItems.items[0].fromStoreId ? '' : 'd-none'}" name="changeStore" value="changeStore">
+                ${Resource.msg('button.change.store','instorePickup',null)}
+            </button> </iscomment>
+
+
+
+            <iscomment> <fieldset class="gift-message-block ${shippingModel.selectedShippingMethod.storePickupEnabled ? 'd-none' : ''}">
+                <isinclude template="checkout/shipping/isGift" />
+            </fieldset> </iscomment>
+        </div>
+
+        <div class="view-address-block ${shippingModel.shippingAddress ? '' : 'd-none' }">
+            <isinclude template="checkout/shipping/shippingCard" />
+        </div>
+
+        <isinclude template="checkout/shipping/multiShippingButtons" />
+
+        <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+    </form>
+</div>

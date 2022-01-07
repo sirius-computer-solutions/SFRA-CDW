@@ -1,0 +1,22 @@
+{
+    "name": "Shop By Brand for Category",
+    "description": "Shop By Brand for Category for Super Cat Landing and Brand Landing Pages.",
+    "group": "commerce_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "shopByBrandCategory",
+            "name": "shopByBrandCategory",
+            "description": "Specify the Category to pull the brands underneath.",
+            "attribute_definitions": [
+                {
+                    "id": "category",
+                    "name": "Category",
+                    "description": "Select Category to pull the brands underneath.",
+                    "type": "category",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

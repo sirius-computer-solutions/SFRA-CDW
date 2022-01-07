@@ -1,0 +1,49 @@
+<div class="payment-option">
+<div class="store-credit-tab py-3 nav-item" id="${paymentOption.ID}" data-method-id="${paymentOption.ID}">
+        <div class="d-flex align-items-center">
+            <input type="radio" name="paymentType" value="${paymentOption.ID}"/>
+            <label for="${paymentOption.ID}" class="nav-link store-credit-tab">
+                ${Resource.msg('label.store.credit.heading','storeCredit',null)}
+            </label>
+        </div>
+<div class="tab-pane store-credit-content" id="store-credit-content" role="tabpanel">
+    <fieldset class="payment-form-fields">
+
+        <!--- payment method is store credit--->
+        <input type="hidden" class="form-control"
+               name="${pdict.forms.billingForm.paymentMethod.htmlName}"
+               value="STORE_CREDIT"
+        />
+
+        <div class="card-body">
+            <div class="form-group">
+            
+                <input type="hidden" class="form-control"
+                name="storeCreditCode"
+                value="<isif condition="${customer.profile && customer.profile.custom && customer.profile.custom.b2bAccountNumber}">${customer.profile.custom.b2bAccountNumber}</isif>"/>
+            
+                <isif condition="${pdict.customer.registeredUser}">
+                    <div class="store-credit-content-a-number">
+                        <label class="store-credit-label">${Resource.msg('label.store.credit.account.number','storeCredit',null)}</label>
+                        <isif condition="${customer.profile.custom.b2bUser && customer.profile.custom.b2bAccountNumber 
+                                            && customer.profile.custom.b2bWebEnabled}">
+                            <label class="store-credit-account-value">${customer.profile.custom.b2bAccountNumber}</label>
+                        </isif>
+                                 
+                    </div>
+                    <iscomment> <div class="store-credit-content-value">
+                        <label class="store-credit-label" for="store-credit-account-number">${Resource.msg('label.store.credit.value','storeCredit',null)}</label>
+                        <isif condition="${customer.profile.custom.b2bUser && customer.profile.custom.b2bAccountNumber && customer.profile.custom.b2bCreditLimit 
+                                            && customer.profile.custom.b2bWebEnabled}">
+                            <label class="store-credit-limit-value">${customer.profile.custom.b2bCreditLimit}</label>
+                        </isif>
+                    </div> </iscomment>
+                   
+                </isif>
+            </div>
+        </div>
+
+    </fieldset>
+</div>
+</div>
+</div>

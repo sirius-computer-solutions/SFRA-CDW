@@ -1,0 +1,78 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/imageAndTextCommon.css');
+</isscript>
+
+<div class="image-cta product-list-tile">
+    <div class="image-wrapper">
+        <div class="image">
+            <picture>
+                <source srcset="${pdict.image.src.tablet}" media="(min-width: 768px)"/>
+                <source srcset="${pdict.image.src.desktop}" media="(min-width: 1024px)"/>
+                <isset name="imageName" value="${Resource.msg('pd.ITC.image.alt','pageDesigner',null)}" scope="page"/>
+
+                <isif condition="${!empty(pdict.imageLink)}">
+                    <a href="${pdict.imageLink}" aria-label="${Resource.msgf('pd.ITC.image.link','pageDesigner', null, pdict.alt ? pdict.alt : imageName)}">
+                        <img
+                            class="ITC-image image-fluid common-image-component"
+                            src="${pdict.image.src.mobile}"
+                            style="--focal-point-x:${pdict.image.focalPointX}; --focal-point-y:${pdict.image.focalPointY};"
+                            alt="${pdict.alt ? pdict.alt : imageName}" title="${pdict.alt ? pdict.alt : imageName}"
+                        />
+                    </a>
+                <iselse/>
+                    <div class="parent-img">
+                        <img
+                            class="ITC-image image-fluid common-image-component parent-img-responsive"
+                            src="${pdict.image.src.mobile}"
+                            style="--focal-point-x:${pdict.image.focalPointX}; --focal-point-y:${pdict.image.focalPointY};"
+                            alt="${pdict.alt ? pdict.alt : imageName}" title="${pdict.alt ? pdict.alt : imageName}"
+                        />
+                    </div>
+              
+                </isif>
+
+            </picture>
+            </div>
+            <div class="button-container common-image-height">
+                <isif condition="${pdict.overlayImage}">
+                    <div class="promotional-overlay-text-1">
+                        <img
+                            class="ITC-image image-fluid child-img"
+                            src="${pdict.overlayImage.src.mobile}"
+                            style="--focal-point-x:${pdict.overlayImage.focalPointX}; --focal-point-y:${pdict.overlayImage.focalPointY};"
+                            alt="${pdict.alt ? pdict.alt : overlayImage}" title="${pdict.alt ? pdict.alt : overlayImage}"
+                        />               
+                    </div>
+                    
+                </isif>
+                <div class="promotional-overlay-text-1">
+                    <isprint value="${pdict.imageTextOverlay1 ? pdict.imageTextOverlay1 : ''}" encoding="off"/>
+                </div>
+                <div class="promotional-overlay-text-2">
+                    <isprint value="${pdict.imageTextOverlay2 ? pdict.imageTextOverlay2 : ''}" encoding="off"/>
+                </div>
+
+                <div class="image-text row-${pdict.textOverLayOrientation}">
+                    <div class="text-sm-left text-center text-overlay-${pdict.textOverLayOrientation}">
+                        <span><isif condition="${!empty(pdict.textOverlayLink1)}"><a href="${pdict.textOverlayLink1}" class="btn btn-primary" style="background-color: ${pdict.textOverlayButtonColor1}" aria-label="${Resource.msgf('pd.ITC.image.link','pageDesigner', null, pdict.textOverlay1 ? pdict.textOverlay1 : imageName)}"><isprint value="${pdict.textOverlay1 ? pdict.textOverlay1 : ''}" encoding="off"/></a><iselse/><isprint value="${pdict.textOverlay1 ? pdict.textOverlay1 : ''}" encoding="off"/></isif></span>
+                    </div>
+                    <div class="text-sm-left text-center text-overlay-${pdict.textOverLayOrientation}">
+                        <span><isif condition="${!empty(pdict.textOverlayLink2)}"><a href="${pdict.textOverlayLink2}" class="btn btn-primary" style="background-color: ${pdict.textOverlayButtonColor2}" aria-label="${Resource.msgf('pd.ITC.image.link','pageDesigner', null, pdict.textOverlay2 ? pdict.textOverlay2 : imageName)}"><isprint value="${pdict.textOverlay2 ? pdict.textOverlay2 : ''}" encoding="off"/></a><iselse/><isprint value="${pdict.textOverlay2 ? pdict.textOverlay2 : ''}" encoding="off"/></isif></span>
+                    </div>
+                    <div class="text-sm-left text-center text-overlay-${pdict.textOverLayOrientation}">
+                        <span><isif condition="${!empty(pdict.textOverlayLink3)}"><a href="${pdict.textOverlayLink3}" class="btn btn-primary" style="background-color: ${pdict.textOverlayButtonColor3}" aria-label="${Resource.msgf('pd.ITC.image.link','pageDesigner', null, pdict.textOverlay3 ? pdict.textOverlay3 : imageName)}"><isprint value="${pdict.textOverlay3 ? pdict.textOverlay3 : ''}" encoding="off"/></a><iselse/><isprint value="${pdict.textOverlay3? pdict.textOverlay3 : ''}" encoding="off"/></isif></span>
+                    </div>
+                    <div class="text-sm-left text-center text-overlay-${pdict.textOverLayOrientation}">
+                        <span><isif condition="${!empty(pdict.textOverlayLink4)}"><a href="${pdict.textOverlayLink4}" class="btn btn-primary" style="background-color: ${pdict.textOverlayButtonColor4}" aria-label="${Resource.msgf('pd.ITC.image.link','pageDesigner', null, pdict.textOverlay4 ? pdict.textOverlay4 : imageName)}"><isprint value="${pdict.textOverlay4 ? pdict.textOverlay4 : ''}" encoding="off"/></a><iselse/><isprint value="${pdict.textOverlay4 ? pdict.textOverlay4 : ''}" encoding="off"/></isif></span>
+                    </div>                                                                                    
+                </div>
+            </div>
+            <div class="col-12 ITC-text-underneath">
+                <span>
+                    <isprint value="${pdict.ITCText ? pdict.ITCText : ''}" encoding="off"/>
+                </span>
+            </div>
+        </div>    
+    </div>
+
