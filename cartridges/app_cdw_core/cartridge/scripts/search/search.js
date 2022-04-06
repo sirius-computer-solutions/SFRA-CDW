@@ -17,13 +17,6 @@ function setProductProperties(productSearch, httpParams, selectedCategory, sorti
     
     if (httpParams.q) {
         searchPhrase = httpParams.q;
-        if(!empty(searchPhrase)) {
-            var regex = new RegExp(Site.getCurrent().getCustomPreferenceValue('ProductIDRegex') || '[+-*/]','g');
-            if(searchPhrase.match(regex))
-            {
-                searchPhrase = searchPhrase.replace(regex, "_"); 
-            }
-        }        
         productSearch.setSearchPhrase(searchPhrase);
     }
     if (selectedCategory) {

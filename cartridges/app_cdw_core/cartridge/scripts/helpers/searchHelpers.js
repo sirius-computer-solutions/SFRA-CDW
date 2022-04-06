@@ -377,11 +377,6 @@ var base = module.superModule;
     var replacedSearchQuery;
     if(!empty(req.querystring.q)) {
         replacedSearchQuery = req.querystring.q;
-    var regex = new RegExp(Site.getCurrent().getCustomPreferenceValue('ProductIDRegex') || '[+-*/]','g');
-        if(replacedSearchQuery.match(regex))
-        {
-            replacedSearchQuery = replacedSearchQuery.replace(regex, "_"); 
-        }
     }
     var searchRedirect = replacedSearchQuery ? apiProductSearch.getSearchRedirect(replacedSearchQuery) : null;
 

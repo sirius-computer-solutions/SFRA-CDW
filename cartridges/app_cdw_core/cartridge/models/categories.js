@@ -36,7 +36,7 @@ function getCategoryUrl(category) {
  * @returns {Object} plain object that represents a category
  */
 function categoryToObject(category) {
-    if (!category.custom || !category.custom.showInMenu || !category.onlineFlag) {
+    if (!category.onlineFlag) {
         return null;
     }
     
