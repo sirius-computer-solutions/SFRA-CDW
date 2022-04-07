@@ -8,7 +8,7 @@ var cache = require('*/cartridge/scripts/middleware/cache');
 
 server.extend(module.superModule);
 
-var varsityHelper = require('~/cartridge/scripts/helpers/varsityHelper');
+//var varsityHelper = require('~/cartridge/scripts/helpers/varsityHelper');
 var dateHelper = require('*/cartridge/scripts/helpers/dateHelper');
 
 server.get('GetInventory', cache.applycdwInventorySensitiveCache, function (req, res, next) {
@@ -121,6 +121,8 @@ server.get('GetArrivalDate', cache.applycdwArrivalDateSensitiveCache, function (
 
         geoZipCode = request.httpCookies.zipCode ? request.httpCookies.zipCode.value : request.geolocation.postalCode;
     }
+
+    geoZipCode = false;
 
     if(geoZipCode) {
         var jsonResponse = varsityHelper.getVarsityResponse(geoZipCode);

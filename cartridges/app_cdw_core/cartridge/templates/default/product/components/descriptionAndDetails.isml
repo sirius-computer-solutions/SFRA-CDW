@@ -50,6 +50,7 @@
   <isinclude template="product/components/fromManufacturerContent" />
 </isif>
 
+<iscomment>
 <!-- Bazaarvoice content START -->
   <div class="row reviews <isif condition="${!pdict.bvDisplay.rr.enabled}">hidden-xl-down</isif>" id="ReviewsPDP">
       <div class="col-12">
@@ -61,6 +62,7 @@
       </div>
       <isinclude template="bv/display/rr/reviews" />      
   </div>
+</iscomment>
 
   <iscomment> <div class="row questions<isif condition="${!pdict.bvDisplay.qa.enabled}">hidden-xl-down</isif>">
       <div class="col-12">
