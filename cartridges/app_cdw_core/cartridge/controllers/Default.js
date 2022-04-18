@@ -42,7 +42,7 @@ server.replace('Start', consentTracking.consent, cache.applyDefaultCache, functi
                                 "@type": "Corporation",
                                 "name": "cdw Tools",
                                 "url": siteHostName,
-                                "logo": siteHostName + URLUtils.staticURL('/images/CDWStarterStoreLogo.svg').toString(),
+                                "logo": siteHostName + URLUtils.staticURL('/images/CDWStarterStoreLogo.png').toString(),
                                 "sameAs": [
                                     "https://facebook.com/cdwtools",
                                     "https://instagram.com/cdwtools",

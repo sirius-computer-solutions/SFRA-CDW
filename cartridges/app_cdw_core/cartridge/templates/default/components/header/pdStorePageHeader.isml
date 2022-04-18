@@ -16,7 +16,7 @@
                         <a class="logo-home" href="/"
                             title="${Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg(
                                    'global.home', 'common', null))}">
-                            <img src="${URLUtils.staticURL('/images/CDWStarterStoreLogo.svg')}"
+                            <img src="${URLUtils.staticURL('/images/CDWStarterStoreLogo.png')}"
                                 alt="${Resource.msg('global.storename', 'common', null)}" />
                         </a>
                     </div>
