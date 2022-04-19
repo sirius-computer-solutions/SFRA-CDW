@@ -14,7 +14,7 @@
                 <div class="col-12">
                     <div class="navbar-header brand col-xl-4 col-sm-5 col-6 px-0">
                         <a class="logo-home" href="/" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
-                            <img src="${URLUtils.staticURL('/images/CDWStarterStoreLogo.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
+                            <img src="${URLUtils.staticURL('/images/CDWStarterStoreLogo.png')}" alt="${Resource.msg('global.storename', 'common', null)}" />
                         </a>
                     </div>
                     <div class="navbar-header d-sm-flex d-md-block align-items-center justify-content-between">

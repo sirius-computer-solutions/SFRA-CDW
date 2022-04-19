@@ -46,7 +46,7 @@ server.append('Show', consentTracking.consent, cache.applyDefaultCache, function
                                 "@type": "Corporation",
                                 "name": "cdw Tools",
                                 "url": siteHostName,
-                                "logo": siteHostName + URLUtils.staticURL('/images/CDWStarterStoreLogo.svg').toString(),
+                                "logo": siteHostName + URLUtils.staticURL('/images/CDWStarterStoreLogo.png').toString(),
                                 "sameAs": [
                                     "https://facebook.com/cdwtools",
                                     "https://instagram.com/cdwtools",
