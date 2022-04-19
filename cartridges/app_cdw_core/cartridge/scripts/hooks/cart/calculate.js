@@ -19,6 +19,7 @@ var Status = require('dw/system/Status');
 var HookMgr = require('dw/system/HookMgr');
 var collections = require('*/cartridge/scripts/util/collections');
 
+var Vertex = require('*/cartridge/scripts/vertex');
 var Helper = require('*/cartridge/scripts/helper/helper');
 
 /**
@@ -82,7 +83,22 @@ exports.calculate = function (basket) {
     // =====         CALCULATE TAX                   =====
     // ===================================================
 
-   	HookMgr.callHook('dw.order.calculateTax', 'calculateTax', basket);
+    if(Vertex.isEnabled()) {
+    	if (basket.defaultShipment && basket.defaultShipment.shippingAddress 
+            && !empty(basket.defaultShipment.shippingAddress.address1)
+            && !empty(basket.defaultShipment.shippingAddress.city)
+            && !empty(basket.defaultShipment.shippingAddress.stateCode)
+            && !empty(basket.defaultShipment.shippingAddress.postalCode))
+        {
+    		Vertex.CalculateTax('Quotation', basket);
+    	} else {
+    		Helper.prepareCart(basket);
+    	}
+    	
+    	//HookMgr.callHook('dw.order.calculateTax', 'calculateTax', basket);
+    } else {
+    	HookMgr.callHook('dw.order.calculateTax', 'calculateTax', basket);
+    }
 
     // ===================================================
     // =====         CALCULATE BASKET TOTALS         =====
