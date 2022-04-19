@@ -310,22 +310,23 @@ function addProductToCart(currentBasket, productId, quantity, childProducts, opt
         );
 
         /** Condition to handle the dropShip flag at line level START */
-        if(product.availabilityModel.inventoryRecord && 
-                "custom" in product.availabilityModel.inventoryRecord && 
-                    'dropShipQuantity'in product.availabilityModel.inventoryRecord.custom) {
-            
-            var dropShipQuantity = product.availabilityModel.inventoryRecord.custom.dropShipQuantity;
-            
-            if(dropShipQuantity > 0) {
-                productLineItem.custom.dropShip = true;
-            } else {
+        if ('dropShipQuantity'in product.availabilityModel.inventoryRecord.custom) {
+            if(product.availabilityModel.inventoryRecord && 
+                    "custom" in product.availabilityModel.inventoryRecord && 
+                        'dropShipQuantity'in product.availabilityModel.inventoryRecord.custom) {
+                
+                var dropShipQuantity = product.availabilityModel.inventoryRecord.custom.dropShipQuantity;
+                
+                if(dropShipQuantity > 0) {
+                    productLineItem.custom.dropShip = true;
+                } else {
+                    productLineItem.custom.dropShip = false;
+                }
+
+            }else {
                 productLineItem.custom.dropShip = false;
             }
-
-        }else {
-            productLineItem.custom.dropShip = false;
-        }
-    
+        }    
 
         /** Condition to handle the dropShip flag at line level END */
         
