@@ -121,7 +121,8 @@ server.replace(
         }
 
         var paymentMethodIdValue = paymentForm.paymentMethod.value;
-        if (!PaymentManager.getPaymentMethod(paymentMethodIdValue).paymentProcessor) {
+        var paymentMethod = PaymentManager.getPaymentMethod(paymentMethodIdValue);
+        if (paymentMethod == null || !paymentMethod.paymentProcessor) {
             throw new Error(Resource.msg(
                 'error.payment.processor.missing',
                 'checkout',
@@ -129,7 +130,7 @@ server.replace(
             ));
         }
 
-        var paymentProcessor = PaymentManager.getPaymentMethod(paymentMethodIdValue).getPaymentProcessor();
+        var paymentProcessor = paymentMethod.getPaymentProcessor();
 
         logger.info("paymentProcessor::::"+paymentProcessor.ID);
         logger.debug("debug::paymentProcessor::::"+paymentProcessor.ID);

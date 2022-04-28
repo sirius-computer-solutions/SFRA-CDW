@@ -10,28 +10,6 @@ var PaymentInstrument = require('dw/order/PaymentInstrument');
 var COHelpers = require('*/cartridge/scripts/checkout/checkoutHelpers');
 var Resource = require('dw/web/Resource');
 
-
-
-server.prepend(
-    'Begin',
-    function (req, res, next) {
-        var BasketMgr = require('dw/order/BasketMgr');
-        var currentBasket = BasketMgr.getCurrentBasket();
-
-        //do shipping restrictions check and update response accordingly
-        var ShippingHelper = require('*/cartridge/scripts/checkout/shippingHelpers');
-        var restrictions = ShippingHelper.validateShippingRestrictions(currentBasket);
-        if(restrictions && restrictions.length > 0){
-            res.json({
-                fieldErrors: [],
-                serverErrors: restrictions,
-                error: true
-            });
-        }
-
-        next();
-    });
-
 // Main entry point for Checkout
 /**
  * Checkout-Begin : The Checkout-Begin endpoint will render the checkout shipping page for both guest shopper and returning shopper

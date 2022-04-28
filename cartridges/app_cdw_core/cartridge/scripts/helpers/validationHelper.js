@@ -1,6 +1,5 @@
 'use strict';
 
-var bvService = require('*/cartridge/scripts/services/bvService');
 var ValidationConstants = require('*/cartridge/scripts/utils/cdwConstants').getConstants();
 var emailHelper = require('*/cartridge/scripts/helpers/emailHelpers');
 var Site = require('dw/system/Site');
@@ -14,22 +13,7 @@ var Site = require('dw/system/Site');
  function valdateEmailId(emailId) {
 
     var validEmail = false;
-    //Check if BriteVerify is enabled and call that service or else just call the emailHelper to return the validation
-
-    var briteVerifyEnabled = Site.current.getCustomPreferenceValue('enableBriteVerify') || false;
-
-    if(briteVerifyEnabled) {
-        var service = bvService.BriteVerifyService;
-        var data = "?address="+emailId+"&apikey=";
-        var jsonResponse = service.call("GET", data);
-        var jsonResponseObject = jsonResponse.object;
-
-        if(jsonResponseObject == null || jsonResponseObject == ValidationConstants.VALID_STRING || jsonResponseObject == ValidationConstants.UNKNOWN_STRING || jsonResponseObject == ValidationConstants.ACCEPT_ALL_STRING) {
-            validEmail = true;
-        }
-    } else {
-        validEmail = emailHelper.validateEmail(emailId);
-    }
+    validEmail = emailHelper.validateEmail(emailId);
    
     return validEmail;
 }
