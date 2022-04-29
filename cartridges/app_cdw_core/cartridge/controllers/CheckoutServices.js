@@ -208,19 +208,6 @@ server.replace(
                 return;
             }
             
-            //do shipping restrictions check and update response accordingly
-            var ShippingHelper = require('*/cartridge/scripts/checkout/shippingHelpers');
-            var restrictions = ShippingHelper.validateShippingRestrictions(currentBasket);
-            if(restrictions && restrictions.length > 0){
-                res.json({
-                    fieldErrors: [],
-                    serverErrors: restrictions,
-                    error: true
-                });
-                return;
-            }
-
-
             var billingAddress = currentBasket.billingAddress;
             var billingForm = server.forms.getForm('billing');
             var paymentMethodID = billingData.paymentMethod.value;
