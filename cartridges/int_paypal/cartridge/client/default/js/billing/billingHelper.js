@@ -174,6 +174,7 @@ function updateClientSide(_, customer) {
                 if (!isBAEnabled) {
                     $sessionPaypalAccount.value = '';
                     $restPaypalAccountsList.querySelector('option:checked').value = 'newaccount';
+                    document.querySelector('#usedPaymentMethod').value = '';
                     hidePaypalBlock();
                     togglePaypalBtnVisibility($restPaypalAccountsList);
                 } else if (isBAEnabled && $sessionPaypalAccount) {
@@ -214,6 +215,17 @@ function isLpmUsed($usedPaymentMethod) {
     return false;
 }
 
+/**
+ * Updates "Submit order" button text on billing page in case of Venmo checkout
+ * Needed in case of checkout NOT through smart button (when Venmo account is chosen in dropdown)
+*/
+function updateSubmitOrderButton() {
+    var $usedPaymentMethod = document.querySelector('#usedPaymentMethod');
+    if ($usedPaymentMethod && $usedPaymentMethod.value === 'Venmo') {
+        document.querySelector('button.place-order').innerText = 'Place Order with Venmo';
+    }
+}
+
 export {
     injectBillingSDK,
     showPaypalBlock,
@@ -226,5 +238,6 @@ export {
     isNewAccountSelected,
     updateClientSide,
     showContinueButton,
-    isLpmUsed
+    isLpmUsed,
+    updateSubmitOrderButton
 };

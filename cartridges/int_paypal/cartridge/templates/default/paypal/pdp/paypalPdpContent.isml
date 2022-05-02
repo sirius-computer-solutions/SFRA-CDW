@@ -23,7 +23,7 @@
             <isif condition="${pdict.paypal.showStaticImage}">
                 <div>
                     <img id="paypal_pdp_image" alt="Check out with PayPal"
-                        src="${pdict.paypal.staticImageLink}"
+                        src="${pdict.paypal.paypalStaticImageLink}"
                         data-paypal-default-ba-email="${defaultBAemail}"
                         data-paypal-billing-form-fields="${JSON.stringify(billingFormFields)}">
                 </div>

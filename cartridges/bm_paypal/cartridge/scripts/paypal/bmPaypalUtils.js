@@ -12,11 +12,13 @@ var paypalLogger;
  */
 function createErrorLog(msg) {
     paypalLogger = paypalLogger || Logger.getLogger('PayPal-BM', 'PayPal_General');
+
     if (!empty(msg)) {
         paypalLogger.error(msg);
     } else {
         paypalLogger.debug('Empty log entry');
     }
+
     return;
 }
 

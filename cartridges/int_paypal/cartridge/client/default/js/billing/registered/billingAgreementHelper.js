@@ -161,17 +161,15 @@ function toggleBABtnVisibility() {
 */
 function assignEmailForSavedBA() {
     let $paypalActiveAccount = document.querySelector('#paypal_activeAccount');
-    let $contractInfoeEmail = document.querySelector('input[name=dwfrm_billing_contactInfoFields_email]');
     let $selectedAccount = $restPaypalAccountsList.querySelector('option:checked');
 
     if (isNewAccountSelected($restPaypalAccountsList)) {
         $paypalActiveAccount.value = '';
-        $contractInfoeEmail.value = '';
         document.getElementById('billingAgreementID').value = '';
         document.getElementById('billingAgreementPayerEmail').value = '';
     } else {
         $paypalActiveAccount.value = $restPaypalAccountsList.querySelector('option:checked').value;
-        $contractInfoeEmail.value = $paypalActiveAccount.value;
+
         setBAFormValues($selectedAccount.dataset.baId, $selectedAccount.value);
     }
 }

@@ -1,4 +1,5 @@
 <isset name="isBAEnabled" value="${pdict.paypal.prefs.billingAgreementEnabled}" scope="page" />
+<isset name="isVenmoUsed" value="${pdict.paypal.isVenmoUsed}" scope="page" />
 
 <isscript>
     var assets = require('*/cartridge/scripts/assets.js');
@@ -30,7 +31,7 @@
                 name="${pdict.forms.billingForm.paypal.makeDefaultPaypalAccount.htmlName}" value="" />
             <input id="paypal_activeAccount" type="hidden"
                 name="${pdict.forms.billingForm.paypal.paypalActiveAccount.htmlName}" value="" />
-            <input id="usedPaymentMethod" type="hidden" name="usedPaymentMethod" value="" />
+            <input id="usedPaymentMethod" type="hidden" name="${pdict.forms.billingForm.paypal.usedPaymentMethod.htmlName}" value="${pdict.paypal.isVenmoUsed ? 'Venmo' : ''}" />
         </div>
 
         <div class="form-group">

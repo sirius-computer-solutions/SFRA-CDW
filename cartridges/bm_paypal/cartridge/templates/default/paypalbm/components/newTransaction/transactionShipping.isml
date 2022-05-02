@@ -55,7 +55,7 @@
             <td class="infobox_title top">${Resource.msg('transaction.newtransaction.shipping.country', 'paypalbm', null)}</td>
             <td class="infobox_item top">
                 <select name="shiptoCountry" disabled>
-                    <isloop items="${countries}" var="country" >
+                    <isloop items="${pdict.countries}" var="country" >
                         <option value="${country.value}">${country.label}</option>
                         </isloop>
                     </select>
@@ -65,7 +65,7 @@
             <td class="infobox_title top">${Resource.msg('transaction.newtransaction.shipping.amt', 'paypalbm', null)}</td>
             <td class="infobox_item top">
                 <input type="text" name="shippingamt" class="totalCount" data-validation="required,float" value="0" disabled/>
-                <span class="js_paypa_currency"><isprint value="${defaultCurrency}"/></span>
+                <span class="js_paypa_currency"><isprint value="${pdict.defaultCurrency}"/></span>
             </td>
         </tr>
     </table>

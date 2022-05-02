@@ -5,15 +5,15 @@ const OrderMgr = require('dw/order/OrderMgr');
 
 const {
     paypalPaymentMethodId
-} = require('../../../../config/paypalPreferences');
+} = require('*/cartridge/config/paypalPreferences');
 
 const {
     createErrorLog
-} = require('../../../paypal/paypalUtils');
+} = require('*/cartridge/scripts/paypal/paypalUtils');
 const {
     handle,
     authorize
-} = require('../../../paypal/processor');
+} = require('*/cartridge/scripts/paypal/processor');
 
 /**
  * ProcessForm point for setting data

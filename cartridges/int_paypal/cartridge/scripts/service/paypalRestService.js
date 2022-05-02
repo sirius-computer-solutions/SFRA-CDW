@@ -8,22 +8,10 @@ const tokenCache = require('dw/system/CacheMgr').getCache('paypalRestOauthToken'
 
 const {
     createErrorLog
-} = require('../paypal/paypalUtils');
-
-/**
- * Create URL for a call
- * @param  {dw.svc.ServiceCredential} credential current service credential
- * @param  {string} path REST action endpoint
- * @returns {string} url for a call
- */
-function getUrlPath(credential, path) {
-    var url = credential.URL;
-    if (!url.match(/.+\/$/)) {
-        url += '/';
-    }
-    url += path;
-    return url;
-}
+} = require('*/cartridge/scripts/paypal/paypalUtils');
+const {
+    getUrlPath
+} = require('*/cartridge/scripts/paypal/helpers/paypalHelper');
 
 /**
  * Create and store oauth token
@@ -103,6 +91,9 @@ module.exports = (function () {
             createRequest: createRequest,
             parseResponse: function (_, httpClient) {
                 return JSON.parse(httpClient.getText());
+            },
+            filterLogMessage: function (msg) {
+                return msg;
             },
             getRequestLogMessage: function (request) {
                 return request;

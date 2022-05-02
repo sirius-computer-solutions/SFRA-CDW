@@ -54,14 +54,11 @@ addressHelper.updateOrderBillingAddress = function (basket, billingAddress) {
         billing.setPostalCode(address.postal_code || '');
         billing.setStateCode(address.admin_area_1 || '');
         if (empty(billing.phone)) {
-            if(phone!=undefined){
-                billing.setPhone(phone.phone_number.national_number || '');
-            } else {
-                billing.setPhone('');
-            }
+            billing.setPhone(phone.phone_number.national_number || '');
         }
         if (empty(basket.customerEmail)) {
-            basket.setCustomerEmail(email_address);
+            basket.setCustomerEmail(basket.customer.authenticated ?
+                basket.customer.profile.email : email_address);
         }
     });
 };
@@ -85,13 +82,7 @@ addressHelper.updateOrderShippingAddress = function (basket, shippingInfo) {
         shipping.setAddress2(shippingAddress.address_line_2 || '');
         shipping.setPostalCode(shippingAddress.postal_code || '');
         shipping.setStateCode(shippingAddress.admin_area_1 || '');
-        if(empty(shipping.phone)){
-            if(shippingInfo.phone!=undefined){
-                shipping.setPhone(shippingInfo.phone.phone_number.national_number || '');
-            } else {
-                shipping.setPhone('');
-            }
-        }
+        shipping.setPhone(shippingInfo.phone.phone_number.national_number || '');
 
         if (!empty(fullName.firstName)) {
             shipping.setFirstName(fullName.firstName || '');
@@ -103,8 +94,6 @@ addressHelper.updateOrderShippingAddress = function (basket, shippingInfo) {
             shipping.setLastName(fullName.lastName || '');
         }
     });
-    //since we updated the shipping address, we need to remove this session var so vertex will re-calculate
-    delete session.privacy.VertexAddressSuggestionsError;
 };
 
 /**
@@ -119,7 +108,7 @@ addressHelper.createShippingAddress = function (shippingAddress) {
         },
         address: {
             address_line_1: shippingAddress.address1,
-            address_line_2: shippingAddress.address1,
+            address_line_2: shippingAddress.address2,
             admin_area_1: shippingAddress.stateCode,
             admin_area_2: shippingAddress.city,
             postal_code: shippingAddress.postalCode,
@@ -173,7 +162,8 @@ addressHelper.updateBABillingAddress = function (basket, billingAddress) {
             billing.setPhone(phone || '');
         }
         if (empty(basket.customerEmail)) {
-            basket.setCustomerEmail(email);
+            basket.setCustomerEmail(basket.customer.authenticated ?
+                basket.customer.profile.email : email);
         }
     });
 };

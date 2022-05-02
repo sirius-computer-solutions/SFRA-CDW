@@ -5,7 +5,7 @@ const Money = require('dw/value/Money');
 const PaymentMgr = require('dw/order/PaymentMgr');
 const {
     paypalPaymentMethodId
-} = require('../../../config/paypalPreferences');
+} = require('*/cartridge/config/paypalPreferences');
 
 /**
  * Calculates the amount to be payed by a non-gift certificate payment instrument based
@@ -27,10 +27,6 @@ function calculateNonGiftCertificateAmount(lineItemCtnr) {
     }
 
     var orderTotal = lineItemCtnr.totalGrossPrice;
-    //if Tax hasn't yet been computed, use netPrice
-    if (lineItemCtnr.totalTax.value === 0) {
-        orderTotal = lineItemCtnr.totalNetPrice;
-    }
     var amountOpen = orderTotal.subtract(giftCertTotal);
     return amountOpen;
 }

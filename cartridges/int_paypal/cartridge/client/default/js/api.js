@@ -95,17 +95,6 @@ function createBillingAgreementCall(billingToken) {
 }
 
 /**
- * Gets Order Details
- *
- * @param {string} orderId - billing agreement token
- * @returns {Object} JSON response body that includes payer email
- */
-function getOrderDetailsCall(orderId) {
-    return $.get(window.paypalUrls.getOrderDetails + `?orderId=${orderId}`)
-        .then((data) => data);
-}
-
-/**
  * Create billing formData from fields data
  *
  * @param {Object} fieldsData - fields data values
@@ -115,7 +104,7 @@ function getOrderDetailsCall(orderId) {
 function createCartBillingFormData(fieldsData, $paypalButton) {
     var cartBillingFormData = new FormData();
     if (!$paypalButton) {
-        $paypalButton = document.querySelector('#paypal_pdp_image') || document.querySelector('#paypal_image');
+        $paypalButton = document.querySelector('#paypal_pdp_image') || document.querySelector('#paypal_image') || document.querySelector('#venmo_image');
     }
     var cartBillingFields = $paypalButton && JSON.parse($paypalButton.getAttribute('data-paypal-billing-form-fields'));
 
@@ -180,7 +169,6 @@ export {
     getPurchaseUnits,
     getBillingAgreementToken,
     createBillingAgreementCall,
-    getOrderDetailsCall,
     returnFromCart,
     showCartErrorHtml,
     showCheckoutErrorHtml,

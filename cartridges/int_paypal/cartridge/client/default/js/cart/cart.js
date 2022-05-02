@@ -3,7 +3,7 @@ import initPaypalButton from './initCartButton';
 import initPaypalBAButton from './registered/initBillingAgreementButton';
 import { updateOrderData, returnFromCart } from '../api';
 
-let $paypalImage = document.querySelector('#paypal_image');
+let $paypalImage = document.querySelector('#paypal_image') || document.querySelector('#venmo_image');
 let $cartButton = document.querySelector('.js_paypal_button_on_cart_page');
 let $isBAEnabled = $cartButton && JSON.parse($cartButton.getAttribute('data-paypal-ba-enabled'));
 const paypalUrls = document.querySelector('.js_paypal-content').getAttribute('data-paypal-urls');

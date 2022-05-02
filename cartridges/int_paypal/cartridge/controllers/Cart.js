@@ -8,33 +8,35 @@ const BasketMgr = require('dw/order/BasketMgr');
 const {
     validateExpiredTransaction,
     validatePaypalOnCheckout
-} = require('../scripts/paypal/middleware');
+} = require('*/cartridge/scripts/paypal/middleware');
 
 const {
     billingAgreementEnabled,
     paypalCartButtonConfig,
     paypalMinicartButtonConfig,
     partnerAttributionId,
-    staticImageLink
-} = require('../config/paypalPreferences');
+    paypalStaticImageLink
+} = require('*/cartridge/config/paypalPreferences');
 
 const {
     isPaypalButtonEnabled,
     getPurchaseUnit,
     getPreparedBillingFormFields
-} = require('../scripts/paypal/helpers/paypalHelper');
+} = require('*/cartridge/scripts/paypal/helpers/paypalHelper');
 
 const {
     createCartSDKUrl,
     getUrls,
     encodeString
-} = require('../scripts/paypal/paypalUtils');
+} = require('*/cartridge/scripts/paypal/paypalUtils');
 
 const {
     getPaypalPaymentInstrument
-} = require('../scripts/paypal/helpers/paymentInstrumentHelper');
+} = require('*/cartridge/scripts/paypal/helpers/paymentInstrumentHelper');
 
-const BillingAgreementModel = require('../models/billingAgreement');
+const BillingAgreementModel = require('*/cartridge/models/billingAgreement');
+
+const paypalConstants = require('*/cartridge/scripts/util/paypalConstants');
 
 server.extend(page);
 
@@ -52,6 +54,7 @@ function payPalCartHandler(req, res, next) {
 
     var paypalPaymentInstrument = basket && getPaypalPaymentInstrument(basket) || null;
     var paypalEmail = paypalPaymentInstrument && paypalPaymentInstrument.custom.currentPaypalEmail;
+    var isVenmoUsed = paypalPaymentInstrument && paypalPaymentInstrument.custom.paymentId === paypalConstants.PAYMENT_METHOD_ID_VENMO;
     var defaultBA = {};
     // for guest with paypalEmail from PI
     var showStaticImage = !!paypalEmail;
@@ -79,11 +82,12 @@ function payPalCartHandler(req, res, next) {
             billingFormFields: getPreparedBillingFormFields(paypalPaymentInstrument, defaultBA),
             paypalEmail: paypalEmail,
             showStaticImage: showStaticImage,
-            staticImageLink: staticImageLink,
+            paypalStaticImageLink: paypalStaticImageLink,
             defaultBAemail: defaultBA.email,
             isPaypalInstrumentExist: paypalPaymentInstrument && !empty(paypalPaymentInstrument),
             billingAgreementEnabled: billingAgreementEnabled,
-            paypalUrls: JSON.stringify(getUrls())
+            paypalUrls: JSON.stringify(getUrls()),
+            isVenmoUsed: isVenmoUsed
         }
     });
     next();
@@ -91,6 +95,6 @@ function payPalCartHandler(req, res, next) {
 
 server.append('Show', validatePaypalOnCheckout, validateExpiredTransaction, payPalCartHandler);
 
-//server.append('MiniCartShow', validatePaypalOnCheckout, validateExpiredTransaction, payPalCartHandler);
+server.append('MiniCartShow', validatePaypalOnCheckout, validateExpiredTransaction, payPalCartHandler);
 
 module.exports = server.exports();

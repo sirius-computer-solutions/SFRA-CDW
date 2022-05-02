@@ -1,7 +1,7 @@
 'use strict';
 const server = require('server');
 
-const basket = require('dw/order/BasketMgr').getCurrentBasket();
+const BasketMgr = require('dw/order/BasketMgr');
 const OrderMgr = require('dw/order/OrderMgr');
 const PaymentMgr = require('dw/order/PaymentMgr');
 const HookMgr = require('dw/system/HookMgr');
@@ -12,24 +12,26 @@ const {
     removePaypalPaymentInstrument,
     removeNonPayPalPaymentInstrument,
     calculateNonGiftCertificateAmount
-} = require('./helpers/paymentInstrumentHelper');
+} = require('*/cartridge/scripts/paypal/helpers/paymentInstrumentHelper');
 
 const {
     isExpiredTransaction,
-    isErrorEmail,
-    createErrorEmailResponse,
     isPaypalButtonEnabled
-} = require('./helpers/paypalHelper');
+} = require('*/cartridge/scripts/paypal/helpers/paypalHelper');
 
 const {
     createErrorMsg,
     getUrls,
     createErrorLog
-} = require('./paypalUtils');
+} = require('*/cartridge/scripts/paypal/paypalUtils');
 
 const {
     paypalPaymentMethodId
-} = require('../../config/paypalPreferences');
+} = require('*/cartridge/config/paypalPreferences');
+
+const accountHelpers = require('*/cartridge/scripts/helpers/accountHelpers');
+
+const paypalConstants = require('*/cartridge/scripts/util/paypalConstants');
 
 /**
  * Middleware to check if transaction is expired on payment stage (CheckoutServices.js)
@@ -39,9 +41,12 @@ const {
  * @returns {void}
  */
 function validateExpiredTransaction(req, res, next) {
+    var basket = BasketMgr.getCurrentBasket();
+
     if (empty(basket)) return next();
 
     var expiredTransaction = isExpiredTransaction(getPaypalPaymentInstrument(basket));
+
     if (!expiredTransaction) return next();
 
     removePaypalPaymentInstrument(basket);
@@ -80,6 +85,8 @@ function validateExpiredTransaction(req, res, next) {
  * @returns {void}
  */
 function validatePaymentMethod(req, res, next) {
+    var basket = BasketMgr.getCurrentBasket();
+
     if (!basket) return next();
 
     var paymentInstruments = basket.getPaymentInstruments();
@@ -101,30 +108,13 @@ function validatePaymentMethod(req, res, next) {
 }
 
 /**
- * Middleware to validate email
+ * Middleware to validate whether paypal enabled on storefront
  * @param {Object} req - Request object
  * @param {Object} res - Response object
  * @param {Function} next - Next call in the middleware chain
  * @returns {void}
  */
-function validateEmail(req, res, next) {
-    var billingData = res.getViewData();
-
-    if (!isErrorEmail(billingData)) return next();
-
-    res.json(createErrorEmailResponse(billingData));
-    this.emit('route:Complete', req, res);
-    return;
-}
-
-/**
- * Middleware to validate if paypal data exists on Account
- * @param {Object} req - Request object
- * @param {Object} res - Response object
- * @param {Function} next - Next call in the middleware chain
- * @returns {void}
- */
-function validatePaypalOnAccount(req, res, next) {
+function validateWhetherPaypalEnabled(req, res, next) {
     if (paypalPaymentMethodId) return next();
 
     this.emit('route:Complete', req, res);
@@ -155,6 +145,8 @@ function validatePaypalOnProduct(req, res, next) {
  * @returns {void}
  */
 function validatePaypalOnCheckout(req, res, next) {
+    var basket = BasketMgr.getCurrentBasket();
+
     switch (this.name) {
         case 'Show':
             if (!basket || !paypalPaymentMethodId || !isPaypalButtonEnabled('cart')) {
@@ -190,7 +182,7 @@ function validatePaypalOnCheckout(req, res, next) {
  * @returns {void}
  */
 function validatePaypalPaymentInstrument(req, res, next) {
-    var order = OrderMgr.getOrder(req.querystring.ID);
+    var order = OrderMgr.getOrder(req.form.orderID, req.form.orderToken);
     var paypalPaymentInstrument = getPaypalPaymentInstrument(order);
     if (!paypalPaymentInstrument) {
         this.emit('route:Complete', req, res);
@@ -246,6 +238,8 @@ function validateProcessor(req, res, next) {
  * @returns {void}
  */
 function removeNonPaypalPayment(req, res, next) {
+    var basket = BasketMgr.getCurrentBasket();
+
     if (!basket) return next();
 
     if (!empty(basket.paymentInstruments)) removeNonPayPalPaymentInstrument(basket);
@@ -274,13 +268,18 @@ function validateHandleHook(req, res, next) {
 
 /**
  * Check if existed giftCert payment instruments fully cover total price of the order
- * @param {Object} req - Request object
+* @param {Object} req - Request object
  * @param {Object} res - Response object
  * @param {Function} next - Next call in the middleware chain
  * @returns {void}
  */
 function validateGiftCertificateAmount(req, res, next) {
-    if (calculateNonGiftCertificateAmount(basket).value !== 0) return next();
+    var basket = BasketMgr.getCurrentBasket();
+    var calculatedNonGiftCertificateAmount = calculateNonGiftCertificateAmount(basket);
+
+    if (calculatedNonGiftCertificateAmount.value !== 0) return next();
+
+    if (basket.giftCertificatePaymentInstruments.length && calculatedNonGiftCertificateAmount.value === 0) return next();
 
     switch (this.name) {
         case 'SubmitPayment':
@@ -303,18 +302,43 @@ function validateGiftCertificateAmount(req, res, next) {
             break;
     }
 }
+/**
+ * Checks if 'connect with paypal window' was cancelled by buyer
+* @param {Object} req - Request object
+ * @param {Object} res - Response object
+ * @param {Function} next - Next call in the middleware chain
+ * @returns {void}
+ */
+function validateConnectWithPaypalUrl(req, res, next) {
+    var error = request.httpParameterMap.get('error_description');
+
+    if (!error.empty) {
+        if (error.value === paypalConstants.CONNECT_WITH_PAYPAL_CONSENT_DENIED) {
+            createErrorLog(error.value);
+
+            // Sets redirect endpoint depands of 'Connect with paypal' button location
+            // req.querystring.state - oAuth reentry endpoint(1 or 2)
+            res.redirect(accountHelpers.getLoginRedirectURL(req.querystring.state, req.session.privacyCache, false));
+
+            this.emit('route:Complete', req, res);
+            return;
+        }
+    }
+
+    return next();
+}
 
 module.exports = {
     validateExpiredTransaction: validateExpiredTransaction,
     validatePaymentMethod: validatePaymentMethod,
-    validateEmail: validateEmail,
     validatePaypalPaymentInstrument: validatePaypalPaymentInstrument,
-    validatePaypalOnAccount: validatePaypalOnAccount,
+    validateWhetherPaypalEnabled: validateWhetherPaypalEnabled,
     validatePaypalOnCheckout: validatePaypalOnCheckout,
     validatePaypalOnProduct: validatePaypalOnProduct,
     parseBody: parseBody,
     validateProcessor: validateProcessor,
     removeNonPaypalPayment: removeNonPaypalPayment,
     validateHandleHook: validateHandleHook,
-    validateGiftCertificateAmount: validateGiftCertificateAmount
+    validateGiftCertificateAmount: validateGiftCertificateAmount,
+    validateConnectWithPaypalUrl: validateConnectWithPaypalUrl
 };

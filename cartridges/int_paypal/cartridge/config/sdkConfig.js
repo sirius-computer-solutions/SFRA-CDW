@@ -33,16 +33,16 @@ const disableFunds = [
     'ideal',
     'mybank',
     'p24',
-    'sofort',
-    'credit',
-    'card'
+    'sofort'
 ];
 
-const staticImageLink = 'https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-large.png';
+const paypalStaticImageLink = 'https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-large.png';
+const connectWithPaypalStaticImageLink = 'https://www.paypalobjects.com/webstatic/en_US/developer/docs/login/connectwithpaypalbutton.png';
 
 module.exports = {
     disableFunds: disableFunds,
-    staticImageLink: staticImageLink,
+    paypalStaticImageLink: paypalStaticImageLink,
+    connectWithPaypalStaticImageLink: connectWithPaypalStaticImageLink,
     allowedCurrencies: allowedCurrencies,
     paypalBillingButtonConfig: { style: smartButtonStyles.billing },
     paypalCartButtonConfig: { style: smartButtonStyles.cart },

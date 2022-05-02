@@ -3,8 +3,10 @@
         <tr class="paypalbm_gray">
             <td class="infobox_title top">${Resource.msg('transaction.detail.shipaddress', 'paypalbm', null)}:</td>
 
-            <isset name="address" value="${purchaseUnits.shipping.address}" scope="page">
-            <isset name="shiptoname" value="${purchaseUnits.shipping.name.full_name}" scope="page">
+            <isset name="shipping" value="${transaction.purchaseUnits.shipping}" scope="page">
+            <isset name="name" value="${shipping ? shipping.name : null}" scope="page">
+            <isset name="address" value="${shipping ? shipping.address : null}" scope="page">
+            <isset name="shiptoname" value="${name ? name.full_name : null}" scope="page">
             <isif condition="${shiptoname === null}">
                 <isset name="shiptoname" value="No name" scope="page">
             </isif>

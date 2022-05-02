@@ -9,6 +9,18 @@ import {
 var loaderInstance = require('../loader');
 var $loaderContainer = document.querySelector('.paypalLoader');
 var loader = loaderInstance($loaderContainer);
+var usedPaymentMethod;
+
+/**
+ * Saves used payment method to variable
+ *
+ * @param {Object} data - object with data
+ */
+function onClick(data) {
+    if (data.fundingSource === 'venmo') {
+        usedPaymentMethod = 'Venmo';
+    }
+}
 
 /**
  *  Gets purchase units object, creates order and returns object with data
@@ -44,7 +56,8 @@ function createOrder(_, actions) {
  */
 function onApprove({ orderID }) {
     let cartBillingFormData = createCartBillingFormData({
-        paypalOrderID: orderID
+        paypalOrderID: orderID,
+        usedPaymentMethod: usedPaymentMethod
     }, document.querySelector('.js_paypal_button_on_cart_page'));
 
     $.ajax({
@@ -95,6 +108,7 @@ function onError() {
 function initPaypalButton() {
     loader.show();
     window.paypal.Buttons({
+        onClick,
         createOrder,
         onApprove,
         onCancel,

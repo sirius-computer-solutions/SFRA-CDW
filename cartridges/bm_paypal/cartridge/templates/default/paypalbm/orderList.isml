@@ -1,18 +1,7 @@
-<isset name="none" value="style='display: none;'" scope="page" />
-<isset name="block" value="style='display: block;'" scope="page" />
 <isdecorate template="paypalbm/util/pt_paypal">
 
 <isinclude template="inc/Modules">
 <isinclude template="paypalbm/util/modules">
-
-<isscript>
-var isSearchByOrderNo = pdict.CurrentHttpParameterMap.orderNo.submitted;
-var isSearchByTransaction = pdict.CurrentHttpParameterMap.transactionId.submitted;
-
-if (!isSearchByOrderNo && !isSearchByTransaction) {
-    isSearchByOrderNo = true;
-}
-</isscript>
 
 <div class="paypalbm_header">
     <isset name="ordersUrl"   value="${URLUtils.url('SiteNavigationBar-ShowMenuitemOverview', 'CurrentMenuItemId', 'orders')}" scope="page">
@@ -25,7 +14,7 @@ if (!isSearchByOrderNo && !isSearchByTransaction) {
     </table>
 </div>
 
-<div id="paypalbm_search_order_by_id" class="js_paypalbm_switch_block" ${isSearchByOrderNo ? block : none}>
+<div id="paypalbm_search_order_by_id" class="js_paypalbm_switch_block ${pdict.isSearchByOrderNo ? 'block' : 'none'}">
     <table class="infobox w e s n">
         <tr>
             <td class="infobox_title_search">${Resource.msg('search.order.title', 'paypalbm', null)}</td>
@@ -55,7 +44,7 @@ if (!isSearchByOrderNo && !isSearchByTransaction) {
     </table>
 </div>
 
-<div id="paypalbm_search_transaction_by_id" class="js_paypalbm_switch_block" ${isSearchByTransaction ? block : none}>
+<div id="paypalbm_search_transaction_by_id" class="js_paypalbm_switch_block ${pdict.isSearchByTransaction ? 'block' : 'none'}">
     <table class="infobox w e s n">
         <tr>
             <td class="infobox_title_search">${Resource.msg('search.order.title', 'paypalbm', null)}</td>
@@ -88,7 +77,7 @@ if (!isSearchByOrderNo && !isSearchByTransaction) {
 
 <div class="paypalbm_footer">
     <a class="button" href="${ordersUrl}">&lt;&lt; ${Resource.msg('transactions.backordering', 'paypalbm', null)}</a>
-    <button class="button js_paypal_create_reference_transaction" title="${Resource.msgf('transaction.newtransaction.title', 'paypalbm', null)}" data-url="${URLUtils.https('PaypalAdmin-CreateNewTransaction')}">${Resource.msg('transactions.newtransaction', 'paypalbm', null)}</button>
+    <button class="button js_paypal_create_reference_transaction" title="${Resource.msgf('transaction.newtransaction.title', 'paypalbm', null)}" data-url="${URLUtils.https('PaypalAdmin-RenderNewTransactionForm')}">${Resource.msg('transactions.newtransaction', 'paypalbm', null)}</button>
 </div>
 
 </isdecorate>

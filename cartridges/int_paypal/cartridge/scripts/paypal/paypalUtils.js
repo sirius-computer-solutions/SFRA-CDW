@@ -10,18 +10,21 @@ const Resource = require('dw/web/Resource');
 const CacheMgr = require('dw/system/CacheMgr');
 const LocalServiceRegistry = require('dw/svc/LocalServiceRegistry');
 const Logger = require('dw/system/Logger');
+const Site = require('dw/system/Site');
 
 const {
     billingAgreementEnabled,
     isCapture,
     enabledLPMs,
-    partnerAttributionId
-} = require('../../config/paypalPreferences');
+    partnerAttributionId,
+    isVenmoEnabled,
+    connectWithPaypalButtonUrl
+} = require('*/cartridge/config/paypalPreferences');
 
 var {
     disableFunds,
     allowedCurrencies
-} = require('../../config/sdkConfig');
+} = require('*/cartridge/config/sdkConfig');
 
 var paypalLogger;
 
@@ -97,12 +100,12 @@ function createBillingSDKUrl() {
     var clientID = getClientId();
     var currentCurrencyCode = session.currency.currencyCode;
     var sdkUrl = 'https://www.paypal.com/sdk/js?client-id=' + clientID;
-    var isActiveBa = customer.authenticated && billingAgreementEnabled;
-    var isActiveLPM = !isActiveBa && isCapture && !empty(enabledLPMs);
+    var isActiveLPM = !billingAgreementEnabled && isCapture && !empty(enabledLPMs);
+    var isActiveVenmo = !billingAgreementEnabled && isVenmoEnabled;
 
     sdkUrl += isActiveLPM ? '&commit=true' : '&commit=false';
 
-    if (!isCapture && !isActiveBa) {
+    if (!isCapture && !billingAgreementEnabled) {
         sdkUrl += '&intent=authorize';
     }
 
@@ -112,6 +115,10 @@ function createBillingSDKUrl() {
 
     if (isAllowedCurrency(allowedCurrencies, currentCurrencyCode)) {
         sdkUrl += '&currency=' + currentCurrencyCode;
+    }
+
+    if (isActiveVenmo) {
+        sdkUrl += '&enable-funding=venmo';
     }
 
     sdkUrl += '&disable-funding=' + disabledPaymentOptions().join(',');
@@ -127,10 +134,10 @@ function createBillingSDKUrl() {
 function createCartSDKUrl() {
     var clientID = getClientId();
     var currentCurrencyCode = session.currency.currencyCode;
+    var isActiveVenmo = !billingAgreementEnabled && isVenmoEnabled;
     var sdkUrl = 'https://www.paypal.com/sdk/js?client-id=' + clientID + '&commit=false&components=buttons,messages';
-    var isActiveBa = customer.authenticated && billingAgreementEnabled;
 
-    if (!isCapture && !isActiveBa) {
+    if (!isCapture && !billingAgreementEnabled) {
         sdkUrl += '&intent=authorize';
     }
 
@@ -140,6 +147,9 @@ function createCartSDKUrl() {
 
     if (isAllowedCurrency(allowedCurrencies, currentCurrencyCode)) {
         sdkUrl += '&currency=' + currentCurrencyCode;
+    }
+    if (isActiveVenmo) {
+        sdkUrl += '&enable-funding=venmo';
     }
 
     sdkUrl += '&disable-funding=' + disabledPaymentOptions().join(',');
@@ -154,9 +164,23 @@ function createCartSDKUrl() {
  */
 function createAccountSDKUrl() {
     var clientID = getClientId();
-    var sdkUrl = 'https://www.paypal.com/sdk/js?client-id=' + clientID + '&commit=false&vault=true&disable-funding=card';
+    var sdkUrl = 'https://www.paypal.com/sdk/js?client-id=' + clientID + '&commit=false&vault=true&disable-funding=card,credit';
 
     return sdkUrl;
+}
+
+/**
+ * Returns SDK url for Connect with Paypal button on Login page
+ * @param {string} rurl rurl of the req.querystring
+ * @returns {string} SDK Url
+ */
+function createConnectWithPaypalUrl(rurl) {
+    var locale = Site.getCurrent().getDefaultLocale();
+    var redirectUrl = URLUtils.abs('Paypal-ConnectWithPaypal').toString() + '&state=' + rurl;
+    var clientID = getClientId();
+    var url = connectWithPaypalButtonUrl + 'flowEntry=static&client_id=' + clientID + '&locale=' + locale + '&scope=openid profile email address&redirect_uri=' + redirectUrl;
+
+    return url;
 }
 
 
@@ -172,6 +196,18 @@ function createErrorLog(err) {
     } else {
         paypalLogger.debug('Empty log entry');
     }
+    return;
+}
+
+/**
+ * Creates a debug log message
+ * @param {string} err Error message
+ * @returns {void}
+ */
+function createDebugLog(err) {
+    paypalLogger = paypalLogger || Logger.getLogger('PayPal', 'PayPal_General');
+    paypalLogger.debug(err);
+
     return;
 }
 
@@ -241,5 +277,7 @@ module.exports = {
     createBillingSDKUrl: createBillingSDKUrl,
     createCartSDKUrl: createCartSDKUrl,
     createAccountSDKUrl: createAccountSDKUrl,
-    errorHandle: errorHandle
+    errorHandle: errorHandle,
+    createDebugLog: createDebugLog,
+    createConnectWithPaypalUrl: createConnectWithPaypalUrl
 };

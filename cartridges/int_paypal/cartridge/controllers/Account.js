@@ -4,23 +4,23 @@ const page = module.superModule;
 const server = require('server');
 
 const {
-    validatePaypalOnAccount
-} = require('../scripts/paypal/middleware');
+    validateWhetherPaypalEnabled
+} = require('*/cartridge/scripts/paypal/middleware');
 
 const {
     billingAgreementEnabled
-} = require('../config/paypalPreferences');
+} = require('*/cartridge/config/paypalPreferences');
 
-const BillingAgreementModel = require('../models/billingAgreement');
+const BillingAgreementModel = require('*/cartridge/models/billingAgreement');
 
 const {
     createAccountSDKUrl,
     getUrls
-} = require('../scripts/paypal/paypalUtils');
+} = require('*/cartridge/scripts/paypal/paypalUtils');
 
 server.extend(page);
 
-server.append('Show', validatePaypalOnAccount, function (_, res, next) {
+server.append('Show', validateWhetherPaypalEnabled, function (_, res, next) {
     var billingAgreementModel = new BillingAgreementModel();
 
     var savedBA = billingAgreementModel.getBillingAgreements(true);
