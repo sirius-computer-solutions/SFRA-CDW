@@ -1,4 +1,4 @@
-<div class="individual-account" style="display:none;">
+<div class="individual-account">
 <form
     action="${pdict.createAccountUrl}"
     class="registration"

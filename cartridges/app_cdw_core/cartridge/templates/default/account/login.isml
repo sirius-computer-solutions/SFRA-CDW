@@ -29,10 +29,15 @@
                                 </div>
                                 
                                 <div class="tab-pane ${pdict.navTabValue === "register" ? 'active' : ''}" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                    <isinclude template="account/components/registrationTypeSelectorForm" />
+
+                                    <iscomment>
+                                        <isinclude template="account/components/registrationTypeSelectorForm" />
+                                    </iscomment>
                                     <isinclude template="account/components/registerForm" />
+                                    <iscomment>
                                     <isinclude template="account/components/b2bLocateAccountForm" />
                                     <isinclude template="account/components/b2bUserRegistrationForm" /> 
+                                    </iscomment>
                                 </div>
                             </div>
                         </div>
