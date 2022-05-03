@@ -64,6 +64,7 @@ server.prepend('SubmitShipping', function (req, res, next) {
                     error: true
                 });
             }
+            /*
             if(ShippingHelper.isAddressPOBOx(form.shippingAddress.addressFields.address1.value)){
                 res.json({
                     fieldErrors: [],
@@ -78,6 +79,7 @@ server.prepend('SubmitShipping', function (req, res, next) {
                     error: true
                 });
             }
+            */
         }
     }
 

@@ -2,9 +2,9 @@
 
 const {
     getPaypalPaymentInstrument
-} = require('../paypal/helpers/paymentInstrumentHelper');
+} = require('*/cartridge/scripts/paypal/helpers/paymentInstrumentHelper');
 
-const BillingAgreementModel = require('../../models/billingAgreement');
+const BillingAgreementModel = require('*/cartridge/models/billingAgreement');
 
 /**
  * This function is to handle the post payment authorization customizations

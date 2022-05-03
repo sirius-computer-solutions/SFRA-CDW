@@ -9,26 +9,31 @@ const Money = require('dw/value/Money');
 const StringUtils = require('dw/util/StringUtils');
 const TaxMgr = require('dw/order/TaxMgr');
 const BasketMgr = require('dw/order/BasketMgr');
+const Encoding = require('dw/crypto/Encoding');
+const Bytes = require('dw/util/Bytes');
+const CustomObjectMgr = require('dw/object/CustomObjectMgr');
 
 const {
     encodeString
-} = require('../paypalUtils');
+} = require('*/cartridge/scripts/paypal/paypalUtils');
 
 const {
     paypalPaymentMethodId,
     billingAgreementDescription,
     paypalButtonLocation,
     billingAgreementEnabled
-} = require('../../../config/paypalPreferences');
+} = require('*/cartridge/config/paypalPreferences');
 
 const {
     calculateNonGiftCertificateAmount
-} = require('./paymentInstrumentHelper');
+} = require('*/cartridge/scripts/paypal/helpers/paymentInstrumentHelper');
 
 const {
     createShippingAddress,
     getBAShippingAddress
-} = require('./addressHelper');
+} = require('*/cartridge/scripts/paypal/helpers/addressHelper');
+
+const paypalConstants = require('*/cartridge/scripts/util/paypalConstants');
 
 /**
  * Create purchase unit description based on items in the basket
@@ -103,12 +108,7 @@ function getPurchaseUnit(currentBasket, isCartFlow) {
         merchandizeTotalPrice.subtract(adjustedMerchandizeTotalPrice)
     );
     var description = getItemsDescription(productLineItems) + ' ' + getGiftCertificateDescription(giftCertificateLineItems);
-    var Site = require('dw/system/Site');
-    var descriptionTrimLength = Site.current.getCustomPreferenceValue('descriptionTrimLength') || 250; 
-    if(description.length > descriptionTrimLength)
-    {
-        description = description.substring(0,descriptionTrimLength);
-    }
+
     var purchaseUnit = {
         description: description.trim(),
         amount: {
@@ -175,42 +175,6 @@ function isExpiredTransaction(paymentInstrument) {
 }
 
 /**
- * Returns true if email is not empty and have error from core
- * @param {Object} billingData - billingData from checkout
- * @returns {boolean}  true or false
- */
-function isErrorEmail(billingData) {
-    if (empty(billingData)) return false;
-
-    if (billingData.form &&
-        billingData.form.contactInfoFields.email &&
-        !empty(billingData.form.contactInfoFields.email.htmlValue) &&
-        !empty(billingData.fieldErrors) &&
-        billingData.fieldErrors[0].dwfrm_billing_contactInfoFields_email
-    ) {
-        return true;
-    }
-    return false;
-}
-
-/**
- * Returns error response object for json
- * @param {Object} billingData - billingData from checkout
- * @returns {Object}  response
- */
-function createErrorEmailResponse(billingData) {
-    if (empty(billingData)) return false;
-
-    return {
-        form: billingData.form,
-        fieldErrors: [{
-            dwfrm_billing_contactInfoFields_email: billingData.fieldErrors[0].dwfrm_billing_contactInfoFields_email
-        }],
-        error: true
-    };
-}
-
-/**
  * Returns whether purchase unit has changed
  * @param {Object} purchaseUnit - purchase unit
  * @returns {boolean}  true or false
@@ -242,8 +206,9 @@ function hasOnlyGiftCertificates(currentBasket) {
  * The hack renders right mock data for updatePaymentInformation(order)
  * @param {Object} basketModel - order data
  * @param {string} currencyCode - currencyCode
+ * @param {Object} ppPaymentInstrumentCustomProps - custom properties of paypal payment instrument
  */
-function basketModelHack(basketModel, currencyCode) {
+function basketModelHack(basketModel, currencyCode, ppPaymentInstrumentCustomProps) {
     var {
         resources,
         billing
@@ -251,11 +216,13 @@ function basketModelHack(basketModel, currencyCode) {
     resources.cardType = '';
     resources.cardEnding = '';
     var paypalAmount = billing.payment.selectedPaymentInstruments[0].amount;
+
     billing.payment.selectedPaymentInstruments.forEach(function (pi) {
         if (pi.paymentMethod === paypalPaymentMethodId) {
             pi.type = '';
             pi.maskedCreditCardNumber = basketModel.paypalPayerEmail || '';
-            pi.expirationMonth = 'PayPal ';
+            pi.expirationMonth = ppPaymentInstrumentCustomProps.paymentId === paypalConstants.PAYMENT_METHOD_ID_VENMO ?
+                paypalConstants.PAYMENT_METHOD_ID_VENMO + ' ' : paypalConstants.PAYMENT_METHOD_ID_PAYPAL + ' ';
             pi.expirationYear = ' ' + StringUtils.formatMoney(new Money(paypalAmount, currencyCode));
         }
     });
@@ -336,29 +303,6 @@ function getBARestData(isCartFlow) {
 }
 
 /**
- * Sets customer's email to basket if user filled up or changed email on storefront
- *
- * @param {Object} basket - current user's basket
- * @param {Object} billingData - billing data from billing form
- */
-function updateCustomerEmail(basket, billingData) {
-    if (billingData.email && (!basket.customerEmail && billingData.email.value ||
-            basket.customerEmail !== billingData.email.value)) {
-        Transaction.wrap(function () {
-            basket.setCustomerEmail(billingData.email.value);
-        });
-    } else if (billingData.form &&
-        billingData.form.contactInfoFields.email &&
-        !empty(billingData.form.contactInfoFields.email.htmlValue) &&
-        (!basket.customerEmail && billingData.form.contactInfoFields.email.htmlValue ||
-            basket.customerEmail !== billingData.form.contactInfoFields.email.htmlValue)) {
-        Transaction.wrap(function () {
-            basket.setCustomerEmail(billingData.form.contactInfoFields.email.htmlValue);
-        });
-    }
-}
-
-/**
  * Sets customer's phone to basket if user filled up or changed email on storefront
  *
  * @param {Object} basket - current user's basket
@@ -422,6 +366,8 @@ function getPreparedBillingFormFields(paypalPaymentInstrument, defaultBA) {
     var billingForm = server.forms.getForm('billing');
     var paypalEmail = paypalPaymentInstrument && paypalPaymentInstrument.custom.currentPaypalEmail;
     var paypalOrderID = paypalPaymentInstrument && paypalPaymentInstrument.custom.paypalOrderID;
+    var usedPaymentMethod = billingForm.paypal.usedPaymentMethod.htmlValue;
+
     billingForm.clear();
     var data = {};
 
@@ -433,6 +379,7 @@ function getPreparedBillingFormFields(paypalPaymentInstrument, defaultBA) {
     } else {
         data.paypalActiveAccount = paypalEmail;
         data.paypalOrderID = paypalOrderID;
+        data.usedPaymentMethod = usedPaymentMethod;
     }
 
     var ppFields = {
@@ -453,10 +400,44 @@ function getPreparedBillingFormFields(paypalPaymentInstrument, defaultBA) {
     return ppFields;
 }
 
+/**
+ * Create URL for a call
+ * @param  {dw.svc.ServiceCredential} credential current service credential
+ * @param  {string} path REST action endpoint
+ * @returns {string} url for a call
+ */
+function getUrlPath(credential, path) {
+    var url = credential.URL;
+    if (!url.match(/.+\/$/)) {
+        url += '/';
+    }
+    url += path;
+    return url;
+}
+/**
+ * Encoding the paased credentials to Base64 string
+ * @param {dw.svc.ServiceCredential} credentials Service credentials
+ * @returns {string} Base64 string
+ */
+function getAccessToken(credentials) {
+    var authCredentials = credentials.user + ':' + credentials.password;
+
+    return Encoding.toBase64(Bytes(authCredentials));
+}
+
+/**
+ * Return an order or object of PayPalNewTransactions custom object
+ * @param {*} orderNo Order number
+ * @returns {dw.order.Order} Order instance
+ */
+function getOrderByOrderNo(orderNo) {
+    var order = CustomObjectMgr.getCustomObject('PayPalNewTransactions', orderNo) || OrderMgr.queryOrder('orderNo = {0}', orderNo);
+
+    return order;
+}
+
 module.exports = {
     isExpiredTransaction: isExpiredTransaction,
-    isErrorEmail: isErrorEmail,
-    createErrorEmailResponse: createErrorEmailResponse,
     isPurchaseUnitChanged: isPurchaseUnitChanged,
     hasGiftCertificates: hasGiftCertificates,
     hasOnlyGiftCertificates: hasOnlyGiftCertificates,
@@ -464,9 +445,11 @@ module.exports = {
     basketModelHack: basketModelHack,
     cartPaymentForm: cartPaymentForm,
     getBARestData: getBARestData,
-    updateCustomerEmail: updateCustomerEmail,
     updateCustomerPhone: updateCustomerPhone,
     updatePayPalEmail: updatePayPalEmail,
     isPaypalButtonEnabled: isPaypalButtonEnabled,
-    getPreparedBillingFormFields: getPreparedBillingFormFields
+    getPreparedBillingFormFields: getPreparedBillingFormFields,
+    getUrlPath: getUrlPath,
+    getAccessToken: getAccessToken,
+    getOrderByOrderNo: getOrderByOrderNo
 };

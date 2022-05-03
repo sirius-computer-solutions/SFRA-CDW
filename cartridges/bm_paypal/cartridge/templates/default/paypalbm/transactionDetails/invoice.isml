@@ -1,8 +1,8 @@
 <table class="paypalbm_transaction_detail_table infobox w e s n">
-    <isif condition="${purchaseUnits.invoice_id !== undefined}">
+    <isif condition="${transaction.purchaseUnits.invoice_id !== undefined}">
         <tr>
             <td class="infobox_title top">${Resource.msg('transaction.detail.invnum', 'paypalbm', null)}:</td>
-            <td class="infobox_item top">${purchaseUnits.invoice_id}</td>
+            <td class="infobox_item top">${transaction.purchaseUnits.invoice_id}</td>
         </tr>
     </isif>
     <tr class="paypalbm_gray">
@@ -26,7 +26,7 @@
                     </li>
                 </isif>
                 <isif condition="${transaction.paymentstatus !== 'VOIDED' && transaction.paymentstatus !== 'CAPTURED' && transaction.paymentstatus !== 'REFUNDED' && !transaction.isCaptured && transaction.isCaptureButtonAllowed}">
-                    <isif condition="${pdict.isExpiredHonorPeriod}">
+                    <isif condition="${transaction.isExpiredHonorPeriod}">
                         <li>
                             <span class="js_paypal_action" data-action="reauthorize" data-title="${Resource.msg('transaction.reauthorize.title', 'paypalbm', null)}">${Resource.msg('transaction.actions.reauthorize', 'paypalbm', null)}</span>
                         </li>

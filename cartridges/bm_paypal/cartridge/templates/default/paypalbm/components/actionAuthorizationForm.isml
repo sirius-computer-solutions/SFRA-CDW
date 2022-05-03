@@ -6,8 +6,9 @@
         <input type="hidden" name="invoiceId" value="${transaction.invnum}" />
         <input type="hidden" name="currencyCode" value="${transaction.currencycode}" />
 
-        <input type="hidden" name="orderNo" value="${order.orderNo}" />
-        <input type="hidden" name="isCustomOrder" value="${pdict.isCustomOrder}" />
+        <input type="hidden" name="orderNo" value="${transaction.order.orderNo}" />
+        <input type="hidden" name="orderToken" value="${transaction.order.orderToken}" />
+        <input type="hidden" name="isCustomOrder" value="${transaction.isCustomOrder}" />
 
         <h2>${Resource.msg('transaction.authorization.title', 'paypalbm', null)}</h2>
 
@@ -28,7 +29,7 @@
             </tr>
             <tr>
                 <td class="infobox_title top">${Resource.msg('transaction.detail.email', 'paypalbm', null)}:</td>
-                <td class="infobox_item top">${email}</td>
+                <td class="infobox_item top">${transaction.email}</td>
             </tr>
             <tr>
                 <td class="infobox_title top">${Resource.msg('transaction.authorization.amount', 'paypalbm', null)}:</td>

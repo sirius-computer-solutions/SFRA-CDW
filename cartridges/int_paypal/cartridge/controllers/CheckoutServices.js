@@ -13,52 +13,52 @@ const OrderModel = require('*/cartridge/models/order');
 
 const {
     validateExpiredTransaction,
-    validateEmail,
     validatePaymentMethod,
     validateGiftCertificateAmount
-} = require('../scripts/paypal/middleware');
+} = require('*/cartridge/scripts/paypal/middleware');
 
 const {
     getPurchaseUnit,
     isPurchaseUnitChanged,
     basketModelHack,
-    updateCustomerEmail,
     updateCustomerPhone,
     updatePayPalEmail
-} = require('../scripts/paypal/helpers/paypalHelper');
+} = require('*/cartridge/scripts/paypal/helpers/paypalHelper');
 
 const {
     getPaypalPaymentInstrument,
     getPaymentInstrumentAction
-} = require('../scripts/paypal/helpers/paymentInstrumentHelper');
+} = require('*/cartridge/scripts/paypal/helpers/paymentInstrumentHelper');
 
 const {
     updateOrderDetails,
     getOrderDetails,
     getBADetails
-} = require('../scripts/paypal/paypalApi');
+} = require('*/cartridge/scripts/paypal/paypalApi');
 
 const {
     encodeString,
     errorHandle
-} = require('../scripts/paypal/paypalUtils');
+} = require('*/cartridge/scripts/paypal/paypalUtils');
 
 const {
     isSameBillingAgreement,
     createBaFromForm
-} = require('../scripts/paypal/helpers/billingAgreementHelper');
+} = require('*/cartridge/scripts/paypal/helpers/billingAgreementHelper');
 
 const {
     updateOrderBillingAddress,
     updateBABillingAddress
-} = require('../scripts/paypal/helpers/addressHelper');
+} = require('*/cartridge/scripts/paypal/helpers/addressHelper');
+
+const paypalConstants = require('*/cartridge/scripts/util/paypalConstants');
+var venmoName = paypalConstants.PAYMENT_METHOD_ID_VENMO;
 
 server.extend(page);
 
 server.append('SubmitPayment',
     validateExpiredTransaction,
     validatePaymentMethod,
-    validateEmail,
     validateGiftCertificateAmount,
     function (req, res, next) {
         var basket = BasketMgr.getCurrentBasket();
@@ -78,7 +78,7 @@ server.append('SubmitPayment',
                     basketModel: viewData.order,
                     paypalPI: getPaypalPaymentInstrument(currentBasket)
                 });
-                basketModelHack(viewData.order, currencyCode);
+                basketModelHack(viewData.order, currencyCode, paypalPaymentInstrument.custom);
 
                 res.json(viewData);
             });
@@ -90,7 +90,6 @@ server.append('SubmitPayment',
             checkBillingAgreement
         } = getPaymentInstrumentAction(paypalPaymentInstrument, billingForm.paypal);
 
-        updateCustomerEmail(basket, billingData);
         updateCustomerPhone(basket, billingData);
 
         if (checkBillingAgreement) {
@@ -141,7 +140,15 @@ server.append('SubmitPayment',
         if (isOrderIdChanged) {
             Transaction.wrap(function () {
                 paypalPaymentInstrument.custom.paypalOrderID = billingForm.paypal.paypalOrderID.htmlValue;
+                // clear paymentId property in case of NOT Venmo account
+                if (paypalPaymentInstrument.custom.paymentId === venmoName && billingForm.paypal.usedPaymentMethod.htmlValue !== venmoName) {
+                    paypalPaymentInstrument.custom.paymentId = null;
+                    // set paymentId property in case of change to Venmo account
+                } else if (billingForm.paypal.usedPaymentMethod.htmlValue === venmoName && paypalPaymentInstrument.custom.paymentId !== venmoName) {
+                    paypalPaymentInstrument.custom.paymentId = venmoName;
+                }
             });
+
             var { payer, err: OrderDetailsError } = getOrderDetails(paypalPaymentInstrument);
             if (OrderDetailsError) {
                 return errorHandle.call(this, req, res, OrderDetailsError);
@@ -164,7 +171,7 @@ server.append('SubmitPayment',
             basketModel: basketModel,
             paypalPI: paypalPaymentInstrument
         });
-        basketModelHack(basketModel, currencyCode);
+        basketModelHack(basketModel, currencyCode, paypalPaymentInstrument.custom);
 
         res.json({
             customer: new AccountModel(req.currentCustomer),

@@ -12,16 +12,16 @@
         </td>
     </tr>
     <isif condition="${transaction.paymentstatus !== 'REFUNDED'}">
-        <isif condition="${shippingAmount !== null}">
+        <isif condition="${transaction.shippingAmount !== null}">
             <tr class="paypalbm_gray">
                 <td class="infobox_title top">${Resource.msg('transaction.detail.shippingamt', 'paypalbm', null)}:</td>
-                <td class="infobox_item top">${Resource.msgf('transaction.detail.moneyformat', 'paypalbm', null, shippingAmount, transaction.currencycode)}</td>
+                <td class="infobox_item top">${Resource.msgf('transaction.detail.moneyformat', 'paypalbm', null, transaction.shippingAmount, transaction.currencycode)}</td>
             </tr>
         </isif>
-        <isif condition="${taxAmount !== null}">
+        <isif condition="${transaction.taxAmount !== null}">
             <tr>
                 <td class="infobox_title top">${Resource.msg('transaction.detail.salestax', 'paypalbm', null)}:</td>
-                <td class="infobox_item top">${Resource.msgf('transaction.detail.moneyformat', 'paypalbm', null, taxAmount, transaction.currencycode)}</td>
+                <td class="infobox_item top">${Resource.msgf('transaction.detail.moneyformat', 'paypalbm', null, transaction.taxAmount, transaction.currencycode)}</td>
             </tr>
         </isif>
         <isif condition="${handleAmount !== null}">

@@ -12,7 +12,7 @@
 			<pipeline name="PaypalAdmin-Orders" />
 			<pipeline name="PaypalAdmin-OrderTransaction" />
 			<pipeline name="PaypalAdmin-Action" />
-			<pipeline name="PaypalAdmin-CreateNewTransaction" />
+			<pipeline name="PaypalAdmin-RenderNewTransactionForm" />
 		</sub-pipelines>
 		<icon>paypalbm/images/icon_transactions.png</icon>
 	</menuaction>

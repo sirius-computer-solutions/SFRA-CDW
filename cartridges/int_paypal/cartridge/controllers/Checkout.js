@@ -6,25 +6,29 @@ const server = require('server');
 const Money = require('dw/value/Money');
 const BasketMgr = require('dw/order/BasketMgr');
 const StringUtils = require('dw/util/StringUtils');
+const Resource = require('dw/web/Resource');
 
 const {
     validateExpiredTransaction,
     validatePaypalOnCheckout
-} = require('../scripts/paypal/middleware');
+} = require('*/cartridge/scripts/paypal/middleware');
 
 const {
     getPaypalPaymentInstrument
-} = require('../scripts/paypal/helpers/paymentInstrumentHelper');
+} = require('*/cartridge/scripts/paypal/helpers/paymentInstrumentHelper');
 
 const {
     createBillingSDKUrl,
-    getUrls
-} = require('../scripts/paypal/paypalUtils');
+    getUrls,
+    createConnectWithPaypalUrl
+} = require('*/cartridge/scripts/paypal/paypalUtils');
 
-const BillingAgreementModel = require('../models/billingAgreement');
-const prefs = require('../config/paypalPreferences');
+const BillingAgreementModel = require('*/cartridge/models/billingAgreement');
+const prefs = require('*/cartridge/config/paypalPreferences');
+const paypalConstants = require('*/cartridge/scripts/util/paypalConstants');
 
 server.extend(page);
+
 
 server.append('Begin', validatePaypalOnCheckout, validateExpiredTransaction, function (_, res, next) {
     var basket = BasketMgr.getCurrentBasket();
@@ -40,6 +44,7 @@ server.append('Begin', validatePaypalOnCheckout, validateExpiredTransaction, fun
     var isAccountAlreadyExist = false;
     var activeBAEmail;
     var activeBAID;
+    var isVenmoUsed = false;
 
     if (customer.authenticated && prefs.billingAgreementEnabled) {
         var billingAgreementModel = new BillingAgreementModel();
@@ -64,6 +69,7 @@ server.append('Begin', validatePaypalOnCheckout, validateExpiredTransaction, fun
         amount = paypalPaymentInstrument.paymentTransaction.amount.value;
         paymentAmount = new Money(amount, currency);
         paypalEmail = paypalPaymentInstrument.custom.currentPaypalEmail;
+        isVenmoUsed = paypalPaymentInstrument.custom.paymentId === paypalConstants.PAYMENT_METHOD_ID_VENMO;
         if (paypalPaymentInstrument.custom.paypalOrderID) {
             paypalOrderID = paypalPaymentInstrument.custom.paypalOrderID;
         }
@@ -84,7 +90,12 @@ server.append('Begin', validatePaypalOnCheckout, validateExpiredTransaction, fun
             paypalUrls: JSON.stringify(getUrls()),
             isAccountAlreadyExist: isAccountAlreadyExist,
             activeBAEmail: activeBAEmail,
-            activeBAID: activeBAID
+            activeBAID: activeBAID,
+            // Used only for 'Connect with Paypal' feature
+            connectWithPaypalButtonUrl: createConnectWithPaypalUrl(res.viewData.oAuthReentryEndpoint),
+            connectWithPaypalStaticImageLink: prefs.connectWithPaypalStaticImageLink,
+            connectWithPaypalStaticImageAlt: Resource.msg('paypal.connect.with.paypal.image.alt', 'locale', null),
+            isVenmoUsed: isVenmoUsed
         }
     });
     next();

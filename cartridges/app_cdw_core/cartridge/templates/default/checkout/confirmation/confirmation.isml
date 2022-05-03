@@ -38,6 +38,8 @@
         </div>
     </div>
     
+    <iscomment>
     <isinclude template="bv/bvpixel/trackTransaction"/>
+    </iscomment>
     <isinclude template="checkout/confirmation/googleTrustedStoreConfirmation"/>
 </isdecorate>

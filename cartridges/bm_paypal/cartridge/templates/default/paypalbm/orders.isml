@@ -1,9 +1,4 @@
-<isscript>
-    var pagingModel = pdict.PagingModel;
-    var orders = !empty(pagingModel) ? pagingModel.pageElements : [];
-</isscript>
-
-<isif condition="${!empty(orders)}">
+<isif condition="${pdict.PagingModel.count > 0}">
     <table>
         <tr>
             <td class="table_header w e s">${Resource.msg('search.grid.number', 'paypalbm', null)}</td>
@@ -17,10 +12,10 @@
             <td class="table_header e s left" nowrap="nowrap" colspan="2">${Resource.msg('search.grid.status', 'paypalbm', null)}</td>
         </tr>
 
-        <isloop items="${orders}" var="order">
+        <isloop items="${pdict.PagingModel.pageElements}" var="order">
             <tr>
                 <td class="table_detail w e s" nowrap="nowrap">
-                    <a class="js_paypal_show_detail" href="${URLUtils.url('PaypalAdmin-OrderTransaction', 'orderNo', order.orderNo, 'currencyCode', order.currencyCode)}" data-iscustom='${order.isCustom}' data-orderno="${order.orderNo}" data-currencycode="${order.currencyCode}" title="${Resource.msgf('ordertransaction.title', 'paypalbm', null, order.orderNo)}">${order.orderNo}</a>
+                    <a class="js_paypal_show_detail" href="${URLUtils.url('PaypalAdmin-OrderTransaction', 'orderNo', order.orderNo, 'currencyCode', order.currencyCode)}" data-ordertoken="${order.orderToken ? order.orderToken: null}" data-iscustom='${order.isCustom}' data-orderno="${order.orderNo}" data-currencycode="${order.currencyCode}" title="${Resource.msgf('ordertransaction.title', 'paypalbm', null, order.orderNo)}">${order.orderNo}</a>
                 </td>
                 <td class="table_detail e s" nowrap="nowrap">
                     <isprint value="${order.orderDate}"/>
@@ -37,14 +32,14 @@
                 <td class="table_detail e s" nowrap="nowrap"><isprint value="${order.paypalAmount}"/></td>
                 <td class="table_detail e s" nowrap="nowrap"><isprint value="${order.status}"/></td>
                 <td class="table_detail e s" nowrap="nowrap">
-                    <a class="js_paypal_show_detail" href="${URLUtils.url('PaypalAdmin-OrderTransaction', 'orderNo', order.orderNo, 'currencyCode', order.currencyCode)}" data-orderno="${order.orderNo}" data-iscustom='${order.isCustom}' data-currencycode="${order.currencyCode}" title="${Resource.msgf('ordertransaction.title', 'paypalbm', null, order.orderNo)}">${Resource.msg('search.grid.changestatus', 'paypalbm', null)}</a>
+                    <a class="js_paypal_show_detail" href="${URLUtils.url('PaypalAdmin-OrderTransaction', 'orderNo', order.orderNo, 'currencyCode', order.currencyCode)}" data-ordertoken="${order.orderToken ? order.orderToken: null}" data-orderno="${order.orderNo}" data-iscustom='${order.isCustom}' data-currencycode="${order.currencyCode}" title="${Resource.msgf('ordertransaction.title', 'paypalbm', null, order.orderNo)}">${Resource.msg('search.grid.changestatus', 'paypalbm', null)}</a>
                 </td>
             </tr>
         </isloop>
 
     </table>
 
-    <ispaypalpagination pageurl="${URLUtils.https('PaypalAdmin-Orders')}" pagingmodel="${pagingModel}"/>
+    <ispaypalpagination pageurl="${URLUtils.https('PaypalAdmin-Orders')}" pagingmodel="${pdict.PagingModel}"/>
 
 <iselse>
 

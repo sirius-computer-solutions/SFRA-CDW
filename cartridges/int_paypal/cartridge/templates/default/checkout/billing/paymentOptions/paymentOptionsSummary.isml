@@ -3,7 +3,7 @@
         <isif condition="${payment.paymentMethod === 'CREDIT_CARD'}">
             <isinclude template="checkout/billing/paymentOptions/creditCardSummary" />
         </isif>
-        <isif condition="${payment.paymentMethod === 'PayPal' && pdict.paypal}">
+        <isif condition="${payment.paymentMethod === 'PayPal'}">
             <isinclude template="paypal/checkout/paypalSummary" />
         </isif>
     </isloop>

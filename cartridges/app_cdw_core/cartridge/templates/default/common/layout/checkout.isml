@@ -14,8 +14,10 @@
     </head>
     <body>
         ${dw.system.HookMgr.callHook('app.template.beforeHeader', 'beforeHeader', pdict) || ''}
+        <iscomment>
         <isinclude template="/common/datalayer" />
-
+        </iscomment>
+        
         <div class="page">
             <isinclude template="/components/header/pageHeaderNomenu" />
             <div role="main" id="maincontent">

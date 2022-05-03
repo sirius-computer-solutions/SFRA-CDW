@@ -13,22 +13,22 @@
                 <td class="infobox_title top">${Resource.msg('transaction.newtransaction.payment.itemamount', 'paypalbm', null)}</td>
                 <td class="infobox_item top">
                     <input type="text" name="itemamt" class="totalCount" data-validation="required,float,greaterzero" />
-                    <span class="js_paypa_currency"><isprint value="${defaultCurrency}"/></span>
+                    <span class="js_paypa_currency"><isprint value="${pdict.defaultCurrency}"/></span>
                 </td>
             </tr>
             <tr>
                 <td class="infobox_title top">${Resource.msg('transaction.newtransaction.payment.tax', 'paypalbm', null)}</td>
                 <td class="infobox_item top">
                     <input type="text" name="taxamt" class="totalCount" value="0" data-validation="float" />
-                    <span class="js_paypa_currency"><isprint value="${defaultCurrency}"/></span>
+                    <span class="js_paypa_currency"><isprint value="${pdict.defaultCurrency}"/></span>
                 </td>
             </tr>
             <tr class="paypalbm_gray">
                 <td class="infobox_title top">${Resource.msg('transaction.newtransaction.paymentaction', 'paypalbm', null)}</td>
                 <td class="infobox_item top">
                     <select name='paymentAction'>
-                        <option ${isCaprute ? "selected" : ''} value='Sale'>${Resource.msg('transaction.newtransaction.paymentaction.sale', 'paypalbm', null)}</option>
-                        <option ${!isCaprute ? "selected" : ''} value='Authorization'>${Resource.msg('transaction.newtransaction.paymentaction.authorization', 'paypalbm', null)}</option>
+                        <option ${pdict.isCapture ? "selected" : ''} value='Sale'>${Resource.msg('transaction.newtransaction.paymentaction.sale', 'paypalbm', null)}</option>
+                        <option ${!pdict.isCapture ? "selected" : ''} value='Authorization'>${Resource.msg('transaction.newtransaction.paymentaction.authorization', 'paypalbm', null)}</option>
                     </select>
                 </td>
             </tr>
@@ -43,7 +43,7 @@
             <tr class="paypalbm_gray">
                 <td class="infobox_title top">${Resource.msg('transaction.newtransaction.payment.totalamount', 'paypalbm', null)}</td>
                 <td class="infobox_item top">
-                    <div><b id="totalAmount">0</b> <span class="js_paypa_currency"><isprint value="${defaultCurrency}"/></span></div>
+                    <div><b id="totalAmount">0</b> <span class="js_paypa_currency"><isprint value="${pdict.defaultCurrency}"/></span></div>
                 </td>
             </tr>
         </table>

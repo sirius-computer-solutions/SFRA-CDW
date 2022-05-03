@@ -1,8 +1,8 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable no-control-regex */
-import { getPurchaseUnits, showCheckoutErrorHtml, finishLpmOrder, getOrderDetailsCall } from '../../api';
+import { getPurchaseUnits, showCheckoutErrorHtml, finishLpmOrder } from '../../api';
 import { isLpmUsed } from '../billingHelper';
-import { getPaypalButtonStyle } from '../../helper';
+import { getPaypalButtonStyle, processLpmConfirmForm } from '../../helper';
 
 const loaderInstance = require('../../loader');
 let $loaderContainer = document.querySelector('.paypalLoader');
@@ -91,30 +91,11 @@ function createPayerObject(billingAddress) {
 }
 
 /**
- * Check for contactInfoEmail input field and saves used payment method to hidden input
+ * Saves used payment method to hidden input
  *
  * @param {Object} data - object with data
- * @param {Object} actions - actions
- * @returns {Function} reject - if incorrect email or set PaymentMethod
  */
-function onClick(data, actions) {
-    let $contactInfoEmail = document.querySelector('input[name=dwfrm_billing_contactInfoFields_email]');
-    let errDiv = $contactInfoEmail.parentElement.querySelector('.invalid-feedback');
-    let errStr = 'Please enter a valid email address';
-    if ($contactInfoEmail.value.trim() !== '' &&
-        !regExpEmail.test($contactInfoEmail.value)) {
-        showCheckoutErrorHtml(errStr);
-        errDiv.innerText = errStr;
-        errDiv.style = 'display: block';
-        $contactInfoEmail.style = 'border-color: red';
-
-        return actions.reject();
-    }
-
-    errDiv.innerText = '';
-    errDiv.style = 'display: none';
-    $contactInfoEmail.style = 'border-color: rgb(206, 212, 218)';
-
+function onClick(data) {
     $usedPaymentMethod.value = data.fundingSource;
 }
 /**
@@ -159,44 +140,40 @@ function createOrder(_, actions) {
  */
 function onApprove(data, actions) {
     loader.show();
+
     if (isLpmUsed($usedPaymentMethod)) {
         actions.order.capture()
             .then(finishLpmOrder)
             .then(({ redirectUrl }) => {
                 loader.hide();
-                window.location.href = redirectUrl;
+                processLpmConfirmForm(redirectUrl);
             })
             .catch(function () {
                 loader.hide();
             });
         return;
     }
+
     var $orderId = document.querySelector('#paypal_orderId');
     var $selectedAccount = document.querySelector('#sessionPaypalAccount');
+
+    if ($usedPaymentMethod.value === 'venmo') {
+        $usedPaymentMethod.value = 'Venmo';
+        document.querySelector('button.place-order').innerText = 'Place Order with Venmo';
+    }
+
     $orderId.value = data.orderID;
 
     if ($selectedAccount.value !== '') {
         $selectedAccount.value = '';
         $selectedAccount.innerText = '';
     }
+
     $selectedAccount.selected = true;
     $selectedAccount.style.display = 'block';
 
-    var $contactInfoEmail = document.querySelector('input[name=dwfrm_billing_contactInfoFields_email]');
-    if ($contactInfoEmail.value.trim() !== '') {
-        document.querySelector('button.submit-payment').click();
-        loader.hide();
-    } else {
-        getOrderDetailsCall(data.orderID)
-            .then((orderData) => {
-                $contactInfoEmail.value = orderData.payer.email_address;
-                document.querySelector('button.submit-payment').click();
-                loader.hide();
-            })
-            .fail(() => {
-                loader.hide();
-            });
-    }
+    document.querySelector('button.submit-payment').click();
+    loader.hide();
 }
 
 /**

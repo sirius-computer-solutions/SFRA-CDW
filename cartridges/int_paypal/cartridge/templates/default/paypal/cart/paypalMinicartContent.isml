@@ -14,11 +14,7 @@
                 <i class="paypal-loader"></i>
             </div>
             <isif condition="${pdict.paypal.showStaticImage}">
-                <div>
-                    <img id="paypal_image" alt="Check out with PayPal" src="${pdict.paypal.staticImageLink}"
-                        data-is-update-required="${isUpdateRequired}" data-paypal-default-ba-email="${defaultBAemail}"
-                        data-paypal-billing-form-fields="${JSON.stringify(billingFormFields)}">
-                </div>
+                <isinclude template="paypal/cart/staticImage" />
                 <iselse>
                     <div class="paypal-cart-button js_paypal_button_on_cart_page"
                         data-paypal-ba-enabled="${isBAEnabled}"

@@ -10,7 +10,8 @@ const {
     paypalBillingButtonConfig,
     paypalPdpButtonConfig,
     paypalMinicartButtonConfig,
-    staticImageLink
+    paypalStaticImageLink,
+    connectWithPaypalStaticImageLink
 } = require('./sdkConfig');
 
 /**
@@ -51,13 +52,17 @@ function getPreferences() {
         billingAgreementDescription: site.getCustomPreferenceValue('PP_API_BA_Description'),
         enabledLPMs: site.getCustomPreferenceValue('PP_API_APM_methods'),
         paypalButtonLocation: site.getCustomPreferenceValue('PP_API_Button_Location').getValue(),
+        authorizationAndCaptureWhId: site.getCustomPreferenceValue('PP_WH_Authorization_And_Capture_Id'),
+        isVenmoEnabled: site.getCustomPreferenceValue('PP_API_Venmo_Enabled'),
+        connectWithPaypalButtonUrl: site.getCustomPreferenceValue('PP_Connect_With_Paypal_Button_Url'),
         paypalCartButtonConfig: paypalCartButtonConfig,
         paypalBillingButtonConfig: paypalBillingButtonConfig,
         paypalPdpButtonConfig: paypalPdpButtonConfig,
         paypalMinicartButtonConfig: paypalMinicartButtonConfig,
         paypalProcessorId: allowedProcessorsIds,
-        staticImageLink: staticImageLink,
-        partnerAttributionId: 'SFCC_EC_B2C_2020_1_3'
+        paypalStaticImageLink: paypalStaticImageLink,
+        connectWithPaypalStaticImageLink: connectWithPaypalStaticImageLink,
+        partnerAttributionId: 'SFCC_EC_B2C_2021_3_0'
     };
     prefsCache.put('preferences', prefs);
 

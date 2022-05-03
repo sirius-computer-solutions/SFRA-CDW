@@ -2,11 +2,11 @@ const Transaction = require('dw/system/Transaction');
 
 const {
     createErrorLog
-} = require('../scripts/paypal/paypalUtils');
+} = require('*/cartridge/scripts/paypal/paypalUtils');
 
 const {
     getBADetails
-} = require('../scripts/paypal/paypalApi');
+} = require('*/cartridge/scripts/paypal/paypalApi');
 
 const billingAgreementLimit = 3;
 
@@ -180,9 +180,12 @@ BillingAgreementModel.prototype.removeBillingAgreement = function (ba) {
  * @returns {void}
  */
 BillingAgreementModel.prototype.checkBillingAgreementsStatus = function () {
-    this.billingAgreements.forEach(function (ba) {
+    var that = this;
+
+    that.billingAgreements.forEach(function (ba) {
         var isBillingAgreementActive = checkBillingAgreementStatus(ba.baID);
-        if (!isBillingAgreementActive) this.removeBillingAgreement(ba);
+
+        if (!isBillingAgreementActive) that.removeBillingAgreement(ba);
     });
 };
 

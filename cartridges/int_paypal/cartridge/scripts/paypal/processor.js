@@ -5,26 +5,26 @@ const Order = require('dw/order/Order');
 
 const {
     createPaymentInstrument
-} = require('./helpers/paymentInstrumentHelper');
+} = require('*/cartridge/scripts/paypal/helpers/paymentInstrumentHelper');
 
 const {
     createBaFromForm
-} = require('./helpers/billingAgreementHelper');
+} = require('*/cartridge/scripts/paypal/helpers/billingAgreementHelper');
 
 const {
     getPurchaseUnit,
     isPurchaseUnitChanged
-} = require('./helpers/paypalHelper');
+} = require('*/cartridge/scripts/paypal/helpers/paypalHelper');
 
 const {
     createErrorLog,
     encodeString
-} = require('../paypal/paypalUtils');
+} = require('*/cartridge/scripts/paypal/paypalUtils');
 
 const {
     updateOrderBillingAddress,
     updateBABillingAddress
-} = require('../../scripts/paypal/helpers/addressHelper');
+} = require('*/cartridge/scripts/paypal/helpers/addressHelper');
 
 const {
     getOrderDetails,
@@ -32,7 +32,9 @@ const {
     updateOrderDetails,
     createTransaction,
     createOrder
-} = require('./paypalApi');
+} = require('*/cartridge/scripts/paypal/paypalApi');
+
+const paypalConstants = require('*/cartridge/scripts/util/paypalConstants');
 
 /**
  * Processor Handle
@@ -69,7 +71,7 @@ function handle(basket, paymentInformation) {
                 error: true
             };
         }
-        
+
         updateBABillingAddress(basket, billing_info);
 
         // Empty shipping_address in case when only gift certificate in the basket
@@ -77,11 +79,6 @@ function handle(basket, paymentInformation) {
             shipping_address = billing_info.billing_address;
             shipping_address.recipient_name = billing_info.first_name + ' ' + billing_info.last_name;
         }
-        if('country_code'in billing_info && billing_info.country_code != 'US')
-        {
-            billing_info = shipping_address;
-        }
-        
         shipping_address.phone = billing_info.phone;
         shippingAddress = shipping_address;
     } else {
@@ -99,25 +96,19 @@ function handle(basket, paymentInformation) {
                 error: true
             };
         }
-        //TODO
-        shippingAddress = purchase_units[0];
-        if('address' in payer && 'country_code' in payer.address && payer.address.country_code !='US')
-        {
-            if('shipping' in shippingAddress && 'address' in shippingAddress.shipping)
-            {
-                payer.address = shippingAddress.shipping.address;
-                if(payer.address.address_line_1 === payer.address.address_line_2)
-                {
-                    payer.address.address_line_2 = '';
-                }
-            }
-                
-        }
 
         updateOrderBillingAddress(basket, payer);
 
+        Transaction.wrap(function () {
+            paymentInstrument.custom.currentPaypalEmail = payer.email_address;
+            // in case of checkout via Venmo save it's name to payment instrument custom property
+            if (billingForm.paypal.usedPaymentMethod.value === paypalConstants.PAYMENT_METHOD_ID_VENMO) {
+                paymentInstrument.custom.paymentId = billingForm.paypal.usedPaymentMethod.value;
+            }
+        });
+
         session.privacy.paypalPayerEmail = payer.email_address;
-        paymentInstrument.custom.currentPaypalEmail = payer.email_address;
+        shippingAddress = purchase_units[0];
         shippingAddress.phone = payer.phone;
     }
 

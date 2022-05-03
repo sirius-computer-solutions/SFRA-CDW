@@ -11,13 +11,16 @@ const OrderMgr = require('dw/order/OrderMgr');
 const Order = require('dw/order/Order');
 const Status = require('dw/system/Status');
 const URLUtils = require('dw/web/URLUtils');
+const Resource = require('dw/web/Resource');
+const CustomerMgr = require('dw/customer/CustomerMgr');
 
 const {
+    getOrderByOrderNo,
     isPurchaseUnitChanged,
     getPurchaseUnit,
     getBARestData,
     hasOnlyGiftCertificates
-} = require('../scripts/paypal/helpers/paypalHelper');
+} = require('*/cartridge/scripts/paypal/helpers/paypalHelper');
 
 const {
     validateExpiredTransaction,
@@ -25,43 +28,49 @@ const {
     validateProcessor,
     removeNonPaypalPayment,
     validateHandleHook,
-    validateGiftCertificateAmount
-} = require('../scripts/paypal/middleware');
+    validateGiftCertificateAmount,
+    validateConnectWithPaypalUrl
+} = require('*/cartridge/scripts/paypal/middleware');
 
 const {
     updateOrderDetails,
     getBillingAgreementToken,
     createBillingAgreement,
     getOrderDetails,
-    cancelBillingAgreement
-} = require('../scripts/paypal/paypalApi');
+    cancelBillingAgreement,
+    exchangeAuthCodeForAccessToken,
+    getPaypalCustomerInfo
+} = require('*/cartridge/scripts/paypal/paypalApi');
 
 const {
     encodeString,
     createErrorMsg,
-    createErrorLog
-} = require('../scripts/paypal/paypalUtils');
+    createErrorLog,
+    createDebugLog
+} = require('*/cartridge/scripts/paypal/paypalUtils');
 
 const {
     createPaymentInstrument,
     getPaypalPaymentInstrument,
     removePaypalPaymentInstrument
-} = require('../scripts/paypal/helpers/paymentInstrumentHelper');
+} = require('*/cartridge/scripts/paypal/helpers/paymentInstrumentHelper');
 
 const {
     updateOrderBillingAddress,
     updateOrderShippingAddress,
     updateBAShippingAddress
-} = require('../scripts/paypal/helpers/addressHelper');
+} = require('*/cartridge/scripts/paypal/helpers/addressHelper');
 
 const {
+    authorizationAndCaptureWhId,
     paypalPaymentMethodId
-} = require('../config/paypalPreferences');
+} = require('*/cartridge/config/paypalPreferences');
 
 const COHelpers = require('*/cartridge/scripts/checkout/checkoutHelpers');
 
-const BillingAgreementModel = require('../models/billingAgreement');
+const BillingAgreementModel = require('*/cartridge/models/billingAgreement');
 
+const paypalConstants = require('*/cartridge/scripts/util/paypalConstants');
 
 server.get('GetPurchaseUnit', server.middleware.https, function (req, res, next) {
     var {
@@ -304,9 +313,180 @@ server.post('FinishLpmOrder', server.middleware.https, parseBody, function (_, r
     removePaypalPaymentInstrument(currentBasket);
 
     res.json({
-        redirectUrl: URLUtils.https('Order-Confirm', 'ID', order.orderNo, 'token', order.orderToken).toString()
+        redirectUrl: URLUtils.https('Order-Confirm', 'orderID', order.orderNo, 'orderToken', order.orderToken).toString()
     });
     next();
+});
+
+server.get('ConnectWithPaypal',
+    validateConnectWithPaypalUrl,
+    function (req, res, next) {
+        var accountHelpers = require('*/cartridge/scripts/helpers/accountHelpers');
+        var authenticatedCustomerProfile;
+        var oauthProviderID = paypalConstants.PAYMENT_METHOD_ID_PAYPAL;
+        var credentials;
+        var accessToken;
+        var paypalCustomerInfo;
+        var userID;
+        var errorMessage = Resource.msg('error.oauth.login.failure', 'login', null);
+
+        try {
+            // Gets the access token according to the authentification code
+            accessToken = exchangeAuthCodeForAccessToken(request.httpParameterMap.code.value);
+            // Gets the Paypal customer information according to the access token
+            paypalCustomerInfo = getPaypalCustomerInfo(accessToken);
+
+            if (!paypalCustomerInfo) {
+                throw errorMessage;
+            }
+
+            userID = paypalCustomerInfo.user_id;
+
+            authenticatedCustomerProfile = CustomerMgr.getExternallyAuthenticatedCustomerProfile(
+                oauthProviderID,
+                userID
+            );
+
+            // Create a new SFCC Customer Profile and assign PayPal external auth method
+            if (!authenticatedCustomerProfile) {
+                Transaction.wrap(function () {
+                    var newCustomer = CustomerMgr.createExternallyAuthenticatedCustomer(
+                        oauthProviderID,
+                        userID
+                    );
+
+                    authenticatedCustomerProfile = newCustomer.getProfile();
+                    var firstName;
+                    var lastName;
+                    var email;
+
+                    if (paypalCustomerInfo.name) {
+                        var fullNameArray = paypalCustomerInfo.name.split(' ');
+
+                        if (fullNameArray.length) {
+                            firstName = fullNameArray[0];
+                            lastName = fullNameArray[1];
+
+                            authenticatedCustomerProfile.setFirstName(firstName);
+                            authenticatedCustomerProfile.setLastName(lastName);
+                        }
+                    }
+
+                    if (paypalCustomerInfo.emails) {
+                        var emails = paypalCustomerInfo.emails;
+
+                        if (emails && emails.length) {
+                            email = emails[0].value;
+
+                            authenticatedCustomerProfile.setEmail(email);
+                        }
+                    }
+                });
+            }
+
+            credentials = authenticatedCustomerProfile.getCredentials();
+
+            if (credentials.isEnabled()) {
+                Transaction.wrap(function () {
+                    CustomerMgr.loginExternallyAuthenticatedCustomer(oauthProviderID, userID, false);
+                });
+            } else {
+                throw errorMessage;
+            }
+        } catch (err) {
+            res.render('/error', {
+                message: err
+            });
+
+            createErrorLog(err);
+
+            return next();
+        }
+
+        // req.querystring.state - oAuth reentry endpoint(1 or 2)
+        res.redirect(accountHelpers.getLoginRedirectURL(req.querystring.state, req.session.privacyCache, false));
+
+        return next();
+    });
+
+server.post('PaymentAuthorizationAndCaptureHook', function (req, res, next) {
+    var AuthorizationAndCaptureWhMgr = require('*/cartridge/models/authorizationAndCaptureWhMgr');
+    var authorizationAndCaptureWhMgr;
+    var responseObject = {};
+
+    try {
+        var whEvent = JSON.parse(request.httpParameterMap.requestBodyAsString);
+        var eventType = whEvent.event_type;
+        var eventResource = whEvent.resource;
+        authorizationAndCaptureWhMgr = new AuthorizationAndCaptureWhMgr();
+
+        // Cheks if endpoint received an appropriate event
+        var isApproppriateEventType = authorizationAndCaptureWhMgr.isApproppriateEventType(eventType);
+
+        // Throws an error and stop procced the rest of logic
+        if (!isApproppriateEventType) {
+            authorizationAndCaptureWhMgr.logEventError(eventType, this.name);
+        }
+
+        // Verify webhook event notifications
+        var verifiedResponse = authorizationAndCaptureWhMgr.verifyWhSignature(whEvent, request.httpHeaders, authorizationAndCaptureWhId);
+        var verificationStatus = verifiedResponse.verification_status;
+
+        if (verificationStatus === paypalConstants.STATUS_SUCCESS) {
+            var orderNo = eventResource.invoice_id;
+            var paymentStatus = eventResource.status;
+
+            if (!orderNo || !paymentStatus) {
+                throw Resource.msg('paypal.webhook.order.details.error', 'paypalerrors', null);
+            }
+
+            // Gets order needed to update payment status
+            var order = getOrderByOrderNo(orderNo);
+
+            if (!order) {
+                var orderErrorMsg = Resource.msg('paypal.webhook.order.notexist.error', 'paypalerrors', null);
+                createDebugLog(orderErrorMsg);
+
+                responseObject.error = orderErrorMsg;
+                responseObject.success = false;
+                res.json(responseObject);
+
+                return next();
+            }
+
+            // Handles different WebHook scenarios in depends of received webHook event
+            switch (eventType) {
+                case paypalConstants.PAYMENT_AUTHORIZATION_VOIDED:
+                    authorizationAndCaptureWhMgr.voidPaymentOnDwSide(order, paymentStatus);
+                    break;
+                case paypalConstants.PAYMENT_CAPTURE_REFUNDED:
+                    authorizationAndCaptureWhMgr.refundPaymentOnDwSide(order, paypalConstants.PAYMENT_STATUS_REFUNDED);
+                    break;
+                case paypalConstants.PAYMENT_CAPTURE_COMPLETED:
+                    authorizationAndCaptureWhMgr.completePaymentOnDwSide(order, paymentStatus);
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            throw Resource.msgf('paypal.webhook.verified.error', 'paypalerrors', null, verificationStatus);
+        }
+    } catch (err) {
+        responseObject.error = err;
+        responseObject.success = false;
+
+        res.json(responseObject);
+
+        createErrorLog(err);
+
+        return next();
+    }
+
+    res.setStatusCode(200);
+    responseObject.success = true;
+    res.json(responseObject);
+
+    return next();
 });
 
 module.exports = server.exports();

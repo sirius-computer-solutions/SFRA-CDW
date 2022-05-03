@@ -108,7 +108,7 @@ var paypalAdmin = (function ($) {
                     }
                     actionFormWindow.close();
                     if (paypalAdmin.currentOrderNo) {
-                        loadOrderTransaction(paypalAdmin.currentOrderNo, data.transactionid, paypalAdmin.isCustomOrder, paypalAdmin.currentCurrencyCode);
+                        loadOrderTransaction(paypalAdmin.orderToken, paypalAdmin.currentOrderNo, data.transactionid, paypalAdmin.isCustomOrder, paypalAdmin.currentCurrencyCode);
                     } else {
                         window.location.reload();
                     }
@@ -124,6 +124,7 @@ var paypalAdmin = (function ($) {
 
     function initOrderTransaction() {
         paypalAdmin.currentOrderNo = $('.js_paypalbm_order_detail').data('orderno');
+        paypalAdmin.orderToken = $('.js_paypalbm_order_detail').data('ordertoken');
         paypalAdmin.currentCurrencyCode = $('.js_paypalbm_order_detail').data('currencycode');
         paypalAdmin.isCustomOrder = $('.js_paypalbm_order_detail').data('iscustom');
         $('.js_paypal_action').on('click', function () {
@@ -166,14 +167,15 @@ var paypalAdmin = (function ($) {
 
         $('.js_paypalbm_order_transactions_ids').on('change', function () {
             var transactionId = $(this).val();
-            loadOrderTransaction(paypalAdmin.currentOrderNo, transactionId, paypalAdmin.isCustomOrder, paypalAdmin.currentCurrencyCode);
+            loadOrderTransaction(paypalAdmin.orderToken, paypalAdmin.currentOrderNo, transactionId, paypalAdmin.isCustomOrder, paypalAdmin.currentCurrencyCode);
         });
     }
 
-    function loadOrderTransaction(orderNo, transactionId, isCustom, currencyCode) {
+    function loadOrderTransaction(orderToken, orderNo, transactionId, isCustom, currencyCode) {
         var data = {
             format: 'ajax',
             orderNo: orderNo || null,
+            orderToken: orderToken,
             transactionId: transactionId || null,
             isCustomOrder: isCustom || null,
             currencyCode: currencyCode
@@ -258,7 +260,7 @@ var paypalAdmin = (function ($) {
 
     function referenceIdCheck($referenceInput) {
         $referenceInput.bind('input change', function () {
-            var method = $('input[name=methodName]').val() === 'DoReferenceTransaction';
+            var method = $('input[name=methodName]').val() === 'CreateTransaction';
             var enterValue = $.trim($(this).val());
             var reg = new RegExp('^B');
             var indexValue = !reg.test(enterValue) && !!enterValue[0];
@@ -298,7 +300,7 @@ var paypalAdmin = (function ($) {
             });
             transactionDetailWindow.show();
             transactionDetailWindow.maskOver = createMaskOver(transactionDetailWindow);
-            loadOrderTransaction($button.data('orderno'), $button.data('transactionid'), $button.data('iscustom'), $button.data('currencycode'));
+            loadOrderTransaction($button.data('ordertoken'), $button.data('orderno'), $button.data('transactionid'), $button.data('iscustom'), $button.data('currencycode'));
             return false;
         });
 
@@ -443,7 +445,7 @@ var paypalAdmin = (function ($) {
                 $acctInput.hide();
                 $orderOption.removeAttr('disabled');
                 $requiredToggleInputs.removeAttr('data-validation');
-                $method.val('DoReferenceTransaction');
+                $method.val('CreateTransaction');
                 if (status !== 'disabled') {
                     $acctInput.find('input').attr('disabled', 'disabled');
                 } else {

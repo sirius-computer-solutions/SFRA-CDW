@@ -48,7 +48,9 @@ function CalculateTax(requestType, cart) {
                 return false;
             }
         }
-    } else if ((session.forms.singleshipping.fulfilled.value || (session.forms.multishipping.addressSelection.fulfilled.value && session.forms.multishipping.shippingOptions.fulfilled.value)) && API.isEnabled && session.custom.VertexAddressSuggestionsError !== 'error') {
+    }
+    /*
+     else if (API.isEnabled && (session.forms.singleshipping.fulfilled.value || (session.forms.multishipping.addressSelection.fulfilled.value && session.forms.multishipping.shippingOptions.fulfilled.value)) && session.custom.VertexAddressSuggestionsError !== 'error') {
         calculationResult = API.CalculateTax(requestType, cart);
 
         // Check for errors in US addresses only
@@ -57,7 +59,7 @@ function CalculateTax(requestType, cart) {
             response.redirect(URLUtils.https('COShipping-Start'));
             return false;
         }
-    }
+    }*/
 }
 
 /**

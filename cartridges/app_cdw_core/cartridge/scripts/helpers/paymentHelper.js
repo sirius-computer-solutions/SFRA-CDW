@@ -68,7 +68,7 @@ const {
     var bytes = new Bytes(value);
     return Encoding.toBase64(bytes);
 }
-
+/*
 var PaywareService = LocalServiceRegistry.createService('int.payware.http', {
     createRequest: function (svc, callMethod, paymentInstrument, orderNumber, data) {
         var credential = svc.configuration.credential;
@@ -102,7 +102,7 @@ var PaywareService = LocalServiceRegistry.createService('int.payware.http', {
 		}
     }
 });
-
+*/
 
 /**
  * populateRequestData for payware call
@@ -419,7 +419,7 @@ var PaywareService = LocalServiceRegistry.createService('int.payware.http', {
     return validCVVCode;
 }
 module.exports = {        
-    PaywareService: PaywareService,
+/*    PaywareService: PaywareService,*/
     payPalSubmitPayment: payPalSubmitPayment,
     populateExtraCCAttributes: populateExtraCCAttributes,
     isValidResultCode: isValidResultCode,

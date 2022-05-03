@@ -107,3 +107,13 @@
 .none {
     display: none;
 }
+
+.connect-with-paypal-img:hover{
+    filter: brightness(1.1);
+}
+
+#venmo_image {
+	justify-content: center;
+	cursor: pointer;
+    width: 100%;
+}

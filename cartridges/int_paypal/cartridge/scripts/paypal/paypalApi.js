@@ -2,17 +2,22 @@
 
 const Transaction = require('dw/system/Transaction');
 const Money = require('dw/value/Money');
-const paypalRestService = require('../service/paypalRestService');
+const paypalRestService = require('*/cartridge/scripts/service/paypalRestService');
+const paypalTokenService = require('*/cartridge/scripts/service/paypalTokenService');
 
 const {
     isCapture,
     partnerAttributionId
-} = require('../../config/paypalPreferences');
+} = require('*/cartridge/config/paypalPreferences');
 
 const {
     createErrorLog,
     createErrorMsg
-} = require('./paypalUtils');
+} = require('*/cartridge/scripts/paypal/paypalUtils');
+const paypalConstants = require('*/cartridge/scripts/util/paypalConstants');
+
+// A paypalTokenService instance
+var service = paypalTokenService();
 
 /**
  * Function to get information about an order
@@ -255,6 +260,54 @@ function cancelBillingAgreement(baID) {
     }
 }
 
+/**
+ * Gets access token according a paypal user autherization code
+ * @param {string} authCode Autherization code of paypal user
+ * @returns {string} access token
+ */
+function exchangeAuthCodeForAccessToken(authCode) {
+    var result = service.setThrowOnError().call({
+        code: authCode,
+        requestType: paypalConstants.ACCESS_TOKEN,
+        path: 'oauth2/token',
+        method: paypalConstants.METHOD_POST
+    });
+
+    if (!result.ok) {
+        var errorObject = JSON.parse(result.errorMessage);
+        var error = errorObject.error_description;
+
+        createErrorLog(error);
+        throw error;
+    }
+
+    return result.object.access_token;
+}
+
+/**
+ * Gets paypal customer info according access token
+ * @param {string} accessToken Access Token
+ * @returns {Object} Object with the customer info
+ */
+function getPaypalCustomerInfo(accessToken) {
+    var result = service.setThrowOnError().call({
+        accessToken: accessToken,
+        requestType: paypalConstants.USER_INFO,
+        path: 'identity/oauth2/userinfo?schema=paypalv1.1',
+        method: paypalConstants.METHOD_GET
+    });
+
+    if (!result.ok) {
+        var errorObject = JSON.parse(result.errorMessage);
+        var error = errorObject.error_description;
+
+        createErrorLog(error);
+        throw error;
+    }
+
+    return result.object;
+}
+
 module.exports = {
     createTransaction: createTransaction,
     updateOrderDetails: updateOrderDetails,
@@ -263,5 +316,7 @@ module.exports = {
     createBillingAgreement: createBillingAgreement,
     createOrder: createOrder,
     getBADetails: getBADetails,
-    cancelBillingAgreement: cancelBillingAgreement
+    cancelBillingAgreement: cancelBillingAgreement,
+    exchangeAuthCodeForAccessToken: exchangeAuthCodeForAccessToken,
+    getPaypalCustomerInfo: getPaypalCustomerInfo
 };

@@ -7,7 +7,8 @@ import {
     togglePaypalBtnVisibility,
     updateSessionAccountEmail,
     isNewAccountSelected,
-    updateClientSide
+    updateClientSide,
+    updateSubmitOrderButton
 } from './billingHelper';
 
 import {
@@ -73,6 +74,16 @@ if (!isRegisteredUser || !isBAEnabled) {
 }
 
 $('body').on('checkout:updateCheckoutView', updateClientSide);
+
+if (!isBAEnabled) {
+    $('body').on('checkout:updateCheckoutView', updateSubmitOrderButton);
+
+    updateSubmitOrderButton();
+
+    document.querySelector('.payment-summary .edit-button').onclick = function () {
+        document.querySelector('button.place-order').innerText = 'Place Order';
+    };
+}
 
 if (document.querySelector('.paypal-checkbox-container')) {
     document.querySelectorAll('.paypal-checkbox-container .custom-checkbox').forEach(checkbox => checkbox.addEventListener('change', handleCheckboxChange));
