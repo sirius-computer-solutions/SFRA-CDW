@@ -5,7 +5,7 @@
                 <ul>
                     <li><a href="${URLUtils.https('Order-History')}">${Resource.msg('global.orderstatus', 'common', null)}</a></li>
                     <li>
-                        <isinclude template="account/header" />
+                        <isinclude url="${URLUtils.url('Account-Header')}" />
                     </li>
                     <li><a href="/customerservice.html">${Resource.msg('global.customerservice', 'common', null)}</a></li>
                 </ul>
