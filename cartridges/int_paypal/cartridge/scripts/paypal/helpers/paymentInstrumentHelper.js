@@ -38,7 +38,10 @@ function calculateNonGiftCertificateAmount(lineItemCtnr) {
  * @returns {dw.order.OrderPaymentInstrument} payment instrument with id PAYPAL
  */
 function getPaypalPaymentInstrument(basket) {
-    var paymentInstruments = basket.getPaymentInstruments(paypalPaymentMethodId);
+    var paymentInstruments = null;
+    if (!empty(paypalPaymentMethodId) && !empty(basket)) {
+        paymentInstruments = basket.getPaymentInstruments(paypalPaymentMethodId);
+    }
     return !empty(paymentInstruments) && paymentInstruments[0];
 }
 
