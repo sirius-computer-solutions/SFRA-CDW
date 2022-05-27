@@ -3,7 +3,7 @@
 <div>
     <div>
         <span>
-            ${payment.paypalEmail} <br />
+            ${pdict.paypal.paypalEmail} <br />
             ${(isVenmoUsed ? Resource.msg('venmo.payment.method.name', 'locale', null) : payment.paymentMethod) + '/' + pdict.order.priceTotal}
         </span>
     </div>

@@ -18,7 +18,7 @@ const {
 server.extend(page);
 
 server.append('Confirm', validatePaypalPaymentInstrument, function (req, res, next) {
-    var order = OrderMgr.getOrder(req.form.orderID, req.form.orderToken);
+    var order = OrderMgr.getOrder(req.querystring.ID, req.querystring.token);
     var paypalPaymentInstrument = getPaypalPaymentInstrument(order);
     var currency = order.getCurrencyCode();
     var amount = paypalPaymentInstrument.paymentTransaction.amount.value;
