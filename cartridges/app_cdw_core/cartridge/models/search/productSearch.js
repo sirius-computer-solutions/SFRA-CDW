@@ -407,36 +407,39 @@ function ProductSearch(productSearch, httpParams, sortingRule, sortingOptions, r
     var startIdx = httpParams.start || 0;
 
     var Site = require('dw/system/Site');
-    var modifySortRules = Site.getCurrent().getCustomPreferenceValue('modifySortRules') || 'top-sellers';
-    var srule = productSearch.getSortingRule();
-    var inStockProducts = new ArrayList();
-    var backOrderProducts = new ArrayList();
-    var outStockProducts = new ArrayList();
-    var products = productSearch.productSearchHits;
-    var allProducts = new ArrayList();
-    
-    
-    if(productSearch.getCount()<20000 && (srule==null || (srule!=null && modifySortRules.indexOf(srule.ID)!=-1)))
-    {
-        while(products.hasNext())
-        {
-            
-            var product = products.next();
-            if(product.product.availabilityModel.inventoryRecord!=null && product.product.availabilityModel.inventoryRecord.getStockLevel().getValue() > 0 ){
-                inStockProducts.add(product);
-            }
-            else if(product.product.availabilityModel.inventoryRecord!=null && product.product.availabilityModel.inventoryRecord.getATS().getValue() > 0 ){
-                backOrderProducts.add(product);
-            }
-            else{
-                outStockProducts.add(product);
-            }
-        }
+    var overrideATSSortingRules = Site.getCurrent().getCustomPreferenceValue('overrideATSSortingRule');
+    if (overrideATSSortingRules != null && overrideATSSortingRules == 'true') {
+        var modifySortRules = Site.getCurrent().getCustomPreferenceValue('modifySortRules') || 'top-sellers';
+        var modifySortRulesMax = Site.getCurrent().getCustomPreferenceValue('modifySortRulesMax') || '20000';
+        var srule = productSearch.getSortingRule();
+        var inStockProducts = new ArrayList();
+        var backOrderProducts = new ArrayList();
+        var outStockProducts = new ArrayList();
+        var products = productSearch.productSearchHits;
+        var allProducts = new ArrayList();
         
-        allProducts.addAll(inStockProducts);
-        allProducts.addAll(backOrderProducts);
-        allProducts.addAll(outStockProducts);
-        products = allProducts.iterator();
+        if(productSearch.getCount()<modifySortRulesMax && (srule==null || (srule!=null && modifySortRules.indexOf(srule.ID)!=-1)))
+        {
+            while(products.hasNext())
+            {
+                
+                var product = products.next();
+                if(product.product.availabilityModel.inventoryRecord!=null && product.product.availabilityModel.inventoryRecord.getStockLevel().getValue() > 0 ){
+                    inStockProducts.add(product);
+                }
+                else if(product.product.availabilityModel.inventoryRecord!=null && product.product.availabilityModel.inventoryRecord.getATS().getValue() > 0 ){
+                    backOrderProducts.add(product);
+                }
+                else{
+                    outStockProducts.add(product);
+                }
+            }
+            
+            allProducts.addAll(inStockProducts);
+            allProducts.addAll(backOrderProducts);
+            allProducts.addAll(outStockProducts);
+            products = allProducts.iterator();
+        }
     }
 
     var paging = getPagingModel(
