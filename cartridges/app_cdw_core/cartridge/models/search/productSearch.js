@@ -406,6 +406,7 @@ function ProductSearch(productSearch, httpParams, sortingRule, sortingOptions, r
     this.productSearch = productSearch;
     var startIdx = httpParams.start || 0;
 
+    var products = productSearch.productSearchHits;
     var Site = require('dw/system/Site');
     var overrideATSSortingRules = Site.getCurrent().getCustomPreferenceValue('overrideATSSortingRule');
     if (overrideATSSortingRules != null && overrideATSSortingRules == 'true') {
@@ -415,7 +416,6 @@ function ProductSearch(productSearch, httpParams, sortingRule, sortingOptions, r
         var inStockProducts = new ArrayList();
         var backOrderProducts = new ArrayList();
         var outStockProducts = new ArrayList();
-        var products = productSearch.productSearchHits;
         var allProducts = new ArrayList();
         
         if(productSearch.getCount()<modifySortRulesMax && (srule==null || (srule!=null && modifySortRules.indexOf(srule.ID)!=-1)))
