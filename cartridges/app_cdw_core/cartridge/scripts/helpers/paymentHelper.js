@@ -261,7 +261,7 @@ var PaywareService = LocalServiceRegistry.createService('int.payware.http', {
         checkBillingAgreement
     } = getPaymentInstrumentAction(paypalPaymentInstrument, billingForm.paypal);
 
-    updateCustomerEmail(basket, billingData);
+    // updateCustomerEmail(basket, billingData);
     updateCustomerPhone(basket, billingData);
 
     if (checkBillingAgreement) {
@@ -335,7 +335,7 @@ var PaywareService = LocalServiceRegistry.createService('int.payware.http', {
         basketModel: basketModel,
         paypalPI: paypalPaymentInstrument
     });
-    basketModelHack(basketModel, currencyCode);
+    basketModelHack(basketModel, currencyCode, paypalPaymentInstrument.custom);
 
     res.json({
         customer: new AccountModel(req.currentCustomer),

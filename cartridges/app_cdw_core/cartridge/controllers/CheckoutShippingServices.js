@@ -57,6 +57,9 @@ server.prepend('SubmitShipping', function (req, res, next) {
                     error: true
                 });
             }
+            /**
+             * ShippingHelper.isCartContainingNonCarbCompliant is part of the fedex cartridge
+             * 
             if("CA" === stateCode && ShippingHelper.isCartContainingNonCarbCompliant(currentBasket)){
                 res.json({
                     fieldErrors: [],
@@ -64,6 +67,7 @@ server.prepend('SubmitShipping', function (req, res, next) {
                     error: true
                 });
             }
+             */
             /*
             if(ShippingHelper.isAddressPOBOx(form.shippingAddress.addressFields.address1.value)){
                 res.json({

@@ -182,7 +182,7 @@ function validatePaypalOnCheckout(req, res, next) {
  * @returns {void}
  */
 function validatePaypalPaymentInstrument(req, res, next) {
-    var order = OrderMgr.getOrder(req.form.orderID, req.form.orderToken);
+    var order = OrderMgr.getOrder(req.querystring.ID, req.querystring.token);
     var paypalPaymentInstrument = getPaypalPaymentInstrument(order);
     if (!paypalPaymentInstrument) {
         this.emit('route:Complete', req, res);
